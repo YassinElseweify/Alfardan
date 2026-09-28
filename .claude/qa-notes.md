@@ -4171,3 +4171,18 @@ Note: the Atlassian connector intermittently returns 403 "The app is not install
   Held back: 733 (left in QA IN PROGRESS — owner access fixed, but end-to-end cancel blocked by 728); still DEPLOYED TO QA: 698 (Availability For Sale not updated), 713 (M1 HO-00075 follow-up task not created 2h+ after its due time; earlier E2E tasks were fine), 736 (evidence only via file title; early approval email), 743 (recall not checked), 755 (Discount % shows 6.08; 0.11 rounding).
 - 2026-09-28 (user "go ahead"): filed LFRDN-761/762/763 (BUG-RT27-01..03; Sprint 3, parent 317, Yassin, links: 761→343/728/707, 762/763→338). BUG-RT27-04 folded into the 736 comment, not filed. 698 + 713 → Done. 743 + 736 → comment + To Do. 733 → comment "blocked by 728", stays QA IN PROGRESS. 755 NOT moved: its Discount % still shows 6.08 (part of the ticket's actual result + BRD 10.7 FR1) — awaiting user decision; left in QA IN PROGRESS.
 - 2026-09-28: LFRDN-755 rechecked on fresh deal QA RT27 M5 (quote 00000260) — Discount % formula still divides by post-trade-in Subtotal (3.35% vs applied 2.51%). Commented + moved to To Do (user approved).
+
+## 2026-09-28 — Fix-session state (pulled from Jira, latest comments read)
+- LFRDN-736 already fixed and commented (09:22 UTC): the `AF_ApprovalSubmittedAt__c` stamp drives the notification flow. The "drop the redundant Has_Real_Submission gate" cleanup is optional and still undone.
+- DEPLOYED TO QA with a fix comment: 730, 736, 738, 743, 762. 733 is Done. 728 and 729 have fix comments but are still in To Do. 729 is waiting on Marwan about ~10 old Pending cancellation CNs. 756 is waiting on Marwan for a fresh appraisal Id.
+- What the latest comments say is still needed (To Do):
+  - 695: Create Reservation screen stops working when `Get_Active_Appraisal` is null. Guard the visibility rules and show `DepositAmountCashField` on 7-Day.
+  - 719: Sales Walk-In fails reading `UserRole.Name`. Move the rep lookup to system mode.
+  - 752: receptionist gets INSUFFICIENT_ACCESS on the task WhatId. Create the task and notification in system context.
+  - 754: auto-close doesn't run when the doc-type tag is set on the LPO; the Chatter alert also posts twice.
+  - 755: `Quote.AF_DiscountPercent__c` divides by the post-trade-in Subtotal. Use the non-trade-in lines.
+  - 745: Arabic prints reversed in the requisition PDF. Needs an RTL font.
+  - 750: rejection comment (ProcessInstanceStep.Comments) isn't included in the notification.
+  - 758: dashboard component error 209 on Aged Open Opportunities (tabular report row limit).
+- Draft (not triaged yet): 726, 761, 763, 764. Out of scope: 677, 685, 737 (Keyloop), 678 (currency, deferred).
+- ⚠️ This cloud container has no `sf` CLI or org credentials, and the repo's `force-app` is a snapshot that does NOT include today's deployed fixes. Retrieve from the org before editing any metadata, or you will overwrite fixes.
