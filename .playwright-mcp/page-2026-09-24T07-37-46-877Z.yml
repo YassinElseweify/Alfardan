@@ -1,0 +1,371 @@
+- generic:
+  - generic [ref=f40e2]:
+    - generic [ref=f40e3]:
+      - link "Skip to Navigation" [ref=f40e2436] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f40e2437] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f40e196]:
+        - generic [ref=f40e197]: "Sandbox: QA |"
+        - link "Log out" [ref=f40e2438] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f40e6]:
+        - button "Search" [ref=f40e2439]: Search...
+        - navigation "Global Header" [ref=f40e2440]:
+          - list [ref=f40e200]:
+            - listitem [ref=f40e201]:
+              - group [ref=f40e202]:
+                - button "Add favorite" [ref=f40e2441] [cursor=pointer]:
+                  - generic [ref=f40e205]:
+                    - tooltip "Add favorite"
+                - button [ref=f40e2442] [cursor=pointer]:
+                  - generic [ref=f40e214]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f40e221]:
+              - button [ref=f40e2443] [cursor=pointer]:
+                - generic [ref=f40e228]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f40e235]:
+              - button [ref=f40e2444] [cursor=pointer]:
+                - generic [ref=f40e238]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f40e245]:
+              - button [ref=f40e2445] [cursor=pointer]:
+                - generic [ref=f40e249]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f40e256]:
+              - button "2 Notifications" [ref=f40e2446] [cursor=pointer]:
+                - generic [ref=f40e260]:
+                  - generic [ref=f40e261]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f40e270]: 2 new notifications
+            - listitem [ref=f40e271]:
+              - button "View profile" [ref=f40e2447] [cursor=pointer]:
+                - generic [ref=f40e275]:
+                  - tooltip "View profile"
+    - generic [ref=f40e24]:
+      - generic [ref=f40e27]:
+        - generic [ref=f40e29]:
+          - navigation "App" [ref=f40e2448]:
+            - button "App Launcher" [ref=f40e2449] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f40e2450]
+        - navigation "Global" [ref=f40e2452]:
+          - list [ref=f40e49]:
+            - listitem [ref=f40e50]:
+              - link "Home" [ref=f40e2453] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f40e53]:
+              - link "Vehicles" [ref=f40e2454] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f40e2455] [cursor=pointer]
+            - listitem [ref=f40e67]:
+              - link "Assets" [ref=f40e2456] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f40e2457] [cursor=pointer]
+            - listitem [ref=f40e81]:
+              - link "Vehicle Definitions" [ref=f40e2458] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f40e2459] [cursor=pointer]
+            - listitem [ref=f40e95]:
+              - link "Products" [ref=f40e2460] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f40e2461] [cursor=pointer]
+            - listitem [ref=f40e109]:
+              - link "Accounts" [ref=f40e2462] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f40e2463] [cursor=pointer]
+            - listitem [ref=f40e123]:
+              - link "Contacts" [ref=f40e2464] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f40e2465] [cursor=pointer]
+            - listitem [ref=f40e137]:
+              - link "Asset Milestones" [ref=f40e2466] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f40e2467] [cursor=pointer]
+            - listitem [ref=f40e279] [cursor=pointer]:
+              - link "* HO-00037 | Handover" [ref=f40e2468]:
+                - /url: /lightning/r/AF_Handover__c/a0SFV001PomVg8q2IC/view
+                - generic "Not added to nav bar" [ref=f40e2469]: "*"
+                - generic [ref=f40e282]: HO-00037 | Handover
+              - button "HO-00037 | Handover List" [ref=f40e2470]
+              - button "Close tab" [ref=f40e2471]
+            - listitem [ref=f40e165]:
+              - button "* Show more navigation items" [ref=f40e2472] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f40e2473]: "*"
+                - generic [aria-hidden] [ref=f40e169]: More
+                - generic [ref=f40e176]: Show more navigation items
+            - listitem [ref=f40e177]:
+              - button "Edit nav items" [ref=f40e2474] [cursor=pointer]
+      - main [ref=f40e186]:
+        - generic [ref=f40e313]:
+          - generic [ref=f40e323]:
+            - generic [ref=f40e329]:
+              - generic [ref=f40e330]: Handover
+              - heading "HO-00037" [level=1] [ref=f40e2475]
+            - button "Follow" [ref=f40e2476] [cursor=pointer]
+            - generic [ref=f40e349]:
+              - generic "Edit" [ref=f40e2477]:
+                - button "Edit" [ref=f40e2478] [cursor=pointer]
+              - generic "Generate Documents" [ref=f40e2479]:
+                - button "Generate Documents" [active] [ref=f40e2480] [cursor=pointer]
+          - generic [ref=f40e363]:
+            - generic [ref=f40e371]:
+              - heading "Tabs" [level=2] [ref=f40e2481]
+              - tablist "Tabs" [ref=f40e2482]:
+                - tab "Details" [selected] [ref=f40e2483] [cursor=pointer]
+                - tab "Related" [ref=f40e2484] [cursor=pointer]
+              - generic [ref=f40e378]:
+                - tabpanel "Details" [ref=f40e2485]:
+                  - generic [ref=f40e1186]:
+                    - generic [ref=f40e1188]:
+                      - heading [level=3] [ref=f40e2486]:
+                        - button "Handover Information" [expanded] [ref=f40e2487] [cursor=pointer]
+                      - list [ref=f40e1200]:
+                        - generic [ref=f40e1201]:
+                          - generic [ref=f40e1203]:
+                            - listitem [ref=f40e1205]:
+                              - generic [ref=f40e1206]:
+                                - generic [ref=f40e1207]: Handover Number
+                                - generic [ref=f40e1208]: HO-00037
+                            - listitem [ref=f40e1212]:
+                              - generic [ref=f40e1213]:
+                                - generic [ref=f40e1214]: Owner
+                                - generic [ref=f40e1219]:
+                                  - generic [ref=f40e1226]:
+                                    - link "QA SalesRep2" [ref=f40e2488] [cursor=pointer]:
+                                      - /url: /lightning/r/Name/005FV0082KfRrqeYQC/view
+                                    - button "Preview" [ref=f40e2489] [cursor=pointer]
+                                  - button "Change Owner" [ref=f40e2490] [cursor=pointer]
+                          - generic [ref=f40e1247]:
+                            - listitem [ref=f40e1249]:
+                              - generic [ref=f40e1250]:
+                                - generic [ref=f40e1251]: Opportunity
+                                - generic [ref=f40e1252]:
+                                  - generic [ref=f40e1258]:
+                                    - link "DEMO Cycle 01 - Ferrari Roma end-to-end" [ref=f40e2491] [cursor=pointer]:
+                                      - /url: /lightning/r/Opportunity/006FV00Bq30GjbQYES/view
+                                    - button "Preview" [ref=f40e2492] [cursor=pointer]
+                                  - button "Edit Opportunity" [ref=f40e2493] [cursor=pointer]
+                            - listitem [ref=f40e1275]:
+                              - generic [ref=f40e1276]:
+                                - generic [ref=f40e1277]: Handover Location
+                                - generic [ref=f40e1278]:
+                                  - generic [ref=f40e2494]: Doha Showroom - Automobiles
+                                  - button "Edit Handover Location" [ref=f40e2496] [cursor=pointer]
+                          - generic [ref=f40e1283]:
+                            - listitem [ref=f40e1285]:
+                              - generic [ref=f40e1286]:
+                                - generic [ref=f40e1287]: Handover Status
+                                - generic [ref=f40e1288]:
+                                  - generic [ref=f40e1289]: Pending
+                                  - button "Edit Handover Status" [ref=f40e2497] [cursor=pointer]
+                            - listitem [ref=f40e1295]:
+                              - generic [ref=f40e1296]:
+                                - generic [ref=f40e1297]: Invoice Summary
+                                - button "Edit Invoice Summary" [ref=f40e2498] [cursor=pointer]
+                          - generic [ref=f40e1304]:
+                            - listitem [ref=f40e1306]:
+                              - generic [ref=f40e1307]:
+                                - generic [ref=f40e1308]: Handover Date
+                                - generic [ref=f40e1309]:
+                                  - generic [ref=f40e2499]: 24/09/2026, 12:00 AM
+                                  - button "Edit Handover Date" [ref=f40e2501] [cursor=pointer]
+                            - listitem [ref=f40e1314]:
+                              - generic [ref=f40e1315]:
+                                - generic [ref=f40e1316]: Closed Won Gate Passed?
+                                - generic [ref=f40e1322]:
+                                  - generic "False" [ref=f40e2502]
+                                  - generic [ref=f40e1330]: Closed Won Gate Passed?
+                    - generic [ref=f40e1332]:
+                      - heading [level=3] [ref=f40e2503]:
+                        - button "Customer & Vehicle" [expanded] [ref=f40e2504] [cursor=pointer]
+                      - list [ref=f40e1344]:
+                        - generic [ref=f40e1345]:
+                          - generic [ref=f40e1347]:
+                            - listitem [ref=f40e1349]:
+                              - generic [ref=f40e1350]:
+                                - generic [ref=f40e1351]: Account
+                                - generic [ref=f40e1358]:
+                                  - link "DEMO Cycle - Hamad Al-Kuwari" [ref=f40e2505] [cursor=pointer]:
+                                    - /url: /lightning/r/Account/001FV00LHOkVgImY2K/view
+                                  - button "Preview" [ref=f40e2506] [cursor=pointer]
+                            - listitem [ref=f40e1372]:
+                              - generic [ref=f40e1373]:
+                                - generic [ref=f40e1374]: Vehicle
+                                - button "Edit Vehicle" [ref=f40e2507] [cursor=pointer]
+                          - listitem [ref=f40e1383]:
+                            - generic [ref=f40e1384]:
+                              - generic [ref=f40e1385]: Contact
+                              - button "Edit Contact" [ref=f40e2508] [cursor=pointer]
+                    - generic [ref=f40e1393]:
+                      - heading [level=3] [ref=f40e2509]:
+                        - button "Required Documents Checklist" [expanded] [ref=f40e2510] [cursor=pointer]
+                      - list [ref=f40e1405]:
+                        - generic [ref=f40e1406]:
+                          - generic [ref=f40e1408]:
+                            - listitem [ref=f40e1410]:
+                              - generic [ref=f40e1411]:
+                                - generic [ref=f40e1412]: Vehicle Sale Agreement Complete?
+                                - generic [ref=f40e1413]:
+                                  - generic [ref=f40e1418]:
+                                    - generic "True" [ref=f40e2511]
+                                    - generic [ref=f40e1426]: Vehicle Sale Agreement Complete?
+                                  - button "Edit Vehicle Sale Agreement Complete?" [ref=f40e2512] [cursor=pointer]
+                            - listitem [ref=f40e1431]:
+                              - generic [ref=f40e1432]:
+                                - generic [ref=f40e1433]: Buyer Acknowledgement Complete?
+                                - generic [ref=f40e1434]:
+                                  - generic [ref=f40e1439]:
+                                    - generic "True" [ref=f40e2513]
+                                    - generic [ref=f40e1447]: Buyer Acknowledgement Complete?
+                                  - button "Edit Buyer Acknowledgement Complete?" [ref=f40e2514] [cursor=pointer]
+                          - generic [ref=f40e1452]:
+                            - listitem [ref=f40e1454]:
+                              - generic [ref=f40e1455]:
+                                - generic [ref=f40e1456]: Warranty Agreement Complete?
+                                - generic [ref=f40e1457]:
+                                  - generic [ref=f40e1462]:
+                                    - generic "True" [ref=f40e2515]
+                                    - generic [ref=f40e1470]: Warranty Agreement Complete?
+                                  - button "Edit Warranty Agreement Complete?" [ref=f40e2516] [cursor=pointer]
+                            - listitem [ref=f40e1475]:
+                              - generic [ref=f40e1476]:
+                                - generic [ref=f40e1477]: Insurance Form Uploaded?
+                                - generic [ref=f40e1478]:
+                                  - generic [ref=f40e1483]:
+                                    - generic "False" [ref=f40e2517]
+                                    - generic [ref=f40e1491]: Insurance Form Uploaded?
+                                  - button "Edit Insurance Form Uploaded?" [ref=f40e2518] [cursor=pointer]
+                          - generic [ref=f40e1496]:
+                            - listitem [ref=f40e1498]:
+                              - generic [ref=f40e1499]:
+                                - generic [ref=f40e1500]: Service Contract Agreement Complete?
+                                - generic [ref=f40e1501]:
+                                  - generic [ref=f40e1506]:
+                                    - generic "True" [ref=f40e2519]
+                                    - generic [ref=f40e1514]: Service Contract Agreement Complete?
+                                  - button "Edit Service Contract Agreement Complete?" [ref=f40e2520] [cursor=pointer]
+                            - listitem [ref=f40e1519]:
+                              - generic [ref=f40e1520]:
+                                - generic [ref=f40e1521]: Traffic Form Uploaded?
+                                - generic [ref=f40e1522]:
+                                  - generic [ref=f40e1527]:
+                                    - generic "False" [ref=f40e2521]
+                                    - generic [ref=f40e1535]: Traffic Form Uploaded?
+                                  - button "Edit Traffic Form Uploaded?" [ref=f40e2522] [cursor=pointer]
+                          - generic [ref=f40e1540]:
+                            - listitem [ref=f40e1542]:
+                              - generic [ref=f40e1543]:
+                                - generic [ref=f40e1544]: Vehicle Repair Disclaimer Complete?
+                                - generic [ref=f40e1545]:
+                                  - generic [ref=f40e1550]:
+                                    - generic "True" [ref=f40e2523]
+                                    - generic [ref=f40e1558]: Vehicle Repair Disclaimer Complete?
+                                  - button "Edit Vehicle Repair Disclaimer Complete?" [ref=f40e2524] [cursor=pointer]
+                            - listitem [ref=f40e1563]:
+                              - generic [ref=f40e1564]:
+                                - generic [ref=f40e1565]: Checklist Complete?
+                                - generic [ref=f40e1571]:
+                                  - generic "False" [ref=f40e2525]
+                                  - generic [ref=f40e1579]: Checklist Complete?
+                    - generic [ref=f40e1581]:
+                      - heading [level=3] [ref=f40e2526]:
+                        - button "Sign-Off & Delivery" [expanded] [ref=f40e2527] [cursor=pointer]
+                      - list [ref=f40e1593]:
+                        - generic [ref=f40e1594]:
+                          - generic [ref=f40e1596]:
+                            - listitem [ref=f40e1598]:
+                              - generic [ref=f40e1599]:
+                                - generic [ref=f40e1600]: Customer Sign-Off
+                                - button "Edit Customer Sign-Off" [ref=f40e2528] [cursor=pointer]
+                            - listitem [ref=f40e1606]:
+                              - generic [ref=f40e1607]:
+                                - generic [ref=f40e1608]: Follow-Up Task Created?
+                                - generic [ref=f40e1609]:
+                                  - generic [ref=f40e1614]:
+                                    - generic "False" [ref=f40e2529]
+                                    - generic [ref=f40e1622]: Follow-Up Task Created?
+                                  - button "Edit Follow-Up Task Created?" [ref=f40e2530] [cursor=pointer]
+                          - listitem [ref=f40e1629]:
+                            - generic [ref=f40e1630]:
+                              - generic [ref=f40e1631]: Delivery Note Generated?
+                              - generic [ref=f40e1632]:
+                                - generic [ref=f40e1637]:
+                                  - generic "False" [ref=f40e2531]
+                                  - generic [ref=f40e1645]: Delivery Note Generated?
+                                - button "Edit Delivery Note Generated?" [ref=f40e2532] [cursor=pointer]
+                    - generic [ref=f40e1651]:
+                      - heading [level=3] [ref=f40e2533]:
+                        - button "System Information" [expanded] [ref=f40e2534] [cursor=pointer]
+                      - list [ref=f40e1663]:
+                        - generic [ref=f40e1666]:
+                          - listitem [ref=f40e1668]:
+                            - generic [ref=f40e1669]:
+                              - generic [ref=f40e1670]: Created By
+                              - generic [ref=f40e1674]:
+                                - generic [ref=f40e1680]:
+                                  - link "QA SalesRep2" [ref=f40e2535] [cursor=pointer]:
+                                    - /url: /lightning/r/User/005FV0082KfRrqeYQC/view
+                                  - button "Preview" [ref=f40e2536] [cursor=pointer]
+                                - text: ", 24/09/2026, 10:33 AM"
+                          - listitem [ref=f40e1694]:
+                            - generic [ref=f40e1695]:
+                              - generic [ref=f40e1696]: Last Modified By
+                              - generic [ref=f40e1700]:
+                                - generic [ref=f40e1706]:
+                                  - link "QA SalesRep2" [ref=f40e2537] [cursor=pointer]:
+                                    - /url: /lightning/r/User/005FV0082KfRrqeYQC/view
+                                  - button "Preview" [ref=f40e2538] [cursor=pointer]
+                                - text: ", 24/09/2026, 10:37 AM"
+                - text: • • • • • • • • • •
+            - generic [ref=f40e742]:
+              - heading "Tabs" [level=2] [ref=f40e2539]
+              - tablist "Tabs" [ref=f40e2540]:
+                - tab "Activity" [selected] [ref=f40e2541] [cursor=pointer]
+              - tabpanel "Activity" [ref=f40e2542]:
+                - generic [ref=f40e755]:
+                  - heading "Activity Publisher" [level=2] [ref=f40e2543]
+                  - generic [ref=f40e757]:
+                    - group [ref=f40e758]:
+                      - generic [ref=f40e760]:
+                        - button "Log a Call" [ref=f40e2544] [cursor=pointer]
+                        - generic [ref=f40e769]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f40e770]:
+                      - generic [ref=f40e772]:
+                        - button "New Task" [ref=f40e2545] [cursor=pointer]
+                        - generic [ref=f40e781]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f40e2546]
+                  - generic [ref=f40e784]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f40e2547] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f40e787]:
+                      - generic [ref=f40e788]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f40e2548] [cursor=pointer]
+                    - generic [ref=f40e798]:
+                      - button "Refresh" [ref=f40e2549] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f40e2550] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f40e2551] [cursor=pointer]
+                    - generic [ref=f40e803]:
+                      - heading [level=3] [ref=f40e2552]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f40e2553] [cursor=pointer]
+                      - generic [ref=f40e810]:
+                        - generic:
+                          - list
+                        - generic [ref=f40e811]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f40e2554]:
+                      - generic [ref=f40e2555]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f40e2556] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - generic [ref=f40e2558]:
+      - generic [ref=f40e2559]: Success notification.
+      - generic [ref=f40e2566]:
+        - generic [ref=f40e2567]: Handover "HO-00037" was saved.
+        - generic [ref=f40e2570]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f40e2572] [cursor=pointer]
+    - status [ref=f40e2580]: Success notification.Handover "HO-00037" was saved. Press Control + F6 to navigate to the next toast notification or focusable region.

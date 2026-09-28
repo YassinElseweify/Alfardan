@@ -1,0 +1,158 @@
+- generic:
+  - generic:
+    - generic [ref=f23e2]:
+      - generic [ref=f23e3]:
+        - link [ref=f23e2437] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Navigation
+        - link [ref=f23e2438] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Main Content
+        - generic [ref=f23e25]:
+          - generic [ref=f23e26]: "Sandbox: QA |"
+          - link [ref=f23e2439] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+            - text: Log out
+        - generic [ref=f23e6]:
+          - button [ref=f23e2440]: Search...
+          - navigation [ref=f23e2441]:
+            - list [ref=f23e37]:
+              - listitem [ref=f23e38]:
+                - group [ref=f23e39]:
+                  - button [ref=f23e2442] [cursor=pointer]
+                  - button [ref=f23e2443] [cursor=pointer]
+              - listitem [ref=f23e58]:
+                - button [ref=f23e2444] [cursor=pointer]
+              - listitem [ref=f23e72]:
+                - button [ref=f23e2445] [cursor=pointer]
+              - listitem [ref=f23e82]:
+                - button [ref=f23e2446] [cursor=pointer]
+              - listitem [ref=f23e93]:
+                - button [ref=f23e2447] [cursor=pointer]
+              - listitem [ref=f23e107]:
+                - button [ref=f23e2448] [cursor=pointer]
+                - generic [ref=f23e119]: 2 new notifications
+              - listitem [ref=f23e120]:
+                - button [ref=f23e2449] [cursor=pointer]
+      - generic [ref=f23e15]:
+        - generic [ref=f23e130]:
+          - generic [ref=f23e132]:
+            - navigation [ref=f23e2450]:
+              - button [ref=f23e2451] [cursor=pointer]:
+                - generic [ref=f23e136]: App Launcher
+            - heading [level=1] [ref=f23e2452]:
+              - generic [ref=f23e2453]: Sales
+          - navigation [ref=f23e2454]:
+            - list [ref=f23e152]:
+              - listitem [ref=f23e153]:
+                - link [ref=f23e2455] [cursor=pointer]:
+                  - /url: /lightning/page/home
+                  - generic [ref=f23e155]: Home
+              - listitem [ref=f23e156]:
+                - link [ref=f23e2456] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+                  - generic [ref=f23e158]: Analytics
+              - listitem [ref=f23e159]:
+                - link [ref=f23e2457] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                  - generic [ref=f23e161]: Opportunities
+                - button [ref=f23e2458] [cursor=pointer]:
+                  - generic [ref=f23e172]: Opportunities List
+              - listitem [ref=f23e173]:
+                - link [ref=f23e2459] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                  - generic [ref=f23e175]: Quotes
+                - button [ref=f23e2460] [cursor=pointer]:
+                  - generic [ref=f23e186]: Quotes List
+              - listitem [ref=f23e187] [cursor=pointer]:
+                - link [ref=f23e2461]:
+                  - /url: /lightning/o/Lead/home
+                  - generic [ref=f23e189]: Leads
+                - button [ref=f23e2462]:
+                  - generic [ref=f23e200]: Leads List
+              - listitem [ref=f23e201]:
+                - link [ref=f23e2463] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                  - generic [ref=f23e203]: Tasks
+                - button [ref=f23e2464] [cursor=pointer]:
+                  - generic [ref=f23e214]: Tasks List
+              - listitem [ref=f23e215]:
+                - link [ref=f23e2465] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                  - generic [ref=f23e217]: Files
+                - button [ref=f23e2466] [cursor=pointer]:
+                  - generic [ref=f23e228]: Files List
+              - listitem [ref=f23e229]:
+                - link [ref=f23e2467] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                  - generic [ref=f23e231]: Accounts
+                - button [ref=f23e2468] [cursor=pointer]:
+                  - generic [ref=f23e242]: Accounts List
+              - listitem [ref=f23e243]:
+                - link [ref=f23e2469] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                  - generic [ref=f23e245]: Contacts
+                - button [ref=f23e2470] [cursor=pointer]:
+                  - generic [ref=f23e256]: Contacts List
+              - listitem [ref=f23e257]:
+                - link [ref=f23e2471] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                  - generic [ref=f23e259]: Campaigns
+                - button [ref=f23e2472] [cursor=pointer]:
+                  - generic [ref=f23e270]: Campaigns List
+              - listitem [ref=f23e316]:
+                - button [ref=f23e2473] [cursor=pointer]:
+                  - generic [ref=f23e319]: More
+                  - generic [ref=f23e326]: Show more navigation items
+              - listitem [ref=f23e327]:
+                - button [ref=f23e2474] [cursor=pointer]:
+                  - generic [ref=f23e334]: Edit nav items
+        - main [ref=f23e17]
+      - list [ref=f23e731]:
+        - listitem [ref=f23e732]:
+          - button [ref=f23e2576] [cursor=pointer]:
+            - generic [ref=f23e742]: To Do List
+    - dialog [ref=f23e3273]:
+      - generic [ref=f23e1385]:
+        - button [ref=f23e3274] [cursor=pointer]:
+          - generic [ref=f23e1391]: Cancel and close
+        - generic [ref=f23e1392]:
+          - generic [ref=f23e1399]:
+            - heading [level=2] [ref=f23e3275]: New Lead
+            - generic [ref=f23e1403]:
+              - generic [ref=f23e1404]: "* = Required Information"
+              - generic [ref=f23e3365]:
+                - list [ref=f23e3368]:
+                  - listitem [ref=f23e3369]:
+                    - generic [ref=f23e3373]:
+                      - checkbox [checked] [ref=f23e3374]
+                      - generic [ref=f23e3375]: Assign using active assignment rule
+                - generic [ref=f23e3379]:
+                  - generic [ref=f23e3383]:
+                    - generic:
+                      - button [disabled]: Cancel
+                  - generic [ref=f23e3387]:
+                    - generic:
+                      - button [disabled]: Save & New
+                  - generic [ref=f23e3391]:
+                    - generic:
+                      - button [disabled]: Save
+          - status [ref=f23e2436]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Success notification.
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - text: Lead "
+                    - link "Khalid QA test LM-01-TC-001 UI Al-Mannai":
+                      - /url: javascript:void(0)
+                    - text: "\" was created."
+              - generic: Press Control + F6 to navigate to the next toast notification or focusable region.
+            - generic:
+              - button "Close"
+    - status

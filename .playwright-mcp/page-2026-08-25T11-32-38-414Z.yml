@@ -1,0 +1,410 @@
+- generic:
+  - generic [ref=f35e2]:
+    - generic [ref=f35e3]:
+      - link "Skip to Navigation" [ref=f35e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f35e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f35e254]:
+        - generic [ref=f35e255]: "Sandbox: QA |"
+        - link "Log out" [ref=f35e256] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f35e6]:
+        - button "Search" [ref=f35e12]: Search...
+        - navigation "Global Header" [ref=f35e17]:
+          - list [ref=f35e258]:
+            - listitem [ref=f35e259]:
+              - group [ref=f35e260]:
+                - button "Add favorite" [ref=f35e262] [cursor=pointer]:
+                  - generic [ref=f35e263]:
+                    - tooltip "Add favorite"
+                - button [ref=f35e271] [cursor=pointer]:
+                  - generic [ref=f35e272]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f35e279]:
+              - button [ref=f35e285] [cursor=pointer]:
+                - generic [ref=f35e286]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f35e293]:
+              - button [ref=f35e295] [cursor=pointer]:
+                - generic [ref=f35e296]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f35e303]:
+              - button [ref=f35e306] [cursor=pointer]:
+                - generic [ref=f35e307]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f35e314]:
+              - button [ref=f35e320] [cursor=pointer]:
+                - generic [ref=f35e321]:
+                  - tooltip "Setup"
+            - listitem [ref=f35e328]:
+              - button "1 Notifications" [ref=f35e331] [cursor=pointer]:
+                - generic [ref=f35e332]:
+                  - generic [ref=f35e333]: "1"
+                  - tooltip "Notifications"
+              - generic [ref=f35e342]: 1 new notifications
+            - listitem [ref=f35e343]:
+              - button "View profile" [ref=f35e346] [cursor=pointer]:
+                - generic [ref=f35e347]:
+                  - tooltip "View profile"
+    - generic [ref=f35e23]:
+      - generic [ref=f35e26]:
+        - generic [ref=f35e28]:
+          - navigation "App" [ref=f35e29]:
+            - button "App Launcher" [ref=f35e31] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f35e43]
+        - navigation "Global" [ref=f35e47]:
+          - list [ref=f35e48]:
+            - listitem [ref=f35e49]:
+              - link "Home" [ref=f35e50] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f35e52]:
+              - link "Analytics" [ref=f35e53] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f35e55]:
+              - link "Opportunities" [ref=f35e56] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f35e61] [cursor=pointer]
+            - listitem [ref=f35e69]:
+              - link "Quotes" [ref=f35e70] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f35e75] [cursor=pointer]
+            - listitem [ref=f35e83]:
+              - link "Leads" [ref=f35e84] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f35e89] [cursor=pointer]
+            - listitem [ref=f35e97]:
+              - link "Tasks" [ref=f35e98] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f35e103] [cursor=pointer]
+            - listitem [ref=f35e111]:
+              - link "Files" [ref=f35e112] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f35e117] [cursor=pointer]
+            - listitem [ref=f35e125] [cursor=pointer]:
+              - link "Accounts" [ref=f35e126]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f35e131]
+            - listitem [ref=f35e139]:
+              - link "Contacts" [ref=f35e140] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f35e145] [cursor=pointer]
+            - listitem [ref=f35e153]:
+              - link "Campaigns" [ref=f35e154] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f35e159] [cursor=pointer]
+            - listitem [ref=f35e167]:
+              - link "Dashboards" [ref=f35e168] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f35e173] [cursor=pointer]
+            - listitem [ref=f35e181]:
+              - link "Reports" [ref=f35e182] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f35e187] [cursor=pointer]
+            - listitem [ref=f35e195]:
+              - link "Chatter" [ref=f35e196] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f35e198]:
+              - link "Groups" [ref=f35e199] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f35e204] [cursor=pointer]
+            - listitem [ref=f35e212]:
+              - button "Show more navigation items" [ref=f35e214] [cursor=pointer]:
+                - generic [ref=f35e215]: More
+            - listitem [ref=f35e223]:
+              - button "Edit nav items" [ref=f35e225] [cursor=pointer]
+      - main [ref=f35e232]:
+        - generic [ref=f35e362]:
+          - generic [ref=f35e371]:
+            - generic [ref=f35e372]:
+              - generic [ref=f35e373]:
+                - heading "Account QA test HACKED NAME CHANGE" [level=1] [ref=f35e383]:
+                  - generic [ref=f35e384]: Account
+                  - generic [ref=f35e386]: QA test HACKED NAME CHANGE
+                - button "View Account Hierarchy" [ref=f35e397] [cursor=pointer]
+              - button "Follow" [ref=f35e407] [cursor=pointer]
+              - generic [ref=f35e417]:
+                - generic "New Case" [ref=f35e418]:
+                  - button "New Case" [ref=f35e423] [cursor=pointer]
+                - generic "New Note" [ref=f35e424]:
+                  - button "New Note" [ref=f35e429] [cursor=pointer]
+                - generic "New Opportunity" [ref=f35e430]:
+                  - button "New Opportunity" [ref=f35e435] [cursor=pointer]
+                - button "Show more actions" [ref=f35e437] [cursor=pointer]
+            - generic [ref=f35e443]:
+              - generic [ref=f35e445]:
+                - paragraph [ref=f35e446]: Type
+                - paragraph
+              - generic [ref=f35e448]:
+                - paragraph [ref=f35e449]: Phone
+                - paragraph [ref=f35e450]:
+                  - link "+97444782200" [ref=f35e454] [cursor=pointer]:
+                    - /url: tel:+97444782200
+              - generic [ref=f35e456]:
+                - paragraph [ref=f35e457]: Website
+                - paragraph
+              - generic [ref=f35e459]:
+                - paragraph [ref=f35e460]: Account Owner
+                - paragraph [ref=f35e461]:
+                  - generic [ref=f35e464]:
+                    - generic [ref=f35e471]:
+                      - link "Arcsen Alfardan" [ref=f35e472] [cursor=pointer]:
+                        - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                      - button "Preview" [ref=f35e478] [cursor=pointer]
+                    - button "Change Owner" [ref=f35e485] [cursor=pointer]
+              - generic [ref=f35e492]:
+                - paragraph [ref=f35e493]: Account Site
+                - paragraph
+              - generic [ref=f35e495]:
+                - paragraph [ref=f35e496]: Industry
+                - paragraph
+          - generic [ref=f35e498]:
+            - generic [ref=f35e500]:
+              - generic [ref=f35e505]:
+                - article [ref=f35e507]:
+                  - heading "Tags" [level=2] [ref=f35e518]
+                - list [ref=f35e523]:
+                  - listitem [ref=f35e524]:
+                    - link "Looks like you don’t have the right permissions to view this component. Contact your Salesforce admin for help." [ref=f35e525] [cursor=pointer]:
+                      - /url: javascript:void(0);
+              - article [ref=f35e531]:
+                - generic [ref=f35e532]:
+                  - heading "Timeline" [level=2] [ref=f35e536]
+                  - generic [ref=f35e538]:
+                    - generic [ref=f35e541]:
+                      - generic [ref=f35e545]:
+                        - generic [ref=f35e546]:
+                          - heading "Customer Interactions" [level=2] [ref=f35e547]
+                          - menu [ref=f35e548]:
+                            - button "Show Timeline Menu" [ref=f35e549] [cursor=pointer]
+                        - generic [ref=f35e555]: All Events • Most Recent Event
+                      - generic [ref=f35e561]:
+                        - button "Refresh" [ref=f35e564] [cursor=pointer]
+                        - button "Date Range" [ref=f35e572] [cursor=pointer]
+                        - button "Event Type" [ref=f35e580] [cursor=pointer]
+                        - button "Sort" [ref=f35e588] [cursor=pointer]
+                    - generic [ref=f35e598]:
+                      - alert "Time to create some events" [ref=f35e599]
+                      - paragraph [ref=f35e600]: After you create a timeline event, you’ll see it here.
+            - generic [ref=f35e602]:
+              - generic [ref=f35e612]:
+                - generic [ref=f35e619]:
+                  - generic [ref=f35e620]: Alerts (0)
+                  - link "Refresh Alerts" [ref=f35e643] [cursor=pointer]:
+                    - /url: javascript:void(0)
+                    - button "Help" [ref=f35e649]
+                - generic [ref=f35e661]:
+                  - generic [ref=f35e668]: Something went wrong and we can’t retrieve one or more alerts. Click Refresh or contact your Salesforce admin for help.
+                  - link "refresh" [ref=f35e677] [cursor=pointer]:
+                    - /url: javascript:void(0)
+                - generic [ref=f35e679]: No Alerts to Display
+              - article [ref=f35e693]:
+                - article [ref=f35e698]:
+                  - heading "Service Process Capabilities" [level=2] [ref=f35e702]
+                  - generic [ref=f35e715]:
+                    - combobox [expanded] [ref=f35e721]:
+                      - generic [ref=f35e722]:
+                        - textbox "search-box" [ref=f35e723]:
+                          - /placeholder: Search actions...
+                        - generic: Approved
+                    - generic [ref=f35e733]:
+                      - generic [ref=f35e734]:
+                        - button [ref=f35e737]:
+                          - button "Create Visit" [ref=f35e738] [cursor=pointer]
+                        - button [ref=f35e741]:
+                          - button "Create a Case" [ref=f35e742] [cursor=pointer]
+                        - button [ref=f35e745]:
+                          - button "New Task" [ref=f35e746] [cursor=pointer]
+                        - button [ref=f35e749]:
+                          - button "AssetFinance_PaymentDueDateModification" [ref=f35e750] [cursor=pointer]
+                        - button [ref=f35e753]:
+                          - button "Address Update" [ref=f35e754] [cursor=pointer]
+                        - button [ref=f35e757]:
+                          - button "Address Update" [ref=f35e758] [cursor=pointer]
+                        - button [ref=f35e761]:
+                          - button "Update Email or Phone" [ref=f35e762] [cursor=pointer]
+                      - button "Show menu" [ref=f35e765] [cursor=pointer]
+              - generic [ref=f35e774]:
+                - heading "Tabs" [level=2] [ref=f35e775]
+                - generic "Tabs" [ref=f35e776]:
+                  - generic [ref=f35e777]:
+                    - heading "Tabs" [level=2] [ref=f35e778]
+                    - tablist "Tabs" [ref=f35e780]:
+                      - tab "Financial Accounts" [ref=f35e781] [cursor=pointer]
+                      - tab "Details" [active] [selected] [ref=f35e782] [cursor=pointer]
+                      - tab "Cases" [ref=f35e783] [cursor=pointer]
+                      - tab "Opportunities" [ref=f35e784] [cursor=pointer]
+                      - tab "Contracts" [ref=f35e785] [cursor=pointer]
+                      - tab "Related List" [ref=f35e786] [cursor=pointer]
+                      - tab "ARC View" [ref=f35e787] [cursor=pointer]
+                    - tabpanel "Details" [ref=f35e841]:
+                      - generic [ref=f35e854]:
+                        - list [ref=f35e858]:
+                          - generic [ref=f35e859]:
+                            - generic [ref=f35e861]:
+                              - listitem [ref=f35e863]:
+                                - generic [ref=f35e864]:
+                                  - generic [ref=f35e865]: Account Owner
+                                  - generic [ref=f35e870]:
+                                    - generic [ref=f35e877]:
+                                      - link "Arcsen Alfardan" [ref=f35e878] [cursor=pointer]:
+                                        - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                      - button "Preview" [ref=f35e884] [cursor=pointer]
+                                    - button "Change Owner" [ref=f35e891] [cursor=pointer]
+                              - listitem [ref=f35e898]:
+                                - generic [ref=f35e899]:
+                                  - generic [ref=f35e900]: Phone
+                                  - generic [ref=f35e901]:
+                                    - link "+97444782200" [ref=f35e906] [cursor=pointer]:
+                                      - /url: tel:+97444782200
+                                    - button "Edit Phone" [ref=f35e907] [cursor=pointer]
+                            - generic [ref=f35e911]:
+                              - listitem [ref=f35e913]:
+                                - generic [ref=f35e914]:
+                                  - generic [ref=f35e915]: Account Name
+                                  - generic [ref=f35e916]:
+                                    - generic [ref=f35e917]: QA test HACKED NAME CHANGE
+                                    - button "Edit Account Name" [ref=f35e919] [cursor=pointer]
+                              - listitem [ref=f35e923]:
+                                - generic [ref=f35e924]:
+                                  - generic [ref=f35e925]: Fax
+                                  - button "Edit Fax" [ref=f35e927] [cursor=pointer]
+                            - generic [ref=f35e931]:
+                              - listitem [ref=f35e933]:
+                                - generic [ref=f35e934]:
+                                  - generic [ref=f35e935]: Parent Account
+                                  - button "Edit Parent Account" [ref=f35e938] [cursor=pointer]
+                              - listitem [ref=f35e942]:
+                                - generic [ref=f35e943]:
+                                  - generic [ref=f35e944]: Website
+                                  - button "Edit Website" [ref=f35e946] [cursor=pointer]
+                        - generic [ref=f35e950]:
+                          - heading [level=3] [ref=f35e951]:
+                            - button "Additional Information" [expanded] [ref=f35e952] [cursor=pointer]
+                          - list [ref=f35e962]:
+                            - generic [ref=f35e963]:
+                              - generic [ref=f35e965]:
+                                - listitem [ref=f35e967]:
+                                  - generic [ref=f35e968]:
+                                    - generic [ref=f35e969]: Type
+                                    - button "Edit Type" [ref=f35e971] [cursor=pointer]
+                                - listitem [ref=f35e975]:
+                                  - generic [ref=f35e976]:
+                                    - generic [ref=f35e977]: Employees
+                                    - button "Edit Employees" [ref=f35e979] [cursor=pointer]
+                              - generic [ref=f35e983]:
+                                - listitem [ref=f35e985]:
+                                  - generic [ref=f35e986]:
+                                    - generic [ref=f35e987]: Industry
+                                    - button "Edit Industry" [ref=f35e989] [cursor=pointer]
+                                - listitem [ref=f35e993]:
+                                  - generic [ref=f35e994]:
+                                    - generic [ref=f35e995]: Annual Revenue
+                                    - button "Edit Annual Revenue" [ref=f35e997] [cursor=pointer]
+                        - list [ref=f35e1003]:
+                          - listitem [ref=f35e1008]:
+                            - generic [ref=f35e1009]:
+                              - generic [ref=f35e1010]: Description
+                              - button "Edit Description" [ref=f35e1012] [cursor=pointer]
+                        - generic [ref=f35e1016]:
+                          - heading [level=3] [ref=f35e1017]:
+                            - button "Address Information" [expanded] [ref=f35e1018] [cursor=pointer]
+                          - list [ref=f35e1028]:
+                            - generic [ref=f35e1031]:
+                              - listitem [ref=f35e1033]:
+                                - generic [ref=f35e1034]:
+                                  - generic [ref=f35e1035]: Billing Address
+                                  - generic [ref=f35e1036]:
+                                    - link "Doha Qatar" [ref=f35e1040] [cursor=pointer]:
+                                      - /url: https://www.google.com/maps?q=Doha%0AQatar
+                                      - generic [ref=f35e1041]: Doha
+                                      - generic [ref=f35e1042]: Qatar
+                                    - button "Edit Billing Address" [ref=f35e1043] [cursor=pointer]
+                              - listitem [ref=f35e1047]:
+                                - generic [ref=f35e1048]:
+                                  - generic [ref=f35e1049]: Shipping Address
+                                  - button "Edit Shipping Address" [ref=f35e1051] [cursor=pointer]
+                        - generic [ref=f35e1055]:
+                          - heading [level=3] [ref=f35e1056]:
+                            - button "Identity & Compliance" [expanded] [ref=f35e1057] [cursor=pointer]
+                          - list [ref=f35e1067]:
+                            - generic [ref=f35e1068]:
+                              - generic [ref=f35e1070]:
+                                - listitem [ref=f35e1072]:
+                                  - generic [ref=f35e1073]:
+                                    - generic [ref=f35e1074]: Salutation
+                                    - button "Edit Salutation" [ref=f35e1076] [cursor=pointer]
+                                - listitem [ref=f35e1080]:
+                                  - generic [ref=f35e1081]:
+                                    - generic [ref=f35e1082]: Qatar ID
+                                    - generic [ref=f35e1083]: "28912345678"
+                              - generic [ref=f35e1087]:
+                                - listitem [ref=f35e1089]:
+                                  - generic [ref=f35e1090]:
+                                    - generic [ref=f35e1091]: Nationality
+                                    - generic [ref=f35e1092]: Qatari
+                                - listitem [ref=f35e1096]:
+                                  - generic [ref=f35e1097]:
+                                    - generic [ref=f35e1098]: Date of Birth
+                                    - generic [ref=f35e1099]: 1/1/1990
+                              - generic [ref=f35e1103]:
+                                - listitem [ref=f35e1105]:
+                                  - generic [ref=f35e1106]: Keyloop Customer Reference
+                                - listitem [ref=f35e1110]:
+                                  - generic [ref=f35e1111]:
+                                    - generic [ref=f35e1112]: Other ID Number
+                                    - generic [ref=f35e1113]:
+                                      - generic [ref=f35e1114]: OM-PASSPORT-XZ99123
+                                      - button "Edit Other ID Number" [ref=f35e1116] [cursor=pointer]
+                        - generic [ref=f35e1120]:
+                          - heading [level=3] [ref=f35e1121]:
+                            - button "System Information" [expanded] [ref=f35e1122] [cursor=pointer]
+                          - list [ref=f35e1132]:
+                            - generic [ref=f35e1135]:
+                              - listitem [ref=f35e1137]:
+                                - generic [ref=f35e1138]:
+                                  - generic [ref=f35e1139]: Created By
+                                  - generic [ref=f35e1143]:
+                                    - generic [ref=f35e1149]:
+                                      - link "Arcsen Alfardan" [ref=f35e1150] [cursor=pointer]:
+                                        - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                      - button "Preview" [ref=f35e1156] [cursor=pointer]
+                                    - text: ", 8/24/2026, 4:19 PM"
+                              - listitem [ref=f35e1163]:
+                                - generic [ref=f35e1164]:
+                                  - generic [ref=f35e1165]: Last Modified By
+                                  - generic [ref=f35e1169]:
+                                    - generic [ref=f35e1175]:
+                                      - link "Arcsen Alfardan" [ref=f35e1176] [cursor=pointer]:
+                                        - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                      - button "Preview" [ref=f35e1182] [cursor=pointer]
+                                    - text: ", 8/25/2026, 10:52 AM"
+                        - generic [ref=f35e1189]:
+                          - heading [level=3] [ref=f35e1190]:
+                            - button "Custom Links" [expanded] [ref=f35e1191] [cursor=pointer]
+                          - list [ref=f35e1201]:
+                            - generic [ref=f35e1202]:
+                              - generic [ref=f35e1204]:
+                                - listitem [ref=f35e1206]:
+                                  - generic "Google Search" [ref=f35e1211]:
+                                    - link "Google Search" [ref=f35e1212] [cursor=pointer]:
+                                      - /url: /servlet/servlet.Integration?lid=00ba3000HrAcuvs&eid=001FV00HYReLwc8Y2C&ic=1
+                                - listitem [ref=f35e1214]:
+                                  - generic "Google Maps" [ref=f35e1219]:
+                                    - link "Google Maps" [ref=f35e1220] [cursor=pointer]:
+                                      - /url: /servlet/servlet.Integration?lid=00ba3000HrAUWdo&eid=001FV00HYReLwc8Y2C&ic=1
+                                - listitem [ref=f35e1222]:
+                                  - generic "Google News" [ref=f35e1227]:
+                                    - link "Google News" [ref=f35e1228] [cursor=pointer]:
+                                      - /url: /servlet/servlet.Integration?lid=00ba3000HrAYimq&eid=001FV00HYReLwc8Y2C&ic=1
+                              - listitem [ref=f35e1232]:
+                                - generic "Hoovers Profile" [ref=f35e1237]:
+                                  - link "Hoovers Profile" [ref=f35e1238] [cursor=pointer]:
+                                    - /url: /servlet/servlet.Integration?lid=00ba3000HrAh74u&eid=001FV00HYReLwc8Y2C&ic=1
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f35e239]:
+          - listitem [ref=f35e240]:
+            - button "To Do List" [ref=f35e243] [cursor=pointer]
+  - generic:
+    - status

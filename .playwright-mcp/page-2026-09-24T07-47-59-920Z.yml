@@ -1,0 +1,159 @@
+- generic [active]:
+  - generic [ref=f54e2]:
+    - generic [ref=f54e3]:
+      - link "Skip to Navigation" [ref=f54e1074] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f54e1075] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f54e197]:
+        - generic [ref=f54e198]: "Sandbox: QA |"
+        - link "Log out" [ref=f54e1076] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f54e6]:
+        - button "Search" [ref=f54e1077]: Search...
+        - navigation "Global Header" [ref=f54e1078]:
+          - list [ref=f54e203]:
+            - listitem [ref=f54e204]:
+              - group [ref=f54e205]:
+                - button "This item doesn't support favorites" [ref=f54e1079] [cursor=pointer]:
+                  - generic [ref=f54e208]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f54e1080] [cursor=pointer]:
+                  - generic [ref=f54e217]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f54e224]:
+              - button [ref=f54e1081] [cursor=pointer]:
+                - generic [ref=f54e231]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f54e238]:
+              - button [ref=f54e1082] [cursor=pointer]:
+                - generic [ref=f54e241]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f54e248]:
+              - button [ref=f54e1083] [cursor=pointer]:
+                - generic [ref=f54e252]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f54e259]:
+              - button "2 Notifications" [ref=f54e1084] [cursor=pointer]:
+                - generic [ref=f54e263]:
+                  - generic [ref=f54e264]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f54e273]: 2 new notifications
+            - listitem [ref=f54e274]:
+              - button "View profile" [ref=f54e1085] [cursor=pointer]:
+                - generic [ref=f54e278]:
+                  - tooltip "View profile"
+    - generic [ref=f54e24]:
+      - generic [ref=f54e27]:
+        - generic [ref=f54e29]:
+          - navigation "App" [ref=f54e1086]:
+            - button "App Launcher" [ref=f54e1087] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f54e1088]
+        - navigation "Global" [ref=f54e1090]:
+          - list [ref=f54e49]:
+            - listitem [ref=f54e50] [cursor=pointer]:
+              - link "Home" [ref=f54e1091]:
+                - /url: /lightning/page/home
+            - listitem [ref=f54e53]:
+              - link "Vehicles" [ref=f54e1092] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f54e1093] [cursor=pointer]
+            - listitem [ref=f54e67]:
+              - link "Assets" [ref=f54e1094] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f54e1095] [cursor=pointer]
+            - listitem [ref=f54e81]:
+              - link "Vehicle Definitions" [ref=f54e1096] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f54e1097] [cursor=pointer]
+            - listitem [ref=f54e95]:
+              - link "Products" [ref=f54e1098] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f54e1099] [cursor=pointer]
+            - listitem [ref=f54e109]:
+              - link "Accounts" [ref=f54e1100] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f54e1101] [cursor=pointer]
+            - listitem [ref=f54e123]:
+              - link "Contacts" [ref=f54e1102] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f54e1103] [cursor=pointer]
+            - listitem [ref=f54e137]:
+              - link "Asset Milestones" [ref=f54e1104] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f54e1105] [cursor=pointer]
+            - listitem [ref=f54e151]:
+              - link "Asset Contact Participants" [ref=f54e1106] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f54e1107] [cursor=pointer]
+            - listitem [ref=f54e165]:
+              - button "* Show more navigation items" [ref=f54e1108] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f54e1109]: "*"
+                - generic [aria-hidden] [ref=f54e168]: More
+                - generic [ref=f54e175]: Show more navigation items
+            - listitem [ref=f54e176]:
+              - button "Edit nav items" [ref=f54e1110] [cursor=pointer]
+      - main [ref=f54e185]:
+        - generic [ref=f54e1114]:
+          - generic [ref=f54e1115]:
+            - heading "Home" [level=1] [ref=f54e1116]
+            - article [ref=f54e1121]:
+              - generic [ref=f54e1123]:
+                - heading "My Approval Requests" [level=2] [ref=f54e1132]
+                - generic [ref=f54e1134]: No items selected
+              - generic [ref=f54e1136]: You have no approval requests waiting.
+          - generic [ref=f54e1139]:
+            - article [ref=f54e1142]:
+              - generic [ref=f54e1143]:
+                - heading "Today’s Tasks" [level=2] [ref=f54e1146]
+                - button "Select a view of your tasks" [ref=f54e1150] [cursor=pointer]
+              - list [ref=f54e1159]:
+                - listitem [ref=f54e1160]:
+                  - generic [ref=f54e1161]:
+                    - generic [ref=f54e1165]:
+                      - checkbox "Tell customer about Trade-In option" [ref=f54e1166] [cursor=pointer]
+                      - generic [ref=f54e1168]: Tell customer about Trade-In option
+                    - generic [ref=f54e1169]:
+                      - generic [ref=f54e1279]: Today
+                      - generic [ref=f54e1171]:
+                        - generic [ref=f54e1173]:
+                          - generic [ref=f54e1174]: Tell customer about Trade-In option
+                          - link "Tell customer about Trade-In option" [ref=f54e1176] [cursor=pointer]:
+                            - /url: /lightning/r/00TFV00G1lPI37E2ET/view
+                        - list [ref=f54e1177]:
+                          - listitem [ref=f54e1178]:
+                            - link "DEMO Cycle 01 - Ferrari Roma end-to-end" [ref=f54e1180] [cursor=pointer]:
+                              - /url: /lightning/r/006FV00Bq30GjbQYES/view
+              - button "View All Tasks" [ref=f54e1182] [cursor=pointer]: View All
+            - article [ref=f54e1185]:
+              - heading "Today's Events" [level=2] [ref=f54e1189]
+              - generic [ref=f54e1191]: Looks like you're free and clear the rest of the day.
+              - button "View Calendar" [ref=f54e1198] [cursor=pointer]
+            - article [ref=f54e1201]:
+              - heading "Recent Records" [level=2] [ref=f54e1205]
+              - list [ref=f54e1208]:
+                - listitem [ref=f54e1209]:
+                  - link "Trade-In Conversion" [ref=f54e1217] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV002Ctzm8Zs2II/view
+                - listitem [ref=f54e1218]:
+                  - link "Reservation Aging" [ref=f54e1226] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulhvgzA2AQ/view
+                - listitem [ref=f54e1227]:
+                  - link "Opportunity Pipeline by Stage" [ref=f54e1235] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulhrUq82AE/view
+                - listitem [ref=f54e1236]:
+                  - link "Lead SLA Compliance" [ref=f54e1244] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulhj6Y42AI/view
+                - listitem [ref=f54e1245]:
+                  - link "Lead Qualification Rate" [ref=f54e1253] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulheuP22AI/view
+              - button "View All Recent Records" [ref=f54e1255] [cursor=pointer]: View All
+  - generic:
+    - generic [ref=f54e1257]:
+      - generic [ref=f54e1258]: Success notification.
+      - generic [ref=f54e1265]:
+        - generic [ref=f54e1266]: Handover "HO-00037" was saved.
+        - generic [ref=f54e1269]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f54e1271] [cursor=pointer]
+    - status [ref=f54e1281]: Success notification.Handover "HO-00037" was saved. Press Control + F6 to navigate to the next toast notification or focusable region.

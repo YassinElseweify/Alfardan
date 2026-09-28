@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_LostReasonRequired</fullName>
+    <active>true</active>
+    <description>QA fix (Defect #8, corrected): requires Lost Reason before submission. Competitor Outcome stays optional, matching the real Request Closure screen (isRequired=false, per FR4&apos;s &quot;where known&quot;).</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(AF_LostApprovalStatus__c, &quot;Pending&quot;),
+  ISBLANK(TEXT(AF_LostReason__c))
+)</errorConditionFormula>
+    <errorMessage>Lost Reason is required before submitting a Closed Lost request for approval.</errorMessage>
+</ValidationRule>

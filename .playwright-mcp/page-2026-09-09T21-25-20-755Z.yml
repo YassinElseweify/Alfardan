@@ -1,0 +1,285 @@
+- generic:
+  - generic [ref=f173e2]:
+    - generic [ref=f173e3]:
+      - link "Skip to Navigation" [ref=f173e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f173e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f173e255]:
+        - generic [ref=f173e256]: "Sandbox: QA |"
+        - link "Log out" [ref=f173e257] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f173e6]:
+        - button "Search" [ref=f173e13]: Search...
+        - navigation "Global Header" [ref=f173e18]:
+          - list [ref=f173e259]:
+            - listitem [ref=f173e260]:
+              - group [ref=f173e261]:
+                - button "Add favorite" [ref=f173e847] [cursor=pointer]:
+                  - generic [ref=f173e264]:
+                    - tooltip "Add favorite"
+                - button [ref=f173e272] [cursor=pointer]:
+                  - generic [ref=f173e273]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f173e280]:
+              - button [ref=f173e286] [cursor=pointer]:
+                - generic [ref=f173e287]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f173e294]:
+              - button [ref=f173e296] [cursor=pointer]:
+                - generic [ref=f173e297]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f173e304]:
+              - button [ref=f173e307] [cursor=pointer]:
+                - generic [ref=f173e308]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f173e315]:
+              - button [ref=f173e321] [cursor=pointer]:
+                - generic [ref=f173e322]:
+                  - tooltip "Setup"
+            - listitem [ref=f173e329]:
+              - button "7 Notifications" [ref=f173e332] [cursor=pointer]:
+                - generic [ref=f173e333]:
+                  - generic [ref=f173e334]: "7"
+                  - tooltip "Notifications"
+              - generic [ref=f173e343]: 7 new notifications
+            - listitem [ref=f173e344]:
+              - button "View profile" [ref=f173e347] [cursor=pointer]:
+                - generic [ref=f173e348]:
+                  - tooltip "View profile"
+    - generic [ref=f173e24]:
+      - generic [ref=f173e27]:
+        - generic [ref=f173e29]:
+          - navigation "App" [ref=f173e30]:
+            - button "App Launcher" [ref=f173e32] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f173e44]
+        - navigation "Global" [ref=f173e48]:
+          - list [ref=f173e49]:
+            - listitem [ref=f173e50]:
+              - link "Home" [ref=f173e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f173e53]:
+              - link "Analytics" [ref=f173e54] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f173e56]:
+              - link "Opportunities" [ref=f173e57] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f173e62] [cursor=pointer]
+            - listitem [ref=f173e70]:
+              - link "Quotes" [ref=f173e71] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f173e76] [cursor=pointer]
+            - listitem [ref=f173e84]:
+              - link "Leads" [ref=f173e85] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f173e90] [cursor=pointer]
+            - listitem [ref=f173e98]:
+              - link "Tasks" [ref=f173e99] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f173e104] [cursor=pointer]
+            - listitem [ref=f173e112]:
+              - link "Files" [ref=f173e113] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f173e118] [cursor=pointer]
+            - listitem [ref=f173e126]:
+              - link "Accounts" [ref=f173e127] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f173e132] [cursor=pointer]
+            - listitem [ref=f173e140]:
+              - link "Contacts" [ref=f173e141] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f173e146] [cursor=pointer]
+            - listitem [ref=f173e154]:
+              - link "Campaigns" [ref=f173e155] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f173e160] [cursor=pointer]
+            - listitem [ref=f173e168]:
+              - link "Dashboards" [ref=f173e169] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f173e174] [cursor=pointer]
+            - listitem [ref=f173e848] [cursor=pointer]:
+              - link "* Items to Approve | Approval Requests" [ref=f173e849]:
+                - /url: /lightning/o/ProcessInstanceWorkitem/list?filterName=00Ba3005Kc5wdOuEII
+                - generic "Not added to nav bar" [ref=f173e850]: "*"
+                - generic [ref=f173e851]: Items to Approve | Approval Requests
+              - button "Items to Approve | Approval Requests List" [ref=f173e855]
+              - button "Close tab" [ref=f173e863]
+            - listitem [ref=f173e213]:
+              - button "* Show more navigation items" [ref=f173e352] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f173e353]: "*"
+                - generic [aria-hidden] [ref=f173e216]: More
+                - generic [ref=f173e223]: Show more navigation items
+            - listitem [ref=f173e224]:
+              - button "Edit nav items" [ref=f173e226] [cursor=pointer]
+      - main [ref=f173e233]:
+        - generic [ref=f173e873]:
+          - generic [ref=f173e874]:
+            - generic [ref=f173e880]:
+              - heading "Approval Requests" [level=1] [ref=f173e884]
+              - generic [ref=f173e885]:
+                - generic [ref=f173e889] [cursor=pointer]:
+                  - heading "Approval Requests Items to Approve" [level=1] [ref=f173e890]:
+                    - generic [ref=f173e891]: Approval Requests
+                    - generic [ref=f173e892]: Items to Approve
+                  - 'button "Select a List View: Approval Requests" [ref=f173e895]'
+                - generic "Items to Approve" [ref=f173e902]:
+                  - button "Pin this list view." [ref=f173e905] [cursor=pointer]
+            - generic [ref=f173e911]:
+              - paragraph [ref=f173e913]:
+                - generic [ref=f173e915]:
+                  - status "Items to Approve" [ref=f173e916]: 8 items • Sorted by Date Submitted • Filtered by requests assigned to me and my queues •
+                  - text: Updated a few seconds ago
+              - generic [ref=f173e917]:
+                - generic "List View Controls" [ref=f173e920]:
+                  - button "List View Controls" [ref=f173e921] [cursor=pointer]
+                - generic [ref=f173e932]:
+                  - button "Refresh" [ref=f173e935] [cursor=pointer]
+                  - button "Column sort is unavailable for this object." [ref=f173e943] [cursor=pointer]
+                  - generic "Edit List" [ref=f173e950]:
+                    - button "Edit List" [ref=f173e953] [cursor=pointer]
+                  - group [ref=f173e959]:
+                    - generic [ref=f173e961]:
+                      - button "Charts" [ref=f173e964] [cursor=pointer]
+                      - button "Filters" [ref=f173e972] [cursor=pointer]
+          - generic [ref=f173e982]:
+            - grid [ref=f173e986]:
+              - rowgroup:
+                - row "Item Number Related To Type Most Recent Approver Date Submitted Action":
+                  - columnheader "Item Number"
+                  - columnheader "Related To":
+                    - generic [ref=f173e990]:
+                      - button "Sort Related To" [ref=f173e991] [cursor=pointer]:
+                        - generic [ref=f173e992]: Sort
+                        - generic "Related To" [ref=f173e993]
+                      - button "Show Related To Column Actions" [ref=f173e996] [cursor=pointer]
+                      - slider "Related To column width" [ref=f173e1002]: "452"
+                  - columnheader "Type":
+                    - generic [ref=f173e1005]:
+                      - button "Sort Type" [ref=f173e1006] [cursor=pointer]:
+                        - generic [ref=f173e1007]: Sort
+                        - generic "Type" [ref=f173e1008]
+                      - button "Show Type Column Actions" [ref=f173e1011] [cursor=pointer]
+                      - slider "Type column width" [ref=f173e1017]: "338"
+                  - columnheader "Most Recent Approver":
+                    - generic [ref=f173e1020]:
+                      - button "Sort Most Recent Approver" [ref=f173e1021] [cursor=pointer]:
+                        - generic [ref=f173e1022]: Sort
+                        - generic "Most Recent Approver" [ref=f173e1023]
+                      - button "Show Most Recent Approver Column Actions" [ref=f173e1026] [cursor=pointer]
+                      - slider "Most Recent Approver column width" [ref=f173e1032]: "411"
+                  - columnheader "Date Submitted":
+                    - generic [ref=f173e1035]:
+                      - button "Sort Date Submitted" [ref=f173e1036] [cursor=pointer]:
+                        - generic [ref=f173e1037]: Sort
+                        - generic "Date Submitted" [ref=f173e1038]
+                      - generic [ref=f173e1039]: Sorted Descending
+                      - button "Show Date Submitted Column Actions" [ref=f173e1041] [cursor=pointer]
+                      - slider "Date Submitted column width" [ref=f173e1047]: "397"
+                  - columnheader "Action"
+              - rowgroup
+              - rowgroup [ref=f173e1053]:
+                - row [ref=f173e1054]:
+                  - gridcell [ref=f173e1055]
+                  - rowheader [ref=f173e1060]:
+                    - link "QA RS07 Q12-zerosubtotal" [ref=f173e1062] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DVePGU4YYO/view
+                  - gridcell "Quote" [ref=f173e1063]
+                  - gridcell [ref=f173e1066]:
+                    - link "Sales Representative" [ref=f173e1068] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:٢١ AM" [ref=f173e1069]
+                  - gridcell [ref=f173e1072]:
+                    - button "Show Actions" [ref=f173e1075] [cursor=pointer]
+                - row [ref=f173e1079]:
+                  - gridcell [ref=f173e1080]
+                  - rowheader [ref=f173e1085]:
+                    - link "QA RS07 Q10-over100" [ref=f173e1087] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DVeL4L2YYK/view
+                  - gridcell "Quote" [ref=f173e1088]
+                  - gridcell [ref=f173e1091]:
+                    - link "Sales Representative" [ref=f173e1093] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:٢١ AM" [ref=f173e1094]
+                  - gridcell [ref=f173e1097]:
+                    - button "Show Actions" [ref=f173e1100] [cursor=pointer]
+                - row [ref=f173e1104]:
+                  - gridcell [ref=f173e1105]
+                  - rowheader [ref=f173e1110]:
+                    - link "QA RS07 H3-tier3-reject" [ref=f173e1112] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DVXdfuqYYB/view
+                  - gridcell "Quote" [ref=f173e1113]
+                  - gridcell [ref=f173e1116]:
+                    - link "Sales Representative" [ref=f173e1118] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:٢٠ AM" [ref=f173e1119]
+                  - gridcell [ref=f173e1122]:
+                    - button "Show Actions" [ref=f173e1125] [cursor=pointer]
+                - row [ref=f173e1129]:
+                  - gridcell [ref=f173e1130]
+                  - rowheader [ref=f173e1135]:
+                    - link "QA RS07 H1-tier1-approve" [ref=f173e1137] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DVXZTloYYH/view
+                  - gridcell "Quote" [ref=f173e1138]
+                  - gridcell [ref=f173e1141]:
+                    - link "Sales Representative" [ref=f173e1143] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:٢٠ AM" [ref=f173e1144]
+                  - gridcell [ref=f173e1147]:
+                    - button "Show Actions" [ref=f173e1150] [cursor=pointer]
+                - row [ref=f173e1154]:
+                  - gridcell [ref=f173e1155]
+                  - rowheader [ref=f173e1160]:
+                    - link "QA RS07 H7-selfapprove" [ref=f173e1162] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DV6uIN6YYM/view
+                  - gridcell "Quote" [ref=f173e1163]
+                  - gridcell [ref=f173e1166]:
+                    - link "Sales Representative" [ref=f173e1168] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:١٤ AM" [ref=f173e1169]
+                  - gridcell [ref=f173e1172]:
+                    - button "Show Actions" [ref=f173e1175] [cursor=pointer]
+                - row [ref=f173e1179]:
+                  - gridcell [ref=f173e1180]
+                  - rowheader [ref=f173e1185]:
+                    - link "QA RS07 H6-bulk-3" [ref=f173e1187] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DV6q6E4YYI/view
+                  - gridcell "Quote" [ref=f173e1188]
+                  - gridcell [ref=f173e1191]:
+                    - link "Sales Representative" [ref=f173e1193] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:١٤ AM" [ref=f173e1194]
+                  - gridcell [ref=f173e1197]:
+                    - button "Show Actions" [ref=f173e1200] [cursor=pointer]
+                - row [ref=f173e1204]:
+                  - gridcell [ref=f173e1205]
+                  - rowheader [ref=f173e1210]:
+                    - link "QA RS07 H5-bulk-2" [ref=f173e1212] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DV6lu52YYA/view
+                  - gridcell "Quote" [ref=f173e1213]
+                  - gridcell [ref=f173e1216]:
+                    - link "Sales Representative" [ref=f173e1218] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:١٤ AM" [ref=f173e1219]
+                  - gridcell [ref=f173e1222]:
+                    - button "Show Actions" [ref=f173e1225] [cursor=pointer]
+                - row [ref=f173e1229]:
+                  - gridcell [ref=f173e1230]
+                  - rowheader [ref=f173e1235]:
+                    - link "QA RS07 H4-bulk-1" [ref=f173e1237] [cursor=pointer]:
+                      - /url: /lightning/r/04iFV001DV6hhw0YYA/view
+                  - gridcell "Quote" [ref=f173e1238]
+                  - gridcell [ref=f173e1241]:
+                    - link "Sales Representative" [ref=f173e1243] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN36pJcAQI/view
+                  - gridcell "١٠/٩/٢٠٢٦, ١٢:١٤ AM" [ref=f173e1244]
+                  - gridcell [ref=f173e1247]:
+                    - button "Show Actions" [ref=f173e1250] [cursor=pointer]
+            - generic:
+              - status
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f173e240]:
+          - listitem [ref=f173e241]:
+            - button "To Do List" [ref=f173e244] [cursor=pointer]
+  - generic:
+    - status

@@ -1,0 +1,324 @@
+- generic [active]:
+  - generic [ref=f14e2]:
+    - generic [ref=f14e3]:
+      - link "Skip to Navigation" [ref=f14e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f14e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f14e8]:
+        - generic [ref=f14e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f14e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f14e11]:
+        - button "Search" [ref=f14e17]: Search...
+        - navigation "Global Header" [ref=f14e22]:
+          - list [ref=f14e24]:
+            - listitem [ref=f14e25]:
+              - group [ref=f14e26]:
+                - button "This item doesn't support favorites" [ref=f14e28] [cursor=pointer]:
+                  - generic [ref=f14e29]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f14e37] [cursor=pointer]:
+                  - generic [ref=f14e38]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f14e45]:
+              - button "Global Actions" [ref=f14e47]
+            - listitem [ref=f14e54]:
+              - button [ref=f14e57] [cursor=pointer]:
+                - generic [ref=f14e58]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f14e65]:
+              - button [ref=f14e71] [cursor=pointer]:
+                - generic [ref=f14e72]:
+                  - tooltip "Setup"
+            - listitem [ref=f14e79]:
+              - button [ref=f14e82] [cursor=pointer]:
+                - generic [ref=f14e83]:
+                  - tooltip "Notifications"
+            - listitem [ref=f14e92]:
+              - button "View profile" [ref=f14e95] [cursor=pointer]:
+                - generic [ref=f14e96]:
+                  - tooltip "View profile"
+    - generic [ref=f14e100]:
+      - generic [ref=f14e103]:
+        - generic [ref=f14e105]:
+          - navigation "App" [ref=f14e106]:
+            - button "App Launcher" [ref=f14e108] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f14e120]
+        - navigation "Global" [ref=f14e124]:
+          - list [ref=f14e125]:
+            - listitem [ref=f14e126] [cursor=pointer]:
+              - link "Home" [ref=f14e127]:
+                - /url: /lightning/page/home
+            - listitem [ref=f14e129]:
+              - link "Analytics" [ref=f14e130] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f14e132]:
+              - link "Opportunities" [ref=f14e133] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f14e138] [cursor=pointer]
+            - listitem [ref=f14e146]:
+              - link "Quotes" [ref=f14e147] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f14e152] [cursor=pointer]
+            - listitem [ref=f14e160]:
+              - link "Leads" [ref=f14e161] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f14e166] [cursor=pointer]
+            - listitem [ref=f14e174]:
+              - link "Tasks" [ref=f14e175] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f14e180] [cursor=pointer]
+            - listitem [ref=f14e188]:
+              - link "Files" [ref=f14e189] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f14e194] [cursor=pointer]
+            - listitem [ref=f14e202]:
+              - link "Accounts" [ref=f14e203] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f14e208] [cursor=pointer]
+            - listitem [ref=f14e216]:
+              - link "Contacts" [ref=f14e217] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f14e222] [cursor=pointer]
+            - listitem [ref=f14e230]:
+              - link "Campaigns" [ref=f14e231] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f14e236] [cursor=pointer]
+            - listitem [ref=f14e244]:
+              - link "Dashboards" [ref=f14e245] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f14e250] [cursor=pointer]
+            - listitem [ref=f14e258]:
+              - link "Reports" [ref=f14e259] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f14e264] [cursor=pointer]
+            - listitem [ref=f14e272]:
+              - link "Chatter" [ref=f14e273] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f14e275]:
+              - link "Groups" [ref=f14e276] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f14e281] [cursor=pointer]
+            - listitem [ref=f14e289]:
+              - button "Show more navigation items" [ref=f14e291] [cursor=pointer]:
+                - generic [ref=f14e292]: More
+            - listitem [ref=f14e300]:
+              - button "Edit nav items" [ref=f14e302] [cursor=pointer]
+      - main [ref=f14e309]:
+        - generic [ref=f14e317]:
+          - heading "Home" [level=1] [ref=f14e318]
+          - article [ref=f14e320]:
+            - heading "Seller HomeGood morning, CRM. Let's get selling!" [level=1] [ref=f14e321]
+          - generic [ref=f14e322]:
+            - article [ref=f14e325]:
+              - heading "Close Deals" [level=2] [ref=f14e329]
+              - generic [ref=f14e330]:
+                - generic [ref=f14e331]: Opportunities owned by me and closing this quarter
+                - generic [ref=f14e332]:
+                  - generic [ref=f14e339]:
+                    - generic [ref=f14e340]: QAR 0
+                    - generic [ref=f14e341]: Total Pipeline
+                  - generic [ref=f14e343]:
+                    - generic [ref=f14e344]: QAR 0 Open
+                    - generic [ref=f14e350]: QAR 0 Won
+                    - generic [ref=f14e356]: QAR 0 Lost
+              - button "View Opportunities (opens in new tab)" [ref=f14e363] [cursor=pointer]: View Opportunities
+            - article [ref=f14e366]:
+              - heading "Plan My Accounts" [level=2] [ref=f14e370]
+              - generic [ref=f14e371]:
+                - generic [ref=f14e372]: Accounts owned by me
+                - generic [ref=f14e373]:
+                  - generic [ref=f14e380]:
+                    - generic [ref=f14e381]: "2"
+                    - generic [ref=f14e382]: Accounts
+                  - generic [ref=f14e384]:
+                    - generic [ref=f14e385]: 0 Upcoming Activity
+                    - generic [ref=f14e391]: 0 Past Activity
+                    - generic [ref=f14e397]: 2 No Activity
+              - button "View Accounts (opens in new tab)" [ref=f14e404] [cursor=pointer]: View Accounts
+            - article [ref=f14e407]:
+              - heading "Grow Relationships" [level=2] [ref=f14e411]
+              - generic [ref=f14e412]:
+                - generic [ref=f14e413]: Contacts owned by me and created in the last 90 days
+                - generic [ref=f14e414]:
+                  - generic [ref=f14e421]:
+                    - generic [ref=f14e422]: "1"
+                    - generic [ref=f14e423]: Contact
+                  - generic [ref=f14e425]:
+                    - generic [ref=f14e426]: 0 Upcoming Activity
+                    - generic [ref=f14e432]: 0 Past Activity
+                    - generic [ref=f14e438]: 1 No Activity
+              - button "View Contacts (opens in new tab)" [ref=f14e445] [cursor=pointer]: View Contacts
+            - article [ref=f14e448]:
+              - heading "Build Pipeline" [level=2] [ref=f14e452]
+              - generic [ref=f14e453]:
+                - generic [ref=f14e454]: Leads owned by me and created in the last 30 days
+                - generic [ref=f14e455]:
+                  - generic [ref=f14e463]:
+                    - generic [ref=f14e464]: "17"
+                    - generic [ref=f14e465]: Leads
+                  - generic [ref=f14e467]:
+                    - generic [ref=f14e468]: 14 Upcoming Activity
+                    - generic [ref=f14e474]: 0 Past Activity
+                    - generic [ref=f14e480]: 3 No Activity
+              - button "View Leads (opens in new tab)" [ref=f14e487] [cursor=pointer]: View Leads
+            - generic [ref=f14e490]:
+              - article [ref=f14e493]:
+                - generic [ref=f14e496]:
+                  - heading "My Goals" [level=2] [ref=f14e497]
+                  - button "Edit my goals" [ref=f14e500] [cursor=pointer]
+                - generic [ref=f14e505]:
+                  - generic [ref=f14e506]: Set personal weekly or monthly goals for emails, calls, and meetings.
+                  - button "Set goals" [ref=f14e508] [cursor=pointer]
+              - article [ref=f14e511]:
+                - heading "Set Goals" [level=2] [ref=f14e515]
+                - generic [ref=f14e517]:
+                  - generic [ref=f14e518]:
+                    - generic [ref=f14e519]: Forecast Commit
+                    - generic [ref=f14e520]: If your Salesforce admin has added a quota, you see your progress against that quota compared to your commit, including adjustments.
+                  - generic [ref=f14e521]:
+                    - generic [ref=f14e525]:
+                      - generic [ref=f14e526]: Meetings
+                      - spinbutton "Meetings" [disabled] [ref=f14e528]
+                    - generic [ref=f14e532]:
+                      - generic [ref=f14e533]: Calls
+                      - spinbutton "Calls" [disabled] [ref=f14e535]
+                    - generic [ref=f14e539]:
+                      - generic [ref=f14e540]: Emails
+                      - spinbutton "Emails" [disabled] [ref=f14e542]
+                    - generic [ref=f14e545]:
+                      - generic [ref=f14e546]: Time Frame
+                      - combobox "Time Frame" [disabled] [ref=f14e552]:
+                        - generic [ref=f14e553]: Monthly
+                      - status
+                  - generic [ref=f14e560]:
+                    - generic:
+                      - button "Cancel" [disabled]
+                    - generic:
+                      - button "Save" [disabled]
+            - article [ref=f14e563]:
+              - heading "Today's Events" [level=2] [ref=f14e567]
+              - generic [ref=f14e569]: Looks like you're free and clear the rest of the day.
+              - button "View Calendar" [ref=f14e576] [cursor=pointer]
+            - article [ref=f14e579]:
+              - generic [ref=f14e580]:
+                - heading "Today’s Tasks" [level=2] [ref=f14e583]
+                - button "Select a view of your tasks" [ref=f14e587] [cursor=pointer]
+              - list [ref=f14e596]:
+                - listitem [ref=f14e597]:
+                  - generic [ref=f14e598]:
+                    - generic [ref=f14e602]:
+                      - checkbox "SLA Reminder — First Contact Due (15 min)" [ref=f14e603]
+                      - generic [ref=f14e605]: SLA Reminder — First Contact Due (15 min)
+                    - generic [ref=f14e608]:
+                      - generic [ref=f14e610]:
+                        - generic "SLA Reminder — First Contact Due (15 min)"
+                        - link "SLA Reminder — First Contact Due (15 min)" [ref=f14e612] [cursor=pointer]:
+                          - /url: /lightning/r/00TFV00CvbC8CVQ2E3/view
+                        - generic [ref=f14e613]: High-Priority task
+                      - list [ref=f14e622]:
+                        - listitem [ref=f14e623]:
+                          - link "Khalid QA test LM-01-TC-001 UI Al-Mannai" [ref=f14e625] [cursor=pointer]:
+                            - /url: /lightning/r/00QFV00A2neEMe42EG/view
+                - listitem [ref=f14e626]:
+                  - generic [ref=f14e627]:
+                    - generic [ref=f14e631]:
+                      - checkbox "SLA Reminder — First Contact Due (15 min)" [ref=f14e632]
+                      - generic [ref=f14e634]: SLA Reminder — First Contact Due (15 min)
+                    - generic [ref=f14e637]:
+                      - generic [ref=f14e639]:
+                        - generic "SLA Reminder — First Contact Due (15 min)"
+                        - link "SLA Reminder — First Contact Due (15 min)" [ref=f14e641] [cursor=pointer]:
+                          - /url: /lightning/r/00TFV00CvXhuJ3M2UU/view
+                        - generic [ref=f14e642]: High-Priority task
+                      - list [ref=f14e651]:
+                        - listitem [ref=f14e652]:
+                          - link "QA test LM-04-TC001 FerrariA" [ref=f14e654] [cursor=pointer]:
+                            - /url: /lightning/r/00QFV00A3Nszz802UA/view
+                - listitem [ref=f14e655]:
+                  - generic [ref=f14e656]:
+                    - generic [ref=f14e660]:
+                      - checkbox "SLA Reminder — First Contact Due (15 min)" [ref=f14e661]
+                      - generic [ref=f14e663]: SLA Reminder — First Contact Due (15 min)
+                    - generic [ref=f14e666]:
+                      - generic [ref=f14e668]:
+                        - generic "SLA Reminder — First Contact Due (15 min)"
+                        - link "SLA Reminder — First Contact Due (15 min)" [ref=f14e670] [cursor=pointer]:
+                          - /url: /lightning/r/00TFV00CvXhlulI2UQ/view
+                        - generic [ref=f14e671]: High-Priority task
+                      - list [ref=f14e680]:
+                        - listitem [ref=f14e681]:
+                          - link "QA test LM-04-TC004 Ferrari2" [ref=f14e683] [cursor=pointer]:
+                            - /url: /lightning/r/00QFV00A39hPthk2EC/view
+                - listitem [ref=f14e684]:
+                  - generic [ref=f14e685]:
+                    - generic [ref=f14e689]:
+                      - checkbox "SLA Reminder — First Contact Due (15 min)" [ref=f14e690]
+                      - generic [ref=f14e692]: SLA Reminder — First Contact Due (15 min)
+                    - generic [ref=f14e695]:
+                      - generic [ref=f14e697]:
+                        - generic "SLA Reminder — First Contact Due (15 min)"
+                        - link "SLA Reminder — First Contact Due (15 min)" [ref=f14e699] [cursor=pointer]:
+                          - /url: /lightning/r/00TFV00CvXhZKKC2U4/view
+                        - generic [ref=f14e700]: High-Priority task
+                      - list [ref=f14e709]:
+                        - listitem [ref=f14e710]:
+                          - link "QA test LM-04-TC004 Ferrari4" [ref=f14e712] [cursor=pointer]:
+                            - /url: /lightning/r/00QFV00A39hYHzo2EG/view
+                - listitem [ref=f14e713]:
+                  - generic [ref=f14e714]:
+                    - generic [ref=f14e718]:
+                      - checkbox "SLA Reminder — First Contact Due (15 min)" [ref=f14e719]
+                      - generic [ref=f14e721]: SLA Reminder — First Contact Due (15 min)
+                    - generic [ref=f14e724]:
+                      - generic [ref=f14e726]:
+                        - generic "SLA Reminder — First Contact Due (15 min)"
+                        - link "SLA Reminder — First Contact Due (15 min)" [ref=f14e728] [cursor=pointer]:
+                          - /url: /lightning/r/00TFV00Cv6xeDPw2EM/view
+                        - generic [ref=f14e729]: High-Priority task
+                      - list [ref=f14e738]:
+                        - listitem [ref=f14e739]:
+                          - link "Fahad QA-LM03-TC004-Contact" [ref=f14e741] [cursor=pointer]:
+                            - /url: /lightning/r/00QFV00A38AXFSW2E5/view
+              - button "View All Tasks" [ref=f14e743] [cursor=pointer]: View All
+            - article [ref=f14e746]:
+              - heading "Recent Records" [level=2] [ref=f14e750]
+              - list [ref=f14e753]:
+                - listitem [ref=f14e754]:
+                  - link "QA test LM-05-TC002 QualGate" [ref=f14e762] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f14e763]:
+                  - link "QA test LM-05-TC006 FreeMovement" [ref=f14e771] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f14e772]:
+                  - link "Khalid QA test LM-01-TC-001 UI Al-Mannai" [ref=f14e780] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f14e781]:
+                  - link "QA test LM-04-TC004 Ferrari4" [ref=f14e789] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f14e790]:
+                  - link "QA test LM-04-TC004 Ferrari3" [ref=f14e798] [cursor=pointer]:
+                    - /url: /lightning/r/00QFV00A39hU5qm2EC/view
+              - button "View All Recent Records" [ref=f14e800] [cursor=pointer]: View All
+            - article [ref=f14e803]:
+              - heading "Salesblazer" [level=2] [ref=f14e807]
+              - generic [ref=f14e808]:
+                - heading [level=3] [ref=f14e809]:
+                  - link "How Salesforce Migrated 30,000+ Sellers to Spiff, a Single Comp Management Tool (Link opens in new window)" [ref=f14e812] [cursor=pointer]:
+                    - /url: /HelpAndTrainingDoor?version=2&resource=https%3A%2F%2Fwww.salesforce.com%2Fblog%2Fsales%2Fsalesforce-spiff-migration%2F
+                    - generic [ref=f14e814]:
+                      - text: How Salesforce Migrated 30,000+ Sellers to Spiff, a Single Comp Management Tool
+                      - generic [ref=f14e815]: (Link opens in new window)
+                - generic [ref=f14e822]: A methodical, six-step approach with broad buy-in and phased rollout ensured success.
+                - paragraph [ref=f14e823]: 9 minute read
+              - button "Join the Community (Link opens in new window)" [ref=f14e825] [cursor=pointer]:
+                - text: Join the Community
+                - generic [ref=f14e826]: (Link opens in new window)
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f14e835]:
+          - listitem [ref=f14e836]:
+            - button "To Do List" [ref=f14e839] [cursor=pointer]
+  - generic:
+    - status

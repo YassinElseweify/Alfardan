@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_SOStatus__c</fullName>
+    <description>ALF-RS-12 (LFRDN-342) FR3 added &quot;Delivered&quot;, set by AF_FL_Handover_SyncOpportunityGate when the linked Handover&apos;s AF_ClosedWonGatePassed__c becomes true. Align remaining values with Sales Order before this ships to production.</description>
+    <label>Sales Order Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Generated</fullName>
+                <default>true</default>
+                <label>Not Generated</label>
+            </value>
+            <value>
+                <fullName>Generated</fullName>
+                <default>false</default>
+                <label>Generated</label>
+            </value>
+            <value>
+                <fullName>Sent to Customer</fullName>
+                <default>false</default>
+                <label>Sent to Customer</label>
+            </value>
+            <value>
+                <fullName>Signed</fullName>
+                <default>false</default>
+                <label>Signed</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+                <label>Delivered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

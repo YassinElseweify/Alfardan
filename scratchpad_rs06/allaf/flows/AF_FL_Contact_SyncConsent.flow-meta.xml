@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Sync_From_OptedOut</name>
+        <label>Derive Marketing Opt-In from HasOptedOutOfEmail</label>
+        <locationX>314</locationX>
+        <locationY>240</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_MarketingOptIn__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_NotOptedOut</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Sync_From_OptIn</name>
+        <label>Derive HasOptedOutOfEmail from Marketing Opt-In</label>
+        <locationX>50</locationX>
+        <locationY>240</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.HasOptedOutOfEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_NotOptIn</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Decide_WhichChanged</name>
+        <label>Which Field Changed?</label>
+        <locationX>50</locationX>
+        <locationY>120</locationY>
+        <defaultConnectorLabel>Neither Changed</defaultConnectorLabel>
+        <rules>
+            <name>OptIn_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_MarketingOptIn__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sync_From_OptIn</targetReference>
+            </connector>
+            <label>Marketing Opt-In Changed</label>
+        </rules>
+        <rules>
+            <name>OptedOut_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.HasOptedOutOfEmail</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sync_From_OptedOut</targetReference>
+            </connector>
+            <label>Has Opted Out Of Email Changed</label>
+        </rules>
+    </decisions>
+    <description>LFRDN-611 #3: AF_MarketingOptIn__c and the standard HasOptedOutOfEmail checkbox were completely independent, so a Contact could show opted-in on one and opted-out on the other. AF_MarketingOptIn__c is treated as the canonical field (brand-specific, what the rest of this project&apos;s marketing logic keys off) — whenever it changes, HasOptedOutOfEmail is derived from it. If only HasOptedOutOfEmail changes (e.g. a direct edit or unsubscribe-link webhook), AF_MarketingOptIn__c is derived from that instead. Before-save fast field update, no separate DML.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_NotOptedOut</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!$Record.HasOptedOutOfEmail})</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_NotOptIn</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!$Record.AF_MarketingOptIn__c})</expression>
+    </formulas>
+    <interviewLabel>Contact Sync Consent {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact Sync Consent</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decide_WhichChanged</targetReference>
+        </connector>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Derives Lead.AF_BusinessUnit__c from AF_Brand__c via the single shared subflow, so Brand and Business Unit can never disagree. Fires after save on create only (before-save flows cannot call subflows on this platform) and writes the result back with one Update Records call, which does not re-enter this flow since the resulting DML is an Update, not a Create.
+
+FIXED 2026-08-16: Added NOT({!$Record.IsConverted}) to entry criteria to prevent flow from running during lead conversion, which was causing &quot;Unable to convert lead that is in use by workflow&quot; error.</description>
+    <ends>
+        <name>END_ELEMENT_2</name>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <environments>Default</environments>
+    <interviewLabel>AF Lead Derive Business Unit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Derive Business Unit</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_BusinessUnit</name>
+        <label>Update Business Unit</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_2</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AF_BusinessUnit__c</field>
+            <value>
+                <elementReference>Call_DeriveBusinessUnit.AF_BusinessUnit</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_DeriveBusinessUnit</targetReference>
+        </connector>
+        <filterFormula>NOT(ISBLANK(TEXT({!$Record.AF_Brand__c})))
+&amp;&amp;
+(ISNEW() || ISCHANGED({!$Record.AF_Brand__c}))
+&amp;&amp;
+NOT({!$Record.IsConverted})</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_DeriveBusinessUnit</name>
+        <label>Call Derive Business Unit</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Update_BusinessUnit</targetReference>
+        </connector>
+        <flowName>AF_FL_Sub_DeriveBusinessUnit</flowName>
+        <inputAssignments>
+            <name>AF_Brand</name>
+            <value>
+                <elementReference>$Record.AF_Brand__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <triggerOrder>10</triggerOrder>
+</Flow>

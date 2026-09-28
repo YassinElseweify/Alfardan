@@ -1,0 +1,212 @@
+- generic [active]:
+  - generic [ref=f138e2]:
+    - generic [ref=f138e3]:
+      - link "Skip to Navigation" [ref=f138e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f138e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f138e195]:
+        - generic [ref=f138e196]: "Sandbox: QA |"
+        - link "Log out" [ref=f138e197] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f138e6]:
+        - button "Search" [ref=f138e13]: Search...
+        - navigation "Global Header" [ref=f138e18]:
+          - list [ref=f138e199]:
+            - listitem [ref=f138e200]:
+              - group [ref=f138e201]:
+                - button "Add favorite" [ref=f138e203] [cursor=pointer]:
+                  - generic [ref=f138e204]:
+                    - tooltip "Add favorite"
+                - button [ref=f138e212] [cursor=pointer]:
+                  - generic [ref=f138e213]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f138e220]:
+              - button [ref=f138e226] [cursor=pointer]:
+                - generic [ref=f138e227]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f138e234]:
+              - button [ref=f138e236] [cursor=pointer]:
+                - generic [ref=f138e237]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f138e244]:
+              - button [ref=f138e247] [cursor=pointer]:
+                - generic [ref=f138e248]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f138e255]:
+              - button "2 Notifications" [ref=f138e258] [cursor=pointer]:
+                - generic [ref=f138e259]:
+                  - generic [ref=f138e260]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f138e269]: 2 new notifications
+            - listitem [ref=f138e270]:
+              - button "View profile" [ref=f138e273] [cursor=pointer]:
+                - generic [ref=f138e274]:
+                  - tooltip "View profile"
+    - generic [ref=f138e24]:
+      - generic [ref=f138e27]:
+        - generic [ref=f138e29]:
+          - navigation "App" [ref=f138e30]:
+            - button "App Launcher" [ref=f138e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f138e44]
+        - navigation "Global" [ref=f138e48]:
+          - list [ref=f138e49]:
+            - listitem [ref=f138e50]:
+              - link "Home" [ref=f138e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f138e53]:
+              - link "Vehicles" [ref=f138e54] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f138e59] [cursor=pointer]
+            - listitem [ref=f138e67]:
+              - link "Assets" [ref=f138e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f138e73] [cursor=pointer]
+            - listitem [ref=f138e81]:
+              - link "Vehicle Definitions" [ref=f138e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f138e87] [cursor=pointer]
+            - listitem [ref=f138e95]:
+              - link "Products" [ref=f138e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f138e101] [cursor=pointer]
+            - listitem [ref=f138e109]:
+              - link "Accounts" [ref=f138e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f138e115] [cursor=pointer]
+            - listitem [ref=f138e123]:
+              - link "Contacts" [ref=f138e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f138e129] [cursor=pointer]
+            - listitem [ref=f138e137]:
+              - link "Asset Milestones" [ref=f138e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f138e143] [cursor=pointer]
+            - listitem [ref=f138e278] [cursor=pointer]:
+              - link "* Recently Viewed | Credit Notes" [ref=f138e279]:
+                - /url: /lightning/o/AF_CreditNote__c/list?filterName=__Recent
+                - generic "Not added to nav bar" [ref=f138e280]: "*"
+                - generic [ref=f138e281]: Recently Viewed | Credit Notes
+              - button "Recently Viewed | Credit Notes List" [ref=f138e285]
+              - button "Close tab" [ref=f138e293]
+            - listitem [ref=f138e165]:
+              - button "* Show more navigation items" [ref=f138e301] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f138e302]: "*"
+                - generic [aria-hidden] [ref=f138e168]: More
+                - generic [ref=f138e175]: Show more navigation items
+            - listitem [ref=f138e176]:
+              - button "Edit nav items" [ref=f138e178] [cursor=pointer]
+      - main [ref=f138e185]:
+        - generic [ref=f138e308]:
+          - generic [ref=f138e310]:
+            - generic [ref=f138e311]:
+              - generic [ref=f138e318]:
+                - heading "Credit Notes" [level=1] [ref=f138e322]
+                - heading "Credit Notes Recently Viewed" [level=1] [ref=f138e325]:
+                  - generic [ref=f138e326]: Credit Notes
+                  - text: Recently Viewed
+              - list [ref=f138e329]:
+                - listitem [ref=f138e330]:
+                  - button "New" [ref=f138e331] [cursor=pointer]
+            - generic [ref=f138e333]:
+              - paragraph [ref=f138e335]:
+                - generic [ref=f138e337]:
+                  - status "Recently Viewed" [ref=f138e338]: 8 items •
+                  - text: Updated a few seconds ago
+              - generic [ref=f138e344]:
+                - generic [ref=f138e345]: Search this list...
+                - searchbox "Search this list..." [ref=f138e347]
+              - generic [ref=f138e351]:
+                - button "List View Controls" [ref=f138e355] [cursor=pointer]
+                - button "Select list display" [ref=f138e367] [cursor=pointer]
+                - generic [ref=f138e378]:
+                  - button "Refresh" [ref=f138e381] [cursor=pointer]
+                  - button "Column sort is disabled. To sort columns, a list view needs at least one row and two columns." [ref=f138e389] [cursor=pointer]
+                  - button "Inline edit isn't available for the displayed fields." [ref=f138e397] [cursor=pointer]
+                  - group [ref=f138e403]:
+                    - generic [ref=f138e405]:
+                      - generic:
+                        - generic:
+                          - button "Charts" [disabled]
+                      - generic:
+                        - generic:
+                          - button "Filters" [disabled]
+          - generic [ref=f138e412]:
+            - generic: Navigation Mode
+            - grid "Recently Viewed" [ref=f138e417]:
+              - rowgroup:
+                - row "Row Number Credit Note Number Action":
+                  - columnheader "Row Number":
+                    - generic [ref=f138e420]:
+                      - generic "Row Number"
+                  - columnheader "Credit Note Number":
+                    - generic [ref=f138e422]:
+                      - 'button "Sort by: Credit Note Number" [ref=f138e423] [cursor=pointer]':
+                        - generic [ref=f138e424]: "Sort by:"
+                        - generic "Credit Note Number" [ref=f138e425]
+                      - generic [ref=f138e426]: "Sorted: None"
+                      - button "Show Credit Note Number column actions" [ref=f138e428] [cursor=pointer]
+                      - slider "Credit Note Number column width" [ref=f138e434]: "1399"
+                  - columnheader "Action":
+                    - generic [ref=f138e439]:
+                      - generic "Action"
+              - rowgroup [ref=f138e440]:
+                - row [ref=f138e441]:
+                  - gridcell [ref=f138e442]
+                  - rowheader [ref=f138e446]:
+                    - link "CN-00007" [ref=f138e453] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV00476cLXng2AG/view
+                  - gridcell [ref=f138e455]:
+                    - button "Show Actions" [ref=f138e461] [cursor=pointer]
+                - row [ref=f138e467]:
+                  - gridcell [ref=f138e468]
+                  - rowheader [ref=f138e472]:
+                    - link "CN-00006" [ref=f138e479] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV00476VZxES2A1/view
+                  - gridcell [ref=f138e481]:
+                    - button "Show Actions" [ref=f138e487] [cursor=pointer]
+                - row [ref=f138e493]:
+                  - gridcell [ref=f138e494]
+                  - rowheader [ref=f138e498]:
+                    - link "CN-00005" [ref=f138e505] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV00476I2m602AB/view
+                  - gridcell [ref=f138e507]:
+                    - button "Show Actions" [ref=f138e513] [cursor=pointer]
+                - row [ref=f138e519]:
+                  - gridcell [ref=f138e520]
+                  - rowheader [ref=f138e524]:
+                    - link "CN-00004" [ref=f138e531] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV00476BHBWm2AP/view
+                  - gridcell [ref=f138e533]:
+                    - button "Show Actions" [ref=f138e539] [cursor=pointer]
+                - row [ref=f138e545]:
+                  - gridcell [ref=f138e546]
+                  - rowheader [ref=f138e550]:
+                    - link "CN-00003" [ref=f138e557] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV00475xk0OK2AY/view
+                  - gridcell [ref=f138e559]:
+                    - button "Show Actions" [ref=f138e565] [cursor=pointer]
+                - row [ref=f138e571]:
+                  - gridcell [ref=f138e572]
+                  - rowheader [ref=f138e576]:
+                    - link "CN-00002" [ref=f138e583] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV0044UPj5W82QJ/view
+                  - gridcell [ref=f138e585]:
+                    - button "Show Actions" [ref=f138e591] [cursor=pointer]
+                - row [ref=f138e597]:
+                  - gridcell [ref=f138e598]
+                  - rowheader [ref=f138e602]:
+                    - link "CN-00001" [ref=f138e609] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV00445JBQqC2AX/view
+                  - gridcell [ref=f138e611]:
+                    - button "Show Actions" [ref=f138e617] [cursor=pointer]
+                - row [ref=f138e623]:
+                  - gridcell [ref=f138e624]
+                  - rowheader [ref=f138e628]:
+                    - link "CN-00000" [ref=f138e635] [cursor=pointer]:
+                      - /url: /lightning/r/a0PFV00428TTVtE2AX/view
+                  - gridcell [ref=f138e637]:
+                    - button "Show Actions" [ref=f138e643] [cursor=pointer]
+  - generic:
+    - status

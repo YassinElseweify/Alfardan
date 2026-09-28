@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Confirmation_Email</name>
+        <label>Send Confirmation Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_Contact.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>Get_OrgWideEmailAddress.Address</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Has_Email</name>
+        <label>Has Email?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Has_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contact.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Confirmation_Email</targetReference>
+            </connector>
+            <label>Yes — Has Email</label>
+        </rules>
+    </decisions>
+    <description>Sends the customer confirmation email the moment a Test Drive itself becomes fully Scheduled (Status=Scheduled AND Vehicle, Vehicle Definition, Time Slot, and Location are all populated) — replaces the old AF_FL_Task_TestDriveConfirmationEmail mechanism, which incorrectly gated the send on the owner separately marking the &quot;Complete Test Drive Details&quot; Task as Completed. That extra manual step is no longer required: since afTestDriveScheduler&apos;s confirmSchedule already sets all 5 of these fields in one transaction when the agent picks a slot, this now fires immediately at that moment, matching the original ALF-RS-03 intent (&quot;when the date and time are selected... the email to be sent to the customer&quot;).</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DateTimeDisplay</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.AF_TestDriveDateTime__c}), &quot;To be confirmed&quot;, TEXT({!$Record.AF_TestDriveDateTime__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>EmailBody</name>
+        <dataType>String</dataType>
+        <expression>&apos;&lt;html&gt;&lt;body style=&quot;margin:0;padding:16px;background-color:#F4F4F6;font-family:Helvetica,Arial,sans-serif;&quot;&gt;&lt;div style=&quot;max-width:560px;margin:0 auto;background:#FFFFFF;border-radius:6px;border:1px solid #E2E5EA;border-top:4px solid #1E7A46;padding:20px 24px;&quot;&gt;&lt;div style=&quot;display:inline-block;padding:4px 10px;border-radius:3px;background-color:#DFF3E6;color:#1E7A46;font-size:11px;font-weight:bold;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:12px;&quot;&gt;Confirmed&lt;/div&gt;&lt;h2 style=&quot;margin:0 0 12px;font-size:18px;color:#0B2545;&quot;&gt;Your Test Drive is Confirmed&lt;/h2&gt;&lt;p style=&quot;margin:0 0 6px;font-size:14px;color:#4A4A4A;&quot;&gt;&lt;strong&gt;Vehicle:&lt;/strong&gt; &apos; &amp; {!VehicleDisplay} &amp; &apos;&lt;/p&gt;&lt;p style=&quot;margin:0 0 6px;font-size:14px;color:#4A4A4A;&quot;&gt;&lt;strong&gt;Date/Time:&lt;/strong&gt; &apos; &amp; {!DateTimeDisplay} &amp; &apos;&lt;/p&gt;&lt;p style=&quot;margin:0 0 12px;font-size:14px;color:#4A4A4A;&quot;&gt;&lt;strong&gt;Location:&lt;/strong&gt; &apos; &amp; {!LocationDisplay} &amp; &apos;&lt;/p&gt;&lt;p style=&quot;margin:0;font-size:14px;color:#4A4A4A;&quot;&gt;We look forward to seeing you.&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <expression>&quot;Your Test Drive is Confirmed – &quot; &amp; {!$Record.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>LocationDisplay</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.AF_Location__c}), &quot;To be confirmed&quot;, {!$Record.AF_Location__c})</expression>
+    </formulas>
+    <formulas>
+        <name>VehicleDisplay</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    NOT(ISBLANK({!$Record.AF_Vehicle__r.Name})),
+    {!$Record.AF_Vehicle__r.Name},
+    IF(
+        NOT(ISBLANK({!$Record.AF_VehicleDefinition__r.Name})),
+        {!$Record.AF_VehicleDefinition__r.Name},
+        &quot;To be confirmed&quot;
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>AF Test Drive Send Confirmation Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Test Drive Send Confirmation Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Contact</name>
+        <label>Get Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Contact__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_OrgWideEmailAddress</name>
+        <label>Get Org Wide Email Address</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Contact</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DisplayName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>No Reply</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OrgWideEmailAddress</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_OrgWideEmailAddress</targetReference>
+        </connector>
+        <filterFormula>AND(
+    OR(
+        ISCHANGED({!$Record.AF_Status__c}),
+        ISCHANGED({!$Record.AF_Vehicle__c}),
+        ISCHANGED({!$Record.AF_VehicleDefinition__c}),
+        ISCHANGED({!$Record.AF_TimeSlot__c}),
+        ISCHANGED({!$Record.AF_Location__c})
+    ),
+    ISPICKVAL({!$Record.AF_Status__c}, &quot;Scheduled&quot;),
+    NOT(ISBLANK({!$Record.AF_Vehicle__c})),
+    NOT(ISBLANK({!$Record.AF_VehicleDefinition__c})),
+    NOT(ISBLANK(TEXT({!$Record.AF_TimeSlot__c}))),
+    NOT(ISBLANK({!$Record.AF_Location__c}))
+)</filterFormula>
+        <object>AF_TestDrive__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,90 @@
+- generic [active]:
+  - generic [ref=f200e2]:
+    - generic [ref=f200e3]:
+      - link "Skip to Navigation" [ref=f200e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f200e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f200e8]:
+        - generic [ref=f200e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f200e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f200e11]:
+        - button "Search" [ref=f200e18]: Search...
+        - navigation "Global Header" [ref=f200e23]:
+          - list [ref=f200e25]:
+            - listitem [ref=f200e26]:
+              - group [ref=f200e27]:
+                - button "This item doesn't support favorites" [ref=f200e29] [cursor=pointer]:
+                  - generic [ref=f200e30]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f200e38] [cursor=pointer]:
+                  - generic [ref=f200e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f200e46]:
+              - button "Global Actions" [ref=f200e48]
+            - listitem [ref=f200e55]:
+              - button [ref=f200e58] [cursor=pointer]:
+                - generic [ref=f200e59]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f200e66]:
+              - button [ref=f200e69] [cursor=pointer]:
+                - generic [ref=f200e70]:
+                  - tooltip "Notifications"
+            - listitem [ref=f200e79]:
+              - button [ref=f200e82] [cursor=pointer]:
+                - generic [ref=f200e83]:
+                  - tooltip "View profile"
+    - generic [ref=f200e85]:
+      - generic [ref=f200e88]:
+        - generic [ref=f200e90]:
+          - navigation "App" [ref=f200e91]:
+            - button "App Launcher" [ref=f200e93] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f200e105]
+        - navigation "Global" [ref=f200e109]:
+          - list [ref=f200e110]:
+            - listitem [ref=f200e111]:
+              - link "Vehicles" [ref=f200e112] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f200e117] [cursor=pointer]
+            - listitem [ref=f200e125]:
+              - link "Assets" [ref=f200e126] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f200e131] [cursor=pointer]
+            - listitem [ref=f200e139]:
+              - link "Vehicle Definitions" [ref=f200e140] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f200e145] [cursor=pointer]
+            - listitem [ref=f200e153]:
+              - link "Accounts" [ref=f200e154] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f200e159] [cursor=pointer]
+            - listitem [ref=f200e167]:
+              - link "Contacts" [ref=f200e168] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f200e173] [cursor=pointer]
+            - listitem [ref=f200e181]:
+              - link "Asset Milestones" [ref=f200e182] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f200e187] [cursor=pointer]
+            - listitem [ref=f200e195]:
+              - link "Asset Contact Participants" [ref=f200e196] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f200e201] [cursor=pointer]
+            - listitem [ref=f200e209]:
+              - link "Asset Account Participants" [ref=f200e210] [cursor=pointer]:
+                - /url: /lightning/o/AssetAccountParticipant/home
+              - button "Asset Account Participants List" [ref=f200e215] [cursor=pointer]
+            - listitem [ref=f200e223]:
+              - link "Product Related Materials" [ref=f200e224] [cursor=pointer]:
+                - /url: /lightning/o/ProductRelatedMaterial/home
+              - button "Product Related Materials List" [ref=f200e229] [cursor=pointer]
+            - listitem [ref=f200e237]:
+              - button "Show more navigation items" [ref=f200e239] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f200e240]: More
+            - listitem [ref=f200e248]:
+              - button "Edit nav items" [ref=f200e250] [cursor=pointer]
+      - main [ref=f200e257]
+  - generic:
+    - status

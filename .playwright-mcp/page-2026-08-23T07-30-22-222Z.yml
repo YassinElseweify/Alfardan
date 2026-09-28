@@ -1,0 +1,31 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: Salesforce login
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]: "Error: Please enter your password."
+          - heading "Salesforce login" [level=1] [ref=e14]
+          - generic [ref=e15]:
+            - text: Username
+            - textbox "Username" [ref=e17]: salesreceptionist.v2.20260823@alfardan.com.qa.qa
+          - text: Password
+          - textbox "Password" [active] [ref=e18]
+          - button "Log In to Sandbox" [ref=e19] [cursor=pointer]
+          - generic [ref=e20]:
+            - checkbox "Remember me" [ref=e21]
+            - generic [ref=e22]: Remember me
+        - generic [ref=e23]:
+          - link "Forgot Your Password?" [ref=e24] [cursor=pointer]:
+            - /url: /secur/forgotpassword.jsp?locale=us&lqs=type%3Dtwobox%26un%3Dsalesreceptionist.v2.20260823%2540alfardan.com.qa.qa
+          - link "Use Custom Domain" [ref=e25] [cursor=pointer]:
+            - /url: javascript:void(0);
+    - generic [ref=e26]:
+      - text: © 2026 Salesforce, Inc. All rights reserved. |
+      - link "Privacy" [ref=e27] [cursor=pointer]:
+        - /url: https://www.salesforce.com/us/company/privacy
+  - iframe [ref=e29]:
+    
+  - generic: Login
+  - iframe [ref=e30]:
+    

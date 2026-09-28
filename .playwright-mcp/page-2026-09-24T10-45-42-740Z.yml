@@ -1,0 +1,185 @@
+- generic [active]:
+  - generic [ref=f127e3]:
+    - generic [ref=f127e4]:
+      - link "Skip to Navigation" [ref=f127e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f127e6] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f127e9]:
+        - generic [ref=f127e10]: "Sandbox: QA |"
+        - link "Log out" [ref=f127e11] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f127e12]:
+        - button "Search" [ref=f127e19]: Search...
+        - navigation "Global Header" [ref=f127e24]:
+          - list [ref=f127e26]:
+            - listitem [ref=f127e27]:
+              - group [ref=f127e28]:
+                - button "Add favorite" [ref=f127e30] [cursor=pointer]:
+                  - generic [ref=f127e31]:
+                    - tooltip "Add favorite"
+                - button [ref=f127e39] [cursor=pointer]:
+                  - generic [ref=f127e40]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f127e47]:
+              - button "Global Actions" [ref=f127e49]
+            - listitem [ref=f127e56]:
+              - button [ref=f127e59] [cursor=pointer]:
+                - generic [ref=f127e60]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f127e67]:
+              - button [ref=f127e70] [cursor=pointer]:
+                - generic [ref=f127e71]:
+                  - tooltip "Notifications"
+            - listitem [ref=f127e80]:
+              - button "View profile" [ref=f127e83] [cursor=pointer]:
+                - generic [ref=f127e84]:
+                  - tooltip "View profile"
+    - generic [ref=f127e88]:
+      - generic [ref=f127e91]:
+        - generic [ref=f127e93]:
+          - navigation "App" [ref=f127e94]:
+            - button "App Launcher" [ref=f127e96] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f127e108]
+        - navigation "Global" [ref=f127e112]:
+          - list [ref=f127e113]:
+            - listitem [ref=f127e114]:
+              - link "Home" [ref=f127e115] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f127e117]:
+              - link "Vehicles" [ref=f127e118] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f127e123] [cursor=pointer]
+            - listitem [ref=f127e131]:
+              - link "Assets" [ref=f127e132] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f127e137] [cursor=pointer]
+            - listitem [ref=f127e145]:
+              - link "Vehicle Definitions" [ref=f127e146] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f127e151] [cursor=pointer]
+            - listitem [ref=f127e159]:
+              - link "Products" [ref=f127e160] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f127e165] [cursor=pointer]
+            - listitem [ref=f127e173]:
+              - link "Accounts" [ref=f127e174] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f127e179] [cursor=pointer]
+            - listitem [ref=f127e187]:
+              - link "Contacts" [ref=f127e188] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f127e193] [cursor=pointer]
+            - listitem [ref=f127e201]:
+              - link "Asset Milestones" [ref=f127e202] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f127e207] [cursor=pointer]
+            - listitem [ref=f127e215] [cursor=pointer]:
+              - link "Opportunities" [ref=f127e216]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f127e221]
+            - listitem [ref=f127e229]:
+              - button "* Show more navigation items" [ref=f127e231] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f127e232]: "*"
+                - generic [aria-hidden] [ref=f127e233]: More
+                - generic [ref=f127e240]: Show more navigation items
+            - listitem [ref=f127e241]:
+              - button "Edit nav items" [ref=f127e243] [cursor=pointer]
+      - main [ref=f127e250]:
+        - generic [ref=f127e266]:
+          - generic [ref=f127e275]:
+            - generic [ref=f127e276]:
+              - generic [ref=f127e282]:
+                - generic [ref=f127e283]: Opportunity
+                - heading "DEMO RS13 01 - Fully paid order, cancellation approved" [level=1] [ref=f127e285]
+              - generic [ref=f127e291]:
+                - generic "Log a Call" [ref=f127e292]:
+                  - button "Log a Call" [ref=f127e297] [cursor=pointer]
+                - generic "Edit" [ref=f127e298]:
+                  - button "Edit" [ref=f127e303] [cursor=pointer]
+                - generic "Request Closure" [ref=f127e304]:
+                  - button "Request Closure" [ref=f127e309] [cursor=pointer]
+                - button "Show more actions" [ref=f127e311] [cursor=pointer]
+            - generic [ref=f127e317]:
+              - generic [ref=f127e319]:
+                - paragraph [ref=f127e320]: Account Name
+                - paragraph [ref=f127e321]:
+                  - generic [ref=f127e327]:
+                    - link "DEMO RS13 Customer - Nasser Al-Mohannadi" [ref=f127e328] [cursor=pointer]:
+                      - /url: /lightning/r/Account/001FV00LJCxNPvoY2G/view
+                    - button "Preview" [ref=f127e334] [cursor=pointer]
+              - generic [ref=f127e341]:
+                - paragraph [ref=f127e342]: Close Date
+                - paragraph [ref=f127e343]:
+                  - generic [ref=f127e344]: 24/10/2026
+              - generic [ref=f127e346]:
+                - paragraph [ref=f127e347]: Amount
+                - paragraph [ref=f127e348]:
+                  - generic [ref=f127e349]: AED 369,300.00
+              - generic [ref=f127e351]:
+                - paragraph [ref=f127e352]: Opportunity Owner
+                - paragraph [ref=f127e353]:
+                  - generic [ref=f127e356]:
+                    - generic [ref=f127e362]:
+                      - link "QA SalesRep2" [ref=f127e363] [cursor=pointer]:
+                        - /url: /lightning/r/User/005FV0082KfRrqeYQC/view
+                      - button "Preview" [ref=f127e369] [cursor=pointer]
+                    - button "Change Owner" [ref=f127e376] [cursor=pointer]
+          - article [ref=f127e389]:
+            - generic [ref=f127e393]:
+              - list [ref=f127e395]:
+                - listitem [ref=f127e396]
+                - listitem [ref=f127e397]
+                - listitem [ref=f127e398]
+                - listitem [ref=f127e399]
+                - listitem [ref=f127e400]
+              - list [ref=f127e402]:
+                - listitem [ref=f127e403]
+          - generic [ref=f127e404]:
+            - generic [ref=f127e412]:
+              - heading "Tabs" [level=2] [ref=f127e413]
+              - tablist "Tabs" [ref=f127e415]:
+                - tab "Activity" [ref=f127e416] [cursor=pointer]
+                - tab "Details" [selected] [ref=f127e417] [cursor=pointer]
+                - tab "Chatter" [ref=f127e418] [cursor=pointer]
+              - tabpanel "Details" [ref=f127e421]
+            - generic [ref=f127e477]:
+              - heading "Tabs" [level=2] [ref=f127e478]
+              - tablist "Tabs" [ref=f127e480]:
+                - tab "Related" [selected] [ref=f127e481] [cursor=pointer]
+              - tabpanel "Related" [ref=f127e484]:
+                - generic [ref=f127e485]:
+                  - article [ref=f127e493]:
+                    - heading "Approval History" [level=2] [ref=f127e497]
+                  - article [ref=f127e505]:
+                    - heading "Test Drives" [level=2] [ref=f127e509]
+                  - article [ref=f127e517]:
+                    - heading "Trade Ins" [level=2] [ref=f127e521]
+                  - article [ref=f127e529]:
+                    - heading "Products" [level=2] [ref=f127e533]
+                  - article [ref=f127e541]:
+                    - heading "Quotes" [level=2] [ref=f127e545]
+                  - article [ref=f127e553]:
+                    - heading "Payments" [level=2] [ref=f127e557]
+                  - article [ref=f127e565]:
+                    - heading "Vehicle Reservations" [level=2] [ref=f127e569]
+                  - article [ref=f127e577]:
+                    - heading "Invoices" [level=2] [ref=f127e581]
+                  - article [ref=f127e589]:
+                    - heading "Notes & Attachments" [level=2] [ref=f127e593]
+                  - generic [ref=f127e599]:
+                    - heading "Activity Publisher" [level=2] [ref=f127e600]
+                    - generic [ref=f127e602]:
+                      - status:
+                        - generic [ref=f127e603]: Loading...
+                    - heading "Activity Timeline" [level=2] [ref=f127e606]
+                    - generic [ref=f127e607]:
+                      - paragraph
+                  - article [ref=f127e613]:
+                    - heading "Required Documents" [level=2] [ref=f127e624]
+                    - generic [ref=f127e627]:
+                      - status:
+                        - generic [ref=f127e628]: Loading
+  - generic:
+    - status

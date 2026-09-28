@@ -1,0 +1,93 @@
+- generic [active]:
+  - generic [ref=f21e2]:
+    - generic [ref=f21e3]:
+      - link "Skip to Navigation" [ref=f21e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f21e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f21e8]:
+        - generic [ref=f21e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f21e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f21e11]:
+        - button "Search" [ref=f21e18]: Search...
+        - navigation "Global Header" [ref=f21e23]:
+          - list [ref=f21e25]:
+            - listitem [ref=f21e26]:
+              - group [ref=f21e27]:
+                - button "Add favorite" [ref=f21e29] [cursor=pointer]:
+                  - generic [ref=f21e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f21e38] [cursor=pointer]:
+                  - generic [ref=f21e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f21e46]:
+              - button "Global Actions" [ref=f21e48]
+            - listitem [ref=f21e55]:
+              - button [ref=f21e58] [cursor=pointer]:
+                - generic [ref=f21e59]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f21e66]:
+              - button [ref=f21e69] [cursor=pointer]:
+                - generic [ref=f21e70]:
+                  - tooltip "Notifications"
+            - listitem [ref=f21e79]:
+              - button "View profile" [ref=f21e82] [cursor=pointer]:
+                - generic [ref=f21e83]:
+                  - tooltip "View profile"
+    - generic [ref=f21e87]:
+      - generic [ref=f21e90]:
+        - generic [ref=f21e92]:
+          - navigation "App" [ref=f21e93]:
+            - button "App Launcher" [ref=f21e95] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f21e107]
+        - navigation "Global" [ref=f21e111]:
+          - list [ref=f21e112]:
+            - listitem [ref=f21e113]:
+              - link "Home" [ref=f21e114] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f21e116]:
+              - link "Vehicles" [ref=f21e117] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f21e122] [cursor=pointer]
+            - listitem [ref=f21e130]:
+              - link "Assets" [ref=f21e131] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f21e136] [cursor=pointer]
+            - listitem [ref=f21e144]:
+              - link "Vehicle Definitions" [ref=f21e145] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f21e150] [cursor=pointer]
+            - listitem [ref=f21e158]:
+              - link "Products" [ref=f21e159] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f21e164] [cursor=pointer]
+            - listitem [ref=f21e172]:
+              - link "Accounts" [ref=f21e173] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f21e178] [cursor=pointer]
+            - listitem [ref=f21e186]:
+              - link "Contacts" [ref=f21e187] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f21e192] [cursor=pointer]
+            - listitem [ref=f21e200]:
+              - link "Asset Milestones" [ref=f21e201] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f21e206] [cursor=pointer]
+            - listitem [ref=f21e214]:
+              - link "Asset Contact Participants" [ref=f21e215] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f21e220] [cursor=pointer]
+            - listitem [ref=f21e228] [cursor=pointer]:
+              - link "Opportunities" [ref=f21e229]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f21e234]
+            - listitem [ref=f21e242]:
+              - button "Show more navigation items" [ref=f21e244] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f21e245]: More
+            - listitem [ref=f21e253]:
+              - button "Edit nav items" [ref=f21e255] [cursor=pointer]
+      - main [ref=f21e262]
+  - generic:
+    - status

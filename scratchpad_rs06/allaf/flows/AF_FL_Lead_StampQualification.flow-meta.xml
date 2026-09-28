@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Stamp_Qualification</name>
+        <label>Stamp Qualification</label>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_QualifiedDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_QualifiedBy__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Stamps AF_QualifiedDate__c/AF_QualifiedBy__c the moment a Lead&apos;s Qualification Outcome becomes Qualified. Before-save fast field update — no separate DML.
+
+FIXED 2026-08-16: Added NOT({!$Record.IsConverted}) to entry criteria to prevent flow from running during lead conversion, which was causing &quot;Unable to convert lead that is in use by workflow&quot; error.
+
+LFRDN-604 #4: retargeted from Status = Qualified to AF_QualificationOutcome__c = Qualified — Status no longer has a Qualified value under the BRD&apos;s ratified 5-value set (New/Follow-up/On-Hold/Disqualified/Converted).</description>
+    <environments>Default</environments>
+    <interviewLabel>Lead Stamp Qualification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Stamp Qualification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Stamp_Qualification</targetReference>
+        </connector>
+        <filterFormula>AND(NOT({!$Record.IsConverted}), ISPICKVAL({!$Record.AF_QualificationOutcome__c}, &quot;Qualified&quot;), OR(ISNEW(), ISCHANGED({!$Record.AF_QualificationOutcome__c})))</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>30</triggerOrder>
+</Flow>

@@ -1,0 +1,30 @@
+<template>
+    <lightning-modal-body>
+        <div class="af-confirmed">
+            <lightning-icon icon-name="utility:success" size="large" variant="success"></lightning-icon>
+            <h2 class="af-confirmed-title">Test Drive Scheduled!</h2>
+            <p class="af-confirmed-subtitle">The booking was saved in Salesforce.</p>
+
+            <div class="af-confirmed-details">
+                <div class="af-confirmed-row">
+                    <span class="af-confirmed-label">Vehicle</span>
+                    <span class="af-confirmed-value">{vehicleName}</span>
+                </div>
+                <div class="af-confirmed-row">
+                    <span class="af-confirmed-label">Date</span>
+                    <span class="af-confirmed-value">{date}</span>
+                </div>
+                <div class="af-confirmed-row">
+                    <span class="af-confirmed-label">Time</span>
+                    <span class="af-confirmed-value">{timeSlot}</span>
+                </div>
+                <div class="af-confirmed-row">
+                    <span class="af-confirmed-label">Location</span>
+                    <span class="af-confirmed-value">{location}</span>
+                </div>
+            </div>
+
+            <button class="af-btn af-btn-primary" onclick={handleDone}>Done</button>
+        </div>
+    </lightning-modal-body>
+</template>

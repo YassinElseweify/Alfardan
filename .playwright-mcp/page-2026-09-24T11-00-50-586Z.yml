@@ -1,0 +1,314 @@
+- generic [active]:
+  - generic [ref=f219e2]:
+    - generic [ref=f219e3]:
+      - link "Skip to Navigation" [ref=f219e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f219e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f219e8]:
+        - generic [ref=f219e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f219e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f219e11]:
+        - button "Search" [ref=f219e18]: Search...
+        - navigation "Global Header" [ref=f219e23]:
+          - list [ref=f219e199]:
+            - listitem [ref=f219e200]:
+              - group [ref=f219e201]:
+                - button "Add favorite" [ref=f219e203] [cursor=pointer]:
+                  - generic [ref=f219e204]:
+                    - tooltip "Add favorite"
+                - button [ref=f219e212] [cursor=pointer]:
+                  - generic [ref=f219e213]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f219e220]:
+              - button "Global Actions" [ref=f219e222]
+            - listitem [ref=f219e229]:
+              - button [ref=f219e231] [cursor=pointer]:
+                - generic [ref=f219e232]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f219e239]:
+              - button [ref=f219e242] [cursor=pointer]:
+                - generic [ref=f219e243]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f219e250]:
+              - button [ref=f219e253] [cursor=pointer]:
+                - generic [ref=f219e254]:
+                  - tooltip "Notifications"
+            - listitem [ref=f219e263]:
+              - button "View profile" [ref=f219e266] [cursor=pointer]:
+                - generic [ref=f219e267]:
+                  - tooltip "View profile"
+    - generic [ref=f219e29]:
+      - generic [ref=f219e32]:
+        - generic [ref=f219e34]:
+          - navigation "App" [ref=f219e35]:
+            - button "App Launcher" [ref=f219e37] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f219e49]
+        - navigation "Global" [ref=f219e53]:
+          - list [ref=f219e54]:
+            - listitem [ref=f219e55]:
+              - link "Home" [ref=f219e56] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f219e58]:
+              - link "Vehicles" [ref=f219e59] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f219e64] [cursor=pointer]
+            - listitem [ref=f219e72]:
+              - link "Assets" [ref=f219e73] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f219e78] [cursor=pointer]
+            - listitem [ref=f219e86]:
+              - link "Vehicle Definitions" [ref=f219e87] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f219e92] [cursor=pointer]
+            - listitem [ref=f219e100]:
+              - link "Products" [ref=f219e101] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f219e106] [cursor=pointer]
+            - listitem [ref=f219e114]:
+              - link "Accounts" [ref=f219e115] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f219e120] [cursor=pointer]
+            - listitem [ref=f219e128]:
+              - link "Contacts" [ref=f219e129] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f219e134] [cursor=pointer]
+            - listitem [ref=f219e142]:
+              - link "Asset Milestones" [ref=f219e143] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f219e148] [cursor=pointer]
+            - listitem [ref=f219e271] [cursor=pointer]:
+              - link "* CN-00004 | Credit Note" [ref=f219e272]:
+                - /url: /lightning/r/AF_CreditNote__c/a0PFV00476BHBWm2AP/view
+                - generic "Not added to nav bar" [ref=f219e273]: "*"
+                - generic [ref=f219e274]: CN-00004 | Credit Note
+              - button "CN-00004 | Credit Note List" [ref=f219e278]
+              - button "Close tab" [ref=f219e286]
+            - listitem [ref=f219e170]:
+              - button "Show more navigation items" [ref=f219e172] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f219e173]: More
+            - listitem [ref=f219e181]:
+              - button "Edit nav items" [ref=f219e183] [cursor=pointer]
+      - main [ref=f219e190]:
+        - generic [ref=f219e305]:
+          - generic [ref=f219e315]:
+            - generic [ref=f219e321]:
+              - generic [ref=f219e322]: Credit Note
+              - heading "CN-00004" [level=1] [ref=f219e324]
+            - button "Follow" [ref=f219e330] [cursor=pointer]
+            - generic "Edit" [ref=f219e342]:
+              - button "Edit" [ref=f219e347] [cursor=pointer]
+          - generic [ref=f219e348]:
+            - generic [ref=f219e356]:
+              - heading "Tabs" [level=2] [ref=f219e357]
+              - tablist "Tabs" [ref=f219e359]:
+                - tab "Details" [selected] [ref=f219e360] [cursor=pointer]
+                - tab "Related" [ref=f219e361] [cursor=pointer]
+              - tabpanel "Details" [ref=f219e364]:
+                - generic [ref=f219e377]:
+                  - generic [ref=f219e379]:
+                    - heading [level=3] [ref=f219e380]:
+                      - button "Information" [expanded] [ref=f219e381] [cursor=pointer]
+                    - list [ref=f219e391]:
+                      - generic [ref=f219e392]:
+                        - generic [ref=f219e394]:
+                          - listitem [ref=f219e396]:
+                            - generic [ref=f219e397]:
+                              - generic [ref=f219e398]: Account
+                              - generic [ref=f219e399]:
+                                - generic [ref=f219e405]:
+                                  - link "DEMO RS13 Customer - Nasser Al-Mohannadi" [ref=f219e406] [cursor=pointer]:
+                                    - /url: /lightning/r/Account/001FV00LJCxNPvoY2G/view
+                                  - button "Preview" [ref=f219e412] [cursor=pointer]
+                                - button "Edit Account" [ref=f219e418] [cursor=pointer]
+                          - listitem [ref=f219e422]:
+                            - generic [ref=f219e423]:
+                              - generic [ref=f219e424]: Owner
+                              - generic [ref=f219e429]:
+                                - generic [ref=f219e436]:
+                                  - link "QA SalesRep2" [ref=f219e437] [cursor=pointer]:
+                                    - /url: /lightning/r/Name/005FV0082KfRrqeYQC/view
+                                  - button "Preview" [ref=f219e443] [cursor=pointer]
+                                - button "Change Owner" [ref=f219e450] [cursor=pointer]
+                        - generic [ref=f219e457]:
+                          - listitem [ref=f219e459]:
+                            - generic [ref=f219e460]:
+                              - generic [ref=f219e461]: Credit Note Amount
+                              - generic [ref=f219e462]:
+                                - generic [ref=f219e463]: AED 369,300.00
+                                - button "Edit Credit Note Amount" [ref=f219e465] [cursor=pointer]
+                          - listitem [ref=f219e469]:
+                            - generic [ref=f219e470]:
+                              - generic [ref=f219e471]: Approval Status
+                              - generic [ref=f219e472]: Pending
+                        - generic [ref=f219e476]:
+                          - listitem [ref=f219e478]:
+                            - generic [ref=f219e479]:
+                              - generic [ref=f219e480]: Opportunity
+                              - generic [ref=f219e481]:
+                                - generic [ref=f219e487]:
+                                  - link "DEMO RS13 03 - Deposit only, no Sales Order yet" [ref=f219e488] [cursor=pointer]:
+                                    - /url: /lightning/r/Opportunity/006FV00Br6vxAuqYEE/view
+                                  - button "Preview" [ref=f219e494] [cursor=pointer]
+                                - button "Edit Opportunity" [ref=f219e500] [cursor=pointer]
+                          - listitem [ref=f219e504]:
+                            - generic [ref=f219e505]: Approval Reference
+                        - generic [ref=f219e509]:
+                          - listitem [ref=f219e511]:
+                            - generic [ref=f219e512]:
+                              - generic [ref=f219e513]: Payment
+                              - button "Edit Payment" [ref=f219e516] [cursor=pointer]
+                          - listitem [ref=f219e520]:
+                            - generic [ref=f219e521]:
+                              - generic [ref=f219e522]: Evidence Reference
+                              - generic [ref=f219e523]:
+                                - generic [ref=f219e524]: bank decline letter
+                                - button "Edit Evidence Reference" [ref=f219e526] [cursor=pointer]
+                        - generic [ref=f219e530]:
+                          - listitem [ref=f219e532]:
+                            - generic [ref=f219e533]:
+                              - generic [ref=f219e534]: Invoice Summary
+                              - generic [ref=f219e535]:
+                                - generic [ref=f219e541]:
+                                  - link "INVM-00097" [ref=f219e542] [cursor=pointer]:
+                                    - /url: /lightning/r/AF_InvoiceSummary__c/a0TFV00G3CTZ8aS2UT/view
+                                  - button "Preview" [ref=f219e548] [cursor=pointer]
+                                - button "Edit Invoice Summary" [ref=f219e554] [cursor=pointer]
+                          - listitem [ref=f219e558]:
+                            - generic [ref=f219e559]:
+                              - generic [ref=f219e560]: Refund Amount
+                              - generic [ref=f219e561]:
+                                - generic [ref=f219e562]: AED 369,300.00
+                                - button "Edit Refund Amount" [ref=f219e564] [cursor=pointer]
+                        - generic [ref=f219e568]:
+                          - listitem [ref=f219e570]:
+                            - generic [ref=f219e571]:
+                              - generic [ref=f219e572]: Cancellation / Refund Reason
+                              - generic [ref=f219e573]:
+                                - generic [ref=f219e574]: Cancellation
+                                - button "Edit Cancellation / Refund Reason" [ref=f219e576] [cursor=pointer]
+                          - listitem [ref=f219e580]:
+                            - generic [ref=f219e581]:
+                              - generic [ref=f219e582]: Refund or Credit Retention Path
+                              - generic [ref=f219e583]:
+                                - generic [ref=f219e584]: Refund
+                                - button "Edit Refund or Credit Retention Path" [ref=f219e586] [cursor=pointer]
+                        - generic [ref=f219e590]:
+                          - listitem [ref=f219e592]:
+                            - generic [ref=f219e593]:
+                              - generic [ref=f219e594]: Credit Note Number
+                              - generic [ref=f219e595]: CN-00004
+                          - listitem [ref=f219e599]:
+                            - generic [ref=f219e600]: Finance Status
+                  - generic [ref=f219e604]:
+                    - heading [level=3] [ref=f219e605]:
+                      - button "Keyloop Mirror" [expanded] [ref=f219e606] [cursor=pointer]
+                    - list [ref=f219e616]:
+                      - generic [ref=f219e617]:
+                        - generic [ref=f219e619]:
+                          - listitem [ref=f219e621]:
+                            - generic [ref=f219e622]: Integration Status
+                          - listitem [ref=f219e626]:
+                            - generic [ref=f219e627]: Document Reference
+                        - generic [ref=f219e631]:
+                          - listitem [ref=f219e633]:
+                            - generic [ref=f219e634]: Keyloop Credit Note Reference
+                          - listitem [ref=f219e638]:
+                            - generic [ref=f219e639]:
+                              - generic [ref=f219e640]: Synced?
+                              - generic [ref=f219e646]:
+                                - generic "False" [ref=f219e647]
+                                - generic [ref=f219e654]: Synced?
+                  - generic [ref=f219e656]:
+                    - heading [level=3] [ref=f219e657]:
+                      - button "System Information" [expanded] [ref=f219e658] [cursor=pointer]
+                    - list [ref=f219e668]:
+                      - generic [ref=f219e671]:
+                        - listitem [ref=f219e673]:
+                          - generic [ref=f219e674]:
+                            - generic [ref=f219e675]: Created By
+                            - generic [ref=f219e679]:
+                              - generic [ref=f219e685]:
+                                - link "QA SalesRep2" [ref=f219e686] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005FV0082KfRrqeYQC/view
+                                - button "Preview" [ref=f219e692] [cursor=pointer]
+                              - text: ", 24/09/2026, 1:48 PM"
+                        - listitem [ref=f219e699]:
+                          - generic [ref=f219e700]:
+                            - generic [ref=f219e701]: Last Modified By
+                            - generic [ref=f219e705]:
+                              - generic [ref=f219e711]:
+                                - link "Arcsen Alfardan" [ref=f219e712] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f219e718] [cursor=pointer]
+                              - text: ", 24/09/2026, 1:58 PM"
+            - generic [ref=f219e731]:
+              - heading "Tabs" [level=2] [ref=f219e732]
+              - tablist "Tabs" [ref=f219e734]:
+                - tab "Activity" [selected] [ref=f219e735] [cursor=pointer]
+              - tabpanel "Activity" [ref=f219e738]:
+                - generic [ref=f219e744]:
+                  - heading "Activity Publisher" [level=2] [ref=f219e745]
+                  - generic [ref=f219e746]:
+                    - group [ref=f219e747]:
+                      - generic [ref=f219e749]:
+                        - button "Log a Call" [ref=f219e750] [cursor=pointer]
+                        - generic [ref=f219e758]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f219e759]:
+                      - generic [ref=f219e761]:
+                        - button "New Task" [ref=f219e762] [cursor=pointer]
+                        - generic [ref=f219e770]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f219e771]
+                  - generic [ref=f219e773]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f219e774] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f219e776]:
+                      - generic [ref=f219e777]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f219e779] [cursor=pointer]
+                    - generic [ref=f219e787]:
+                      - button "Refresh" [ref=f219e788] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f219e789] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f219e790] [cursor=pointer]
+                    - generic [ref=f219e792]:
+                      - heading [level=3] [ref=f219e793]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f219e794] [cursor=pointer]
+                      - generic [ref=f219e799]:
+                        - generic:
+                          - list
+                        - generic [ref=f219e800]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - generic [ref=f219e807]:
+                      - heading [level=3] [ref=f219e808]:
+                        - button "September • 2026 This Month" [expanded] [ref=f219e809] [cursor=pointer]:
+                          - generic [ref=f219e814]: September • 2026
+                          - generic [ref=f219e815]: This Month
+                      - list [ref=f219e817]:
+                        - listitem [ref=f219e818]:
+                          - generic [ref=f219e820]:
+                            - 'button "Show details for Approval Needed: Cancellation/Refund CN-00004" [ref=f219e823] [cursor=pointer]':
+                              - 'generic "Details for Approval Needed: Cancellation/Refund CN-00004" [ref=f219e824]': Details for
+                            - generic [ref=f219e831]:
+                              - img "Email" [ref=f219e836]
+                              - generic [ref=f219e837]:
+                                - generic [ref=f219e838]:
+                                  - 'link "Approval Needed: Cancellation/Refund CN-00004" [ref=f219e844] [cursor=pointer]':
+                                    - /url: /lightning/r/02sFV005dHCgZfoYQF/view
+                                  - generic [ref=f219e846]:
+                                    - generic [ref=f219e847]: 1:48 PM | Today
+                                    - 'button "Show more actions - Approval Needed: Cancellation/Refund CN-00004" [ref=f219e850] [cursor=pointer]'
+                                - generic [ref=f219e858]:
+                                  - link "emea-delivery-operations@arcsen.com" [ref=f219e859] [cursor=pointer]:
+                                    - /url: mailto:emea-delivery-operations@arcsen.com
+                                  - text: sent an email to
+                                  - link "alfardan.qa.showroommanager@yopmail.com" [ref=f219e860] [cursor=pointer]:
+                                    - /url: mailto:alfardan.qa.showroommanager@yopmail.com
+                    - status [ref=f219e861]: No more past activities to load.
+                    - link "Skip to the top of the activity timeline" [ref=f219e862] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

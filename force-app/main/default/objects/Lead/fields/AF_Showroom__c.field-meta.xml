@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_Showroom__c</fullName>
+    <description>Walk-in showroom context. Dependent on AF_BusinessUnit__c. Only showroom names confirmed in the LLD are populated (Alsadd, Lusail Boulevard under Alfardan Automobiles); Premier Motors and Sports Motors names are an open item pending customer confirmation.</description>
+    <label>Showroom</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>AF_BusinessUnit__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alsadd</fullName>
+                <default>false</default>
+                <label>Alsadd</label>
+            </value>
+            <value>
+                <fullName>Lusail Boulevard</fullName>
+                <default>false</default>
+                <label>Lusail Boulevard</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Alfardan Automobiles</controllingFieldValue>
+            <valueName>Alsadd</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alfardan Automobiles</controllingFieldValue>
+            <valueName>Lusail Boulevard</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

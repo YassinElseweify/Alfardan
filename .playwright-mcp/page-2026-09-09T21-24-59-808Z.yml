@@ -1,0 +1,303 @@
+- generic:
+  - generic:
+    - generic [ref=f173e2]:
+      - generic [ref=f173e3]:
+        - link "Skip to Navigation" [ref=f173e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f173e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f173e255]:
+          - generic [ref=f173e256]: "Sandbox: QA |"
+          - link "Log out" [ref=f173e257] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f173e6]:
+          - button "Search" [ref=f173e13]: Search...
+          - navigation "Global Header" [ref=f173e18]:
+            - list [ref=f173e259]:
+              - listitem [ref=f173e260]:
+                - group [ref=f173e261]:
+                  - button "This item doesn't support favorites" [ref=f173e263] [cursor=pointer]:
+                    - generic [ref=f173e264]:
+                      - tooltip "This item doesn't support favorites"
+                  - button [ref=f173e272] [cursor=pointer]:
+                    - generic [ref=f173e273]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f173e280]:
+                - button [ref=f173e286] [cursor=pointer]:
+                  - generic [ref=f173e287]:
+                    - tooltip "Global Actions"
+              - listitem [ref=f173e294]:
+                - button [ref=f173e296] [cursor=pointer]:
+                  - generic [ref=f173e297]:
+                    - tooltip "Guidance Center"
+              - listitem [ref=f173e304]:
+                - button [ref=f173e307] [cursor=pointer]:
+                  - generic [ref=f173e308]:
+                    - tooltip "Salesforce Help"
+              - listitem [ref=f173e315]:
+                - button [ref=f173e321] [cursor=pointer]:
+                  - generic [ref=f173e322]:
+                    - tooltip "Setup"
+              - listitem [ref=f173e329]:
+                - button "7 Notifications" [ref=f173e332] [cursor=pointer]:
+                  - generic [ref=f173e333]:
+                    - generic [ref=f173e334]: "7"
+                    - tooltip "Notifications"
+                - generic [ref=f173e343]: 7 new notifications
+              - listitem [ref=f173e344]:
+                - button "View profile" [ref=f173e347] [cursor=pointer]:
+                  - generic [ref=f173e348]:
+                    - tooltip "View profile"
+      - generic [ref=f173e24]:
+        - generic [ref=f173e27]:
+          - generic [ref=f173e29]:
+            - navigation "App" [ref=f173e30]:
+              - button "App Launcher" [expanded] [ref=f173e32] [cursor=pointer]
+            - heading "Sales" [level=1] [ref=f173e44]
+          - navigation "Global" [ref=f173e48]:
+            - list [ref=f173e49]:
+              - listitem [ref=f173e50] [cursor=pointer]:
+                - link "Home" [ref=f173e51]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f173e53]:
+                - link "Analytics" [ref=f173e54] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+              - listitem [ref=f173e56]:
+                - link "Opportunities" [ref=f173e57] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                - button "Opportunities List" [ref=f173e62] [cursor=pointer]
+              - listitem [ref=f173e70]:
+                - link "Quotes" [ref=f173e71] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                - button "Quotes List" [ref=f173e76] [cursor=pointer]
+              - listitem [ref=f173e84]:
+                - link "Leads" [ref=f173e85] [cursor=pointer]:
+                  - /url: /lightning/o/Lead/home
+                - button "Leads List" [ref=f173e90] [cursor=pointer]
+              - listitem [ref=f173e98]:
+                - link "Tasks" [ref=f173e99] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                - button "Tasks List" [ref=f173e104] [cursor=pointer]
+              - listitem [ref=f173e112]:
+                - link "Files" [ref=f173e113] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                - button "Files List" [ref=f173e118] [cursor=pointer]
+              - listitem [ref=f173e126]:
+                - link "Accounts" [ref=f173e127] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f173e132] [cursor=pointer]
+              - listitem [ref=f173e140]:
+                - link "Contacts" [ref=f173e141] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f173e146] [cursor=pointer]
+              - listitem [ref=f173e154]:
+                - link "Campaigns" [ref=f173e155] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                - button "Campaigns List" [ref=f173e160] [cursor=pointer]
+              - listitem [ref=f173e168]:
+                - link "Dashboards" [ref=f173e169] [cursor=pointer]:
+                  - /url: /lightning/o/Dashboard/home
+                - button "Dashboards List" [ref=f173e174] [cursor=pointer]
+              - listitem [ref=f173e182]:
+                - link "Reports" [ref=f173e183] [cursor=pointer]:
+                  - /url: /lightning/o/Report/home
+                - button "Reports List" [ref=f173e188] [cursor=pointer]
+              - listitem [ref=f173e196]:
+                - link "Chatter" [ref=f173e197] [cursor=pointer]:
+                  - /url: /lightning/page/chatter
+              - listitem [ref=f173e199]:
+                - link "Groups" [ref=f173e200] [cursor=pointer]:
+                  - /url: /lightning/o/CollaborationGroup/home
+                - button "Groups List" [ref=f173e205] [cursor=pointer]
+              - listitem [ref=f173e213]:
+                - button "* Show more navigation items" [ref=f173e352] [cursor=pointer]:
+                  - generic "Not added to nav bar" [ref=f173e353]: "*"
+                  - generic [aria-hidden] [ref=f173e216]: More
+                  - generic [ref=f173e223]: Show more navigation items
+              - listitem [ref=f173e224]:
+                - button "Edit nav items" [ref=f173e226] [cursor=pointer]
+        - main [ref=f173e233]:
+          - generic [ref=f173e357]:
+            - heading "Home" [level=1] [ref=f173e358]
+            - article [ref=f173e360]:
+              - heading "Seller HomeGood morning, Sales. Let's get selling!" [level=1] [ref=f173e361]
+            - generic [ref=f173e362]:
+              - article [ref=f173e365]:
+                - heading "Close Deals" [level=2] [ref=f173e369]
+                - generic [ref=f173e370]:
+                  - generic [ref=f173e371]: Opportunities owned by me and closing this quarter
+                  - generic [ref=f173e372]:
+                    - generic [ref=f173e375]:
+                      - generic [ref=f173e376]: Donut chart with accompanying data table, Total Pipeline
+                      - generic [ref=f173e380]:
+                        - generic [ref=f173e381]: ‏٨٧٦ ألف ر.ق.‏
+                        - generic [ref=f173e382]: Total Pipeline
+                    - generic [ref=f173e384]:
+                      - generic [ref=f173e385]: ‏٨٧٦ ألف ر.ق.‏ Open
+                      - generic [ref=f173e391]: ‏٠ ر.ق.‏ Won
+                      - generic [ref=f173e397]: ‏٠ ر.ق.‏ Lost
+                - button "View Opportunities (opens in new tab)" [ref=f173e404] [cursor=pointer]: View Opportunities
+              - article [ref=f173e407]:
+                - heading "Plan My Accounts" [level=2] [ref=f173e411]
+                - generic [ref=f173e412]:
+                  - generic [ref=f173e413]: Accounts owned by me
+                  - generic [ref=f173e414]:
+                    - generic [ref=f173e417]:
+                      - generic [ref=f173e418]: Donut chart with accompanying data table, Accounts
+                      - generic [ref=f173e422]:
+                        - generic [ref=f173e423]: ٠
+                        - generic [ref=f173e424]: Accounts
+                    - generic [ref=f173e426]:
+                      - generic [ref=f173e427]: ٠ Upcoming Activity
+                      - generic [ref=f173e433]: ٠ Past Activity
+                      - generic [ref=f173e439]: ٠ No Activity
+                - button "View Accounts (opens in new tab)" [ref=f173e446] [cursor=pointer]: View Accounts
+              - article [ref=f173e449]:
+                - heading "Grow Relationships" [level=2] [ref=f173e453]
+                - generic [ref=f173e454]:
+                  - generic [ref=f173e455]: Contacts owned by me and created in the last 90 days
+                  - generic [ref=f173e456]:
+                    - generic [ref=f173e459]:
+                      - generic [ref=f173e460]: Donut chart with accompanying data table, Contacts
+                      - generic [ref=f173e464]:
+                        - generic [ref=f173e465]: ٠
+                        - generic [ref=f173e466]: Contacts
+                    - generic [ref=f173e468]:
+                      - generic [ref=f173e469]: ٠ Upcoming Activity
+                      - generic [ref=f173e475]: ٠ Past Activity
+                      - generic [ref=f173e481]: ٠ No Activity
+                - button "View Contacts (opens in new tab)" [ref=f173e488] [cursor=pointer]: View Contacts
+              - article [ref=f173e491]:
+                - heading "Build Pipeline" [level=2] [ref=f173e495]
+                - generic [ref=f173e496]:
+                  - generic [ref=f173e497]: Leads owned by me and created in the last 30 days
+                  - generic [ref=f173e498]:
+                    - generic [ref=f173e501]:
+                      - generic [ref=f173e502]: Donut chart with accompanying data table, Leads
+                      - generic [ref=f173e506]:
+                        - generic [ref=f173e507]: ٠
+                        - generic [ref=f173e508]: Leads
+                    - generic [ref=f173e510]:
+                      - generic [ref=f173e511]: ٠ Upcoming Activity
+                      - generic [ref=f173e517]: ٠ Past Activity
+                      - generic [ref=f173e523]: ٠ No Activity
+                - button "View Leads (opens in new tab)" [ref=f173e530] [cursor=pointer]: View Leads
+              - generic [ref=f173e533]:
+                - article [ref=f173e536]:
+                  - generic [ref=f173e539]:
+                    - heading "My Goals" [level=2] [ref=f173e540]
+                    - button "Edit my goals" [ref=f173e543] [cursor=pointer]
+                  - generic [ref=f173e548]:
+                    - generic [ref=f173e549]: Set personal weekly or monthly goals for emails, calls, and meetings.
+                    - button "Set goals" [ref=f173e551] [cursor=pointer]
+                - article [ref=f173e554]:
+                  - heading "Set Goals" [level=2] [ref=f173e558]
+                  - generic [ref=f173e560]:
+                    - generic [ref=f173e561]:
+                      - generic [ref=f173e562]: Forecast Commit
+                      - generic [ref=f173e563]: If your Salesforce admin has added a quota, you see your progress against that quota compared to your commit, including adjustments.
+                    - generic [ref=f173e564]:
+                      - generic [ref=f173e568]:
+                        - generic [ref=f173e569]: Meetings
+                        - spinbutton "Meetings" [disabled] [ref=f173e571]
+                      - generic [ref=f173e575]:
+                        - generic [ref=f173e576]: Calls
+                        - spinbutton "Calls" [disabled] [ref=f173e578]
+                      - generic [ref=f173e582]:
+                        - generic [ref=f173e583]: Emails
+                        - spinbutton "Emails" [disabled] [ref=f173e585]
+                      - generic [ref=f173e588]:
+                        - generic [ref=f173e589]: Time Frame
+                        - combobox "Time Frame" [disabled] [ref=f173e595]:
+                          - generic [ref=f173e596]: Monthly
+                        - status
+                    - generic [ref=f173e603]:
+                      - generic:
+                        - button "Cancel" [disabled]
+                      - generic:
+                        - button "Save" [disabled]
+              - article [ref=f173e606]:
+                - heading "Today's Events" [level=2] [ref=f173e610]
+                - generic [ref=f173e612]: Looks like you're free and clear the rest of the day.
+                - button "View Calendar" [ref=f173e619] [cursor=pointer]
+              - article [ref=f173e622]:
+                - generic [ref=f173e623]:
+                  - heading "Today’s Tasks" [level=2] [ref=f173e626]
+                  - button "Select a view of your tasks" [ref=f173e630] [cursor=pointer]
+                - list [ref=f173e639]:
+                  - listitem [ref=f173e640]:
+                    - generic [ref=f173e641]:
+                      - generic [ref=f173e645]:
+                        - checkbox "Complete Trade-In Appraisal Follow-Up" [ref=f173e646] [cursor=pointer]
+                        - generic [ref=f173e648]: Complete Trade-In Appraisal Follow-Up
+                      - generic [ref=f173e649]:
+                        - generic [ref=f173e650]: Today
+                        - generic [ref=f173e653]:
+                          - generic [ref=f173e655]:
+                            - generic [ref=f173e656]: Complete Trade-In Appraisal Follow-Up
+                            - link "Complete Trade-In Appraisal Follow-Up" [ref=f173e658] [cursor=pointer]:
+                              - /url: /lightning/r/00TFV00EdeStEHE2E3/view
+                          - list [ref=f173e659]:
+                            - listitem [ref=f173e660]:
+                              - link "APL-000000060" [ref=f173e662] [cursor=pointer]:
+                                - /url: /lightning/r/9ALFV0000ikmCqe4AE/view
+                - button "View All Tasks" [ref=f173e664] [cursor=pointer]: View All
+              - article [ref=f173e667]:
+                - heading "Recent Records" [level=2] [ref=f173e671]
+                - list [ref=f173e674]:
+                  - listitem [ref=f173e675]:
+                    - link "Test Demo 2 - Rolls-Royce" [ref=f173e683] [cursor=pointer]:
+                      - /url: /lightning/r/006FV00ABujcvkyYMA/view
+                  - listitem [ref=f173e684]:
+                    - link "Sales Manager" [ref=f173e692] [cursor=pointer]:
+                      - /url: /lightning/r/005a3001tN3B1SeAQK/view
+                  - listitem [ref=f173e693]:
+                    - link "QA test RS-05 AddProducts NoBrand" [ref=f173e701] [cursor=pointer]:
+                      - /url: /lightning/r/006FV00AcSfrSrsYUE/view
+              - article [ref=f173e704]:
+                - heading "Salesblazer" [level=2] [ref=f173e708]
+                - generic [ref=f173e709]:
+                  - heading [level=3] [ref=f173e710]:
+                    - link "How Salesforce Migrated 30,000+ Sellers to Spiff, a Single Comp Management Tool (Link opens in new window)" [ref=f173e713] [cursor=pointer]:
+                      - /url: /HelpAndTrainingDoor?version=2&resource=https%3A%2F%2Fwww.salesforce.com%2Fblog%2Fsales%2Fsalesforce-spiff-migration%2F
+                      - generic [ref=f173e715]:
+                        - text: How Salesforce Migrated 30,000+ Sellers to Spiff, a Single Comp Management Tool
+                        - generic [ref=f173e716]: (Link opens in new window)
+                  - generic [ref=f173e723]: A methodical, six-step approach with broad buy-in and phased rollout ensured success.
+                  - paragraph [ref=f173e724]: 9 minute read
+                - button "Join the Community (Link opens in new window)" [ref=f173e726] [cursor=pointer]:
+                  - text: Join the Community
+                  - generic [ref=f173e727]: (Link opens in new window)
+      - generic:
+        - contentinfo "Utility Bar":
+          - list [ref=f173e240]:
+            - listitem [ref=f173e241]:
+              - button "To Do List" [ref=f173e244] [cursor=pointer]
+    - dialog [ref=f173e734]:
+      - generic [ref=f173e735]:
+        - generic [ref=f173e736]:
+          - heading "App Launcher" [level=2] [ref=f173e737]
+          - button "Close" [ref=f173e738] [cursor=pointer]
+        - generic [ref=f173e746]:
+          - generic [ref=f173e750]:
+            - generic [ref=f173e751]: Search apps and items...
+            - combobox "Search apps and items..." [expanded] [active] [ref=f173e753]
+          - heading "Apps" [level=3] [ref=f173e758]
+          - listbox "Apps" [ref=f173e759]:
+            - option [ref=f173e761] [cursor=pointer]:
+              - paragraph [ref=f173e767]: Service
+            - option [ref=f173e769] [cursor=pointer]:
+              - paragraph [ref=f173e775]: Marketing CRM Classic
+            - option [ref=f173e777] [cursor=pointer]:
+              - paragraph [ref=f173e783]: Salesforce Chatter
+            - option [ref=f173e785] [cursor=pointer]:
+              - paragraph [ref=f173e791]: Digital Experiences
+            - option [ref=f173e793] [cursor=pointer]:
+              - paragraph [ref=f173e799]: Your Account
+            - option [ref=f173e801] [cursor=pointer]:
+              - paragraph [ref=f173e807]: Sales
+            - option [ref=f173e809] [cursor=pointer]:
+              - paragraph [ref=f173e815]: Service Console for Automotive
+          - button "View All Applications" [ref=f173e817] [cursor=pointer]: View All
+  - generic:
+    - status

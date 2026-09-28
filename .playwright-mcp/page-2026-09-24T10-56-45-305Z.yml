@@ -1,0 +1,142 @@
+- generic [active]:
+  - generic [ref=f187e2]:
+    - generic [ref=f187e3]:
+      - link "Skip to Navigation" [ref=f187e494] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f187e495] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f187e195]:
+        - generic [ref=f187e196]: "Sandbox: QA |"
+        - link "Log out" [ref=f187e496] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f187e6]:
+        - button "Search" [ref=f187e497]: Search...
+        - navigation "Global Header" [ref=f187e498]:
+          - list [ref=f187e199]:
+            - listitem [ref=f187e200]:
+              - group [ref=f187e201]:
+                - button "Add favorite" [ref=f187e499] [cursor=pointer]:
+                  - generic [ref=f187e204]:
+                    - tooltip "Add favorite"
+                - button [ref=f187e500] [cursor=pointer]:
+                  - generic [ref=f187e213]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f187e220]:
+              - button [ref=f187e501] [cursor=pointer]:
+                - generic [ref=f187e227]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f187e234]:
+              - button [ref=f187e502] [cursor=pointer]:
+                - generic [ref=f187e237]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f187e244]:
+              - button [ref=f187e503] [cursor=pointer]:
+                - generic [ref=f187e248]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f187e255]:
+              - button "5 Notifications" [ref=f187e504] [cursor=pointer]:
+                - generic [ref=f187e259]:
+                  - generic [ref=f187e260]: "5"
+                  - tooltip "Notifications"
+              - generic [ref=f187e269]: 5 new notifications
+            - listitem [ref=f187e270]:
+              - button "View profile" [ref=f187e505] [cursor=pointer]:
+                - generic [ref=f187e274]:
+                  - tooltip "View profile"
+    - generic [ref=f187e24]:
+      - generic [ref=f187e27]:
+        - generic [ref=f187e29]:
+          - navigation "App" [ref=f187e506]:
+            - button "App Launcher" [ref=f187e507] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f187e508]
+        - navigation "Global" [ref=f187e510]:
+          - list [ref=f187e49]:
+            - listitem [ref=f187e50]:
+              - link "Home" [ref=f187e511] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f187e53]:
+              - link "Vehicles" [ref=f187e512] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f187e513] [cursor=pointer]
+            - listitem [ref=f187e67]:
+              - link "Assets" [ref=f187e514] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f187e515] [cursor=pointer]
+            - listitem [ref=f187e81]:
+              - link "Vehicle Definitions" [ref=f187e516] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f187e517] [cursor=pointer]
+            - listitem [ref=f187e95]:
+              - link "Products" [ref=f187e518] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f187e519] [cursor=pointer]
+            - listitem [ref=f187e109]:
+              - link "Accounts" [ref=f187e520] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f187e521] [cursor=pointer]
+            - listitem [ref=f187e123]:
+              - link "Contacts" [ref=f187e522] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f187e523] [cursor=pointer]
+            - listitem [ref=f187e278]:
+              - link "* DEMO RS13 02 - Fully paid order, cancellation rejected then resubmitted Approval" [ref=f187e524] [cursor=pointer]:
+                - /url: /lightning/r/ProcessInstanceWorkitem/04iFV001KstmyUyYII/view
+                - generic "Not added to nav bar" [ref=f187e525]: "*"
+                - generic [ref=f187e281]: DEMO RS13 02 - Fully paid order, cancellation rejected then resubmitted Approval
+              - button "DEMO RS13 02 - Fully paid order, cancellation rejected then resubmitted Approval List" [ref=f187e526] [cursor=pointer]
+              - button "Close tab" [ref=f187e527] [cursor=pointer]
+            - listitem [ref=f187e165]:
+              - button "Show more navigation items" [ref=f187e528] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f187e168]: More
+            - listitem [ref=f187e176]:
+              - button "Edit nav items" [ref=f187e529] [cursor=pointer]
+      - main [ref=f187e185]:
+        - generic [ref=f187e533]:
+          - generic "Highlights panel header" [ref=f187e536]:
+            - generic [ref=f187e537]:
+              - generic [ref=f187e538]:
+                - heading "Process Instance Step Rejected" [level=1] [ref=f187e544]:
+                  - generic [ref=f187e545]: Process Instance Step
+                  - generic "Rejected" [ref=f187e546]
+                - group [ref=f187e548]
+              - generic [ref=f187e549]:
+                - generic "Submitter" [ref=f187e550]
+                - generic [ref=f187e551]: QA SalesRep2
+              - generic [ref=f187e553]:
+                - generic "Date Submitted" [ref=f187e554]
+                - generic [ref=f187e555]: 24 Sep 2026
+              - generic [ref=f187e557]:
+                - generic "Actual Approver" [ref=f187e558]
+                - generic [ref=f187e559]: QA SalesBrandManager2
+              - generic [ref=f187e561]:
+                - generic "Assigned To" [ref=f187e562]
+                - generic [ref=f187e563]: QA ShowroomManager2
+          - generic [ref=f187e566]:
+            - generic [ref=f187e568]:
+              - heading "Tabs" [level=2] [ref=f187e569]
+              - generic [ref=f187e570]:
+                - tablist [ref=f187e571]:
+                  - tab "Details" [selected] [ref=f187e572] [cursor=pointer]
+                - tabpanel [ref=f187e574]:
+                  - generic [ref=f187e576]:
+                    - article:
+                      - heading "Details" [level=2] [ref=f187e619]
+            - article [ref=f187e622]:
+              - heading "Approver Comments" [level=2] [ref=f187e626]
+              - list [ref=f187e630]:
+                - listitem [ref=f187e631]:
+                  - article [ref=f187e632]:
+                    - link "QA SalesBrandManager2" [ref=f187e634] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                      - generic:
+                        - img "QA SalesBrandManager2"
+                    - generic [ref=f187e635]:
+                      - link "QA SalesBrandManager2" [ref=f187e637] [cursor=pointer]:
+                        - /url: /lightning/r/005FV0082KfaG8iYQE/view
+                      - generic [ref=f187e638]: QA RS13 02 rejected - dispute resolved with customer
+                      - list [ref=f187e640]:
+                        - listitem [ref=f187e641]:
+                          - generic [ref=f187e642]: 24 Sep 2026, 1:56:41 PM
+  - generic:
+    - status

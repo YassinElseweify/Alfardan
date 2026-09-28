@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_RequiredDocumentsComplete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>ALF-RS-08 FR13: derived, not rep-editable. AF_RequiredDocumentService.recomputeCompleteness() sets this from the reservation&apos;s own AF_RequiredDocument__c child rows (seeded per AF_RequiredDocumentType__mdt: Quotation, Payment Receipt where deposit, Customer ID, Approval Reference, Vehicle Stock/VIN, Trade-In Appraisal where applicable) - true only once every seeded row is Linked or Waived. AF_VR_RequiredDocumentsNotManuallySet blocks a direct edit to this field outside that recompute.</description>
+    <label>Required Documents Complete?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

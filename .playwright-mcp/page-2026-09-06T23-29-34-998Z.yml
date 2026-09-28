@@ -1,0 +1,384 @@
+- generic:
+  - generic:
+    - generic [ref=f163e2]:
+      - generic [ref=f163e3]:
+        - link [ref=f163e969] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Navigation
+        - link [ref=f163e970] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Main Content
+        - generic [ref=f163e25]:
+          - generic [ref=f163e26]: "Sandbox: QA |"
+          - link [ref=f163e971] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+            - text: Log out
+        - generic [ref=f163e6]:
+          - button [ref=f163e972]: Search...
+          - navigation [ref=f163e973]:
+            - list [ref=f163e37]:
+              - listitem [ref=f163e38]:
+                - group [ref=f163e39]:
+                  - button [ref=f163e974] [cursor=pointer]
+                  - button [ref=f163e975] [cursor=pointer]
+              - listitem [ref=f163e58]:
+                - button [ref=f163e976] [cursor=pointer]
+              - listitem [ref=f163e72]:
+                - button [ref=f163e977] [cursor=pointer]
+              - listitem [ref=f163e82]:
+                - button [ref=f163e978] [cursor=pointer]
+              - listitem [ref=f163e93]:
+                - button [ref=f163e979] [cursor=pointer]
+              - listitem [ref=f163e107]:
+                - button [ref=f163e980] [cursor=pointer]:
+                  - generic [ref=f163e111]: "6"
+                - generic [ref=f163e121]: 6 new notifications
+              - listitem [ref=f163e122]:
+                - button [ref=f163e981] [cursor=pointer]
+      - generic [ref=f163e15]:
+        - generic [ref=f163e132]:
+          - generic [ref=f163e134]:
+            - navigation [ref=f163e982]:
+              - button [ref=f163e983] [cursor=pointer]:
+                - generic [ref=f163e138]: App Launcher
+            - heading [level=1] [ref=f163e984]:
+              - generic [ref=f163e985]: Sales
+          - navigation [ref=f163e986]:
+            - list [ref=f163e154]:
+              - listitem [ref=f163e155]:
+                - link [ref=f163e987] [cursor=pointer]:
+                  - /url: /lightning/page/home
+                  - generic [ref=f163e157]: Home
+              - listitem [ref=f163e158]:
+                - link [ref=f163e988] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+                  - generic [ref=f163e160]: Analytics
+              - listitem [ref=f163e161] [cursor=pointer]:
+                - link [ref=f163e989]:
+                  - /url: /lightning/o/Opportunity/home
+                  - generic [ref=f163e163]: Opportunities
+                - button [ref=f163e990]:
+                  - generic [ref=f163e174]: Opportunities List
+              - listitem [ref=f163e175]:
+                - link [ref=f163e991] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                  - generic [ref=f163e177]: Quotes
+                - button [ref=f163e992] [cursor=pointer]:
+                  - generic [ref=f163e188]: Quotes List
+              - listitem [ref=f163e189]:
+                - link [ref=f163e993] [cursor=pointer]:
+                  - /url: /lightning/o/Lead/home
+                  - generic [ref=f163e191]: Leads
+                - button [ref=f163e994] [cursor=pointer]:
+                  - generic [ref=f163e202]: Leads List
+              - listitem [ref=f163e203]:
+                - link [ref=f163e995] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                  - generic [ref=f163e205]: Tasks
+                - button [ref=f163e996] [cursor=pointer]:
+                  - generic [ref=f163e216]: Tasks List
+              - listitem [ref=f163e217]:
+                - button [ref=f163e997] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f163e220]: More
+                  - generic [ref=f163e227]: Show more navigation items
+              - listitem [ref=f163e228]:
+                - button [ref=f163e998] [cursor=pointer]:
+                  - generic [ref=f163e235]: Edit nav items
+        - main [ref=f163e17]:
+          - generic [ref=f163e247]:
+            - generic [ref=f163e257]:
+              - generic [ref=f163e263]:
+                - generic [ref=f163e264]: Opportunity
+                - heading [level=1] [ref=f163e999]:
+                  - generic [ref=f163e267]: Test Demo 2 - Rolls-Royce
+              - button [ref=f163e1000] [cursor=pointer]:
+                - generic [ref=f163e273]: Follow
+              - generic [ref=f163e282]:
+                - button [ref=f163e1002] [cursor=pointer]: Add Products
+                - button [ref=f163e1004] [cursor=pointer]: New Case
+                - button [ref=f163e1006] [cursor=pointer]: New Note
+                - button [ref=f163e1007] [cursor=pointer]:
+                  - generic [ref=f163e307]: Show more actions
+            - article [ref=f163e381]:
+              - generic [ref=f163e382]:
+                - heading [level=2] [ref=f163e1008]: Path
+                - generic [ref=f163e386]:
+                  - listbox [ref=f163e1009]:
+                    - option [ref=f163e1010] [cursor=pointer]:
+                      - generic [ref=f163e393]: stage complete
+                      - generic [ref=f163e401]: Consider
+                    - option [selected] [ref=f163e1011] [cursor=pointer]:
+                      - generic [ref=f163e403]: Explore
+                    - option [ref=f163e1012] [cursor=pointer]:
+                      - generic [ref=f163e405]: Select
+                    - option [ref=f163e1013] [cursor=pointer]:
+                      - generic [ref=f163e407]: Commit
+                    - option [ref=f163e1014] [cursor=pointer]:
+                      - generic [ref=f163e409]: Take the Keys
+                    - option [ref=f163e1015] [cursor=pointer]:
+                      - generic [ref=f163e411]: Closed
+                  - button [ref=f163e1016] [cursor=pointer]:
+                    - generic [ref=f163e421]: Mark Stage as Complete
+            - generic [ref=f163e422]:
+              - generic [ref=f163e430]:
+                - heading [level=2] [ref=f163e1017]: Tabs
+                - tablist [ref=f163e1018]:
+                  - tab [selected] [ref=f163e1019] [cursor=pointer]: Activity
+                  - tab [ref=f163e1020] [cursor=pointer]: Details
+                  - tab [ref=f163e1021] [cursor=pointer]: Chatter
+                - tabpanel [ref=f163e1022]:
+                  - generic [ref=f163e445]:
+                    - heading [level=2] [ref=f163e1023]: Activity Publisher
+                    - generic [ref=f163e447]:
+                      - group [ref=f163e448]:
+                        - generic [ref=f163e450]:
+                          - button [ref=f163e1024] [cursor=pointer]:
+                            - generic [ref=f163e452]: New Task
+                            - generic [ref=f163e459]: New Task
+                          - generic [ref=f163e460]:
+                            - button [disabled]:
+                              - generic: No Additional New Task Actions
+                      - group [ref=f163e461]:
+                        - generic [ref=f163e463]:
+                          - button [ref=f163e1025] [cursor=pointer]:
+                            - generic [ref=f163e465]: Log a Call
+                            - generic [ref=f163e472]: Log a Call
+                          - button [ref=f163e1026] [cursor=pointer]:
+                            - generic [ref=f163e479]: More Log a Call Actions
+                      - group [ref=f163e480]:
+                        - generic [ref=f163e482]:
+                          - button [ref=f163e1027] [cursor=pointer]:
+                            - generic [ref=f163e484]: New Event
+                            - generic [ref=f163e491]: New Event
+                          - button [ref=f163e1028] [cursor=pointer]:
+                            - generic [ref=f163e498]: More New Event Actions
+                    - heading [level=2] [ref=f163e1029]: Activity Timeline
+                    - generic [ref=f163e501]:
+                      - link [ref=f163e1030] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                        - text: Skip to the bottom of the activity timeline
+                      - generic [ref=f163e504]:
+                        - generic [ref=f163e505]: "Filters: All time • All activities • All types"
+                        - button [ref=f163e1031] [cursor=pointer]:
+                          - generic [ref=f163e512]: Timeline Settings
+                      - generic [ref=f163e515]:
+                        - button [ref=f163e1032] [cursor=pointer]: Refresh
+                        - text: •
+                        - button [ref=f163e1033] [cursor=pointer]: Expand All
+                        - text: •
+                        - button [ref=f163e1034] [cursor=pointer]: View All
+                      - generic [ref=f163e520]:
+                        - heading [level=3] [ref=f163e1035]:
+                          - button [expanded] [ref=f163e1036] [cursor=pointer]: Upcoming & Overdue
+                        - list [ref=f163e529]:
+                          - listitem [ref=f163e530]:
+                            - generic [ref=f163e532]:
+                              - button [ref=f163e1037] [cursor=pointer]:
+                                - generic [ref=f163e1038]: Details for
+                              - generic [ref=f163e549]:
+                                - generic [ref=f163e550]:
+                                  - generic [ref=f163e552]:
+                                    - generic [ref=f163e556]:
+                                      - checkbox [ref=f163e1040] [cursor=pointer]
+                                      - generic [ref=f163e559]: Opportunity Assigned to You
+                                    - link [ref=f163e1041] [cursor=pointer]:
+                                      - /url: /lightning/r/00TFV00DcWNfkCa2UJ/view
+                                      - text: Opportunity Assigned to You
+                                  - generic [ref=f163e565]:
+                                    - generic [ref=f163e566]:
+                                      - text: 30/08
+                                      - generic [ref=f163e567]: Overdue
+                                    - button [ref=f163e1042] [cursor=pointer]:
+                                      - generic [ref=f163e570]: Show more actions - Opportunity Assigned to You
+                                - generic [ref=f163e577]:
+                                  - link [ref=f163e1043] [cursor=pointer]:
+                                    - /url: /lightning/r/005a3001tN36pJcAQI/view
+                                    - text: Sales Representative
+                                  - text: has an upcoming task
+                      - status [ref=f163e581]:
+                        - generic [ref=f163e582]: No past activity. Past meetings and tasks marked as done show up here.
+                      - link [ref=f163e1044] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                        - text: Skip to the top of the activity timeline
+              - generic [ref=f163e592]:
+                - heading [level=2] [ref=f163e1045]: Tabs
+                - tablist [ref=f163e1046]:
+                  - tab [selected] [ref=f163e1047] [cursor=pointer]: Related
+                - tabpanel [ref=f163e1048]:
+                  - generic [ref=f163e604]:
+                    - article [ref=f163e1049]:
+                      - generic [ref=f163e611]:
+                        - generic [ref=f163e612]:
+                          - generic [ref=f163e615]:
+                            - heading [level=2] [ref=f163e1050]:
+                              - link [ref=f163e1051] [cursor=pointer]:
+                                - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/Quotes/view
+                                - generic [ref=f163e1052]: Quotes
+                                - generic [ref=f163e1053]: (1)
+                            - button [ref=f163e1054] [cursor=pointer]:
+                              - generic [ref=f163e631]: Show actions for Quotes
+                          - article [ref=f163e1055]:
+                            - generic [ref=f163e649]:
+                              - heading [level=3] [ref=f163e1056]:
+                                - generic [ref=f163e657]:
+                                  - link [ref=f163e1057] [cursor=pointer]:
+                                    - /url: /lightning/r/0Q0FV0047NrNANQ0Q4/view
+                                    - generic [ref=f163e659]: "00000010"
+                                  - button [ref=f163e1058] [cursor=pointer]:
+                                    - generic [ref=f163e669]: Preview
+                              - generic [ref=f163e671]:
+                                - term [ref=f163e672]: "Quote Name:"
+                                - definition [ref=f163e673]:
+                                  - link [ref=f163e1059] [cursor=pointer]:
+                                    - /url: /lightning/r/0Q0FV0047NrNANQ0Q4/view
+                                    - generic [ref=f163e679]: QA test RS-04 Quote
+                                - term [ref=f163e680]: "Syncing:"
+                                - definition [ref=f163e681]:
+                                  - generic [ref=f163e686]:
+                                    - generic [ref=f163e1060]: "False"
+                                    - generic [ref=f163e694]: Syncing
+                                - term [ref=f163e695]: "Expiration Date:"
+                            - button [ref=f163e1061] [cursor=pointer]:
+                              - generic [ref=f163e705]: Show Actions
+                        - link [ref=f163e1062] [cursor=pointer]:
+                          - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/Quotes/view
+                          - generic [ref=f163e707]:
+                            - text: View All
+                            - generic [ref=f163e708]: Quotes
+                    - article [ref=f163e1063]:
+                      - generic [ref=f163e717]:
+                        - heading [level=2] [ref=f163e1064]:
+                          - link [ref=f163e1065] [cursor=pointer]:
+                            - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/ProcessSteps/view
+                            - generic [ref=f163e1066]: Approval History
+                            - generic [ref=f163e1067]: (0)
+                        - button [ref=f163e1068] [cursor=pointer]:
+                          - generic [ref=f163e731]: Show actions for Approval History
+                    - article [ref=f163e1069]:
+                      - generic [ref=f163e837]:
+                        - heading [level=2] [ref=f163e1070]:
+                          - link [ref=f163e1071] [cursor=pointer]:
+                            - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/Appraisals/view
+                            - generic [ref=f163e1072]: Trade Ins
+                            - generic [ref=f163e1073]: (0)
+                        - list [ref=f163e959]:
+                          - listitem [ref=f163e960]:
+                            - button [ref=f163e1074] [cursor=pointer]:
+                              - generic [ref=f163e1075]: Show more actions
+                    - article [ref=f163e1079]:
+                      - generic [ref=f163e865]:
+                        - heading [level=2] [ref=f163e1080]:
+                          - link [ref=f163e1081] [cursor=pointer]:
+                            - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/OpportunityLineItems/view
+                            - generic [ref=f163e1082]: Products
+                            - generic [ref=f163e1083]: (1)
+                        - button [ref=f163e1084] [cursor=pointer]:
+                          - generic [ref=f163e879]: Show actions for Products
+                      - list [ref=f163e891]:
+                        - listitem [ref=f163e892]:
+                          - article [ref=f163e893]:
+                            - generic [ref=f163e894]:
+                              - generic [ref=f163e895]:
+                                - heading [level=3] [ref=f163e1085]:
+                                  - link [ref=f163e1086] [cursor=pointer]:
+                                    - /url: /lightning/r/00kFV000rYO0Q5gYQF/view
+                                    - text: Ferrari Purosangue
+                                - button [ref=f163e1087] [cursor=pointer]:
+                                  - generic [ref=f163e901]: Show Actions
+                              - list [ref=f163e905]:
+                                - listitem [ref=f163e906]:
+                                  - generic [ref=f163e907]:
+                                    - generic [ref=f163e1088]: "Quantity:"
+                                    - generic [ref=f163e909]: ١٫٠٠
+                                - listitem [ref=f163e910]:
+                                  - generic [ref=f163e911]:
+                                    - generic [ref=f163e1089]: "Sales Price:"
+                                    - generic [ref=f163e913]: ٣٩٨٬٣٥٠٫٠٠ ر.ق.‏
+                                - listitem [ref=f163e914]:
+                                  - generic [ref=f163e915]: "Date:"
+                      - link [ref=f163e1091] [cursor=pointer]:
+                        - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/OpportunityLineItems/view
+                        - generic [ref=f163e920]:
+                          - text: View All
+                          - generic [ref=f163e921]: Products
+                    - article [ref=f163e1092]:
+                      - generic [ref=f163e936]:
+                        - heading [level=2] [ref=f163e1093]:
+                          - link [ref=f163e1094] [cursor=pointer]:
+                            - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/OpptyPreferredSellerOppty/view
+                            - generic [ref=f163e1095]: Preferred Seller
+                            - generic [ref=f163e1096]: (0)
+                        - button [ref=f163e1097] [cursor=pointer]:
+                          - generic [ref=f163e952]: Show actions for Preferred Seller
+                    - article [ref=f163e776]:
+                      - heading [level=2] [ref=f163e1098]: Contact Roles
+                    - article [ref=f163e787]:
+                      - heading [level=2] [ref=f163e1099]: Partners
+                    - article [ref=f163e798]:
+                      - heading [level=2] [ref=f163e1100]: Notes & Attachments
+                    - article [ref=f163e809]:
+                      - heading [level=2] [ref=f163e1101]: Stage History
+      - list [ref=f163e818]:
+        - listitem [ref=f163e819]:
+          - button [ref=f163e1102] [cursor=pointer]:
+            - generic [ref=f163e829]: To Do List
+    - dialog "New Trade In" [ref=f163e1104]:
+      - generic [ref=f163e1105]:
+        - button "Cancel and close" [ref=f163e1106] [cursor=pointer]
+        - generic [ref=f163e1112]:
+          - generic [ref=f163e1119]:
+            - heading "New Trade In" [level=2] [ref=f163e1121]
+            - generic [ref=f163e1123]:
+              - generic [ref=f163e1124]: "* = Required Information"
+              - generic [ref=f163e1126]:
+                - generic [ref=f163e1131]:
+                  - generic [ref=f163e1133]:
+                    - heading "Basic Information" [level=3] [ref=f163e1134]
+                    - list [ref=f163e1137]:
+                      - generic [ref=f163e1138]:
+                        - generic [ref=f163e1140]:
+                          - listitem [ref=f163e1142]:
+                            - button "Undo Purpose Type" [ref=f163e1296] [cursor=pointer]
+                            - generic [ref=f163e1149]:
+                              - generic [ref=f163e1150]: "*Purpose Type"
+                              - combobox "Purpose Type" [ref=f163e1156] [cursor=pointer]:
+                                - generic [ref=f163e1157]: Trade-In
+                              - status
+                          - listitem [ref=f163e1165]:
+                            - generic [ref=f163e1171]:
+                              - generic [ref=f163e1172]: "*Reference Record"
+                              - button "Reference Record Help Info" [ref=f163e1176] [cursor=pointer]
+                              - generic [ref=f163e1186]:
+                                - generic [ref=f163e1187]: Opportunity
+                                - combobox "Reference Record" [ref=f163e1196]: Test Demo 2 - Rolls-Royce
+                                - button "Clear Reference Record Selection" [ref=f163e1197] [cursor=pointer]
+                              - status
+                        - listitem [ref=f163e1207]:
+                          - generic [ref=f163e1208]:
+                            - generic [ref=f163e1209]: Owner Name
+                            - generic [ref=f163e1210]: Sales Manager
+                  - generic [ref=f163e1223]:
+                    - heading "Additional Information" [level=3] [ref=f163e1224]
+                    - list [ref=f163e1227]:
+                      - listitem [ref=f163e1232]:
+                        - generic [ref=f163e1239]:
+                          - generic [ref=f163e1240]: "*Usage Type"
+                          - generic [ref=f163e1245]:
+                            - combobox "Usage Type" [expanded] [active] [ref=f163e1246] [cursor=pointer]:
+                              - generic [ref=f163e1247]: "--None--"
+                            - listbox "Usage Type" [ref=f163e1301]:
+                              - option "--None--" [checked] [selected] [ref=f163e1302]
+                              - option "Automotive" [ref=f163e1311]
+                              - option "Manufacturing" [ref=f163e1313]
+                              - option "Lending" [ref=f163e1315]
+                          - status
+                - generic [ref=f163e1259]:
+                  - generic "Cancel" [ref=f163e1260]:
+                    - button "Cancel" [ref=f163e1265] [cursor=pointer]
+                  - generic "Save & New" [ref=f163e1266]:
+                    - button "Save & New" [ref=f163e1271] [cursor=pointer]
+                  - generic "Save" [ref=f163e1272]:
+                    - button "Save" [ref=f163e1277] [cursor=pointer]
+          - status [ref=f163e1278]
+  - generic:
+    - status

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_SOPaymentConfirmedBy__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LFRDN-662 FR4: the user who confirmed full payment collection at the Sales Order confirmation prompt. Populated in the same transaction as AF_SOStatus__c/AF_SOGeneratedDate__c, so the FR4 control is auditable after the fact rather than transient.</description>
+    <label>Sales Order Payment Confirmed By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Opportunities (Sales Order Payment Confirmed)</relationshipLabel>
+    <relationshipName>SOPaymentConfirmedOpportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

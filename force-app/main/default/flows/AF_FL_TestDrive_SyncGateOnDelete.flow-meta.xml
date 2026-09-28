@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Any_Incomplete</name>
+        <label>Any Incomplete Test Drives Remaining?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Clear_Gate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None Incomplete</defaultConnectorLabel>
+        <rules>
+            <name>Has_Incomplete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Incomplete_TestDrives</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Has Incomplete</label>
+        </rules>
+    </decisions>
+    <description>Companion to AF_FL_TestDrive_SyncOpportunityGate, which only handles Create/Update - deleting the last blocking Test Drive record left AF_TestDriveGateBlocked__c permanently stuck true (found during BRD acceptance-criteria audit, 2026-08-24). Re-evaluates remaining Test Drives on the Opportunity after a delete and clears the gate if none are left incomplete.</description>
+    <environments>Default</environments>
+    <interviewLabel>Test Drive Sync Gate On Delete {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Test Drive Sync Gate On Delete</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Incomplete_TestDrives</name>
+        <label>Get Incomplete Test Drives</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Any_Incomplete</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AF_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_StageGatePassed__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AF_TestDrive__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Clear_Gate</name>
+        <label>Clear Gate</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_TestDriveGateBlocked__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Incomplete_TestDrives</targetReference>
+        </connector>
+        <object>AF_TestDrive__c</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

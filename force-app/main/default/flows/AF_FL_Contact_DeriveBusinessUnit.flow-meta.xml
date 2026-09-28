@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Derives Contact.AF_BusinessUnit__c from AF_Brand__c via the single shared subflow, so Brand and Business Unit can never disagree. Fires after save on create, and on update whenever AF_Brand__c changes (before-save flows cannot call subflows on this platform), and writes the result back with one Update Records call, which does not re-enter this flow since the resulting DML is an Update that does not itself change AF_Brand__c.
+
+SCOPED to AF_Brand_Profile record type only: Related Person contacts let the agent set Business Unit manually (they don&apos;t have the same guaranteed 1:1 Brand-to-BU relationship a Brand Profile contact does), so this must not silently overwrite that.</description>
+    <environments>Default</environments>
+    <interviewLabel>AF Contact Derive Business Unit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact Derive Business Unit</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_BusinessUnit</name>
+        <label>Update Business Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>AF_BusinessUnit__c</field>
+            <value>
+                <elementReference>Call_DeriveBusinessUnit.AF_BusinessUnit</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_DeriveBusinessUnit</targetReference>
+        </connector>
+        <filterFormula>AND(
+    OR(ISNEW(), ISCHANGED({!$Record.AF_Brand__c})),
+    {!$Record.RecordType.DeveloperName} = &quot;AF_Brand_Profile&quot;
+)</filterFormula>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_DeriveBusinessUnit</name>
+        <label>Call Derive Business Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_BusinessUnit</targetReference>
+        </connector>
+        <flowName>AF_FL_Sub_DeriveBusinessUnit</flowName>
+        <inputAssignments>
+            <name>AF_Brand</name>
+            <value>
+                <elementReference>$Record.AF_Brand__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+</Flow>

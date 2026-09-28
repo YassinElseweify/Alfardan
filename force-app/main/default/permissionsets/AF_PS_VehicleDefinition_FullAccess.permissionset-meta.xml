@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Full CRUD/FLS for Vehicle Definition data-model fields (Data Dictionary V1.1.4).</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VehicleDefinition.AF_Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VehicleDefinition.AF_Brand__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Vehicle Definition Full Access</label>
+</PermissionSet>

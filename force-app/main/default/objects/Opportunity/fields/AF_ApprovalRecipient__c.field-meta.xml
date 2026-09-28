@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_ApprovalRecipient__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Set by AF_FL_Opp_RequestClosure at submission time to the Opportunity Owner&apos;s Manager. Exists purely so the AF_EA_Opp_ApprovalRequested Email Alert has a declarative way to reach a dynamically-resolved recipient (Owner&apos;s Manager isn&apos;t one of the native Email Alert recipient types) — the Flow only ever sets this field, the actual email send is handled natively by the Email Alert/Email Template, no Apex involved.</description>
+    <label>Approval Recipient</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Opportunities (Approval Recipient)</relationshipLabel>
+    <relationshipName>AF_ApprovalRecipientOpportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

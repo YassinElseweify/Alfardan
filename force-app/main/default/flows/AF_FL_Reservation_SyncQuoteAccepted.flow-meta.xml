@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Decide_Quote_Status</name>
+        <label>Quote Still Open?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Update_Quote_Accepted</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Draft or Presented</defaultConnectorLabel>
+        <rules>
+            <name>Already_Terminal</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Quote.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accepted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Quote.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Already Accepted or Denied</label>
+        </rules>
+    </decisions>
+    <description>Retail Cycle - CORRECTED 2026-09-19: previously fired the moment a Reservation was merely CREATED (ISNEW()), which wrongly marked the Quote Accepted while the reservation was still Requested or Pending Approval and could still be rejected by a manager (below-threshold deposit, VIP/extended) or simply never confirmed (3-Day no-deposit path has no commitment at all at creation time). Now fires only when AF_Status__c actually becomes Reserved or Converted - the genuinely-confirmed states - matching what &quot;the customer has committed&quot; actually means. Skips a Quote already Accepted or Denied so this never resurrects a dead Quote or double-fires. Part of the same effort as AF_FL_Quote_StatusFollowsCycle.</description>
+    <environments>Default</environments>
+    <interviewLabel>Reservation Sync Quote Accepted {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reservation Sync Quote Accepted</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Quote</name>
+        <label>Get Quote</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decide_Quote_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Quote__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Quote</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Quote_Accepted</name>
+        <label>Update Quote Accepted</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Quote.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Accepted</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Quote</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Quote</targetReference>
+        </connector>
+        <filterFormula>AND(
+  NOT(ISBLANK({!$Record.AF_Quote__c})),
+  OR(
+    ISPICKVAL({!$Record.AF_Status__c}, &quot;Reserved&quot;),
+    ISPICKVAL({!$Record.AF_Status__c}, &quot;Converted&quot;)
+  ),
+  OR(
+    ISNEW(),
+    ISCHANGED({!$Record.AF_Status__c})
+  )
+)</filterFormula>
+        <object>AF_VehicleReservation__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

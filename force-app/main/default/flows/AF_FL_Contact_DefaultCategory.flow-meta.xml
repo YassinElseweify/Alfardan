@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Category</name>
+        <label>Assign Category</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_ContactCategory__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_CategoryValue</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>AF_ContactCategory__c mirrors the Contact&apos;s own Record Type (per that field&apos;s description) so it&apos;s reportable without a record-type join — it should never require manual input. Stamps it from RecordType.DeveloperName on create, so it can be removed from both Contact page layouts entirely.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_CategoryValue</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.RecordType.DeveloperName},
+    &quot;AF_Brand_Profile&quot;, &quot;Brand Profile&quot;,
+    &quot;AF_Related_Person&quot;, &quot;Related Person&quot;,
+    &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>AF Contact Default Category {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact Default Category</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Category</targetReference>
+        </connector>
+        <object>Contact</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

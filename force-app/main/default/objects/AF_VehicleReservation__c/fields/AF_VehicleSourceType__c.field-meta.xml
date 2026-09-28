@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VehicleSourceType__c</fullName>
+    <description>ALF-RS-08 FR4: which stock scenario this reservation covers. In Stock and In Transit / Ordered both point at a real Vehicle record; Pre-Order (Placeholder) uses AF_VehicleDefinition__c only, because no VIN exists yet. AF_VR_VehicleSourceMatchesVehicle enforces the pairing.</description>
+    <label>Vehicle Source Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Stock</fullName>
+                <default>false</default>
+                <label>In Stock</label>
+            </value>
+            <value>
+                <fullName>In Transit / Ordered</fullName>
+                <default>false</default>
+                <label>In Transit / Ordered</label>
+            </value>
+            <value>
+                <fullName>Pre-Order (Placeholder)</fullName>
+                <default>false</default>
+                <label>Pre-Order (Placeholder)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

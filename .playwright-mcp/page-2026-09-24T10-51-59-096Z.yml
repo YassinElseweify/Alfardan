@@ -1,0 +1,112 @@
+- generic [active]:
+  - generic [ref=f138e2]:
+    - generic [ref=f138e3]:
+      - link "Skip to Navigation" [ref=f138e1233] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f138e1234] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f138e195]:
+        - generic [ref=f138e196]: "Sandbox: QA |"
+        - link "Log out" [ref=f138e1235] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f138e6]:
+        - button "Search" [ref=f138e1236]: Search...
+        - navigation "Global Header" [ref=f138e1237]:
+          - list [ref=f138e199]:
+            - listitem [ref=f138e200]:
+              - group [ref=f138e201]:
+                - button "Add favorite" [ref=f138e1238] [cursor=pointer]:
+                  - generic [ref=f138e204]:
+                    - tooltip "Add favorite"
+                - button [ref=f138e1239] [cursor=pointer]:
+                  - generic [ref=f138e213]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f138e220]:
+              - button [ref=f138e1240] [cursor=pointer]:
+                - generic [ref=f138e227]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f138e234]:
+              - button [ref=f138e1241] [cursor=pointer]:
+                - generic [ref=f138e237]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f138e244]:
+              - button [ref=f138e1242] [cursor=pointer]:
+                - generic [ref=f138e248]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f138e255]:
+              - button "2 Notifications" [ref=f138e1243] [cursor=pointer]:
+                - generic [ref=f138e259]:
+                  - generic [ref=f138e260]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f138e269]: 2 new notifications
+            - listitem [ref=f138e270]:
+              - button "View profile" [ref=f138e1244] [cursor=pointer]:
+                - generic [ref=f138e274]:
+                  - tooltip "View profile"
+    - generic [ref=f138e24]:
+      - generic [ref=f138e27]:
+        - generic [ref=f138e29]:
+          - navigation "App" [ref=f138e1245]:
+            - button "App Launcher" [ref=f138e1246] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f138e1247]
+        - navigation "Global" [ref=f138e1249]:
+          - list [ref=f138e49]:
+            - listitem [ref=f138e50]:
+              - link "Home" [ref=f138e1250] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f138e53]:
+              - link "Vehicles" [ref=f138e1251] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f138e1252] [cursor=pointer]
+            - listitem [ref=f138e67]:
+              - link "Assets" [ref=f138e1253] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f138e1254] [cursor=pointer]
+            - listitem [ref=f138e81]:
+              - link "Vehicle Definitions" [ref=f138e1255] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f138e1256] [cursor=pointer]
+            - listitem [ref=f138e95]:
+              - link "Products" [ref=f138e1257] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f138e1258] [cursor=pointer]
+            - listitem [ref=f138e109]:
+              - link "Accounts" [ref=f138e1259] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f138e1260] [cursor=pointer]
+            - listitem [ref=f138e123]:
+              - link "Contacts" [ref=f138e1261] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f138e1262] [cursor=pointer]
+            - listitem [ref=f138e137]:
+              - link "Asset Milestones" [ref=f138e1263] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f138e1264] [cursor=pointer]
+            - listitem [ref=f138e1265] [cursor=pointer]:
+              - link "* Loading..." [ref=f138e1266]:
+                - /url: /lightning/r/AF_CreditNote__c/a0PFV00476psiw82AA/view
+                - generic "Not added to nav bar" [ref=f138e1267]: "*"
+                - generic [ref=f138e1268]: Loading...
+              - button "Loading... List" [ref=f138e1272]
+              - button "Close tab" [ref=f138e1280]
+            - listitem [ref=f138e165]:
+              - button "* Show more navigation items" [ref=f138e1288] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f138e1289]: "*"
+                - generic [aria-hidden] [ref=f138e168]: More
+                - generic [ref=f138e175]: Show more navigation items
+            - listitem [ref=f138e176]:
+              - button "Edit nav items" [ref=f138e1290] [cursor=pointer]
+      - main [ref=f138e185]
+  - generic:
+    - generic [ref=f138e1293]:
+      - generic [ref=f138e1294]: Success notification.
+      - generic [ref=f138e1301]:
+        - generic [ref=f138e1304]:
+          - text: Credit Note "
+          - link "CN-00008" [ref=f138e1305] [cursor=pointer]:
+            - /url: javascript:void(0)
+          - text: "\" was created."
+        - generic [ref=f138e1307]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f138e1309] [cursor=pointer]
+    - status

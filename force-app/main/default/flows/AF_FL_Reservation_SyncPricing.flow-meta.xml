@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Price_From_Quote</name>
+        <label>Set Price From Quote</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_VehiclePriceTotal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AF_Quote__r.GrandTotal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decide_Can_Calculate_Balance</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Remaining_Balance</name>
+        <label>Set Remaining Balance</label>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_RemainingBalance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_RemainingBalance</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Decide_Can_Calculate_Balance</name>
+        <label>Can Calculate Balance?</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>No Price Known</defaultConnectorLabel>
+        <rules>
+            <name>Price_Known</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_VehiclePriceTotal__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Remaining_Balance</targetReference>
+            </connector>
+            <label>Price Known</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_Price_Blank</name>
+        <label>Price Total Blank?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Decide_Can_Calculate_Balance</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Already Set</defaultConnectorLabel>
+        <rules>
+            <name>Price_Blank_With_Quote</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_VehiclePriceTotal__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_Quote__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Price_From_Quote</targetReference>
+            </connector>
+            <label>Blank, Quote Linked</label>
+        </rules>
+    </decisions>
+    <description>ALF-RS-08 FR10: keeps the reservation&apos;s money fields coherent. Fills AF_VehiclePriceTotal__c from the linked Quote&apos;s GrandTotal when it has not been set by hand (never overwrites a manual figure - same IF(ISBLANK(...)) convention as the other AF flows), then derives AF_RemainingBalance__c as price minus deposit so the contract&apos;s &quot;remaining balance&quot; line is always current.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_RemainingBalance</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.AF_VehiclePriceTotal__c} - IF(ISBLANK({!$Record.AF_DepositAmount__c}), 0, {!$Record.AF_DepositAmount__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Reservation Sync Pricing {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reservation Sync Pricing</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decide_Price_Blank</targetReference>
+        </connector>
+        <filterFormula>OR(
+  ISNEW(),
+  ISCHANGED({!$Record.AF_DepositAmount__c}),
+  ISCHANGED({!$Record.AF_VehiclePriceTotal__c}),
+  ISCHANGED({!$Record.AF_Quote__c})
+)</filterFormula>
+        <object>AF_VehicleReservation__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

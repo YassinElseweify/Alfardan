@@ -1,0 +1,32 @@
+- generic [ref=f33e1]:
+  - generic [ref=f33e2]:
+    - generic [ref=f33e5]:
+      - generic [ref=f33e6]: Salesforce login
+      - generic [ref=f33e11]:
+        - generic [ref=f33e12]:
+          - heading "Salesforce login" [level=1] [ref=f33e13]
+          - generic [ref=f33e14]:
+            - text: Username
+            - textbox "Username" [active] [ref=f33e16]
+          - button "Log In to Sandbox" [ref=f33e17] [cursor=pointer]
+          - generic [ref=f33e18]:
+            - checkbox "Remember me" [ref=f33e19]
+            - generic [ref=f33e20]: Remember me
+        - link "Forgot Your Password?" [ref=f33e22] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us
+    - generic [ref=f33e23]: © 2026 Salesforce, Inc. All rights reserved.
+  - iframe [ref=f33e25]:
+    - main [ref=f34e3]:
+      - article [ref=f34e7]:
+        - img "Headshots of H.E. Omar Sultan Al Olama, Alessandra Sala, and Travis Kalanick" [ref=f34e9]
+        - generic [ref=f34e10]:
+          - generic [ref=f34e11]:
+            - generic [ref=f34e12]: San Francisco | September 15–17, 2026
+            - heading "Be in the room when the boldest ideas come to life" [level=2] [ref=f34e14]
+            - paragraph [ref=f34e16]: Industry leaders, AI pioneers, and cultural icons, all on one stage at Dreamforce. Register now for $2,299.
+          - 'link "Register now: Dreamforce" [ref=f34e19] [cursor=pointer]':
+            - /url: https://www.salesforce.com/dreamforce/
+            - text: Register now
+  - generic: Login
+  - iframe [ref=f33e26]:
+    

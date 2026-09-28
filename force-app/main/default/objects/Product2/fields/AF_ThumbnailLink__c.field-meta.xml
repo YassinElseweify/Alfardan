@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_ThumbnailLink__c</fullName>
+    <description>Auto-populated by AF_VehicleImagesHandler from the first Photo uploaded to this Product&apos;s (Vehicle Model&apos;s) Files related list. Used by the Vehicle Finder&apos;s model card image, same-origin so it needs no CSP trusted site.</description>
+    <externalId>false</externalId>
+    <label>Thumbnail Link</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

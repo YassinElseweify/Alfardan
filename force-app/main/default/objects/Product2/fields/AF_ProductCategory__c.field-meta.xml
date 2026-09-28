@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_ProductCategory__c</fullName>
+    <label>Product Category</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vehicle Model</fullName>
+                <default>false</default>
+                <label>Vehicle Model</label>
+            </value>
+            <value>
+                <fullName>Accessory</fullName>
+                <default>false</default>
+                <label>Accessory</label>
+            </value>
+            <value>
+                <fullName>Package</fullName>
+                <default>false</default>
+                <label>Package</label>
+            </value>
+            <value>
+                <fullName>Paint Job</fullName>
+                <default>false</default>
+                <label>Paint Job</label>
+            </value>
+            <value>
+                <fullName>Tint</fullName>
+                <default>false</default>
+                <label>Tint</label>
+            </value>
+            <value>
+                <fullName>Service Item</fullName>
+                <default>false</default>
+                <label>Service Item</label>
+            </value>
+            <value>
+                <fullName>Internal Provider Item</fullName>
+                <default>false</default>
+                <label>Internal Provider Item</label>
+            </value>
+            <value>
+                <fullName>Trade-In Deduction</fullName>
+                <default>false</default>
+                <label>Trade-In Deduction</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Derives Appraisal.AF_BusinessUnit__c from AF_Brand__c via the single shared subflow (same pattern as AF_FL_Opp_DeriveBusinessUnit/AF_FL_Lead_DeriveBusinessUnit/AF_FL_Contact_DeriveBusinessUnit), so Brand and Business Unit can never disagree and the field never needs to be picked manually. Fires whenever Brand is set or changes (covers both the Consider-to-Explore auto-create, which already carries Brand from the Opportunity, and standalone manual creation from an Account).</description>
+    <environments>Default</environments>
+    <interviewLabel>AF Appraisal Derive Business Unit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Appraisal Derive Business Unit</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_BusinessUnit</name>
+        <label>Update Business Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>AF_BusinessUnit__c</field>
+            <value>
+                <elementReference>Call_DeriveBusinessUnit.AF_BusinessUnit</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_DeriveBusinessUnit</targetReference>
+        </connector>
+        <filterFormula>NOT(ISBLANK(TEXT({!$Record.AF_Brand__c}))) &amp;&amp; (ISNEW() || ISCHANGED({!$Record.AF_Brand__c}))</filterFormula>
+        <object>Appraisal</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_DeriveBusinessUnit</name>
+        <label>Call Derive Business Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_BusinessUnit</targetReference>
+        </connector>
+        <flowName>AF_FL_Sub_DeriveBusinessUnit</flowName>
+        <inputAssignments>
+            <name>AF_Brand</name>
+            <value>
+                <elementReference>$Record.AF_Brand__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+</Flow>

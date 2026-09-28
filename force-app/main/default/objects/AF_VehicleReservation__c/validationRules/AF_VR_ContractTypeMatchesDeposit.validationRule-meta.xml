@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_ContractTypeMatchesDeposit</fullName>
+    <active>true</active>
+    <description>ALF-RS-08 FR2: a 3-day contract is the no-deposit path, a 7-day contract the deposit path. Stops the two being combined. VIP / Extended is exempt - its duration comes from the approved extension, not from whether a deposit was taken.</description>
+    <errorConditionFormula>OR(
+  AND(
+    ISPICKVAL(AF_ContractType__c, &quot;3-Day (No Deposit)&quot;),
+    NOT(ISBLANK(AF_DepositAmount__c)),
+    AF_DepositAmount__c &gt; 0
+  ),
+  AND(
+    ISPICKVAL(AF_ContractType__c, &quot;7-Day (Deposit)&quot;),
+    OR(ISBLANK(AF_DepositAmount__c), AF_DepositAmount__c &lt;= 0)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>AF_ContractType__c</errorDisplayField>
+    <errorMessage>Contract type and deposit do not match: a 3-Day (No Deposit) reservation must have no deposit, and a 7-Day (Deposit) reservation must have a deposit greater than zero.</errorMessage>
+</ValidationRule>

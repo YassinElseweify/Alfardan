@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AF_CanBypassStageGates</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AF_CanCloseLostWithoutApproval</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AF_CanEditSourceOfBusiness</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AF_CanOverrideDuplicateBlock</name>
+    </customPermissions>
+    <description>Grants the 4 manager-tier override custom permissions (SoB edit, duplicate override, stage gate bypass, Closed Lost w/o approval) - previously built but never assigned to any persona.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Manager Overrides</label>
+</PermissionSet>

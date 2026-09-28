@@ -1,0 +1,55 @@
+- generic [active]:
+  - generic [ref=f178e2]:
+    - generic [ref=f178e3]:
+      - link "Skip to Navigation" [ref=f178e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f178e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f178e6]:
+        - button "Search" [ref=f178e11]: Search...
+        - navigation "Global Header" [ref=f178e16]:
+          - list [ref=f178e17]:
+            - listitem [ref=f178e18]
+    - generic [ref=f178e24]:
+      - generic [ref=f178e27]:
+        - generic [ref=f178e29]:
+          - navigation "App" [ref=f178e30]:
+            - button "App Launcher" [ref=f178e32] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f178e44]
+        - navigation "Global" [ref=f178e48]:
+          - list [ref=f178e49]:
+            - listitem [ref=f178e50]:
+              - link "Home" [ref=f178e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f178e53]:
+              - link "Analytics" [ref=f178e54] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f178e56]:
+              - link "Opportunities" [ref=f178e57] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f178e62] [cursor=pointer]
+            - listitem [ref=f178e70]:
+              - link "Quotes" [ref=f178e71] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f178e76] [cursor=pointer]
+            - listitem [ref=f178e84]:
+              - link "Leads" [ref=f178e85] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f178e90] [cursor=pointer]
+            - listitem [ref=f178e98]:
+              - link "Tasks" [ref=f178e99] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f178e104] [cursor=pointer]
+            - listitem [ref=f178e112]:
+              - button "Show more navigation items" [ref=f178e114] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f178e115]: More
+            - listitem [ref=f178e123]:
+              - button "Edit nav items" [ref=f178e125] [cursor=pointer]
+      - main [ref=f178e132]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f178e139]:
+          - listitem [ref=f178e140]:
+            - button "To Do List" [ref=f178e143] [cursor=pointer]
+  - generic:
+    - status

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_InvoiceSummary__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Optional by design — reservation-stage deposits precede any invoice.</description>
+    <label>Invoice Summary</label>
+    <referenceTo>AF_InvoiceSummary__c</referenceTo>
+    <relationshipLabel>Payments</relationshipLabel>
+    <relationshipName>AF_Payments</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

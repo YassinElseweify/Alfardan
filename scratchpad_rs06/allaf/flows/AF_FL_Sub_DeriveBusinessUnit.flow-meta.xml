@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Automobiles</name>
+        <label>Assign Automobiles</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>AF_BusinessUnit</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Alfardan Automobiles</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_SportsMotors</name>
+        <label>Assign Sports Motors</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>AF_BusinessUnit</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Alfardan Sports Motors</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Unmapped</name>
+        <label>Assign Unmapped</label>
+        <locationX>302</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>AF_BusinessUnit</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>UNMAPPED</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Decide_Brand</name>
+        <label>Decide Brand</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Unmapped</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Unmapped</defaultConnectorLabel>
+        <rules>
+            <name>Is_Ferrari</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AF_Brand</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ferrari</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_SportsMotors</targetReference>
+            </connector>
+            <label>Is Ferrari</label>
+        </rules>
+        <rules>
+            <name>Is_RollsRoyce</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AF_Brand</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rolls-Royce</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Automobiles</targetReference>
+            </connector>
+            <label>Is Rolls-Royce</label>
+        </rules>
+    </decisions>
+    <description>Maps Brand to Business Unit in exactly one place. Confirmed: Ferrari to Alfardan Sports Motors, Rolls-Royce to Alfardan Automobiles. Remaining brands map to UNMAPPED pending the Brand to Business Unit map.</description>
+    <environments>Default</environments>
+    <interviewLabel>AF Derive Business Unit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Derive Business Unit</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decide_Brand</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>AF_Brand</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>AF_BusinessUnit</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,307 @@
+- generic:
+  - generic:
+    - generic [ref=f27e2]:
+      - generic [ref=f27e3]:
+        - link [ref=f27e843] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Navigation
+        - link [ref=f27e844] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Main Content
+        - generic [ref=f27e8]:
+          - generic [ref=f27e9]: "Sandbox: QA |"
+          - link [ref=f27e845] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+            - text: Log out
+        - generic [ref=f27e11]:
+          - button [ref=f27e846]: Search...
+          - navigation [ref=f27e847]:
+            - list [ref=f27e25]:
+              - listitem [ref=f27e26]:
+                - group [ref=f27e27]:
+                  - button [ref=f27e848] [cursor=pointer]
+                  - button [ref=f27e849] [cursor=pointer]
+              - listitem [ref=f27e46]:
+                - button [ref=f27e850] [cursor=pointer]
+              - listitem [ref=f27e267]:
+                - button [ref=f27e851] [cursor=pointer]
+              - listitem [ref=f27e55]:
+                - button [ref=f27e852] [cursor=pointer]
+              - listitem [ref=f27e66]:
+                - button [ref=f27e853] [cursor=pointer]:
+                  - generic [ref=f27e70]: "2"
+                - generic [ref=f27e78]: 2 new notifications
+              - listitem [ref=f27e79]:
+                - button [ref=f27e854] [cursor=pointer]
+      - generic [ref=f27e85]:
+        - generic [ref=f27e88]:
+          - generic [ref=f27e90]:
+            - navigation [ref=f27e855]:
+              - button [ref=f27e856] [cursor=pointer]:
+                - generic [ref=f27e94]: App Launcher
+            - heading [level=1] [ref=f27e857]:
+              - generic [ref=f27e858]: Automotive
+          - navigation [ref=f27e859]:
+            - list [ref=f27e110]:
+              - listitem [ref=f27e111]:
+                - link [ref=f27e860] [cursor=pointer]:
+                  - /url: /lightning/page/home
+                  - generic [ref=f27e113]: Home
+              - listitem [ref=f27e114]:
+                - link [ref=f27e861] [cursor=pointer]:
+                  - /url: /lightning/o/Vehicle/home
+                  - generic [ref=f27e116]: Vehicles
+                - button [ref=f27e862] [cursor=pointer]:
+                  - generic [ref=f27e127]: Vehicles List
+              - listitem [ref=f27e128]:
+                - link [ref=f27e863] [cursor=pointer]:
+                  - /url: /lightning/o/Asset/home
+                  - generic [ref=f27e130]: Assets
+                - button [ref=f27e864] [cursor=pointer]:
+                  - generic [ref=f27e141]: Assets List
+              - listitem [ref=f27e142]:
+                - link [ref=f27e865] [cursor=pointer]:
+                  - /url: /lightning/o/VehicleDefinition/home
+                  - generic [ref=f27e144]: Vehicle Definitions
+                - button [ref=f27e866] [cursor=pointer]:
+                  - generic [ref=f27e155]: Vehicle Definitions List
+              - listitem [ref=f27e156]:
+                - link [ref=f27e867] [cursor=pointer]:
+                  - /url: /lightning/o/Product2/home
+                  - generic [ref=f27e158]: Products
+                - button [ref=f27e868] [cursor=pointer]:
+                  - generic [ref=f27e169]: Products List
+              - listitem [ref=f27e170]:
+                - link [ref=f27e869] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                  - generic [ref=f27e172]: Accounts
+                - button [ref=f27e870] [cursor=pointer]:
+                  - generic [ref=f27e183]: Accounts List
+              - listitem [ref=f27e184]:
+                - link [ref=f27e871] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                  - generic [ref=f27e186]: Contacts
+                - button [ref=f27e872] [cursor=pointer]:
+                  - generic [ref=f27e197]: Contacts List
+              - listitem [ref=f27e282] [cursor=pointer]:
+                - link [ref=f27e873]:
+                  - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/view
+                  - generic [ref=f27e874]: "*"
+                  - generic [ref=f27e285]: DEMO Cycle 01 - Ferrari Roma end-to-end
+                - button [ref=f27e875]:
+                  - generic [ref=f27e296]: DEMO Cycle 01 - Ferrari Roma end-to-end List
+                - button [ref=f27e876]:
+                  - generic [ref=f27e304]: Close tab
+              - listitem [ref=f27e226]:
+                - button [ref=f27e877] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f27e229]: More
+                  - generic [ref=f27e236]: Show more navigation items
+              - listitem [ref=f27e237]:
+                - button [ref=f27e878] [cursor=pointer]:
+                  - generic [ref=f27e244]: Edit nav items
+        - main [ref=f27e246]:
+          - generic [ref=f27e316]:
+            - generic [ref=f27e326]:
+              - generic [ref=f27e332]:
+                - generic [ref=f27e333]: Quote
+                - heading [level=1] [ref=f27e879]:
+                  - generic [ref=f27e336]: DEMO Cycle 01 - Ferrari Roma end-to-end
+              - generic [ref=f27e341]:
+                - button [ref=f27e881] [cursor=pointer]: Edit
+                - button [ref=f27e883] [cursor=pointer]: Create Reservation
+                - button [ref=f27e885] [cursor=pointer]: Change Owner
+                - button [ref=f27e886] [cursor=pointer]:
+                  - generic [ref=f27e366]: Show more actions
+            - article [ref=f27e447]:
+              - generic [ref=f27e448]:
+                - heading [level=2] [ref=f27e887]: Path
+                - generic [ref=f27e452]:
+                  - listbox [ref=f27e888]:
+                    - option [selected] [ref=f27e889] [cursor=pointer]:
+                      - generic [ref=f27e459]: Draft
+                    - option [ref=f27e890] [cursor=pointer]:
+                      - generic [ref=f27e461]: Needs Review
+                    - option [ref=f27e891] [cursor=pointer]:
+                      - generic [ref=f27e463]: In Review
+                    - option [ref=f27e892] [cursor=pointer]:
+                      - generic [ref=f27e465]: Approved
+                    - option [ref=f27e893] [cursor=pointer]:
+                      - generic [ref=f27e467]: Rejected
+                    - option [ref=f27e894] [cursor=pointer]:
+                      - generic [ref=f27e469]: Presented
+                    - option [ref=f27e895] [cursor=pointer]:
+                      - generic [ref=f27e471]: Accepted
+                    - option [ref=f27e896] [cursor=pointer]:
+                      - generic [ref=f27e473]: Denied
+                  - button [ref=f27e897] [cursor=pointer]:
+                    - generic [ref=f27e483]: Mark Status as Complete
+            - generic [ref=f27e484]:
+              - generic [ref=f27e492]:
+                - heading [level=2] [ref=f27e898]: Tabs
+                - tablist [ref=f27e899]:
+                  - tab [selected] [ref=f27e900] [cursor=pointer]: Related
+                  - tab [ref=f27e901] [cursor=pointer]: Details
+                - tabpanel [ref=f27e902]:
+                  - generic [ref=f27e505]:
+                    - article [ref=f27e903]:
+                      - heading [level=2] [ref=f27e904]:
+                        - link [ref=f27e905] [cursor=pointer]:
+                          - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/ProcessSteps/view
+                          - generic [ref=f27e906]: Approval History
+                          - generic [ref=f27e907]: (0)
+                    - article [ref=f27e908]:
+                      - generic [ref=f27e530]:
+                        - generic [ref=f27e531]:
+                          - heading [level=2] [ref=f27e909]:
+                            - link [ref=f27e910] [cursor=pointer]:
+                              - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/QuoteLineItems/view
+                              - generic [ref=f27e911]: Quote Line Items
+                              - generic [ref=f27e912]: (2)
+                          - generic [ref=f27e552]:
+                            - generic [ref=f27e553]: Navigation Mode
+                            - grid [ref=f27e913]:
+                              - generic [ref=f27e558]: Product
+                              - generic [ref=f27e562]: Sales Price
+                              - generic [ref=f27e566]: Quantity
+                              - generic [ref=f27e570]: Subtotal
+                              - rowgroup [ref=f27e577]:
+                                - row [ref=f27e918]:
+                                  - rowheader [ref=f27e919]:
+                                    - generic [ref=f27e588]:
+                                      - link [ref=f27e920] [cursor=pointer]:
+                                        - /url: /lightning/r/0QLFV000Ql3bqXY4IY/view
+                                        - generic [ref=f27e590]: Ferrari Roma
+                                      - button [ref=f27e921] [cursor=pointer]:
+                                        - generic [ref=f27e600]: Preview
+                                  - gridcell [ref=f27e922]:
+                                    - generic [ref=f27e602]: AED 247,308.00
+                                  - gridcell [ref=f27e923]:
+                                    - generic [ref=f27e608]: "1.00"
+                                  - gridcell [ref=f27e924]:
+                                    - generic [ref=f27e613]: AED 247,308.00
+                                  - gridcell [ref=f27e925]:
+                                    - button [ref=f27e926] [cursor=pointer]:
+                                      - generic [ref=f27e630]: Show Actions
+                                - row [ref=f27e927]:
+                                  - rowheader [ref=f27e928]:
+                                    - generic [ref=f27e641]:
+                                      - link [ref=f27e929] [cursor=pointer]:
+                                        - /url: /lightning/r/0QLFV000Ql3g2ga4IA/view
+                                        - generic [ref=f27e643]: Spider Package
+                                      - button [ref=f27e930] [cursor=pointer]:
+                                        - generic [ref=f27e653]: Preview
+                                  - gridcell [ref=f27e931]:
+                                    - generic [ref=f27e655]: AED 32,000.00
+                                  - gridcell [ref=f27e932]:
+                                    - generic [ref=f27e661]: "1.00"
+                                  - gridcell [ref=f27e933]:
+                                    - generic [ref=f27e666]: AED 32,000.00
+                                  - gridcell [ref=f27e934]:
+                                    - button [ref=f27e935] [cursor=pointer]:
+                                      - generic [ref=f27e683]: Show Actions
+                        - link [ref=f27e936] [cursor=pointer]:
+                          - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/QuoteLineItems/view
+                          - generic [ref=f27e685]:
+                            - text: View All
+                            - generic [ref=f27e686]: Quote Line Items
+                    - article [ref=f27e939]:
+                      - heading [level=2] [ref=f27e952]:
+                        - link [ref=f27e953] [cursor=pointer]:
+                          - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/AF_VehicleReservations__r/view
+                          - generic [ref=f27e954]: Vehicle Reservations
+                          - generic [ref=f27e955]: (0)
+                    - article [ref=f27e958]:
+                      - heading [level=2] [ref=f27e971]:
+                        - link [ref=f27e972] [cursor=pointer]:
+                          - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/AF_InvoiceSummaries__r/view
+                          - generic [ref=f27e973]: Invoices
+                          - generic [ref=f27e974]: (0)
+                    - article [ref=f27e977]:
+                      - heading [level=2] [ref=f27e990]:
+                        - link [ref=f27e991] [cursor=pointer]:
+                          - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/AF_Payments__r/view
+                          - generic [ref=f27e992]: Payments
+                          - generic [ref=f27e993]: (0)
+                    - article [ref=f27e998]:
+                      - heading [level=2] [ref=f27e1005]:
+                        - link [ref=f27e1006] [cursor=pointer]:
+                          - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/QuoteDocuments/view
+                          - generic [ref=f27e1007]: Quote PDFs
+                          - generic [ref=f27e1008]: (0)
+                    - article [ref=f27e1013]:
+                      - generic [ref=f27e1014]:
+                        - heading [level=2] [ref=f27e1020]:
+                          - link [ref=f27e1021] [cursor=pointer]:
+                            - /url: /lightning/r/Quote/0Q0FV004Xp29WYO0I2/related/CombinedAttachments/view
+                            - generic [ref=f27e1022]: Notes & Attachments
+                            - generic [ref=f27e1023]: (0)
+                        - list [ref=f27e1026]:
+                          - listitem [ref=f27e1027]:
+                            - button [ref=f27e1028] [cursor=pointer]:
+                              - generic [ref=f27e1029]: Upload Files
+                      - generic [ref=f27e1035]:
+                        - generic [ref=f27e1036]: Drop Files
+                        - generic [ref=f27e1051]:
+                          - button [ref=f27e1052]
+                          - generic [ref=f27e1053]:
+                            - generic [ref=f27e1054]: Upload Files
+                            - generic [ref=f27e1059]: Or drop files
+              - generic [ref=f27e749]:
+                - heading [level=2] [ref=f27e1060]: Tabs
+                - tablist [ref=f27e1061]:
+                  - tab [selected] [ref=f27e1062] [cursor=pointer]: Activity
+                - tabpanel [ref=f27e1063]:
+                  - generic [ref=f27e762]:
+                    - heading [level=2] [ref=f27e1064]: Activity Publisher
+                    - generic [ref=f27e764]:
+                      - group [ref=f27e765]:
+                        - generic [ref=f27e767]:
+                          - button [ref=f27e1065] [cursor=pointer]:
+                            - generic [ref=f27e769]: Log a Call
+                          - generic [ref=f27e776]:
+                            - button [disabled]:
+                              - generic: No Additional Log a Call Actions
+                      - group [ref=f27e777]:
+                        - generic [ref=f27e779]:
+                          - button [ref=f27e1066] [cursor=pointer]:
+                            - generic [ref=f27e781]: New Task
+                          - generic [ref=f27e788]:
+                            - button [disabled]:
+                              - generic: No Additional New Task Actions
+                    - heading [level=2] [ref=f27e1067]: Activity Timeline
+                    - generic [ref=f27e791]:
+                      - link [ref=f27e1068] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                        - text: Skip to the bottom of the activity timeline
+                      - generic [ref=f27e794]:
+                        - generic [ref=f27e795]: "Filters: All time • All activities • All types"
+                        - button [ref=f27e1069] [cursor=pointer]:
+                          - generic [ref=f27e802]: Timeline Settings
+                      - generic [ref=f27e805]:
+                        - button [ref=f27e1070] [cursor=pointer]: Refresh
+                        - text: •
+                        - button [ref=f27e1071] [cursor=pointer]: Expand All
+                        - text: •
+                        - button [ref=f27e1072] [cursor=pointer]: View All
+                      - generic [ref=f27e810]:
+                        - heading [level=3] [ref=f27e1073]:
+                          - button [expanded] [ref=f27e1074] [cursor=pointer]: Upcoming & Overdue
+                        - generic [ref=f27e817]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                      - status [ref=f27e821]:
+                        - generic [ref=f27e822]: No past activity. Past meetings and tasks marked as done show up here.
+                      - link [ref=f27e1075] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                        - text: Skip to the top of the activity timeline
+    - dialog [ref=f27e1077]:
+      - generic [ref=f27e1078]:
+        - generic [ref=f27e1079]:
+          - heading "Sync Quote" [active] [level=1] [ref=f27e1080]
+          - button "Cancel and close" [ref=f27e1081] [cursor=pointer]
+        - generic [ref=f27e1087]:
+          - generic [ref=f27e1088]: If you continue, you’ll replace all opportunity products with the quote line items.After a quote is synced, opportunity products and quote line items are updated automatically.
+          - status [ref=f27e1090]
+        - generic [ref=f27e1091]:
+          - button "Cancel" [ref=f27e1092] [cursor=pointer]
+          - button "Continue" [ref=f27e1094] [cursor=pointer]
+  - generic:
+    - status

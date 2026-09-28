@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gives users the ability to calculate actuals for sales agreements using a Data Processing Engine definition.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SalesAgreement.Calculate_actual_values_using_DPE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Data Processing Engine Based Actuals Calculation for Sales Agreements</label>
+</PermissionSet>

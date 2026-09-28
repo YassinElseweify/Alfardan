@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Default_Vehicle_And_Source</name>
+        <label>Default Vehicle And Source</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_Vehicle__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__r.AF_SelectedVehicle__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_VehicleSourceType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Stock</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>ALF-RS-08 FR4/FR1: on a brand-new reservation, if the rep hasn&apos;t already picked a Vehicle or a Vehicle Definition, defaults the Vehicle from the linked Opportunity&apos;s own AF_SelectedVehicle__c (set earlier in the deal via Select Vehicle) and marks the source as In Stock. Exists because reservations are created via the plain related-list New button, which carries no context from the Opportunity on its own - without this, every reservation on an Opportunity that already has a selected vehicle would trip AF_VR_VehicleRequired for no reason. Never overwrites a value the rep already set (checks both AF_Vehicle__c and AF_VehicleDefinition__c blank first), and does nothing when the Opportunity has no selected vehicle - a pre-order reservation still needs the rep to set Vehicle Definition and Source Type by hand.</description>
+    <environments>Default</environments>
+    <interviewLabel>Reservation Default Vehicle From Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reservation Default Vehicle From Opportunity</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Default_Vehicle_And_Source</targetReference>
+        </connector>
+        <filterFormula>AND(
+  ISNEW(),
+  ISBLANK({!$Record.AF_Vehicle__c}),
+  ISBLANK({!$Record.AF_VehicleDefinition__c}),
+  NOT(ISBLANK({!$Record.AF_Opportunity__c})),
+  NOT(ISBLANK({!$Record.AF_Opportunity__r.AF_SelectedVehicle__c}))
+)</filterFormula>
+        <object>AF_VehicleReservation__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,260 @@
+- generic:
+  - generic [ref=f245e2]:
+    - generic [ref=f245e3]:
+      - link "Skip to Navigation" [ref=f245e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f245e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f245e8]:
+        - generic [ref=f245e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f245e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f245e11]:
+        - button "Search" [ref=f245e18]: Search...
+        - navigation "Global Header" [ref=f245e23]:
+          - list [ref=f245e25]:
+            - listitem [ref=f245e26]:
+              - group [ref=f245e27]:
+                - button "Add favorite" [ref=f245e29] [cursor=pointer]:
+                  - generic [ref=f245e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f245e38] [cursor=pointer]:
+                  - generic [ref=f245e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f245e46]:
+              - button [ref=f245e52] [cursor=pointer]:
+                - generic [ref=f245e53]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f245e60]:
+              - button [ref=f245e62] [cursor=pointer]:
+                - generic [ref=f245e63]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f245e70]:
+              - button [ref=f245e73] [cursor=pointer]:
+                - generic [ref=f245e74]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f245e81]:
+              - button "3 Notifications" [ref=f245e84] [cursor=pointer]:
+                - generic [ref=f245e85]:
+                  - generic [ref=f245e86]: "3"
+                  - tooltip "Notifications"
+              - generic [ref=f245e95]: 3 new notifications
+            - listitem [ref=f245e96]:
+              - button "View profile" [ref=f245e99] [cursor=pointer]:
+                - generic [ref=f245e100]:
+                  - tooltip "View profile"
+    - generic [ref=f245e104]:
+      - generic [ref=f245e107]:
+        - generic [ref=f245e109]:
+          - navigation "App" [ref=f245e110]:
+            - button "App Launcher" [ref=f245e112] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f245e124]
+        - navigation "Global" [ref=f245e128]:
+          - list [ref=f245e129]:
+            - listitem [ref=f245e130]:
+              - link "Home" [ref=f245e131] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f245e133]:
+              - link "Vehicles" [ref=f245e134] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f245e139] [cursor=pointer]
+            - listitem [ref=f245e147]:
+              - link "Assets" [ref=f245e148] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f245e153] [cursor=pointer]
+            - listitem [ref=f245e161]:
+              - link "Vehicle Definitions" [ref=f245e162] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f245e167] [cursor=pointer]
+            - listitem [ref=f245e175]:
+              - link "Products" [ref=f245e176] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f245e181] [cursor=pointer]
+            - listitem [ref=f245e189]:
+              - link "Accounts" [ref=f245e190] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f245e195] [cursor=pointer]
+            - listitem [ref=f245e203] [cursor=pointer]:
+              - link "* RES-00207 | Vehicle Reservation" [ref=f245e204]:
+                - /url: /lightning/r/AF_VehicleReservation__c/a0WFV000gGNItEe2QL/view
+                - generic "Not added to nav bar" [ref=f245e205]: "*"
+                - generic [ref=f245e206]: RES-00207 | Vehicle Reservation
+              - button "RES-00207 | Vehicle Reservation List" [ref=f245e210]
+              - button "Close tab" [ref=f245e218]
+            - listitem [ref=f245e226]:
+              - button "* Show more navigation items" [ref=f245e228] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f245e229]: "*"
+                - generic [aria-hidden] [ref=f245e230]: More
+                - generic [ref=f245e237]: Show more navigation items
+            - listitem [ref=f245e238]:
+              - button "Edit nav items" [ref=f245e240] [cursor=pointer]
+      - main [ref=f245e247]:
+        - generic [ref=f245e263]:
+          - generic [ref=f245e273]:
+            - generic [ref=f245e279]:
+              - generic [ref=f245e280]: Vehicle Reservation
+              - heading "RES-00207" [level=1] [ref=f245e282]
+            - button "Follow" [ref=f245e288] [cursor=pointer]
+            - generic [ref=f245e299]:
+              - generic "Edit" [ref=f245e300]:
+                - button "Edit" [ref=f245e305] [cursor=pointer]
+              - generic "Generate Reservation Contract" [ref=f245e306]:
+                - button "Generate Reservation Contract" [ref=f245e311] [cursor=pointer]
+          - generic [ref=f245e313]:
+            - generic [ref=f245e321]:
+              - heading "Tabs" [level=2] [ref=f245e322]
+              - tablist "Tabs" [ref=f245e324]:
+                - tab "Related" [selected] [ref=f245e325] [cursor=pointer]
+                - tab "Details" [ref=f245e326] [cursor=pointer]
+              - tabpanel "Related" [ref=f245e329]:
+                - generic [ref=f245e330]:
+                  - article "Approval History" [ref=f245e339]:
+                    - heading [level=2] [ref=f245e346]:
+                      - link "Approval History (0)" [ref=f245e347] [cursor=pointer]:
+                        - /url: /lightning/r/AF_VehicleReservation__c/a0WFV000gGNItEe2QL/related/ProcessSteps/view
+                        - generic "Approval History" [ref=f245e348]
+                        - generic "(0)" [ref=f245e349]
+                  - article "Payments" [ref=f245e356]:
+                    - generic [ref=f245e361]:
+                      - heading [level=2] [ref=f245e369]:
+                        - link "Payments (0)" [ref=f245e370] [cursor=pointer]:
+                          - /url: /lightning/r/AF_VehicleReservation__c/a0WFV000gGNItEe2QL/related/AF_Payments__r/view
+                          - generic "Payments" [ref=f245e371]
+                          - generic "(0)" [ref=f245e372]
+                      - generic "New" [ref=f245e376]:
+                        - button "New" [ref=f245e381] [cursor=pointer]
+                  - article "Appraisals" [ref=f245e388]:
+                    - generic [ref=f245e393]:
+                      - heading [level=2] [ref=f245e401]:
+                        - link "Appraisals (0)" [ref=f245e402] [cursor=pointer]:
+                          - /url: /lightning/r/AF_VehicleReservation__c/a0WFV000gGNItEe2QL/related/AF_Appraisals__r/view
+                          - generic "Appraisals" [ref=f245e403]
+                          - generic "(0)" [ref=f245e404]
+                      - list [ref=f245e407]:
+                        - listitem [ref=f245e408]:
+                          - button "New" [ref=f245e409] [cursor=pointer]
+                  - article "Notes & Attachments" [ref=f245e419]:
+                    - generic [ref=f245e420]:
+                      - heading [level=2] [ref=f245e426]:
+                        - link "Notes & Attachments (0)" [ref=f245e427] [cursor=pointer]:
+                          - /url: /lightning/r/AF_VehicleReservation__c/a0WFV000gGNItEe2QL/related/CombinedAttachments/view
+                          - generic "Notes & Attachments" [ref=f245e428]
+                          - generic "(0)" [ref=f245e429]
+                      - list [ref=f245e432]:
+                        - listitem [ref=f245e433]:
+                          - button "Upload Files" [ref=f245e434] [cursor=pointer]
+                    - generic [ref=f245e441]:
+                      - generic [ref=f245e442]: Drop Files
+                      - generic [ref=f245e451]:
+                        - generic [ref=f245e453]:
+                          - generic [ref=f245e457]:
+                            - button "Upload Files Or drop files" [ref=f245e458]
+                            - generic [ref=f245e459]:
+                              - generic [ref=f245e460]: Upload Files
+                              - generic [ref=f245e465]: Or drop files
+                          - status
+                        - list
+                  - article [ref=f245e470]:
+                    - heading "Required Documents" [level=2] [ref=f245e481]
+                    - generic [ref=f245e485]:
+                      - generic [ref=f245e486]:
+                        - generic [ref=f245e488]:
+                          - text: Customer ID
+                          - generic [ref=f245e489]: Missing
+                        - generic [ref=f245e494]:
+                          - generic [ref=f245e495]: Upload
+                          - generic [ref=f245e499]:
+                            - button "Upload Upload Files Or drop files" [active] [ref=f245e500]
+                            - generic [ref=f245e501]:
+                              - generic [ref=f245e502]: Upload Files
+                              - generic [ref=f245e507]: Or drop files
+                          - status
+                      - generic [ref=f245e508]:
+                        - generic [ref=f245e510]:
+                          - text: Payment Receipt
+                          - generic [ref=f245e511]: Missing
+                        - generic [ref=f245e516]:
+                          - generic [ref=f245e517]: Upload
+                          - generic [ref=f245e521]:
+                            - button "Upload Upload Files Or drop files" [ref=f245e522]
+                            - generic [ref=f245e523]:
+                              - generic [ref=f245e524]: Upload Files
+                              - generic [ref=f245e529]: Or drop files
+                          - status
+                      - generic [ref=f245e530]:
+                        - generic [ref=f245e532]:
+                          - text: Quotation
+                          - generic [ref=f245e533]: Missing
+                        - generic [ref=f245e538]:
+                          - generic [ref=f245e539]: Upload
+                          - generic [ref=f245e543]:
+                            - button "Upload Upload Files Or drop files" [ref=f245e544]
+                            - generic [ref=f245e545]:
+                              - generic [ref=f245e546]: Upload Files
+                              - generic [ref=f245e551]: Or drop files
+                          - status
+                      - generic [ref=f245e552]:
+                        - generic [ref=f245e554]:
+                          - text: Vehicle Stock / VIN
+                          - generic [ref=f245e555]: Missing
+                        - generic [ref=f245e560]:
+                          - generic [ref=f245e561]: Upload
+                          - generic [ref=f245e565]:
+                            - button "Upload Upload Files Or drop files" [ref=f245e566]
+                            - generic [ref=f245e567]:
+                              - generic [ref=f245e568]: Upload Files
+                              - generic [ref=f245e573]: Or drop files
+                          - status
+            - generic [ref=f245e581]:
+              - heading "Tabs" [level=2] [ref=f245e582]
+              - tablist "Tabs" [ref=f245e584]:
+                - tab "Activity" [selected] [ref=f245e585] [cursor=pointer]
+              - tabpanel "Activity" [ref=f245e588]:
+                - generic [ref=f245e594]:
+                  - heading "Activity Publisher" [level=2] [ref=f245e595]
+                  - generic [ref=f245e596]:
+                    - group [ref=f245e597]:
+                      - generic [ref=f245e599]:
+                        - button "Log a Call" [ref=f245e600] [cursor=pointer]
+                        - generic [ref=f245e608]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f245e609]:
+                      - generic [ref=f245e611]:
+                        - button "New Task" [ref=f245e612] [cursor=pointer]
+                        - generic [ref=f245e620]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f245e621]
+                  - generic [ref=f245e623]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f245e624] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f245e626]:
+                      - generic [ref=f245e627]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f245e629] [cursor=pointer]
+                    - generic [ref=f245e637]:
+                      - button "Refresh" [ref=f245e638] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f245e639] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f245e640] [cursor=pointer]
+                    - generic [ref=f245e642]:
+                      - heading [level=3] [ref=f245e643]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f245e644] [cursor=pointer]
+                      - generic [ref=f245e649]:
+                        - generic:
+                          - list
+                        - generic [ref=f245e650]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f245e653]:
+                      - generic [ref=f245e654]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f245e655] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - generic [ref=f245e662]:
+      - generic [ref=f245e663]: Success notification.
+      - generic [ref=f245e670]:
+        - generic [ref=f245e671]:
+          - generic [ref=f245e672]: Uploaded
+          - generic [ref=f245e673]: Customer ID uploaded.
+        - generic [ref=f245e674]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f245e676] [cursor=pointer]
+    - status

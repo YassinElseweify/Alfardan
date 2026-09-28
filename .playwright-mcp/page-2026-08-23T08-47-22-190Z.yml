@@ -1,0 +1,20 @@
+- generic [active] [ref=f15e1]:
+  - generic [ref=f15e4]:
+    - generic [ref=f15e5]: Salesforce login
+    - heading "Choose a Verification Method" [level=2] [ref=f15e9]
+    - generic [ref=f15e11]:
+      - text: To keep your account secure, Salesforce requires extra verification. Set up multi-factor authentication (MFA) to finish logging in.
+      - button "Recommended Passkey Use a built-in authenticator on your device" [ref=f15e12] [cursor=pointer]:
+        - generic [ref=f15e13]: Recommended
+        - generic [ref=f15e20]:
+          - heading "Passkey" [level=3] [ref=f15e21]
+          - paragraph [ref=f15e22]: Use a built-in authenticator on your device
+      - button [ref=f15e23] [cursor=pointer]:
+        - generic [ref=f15e27]:
+          - heading "Salesforce Authenticator" [level=3] [ref=f15e28]
+          - paragraph [ref=f15e29]: Use the Salesforce Authenticator mobile app
+      - button [ref=f15e30] [cursor=pointer]:
+        - generic [ref=f15e35]:
+          - heading "One-Time Password App" [level=3] [ref=f15e36]
+          - paragraph [ref=f15e37]: Use verification codes from an authenticator app (such as Google Authenticator or Authy)
+  - generic [ref=f15e38]: © 2026 Salesforce, Inc. All rights reserved.

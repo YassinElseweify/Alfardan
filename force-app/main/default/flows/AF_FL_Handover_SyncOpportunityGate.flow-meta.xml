@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Gate_Passed</name>
+        <label>Gate Passed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_ClosedWonGatePassed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opportunity_Delivered</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>After-save on AF_Handover__c (paired with the before-save AF_FL_Handover_UpdateChecklistGate, which computes AF_ClosedWonGatePassed__c): pushes that value up to the parent Opportunity&apos;s AF_HandoverComplete__c, which AF_VR_Opp_ClosedWonGate reads. Does not touch AF_DeliveryConfirmation__c - that field is reserved for the Keyloop/MuleSoft delivery-status sync ( FR2), a different source of truth from the local handover checklist. ALF-RS-12 (LFRDN-342) FR3: when the gate passes, also sets Opportunity.AF_SOStatus__c = &apos;Delivered&apos; - one-way only, never reverts it if the gate later becomes false (e.g. a data fix unchecking a document), since Sales Order status should not silently regress once delivery has been confirmed.
+
+Also sets Opportunity.AF_Handover__c = this Handover&apos;s Id on every save (idempotent). This is a real, previously-undiscovered gap fix: AF_Opportunity_ClosedWonPaymentGate.cls and its before-save mirror AF_FL_Opp_ClosedWonPaymentGate both read the Traffic Form / Customer Sign-Off condition via Opportunity.AF_Handover__c (a lookup FROM the Opportunity TO the Handover) - but nothing in the org ever populated that reverse lookup (only AF_Handover__c.AF_Opportunity__c, the forward lookup, was ever set, e.g. by the Quick Action that creates the Handover). Confirmed via live anonymous Apex against ALFardan DEV (2026-09-16): without this, Closed Won never auto-progresses and the LFRDN-341 handover gate silently evaluates as &quot;no handover found&quot; for every real Opportunity.</description>
+    <environments>Default</environments>
+    <interviewLabel>Handover Sync Opportunity Gate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Handover Sync Opportunity Gate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity Handover Complete</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Gate_Passed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_HandoverComplete__c</field>
+            <value>
+                <elementReference>$Record.AF_ClosedWonGatePassed__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_Handover__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity_Delivered</name>
+        <label>Set Sales Order Status Delivered</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_SOStatus__c</field>
+            <value>
+                <stringValue>Delivered</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+        <object>AF_Handover__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

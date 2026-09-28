@@ -1,0 +1,1078 @@
+- generic:
+  - generic [ref=f15e2]:
+    - generic [ref=f15e3]:
+      - link "Skip to Navigation" [ref=f15e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f15e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f15e254]:
+        - generic [ref=f15e255]: "Sandbox: QA |"
+        - link "Log out" [ref=f15e256] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f15e6]:
+        - button "Search" [ref=f15e12]: Search...
+        - navigation "Global Header" [ref=f15e17]:
+          - list [ref=f15e258]:
+            - listitem [ref=f15e259]:
+              - group [ref=f15e260]:
+                - button "Add favorite" [ref=f15e262] [cursor=pointer]:
+                  - generic [ref=f15e263]:
+                    - tooltip "Add favorite"
+                - button [ref=f15e271] [cursor=pointer]:
+                  - generic [ref=f15e272]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f15e279]:
+              - button [ref=f15e285] [cursor=pointer]:
+                - generic [ref=f15e286]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f15e293]:
+              - button [ref=f15e295] [cursor=pointer]:
+                - generic [ref=f15e296]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f15e303]:
+              - button [ref=f15e306] [cursor=pointer]:
+                - generic [ref=f15e307]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f15e314]:
+              - button [ref=f15e320] [cursor=pointer]:
+                - generic [ref=f15e321]:
+                  - tooltip "Setup"
+            - listitem [ref=f15e328]:
+              - button "9 Notifications" [ref=f15e331] [cursor=pointer]:
+                - generic [ref=f15e332]:
+                  - generic [ref=f15e333]: "9"
+                  - tooltip "Notifications"
+              - generic [ref=f15e342]: 9 new notifications
+            - listitem [ref=f15e343]:
+              - button "View profile" [ref=f15e346] [cursor=pointer]:
+                - generic [ref=f15e347]:
+                  - tooltip "View profile"
+    - generic [ref=f15e23]:
+      - generic [ref=f15e26]:
+        - generic [ref=f15e28]:
+          - navigation "App" [ref=f15e29]:
+            - button "App Launcher" [ref=f15e31] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f15e43]
+        - navigation "Global" [ref=f15e47]:
+          - list [ref=f15e48]:
+            - listitem [ref=f15e49]:
+              - link "Home" [ref=f15e50] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f15e52]:
+              - link "Analytics" [ref=f15e53] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f15e55]:
+              - link "Opportunities" [ref=f15e56] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f15e61] [cursor=pointer]
+            - listitem [ref=f15e69]:
+              - link "Quotes" [ref=f15e70] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f15e75] [cursor=pointer]
+            - listitem [ref=f15e83] [cursor=pointer]:
+              - link "Leads" [ref=f15e84]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f15e89]
+            - listitem [ref=f15e97]:
+              - link "Tasks" [ref=f15e98] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f15e103] [cursor=pointer]
+            - listitem [ref=f15e111]:
+              - link "Files" [ref=f15e112] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f15e117] [cursor=pointer]
+            - listitem [ref=f15e125]:
+              - link "Accounts" [ref=f15e126] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f15e131] [cursor=pointer]
+            - listitem [ref=f15e139]:
+              - link "Contacts" [ref=f15e140] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f15e145] [cursor=pointer]
+            - listitem [ref=f15e153]:
+              - link "Campaigns" [ref=f15e154] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f15e159] [cursor=pointer]
+            - listitem [ref=f15e167]:
+              - link "Dashboards" [ref=f15e168] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f15e173] [cursor=pointer]
+            - listitem [ref=f15e181]:
+              - link "Reports" [ref=f15e182] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f15e187] [cursor=pointer]
+            - listitem [ref=f15e195]:
+              - link "Chatter" [ref=f15e196] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f15e198]:
+              - link "Groups" [ref=f15e199] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f15e204] [cursor=pointer]
+            - listitem [ref=f15e212]:
+              - button "Show more navigation items" [ref=f15e214] [cursor=pointer]:
+                - generic [ref=f15e215]: More
+            - listitem [ref=f15e223]:
+              - button "Edit nav items" [ref=f15e225] [cursor=pointer]
+      - main [ref=f15e351]:
+        - generic [ref=f15e361]:
+          - generic [ref=f15e363]:
+            - generic [ref=f15e364]:
+              - generic [ref=f15e371]:
+                - heading "Leads" [level=1] [ref=f15e375]
+                - generic [ref=f15e376]:
+                  - generic [ref=f15e377]:
+                    - generic [ref=f15e378] [cursor=pointer]:
+                      - heading "Leads Recently Viewed" [level=1] [ref=f15e379]:
+                        - generic [ref=f15e380]: Leads
+                        - generic [ref=f15e381]: Recently Viewed
+                      - 'button "Select a List View: Leads" [ref=f15e384]'
+                    - dialog [ref=f15e2334]:
+                      - generic [ref=f15e2342]:
+                        - generic [ref=f15e2343]: Search lists...
+                        - generic [ref=f15e2348]:
+                          - combobox "Search lists..." [expanded] [active] [ref=f15e2351]
+                          - listbox "Search lists..." [ref=f15e2358]:
+                            - group "Recent List Views" [ref=f15e2359]:
+                              - text: Recent List Views
+                              - option "Recently Viewed (Pinned list)" [checked] [selected] [ref=f15e2360]
+                            - group "All Other Lists" [ref=f15e2369]:
+                              - text: All Other Lists
+                              - option "AF Leads - Automobiles" [ref=f15e2370]
+                              - option "AF Leads - PremierMotors" [ref=f15e2372]
+                              - option "AF Leads - Review" [ref=f15e2374]
+                              - option "AF Leads - SportsMotors" [ref=f15e2376]
+                              - option "All Items" [ref=f15e2378]
+                              - option "All Open Leads" [ref=f15e2380]
+                              - option "My Leads (AF)" [ref=f15e2382]
+                              - option "My Unread Leads" [ref=f15e2384]
+                              - option "Recently Viewed Leads" [ref=f15e2386]
+                              - option "Today's Leads" [ref=f15e2388]
+                        - status
+                  - button "This list is pinned." [disabled] [ref=f15e393] [cursor=pointer]
+              - list [ref=f15e401]:
+                - listitem [ref=f15e402]:
+                  - button "New" [ref=f15e403] [cursor=pointer]
+                - listitem [ref=f15e405]:
+                  - button "Intelligence View" [ref=f15e406] [cursor=pointer]
+                - listitem [ref=f15e408]:
+                  - button "Change Owner" [ref=f15e409] [cursor=pointer]
+                - listitem [ref=f15e411]:
+                  - button "Add to an Actionable List" [ref=f15e412] [cursor=pointer]
+                - listitem [ref=f15e414]:
+                  - button "Assign Label" [ref=f15e415] [cursor=pointer]
+            - generic [ref=f15e417]:
+              - paragraph [ref=f15e419]:
+                - generic [ref=f15e421]:
+                  - status "Recently Viewed" [ref=f15e422]: 31 items •
+                  - text: Updated a few seconds ago
+              - generic [ref=f15e428]:
+                - generic [ref=f15e429]: Search this list...
+                - searchbox "Search this list..." [ref=f15e431]
+              - generic [ref=f15e435]:
+                - button "List View Controls" [ref=f15e439] [cursor=pointer]
+                - button "Select list display" [ref=f15e451] [cursor=pointer]
+                - generic [ref=f15e462]:
+                  - button "Refresh" [ref=f15e465] [cursor=pointer]
+                  - button "Column sort" [ref=f15e473] [cursor=pointer]
+                  - button "Edit List" [ref=f15e481] [cursor=pointer]
+                  - group [ref=f15e487]:
+                    - generic [ref=f15e489]:
+                      - generic:
+                        - generic:
+                          - button "Charts" [disabled]
+                      - generic:
+                        - generic:
+                          - button "Filters" [disabled]
+          - generic [ref=f15e496]:
+            - generic: Navigation Mode
+            - grid [ref=f15e501]:
+              - rowgroup:
+                - row "Row Number Choose a Row Select 31 items Name Title Company Phone Mobile Email Lead Status Owner Alias Action":
+                  - columnheader "Row Number":
+                    - generic [ref=f15e504]:
+                      - generic "Row Number"
+                  - gridcell "Choose a Row Select 31 items":
+                    - generic [ref=f15e505]:
+                      - generic [ref=f15e506]: Choose a Row
+                      - generic [ref=f15e508]:
+                        - checkbox "Select 31 items" [ref=f15e509]
+                        - generic [ref=f15e510]: Select 31 items
+                  - columnheader "Name":
+                    - generic [ref=f15e514]:
+                      - 'button "Sort by: Name" [ref=f15e515] [cursor=pointer]':
+                        - generic [ref=f15e516]: "Sort by:"
+                        - generic "Name" [ref=f15e517]
+                      - generic [ref=f15e518]: "Sorted: None"
+                      - button "Show Name column actions" [ref=f15e520] [cursor=pointer]
+                      - slider "Name column width" [ref=f15e526]: "449"
+                  - columnheader "Title":
+                    - generic [ref=f15e530]:
+                      - 'button "Sort by: Title" [ref=f15e531] [cursor=pointer]':
+                        - generic [ref=f15e532]: "Sort by:"
+                        - generic "Title" [ref=f15e533]
+                      - generic [ref=f15e534]: "Sorted: None"
+                      - button "Show Title column actions" [ref=f15e536] [cursor=pointer]
+                      - slider "Title column width" [ref=f15e542]: "74"
+                  - columnheader "Company":
+                    - generic [ref=f15e546]:
+                      - 'button "Sort by: Company" [ref=f15e547] [cursor=pointer]':
+                        - generic [ref=f15e548]: "Sort by:"
+                        - generic "Company" [ref=f15e549]
+                      - generic [ref=f15e550]: "Sorted: None"
+                      - button "Show Company column actions" [ref=f15e552] [cursor=pointer]
+                      - slider "Company column width" [ref=f15e558]: "74"
+                  - columnheader "Phone":
+                    - generic [ref=f15e562]:
+                      - 'button "Sort by: Phone" [ref=f15e563] [cursor=pointer]':
+                        - generic [ref=f15e564]: "Sort by:"
+                        - generic "Phone" [ref=f15e565]
+                      - generic [ref=f15e566]: "Sorted: None"
+                      - button "Show Phone column actions" [ref=f15e568] [cursor=pointer]
+                      - slider "Phone column width" [ref=f15e574]: "230"
+                  - columnheader "Mobile":
+                    - generic [ref=f15e578]:
+                      - 'button "Sort by: Mobile" [ref=f15e579] [cursor=pointer]':
+                        - generic [ref=f15e580]: "Sort by:"
+                        - generic "Mobile" [ref=f15e581]
+                      - generic [ref=f15e582]: "Sorted: None"
+                      - button "Show Mobile column actions" [ref=f15e584] [cursor=pointer]
+                      - slider "Mobile column width" [ref=f15e590]: "70"
+                  - columnheader "Email":
+                    - generic [ref=f15e594]:
+                      - 'button "Sort by: Email" [ref=f15e595] [cursor=pointer]':
+                        - generic [ref=f15e596]: "Sort by:"
+                        - generic "Email" [ref=f15e597]
+                      - generic [ref=f15e598]: "Sorted: None"
+                      - button "Show Email column actions" [ref=f15e600] [cursor=pointer]
+                      - slider "Email column width" [ref=f15e606]: "460"
+                  - columnheader "Lead Status":
+                    - generic [ref=f15e610]:
+                      - 'button "Sort by: Lead Status" [ref=f15e611] [cursor=pointer]':
+                        - generic [ref=f15e612]: "Sort by:"
+                        - generic "Lead Status" [ref=f15e613]
+                      - generic [ref=f15e614]: "Sorted: None"
+                      - button "Show Lead Status column actions" [ref=f15e616] [cursor=pointer]
+                      - slider "Lead Status column width" [ref=f15e622]: "118"
+                  - columnheader "Owner Alias":
+                    - generic [ref=f15e626]:
+                      - 'button "Sort by: Owner Alias" [ref=f15e627] [cursor=pointer]':
+                        - generic [ref=f15e628]: "Sort by:"
+                        - generic "Owner Alias" [ref=f15e629]
+                      - generic [ref=f15e630]: "Sorted: None"
+                      - button "Show Owner Alias column actions" [ref=f15e632] [cursor=pointer]
+                      - slider "Owner Alias column width" [ref=f15e638]: "95"
+                  - columnheader "Action":
+                    - generic [ref=f15e643]:
+                      - generic "Action"
+              - rowgroup [ref=f15e644]:
+                - row [ref=f15e645]:
+                  - gridcell [ref=f15e646]
+                  - gridcell "Select Item 1 Choose a Row" [ref=f15e650]:
+                    - generic [ref=f15e651]:
+                      - checkbox "Select Item 1 Choose a Row" [ref=f15e652]
+                      - generic [ref=f15e653]: Select Item 1
+                  - rowheader [ref=f15e656]:
+                    - generic [ref=f15e657]:
+                      - link "QA test LM-04-TC004 Ferrari4" [ref=f15e663] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A39hYHzo2EG/view
+                      - img "Locked Name" [ref=f15e665]
+                  - gridcell [ref=f15e669]:
+                    - button "Edit Title" [ref=f15e671] [cursor=pointer]
+                  - gridcell [ref=f15e675]:
+                    - generic [ref=f15e676]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A39hYHzo2EG/view
+                      - button "Edit Company" [ref=f15e677] [cursor=pointer]
+                  - gridcell [ref=f15e681]:
+                    - generic [ref=f15e682]:
+                      - link "+974 5512 4014" [ref=f15e686] [cursor=pointer]:
+                        - /url: tel:+974 5512 4014
+                      - button "Edit Phone" [ref=f15e687] [cursor=pointer]
+                  - gridcell [ref=f15e691]:
+                    - img "Locked Mobile" [ref=f15e693]
+                  - gridcell [ref=f15e697]:
+                    - button "Edit Email" [ref=f15e699] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e703]:
+                    - generic [ref=f15e704]:
+                      - generic [ref=f15e705]: New
+                      - button "Edit Lead Status" [ref=f15e708] [cursor=pointer]
+                  - gridcell [ref=f15e712]:
+                    - generic [ref=f15e713]:
+                      - link "jross" [ref=f15e718] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e720]
+                  - gridcell [ref=f15e724]:
+                    - button "Show Actions" [ref=f15e730] [cursor=pointer]
+                - row [ref=f15e736]:
+                  - gridcell [ref=f15e737]
+                  - gridcell "Select Item 2 Choose a Row" [ref=f15e741]:
+                    - generic [ref=f15e742]:
+                      - checkbox "Select Item 2 Choose a Row" [ref=f15e743]
+                      - generic [ref=f15e744]: Select Item 2
+                  - rowheader [ref=f15e747]:
+                    - generic [ref=f15e748]:
+                      - link "QA test LM-04-TC004 Ferrari3" [ref=f15e754] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A39hU5qm2EC/view
+                      - img "Locked Name" [ref=f15e756]
+                  - gridcell [ref=f15e760]:
+                    - button "Edit Title" [ref=f15e762] [cursor=pointer]
+                  - gridcell [ref=f15e766]:
+                    - generic [ref=f15e767]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A39hU5qm2EC/view
+                      - button "Edit Company" [ref=f15e768] [cursor=pointer]
+                  - gridcell [ref=f15e772]:
+                    - generic [ref=f15e773]:
+                      - link "+974 5512 4013" [ref=f15e777] [cursor=pointer]:
+                        - /url: tel:+974 5512 4013
+                      - button "Edit Phone" [ref=f15e778] [cursor=pointer]
+                  - gridcell [ref=f15e782]:
+                    - img "Locked Mobile" [ref=f15e784]
+                  - gridcell [ref=f15e788]:
+                    - button "Edit Email" [ref=f15e790] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e794]:
+                    - generic [ref=f15e795]:
+                      - generic [ref=f15e796]: New
+                      - button "Edit Lead Status" [ref=f15e799] [cursor=pointer]
+                  - gridcell [ref=f15e803]:
+                    - generic [ref=f15e804]:
+                      - link "sukh" [ref=f15e809] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e811]
+                  - gridcell [ref=f15e815]:
+                    - button "Show Actions" [ref=f15e821] [cursor=pointer]
+                - row [ref=f15e827]:
+                  - gridcell [ref=f15e828]
+                  - gridcell "Select Item 3 Choose a Row" [ref=f15e832]:
+                    - generic [ref=f15e833]:
+                      - checkbox "Select Item 3 Choose a Row" [ref=f15e834]
+                      - generic [ref=f15e835]: Select Item 3
+                  - rowheader [ref=f15e838]:
+                    - generic [ref=f15e839]:
+                      - link "QA test LM-04-TC004 Ferrari2" [ref=f15e845] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A39hPthk2EC/view
+                      - img "Locked Name" [ref=f15e847]
+                  - gridcell [ref=f15e851]:
+                    - button "Edit Title" [ref=f15e853] [cursor=pointer]
+                  - gridcell [ref=f15e857]:
+                    - generic [ref=f15e858]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A39hPthk2EC/view
+                      - button "Edit Company" [ref=f15e859] [cursor=pointer]
+                  - gridcell [ref=f15e863]:
+                    - generic [ref=f15e864]:
+                      - link "+974 5512 4012" [ref=f15e868] [cursor=pointer]:
+                        - /url: tel:+974 5512 4012
+                      - button "Edit Phone" [ref=f15e869] [cursor=pointer]
+                  - gridcell [ref=f15e873]:
+                    - img "Locked Mobile" [ref=f15e875]
+                  - gridcell [ref=f15e879]:
+                    - button "Edit Email" [ref=f15e881] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e885]:
+                    - generic [ref=f15e886]:
+                      - generic [ref=f15e887]: New
+                      - button "Edit Lead Status" [ref=f15e890] [cursor=pointer]
+                  - gridcell [ref=f15e894]:
+                    - generic [ref=f15e895]:
+                      - link "jross" [ref=f15e900] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e902]
+                  - gridcell [ref=f15e906]:
+                    - button "Show Actions" [ref=f15e912] [cursor=pointer]
+                - row [ref=f15e918]:
+                  - gridcell [ref=f15e919]
+                  - gridcell "Select Item 4 Choose a Row" [ref=f15e923]:
+                    - generic [ref=f15e924]:
+                      - checkbox "Select Item 4 Choose a Row" [ref=f15e925]
+                      - generic [ref=f15e926]: Select Item 4
+                  - rowheader [ref=f15e929]:
+                    - generic [ref=f15e930]:
+                      - link "QA test LM-04-TC004 Ferrari1" [ref=f15e936] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A39hLhYi2EK/view
+                      - img "Locked Name" [ref=f15e938]
+                  - gridcell [ref=f15e942]:
+                    - button "Edit Title" [ref=f15e944] [cursor=pointer]
+                  - gridcell [ref=f15e948]:
+                    - generic [ref=f15e949]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A39hLhYi2EK/view
+                      - button "Edit Company" [ref=f15e950] [cursor=pointer]
+                  - gridcell [ref=f15e954]:
+                    - generic [ref=f15e955]:
+                      - link "+974 5512 4011" [ref=f15e959] [cursor=pointer]:
+                        - /url: tel:+974 5512 4011
+                      - button "Edit Phone" [ref=f15e960] [cursor=pointer]
+                  - gridcell [ref=f15e964]:
+                    - img "Locked Mobile" [ref=f15e966]
+                  - gridcell [ref=f15e970]:
+                    - button "Edit Email" [ref=f15e972] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e976]:
+                    - generic [ref=f15e977]:
+                      - generic [ref=f15e978]: New
+                      - button "Edit Lead Status" [ref=f15e981] [cursor=pointer]
+                  - gridcell [ref=f15e985]:
+                    - generic [ref=f15e986]:
+                      - link "sukh" [ref=f15e991] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e993]
+                  - gridcell [ref=f15e997]:
+                    - button "Show Actions" [ref=f15e1003] [cursor=pointer]
+                - row [ref=f15e1009]:
+                  - gridcell [ref=f15e1010]
+                  - gridcell "Select Item 5 Choose a Row" [ref=f15e1014]:
+                    - generic [ref=f15e1015]:
+                      - checkbox "Select Item 5 Choose a Row" [ref=f15e1016]
+                      - generic [ref=f15e1017]: Select Item 5
+                  - rowheader [ref=f15e1020]:
+                    - generic [ref=f15e1021]:
+                      - link "QA test LM-04-TC001 RollsRoyceA" [ref=f15e1027] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3NzlZhE2UU/view
+                      - img "Locked Name" [ref=f15e1029]
+                  - gridcell [ref=f15e1033]:
+                    - button "Edit Title" [ref=f15e1035] [cursor=pointer]
+                  - gridcell [ref=f15e1039]:
+                    - generic [ref=f15e1040]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3NzlZhE2UU/view
+                      - button "Edit Company" [ref=f15e1041] [cursor=pointer]
+                  - gridcell [ref=f15e1045]:
+                    - generic [ref=f15e1046]:
+                      - link "+974 5512 4002" [ref=f15e1050] [cursor=pointer]:
+                        - /url: tel:+974 5512 4002
+                      - button "Edit Phone" [ref=f15e1051] [cursor=pointer]
+                  - gridcell [ref=f15e1055]:
+                    - img "Locked Mobile" [ref=f15e1057]
+                  - gridcell [ref=f15e1061]:
+                    - button "Edit Email" [ref=f15e1063] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1067]:
+                    - generic [ref=f15e1068]:
+                      - generic [ref=f15e1069]: New
+                      - button "Edit Lead Status" [ref=f15e1072] [cursor=pointer]
+                  - gridcell [ref=f15e1076]:
+                    - generic [ref=f15e1077]:
+                      - link "sukh" [ref=f15e1082] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e1084]
+                  - gridcell [ref=f15e1088]:
+                    - button "Show Actions" [ref=f15e1094] [cursor=pointer]
+                - row [ref=f15e1100]:
+                  - gridcell [ref=f15e1101]
+                  - gridcell "Select Item 6 Choose a Row" [ref=f15e1105]:
+                    - generic [ref=f15e1106]:
+                      - checkbox "Select Item 6 Choose a Row" [ref=f15e1107]
+                      - generic [ref=f15e1108]: Select Item 6
+                  - rowheader [ref=f15e1111]:
+                    - generic [ref=f15e1112]:
+                      - link "QA test LM-04-TC001 FerrariA" [ref=f15e1118] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3Nszz802UA/view
+                      - img "Locked Name" [ref=f15e1120]
+                  - gridcell [ref=f15e1124]:
+                    - button "Edit Title" [ref=f15e1126] [cursor=pointer]
+                  - gridcell [ref=f15e1130]:
+                    - generic [ref=f15e1131]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3Nszz802UA/view
+                      - button "Edit Company" [ref=f15e1132] [cursor=pointer]
+                  - gridcell [ref=f15e1136]:
+                    - generic [ref=f15e1137]:
+                      - link "+974 5512 4001" [ref=f15e1141] [cursor=pointer]:
+                        - /url: tel:+974 5512 4001
+                      - button "Edit Phone" [ref=f15e1142] [cursor=pointer]
+                  - gridcell [ref=f15e1146]:
+                    - img "Locked Mobile" [ref=f15e1148]
+                  - gridcell [ref=f15e1152]:
+                    - button "Edit Email" [ref=f15e1154] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1158]:
+                    - generic [ref=f15e1159]:
+                      - generic [ref=f15e1160]: New
+                      - button "Edit Lead Status" [ref=f15e1163] [cursor=pointer]
+                  - gridcell [ref=f15e1167]:
+                    - generic [ref=f15e1168]:
+                      - link "jross" [ref=f15e1173] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e1175]
+                  - gridcell [ref=f15e1179]:
+                    - button "Show Actions" [ref=f15e1185] [cursor=pointer]
+                - row [ref=f15e1191]:
+                  - gridcell [ref=f15e1192]
+                  - gridcell "Select Item 7 Choose a Row" [ref=f15e1196]:
+                    - generic [ref=f15e1197]:
+                      - checkbox "Select Item 7 Choose a Row" [ref=f15e1198]
+                      - generic [ref=f15e1199]: Select Item 7
+                  - rowheader [ref=f15e1202]:
+                    - generic [ref=f15e1203]:
+                      - link "QA test LM-03 TC004 PhoneCrossObject" [ref=f15e1209] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3CdwEbk2UE/view
+                      - img "Locked Name" [ref=f15e1211]
+                  - gridcell [ref=f15e1215]:
+                    - button "Edit Title" [ref=f15e1217] [cursor=pointer]
+                  - gridcell [ref=f15e1221]:
+                    - generic [ref=f15e1222]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3CdwEbk2UE/view
+                      - button "Edit Company" [ref=f15e1223] [cursor=pointer]
+                  - gridcell [ref=f15e1227]:
+                    - generic [ref=f15e1228]:
+                      - link "+974 4478 2200" [ref=f15e1232] [cursor=pointer]:
+                        - /url: tel:+974 4478 2200
+                      - button "Edit Phone" [ref=f15e1233] [cursor=pointer]
+                  - gridcell [ref=f15e1237]:
+                    - img "Locked Mobile" [ref=f15e1239]
+                  - gridcell [ref=f15e1243]:
+                    - generic [ref=f15e1244]:
+                      - link "qa.lm03.tc004phonematch@example.qa" [ref=f15e1249] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.tc004phonematch@example.qa
+                      - button "Edit Email" [ref=f15e1250] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1254]:
+                    - generic [ref=f15e1255]:
+                      - generic [ref=f15e1256]: New
+                      - button "Edit Lead Status" [ref=f15e1259] [cursor=pointer]
+                  - gridcell [ref=f15e1263]:
+                    - generic [ref=f15e1264]:
+                      - link "sukh" [ref=f15e1269] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e1271]
+                  - gridcell [ref=f15e1275]:
+                    - button "Show Actions" [ref=f15e1281] [cursor=pointer]
+                - row [ref=f15e1287]:
+                  - gridcell [ref=f15e1288]
+                  - gridcell "Select Item 8 Choose a Row" [ref=f15e1292]:
+                    - generic [ref=f15e1293]:
+                      - checkbox "Select Item 8 Choose a Row" [ref=f15e1294]
+                      - generic [ref=f15e1295]: Select Item 8
+                  - rowheader [ref=f15e1298]:
+                    - generic [ref=f15e1299]:
+                      - link "Fahad QA-LM03-TC004-Contact" [ref=f15e1305] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A38AXFSW2E5/view
+                      - img "Locked Name" [ref=f15e1307]
+                  - gridcell [ref=f15e1311]:
+                    - button "Edit Title" [ref=f15e1313] [cursor=pointer]
+                  - gridcell [ref=f15e1317]:
+                    - generic [ref=f15e1318]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A38AXFSW2E5/view
+                      - button "Edit Company" [ref=f15e1319] [cursor=pointer]
+                  - gridcell [ref=f15e1323]:
+                    - generic [ref=f15e1324]:
+                      - link "+974 5512 3701" [ref=f15e1328] [cursor=pointer]:
+                        - /url: tel:+974 5512 3701
+                      - button "Edit Phone" [ref=f15e1329] [cursor=pointer]
+                  - gridcell [ref=f15e1333]:
+                    - img "Locked Mobile" [ref=f15e1335]
+                  - gridcell [ref=f15e1339]:
+                    - generic [ref=f15e1340]:
+                      - link "qa.lm03.tc004namematch@example.qa" [ref=f15e1345] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.tc004namematch@example.qa
+                      - button "Edit Email" [ref=f15e1346] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1350]:
+                    - generic [ref=f15e1351]:
+                      - generic [ref=f15e1352]: New
+                      - button "Edit Lead Status" [ref=f15e1355] [cursor=pointer]
+                  - gridcell [ref=f15e1359]:
+                    - generic [ref=f15e1360]:
+                      - link "jross" [ref=f15e1365] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e1367]
+                  - gridcell [ref=f15e1371]:
+                    - button "Show Actions" [ref=f15e1377] [cursor=pointer]
+                - row [ref=f15e1383]:
+                  - gridcell [ref=f15e1384]
+                  - gridcell "Select Item 9 Choose a Row" [ref=f15e1388]:
+                    - generic [ref=f15e1389]:
+                      - checkbox "Select Item 9 Choose a Row" [ref=f15e1390]
+                      - generic [ref=f15e1391]: Select Item 9
+                  - rowheader [ref=f15e1394]:
+                    - generic [ref=f15e1395]:
+                      - link "Rashid QA-LM03-Anchor" [ref=f15e1401] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3CXAe2W2UT/view
+                      - img "Locked Name" [ref=f15e1403]
+                  - gridcell [ref=f15e1407]:
+                    - button "Edit Title" [ref=f15e1409] [cursor=pointer]
+                  - gridcell [ref=f15e1413]:
+                    - generic [ref=f15e1414]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3CXAe2W2UT/view
+                      - button "Edit Company" [ref=f15e1415] [cursor=pointer]
+                  - gridcell [ref=f15e1419]:
+                    - generic [ref=f15e1420]:
+                      - link "+974 5512 3601" [ref=f15e1424] [cursor=pointer]:
+                        - /url: tel:+974 5512 3601
+                      - button "Edit Phone" [ref=f15e1425] [cursor=pointer]
+                  - gridcell [ref=f15e1429]:
+                    - img "Locked Mobile" [ref=f15e1431]
+                  - gridcell [ref=f15e1435]:
+                    - generic [ref=f15e1436]:
+                      - link "qa.lm03.anchor2@example.qa" [ref=f15e1441] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.anchor2@example.qa
+                      - button "Edit Email" [ref=f15e1442] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1446]:
+                    - generic [ref=f15e1447]:
+                      - generic [ref=f15e1448]: New
+                      - button "Edit Lead Status" [ref=f15e1451] [cursor=pointer]
+                  - gridcell [ref=f15e1455]:
+                    - generic [ref=f15e1456]:
+                      - link "sukh" [ref=f15e1461] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e1463]
+                  - gridcell [ref=f15e1467]:
+                    - button "Show Actions" [ref=f15e1473] [cursor=pointer]
+                - row [ref=f15e1479]:
+                  - gridcell [ref=f15e1480]
+                  - gridcell "Select Item 10 Choose a Row" [ref=f15e1484]:
+                    - generic [ref=f15e1485]:
+                      - checkbox "Select Item 10 Choose a Row" [ref=f15e1486]
+                      - generic [ref=f15e1487]: Select Item 10
+                  - rowheader [ref=f15e1490]:
+                    - generic [ref=f15e1491]:
+                      - link "QA test LM-03 Master Al-Mannai" [ref=f15e1497] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A30xsJxc2EE/view
+                      - img "Locked Name" [ref=f15e1499]
+                  - gridcell [ref=f15e1503]:
+                    - button "Edit Title" [ref=f15e1505] [cursor=pointer]
+                  - gridcell [ref=f15e1509]:
+                    - generic [ref=f15e1510]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A30xsJxc2EE/view
+                      - button "Edit Company" [ref=f15e1511] [cursor=pointer]
+                  - gridcell [ref=f15e1515]:
+                    - generic [ref=f15e1516]:
+                      - link "+974 5512 9999" [ref=f15e1520] [cursor=pointer]:
+                        - /url: tel:+974 5512 9999
+                      - button "Edit Phone" [ref=f15e1521] [cursor=pointer]
+                  - gridcell [ref=f15e1525]:
+                    - img "Locked Mobile" [ref=f15e1527]
+                  - gridcell [ref=f15e1531]:
+                    - generic [ref=f15e1532]:
+                      - link "qa.lm03.namematch@example.qa" [ref=f15e1537] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.namematch@example.qa
+                      - button "Edit Email" [ref=f15e1538] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1542]:
+                    - generic [ref=f15e1543]:
+                      - generic [ref=f15e1544]: New
+                      - button "Edit Lead Status" [ref=f15e1547] [cursor=pointer]
+                  - gridcell [ref=f15e1551]:
+                    - generic [ref=f15e1552]:
+                      - link "jross" [ref=f15e1557] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e1559]
+                  - gridcell [ref=f15e1563]:
+                    - button "Show Actions" [ref=f15e1569] [cursor=pointer]
+                - row [ref=f15e1575]:
+                  - gridcell [ref=f15e1576]
+                  - gridcell "Select Item 11 Choose a Row" [ref=f15e1580]:
+                    - generic [ref=f15e1581]:
+                      - checkbox "Select Item 11 Choose a Row" [ref=f15e1582]
+                      - generic [ref=f15e1583]: Select Item 11
+                  - rowheader [ref=f15e1586]:
+                    - generic [ref=f15e1587]:
+                      - link "QA test LM-03 PhoneNormalized" [ref=f15e1593] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3CJdSu42UF/view
+                      - img "Locked Name" [ref=f15e1595]
+                  - gridcell [ref=f15e1599]:
+                    - button "Edit Title" [ref=f15e1601] [cursor=pointer]
+                  - gridcell [ref=f15e1605]:
+                    - generic [ref=f15e1606]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3CJdSu42UF/view
+                      - button "Edit Company" [ref=f15e1607] [cursor=pointer]
+                  - gridcell [ref=f15e1611]:
+                    - generic [ref=f15e1612]:
+                      - link "974 5512 3501" [ref=f15e1616] [cursor=pointer]:
+                        - /url: tel:974 5512 3501
+                      - button "Edit Phone" [ref=f15e1617] [cursor=pointer]
+                  - gridcell [ref=f15e1621]:
+                    - img "Locked Mobile" [ref=f15e1623]
+                  - gridcell [ref=f15e1627]:
+                    - generic [ref=f15e1628]:
+                      - link "qa.lm03.phonenorm@example.qa" [ref=f15e1633] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.phonenorm@example.qa
+                      - button "Edit Email" [ref=f15e1634] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1638]:
+                    - generic [ref=f15e1639]:
+                      - generic [ref=f15e1640]: New
+                      - button "Edit Lead Status" [ref=f15e1643] [cursor=pointer]
+                  - gridcell [ref=f15e1647]:
+                    - generic [ref=f15e1648]:
+                      - link "sukh" [ref=f15e1653] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e1655]
+                  - gridcell [ref=f15e1659]:
+                    - button "Show Actions" [ref=f15e1665] [cursor=pointer]
+                - row [ref=f15e1671]:
+                  - gridcell [ref=f15e1672]
+                  - gridcell "Select Item 12 Choose a Row" [ref=f15e1676]:
+                    - generic [ref=f15e1677]:
+                      - checkbox "Select Item 12 Choose a Row" [ref=f15e1678]
+                      - generic [ref=f15e1679]: Select Item 12
+                  - rowheader [ref=f15e1682]:
+                    - generic [ref=f15e1683]:
+                      - link "QA test LM-03 NoMatch" [ref=f15e1689] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3CCrsKq2UJ/view
+                      - img "Locked Name" [ref=f15e1691]
+                  - gridcell [ref=f15e1695]:
+                    - button "Edit Title" [ref=f15e1697] [cursor=pointer]
+                  - gridcell [ref=f15e1701]:
+                    - generic [ref=f15e1702]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3CCrsKq2UJ/view
+                      - button "Edit Company" [ref=f15e1703] [cursor=pointer]
+                  - gridcell [ref=f15e1707]:
+                    - generic [ref=f15e1708]:
+                      - link "+974 5512 3504" [ref=f15e1712] [cursor=pointer]:
+                        - /url: tel:+974 5512 3504
+                      - button "Edit Phone" [ref=f15e1713] [cursor=pointer]
+                  - gridcell [ref=f15e1717]:
+                    - img "Locked Mobile" [ref=f15e1719]
+                  - gridcell [ref=f15e1723]:
+                    - generic [ref=f15e1724]:
+                      - link "qa.lm03.nomatch@example.qa" [ref=f15e1729] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.nomatch@example.qa
+                      - button "Edit Email" [ref=f15e1730] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1734]:
+                    - generic [ref=f15e1735]:
+                      - generic [ref=f15e1736]: New
+                      - button "Edit Lead Status" [ref=f15e1739] [cursor=pointer]
+                  - gridcell [ref=f15e1743]:
+                    - generic [ref=f15e1744]:
+                      - link "jross" [ref=f15e1749] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e1751]
+                  - gridcell [ref=f15e1755]:
+                    - button "Show Actions" [ref=f15e1761] [cursor=pointer]
+                - row [ref=f15e1767]:
+                  - gridcell [ref=f15e1768]
+                  - gridcell "Select Item 13 Choose a Row" [ref=f15e1772]:
+                    - generic [ref=f15e1773]:
+                      - checkbox "Select Item 13 Choose a Row" [ref=f15e1774]
+                      - generic [ref=f15e1775]: Select Item 13
+                  - rowheader [ref=f15e1778]:
+                    - generic [ref=f15e1779]:
+                      - link "QA test LM-03 QIDOnlyMatch" [ref=f15e1785] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3C66Hlc2UE/view
+                      - img "Locked Name" [ref=f15e1787]
+                  - gridcell [ref=f15e1791]:
+                    - button "Edit Title" [ref=f15e1793] [cursor=pointer]
+                  - gridcell [ref=f15e1797]:
+                    - generic [ref=f15e1798]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3C66Hlc2UE/view
+                      - button "Edit Company" [ref=f15e1799] [cursor=pointer]
+                  - gridcell [ref=f15e1803]:
+                    - generic [ref=f15e1804]:
+                      - link "+974 5512 3503" [ref=f15e1808] [cursor=pointer]:
+                        - /url: tel:+974 5512 3503
+                      - button "Edit Phone" [ref=f15e1809] [cursor=pointer]
+                  - gridcell [ref=f15e1813]:
+                    - img "Locked Mobile" [ref=f15e1815]
+                  - gridcell [ref=f15e1819]:
+                    - generic [ref=f15e1820]:
+                      - link "qa.lm03.qidonly@example.qa" [ref=f15e1825] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.qidonly@example.qa
+                      - button "Edit Email" [ref=f15e1826] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1830]:
+                    - generic [ref=f15e1831]:
+                      - generic [ref=f15e1832]: New
+                      - button "Edit Lead Status" [ref=f15e1835] [cursor=pointer]
+                  - gridcell [ref=f15e1839]:
+                    - generic [ref=f15e1840]:
+                      - link "sukh" [ref=f15e1845] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e1847]
+                  - gridcell [ref=f15e1851]:
+                    - button "Show Actions" [ref=f15e1857] [cursor=pointer]
+                - row [ref=f15e1863]:
+                  - gridcell [ref=f15e1864]
+                  - gridcell "Select Item 14 Choose a Row" [ref=f15e1868]:
+                    - generic [ref=f15e1869]:
+                      - checkbox "Select Item 14 Choose a Row" [ref=f15e1870]
+                      - generic [ref=f15e1871]: Select Item 14
+                  - rowheader [ref=f15e1874]:
+                    - generic [ref=f15e1875]:
+                      - link "QA test LM-03 Master Al-Mannai" [ref=f15e1881] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3BsZ6dA2US/view
+                      - img "Locked Name" [ref=f15e1883]
+                  - gridcell [ref=f15e1887]:
+                    - button "Edit Title" [ref=f15e1889] [cursor=pointer]
+                  - gridcell [ref=f15e1893]:
+                    - generic [ref=f15e1894]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3BsZ6dA2US/view
+                      - button "Edit Company" [ref=f15e1895] [cursor=pointer]
+                  - gridcell [ref=f15e1899]:
+                    - generic [ref=f15e1900]:
+                      - link "+974 5512 3501" [ref=f15e1904] [cursor=pointer]:
+                        - /url: tel:+974 5512 3501
+                      - button "Edit Phone" [ref=f15e1905] [cursor=pointer]
+                  - gridcell [ref=f15e1909]:
+                    - img "Locked Mobile" [ref=f15e1911]
+                  - gridcell [ref=f15e1915]:
+                    - generic [ref=f15e1916]:
+                      - link "qa.lm03.master@example.qa" [ref=f15e1921] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.master@example.qa
+                      - button "Edit Email" [ref=f15e1922] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e1926]:
+                    - generic [ref=f15e1927]:
+                      - generic [ref=f15e1928]: New
+                      - button "Edit Lead Status" [ref=f15e1931] [cursor=pointer]
+                  - gridcell [ref=f15e1935]:
+                    - generic [ref=f15e1936]:
+                      - link "jross" [ref=f15e1941] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e1943]
+                  - gridcell [ref=f15e1947]:
+                    - button "Show Actions" [ref=f15e1953] [cursor=pointer]
+                - row [ref=f15e1959]:
+                  - gridcell [ref=f15e1960]
+                  - gridcell "Select Item 15 Choose a Row" [ref=f15e1964]:
+                    - generic [ref=f15e1965]:
+                      - checkbox "Select Item 15 Choose a Row" [ref=f15e1966]
+                      - generic [ref=f15e1967]: Select Item 15
+                  - rowheader [ref=f15e1970]:
+                    - generic [ref=f15e1971]:
+                      - link "QA test LM-03 EmailOnlyMatch" [ref=f15e1977] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3B7GAnc2UG/view
+                      - img "Locked Name" [ref=f15e1979]
+                  - gridcell [ref=f15e1983]:
+                    - button "Edit Title" [ref=f15e1985] [cursor=pointer]
+                  - gridcell [ref=f15e1989]:
+                    - generic [ref=f15e1990]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3B7GAnc2UG/view
+                      - button "Edit Company" [ref=f15e1991] [cursor=pointer]
+                  - gridcell [ref=f15e1995]:
+                    - generic [ref=f15e1996]:
+                      - link "+974 5512 3502" [ref=f15e2000] [cursor=pointer]:
+                        - /url: tel:+974 5512 3502
+                      - button "Edit Phone" [ref=f15e2001] [cursor=pointer]
+                  - gridcell [ref=f15e2005]:
+                    - img "Locked Mobile" [ref=f15e2007]
+                  - gridcell [ref=f15e2011]:
+                    - generic [ref=f15e2012]:
+                      - link "qa.lm03.master@example.qa" [ref=f15e2017] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.master@example.qa
+                      - button "Edit Email" [ref=f15e2018] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e2022]:
+                    - generic [ref=f15e2023]:
+                      - generic [ref=f15e2024]: New
+                      - button "Edit Lead Status" [ref=f15e2027] [cursor=pointer]
+                  - gridcell [ref=f15e2031]:
+                    - generic [ref=f15e2032]:
+                      - link "jross" [ref=f15e2037] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e2039]
+                  - gridcell [ref=f15e2043]:
+                    - button "Show Actions" [ref=f15e2049] [cursor=pointer]
+                - row [ref=f15e2055]:
+                  - gridcell [ref=f15e2056]
+                  - gridcell "Select Item 16 Choose a Row" [ref=f15e2060]:
+                    - generic [ref=f15e2061]:
+                      - checkbox "Select Item 16 Choose a Row" [ref=f15e2062]
+                      - generic [ref=f15e2063]: Select Item 16
+                  - rowheader [ref=f15e2066]:
+                    - generic [ref=f15e2067]:
+                      - link "QA test LM-03 PhoneOnlyMatch" [ref=f15e2073] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3BzKhCO2U0/view
+                      - img "Locked Name" [ref=f15e2075]
+                  - gridcell [ref=f15e2079]:
+                    - button "Edit Title" [ref=f15e2081] [cursor=pointer]
+                  - gridcell [ref=f15e2085]:
+                    - generic [ref=f15e2086]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A3BzKhCO2U0/view
+                      - button "Edit Company" [ref=f15e2087] [cursor=pointer]
+                  - gridcell [ref=f15e2091]:
+                    - generic [ref=f15e2092]:
+                      - link "+974 5512 3501" [ref=f15e2096] [cursor=pointer]:
+                        - /url: tel:+974 5512 3501
+                      - button "Edit Phone" [ref=f15e2097] [cursor=pointer]
+                  - gridcell [ref=f15e2101]:
+                    - img "Locked Mobile" [ref=f15e2103]
+                  - gridcell [ref=f15e2107]:
+                    - generic [ref=f15e2108]:
+                      - link "qa.lm03.phoneonly@example.qa" [ref=f15e2113] [cursor=pointer]:
+                        - /url: mailto:qa.lm03.phoneonly@example.qa
+                      - button "Edit Email" [ref=f15e2114] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e2118]:
+                    - generic [ref=f15e2119]:
+                      - generic [ref=f15e2120]: New
+                      - button "Edit Lead Status" [ref=f15e2123] [cursor=pointer]
+                  - gridcell [ref=f15e2127]:
+                    - generic [ref=f15e2128]:
+                      - link "sukh" [ref=f15e2133] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e2135]
+                  - gridcell [ref=f15e2139]:
+                    - button "Show Actions" [ref=f15e2145] [cursor=pointer]
+                - row [ref=f15e2151]:
+                  - gridcell [ref=f15e2152]
+                  - gridcell "Select Item 17 Choose a Row" [ref=f15e2156]:
+                    - generic [ref=f15e2157]:
+                      - checkbox "Select Item 17 Choose a Row" [ref=f15e2158]
+                      - generic [ref=f15e2159]: Select Item 17
+                  - rowheader [ref=f15e2162]:
+                    - generic [ref=f15e2163]:
+                      - link "adf sadf" [ref=f15e2169] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A2whwJno2EE/view
+                      - img "Locked Name" [ref=f15e2171]
+                  - gridcell [ref=f15e2175]:
+                    - button "Edit Title" [ref=f15e2177] [cursor=pointer]
+                  - gridcell [ref=f15e2181]:
+                    - generic [ref=f15e2182]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A2whwJno2EE/view
+                      - button "Edit Company" [ref=f15e2183] [cursor=pointer]
+                  - gridcell [ref=f15e2187]:
+                    - generic [ref=f15e2188]:
+                      - link "+971503318899" [ref=f15e2192] [cursor=pointer]:
+                        - /url: tel:+971503318899
+                      - button "Edit Phone" [ref=f15e2193] [cursor=pointer]
+                  - gridcell [ref=f15e2197]:
+                    - img "Locked Mobile" [ref=f15e2199]
+                  - gridcell [ref=f15e2203]:
+                    - button "Edit Email" [ref=f15e2205] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e2209]:
+                    - generic [ref=f15e2210]:
+                      - generic [ref=f15e2211]: New
+                      - button "Edit Lead Status" [ref=f15e2214] [cursor=pointer]
+                  - gridcell [ref=f15e2218]:
+                    - generic [ref=f15e2219]:
+                      - link "jross" [ref=f15e2224] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN2A5HAAQ0/view
+                      - img "Locked Owner Alias" [ref=f15e2226]
+                  - gridcell [ref=f15e2230]:
+                    - button "Show Actions" [ref=f15e2236] [cursor=pointer]
+                - row [ref=f15e2242]:
+                  - gridcell [ref=f15e2243]
+                  - gridcell "Select Item 18 Choose a Row" [ref=f15e2247]:
+                    - generic [ref=f15e2248]:
+                      - checkbox "Select Item 18 Choose a Row" [ref=f15e2249]
+                      - generic [ref=f15e2250]: Select Item 18
+                  - rowheader [ref=f15e2253]:
+                    - generic [ref=f15e2254]:
+                      - link "g g" [ref=f15e2260] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A2yLSAKC2E5/view
+                      - img "Locked Name" [ref=f15e2262]
+                  - gridcell [ref=f15e2266]:
+                    - button "Edit Title" [ref=f15e2268] [cursor=pointer]
+                  - gridcell [ref=f15e2272]:
+                    - generic [ref=f15e2273]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A2yLSAKC2E5/view
+                      - button "Edit Company" [ref=f15e2274] [cursor=pointer]
+                  - gridcell [ref=f15e2278]:
+                    - generic [ref=f15e2279]:
+                      - link "+971503332222" [ref=f15e2283] [cursor=pointer]:
+                        - /url: tel:+971503332222
+                      - button "Edit Phone" [ref=f15e2284] [cursor=pointer]
+                  - gridcell [ref=f15e2288]:
+                    - img "Locked Mobile" [ref=f15e2290]
+                  - gridcell [ref=f15e2294]:
+                    - button "Edit Email" [ref=f15e2296] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e2300]:
+                    - generic [ref=f15e2301]:
+                      - generic [ref=f15e2302]: New
+                      - button "Edit Lead Status" [ref=f15e2305] [cursor=pointer]
+                  - gridcell [ref=f15e2309]:
+                    - generic [ref=f15e2310]:
+                      - link "sukh" [ref=f15e2315] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                      - img "Locked Owner Alias" [ref=f15e2317]
+                  - gridcell [ref=f15e2321]:
+                    - button "Show Actions" [ref=f15e2327] [cursor=pointer]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f15e239]:
+          - listitem [ref=f15e240]:
+            - button "To Do List" [ref=f15e243] [cursor=pointer]
+  - generic:
+    - status

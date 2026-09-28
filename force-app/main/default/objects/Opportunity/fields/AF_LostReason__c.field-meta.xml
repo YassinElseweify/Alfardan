@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_LostReason__c</fullName>
+    <description>All values proposed — no list was provided by the customer. The CRM-follow-up flag per reason is tracked separately on AF_LossReason__mdt so it stays admin-editable.</description>
+    <label>Lost Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Price — Lost to Competitor</fullName>
+                <default>false</default>
+                <label>Price — Lost to Competitor</label>
+            </value>
+            <value>
+                <fullName>Price — Customer Budget</fullName>
+                <default>false</default>
+                <label>Price — Customer Budget</label>
+            </value>
+            <value>
+                <fullName>Vehicle Unavailable / Lead Time Too Long</fullName>
+                <default>false</default>
+                <label>Vehicle Unavailable / Lead Time Too Long</label>
+            </value>
+            <value>
+                <fullName>Chose a Different Brand</fullName>
+                <default>false</default>
+                <label>Chose a Different Brand</label>
+            </value>
+            <value>
+                <fullName>Finance Not Approved</fullName>
+                <default>false</default>
+                <label>Finance Not Approved</label>
+            </value>
+            <value>
+                <fullName>Customer Postponed Purchase</fullName>
+                <default>false</default>
+                <label>Customer Postponed Purchase</label>
+            </value>
+            <value>
+                <fullName>Trade-In Valuation Not Accepted</fullName>
+                <default>false</default>
+                <label>Trade-In Valuation Not Accepted</label>
+            </value>
+            <value>
+                <fullName>Duplicate Opportunity</fullName>
+                <default>false</default>
+                <label>Duplicate Opportunity</label>
+            </value>
+            <value>
+                <fullName>Not Genuine / Test Record</fullName>
+                <default>false</default>
+                <label>Not Genuine / Test Record</label>
+            </value>
+            <value>
+                <fullName>Customer Unreachable</fullName>
+                <default>false</default>
+                <label>Customer Unreachable</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

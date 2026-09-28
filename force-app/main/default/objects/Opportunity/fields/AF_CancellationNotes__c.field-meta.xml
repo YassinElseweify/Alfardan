@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_CancellationNotes__c</fullName>
+    <description>LFRDN-343 / ALF-RS-13 FR1. Free-text detail captured by the Sales Representative when requesting cancellation. Same pattern as AF_LostNotes__c.</description>
+    <label>Cancellation Notes</label>
+    <length>1000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>6</visibleLines>
+</CustomField>

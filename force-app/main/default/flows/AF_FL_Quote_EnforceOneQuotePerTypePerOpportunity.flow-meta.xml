@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Duplicate_Quote_Type_Error</name>
+        <label>Duplicate Quote Type Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>This Opportunity already has a {!$Record.AF_QuoteType__c}. Only one Customer Quotation and one Bank Quotation are allowed per Opportunity (maximum 2 Quotes total).</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Already_Has_One_Of_This_Type</name>
+        <label>Already Has One Of This Type?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Duplicate_Type_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_Quote_Of_Same_Type</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Duplicate_Quote_Type_Error</targetReference>
+            </connector>
+            <label>Duplicate Type Exists</label>
+        </rules>
+    </decisions>
+    <description>Caps Quotes per Opportunity at one Customer Quotation and one Bank Quotation (2 total). Conflict key is OpportunityId + AF_QuoteType__c match on another Quote. Runs only on create/update when both fields are populated and one of them changed, mirroring AF_FL_TestDrive_PreventDoubleBooking&apos;s gating pattern.</description>
+    <environments>Default</environments>
+    <interviewLabel>AF Quote - Enforce One Quote Per Type Per Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AF Quote - Enforce One Quote Per Type Per Opportunity</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Existing_Quote_Of_Same_Type</name>
+        <label>Get Existing Quote Of Same Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Already_Has_One_Of_This_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_QuoteType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_QuoteType__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Quote</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Existing_Quote_Of_Same_Type</targetReference>
+        </connector>
+        <filterFormula>AND(
+    NOT(ISBLANK({!$Record.OpportunityId})),
+    NOT(ISBLANK(TEXT({!$Record.AF_QuoteType__c}))),
+    OR(
+        ISNEW(),
+        ISCHANGED({!$Record.OpportunityId}),
+        ISCHANGED({!$Record.AF_QuoteType__c})
+    )
+)</filterFormula>
+        <object>Quote</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

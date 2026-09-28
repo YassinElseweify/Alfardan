@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Compute_Cutoff</name>
+        <label>Compute Cutoff</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>AF_Var_CutoffDateTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_Cutoff</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Recent_Matches</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Flag_Suppressed_Duplicate</name>
+        <label>Flag Suppressed Duplicate</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_IsSuppressedDuplicate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Any_Match_Found</name>
+        <label>Any Match Found?</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Match_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Recent_Matches</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Flag_Suppressed_Duplicate</targetReference>
+            </connector>
+            <label>Match Found</label>
+        </rules>
+    </decisions>
+    <description>Flags (never blocks) a rapid re-submission from the same contact within a configurable window for digital-channel Leads. Does not set OwnerId — routing stays owned by the assignment rule, which routes suppressed duplicates to the review queue.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_Cutoff</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() - (IF(ISBLANK({!Get_Window_Setting.AF_Minutes__c}), 15, {!Get_Window_Setting.AF_Minutes__c}) / 1440)</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_EmailMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Email}), &quot;___AF_NO_EMAIL___&quot;, {!$Record.Email})</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_PhoneMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Phone}), &quot;___AF_NO_PHONE___&quot;, {!$Record.Phone})</expression>
+    </formulas>
+    <interviewLabel>AF Lead Short Window Guard {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Short Window Guard</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Recent_Matches</name>
+        <label>Get Recent Matches</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Any_Match_Found</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <filters>
+            <field>Phone</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_PhoneMatchValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_EmailMatchValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>AF_Var_CutoffDateTime</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Window_Setting</name>
+        <label>Get Window Setting</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Compute_Cutoff</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AF_DuplicateWindowMinutes__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Window_Setting</targetReference>
+        </connector>
+        <filterFormula>ISPICKVAL({!$Record.AF_LeadChannel__c}, &quot;Web&quot;)</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>20</triggerOrder>
+    <variables>
+        <name>AF_Var_CutoffDateTime</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

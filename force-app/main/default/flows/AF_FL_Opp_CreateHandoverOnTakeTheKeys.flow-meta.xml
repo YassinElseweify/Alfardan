@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Has_Existing_Handover</name>
+        <label>Handover Already Exists?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Create_Handover</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Handover Yet</defaultConnectorLabel>
+        <rules>
+            <name>Handover_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_Handover.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Handover Exists</label>
+        </rules>
+    </decisions>
+    <description>Found live 2026-09-20 (full retail cycle test): no automation anywhere in the org ever created an AF_Handover__c record. AF_FL_Handover_SyncOpportunityGate&apos;s own description already assumed &quot;the Quick Action that creates the Handover&quot; existed - it never did; every Handover in this org before today was created by hand or by test-setup Apex. This flow closes that gap: fires the moment an Opportunity reaches Take the Keys (the stage immediately before Closed Won, where the handover checklist actually needs to start), and creates the Handover automatically so a rep is never blocked waiting on a manual step nobody remembered to do. Duplicate-guarded by querying AF_Handover__c.AF_Opportunity__c directly (the real relationship), same pattern as AF_InvoiceSummaryService&apos;s own guard - never trusts the Opportunity&apos;s own AF_Handover__c mirror field, since a partial failure there would otherwise let a second Handover be created on a later re-entry into Take the Keys (e.g. after a stage revert and re-progress).
+
+LFRDN-706 fix: Create_Handover originally only set AF_Opportunity__c and AF_Status__c, leaving AF_Vehicle__c/AF_Contact__c/AF_InvoiceSummary__c blank even though the Opportunity already holds all three by the time it reaches Take the Keys - the rep had to look them up and fill them in by hand, and the Handover record didn&apos;t say which car was being handed to whom until they did. Now copies Opportunity.AF_SelectedVehicle__c / ContactId / AF_InvoiceSummary__c straight onto the new Handover at creation time.</description>
+    <environments>Default</environments>
+    <interviewLabel>Opp Create Handover On Take The Keys {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opp Create Handover On Take The Keys</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Handover</name>
+        <label>Create Handover</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <connector>
+            <targetReference>Update_Opportunity_Handover_Link</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AF_Contact__c</field>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_InvoiceSummary__c</field>
+            <value>
+                <elementReference>$Record.AF_InvoiceSummary__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_Status__c</field>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_Vehicle__c</field>
+            <value>
+                <elementReference>$Record.AF_SelectedVehicle__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AF_Handover__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Existing_Handover</name>
+        <label>Get Existing Handover</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Existing_Handover</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AF_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AF_Handover__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunity_Handover_Link</name>
+        <label>Set Opportunity Handover Link</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_Handover__c</field>
+            <value>
+                <elementReference>Create_Handover</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Existing_Handover</targetReference>
+        </connector>
+        <filterFormula>ISPICKVAL({!$Record.StageName}, &quot;Take the Keys&quot;) &amp;&amp; ISCHANGED({!$Record.StageName})</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Payment_PayeeMismatchNOC</fullName>
+    <active>true</active>
+    <description>If the recorded Payee Name does not match the linked Account name, a signed NOC must be confirmed (AF_NOCRecorded__c) before the payment can be saved.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(AF_PayeeName__c)),
+    NOT(ISBLANK(AF_Account__c)),
+    AF_PayeeName__c &lt;&gt; AF_Account__r.Name,
+    NOT(AF_NOCRecorded__c)
+)</errorConditionFormula>
+    <errorMessage>Payee Name does not match the customer name on the linked Account. Confirm a signed NOC is on file (check &quot;NOC Recorded?&quot;) before saving.</errorMessage>
+</ValidationRule>

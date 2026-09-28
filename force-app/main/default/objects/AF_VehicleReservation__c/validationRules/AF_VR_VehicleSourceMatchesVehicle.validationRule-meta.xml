@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_VehicleSourceMatchesVehicle</fullName>
+    <active>true</active>
+    <description>ALF-RS-08 FR4: In Stock and In Transit / Ordered must point at a real Vehicle; Pre-Order (Placeholder) has no VIN yet and must carry a Vehicle Definition instead. Without this a reservation could hold no vehicle at all.</description>
+    <errorConditionFormula>OR(
+  AND(
+    OR(
+      ISPICKVAL(AF_VehicleSourceType__c, &quot;In Stock&quot;),
+      ISPICKVAL(AF_VehicleSourceType__c, &quot;In Transit / Ordered&quot;)
+    ),
+    ISBLANK(AF_Vehicle__c)
+  ),
+  AND(
+    ISPICKVAL(AF_VehicleSourceType__c, &quot;Pre-Order (Placeholder)&quot;),
+    ISBLANK(AF_VehicleDefinition__c)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>AF_VehicleSourceType__c</errorDisplayField>
+    <errorMessage>In Stock and In Transit / Ordered reservations require a Vehicle. Pre-Order (Placeholder) reservations require a Vehicle Definition.</errorMessage>
+</ValidationRule>

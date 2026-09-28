@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Generate_PDF</name>
+        <label>Generate PDF</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <actionName>AF_PdfGenerationService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>DocTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>fileName</name>
+            <value>
+                <elementReference>FileName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>SheetBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>parentRecordId</name>
+            <value>
+                <elementReference>$Record.AppraisalId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>AF_PdfGenerationService</nameSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Already_Generated</name>
+        <label>Book-In Sheet Already Generated?</label>
+        <locationX>176</locationX>
+        <locationY>190</locationY>
+        <defaultConnector>
+            <targetReference>Generate_PDF</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Generate</defaultConnectorLabel>
+        <rules>
+            <name>Sheet_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_Sheet.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Already Generated - Skip</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_Required_Fields</name>
+        <label>Has Required Preliminary Details?</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>Missing Fields - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Fields_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_MakeText__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_ModelText__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ModelYear</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Usage</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ConditionType</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Existing_Sheet</targetReference>
+            </connector>
+            <label>All Required Fields Present</label>
+        </rules>
+    </decisions>
+    <description>ALF-RS-04 FR9: &quot;The system should generate the Eval Expert Book-In Sheet from Salesforce after the New Car Sales Representative has entered the required preliminary vehicle details, including make, model, year, mileage, and condition notes.&quot; Real gap found 2026-09-08 (user re-read the BRD directly and flagged this as missing). Fires on AppraisalItem create/update once ALL of MakeName/ModelName/ModelYear/Usage(mileage)/ConditionType are populated (no ISCHANGED gate - Flow&apos;s ISCHANGED() rejects a TEXT()-wrapped picklist expression as an invalid argument type, so this simply re-checks on every save; Get_Existing_Sheet is the actual duplicate-prevention mechanism). Uses AF_PdfGenerationService (Blob.toPdf(), already built and unit-tested for RS-06&apos;s Quote PDF generation but never actually invoked by anything until now) to render a plain HTML layout of the preliminary details and attach it as a ContentVersion on the parent Appraisal. Duplicate-prevention (Get_Existing_Sheet) originally queried ContentDocumentLink filtered on the cross-object field ContentDocument.Title - this deployed clean but caused a genuine &quot;unhandled fault&quot; on every single insert at runtime (confirmed live: the exact same AF_PdfGenerationService call succeeded when invoked directly via anonymous Apex, isolating the fault to that one recordLookup). Fixed by querying ContentVersion directly instead (FirstPublishLocationId + Title, both native fields, no cross-object traversal) - verified live, PDF now generates and attaches correctly, and re-saving the same item without changing Make/Model/Year does NOT create a duplicate. BRD Assumption 3 explicitly flags that &quot;the Eval Expert Book-In Sheet replaces the Trade-In Evaluation Form... to be confirmed during the solution design phase with Alfardan&quot; - the exact layout/branding here is a first-pass placeholder (a plain labeled table, no letterhead), built on user request ahead of that sign-off; expect the HTML body to be revised once the business confirms the real format. AF_InspectionNotes__c (the free-text &quot;condition notes&quot; BRD literally names) is included alongside ConditionType (the structured condition picklist) since the BRD&apos;s phrase most closely maps to that combination. Updated 2026-09-08 (LFRDN-631) to read AF_MakeText__c/AF_ModelText__c instead of the standard MakeName/ModelName restricted picklists, which were hidden from the layout since their fixed Automotive Cloud demo values could not be changed. Retargeted 2026-09-08 to Create-only (was CreateAndUpdate with a start-filterFormula gate on all 5 fields being non-blank): live persona testing found that when this flow&apos;s Generate_PDF ran on a later Update (the real-world path, since these fields get filled in after initial creation), the same save transaction had already run AF_FL_Appraisal_EvaluationSubmit earlier, which submits the parent Appraisal into AF_AP_Appraisal_Manager for approval - and that approval process&apos;s recordEditability=AdminOrCurrentApprover locks the record for everyone except Admin once submitted (queue-based approvers like AF_Q_UsedCarTeam do not reliably count as &quot;current approver&quot; for this lock), so the ContentVersion/FirstPublishLocationId attach failed with INVALID_CROSS_REFERENCE_KEY for the Used Car Team persona specifically (confirmed: identical insert succeeds as Admin, and succeeds in an isolated runAs-as-UsedCarTeam test against the same record before it&apos;s locked by approval submission). Rather than loosen the approval process&apos;s editability, added AF_VR_ApprItem_RequireCondition (ConditionType had no equivalent to AF_VR_ApprItem_RequireMake/Model/Year/Mileage) so all 5 fields this flow needs are now guaranteed non-blank at Create time via validation rules/required layout fields, letting this flow fire once on Create - before the Appraisal is ever submitted for approval - instead of on a later Update after the lock is already in place. CORRECTION same day: switching to Create-only did not fully fix it, because AF_FL_AppraisalItem_EvaluationComplete is a SEPARATE AfterSave flow on the same AppraisalItem object, fired by the same save (InitialValue being set) and it - not an Update to this flow&apos;s own fields - is what reassigns the Appraisal and sets AF_ApprovalStatus__c=Pending, cascading into AF_FL_Appraisal_EvaluationSubmit&apos;s approval submission within the SAME transaction. With no explicit triggerOrder on either flow, Salesforce ran EvaluationComplete before this one, so the Appraisal was already locked (AdminOrCurrentApprover) by the time Generate_PDF&apos;s ContentVersion insert ran. Fixed by adding explicit triggerOrder: this flow=10, AF_FL_AppraisalItem_EvaluationComplete=20, so the PDF is generated and attached before the Appraisal is ever submitted for approval.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DocTitle</name>
+        <dataType>String</dataType>
+        <expression>&quot;Eval Expert Book-In Sheet - &quot; &amp; {!$Record.AF_MakeText__c} &amp; &quot; &quot; &amp; {!$Record.AF_ModelText__c} &amp; &quot; (&quot; &amp; TEXT({!$Record.ModelYear}) &amp; &quot;)&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>FileName</name>
+        <dataType>String</dataType>
+        <expression>&quot;BookInSheet_&quot; &amp; {!$Record.Id} &amp; &quot;.pdf&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>SheetBody</name>
+        <dataType>String</dataType>
+        <expression>&quot;&lt;html&gt;&lt;body style=&apos;margin:0;font-family:Helvetica,Arial,sans-serif;color:#1A1A1A;&apos;&gt;&quot; &amp;
+&quot;&lt;div style=&apos;max-width:680px;margin:0 auto;&apos;&gt;&quot; &amp;
+&quot;&lt;div style=&apos;background:#0B2545;padding:24px 32px;&apos;&gt;&quot; &amp;
+&quot;&lt;div style=&apos;color:#8FA6C7;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;&apos;&gt;Alfardan Automobiles&lt;/div&gt;&quot; &amp;
+&quot;&lt;h1 style=&apos;margin:6px 0 0;font-size:22px;color:#FFF;&apos;&gt;Eval Expert Book-In Sheet&lt;/h1&gt;&quot; &amp;
+&quot;&lt;/div&gt;&quot; &amp;
+&quot;&lt;div style=&apos;padding:16px 32px 0;&apos;&gt;&quot; &amp;
+&quot;&lt;span style=&apos;display:inline-block;background:#FCEFC7;color:#8A6D00;font-size:11px;font-weight:bold;text-transform:uppercase;padding:5px 12px;border-radius:3px;&apos;&gt;Awaiting Used Car Team Evaluation&lt;/span&gt;&quot; &amp;
+&quot;&lt;p style=&apos;color:#6B6B6B;font-size:13px;line-height:1.5;margin:12px 0 0;&apos;&gt;Preliminary vehicle details entered by the Sales Representative, for Used Car Team book-in review.&lt;/p&gt;&quot; &amp;
+&quot;&lt;/div&gt;&quot; &amp;
+&quot;&lt;div style=&apos;padding:14px 32px 4px;&apos;&gt;&quot; &amp;
+&quot;&lt;div style=&apos;color:#0B2545;font-size:12px;font-weight:bold;text-transform:uppercase;border-bottom:2px solid #0B2545;padding-bottom:5px;&apos;&gt;Vehicle Details&lt;/div&gt;&quot; &amp;
+&quot;&lt;table style=&apos;width:100%;border-collapse:collapse;font-size:14px;&apos;&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;width:38%;color:#6B6B6B;border-bottom:1px solid #EAEAEA;&apos;&gt;Make&lt;/td&gt;&lt;td style=&apos;padding:10px 0;font-weight:600;border-bottom:1px solid #EAEAEA;&apos;&gt;&quot; &amp; {!$Record.AF_MakeText__c} &amp; &quot;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;color:#6B6B6B;border-bottom:1px solid #EAEAEA;&apos;&gt;Model&lt;/td&gt;&lt;td style=&apos;padding:10px 0;font-weight:600;border-bottom:1px solid #EAEAEA;&apos;&gt;&quot; &amp; {!$Record.AF_ModelText__c} &amp; &quot;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;color:#6B6B6B;border-bottom:1px solid #EAEAEA;&apos;&gt;Year&lt;/td&gt;&lt;td style=&apos;padding:10px 0;font-weight:600;border-bottom:1px solid #EAEAEA;&apos;&gt;&quot; &amp; TEXT({!$Record.ModelYear}) &amp; &quot;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;color:#6B6B6B;border-bottom:1px solid #EAEAEA;&apos;&gt;Mileage&lt;/td&gt;&lt;td style=&apos;padding:10px 0;font-weight:600;border-bottom:1px solid #EAEAEA;&apos;&gt;&quot; &amp; TEXT({!$Record.Usage}) &amp; &quot; km&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;color:#6B6B6B;border-bottom:1px solid #EAEAEA;&apos;&gt;VIN&lt;/td&gt;&lt;td style=&apos;padding:10px 0;font-weight:600;font-family:monospace;border-bottom:1px solid #EAEAEA;&apos;&gt;&quot; &amp; {!$Record.IdentificationNumber} &amp; &quot;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;color:#6B6B6B;border-bottom:1px solid #EAEAEA;&apos;&gt;Plate&lt;/td&gt;&lt;td style=&apos;padding:10px 0;font-weight:600;border-bottom:1px solid #EAEAEA;&apos;&gt;&quot; &amp; {!$Record.LicensePlateNumber} &amp; &quot;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;color:#6B6B6B;&apos;&gt;Condition&lt;/td&gt;&lt;td style=&apos;padding:10px 0;&apos;&gt;&lt;span style=&apos;background:#E8F0E4;color:#2E5C3E;font-size:12px;font-weight:bold;padding:3px 10px;border-radius:3px;&apos;&gt;&quot; &amp; TEXT({!$Record.ConditionType}) &amp; &quot;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;/table&gt;&lt;/div&gt;&quot; &amp;
+&quot;&lt;div style=&apos;padding:4px 32px 20px;&apos;&gt;&quot; &amp;
+&quot;&lt;div style=&apos;color:#0B2545;font-size:12px;font-weight:bold;text-transform:uppercase;border-bottom:2px solid #0B2545;padding-bottom:5px;&apos;&gt;Inspection &amp; Valuation&lt;/div&gt;&quot; &amp;
+&quot;&lt;table style=&apos;width:100%;border-collapse:collapse;font-size:14px;&apos;&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:10px 0;width:38%;color:#6B6B6B;border-bottom:1px solid #EAEAEA;vertical-align:top;&apos;&gt;Notes&lt;/td&gt;&lt;td style=&apos;padding:10px 0;border-bottom:1px solid #EAEAEA;&apos;&gt;&quot; &amp; {!$Record.AF_InspectionNotes__c} &amp; &quot;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;tr&gt;&lt;td style=&apos;padding:14px 0 0;color:#6B6B6B;&apos;&gt;Expected Value&lt;/td&gt;&lt;td style=&apos;padding:14px 0 0;font-size:20px;font-weight:700;color:#0B2545;&apos;&gt;AED &quot; &amp; TEXT({!$Record.CustomerAskingValue}) &amp; &quot;&lt;/td&gt;&lt;/tr&gt;&quot; &amp;
+&quot;&lt;/table&gt;&lt;/div&gt;&quot; &amp;
+&quot;&lt;div style=&apos;border-top:1px solid #EAEAEA;padding:14px 32px;color:#9A9A9A;font-size:11px;&apos;&gt;Generated automatically upon preliminary vehicle detail entry. Not a final valuation.&lt;/div&gt;&quot; &amp;
+&quot;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&quot;</expression>
+    </formulas>
+    <interviewLabel>Appraisal Item Generate Book-In Sheet {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Appraisal Item Generate Book-In Sheet</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Existing_Sheet</name>
+        <label>Get Existing Book-In Sheet</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Already_Generated</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FirstPublishLocationId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AppraisalId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Title</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>DocTitle</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ContentVersion</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Has_Required_Fields</targetReference>
+        </connector>
+        <object>AppraisalItem</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>10</triggerOrder>
+</Flow>

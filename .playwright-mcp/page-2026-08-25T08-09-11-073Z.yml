@@ -1,0 +1,213 @@
+- generic [active]:
+  - generic [ref=f18e3]:
+    - generic [ref=f18e4]:
+      - link "Skip to Navigation" [ref=f18e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f18e6] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f18e9]:
+        - generic [ref=f18e10]: "Sandbox: QA |"
+        - link "Log out" [ref=f18e11] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f18e12]:
+        - button "Search" [ref=f18e18]: Search...
+        - navigation "Global Header" [ref=f18e23]:
+          - list [ref=f18e25]:
+            - listitem [ref=f18e26]:
+              - group [ref=f18e27]:
+                - button "Add favorite" [ref=f18e1044] [cursor=pointer]:
+                  - generic [ref=f18e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f18e38] [cursor=pointer]:
+                  - generic [ref=f18e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f18e46]:
+              - button [ref=f18e52] [cursor=pointer]:
+                - generic [ref=f18e53]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f18e60]:
+              - button [ref=f18e62] [cursor=pointer]:
+                - generic [ref=f18e63]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f18e70]:
+              - button [ref=f18e73] [cursor=pointer]:
+                - generic [ref=f18e74]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f18e81]:
+              - button [ref=f18e87] [cursor=pointer]:
+                - generic [ref=f18e88]:
+                  - tooltip "Setup"
+            - listitem [ref=f18e95]:
+              - button [ref=f18e98] [cursor=pointer]:
+                - generic [ref=f18e99]:
+                  - tooltip "Notifications"
+            - listitem [ref=f18e108]:
+              - button "View profile" [ref=f18e111] [cursor=pointer]:
+                - generic [ref=f18e112]:
+                  - tooltip "View profile"
+    - generic [ref=f18e116]:
+      - generic [ref=f18e119]:
+        - generic [ref=f18e121]:
+          - navigation "App" [ref=f18e122]:
+            - button "App Launcher" [ref=f18e124] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f18e136]
+        - navigation "Global" [ref=f18e140]:
+          - list [ref=f18e141]:
+            - listitem [ref=f18e142]:
+              - link "Home" [ref=f18e143] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f18e145]:
+              - link "Analytics" [ref=f18e146] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f18e148]:
+              - link "Opportunities" [ref=f18e149] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f18e154] [cursor=pointer]
+            - listitem [ref=f18e162]:
+              - link "Quotes" [ref=f18e163] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f18e168] [cursor=pointer]
+            - listitem [ref=f18e176]:
+              - link "Leads" [ref=f18e177] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f18e182] [cursor=pointer]
+            - listitem [ref=f18e190]:
+              - link "Tasks" [ref=f18e191] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f18e196] [cursor=pointer]
+            - listitem [ref=f18e204]:
+              - link "Files" [ref=f18e205] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f18e210] [cursor=pointer]
+            - listitem [ref=f18e218]:
+              - link "Accounts" [ref=f18e219] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f18e224] [cursor=pointer]
+            - listitem [ref=f18e232] [cursor=pointer]:
+              - link "Contacts" [ref=f18e233]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f18e238]
+            - listitem [ref=f18e246]:
+              - link "Campaigns" [ref=f18e247] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f18e252] [cursor=pointer]
+            - listitem [ref=f18e260]:
+              - link "Dashboards" [ref=f18e261] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f18e266] [cursor=pointer]
+            - listitem [ref=f18e274]:
+              - link "Reports" [ref=f18e275] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f18e280] [cursor=pointer]
+            - listitem [ref=f18e288]:
+              - link "Chatter" [ref=f18e289] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f18e291]:
+              - link "Groups" [ref=f18e292] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f18e297] [cursor=pointer]
+            - listitem [ref=f18e305]:
+              - button "Show more navigation items" [ref=f18e307] [cursor=pointer]:
+                - generic [ref=f18e308]: More
+            - listitem [ref=f18e316]:
+              - button "Edit nav items" [ref=f18e318] [cursor=pointer]
+      - main [ref=f18e325]:
+        - generic [ref=f18e1057]:
+          - generic [ref=f18e1060]:
+            - generic [ref=f18e1067]:
+              - generic [ref=f18e1068]:
+                - img "Contact" [ref=f18e1073]
+                - heading "RelatedPerson2 UIView" [level=1] [ref=f18e1077]
+                - button "View Contact Hierarchy" [ref=f18e1088] [cursor=pointer]
+              - button "Follow" [ref=f18e1099] [cursor=pointer]
+              - list [ref=f18e1107]:
+                - generic [ref=f18e1108]:
+                  - generic [ref=f18e1110]:
+                    - paragraph [ref=f18e1111]: Title
+                    - paragraph
+                  - generic [ref=f18e1113]:
+                    - paragraph [ref=f18e1114]: Account Name
+                    - paragraph [ref=f18e1115]:
+                      - generic [ref=f18e1120]:
+                        - link "QA test AC-01C Contact Test Parent" [ref=f18e1121] [cursor=pointer]:
+                          - /url: /lightning/r/Account/001FV00HdBbIuNAYU0/view
+                        - button "Preview" [ref=f18e1127] [cursor=pointer]
+                  - generic [ref=f18e1134]:
+                    - button [ref=f18e1135] [cursor=pointer]:
+                      - paragraph [ref=f18e1136]: Phone (2)
+                    - list [ref=f18e1144]:
+                      - generic [ref=f18e1147]:
+                        - paragraph
+                  - generic [ref=f18e1149]:
+                    - paragraph [ref=f18e1150]: Email
+                    - paragraph
+                  - generic [ref=f18e1152]:
+                    - paragraph [ref=f18e1153]: Contact Owner
+                    - paragraph [ref=f18e1154]:
+                      - generic [ref=f18e1157]:
+                        - generic [ref=f18e1164]:
+                          - link "CRM Agent" [ref=f18e1165] [cursor=pointer]:
+                            - /url: /lightning/r/User/005a3001tN2A5HAAQ0/view
+                          - button "Preview" [ref=f18e1171] [cursor=pointer]
+                        - button "Change Owner" [ref=f18e1178] [cursor=pointer]
+            - article [ref=f18e1189]:
+              - generic [ref=f18e1190]:
+                - heading "Timeline" [level=2] [ref=f18e1194]
+                - generic [ref=f18e1196]:
+                  - generic [ref=f18e1197]:
+                    - generic [ref=f18e1199]:
+                      - generic [ref=f18e1203]:
+                        - generic [ref=f18e1204]:
+                          - heading "Interaction Timeline" [level=2] [ref=f18e1205]
+                          - menu [ref=f18e1206]:
+                            - button "Show Timeline Menu" [ref=f18e1207] [cursor=pointer]
+                        - generic [ref=f18e1213]: All Events • Most Recent Event
+                      - generic [ref=f18e1219]:
+                        - button "Refresh" [ref=f18e1222] [cursor=pointer]
+                        - button "Date Range" [ref=f18e1230] [cursor=pointer]
+                        - button "Event Type" [ref=f18e1238] [cursor=pointer]
+                        - button "Sort" [ref=f18e1246] [cursor=pointer]
+                    - generic [ref=f18e1252]:
+                      - progressbar "loading" [ref=f18e1256]
+                      - generic [ref=f18e1261]: Fetching events...
+                  - generic [ref=f18e1267]:
+                    - status:
+                      - generic [ref=f18e1268]: Loading...
+          - generic [ref=f18e1271]:
+            - generic [ref=f18e1274]:
+              - generic [ref=f18e1276]:
+                - alert:
+                  - generic [ref=f18e1277]: Loading content...
+              - article [ref=f18e1285]:
+                - article [ref=f18e1290]:
+                  - heading "Action Launcher" [level=2] [ref=f18e1294]
+                  - combobox [expanded] [ref=f18e1313]:
+                    - generic [ref=f18e1314]:
+                      - textbox "search-box" [ref=f18e1315]:
+                        - /placeholder: Search actions...
+                      - generic: Approved
+              - generic [ref=f18e1326]:
+                - heading "Tabs" [level=2] [ref=f18e1327]
+                - generic "Tabs" [ref=f18e1328]:
+                  - generic [ref=f18e1329]:
+                    - heading "Tabs" [level=2] [ref=f18e1330]
+                    - tablist "Tabs" [ref=f18e1332]:
+                      - tab "Vehicles Owned" [selected] [ref=f18e1333] [cursor=pointer]
+                      - tab "Cases" [ref=f18e1334] [cursor=pointer]
+                      - tab "Work Orders" [ref=f18e1335] [cursor=pointer]
+                      - tab "Opportunities" [ref=f18e1336] [cursor=pointer]
+                    - tabpanel "Vehicles Owned" [ref=f18e1339]
+            - article [ref=f18e1347]:
+              - heading "Actions & Recommendations" [level=2] [ref=f18e1358]
+              - generic [ref=f18e1361]:
+                - tablist [ref=f18e1363]:
+                  - tab "Actions" [selected] [ref=f18e1364] [cursor=pointer]
+                  - tab "History" [ref=f18e1365] [cursor=pointer]
+                - tabpanel "Actions" [ref=f18e1366]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f18e1031]:
+          - listitem [ref=f18e1032]:
+            - button "To Do List" [ref=f18e1035] [cursor=pointer]
+  - generic:
+    - status

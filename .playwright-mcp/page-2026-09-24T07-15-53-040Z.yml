@@ -1,0 +1,141 @@
+- generic [active]:
+  - generic [ref=f21e2]:
+    - generic [ref=f21e3]:
+      - link "Skip to Navigation" [ref=f21e939] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f21e940] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f21e197]:
+        - generic [ref=f21e198]: "Sandbox: QA |"
+        - link "Log out" [ref=f21e941] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f21e6]:
+        - button "Search" [ref=f21e942]: Search...
+        - navigation "Global Header" [ref=f21e943]:
+          - list [ref=f21e203]:
+            - listitem [ref=f21e204]:
+              - group [ref=f21e205]:
+                - button "This item doesn't support favorites" [ref=f21e944] [cursor=pointer]:
+                  - generic [ref=f21e208]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f21e945] [cursor=pointer]:
+                  - generic [ref=f21e217]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f21e224]:
+              - button [ref=f21e946] [cursor=pointer]:
+                - generic [ref=f21e231]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f21e238]:
+              - button [ref=f21e947] [cursor=pointer]:
+                - generic [ref=f21e241]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f21e248]:
+              - button [ref=f21e948] [cursor=pointer]:
+                - generic [ref=f21e252]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f21e259]:
+              - button "2 Notifications" [ref=f21e949] [cursor=pointer]:
+                - generic [ref=f21e263]:
+                  - generic [ref=f21e264]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f21e273]: 2 new notifications
+            - listitem [ref=f21e274]:
+              - button "View profile" [ref=f21e950] [cursor=pointer]:
+                - generic [ref=f21e278]:
+                  - tooltip "View profile"
+    - generic [ref=f21e24]:
+      - generic [ref=f21e27]:
+        - generic [ref=f21e29]:
+          - navigation "App" [ref=f21e951]:
+            - button "App Launcher" [ref=f21e952] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f21e953]
+        - navigation "Global" [ref=f21e955]:
+          - list [ref=f21e49]:
+            - listitem [ref=f21e50] [cursor=pointer]:
+              - link "Home" [ref=f21e956]:
+                - /url: /lightning/page/home
+            - listitem [ref=f21e53]:
+              - link "Vehicles" [ref=f21e957] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f21e958] [cursor=pointer]
+            - listitem [ref=f21e67]:
+              - link "Assets" [ref=f21e959] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f21e960] [cursor=pointer]
+            - listitem [ref=f21e81]:
+              - link "Vehicle Definitions" [ref=f21e961] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f21e962] [cursor=pointer]
+            - listitem [ref=f21e95]:
+              - link "Products" [ref=f21e963] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f21e964] [cursor=pointer]
+            - listitem [ref=f21e109]:
+              - link "Accounts" [ref=f21e965] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f21e966] [cursor=pointer]
+            - listitem [ref=f21e123]:
+              - link "Contacts" [ref=f21e967] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f21e968] [cursor=pointer]
+            - listitem [ref=f21e137]:
+              - link "Asset Milestones" [ref=f21e969] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f21e970] [cursor=pointer]
+            - listitem [ref=f21e151]:
+              - link "Asset Contact Participants" [ref=f21e971] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f21e972] [cursor=pointer]
+            - listitem [ref=f21e165]:
+              - button "Show more navigation items" [ref=f21e973] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f21e168]: More
+            - listitem [ref=f21e176]:
+              - button "Edit nav items" [ref=f21e974] [cursor=pointer]
+      - main [ref=f21e185]:
+        - generic [ref=f21e978]:
+          - generic [ref=f21e979]:
+            - heading "Home" [level=1] [ref=f21e980]
+            - article [ref=f21e985]:
+              - generic [ref=f21e987]:
+                - heading "My Approval Requests" [level=2] [ref=f21e996]
+                - generic [ref=f21e998]: No items selected
+              - generic [ref=f21e1000]: You have no approval requests waiting.
+          - generic [ref=f21e1003]:
+            - article [ref=f21e1006]:
+              - generic [ref=f21e1007]:
+                - heading "Today’s Tasks" [level=2] [ref=f21e1010]
+                - button "Select a view of your tasks" [ref=f21e1014] [cursor=pointer]
+              - generic [ref=f21e1020]: Nothing due today. Be a go-getter, and check back soon.
+              - button "View All Tasks" [ref=f21e1027] [cursor=pointer]: View All
+            - article [ref=f21e1030]:
+              - heading "Today's Events" [level=2] [ref=f21e1034]
+              - generic [ref=f21e1036]: Looks like you're free and clear the rest of the day.
+              - button "View Calendar" [ref=f21e1043] [cursor=pointer]
+            - article [ref=f21e1046]:
+              - heading "Recent Records" [level=2] [ref=f21e1050]
+              - list [ref=f21e1053]:
+                - listitem [ref=f21e1054]:
+                  - link "Trade-In Conversion" [ref=f21e1062] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV002Ctzm8Zs2II/view
+                - listitem [ref=f21e1063]:
+                  - link "Reservation Aging" [ref=f21e1071] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulhvgzA2AQ/view
+                - listitem [ref=f21e1072]:
+                  - link "Opportunity Pipeline by Stage" [ref=f21e1080] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulhrUq82AE/view
+                - listitem [ref=f21e1081]:
+                  - link "Lead SLA Compliance" [ref=f21e1089] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulhj6Y42AI/view
+                - listitem [ref=f21e1090]:
+                  - link "Lead Qualification Rate" [ref=f21e1098] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulheuP22AI/view
+              - button "View All Recent Records" [ref=f21e1100] [cursor=pointer]: View All
+  - generic:
+    - generic [ref=f21e1102]:
+      - generic [ref=f21e1103]: Success notification.
+      - generic [ref=f21e1110]:
+        - generic [ref=f21e1111]: Test Drive "TD-00196" was saved.
+        - generic [ref=f21e1114]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f21e1116] [cursor=pointer]
+    - status

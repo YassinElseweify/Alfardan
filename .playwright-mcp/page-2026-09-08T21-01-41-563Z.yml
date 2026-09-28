@@ -1,0 +1,31 @@
+- generic [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - generic [ref=f6e5]:
+      - generic [ref=f6e7]:
+        - img "Salesforce login" [ref=f6e8]
+        - generic [ref=f6e9]: Salesforce login
+      - generic [ref=f6e11]:
+        - generic [ref=f6e12]:
+          - generic [ref=f6e13]: "Error: Please enter your password."
+          - heading "Salesforce login" [level=1] [ref=f6e14]
+          - generic [ref=f6e15]:
+            - text: Username
+            - textbox "Username" [ref=f6e17]: juw.hfu3iriiizja.8vme43a1ydit.qmphmvmzg0.z75ml2vkdwxs@alfardan.com.qa.qa
+          - text: Password
+          - textbox "Password" [active] [ref=f6e18]
+          - button "Log In to Sandbox" [ref=f6e19] [cursor=pointer]
+          - generic [ref=f6e20]:
+            - checkbox "Remember me" [ref=f6e21]
+            - generic [ref=f6e22]: Remember me
+        - generic [ref=f6e23]:
+          - link "Forgot Your Password?" [ref=f6e24] [cursor=pointer]:
+            - /url: /secur/forgotpassword.jsp?locale=us&lqs=type%3Dtwobox%26un%3Djuw.hfu3iriiizja.8vme43a1ydit.qmphmvmzg0.z75ml2vkdwxs%2540alfardan.com.qa.qa%26retURL%3D%252Fsecur%252Ffrontdoor.jsp%253Fallp%253D1%2526appkp%253D1%2526cshc%253D3001tN4Bxe8V002VP65mTE%2526apv%253D1%2526display%253Dpage%2526ucs%253D1
+          - link "Use Custom Domain" [ref=f6e25] [cursor=pointer]:
+            - /url: javascript:void(0);
+    - generic [ref=f6e26]:
+      - text: © 2026 Salesforce, Inc. All rights reserved. |
+      - link "Privacy" [ref=f6e27] [cursor=pointer]:
+        - /url: https://www.salesforce.com/us/company/privacy
+  - iframe [ref=f6e29]
+  - generic: Login
+  - iframe [aria-hidden] [ref=f6e30]

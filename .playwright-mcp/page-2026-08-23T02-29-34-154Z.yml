@@ -1,0 +1,18 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e4]:
+    - generic [ref=f5e5]: Salesforce login
+    - heading "Log In With a Passkey" [level=2] [ref=f5e9]
+    - generic [ref=f5e11]:
+      - paragraph [ref=f5e38]:
+        - text: You're trying to
+        - strong [ref=f5e39]: log in to Salesforce
+        - text: . For security reasons, we have to verify your identity. Use any passkey on your account.
+      - paragraph [ref=f5e40]: Account
+      - link "emea-delivery-operations@arcsen.com" [ref=f5e41] [cursor=pointer]:
+        - /url: /secur/logout.jsp
+      - button "Log In With a Passkey" [disabled] [ref=f5e50] [cursor=pointer]
+      - paragraph [ref=f5e58]:
+        - text: Having trouble?
+        - link "Log in with a password." [ref=f5e59] [cursor=pointer]:
+          - /url: https://test.salesforce.com?type=twobox&un=arcsen%40alfardan.com.qa&retURL=%2Fsecur%2Ffrontdoor.jsp%3Fallp%3D1%26appkp%3D1%26cshc%3D3001vLvmFZ6V002VP65mTE%26apv%3D1%26display%3Dpage%26ucs%3D1
+  - generic [ref=f5e60]: © 2026 Salesforce, Inc. All rights reserved.

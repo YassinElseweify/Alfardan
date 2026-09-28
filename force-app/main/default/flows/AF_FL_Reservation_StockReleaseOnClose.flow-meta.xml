@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Flag_Stock_For_Release</name>
+        <label>Flag Stock For Release</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_StockReleaseStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending Release</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>ALF-RS-08 FR16 / AC5: releases the vehicle stock hold whenever a reservation reaches Expired or Cancelled. AF_FL_Reservation_ExpiryAutomation only covers the scheduled path that fires on the expiry date, so a reservation cancelled by hand - or expired manually before its date - never had its stock flagged. This before-save flow closes that hole for every route into those two statuses. Stock release is set to &quot;Pending Release&quot; rather than &quot;Released&quot;: actual confirmation is Keyloop-owned, matching the existing invoicing pattern.</description>
+    <environments>Default</environments>
+    <interviewLabel>Reservation Stock Release On Close {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reservation Stock Release On Close</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Flag_Stock_For_Release</targetReference>
+        </connector>
+        <filterFormula>AND(
+  OR(
+    ISPICKVAL({!$Record.AF_Status__c}, &quot;Expired&quot;),
+    ISPICKVAL({!$Record.AF_Status__c}, &quot;Cancelled&quot;)
+  ),
+  ISCHANGED({!$Record.AF_Status__c}),
+  OR(
+    ISBLANK(TEXT({!$Record.AF_StockReleaseStatus__c})),
+    ISPICKVAL({!$Record.AF_StockReleaseStatus__c}, &quot;N/A&quot;)
+  )
+)</filterFormula>
+        <object>AF_VehicleReservation__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

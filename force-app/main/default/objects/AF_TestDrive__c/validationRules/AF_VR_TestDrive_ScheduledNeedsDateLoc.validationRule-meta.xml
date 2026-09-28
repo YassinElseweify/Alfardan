@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_TestDrive_ScheduledNeedsDateLoc</fullName>
+    <active>true</active>
+    <description>Status cannot be set to Scheduled unless both Scheduled Date/Time and Location are populated.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(AF_Status__c, &quot;Scheduled&quot;),
+    OR(
+        ISBLANK(AF_Location__c),
+        ISBLANK(AF_TestDriveDateTime__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Status cannot be set to Scheduled until both Scheduled Date/Time and Location are filled in.</errorMessage>
+</ValidationRule>

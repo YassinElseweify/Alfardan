@@ -1,0 +1,22 @@
+- generic [ref=f105e1]:
+  - generic [ref=f105e2]:
+    - generic [ref=f105e5]:
+      - generic [ref=f105e7]:
+        - img "Salesforce login" [ref=f105e8]
+        - generic [ref=f105e9]: Salesforce login
+      - generic [ref=f105e11]:
+        - generic [ref=f105e12]:
+          - generic [ref=f105e13]: To access this page, you have to log in to Salesforce.
+          - heading "Salesforce login" [level=1] [ref=f105e14]
+          - generic [ref=f105e15]:
+            - text: Username
+            - textbox "Username" [active] [ref=f105e17]
+          - button "Log In to Sandbox" [ref=f105e18] [cursor=pointer]
+          - generic [ref=f105e19]:
+            - checkbox "Remember me" [ref=f105e20]
+            - generic [ref=f105e21]: Remember me
+        - link "Forgot Your Password?" [ref=f105e23] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us&lqs=startURL%3D%252Fvisualforce%252Fsession%253Furl%253Dhttps%25253A%25252F%25252Falfardanautomobiles--qa.sandbox.lightning.force.com%25252Flightning%25252Fr%25252FOpportunity%25252F006FV00ABujcvkyYMA%25252Fview%26ec%3D302
+    - generic [ref=f105e24]: © 2026 Salesforce, Inc. All rights reserved.
+  - generic: Login
+  - iframe [aria-hidden] [ref=f105e25]

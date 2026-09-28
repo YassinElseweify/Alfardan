@@ -1,0 +1,41 @@
+- generic [ref=f210e1]:
+  - generic [ref=f210e4]:
+    - generic [ref=f210e6]:
+      - img "Salesforce login" [ref=f210e7]
+      - generic [ref=f210e8]: Salesforce login
+    - heading "Change Your Password" [level=2] [ref=f210e9]
+    - generic [ref=f210e12]:
+      - paragraph [ref=f210e13]: "Enter a new password for alfardan.qa.salesrep2@alfardan.com.qa.qa. Make sure to include at least:"
+      - list [ref=f210e16]:
+        - listitem [ref=f210e17]:
+          - img "Does not meet requirements" [ref=f210e18]
+          - text: 8 characters
+        - listitem [ref=f210e19]:
+          - img "Does not meet requirements" [ref=f210e20]
+          - text: 1 letter
+        - listitem [ref=f210e21]:
+          - img "Does not meet requirements" [ref=f210e22]
+          - text: 1 number
+      - generic [ref=f210e23]: "* Current Password"
+      - textbox "* Current Password" [active] [ref=f210e25]
+      - generic [ref=f210e26]: "* New Password"
+      - textbox "* New Password" [ref=f210e28]
+      - generic [ref=f210e29]: "* Confirm New Password"
+      - textbox "* Confirm New Password" [ref=f210e31]
+      - generic [ref=f210e32]: "* New Security Question"
+      - combobox "* New Security Question" [ref=f210e34]:
+        - option "In what city were you born?" [selected]
+        - option "What is your mother's maiden name?"
+        - option "What is your pet's name?"
+        - option "What was your childhood nickname?"
+        - option "In what city did you meet your spouse/significant other?"
+        - option "What is the name of your favorite childhood friend?"
+        - option "In what city was your first job?"
+      - generic [ref=f210e35]: "* New Answer"
+      - textbox "* New Answer" [ref=f210e37]
+      - generic [ref=f210e38]: "*=required"
+      - generic [ref=f210e39]:
+        - button "Cancel" [ref=f210e40] [cursor=pointer]
+        - button "Change Password" [disabled] [ref=f210e41]
+      - paragraph [ref=f210e42]: Password was last changed on 22/09/2026, 11:15 AM.
+  - generic [ref=f210e43]: © 2026 Salesforce, Inc. All rights reserved.

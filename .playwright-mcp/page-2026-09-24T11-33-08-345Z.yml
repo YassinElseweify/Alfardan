@@ -1,0 +1,192 @@
+- generic [active]:
+  - generic [ref=f225e3]:
+    - generic [ref=f225e4]:
+      - link "Skip to Navigation" [ref=f225e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f225e6] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f225e9]:
+        - generic [ref=f225e10]: "Sandbox: QA |"
+        - link "Log out" [ref=f225e11] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f225e12]:
+        - button "Search" [ref=f225e19]: Search...
+        - navigation "Global Header" [ref=f225e24]:
+          - list [ref=f225e26]:
+            - listitem [ref=f225e27]:
+              - group [ref=f225e28]:
+                - button "Add favorite" [ref=f225e30] [cursor=pointer]:
+                  - generic [ref=f225e31]:
+                    - tooltip "Add favorite"
+                - button [ref=f225e39] [cursor=pointer]:
+                  - generic [ref=f225e40]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f225e47]:
+              - button [ref=f225e53] [cursor=pointer]:
+                - generic [ref=f225e54]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f225e61]:
+              - button [ref=f225e63] [cursor=pointer]:
+                - generic [ref=f225e64]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f225e71]:
+              - button [ref=f225e74] [cursor=pointer]:
+                - generic [ref=f225e75]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f225e82]:
+              - button "3 Notifications" [ref=f225e85] [cursor=pointer]:
+                - generic [ref=f225e86]:
+                  - generic [ref=f225e87]: "3"
+                  - tooltip "Notifications"
+              - generic [ref=f225e96]: 3 new notifications
+            - listitem [ref=f225e97]:
+              - button "View profile" [ref=f225e100] [cursor=pointer]:
+                - generic [ref=f225e101]:
+                  - tooltip "View profile"
+    - generic [ref=f225e105]:
+      - generic [ref=f225e108]:
+        - generic [ref=f225e110]:
+          - navigation "App" [ref=f225e111]:
+            - button "App Launcher" [ref=f225e113] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f225e125]
+        - navigation "Global" [ref=f225e129]:
+          - list [ref=f225e130]:
+            - listitem [ref=f225e131]:
+              - link "Home" [ref=f225e132] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f225e134]:
+              - link "Vehicles" [ref=f225e135] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f225e140] [cursor=pointer]
+            - listitem [ref=f225e148]:
+              - link "Assets" [ref=f225e149] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f225e154] [cursor=pointer]
+            - listitem [ref=f225e162]:
+              - link "Vehicle Definitions" [ref=f225e163] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f225e168] [cursor=pointer]
+            - listitem [ref=f225e176]:
+              - link "Products" [ref=f225e177] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f225e182] [cursor=pointer]
+            - listitem [ref=f225e190]:
+              - link "Accounts" [ref=f225e191] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f225e196] [cursor=pointer]
+            - listitem [ref=f225e204]:
+              - link "Contacts" [ref=f225e205] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f225e210] [cursor=pointer]
+            - listitem [ref=f225e218] [cursor=pointer]:
+              - link "* Vehicle Repair Disclaimer - HO-00046" [ref=f225e219]:
+                - /url: /lightning/r/ContentDocument/069FV007TtpP34WYIS/view
+                - generic "Not added to nav bar" [ref=f225e220]: "*"
+                - generic [ref=f225e221]: Vehicle Repair Disclaimer - HO-00046
+              - button "Vehicle Repair Disclaimer - HO-00046 List" [ref=f225e225]
+              - button "Close tab" [ref=f225e233]
+            - listitem [ref=f225e241]:
+              - button "* Show more navigation items" [ref=f225e243] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f225e244]: "*"
+                - generic [aria-hidden] [ref=f225e245]: More
+                - generic [ref=f225e252]: Show more navigation items
+            - listitem [ref=f225e253]:
+              - button "Edit nav items" [ref=f225e255] [cursor=pointer]
+      - main [ref=f225e262]:
+        - generic [ref=f225e270]:
+          - generic "Highlights panel header" [ref=f225e273]:
+            - generic [ref=f225e274]:
+              - generic [ref=f225e275]:
+                - generic [ref=f225e276]:
+                  - generic [ref=f225e277]: Adobe PDF
+                  - heading "File Vehicle Repair Disclaimer - HO-00046" [level=1] [ref=f225e287]:
+                    - generic [ref=f225e288]: File
+                    - generic "Vehicle Repair Disclaimer - HO-00046" [ref=f225e289]
+                - group [ref=f225e290]:
+                  - button "Follow" [ref=f225e294] [cursor=pointer]
+                  - list [ref=f225e302]:
+                    - listitem [ref=f225e303]:
+                      - button "Download" [ref=f225e304] [cursor=pointer]
+                    - listitem [ref=f225e306]:
+                      - button "Share" [ref=f225e307] [cursor=pointer]
+                    - listitem [ref=f225e309]:
+                      - link "Upload New Version" [ref=f225e310] [cursor=pointer]:
+                        - /url: "?navigationLocation=DETAIL"
+                    - listitem [ref=f225e312]:
+                      - button "Show 2 more actions" [ref=f225e317] [cursor=pointer]
+              - generic [ref=f225e322]:
+                - generic "Size" [ref=f225e323]
+                - generic [ref=f225e324]: 2KB
+              - generic [ref=f225e328]:
+                - generic "File Extension" [ref=f225e329]
+                - generic [ref=f225e330]: pdf
+              - generic [ref=f225e332]:
+                - generic "Owner" [ref=f225e333]
+                - link "QA SalesRep2" [ref=f225e336] [cursor=pointer]:
+                  - /url: /lightning/r/005FV0082KfRrqeYQC/view
+          - generic [ref=f225e338]:
+            - generic [ref=f225e340]:
+              - heading "Tabs" [level=2] [ref=f225e341]
+              - generic [ref=f225e342]:
+                - tablist [ref=f225e343]:
+                  - tab "Preview" [selected] [ref=f225e344] [cursor=pointer]
+                  - tab "Details" [ref=f225e346] [cursor=pointer]
+                - tabpanel [ref=f225e348]:
+                  - generic [ref=f225e351] [cursor=pointer]:
+                    - button "View File" [ref=f225e352]
+                    - img "Vehicle Repair Disclaimer - HO-00046" [ref=f225e362]
+            - generic [ref=f225e363]:
+              - article [ref=f225e366]:
+                - generic [ref=f225e367]:
+                  - generic:
+                    - generic:
+                      - heading [level=2]
+                - generic [ref=f225e368]:
+                  - generic [ref=f225e370]:
+                    - heading "File Engagement" [level=2] [ref=f225e372]
+                    - button "Help" [ref=f225e378] [cursor=pointer]
+                  - list [ref=f225e385]:
+                    - listitem [ref=f225e386]:
+                      - heading "Views" [level=3] [ref=f225e387]
+                      - paragraph [ref=f225e388]: "0"
+                    - listitem [ref=f225e389]:
+                      - heading "Downloads" [level=3] [ref=f225e390]
+                      - paragraph [ref=f225e391]: "0"
+              - generic [ref=f225e394]:
+                - article "Shared with" [ref=f225e396]:
+                  - generic [ref=f225e397]:
+                    - heading [level=2] [ref=f225e403]:
+                      - link "Shared with (2)" [ref=f225e404] [cursor=pointer]:
+                        - /url: /lightning/r/ContentDocument/069FV007TtpP34WYIS/related/ContentDocumentLinks/view
+                        - generic "Shared with" [ref=f225e405]
+                        - generic "(2)" [ref=f225e406]
+                    - button "Show actions for Shared with" [ref=f225e410] [cursor=pointer]
+                  - list [ref=f225e423]:
+                    - listitem [ref=f225e424]:
+                      - link "QA SalesRep2 Owner" [ref=f225e425] [cursor=pointer]:
+                        - /url: javascript:void(0)
+                        - generic [ref=f225e429]:
+                          - generic [ref=f225e430]: QA SalesRep2
+                          - generic [ref=f225e431]: Owner
+                    - listitem [ref=f225e432]:
+                      - link "HO-00046 Set by Record" [ref=f225e433] [cursor=pointer]:
+                        - /url: javascript:void(0)
+                        - generic [ref=f225e437]:
+                          - generic [ref=f225e438]: HO-00046
+                          - generic [ref=f225e439]: Set by Record
+                  - link "View All Shared with" [ref=f225e440] [cursor=pointer]:
+                    - /url: /lightning/r/ContentDocument/069FV007TtpP34WYIS/related/ContentDocumentLinks/view
+                    - generic [ref=f225e442]:
+                      - text: View All
+                      - generic [ref=f225e443]: Shared with
+                - article "Versions" [ref=f225e445]:
+                  - heading [level=2] [ref=f225e450]:
+                    - link "Versions" [ref=f225e451] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                - article "Followers" [ref=f225e454]:
+                  - heading [level=2] [ref=f225e459]:
+                    - link "Followers" [ref=f225e460] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

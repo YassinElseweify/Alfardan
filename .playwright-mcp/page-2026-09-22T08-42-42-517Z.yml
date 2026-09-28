@@ -1,0 +1,89 @@
+- generic [active]:
+  - generic [ref=f26e2]:
+    - generic [ref=f26e3]:
+      - link "Skip to Navigation" [ref=f26e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f26e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f26e6]:
+        - button "Search" [ref=f26e13]: Search...
+        - navigation "Global Header" [ref=f26e18]:
+          - list [ref=f26e20]:
+            - listitem [ref=f26e21]:
+              - group [ref=f26e22]:
+                - button "This item doesn't support favorites" [ref=f26e24] [cursor=pointer]:
+                  - generic [ref=f26e25]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f26e33] [cursor=pointer]:
+                  - generic [ref=f26e34]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f26e41]:
+              - button "Global Actions" [ref=f26e43]
+            - listitem [ref=f26e50]:
+              - button [ref=f26e53] [cursor=pointer]:
+                - generic [ref=f26e54]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f26e61]:
+              - button [ref=f26e64] [cursor=pointer]:
+                - generic [ref=f26e65]:
+                  - tooltip "Notifications"
+            - listitem [ref=f26e74]:
+              - button [ref=f26e77] [cursor=pointer]:
+                - generic [ref=f26e78]:
+                  - tooltip "View profile"
+    - generic [ref=f26e80]:
+      - generic [ref=f26e83]:
+        - generic [ref=f26e85]:
+          - navigation "App" [ref=f26e86]:
+            - button "App Launcher" [ref=f26e88] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f26e100]
+        - navigation "Global" [ref=f26e104]:
+          - list [ref=f26e105]:
+            - listitem [ref=f26e106]:
+              - link "Home" [ref=f26e107] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f26e109]:
+              - link "Vehicles" [ref=f26e110] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f26e115] [cursor=pointer]
+            - listitem [ref=f26e123]:
+              - link "Assets" [ref=f26e124] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f26e129] [cursor=pointer]
+            - listitem [ref=f26e137]:
+              - link "Vehicle Definitions" [ref=f26e138] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f26e143] [cursor=pointer]
+            - listitem [ref=f26e151]:
+              - link "Products" [ref=f26e152] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f26e157] [cursor=pointer]
+            - listitem [ref=f26e165]:
+              - link "Accounts" [ref=f26e166] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f26e171] [cursor=pointer]
+            - listitem [ref=f26e179]:
+              - link "Contacts" [ref=f26e180] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f26e185] [cursor=pointer]
+            - listitem [ref=f26e193]:
+              - link "Asset Milestones" [ref=f26e194] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f26e199] [cursor=pointer]
+            - listitem [ref=f26e207]:
+              - link "Asset Contact Participants" [ref=f26e208] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f26e213] [cursor=pointer]
+            - listitem [ref=f26e221]:
+              - link "Asset Account Participants" [ref=f26e222] [cursor=pointer]:
+                - /url: /lightning/o/AssetAccountParticipant/home
+              - button "Asset Account Participants List" [ref=f26e227] [cursor=pointer]
+            - listitem [ref=f26e235]:
+              - button "Show more navigation items" [ref=f26e237] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f26e238]: More
+            - listitem [ref=f26e246]:
+              - button "Edit nav items" [ref=f26e248] [cursor=pointer]
+      - main [ref=f26e255]
+  - generic:
+    - status

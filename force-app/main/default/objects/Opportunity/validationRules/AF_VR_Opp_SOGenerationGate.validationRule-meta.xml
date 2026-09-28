@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_SOGenerationGate</fullName>
+    <active>true</active>
+    <description>Sales Order requires: Invoice Summary Fully Paid (supersedes DEC-014 first-payment-only, 2026-09-19), a vehicle selected and In Stock, and a Reserved reservation for that vehicle (LFRDN-661, confirmed 2026-09-21).</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(AF_SOStatus__c, &quot;Generated&quot;),
+    ISCHANGED(AF_SOStatus__c),
+    OR(
+        ISBLANK(AF_InvoiceSummary__c),
+        NOT(ISPICKVAL(AF_InvoiceSummary__r.AF_Status__c, &quot;Fully Paid&quot;)),
+        ISBLANK(AF_SelectedVehicle__c),
+        NOT(ISPICKVAL(AF_SelectedVehicle__r.AF_InventoryStatus__c, &quot;In Stock&quot;)),
+        ISBLANK(AF_VehicleReservation__c),
+        NOT(ISPICKVAL(AF_VehicleReservation__r.AF_Status__c, &quot;Reserved&quot;)),
+        AF_VehicleReservation__r.AF_Vehicle__c &lt;&gt; AF_SelectedVehicle__c
+    )
+)</errorConditionFormula>
+    <errorMessage>Sales Order cannot be generated: the Invoice Summary must be Fully Paid (all payments gathered and paid), a vehicle must be selected and In Stock, and there must be a Reserved reservation on this Opportunity for that same vehicle.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VehicleOfInterest__c</fullName>
+    <description>Lightweight picklist, not a catalogue lookup — a caller may only say “an SUV, maybe”. “Undecided” is confirmed as mandatory under every brand; per-brand model lists are TBP. Conversion maps this to Opportunity.AF_VehicleModel__c (a VehicleDefinition lookup) where a confident match exists.</description>
+    <label>Vehicle of Interest</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>AF_Brand__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Undecided</fullName>
+                <default>false</default>
+                <label>Undecided</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Ferrari</controllingFieldValue>
+            <controllingFieldValue>Rolls-Royce</controllingFieldValue>
+            <valueName>Undecided</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

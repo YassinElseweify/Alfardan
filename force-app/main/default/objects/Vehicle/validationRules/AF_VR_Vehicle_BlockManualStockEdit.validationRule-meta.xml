@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Vehicle_BlockManualStockEdit</fullName>
+    <active>true</active>
+    <description>LFRDN-636: Inventory Status is a Keyloop-mastered mirror and should never be hand-edited in Salesforce (SD p.65). Blocks changes to AF_InventoryStatus__c unless the user holds AF_CanBypassInventorySync.</description>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    ISCHANGED(AF_InventoryStatus__c),
+    NOT($Permission.AF_CanBypassInventorySync)
+)</errorConditionFormula>
+    <errorMessage>Inventory Status is synced automatically from Keyloop and cannot be edited directly in Salesforce. If this is a deliberate manual correction, ask an administrator to apply the &quot;Bypass Inventory Sync Protection&quot; permission first.</errorMessage>
+</ValidationRule>

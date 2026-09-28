@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_Showroom__c</fullName>
+    <description>Walk-in showroom context. Independent picklist (not dependent on AF_BusinessUnit__c, which is written after-save and would leave this empty on the create screen if dependent).</description>
+    <label>Showroom</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alsadd</fullName>
+                <default>false</default>
+                <label>Alsadd</label>
+            </value>
+            <value>
+                <fullName>Lusail Boulevard</fullName>
+                <default>false</default>
+                <label>Lusail Boulevard</label>
+            </value>
+            <value>
+                <fullName>Towers</fullName>
+                <default>false</default>
+                <label>Towers</label>
+            </value>
+            <value>
+                <fullName>Jery Al Samur</fullName>
+                <default>false</default>
+                <label>Jery Al Samur</label>
+            </value>
+            <value>
+                <fullName>Pearl (Rolls Royce)</fullName>
+                <default>false</default>
+                <label>Pearl (Rolls Royce)</label>
+            </value>
+            <value>
+                <fullName>Pearl (Motorcycles)</fullName>
+                <default>false</default>
+                <label>Pearl (Motorcycles)</label>
+            </value>
+            <value>
+                <fullName>Lusail</fullName>
+                <default>false</default>
+                <label>Lusail</label>
+            </value>
+            <value>
+                <fullName>Pearl</fullName>
+                <default>false</default>
+                <label>Pearl</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

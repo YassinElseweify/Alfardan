@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_DocumentConditionFields</fullName>
+    <description>ALF-RS-12 (LFRDN-342). Fields AF_DocumentConditionEvaluator may reference when evaluating AF_DocumentCondition__mdt rows scoped to AF_Handover__c via AF_DynamicObject__mdt. The single Handover condition is unconditional (&quot;true&quot;), but AF_Status__c is included so a future branch (e.g. by brand or business unit) can be added without a field-set/deploy change.</description>
+    <displayedFields>
+        <field>AF_Status__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>AF Document Condition Fields</label>
+</FieldSet>

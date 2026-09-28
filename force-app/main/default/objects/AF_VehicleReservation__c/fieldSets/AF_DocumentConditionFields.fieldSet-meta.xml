@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_DocumentConditionFields</fullName>
+    <description>ALF-RS-08 (LFRDN-338) FR13, ported onto the LFRDN-342 document-requirements engine. Fields AF_DocumentConditionEvaluator references when evaluating AF_DocumentCondition__mdt rows scoped to AF_VehicleReservation__c via AF_DynamicObject__mdt - contract type, trade-in-as-deposit, and (LFRDN-702) approval status are the dimensions the Required Documents rules vary on. AF_ApprovalStatus__c added so the Approval Reference document rows can require AF_ApprovalStatus__c = &apos;Approved&apos;, not apply to every 7-Day reservation regardless of whether it actually went through manager approval.</description>
+    <displayedFields>
+        <field>AF_ContractType__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>AF_TradeInAsDeposit__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>AF_ApprovalStatus__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>AF Document Condition Fields</label>
+</FieldSet>

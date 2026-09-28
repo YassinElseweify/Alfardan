@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_LostApprovalRequired</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(StageName, &quot;Closed Lost&quot;), NOT(ISPICKVAL(AF_LostApprovalStatus__c, &quot;Approved&quot;)))</errorConditionFormula>
+    <errorMessage>Closed Lost can only be reached through the approved Request Closure process, not by editing Stage directly.</errorMessage>
+</ValidationRule>

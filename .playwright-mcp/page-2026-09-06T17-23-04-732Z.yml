@@ -1,0 +1,332 @@
+- generic:
+  - generic [ref=f68e2]:
+    - generic [ref=f68e3]:
+      - link "Skip to Navigation" [ref=f68e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f68e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f68e8]:
+        - generic [ref=f68e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f68e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f68e11]:
+        - button "Search" [ref=f68e18]: Search...
+        - navigation "Global Header" [ref=f68e23]:
+          - list [ref=f68e25]:
+            - listitem [ref=f68e26]:
+              - group [ref=f68e27]:
+                - button "Add favorite" [ref=f68e331] [cursor=pointer]:
+                  - generic [ref=f68e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f68e38] [cursor=pointer]:
+                  - generic [ref=f68e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f68e46]:
+              - button [ref=f68e336] [cursor=pointer]:
+                - generic [ref=f68e337]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f68e344]:
+              - button [ref=f68e346] [cursor=pointer]:
+                - generic [ref=f68e347]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f68e55]:
+              - button [ref=f68e58] [cursor=pointer]:
+                - generic [ref=f68e59]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f68e66]:
+              - button [ref=f68e72] [cursor=pointer]:
+                - generic [ref=f68e73]:
+                  - tooltip "Setup"
+            - listitem [ref=f68e80]:
+              - button "20+ Notifications" [ref=f68e354] [cursor=pointer]:
+                - generic [ref=f68e84]:
+                  - generic [ref=f68e85]: 20+
+                  - tooltip "Notifications"
+              - generic [ref=f68e92]: 43 new notifications
+            - listitem [ref=f68e93]:
+              - button "View profile" [ref=f68e96] [cursor=pointer]:
+                - generic [ref=f68e97]:
+                  - tooltip "View profile"
+    - generic [ref=f68e101]:
+      - generic [ref=f68e104]:
+        - generic [ref=f68e106]:
+          - navigation "App" [ref=f68e107]:
+            - button "App Launcher" [ref=f68e109] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f68e121]
+        - navigation "Global" [ref=f68e125]:
+          - list [ref=f68e126]:
+            - listitem [ref=f68e127]:
+              - link "Home" [ref=f68e128] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f68e130]:
+              - link "Analytics" [ref=f68e131] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f68e133] [cursor=pointer]:
+              - link "Opportunities" [ref=f68e134]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f68e139]
+            - listitem [ref=f68e147]:
+              - link "Quotes" [ref=f68e148] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f68e153] [cursor=pointer]
+            - listitem [ref=f68e161]:
+              - link "Leads" [ref=f68e162] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f68e167] [cursor=pointer]
+            - listitem [ref=f68e175]:
+              - link "Tasks" [ref=f68e176] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f68e181] [cursor=pointer]
+            - listitem [ref=f68e189]:
+              - link "Files" [ref=f68e190] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f68e195] [cursor=pointer]
+            - listitem [ref=f68e203]:
+              - link "Accounts" [ref=f68e204] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f68e209] [cursor=pointer]
+            - listitem [ref=f68e217]:
+              - link "Contacts" [ref=f68e218] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f68e223] [cursor=pointer]
+            - listitem [ref=f68e231]:
+              - link "Campaigns" [ref=f68e232] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f68e237] [cursor=pointer]
+            - listitem [ref=f68e245]:
+              - link "Dashboards" [ref=f68e246] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f68e251] [cursor=pointer]
+            - listitem [ref=f68e259]:
+              - link "Reports" [ref=f68e260] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f68e265] [cursor=pointer]
+            - listitem [ref=f68e273]:
+              - link "Chatter" [ref=f68e274] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f68e276]:
+              - link "Groups" [ref=f68e277] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f68e282] [cursor=pointer]
+            - listitem [ref=f68e290]:
+              - button "* Show more navigation items" [ref=f68e292] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f68e293]: "*"
+                - generic [aria-hidden] [ref=f68e294]: More
+                - generic [ref=f68e301]: Show more navigation items
+            - listitem [ref=f68e302]:
+              - button "Edit nav items" [ref=f68e304] [cursor=pointer]
+      - main [ref=f68e311]:
+        - generic [ref=f68e368]:
+          - generic [ref=f68e377]:
+            - generic [ref=f68e378]:
+              - generic [ref=f68e384]:
+                - generic [ref=f68e385]: Opportunity
+                - heading "Test Demo 2 - Rolls-Royce" [level=1] [ref=f68e387]
+              - button "Follow" [ref=f68e393] [cursor=pointer]
+              - generic [ref=f68e403]:
+                - generic "New Case" [ref=f68e404]:
+                  - button "New Case" [ref=f68e409] [cursor=pointer]
+                - generic "New Note" [ref=f68e410]:
+                  - button "New Note" [ref=f68e415] [cursor=pointer]
+                - generic "Sharing Hierarchy" [ref=f68e416]:
+                  - button "Sharing Hierarchy" [ref=f68e421] [cursor=pointer]
+                - button "Show more actions" [ref=f68e423] [cursor=pointer]
+            - generic [ref=f68e429]:
+              - generic [ref=f68e431]:
+                - paragraph [ref=f68e432]: Account Name
+                - paragraph [ref=f68e433]:
+                  - generic [ref=f68e438]:
+                    - link "Test Demo 2" [ref=f68e439] [cursor=pointer]:
+                      - /url: /lightning/r/Account/001FV00IIYjNQ5cY2G/view
+                    - button "Preview" [ref=f68e445] [cursor=pointer]
+              - generic [ref=f68e452]:
+                - paragraph [ref=f68e453]: Close Date
+                - paragraph [ref=f68e454]:
+                  - generic [ref=f68e455]: ٣٠/٩/٢٠٢٦
+              - generic [ref=f68e457]:
+                - paragraph [ref=f68e458]: Amount
+                - paragraph [ref=f68e459]:
+                  - generic [ref=f68e460]: ٣٩٨٬٣٥٠٫٠٠ ر.ق.‏
+              - generic [ref=f68e462]:
+                - paragraph [ref=f68e463]: Opportunity Owner
+                - paragraph [ref=f68e464]:
+                  - generic [ref=f68e467]:
+                    - generic [ref=f68e474]:
+                      - link "Sales Representative" [ref=f68e475] [cursor=pointer]:
+                        - /url: /lightning/r/User/005a3001tN36pJcAQI/view
+                      - button "Preview" [ref=f68e481] [cursor=pointer]
+                    - button "Change Owner" [ref=f68e488] [cursor=pointer]
+          - article [ref=f68e502]:
+            - generic [ref=f68e503]:
+              - heading "Path" [level=2] [ref=f68e504]
+              - generic [ref=f68e507]:
+                - generic [ref=f68e508]:
+                  - listbox "Path Options" [ref=f68e512]:
+                    - option "Consider" [ref=f68e513] [cursor=pointer]:
+                      - generic [ref=f68e514]: stage complete
+                    - option "Explore" [ref=f68e523] [cursor=pointer]
+                    - option "Select" [active] [selected] [ref=f68e525] [cursor=pointer]
+                    - option "Commit" [ref=f68e527] [cursor=pointer]
+                    - option "Take the Keys" [ref=f68e529] [cursor=pointer]
+                    - option "Closed" [ref=f68e531] [cursor=pointer]
+                  - tooltip "Select"
+                - button "Mark as Current Stage" [ref=f68e1063] [cursor=pointer]
+          - generic [ref=f68e543]:
+            - generic [ref=f68e551]:
+              - heading "Tabs" [level=2] [ref=f68e552]
+              - tablist "Tabs" [ref=f68e554]:
+                - tab "Activity" [selected] [ref=f68e555] [cursor=pointer]
+                - tab "Details" [ref=f68e556] [cursor=pointer]
+                - tab "Chatter" [ref=f68e557] [cursor=pointer]
+              - tabpanel "Activity" [ref=f68e560]:
+                - generic [ref=f68e566]:
+                  - heading "Activity Publisher" [level=2] [ref=f68e567]
+                  - generic [ref=f68e568]:
+                    - group [ref=f68e569]:
+                      - generic [ref=f68e571]:
+                        - button "New Task" [ref=f68e572] [cursor=pointer]
+                        - generic [ref=f68e581]:
+                          - button "No Additional New Task Actions" [disabled]
+                    - group [ref=f68e582]:
+                      - generic [ref=f68e584]:
+                        - button "Log a Call" [ref=f68e585] [cursor=pointer]
+                        - button "More Log a Call Actions" [ref=f68e595] [cursor=pointer]
+                    - group [ref=f68e601]:
+                      - generic [ref=f68e603]:
+                        - button "New Event" [ref=f68e604] [cursor=pointer]
+                        - button "More New Event Actions" [ref=f68e614] [cursor=pointer]
+                  - heading "Activity Timeline" [level=2] [ref=f68e620]
+                  - generic [ref=f68e622]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f68e623] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f68e625]:
+                      - generic [ref=f68e626]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f68e628] [cursor=pointer]
+                    - generic [ref=f68e636]:
+                      - button "Refresh" [ref=f68e637] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f68e638] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f68e639] [cursor=pointer]
+                    - generic [ref=f68e641]:
+                      - heading [level=3] [ref=f68e642]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f68e643] [cursor=pointer]
+                      - list [ref=f68e650]:
+                        - listitem [ref=f68e651]:
+                          - generic [ref=f68e653]:
+                            - button "Show details for Opportunity Assigned to You" [ref=f68e656] [cursor=pointer]:
+                              - generic "Details for Opportunity Assigned to You" [ref=f68e657]: Details for
+                            - generic [ref=f68e664]:
+                              - img "Task" [ref=f68e669]
+                              - generic [ref=f68e670]:
+                                - generic [ref=f68e671]:
+                                  - generic [ref=f68e673]:
+                                    - generic [ref=f68e677]:
+                                      - checkbox "Opportunity Assigned to You" [ref=f68e678] [cursor=pointer]
+                                      - generic [ref=f68e680]: Opportunity Assigned to You
+                                    - link "Opportunity Assigned to You" [ref=f68e684] [cursor=pointer]:
+                                      - /url: /lightning/r/00TFV00DcWNfkCa2UJ/view
+                                  - generic [ref=f68e686]:
+                                    - generic [ref=f68e687]:
+                                      - text: 30/08
+                                      - generic [ref=f68e688]: Overdue
+                                    - button "Show more actions - Opportunity Assigned to You" [ref=f68e690] [cursor=pointer]
+                                - generic [ref=f68e694]: You have an upcoming task
+                    - status [ref=f68e699]:
+                      - generic [ref=f68e700]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f68e701] [cursor=pointer]:
+                      - /url: javascript:void(0);
+            - generic [ref=f68e710]:
+              - heading "Tabs" [level=2] [ref=f68e711]
+              - tablist "Tabs" [ref=f68e713]:
+                - tab "Related" [selected] [ref=f68e714] [cursor=pointer]
+              - tabpanel "Related" [ref=f68e717]:
+                - generic [ref=f68e722]:
+                  - article "Payments" [ref=f68e728]:
+                    - generic [ref=f68e733]:
+                      - heading [level=2] [ref=f68e741]:
+                        - link "Payments (0)" [ref=f68e742] [cursor=pointer]:
+                          - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/AF_Payments__r/view
+                          - generic "Payments" [ref=f68e743]
+                          - generic "(0)" [ref=f68e744]
+                      - button "Show actions for Payments" [ref=f68e749] [cursor=pointer]
+                  - article "Vehicle Reservations" [ref=f68e760]:
+                    - generic [ref=f68e765]:
+                      - heading [level=2] [ref=f68e773]:
+                        - link "Vehicle Reservations (0)" [ref=f68e774] [cursor=pointer]:
+                          - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/AF_VehicleReservations__r/view
+                          - generic "Vehicle Reservations" [ref=f68e775]
+                          - generic "(0)" [ref=f68e776]
+                      - button "Show actions for Vehicle Reservations" [ref=f68e781] [cursor=pointer]
+                  - article "Quotes" [ref=f68e792]:
+                    - generic [ref=f68e797]:
+                      - heading [level=2] [ref=f68e805]:
+                        - link "Quotes (0)" [ref=f68e806] [cursor=pointer]:
+                          - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/Quotes/view
+                          - generic "Quotes" [ref=f68e807]
+                          - generic "(0)" [ref=f68e808]
+                      - button "Show actions for Quotes" [ref=f68e812] [cursor=pointer]
+                  - article "Approval History" [ref=f68e827]:
+                    - generic [ref=f68e828]:
+                      - heading [level=2] [ref=f68e834]:
+                        - link "Approval History (0)" [ref=f68e835] [cursor=pointer]:
+                          - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/ProcessSteps/view
+                          - generic "Approval History" [ref=f68e836]
+                          - generic "(0)" [ref=f68e837]
+                      - button "Show actions for Approval History" [ref=f68e841] [cursor=pointer]
+                  - article "Test Drives" [ref=f68e854]:
+                    - generic [ref=f68e855]:
+                      - generic [ref=f68e856]:
+                        - generic [ref=f68e859]:
+                          - heading [level=2] [ref=f68e867]:
+                            - link "Test Drives (3+)" [ref=f68e868] [cursor=pointer]:
+                              - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/AF_TestDrives__r/view
+                              - generic "Test Drives" [ref=f68e869]
+                              - generic "(3+)" [ref=f68e870]
+                          - button "Show actions for Test Drives" [ref=f68e875] [cursor=pointer]
+                        - generic [ref=f68e888]:
+                          - article "TD-00045" [ref=f68e891]:
+                            - heading [level=3] [ref=f68e894]:
+                              - generic [ref=f68e900]:
+                                - link "TD-00045" [ref=f68e901] [cursor=pointer]:
+                                  - /url: /lightning/r/a0VFV0095d5c6oq2AA/view
+                                - button "Preview" [ref=f68e907] [cursor=pointer]
+                            - button "Show Actions" [ref=f68e917] [cursor=pointer]
+                          - article "TD-00026" [ref=f68e925]:
+                            - heading [level=3] [ref=f68e928]:
+                              - generic [ref=f68e934]:
+                                - link "TD-00026" [ref=f68e935] [cursor=pointer]:
+                                  - /url: /lightning/r/a0VFV0095fie1lY2AQ/view
+                                - button "Preview" [ref=f68e941] [cursor=pointer]
+                            - button "Show Actions" [ref=f68e951] [cursor=pointer]
+                          - article "TD-00020" [ref=f68e959]:
+                            - heading [level=3] [ref=f68e962]:
+                              - generic [ref=f68e968]:
+                                - link "TD-00020" [ref=f68e969] [cursor=pointer]:
+                                  - /url: /lightning/r/a0VFV0095iDUF5M2AX/view
+                                - button "Preview" [ref=f68e975] [cursor=pointer]
+                            - button "Show Actions" [ref=f68e985] [cursor=pointer]
+                      - link "View All Test Drives" [ref=f68e991] [cursor=pointer]:
+                        - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/related/AF_TestDrives__r/view
+                        - generic [ref=f68e992]:
+                          - text: View All
+                          - generic [ref=f68e993]: Test Drives
+                  - article [ref=f68e999]:
+                    - heading "Products" [level=2] [ref=f68e1003]
+                  - article [ref=f68e1010]:
+                    - heading "Preferred Seller" [level=2] [ref=f68e1014]
+                  - article [ref=f68e1021]:
+                    - heading "Contact Roles" [level=2] [ref=f68e1025]
+                  - article [ref=f68e1032]:
+                    - heading "Partners" [level=2] [ref=f68e1036]
+                  - article [ref=f68e1043]:
+                    - heading "Notes & Attachments" [level=2] [ref=f68e1047]
+                  - article [ref=f68e1054]:
+                    - heading "Stage History" [level=2] [ref=f68e1058]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f68e318]:
+          - listitem [ref=f68e319]:
+            - button "To Do List" [ref=f68e322] [cursor=pointer]
+  - generic:
+    - status

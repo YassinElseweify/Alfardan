@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_SequentialStageProgression</fullName>
+    <active>true</active>
+    <description>Blocks forward stage-skipping (e.g. Consider to Select). Backward moves to any earlier stage are always allowed. Closed Lost is exempt in both directions (set directly by AF_FL_Opp_LostApproved from any stage).</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+    NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;Closed Lost&quot;)),
+    (
+        CASE(TEXT(StageName),
+            &quot;Consider&quot;, 0,
+            &quot;Explore&quot;, 1,
+            &quot;Select&quot;, 2,
+            &quot;Commit&quot;, 3,
+            &quot;Take the Keys&quot;, 4,
+            &quot;Closed Won&quot;, 5,
+            -1)
+        -
+        CASE(TEXT(PRIORVALUE(StageName)),
+            &quot;Consider&quot;, 0,
+            &quot;Explore&quot;, 1,
+            &quot;Select&quot;, 2,
+            &quot;Commit&quot;, 3,
+            &quot;Take the Keys&quot;, 4,
+            &quot;Closed Won&quot;, 5,
+            -1)
+    ) &gt; 1
+)</errorConditionFormula>
+    <errorMessage>Stage cannot skip ahead — move the Opportunity through each stage in order. Moving back to an earlier stage is always allowed, and Closed Lost can be set from any stage.</errorMessage>
+</ValidationRule>

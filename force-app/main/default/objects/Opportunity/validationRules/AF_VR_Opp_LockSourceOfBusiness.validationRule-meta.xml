@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_LockSourceOfBusiness</fullName>
+    <active>true</active>
+    <description>Exempts the one-time carryover stamp from AF_LeadConversionService (detected via that same save also first-setting AF_OpportunityOrigin__c) so Source of Business isn&apos;t left blank post-conversion. Later manual edits are unaffected.</description>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    ISCHANGED(AF_SourceOfBusiness__c),
+    NOT($Permission.AF_CanEditSourceOfBusiness),
+    NOT(AND(ISCHANGED(AF_OpportunityOrigin__c), TEXT(AF_OpportunityOrigin__c) = &quot;Lead Conversion&quot;))
+)</errorConditionFormula>
+    <errorMessage>Source of Business cannot be changed after creation without the &quot;Edit Source of Business&quot; permission. Shared pattern with Lead.</errorMessage>
+</ValidationRule>

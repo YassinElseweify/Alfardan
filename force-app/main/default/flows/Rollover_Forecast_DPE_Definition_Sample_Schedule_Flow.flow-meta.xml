@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Calls an action that starts a batch job to run the Rollover Category Sample-Advanced Account Forecast Data Processing Engine definition for all advanced account forecast sets. Stores the result in the Outputs from Run DPE Definition.</description>
+        <name>Run_DPE_Definition</name>
+        <label>Run DPE Definition</label>
+        <locationX>578</locationX>
+        <locationY>276</locationY>
+        <actionName>Rollover_Category_Forecast_Sample</actionName>
+        <actionType>dataProcessingEngineAction</actionType>
+        <connector>
+            <targetReference>SendJobStartedEmail</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>SendFailureEmail</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>AccountId</name>
+            <value>
+                <stringValue>ALL</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>AdvAccountForecastSetId</name>
+            <value>
+                <stringValue>ALL</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>Rollover_Category_Forecast_Sample</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Informs the flow user that the batch job failed.</description>
+        <name>SendFailureEmail</name>
+        <label>Send Failure Email</label>
+        <locationX>1106</locationX>
+        <locationY>396</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>FailureMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce batch job {!Run_DPE_Definition.batchJobId} with the Rollover Account Forecast Data Processing Engine Definition failed </stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an action that sends an email to the Salesforce admin notifying them that the RunDpeDefinition batch job completed.</description>
+        <name>SendJobCompletedEmail</name>
+        <label>Send Job Completed Email</label>
+        <locationX>50</locationX>
+        <locationY>996</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>SuccessMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce batch job {!Run_DPE_Definition.batchJobId} with the Rollover Account Forecast Data Processing Engine Definition batch job completed</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an action that sends an email to the Salesforce admin notifying them that the RunDpeDefinition batch job didn’t complete.</description>
+        <name>SendJobNotCompleted</name>
+        <label>Send Job Not Completed</label>
+        <locationX>314</locationX>
+        <locationY>996</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>NotCompletedMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce batch job {!Run_DPE_Definition.batchJobId} with the Rollover Account Forecast Data Processing Engine Definition didn&apos;t complete</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an action that sends an email to the Salesforce admin notifying them that the RunDPEDefinition action has started.</description>
+        <name>SendJobStartedEmail</name>
+        <label>Send Job Started Email</label>
+        <locationX>578</locationX>
+        <locationY>396</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>PauseUntilActionCompletes</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>JobStartedEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce batch job {!Run_DPE_Definition.batchJobId} with the Rollover Account Forecast Data Processing Engine Definition has started</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Determines whether the status of Batch Job from GetBatchJob is Completed.</description>
+        <name>WasBatchJobCompleted</name>
+        <label>Was Batch Job Completed?</label>
+        <locationX>314</locationX>
+        <locationY>876</locationY>
+        <defaultConnectorLabel>End Flow</defaultConnectorLabel>
+        <rules>
+            <name>IsCompleted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BatchCalcJobView.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendJobCompletedEmail</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+        <rules>
+            <name>No_Default</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BatchCalcJobView.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Failed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendJobNotCompleted</targetReference>
+            </connector>
+            <label>No (Default)</label>
+        </rules>
+    </decisions>
+    <description>Rollover account forecasts using the Rollover Account Forecast Data Processing Engine definition available with Advanced Account Forecasting.</description>
+    <environments>Default</environments>
+    <interviewLabel>Rollover Forecast DPE Definition (Sample Schedule Flow) {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Rollover Forecast DPE Definition (Sample Schedule Flow)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Gets the batch job from RunDpeDefinition. Stores the record in Batch Job from GetBatchJob.</description>
+        <name>GetBatchJob</name>
+        <label>Get Batch Job</label>
+        <locationX>314</locationX>
+        <locationY>636</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetBatchJobDefinition</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Run_DPE_Definition.batchJobId</elementReference>
+            </value>
+        </filters>
+        <object>BatchJob</object>
+        <outputReference>BatchCalcJobView</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+        <queriedFields>StartTime</queriedFields>
+        <queriedFields>EndTime</queriedFields>
+        <queriedFields>ErrorDescription</queriedFields>
+        <queriedFields>BatchJobDefinitionName</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>BatchJobDefinitionId</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the batch job definition record related to the batch job record from GetBatchJob.</description>
+        <name>GetBatchJobDefinition</name>
+        <label>Get Batch Job Definition</label>
+        <locationX>314</locationX>
+        <locationY>756</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>WasBatchJobCompleted</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>BatchCalcJobView.BatchJobDefinitionId</elementReference>
+            </value>
+        </filters>
+        <object>BatchJobDefinition</object>
+        <outputReference>BatchJobDefinitionView</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Description</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>MasterLabel</queriedFields>
+        <queriedFields>ProcessGroup</queriedFields>
+        <queriedFields>Status</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Run_DPE_Definition</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2022-08-17</startDate>
+            <startTime>00:42:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Stores the message that informs the Salesforce admin  that  RunDpeDefinition failed.</description>
+        <name>FailureMessage</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Hello  {!$Organization.Name} admin,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;The Rollover Forecast DPE batch job &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Arial; font-size: 14.6667px;&quot;&gt;{!Run_DPE_Definition.batchJobId}&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt; failed. To view more details, go to Monitor Workflow Jobs in Setup.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Salesforce Manufacturing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Stores the body of the email that’s sent to the Salesforce admin to notify them that the RunDpeDefinition has started.</description>
+        <name>JobStartedEmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Hello  admin,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;The Rollover Forecast DPE batch job {!Run_DPE_Definition.batchJobId} started at {!$Flow.CurrentDateTime}. To view more details, go to Monitor Workflow Jobs in Setup.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Salesforce Manufacturing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(34, 34, 34);&quot;&gt;.&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Stores the message that informs the Salesforce admin that RunDpeDefinition didn&apos;t complete.</description>
+        <name>NotCompletedMessage</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Hello {!$Organization.Name} admin,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;The Rollover Forecast DPE batch job {!Run_DPE_Definition.batchJobId} didn&apos;t finish with a status of Complete. To view more details, go to Monitor Workflow Jobs in Setup.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Salesforce Manufacturing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Stores the message that informs the Salesforce admin that RunDpeDefinition batch job completed.</description>
+        <name>SuccessMessage</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Hello {!$Organization.Name} admin,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;The Rollover Forecast DPE batch job {!Run_DPE_Definition.batchJobId} completed.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent; font-family: Arial; font-size: 11pt;&quot;&gt;Salesforce Manufacturing&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Stores the Data Processing Engine definition that’s used to Rollover the forecasts for an account.</description>
+        <name>BatchCalcJobView</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>BatchJob</objectType>
+    </variables>
+    <variables>
+        <name>BatchJobDefinitionView</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>BatchJobDefinition</objectType>
+    </variables>
+    <variables>
+        <description>Stores the constant DPE label value</description>
+        <name>constDPELabel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Recalculate Category Forecast Sample</stringValue>
+        </value>
+    </variables>
+    <waits>
+        <description>Pauses the flow until RunDpeDefinition is finished.</description>
+        <name>PauseUntilActionCompletes</name>
+        <label>Pause Until Action Completes</label>
+        <locationX>578</locationX>
+        <locationY>516</locationY>
+        <defaultConnectorLabel>Not Completed</defaultConnectorLabel>
+        <waitEvents>
+            <name>RunDpeDefinitionComplete</name>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>GetBatchJob</targetReference>
+            </connector>
+            <eventType>BatchJobStatusChangedEvent</eventType>
+            <inputParameters>
+                <name>BatchJob</name>
+                <value>
+                    <elementReference>Run_DPE_Definition.batchJobId</elementReference>
+                </value>
+            </inputParameters>
+            <label>Completed</label>
+        </waitEvents>
+    </waits>
+</Flow>

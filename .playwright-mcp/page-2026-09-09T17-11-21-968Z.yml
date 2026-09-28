@@ -1,0 +1,83 @@
+- generic [active]:
+  - generic [ref=f84e2]:
+    - generic [ref=f84e3]:
+      - link "Skip to Navigation" [ref=f84e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f84e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f84e6]:
+        - button "Search" [ref=f84e13]: Search...
+        - navigation "Global Header" [ref=f84e18]:
+          - list [ref=f84e19]:
+            - listitem [ref=f84e20]
+    - generic [ref=f84e24]:
+      - generic [ref=f84e27]:
+        - generic [ref=f84e29]:
+          - navigation "App" [ref=f84e30]:
+            - button "App Launcher" [ref=f84e32] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f84e44]
+        - navigation "Global" [ref=f84e48]:
+          - list [ref=f84e49]:
+            - listitem [ref=f84e50]:
+              - link "Home" [ref=f84e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f84e53]:
+              - link "Analytics" [ref=f84e54] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f84e56]:
+              - link "Opportunities" [ref=f84e57] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f84e62] [cursor=pointer]
+            - listitem [ref=f84e70]:
+              - link "Quotes" [ref=f84e71] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f84e76] [cursor=pointer]
+            - listitem [ref=f84e84]:
+              - link "Tasks" [ref=f84e85] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f84e90] [cursor=pointer]
+            - listitem [ref=f84e98]:
+              - link "Files" [ref=f84e99] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f84e104] [cursor=pointer]
+            - listitem [ref=f84e112]:
+              - link "Accounts" [ref=f84e113] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f84e118] [cursor=pointer]
+            - listitem [ref=f84e126]:
+              - link "Contacts" [ref=f84e127] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f84e132] [cursor=pointer]
+            - listitem [ref=f84e140]:
+              - link "Campaigns" [ref=f84e141] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f84e146] [cursor=pointer]
+            - listitem [ref=f84e154]:
+              - link "Chatter" [ref=f84e155] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f84e157]:
+              - link "Groups" [ref=f84e158] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f84e163] [cursor=pointer]
+            - listitem [ref=f84e171]:
+              - link "Calendar" [ref=f84e172] [cursor=pointer]:
+                - /url: /lightning/o/Event/home
+              - button "Calendar List" [ref=f84e177] [cursor=pointer]
+            - listitem [ref=f84e185]:
+              - link "People" [ref=f84e186] [cursor=pointer]:
+                - /url: /lightning/o/User/home
+              - button "People List" [ref=f84e191] [cursor=pointer]
+            - listitem [ref=f84e199]:
+              - link "Email Templates" [ref=f84e200] [cursor=pointer]:
+                - /url: /lightning/o/EmailTemplate/home
+              - button "Email Templates List" [ref=f84e205] [cursor=pointer]
+            - listitem [ref=f84e213]:
+              - button "Edit nav items" [ref=f84e215] [cursor=pointer]
+      - main [ref=f84e222]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f84e229]:
+          - listitem [ref=f84e230]:
+            - button "To Do List" [ref=f84e233] [cursor=pointer]
+  - generic:
+    - status

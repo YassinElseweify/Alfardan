@@ -1,0 +1,271 @@
+- generic:
+  - generic:
+    - generic [ref=f172e2]:
+      - generic [ref=f172e3]:
+        - link [ref=f172e678] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Navigation
+        - link [ref=f172e679] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Main Content
+        - generic [ref=f172e25]:
+          - generic [ref=f172e26]: "Sandbox: QA |"
+          - link [ref=f172e680] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+            - text: Log out
+        - generic [ref=f172e6]:
+          - button [ref=f172e681]: Search...
+          - navigation [ref=f172e682]:
+            - list [ref=f172e37]:
+              - listitem [ref=f172e38]:
+                - group [ref=f172e39]:
+                  - button [ref=f172e683] [cursor=pointer]
+                  - button [ref=f172e684] [cursor=pointer]
+              - listitem [ref=f172e58]:
+                - button [ref=f172e685] [cursor=pointer]
+              - listitem [ref=f172e72]:
+                - button [ref=f172e686] [cursor=pointer]
+              - listitem [ref=f172e82]:
+                - button [ref=f172e687] [cursor=pointer]
+              - listitem [ref=f172e93]:
+                - button [ref=f172e688] [cursor=pointer]
+              - listitem [ref=f172e107]:
+                - button [ref=f172e689] [cursor=pointer]:
+                  - generic [ref=f172e111]: "6"
+                - generic [ref=f172e121]: 6 new notifications
+              - listitem [ref=f172e122]:
+                - button [ref=f172e690] [cursor=pointer]
+      - generic [ref=f172e15]:
+        - generic [ref=f172e132]:
+          - generic [ref=f172e134]:
+            - navigation [ref=f172e691]:
+              - button [ref=f172e692] [cursor=pointer]:
+                - generic [ref=f172e138]: App Launcher
+            - heading [level=1] [ref=f172e693]:
+              - generic [ref=f172e694]: Sales
+          - navigation [ref=f172e695]:
+            - list [ref=f172e154]:
+              - listitem [ref=f172e155]:
+                - link [ref=f172e696] [cursor=pointer]:
+                  - /url: /lightning/page/home
+                  - generic [ref=f172e157]: Home
+              - listitem [ref=f172e158]:
+                - link [ref=f172e697] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+                  - generic [ref=f172e160]: Analytics
+              - listitem [ref=f172e161]:
+                - link [ref=f172e698] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                  - generic [ref=f172e163]: Opportunities
+                - button [ref=f172e699] [cursor=pointer]:
+                  - generic [ref=f172e174]: Opportunities List
+              - listitem [ref=f172e175]:
+                - link [ref=f172e700] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                  - generic [ref=f172e177]: Quotes
+                - button [ref=f172e701] [cursor=pointer]:
+                  - generic [ref=f172e188]: Quotes List
+              - listitem [ref=f172e189]:
+                - link [ref=f172e702] [cursor=pointer]:
+                  - /url: /lightning/o/Lead/home
+                  - generic [ref=f172e191]: Leads
+                - button [ref=f172e703] [cursor=pointer]:
+                  - generic [ref=f172e202]: Leads List
+              - listitem [ref=f172e203]:
+                - link [ref=f172e704] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                  - generic [ref=f172e205]: Tasks
+                - button [ref=f172e705] [cursor=pointer]:
+                  - generic [ref=f172e216]: Tasks List
+              - listitem [ref=f172e217]:
+                - button [ref=f172e706] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f172e220]: More
+                  - generic [ref=f172e227]: Show more navigation items
+              - listitem [ref=f172e228]:
+                - button [ref=f172e707] [cursor=pointer]:
+                  - generic [ref=f172e235]: Edit nav items
+        - main [ref=f172e17]:
+          - generic [ref=f172e247]:
+            - generic [ref=f172e257]:
+              - generic [ref=f172e263]:
+                - generic [ref=f172e264]: Trade In
+                - heading [level=1] [ref=f172e708]:
+                  - generic [ref=f172e267]: APL-000000037
+              - generic [ref=f172e271]:
+                - button [ref=f172e710] [cursor=pointer]: Edit
+                - button [ref=f172e712] [cursor=pointer]: Delete
+                - button [ref=f172e714] [cursor=pointer]: Clone
+                - button [ref=f172e715] [cursor=pointer]:
+                  - generic [ref=f172e296]: Show more actions
+            - generic [ref=f172e298]:
+              - generic [ref=f172e306]:
+                - heading [level=2] [ref=f172e716]: Tabs
+                - tablist [ref=f172e717]:
+                  - tab [ref=f172e718] [cursor=pointer]: Related
+                  - tab [selected] [ref=f172e719] [cursor=pointer]: Details
+                - tabpanel [ref=f172e720]:
+                  - generic [ref=f172e327]:
+                    - generic [ref=f172e329]:
+                      - heading [level=3] [ref=f172e721]:
+                        - button [expanded] [ref=f172e722] [cursor=pointer]:
+                          - generic [ref=f172e339]: Basic Information
+                      - list [ref=f172e341]:
+                        - generic [ref=f172e342]:
+                          - generic [ref=f172e344]:
+                            - listitem [ref=f172e346]:
+                              - generic [ref=f172e347]:
+                                - generic [ref=f172e348]: Name
+                                - generic [ref=f172e349]: APL-000000037
+                            - listitem [ref=f172e353]:
+                              - generic [ref=f172e354]:
+                                - generic [ref=f172e355]: Reference Record
+                                - button [ref=f172e724] [cursor=pointer]:
+                                  - generic [ref=f172e364]: Help Reference Record
+                                - generic [ref=f172e365]:
+                                  - generic [ref=f172e371]:
+                                    - link [ref=f172e725] [cursor=pointer]:
+                                      - /url: /lightning/r/Name/006FV00ABujcvkyYMA/view
+                                      - generic [ref=f172e373]: Test Demo 2 - Rolls-Royce
+                                    - button [ref=f172e726] [cursor=pointer]:
+                                      - generic [ref=f172e383]: Preview
+                                  - button [ref=f172e727] [cursor=pointer]:
+                                    - generic [ref=f172e386]: Edit Reference Record
+                          - generic [ref=f172e388]:
+                            - listitem [ref=f172e390]:
+                              - generic [ref=f172e391]:
+                                - generic [ref=f172e392]: Purpose Type
+                                - generic [ref=f172e393]:
+                                  - generic [ref=f172e394]: Trade-In
+                                  - button [ref=f172e728] [cursor=pointer]:
+                                    - generic [ref=f172e398]: Edit Purpose Type
+                            - listitem [ref=f172e400]:
+                              - generic [ref=f172e401]:
+                                - generic [ref=f172e402]: Owner Name
+                                - generic [ref=f172e407]:
+                                  - generic [ref=f172e414]:
+                                    - link [ref=f172e729] [cursor=pointer]:
+                                      - /url: /lightning/r/Name/005a3001tN3B1SeAQK/view
+                                      - generic [ref=f172e416]: Sales Manager
+                                    - button [ref=f172e730] [cursor=pointer]:
+                                      - generic [ref=f172e426]: Preview
+                                  - button [ref=f172e731] [cursor=pointer]:
+                                    - generic [ref=f172e433]: Change Owner
+                    - generic [ref=f172e435]:
+                      - heading [level=3] [ref=f172e732]:
+                        - button [expanded] [ref=f172e733] [cursor=pointer]:
+                          - generic [ref=f172e445]: Additional Information
+                      - list [ref=f172e447]:
+                        - listitem [ref=f172e452]:
+                          - generic [ref=f172e453]:
+                            - generic [ref=f172e454]: Usage Type
+                            - generic [ref=f172e455]:
+                              - generic [ref=f172e456]: Automotive
+                              - button [ref=f172e734] [cursor=pointer]:
+                                - generic [ref=f172e460]: Edit Usage Type
+                    - generic [ref=f172e463]:
+                      - heading [level=3] [ref=f172e735]:
+                        - button [expanded] [ref=f172e736] [cursor=pointer]:
+                          - generic [ref=f172e473]: System Information
+                      - list [ref=f172e475]:
+                        - generic [ref=f172e478]:
+                          - listitem [ref=f172e480]:
+                            - generic [ref=f172e481]:
+                              - generic [ref=f172e482]: Created By
+                              - generic [ref=f172e486]:
+                                - generic [ref=f172e492]:
+                                  - link [ref=f172e737] [cursor=pointer]:
+                                    - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                    - generic [ref=f172e494]: Arcsen Alfardan
+                                  - button [ref=f172e738] [cursor=pointer]:
+                                    - generic [ref=f172e504]: Preview
+                                - text: ", ٧/٩/٢٠٢٦, ٢:٣٧ AM"
+                          - listitem [ref=f172e506]:
+                            - generic [ref=f172e507]:
+                              - generic [ref=f172e508]: Last Modified By
+                              - generic [ref=f172e512]:
+                                - generic [ref=f172e518]:
+                                  - link [ref=f172e739] [cursor=pointer]:
+                                    - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                    - generic [ref=f172e520]: Arcsen Alfardan
+                                  - button [ref=f172e740] [cursor=pointer]:
+                                    - generic [ref=f172e530]: Preview
+                                - text: ", ٧/٩/٢٠٢٦, ٢:٣٧ AM"
+              - generic [ref=f172e532]:
+                - generic [ref=f172e533]: "Error: Failed to get generated module for forceGenerated:flexCard_AppraisalManagementCreateItemAndRelatedRecordsCard___salesforce___1___false: ui.services.exceptions.NoAccessException: You don't have access to this record. Ask your administrator for help or to request access."
+                - generic [ref=f172e541]:
+                  - generic [ref=f172e542]: Trade-In 360° Photos
+                  - paragraph [ref=f172e550]: Couldn't load media for this trade-in.
+                - generic [ref=f172e556]:
+                  - heading [level=2] [ref=f172e741]: Tabs
+                  - tablist [ref=f172e742]:
+                    - tab [selected] [ref=f172e743] [cursor=pointer]: Activity
+                  - tabpanel [ref=f172e744]:
+                    - generic [ref=f172e569]:
+                      - heading [level=2] [ref=f172e745]: Activity Publisher
+                      - heading [level=2] [ref=f172e746]: Activity Timeline
+                      - generic [ref=f172e573]:
+                        - link [ref=f172e747] [cursor=pointer]:
+                          - /url: javascript:void(0);
+                          - text: Skip to the bottom of the activity timeline
+                        - generic [ref=f172e576]:
+                          - generic [ref=f172e577]: "Filters: All time • All activities • All types"
+                          - button [ref=f172e748] [cursor=pointer]:
+                            - generic [ref=f172e584]: Timeline Settings
+                        - generic [ref=f172e587]:
+                          - button [ref=f172e749] [cursor=pointer]: Refresh
+                          - text: •
+                          - button [ref=f172e750] [cursor=pointer]: Expand All
+                          - text: •
+                          - button [ref=f172e751] [cursor=pointer]: View All
+                        - generic [ref=f172e592]:
+                          - heading [level=3] [ref=f172e752]:
+                            - button [expanded] [ref=f172e753] [cursor=pointer]: Upcoming & Overdue
+                          - list [ref=f172e601]:
+                            - listitem [ref=f172e602]:
+                              - generic [ref=f172e604]:
+                                - button [ref=f172e754] [cursor=pointer]:
+                                  - generic [ref=f172e755]: Details for
+                                - generic [ref=f172e621]:
+                                  - generic [ref=f172e622]:
+                                    - generic [ref=f172e624]:
+                                      - generic [ref=f172e628]:
+                                        - checkbox [ref=f172e757] [cursor=pointer]
+                                        - generic [ref=f172e631]: Complete Trade-In Appraisal Follow-Up
+                                      - link [ref=f172e758] [cursor=pointer]:
+                                        - /url: /lightning/r/00TFV00EKhOIEYe2MP/view
+                                        - text: Complete Trade-In Appraisal Follow-Up
+                                    - generic [ref=f172e637]:
+                                      - generic [ref=f172e638]: Tomorrow
+                                      - button [ref=f172e759] [cursor=pointer]:
+                                        - generic [ref=f172e642]: Show more actions - Complete Trade-In Appraisal Follow-Up
+                                  - generic [ref=f172e645]: You have an upcoming task
+                        - status [ref=f172e649]:
+                          - generic [ref=f172e650]: No past activity. Past meetings and tasks marked as done show up here.
+                        - link [ref=f172e760] [cursor=pointer]:
+                          - /url: javascript:void(0);
+                          - text: Skip to the top of the activity timeline
+      - list [ref=f172e656]:
+        - listitem [ref=f172e657]:
+          - button [ref=f172e761] [cursor=pointer]:
+            - generic [ref=f172e667]: To Do List
+    - dialog "Submit for Evaluation" [ref=f172e763]:
+      - generic [ref=f172e764]:
+        - button "Cancel and close" [ref=f172e765] [cursor=pointer]
+        - generic [ref=f172e771]:
+          - generic [ref=f172e773]:
+            - heading "Submit for Evaluation" [level=2] [ref=f172e802]
+            - article [ref=f172e778]:
+              - generic [ref=f172e779]:
+                - generic [ref=f172e815]:
+                  - paragraph [ref=f172e816]:
+                    - strong [ref=f172e817]: Something went wrong
+                  - paragraph [ref=f172e818]: We couldn't complete this action. Please try again, or contact your administrator if the problem continues.
+                  - paragraph [ref=f172e819]:
+                    - text: "The flow tried to update these records: 9ALFV0000ZMlTzE4QV. This error occurred: INVALID_FIELD_FOR_INSERT_UPDATE: Appraisal: bad field names on insert/update call: Status. You can look up ExceptionCode values in the"
+                    - link "SOAP API Developer Guide" [active] [ref=f172e820] [cursor=pointer]:
+                      - /url: https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_concepts_core_data_objects.htm#
+                    - text: .
+                - button "Finish" [ref=f172e825] [cursor=pointer]
+          - status [ref=f172e800]
+  - generic:
+    - status

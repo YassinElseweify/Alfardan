@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Automobiles</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Automobiles</label>
+        <sharedTo>
+            <group>AF_G_BU_Automobiles</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_BusinessUnit__c</field>
+            <operation>equals</operation>
+            <value>Alfardan Automobiles</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_PremierMotors</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - PremierMotors</label>
+        <sharedTo>
+            <group>AF_G_BU_PremierMotors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_BusinessUnit__c</field>
+            <operation>equals</operation>
+            <value>Alfardan Premier Motors</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_Alsadd</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Alsadd</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_Alsadd</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Alsadd</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_JeryAlSamur</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Jery Al Samur</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_JeryAlSamur</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Jery Al Samur</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_Lusail</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Lusail</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_Lusail</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Lusail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_LusailBoulevard</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Lusail Boulevard</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_LusailBoulevard</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Lusail Boulevard</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_Pearl</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Pearl</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_Pearl</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Pearl</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_PearlMotorcycles</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Pearl (Motorcycles)</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_PearlMotorcycles</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Pearl (Motorcycles)</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_PearlRollsRoyce</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Pearl (Rolls Royce)</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_PearlRollsRoyce</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Pearl (Rolls Royce)</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_Showroom_Towers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - Showroom Towers</label>
+        <sharedTo>
+            <role>AF_Role_ShowroomManager_Towers</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_Showroom__c</field>
+            <operation>equals</operation>
+            <value>Towers</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AF_SR_Opportunity_SportsMotors</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AF Opportunity - SportsMotors</label>
+        <sharedTo>
+            <group>AF_G_BU_SportsMotors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>AF_BusinessUnit__c</field>
+            <operation>equals</operation>
+            <value>Alfardan Sports Motors</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_Status__c</fullName>
+    <description>Not Linked = the document hasn&apos;t been attached/referenced yet. Linked = a file is attached via Notes &amp; Attachments/Files and AF_LinkedContentDocumentId__c points at it, or AF_ExternalReference__c holds an external pointer (e.g. an Approval Reference already recorded elsewhere on the reservation). Waived = an admin/manager has explicitly excused this document for this reservation (e.g. Trade-In Appraisal on a deal with no trade-in) - counts as satisfied for the completeness check but is visibly distinct from Linked in reporting.</description>
+    <label>Status</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Linked</fullName>
+                <default>true</default>
+                <label>Not Linked</label>
+            </value>
+            <value>
+                <fullName>Linked</fullName>
+                <default>false</default>
+                <label>Linked</label>
+            </value>
+            <value>
+                <fullName>Waived</fullName>
+                <default>false</default>
+                <label>Waived</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

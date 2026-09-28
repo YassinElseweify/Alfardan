@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_Nationality__c</fullName>
+    <description>No standard equivalent on Lead. Qatari listed first, remainder alphabetical. Shares the same global value set as Account.AF_Nationality__c.</description>
+    <label>Nationality</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>AF_Nationality</valueSetName>
+    </valueSet>
+</CustomField>

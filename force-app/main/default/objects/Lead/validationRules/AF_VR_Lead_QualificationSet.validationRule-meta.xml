@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Lead_QualificationSet</fullName>
+    <active>true</active>
+    <description>ALF-LM-05</description>
+    <errorConditionFormula>AND(ISPICKVAL(Status, &quot;Qualified&quot;), OR(ISBLANK(TEXT(Rating)), ISBLANK(TEXT(AF_ContactValidity__c)), ISBLANK(TEXT(AF_VehicleOfInterest__c))))</errorConditionFormula>
+    <errorMessage>A Lead cannot be marked Qualified until Rating, Contact Validity, and Vehicle of Interest are all set.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,331 @@
+- generic:
+  - generic [ref=f24e2]:
+    - generic [ref=f24e3]:
+      - link "Skip to Navigation" [ref=f24e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f24e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f24e209]:
+        - generic [ref=f24e210]: "Sandbox: QA |"
+        - link "Log out" [ref=f24e211] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f24e6]:
+        - button "Search" [ref=f24e13]: Search...
+        - navigation "Global Header" [ref=f24e18]:
+          - list [ref=f24e213]:
+            - listitem [ref=f24e214]:
+              - group [ref=f24e215]:
+                - button "Add favorite" [ref=f24e217] [cursor=pointer]:
+                  - generic [ref=f24e218]:
+                    - tooltip "Add favorite"
+                - button [ref=f24e226] [cursor=pointer]:
+                  - generic [ref=f24e227]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f24e234]:
+              - button [ref=f24e240] [cursor=pointer]:
+                - generic [ref=f24e241]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f24e248]:
+              - button [ref=f24e250] [cursor=pointer]:
+                - generic [ref=f24e251]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f24e258]:
+              - button [ref=f24e261] [cursor=pointer]:
+                - generic [ref=f24e262]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f24e269]:
+              - button "3 Notifications" [ref=f24e272] [cursor=pointer]:
+                - generic [ref=f24e273]:
+                  - generic [ref=f24e274]: "3"
+                  - tooltip "Notifications"
+              - generic [ref=f24e283]: 3 new notifications
+            - listitem [ref=f24e284]:
+              - button "View profile" [ref=f24e287] [cursor=pointer]:
+                - generic [ref=f24e288]:
+                  - tooltip "View profile"
+    - generic [ref=f24e24]:
+      - generic [ref=f24e27]:
+        - generic [ref=f24e29]:
+          - navigation "App" [ref=f24e30]:
+            - button "App Launcher" [ref=f24e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f24e44]
+        - navigation "Global" [ref=f24e48]:
+          - list [ref=f24e49]:
+            - listitem [ref=f24e50]:
+              - link "Home" [ref=f24e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f24e53] [cursor=pointer]:
+              - link "Vehicles" [ref=f24e54]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f24e59]
+            - listitem [ref=f24e67]:
+              - link "Assets" [ref=f24e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f24e73] [cursor=pointer]
+            - listitem [ref=f24e81]:
+              - link "Vehicle Definitions" [ref=f24e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f24e87] [cursor=pointer]
+            - listitem [ref=f24e95]:
+              - link "Products" [ref=f24e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f24e101] [cursor=pointer]
+            - listitem [ref=f24e109]:
+              - link "Accounts" [ref=f24e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f24e115] [cursor=pointer]
+            - listitem [ref=f24e123]:
+              - link "Contacts" [ref=f24e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f24e129] [cursor=pointer]
+            - listitem [ref=f24e137]:
+              - link "Asset Milestones" [ref=f24e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f24e143] [cursor=pointer]
+            - listitem [ref=f24e151]:
+              - link "Asset Contact Participants" [ref=f24e152] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f24e157] [cursor=pointer]
+            - listitem [ref=f24e165]:
+              - link "Asset Account Participants" [ref=f24e166] [cursor=pointer]:
+                - /url: /lightning/o/AssetAccountParticipant/home
+              - button "Asset Account Participants List" [ref=f24e171] [cursor=pointer]
+            - listitem [ref=f24e179]:
+              - button "Show more navigation items" [ref=f24e181] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f24e182]: More
+            - listitem [ref=f24e190]:
+              - button "Edit nav items" [ref=f24e192] [cursor=pointer]
+      - main [ref=f24e199]:
+        - generic [ref=f24e303]:
+          - generic [ref=f24e312]:
+            - generic [ref=f24e313]:
+              - generic [ref=f24e319]:
+                - generic [ref=f24e320]: Vehicle
+                - heading "DEMO RS10 07 - Vehicle order status sync" [level=1] [ref=f24e322]
+              - generic [ref=f24e327]:
+                - generic "Change Record Type" [ref=f24e328]:
+                  - button "Change Record Type" [ref=f24e333] [cursor=pointer]
+                - generic "Edit" [ref=f24e334]:
+                  - button "Edit" [ref=f24e339] [cursor=pointer]
+                - generic "Delete" [ref=f24e340]:
+                  - button "Delete" [ref=f24e345] [cursor=pointer]
+                - button "Show more actions" [ref=f24e347] [cursor=pointer]
+            - generic [ref=f24e353]:
+              - generic [ref=f24e355]:
+                - paragraph [ref=f24e356]: Vehicle Identification Number
+                - paragraph [ref=f24e357]:
+                  - generic [ref=f24e358]: ZFF95FLA000RS1007
+              - generic [ref=f24e360]:
+                - paragraph [ref=f24e361]: Engine Number
+                - paragraph
+              - generic [ref=f24e363]:
+                - paragraph [ref=f24e364]: Current Owner
+                - paragraph
+              - generic [ref=f24e366]:
+                - paragraph [ref=f24e367]: Status
+                - paragraph
+              - generic [ref=f24e369]:
+                - paragraph [ref=f24e370]: Last Odometer Reading
+                - paragraph
+              - generic [ref=f24e372]:
+                - paragraph [ref=f24e373]: Odometer Reading Unit of Measure
+                - paragraph
+          - generic [ref=f24e375]:
+            - generic [ref=f24e383]:
+              - heading "Tabs" [level=2] [ref=f24e384]
+              - tablist "Tabs" [ref=f24e386]:
+                - tab "Overview" [ref=f24e387] [cursor=pointer]
+                - tab "Details" [active] [selected] [ref=f24e388] [cursor=pointer]
+                - tab "Assets" [ref=f24e389] [cursor=pointer]
+                - tab "Claims" [ref=f24e390] [cursor=pointer]
+                - tab "Warranties" [ref=f24e391] [cursor=pointer]
+                - tab "Parts & Accessories" [ref=f24e392] [cursor=pointer]
+                - tab "Appointments" [ref=f24e393] [cursor=pointer]
+                - button "More Tabs" [ref=f24e396] [cursor=pointer]:
+                  - text: More
+                  - generic [ref=f24e401]: Tabs
+              - tabpanel "Details" [ref=f24e648]:
+                - generic [ref=f24e649]:
+                  - generic [ref=f24e655]:
+                    - heading [level=3] [ref=f24e656]:
+                      - button "General Information" [expanded] [ref=f24e657] [cursor=pointer]
+                    - list [ref=f24e667]:
+                      - generic [ref=f24e668]:
+                        - generic [ref=f24e671]:
+                          - listitem [ref=f24e674]:
+                            - generic [ref=f24e676]:
+                              - generic [ref=f24e677]: Vehicle Name
+                              - generic [ref=f24e678]:
+                                - generic [ref=f24e679]: DEMO RS10 07 - Vehicle order status sync
+                                - button "Edit Vehicle Name" [ref=f24e681] [cursor=pointer]
+                          - listitem [ref=f24e686]:
+                            - generic [ref=f24e688]:
+                              - generic [ref=f24e689]: Current Owner
+                              - button "Edit Current Owner" [ref=f24e692] [cursor=pointer]
+                          - listitem [ref=f24e697]:
+                            - generic [ref=f24e699]:
+                              - generic [ref=f24e700]: Vehicle Definition
+                              - generic [ref=f24e701]:
+                                - generic [ref=f24e707]:
+                                  - 'link "VD: Ferrari 296 GTB" [ref=f24e708] [cursor=pointer]':
+                                    - /url: /lightning/r/VehicleDefinition/1PqFV0002sT3hsa0AB/view
+                                  - button "Preview" [ref=f24e714] [cursor=pointer]
+                                - button "Edit Vehicle Definition" [ref=f24e720] [cursor=pointer]
+                          - listitem [ref=f24e725]:
+                            - generic [ref=f24e727]:
+                              - generic [ref=f24e728]: Location
+                              - button "Edit Location" [ref=f24e730] [cursor=pointer]
+                          - listitem [ref=f24e735]:
+                            - generic [ref=f24e736]: Make Name
+                          - listitem [ref=f24e742]:
+                            - generic [ref=f24e743]: Model Name
+                          - listitem [ref=f24e749]:
+                            - generic [ref=f24e750]: Model Year
+                          - listitem [ref=f24e756]:
+                            - generic [ref=f24e758]:
+                              - generic [ref=f24e759]: Stock Code
+                              - button "Edit Stock Code" [ref=f24e761] [cursor=pointer]
+                          - listitem [ref=f24e766]:
+                            - generic [ref=f24e768]:
+                              - generic [ref=f24e769]: Inventory Status
+                              - generic [ref=f24e770]:
+                                - generic [ref=f24e771]: In Stock
+                                - button "Edit Inventory Status" [ref=f24e773] [cursor=pointer]
+                          - listitem [ref=f24e778]:
+                            - generic [ref=f24e780]:
+                              - generic [ref=f24e781]: Inventory Vehicle?
+                              - generic [ref=f24e782]:
+                                - generic [ref=f24e787]:
+                                  - generic "True" [ref=f24e788]
+                                  - generic [ref=f24e795]: Inventory Vehicle?
+                                - button "Edit Inventory Vehicle?" [ref=f24e796] [cursor=pointer]
+                        - generic [ref=f24e801]:
+                          - listitem [ref=f24e804]:
+                            - generic [ref=f24e806]:
+                              - generic [ref=f24e807]: Status
+                              - button "Edit Status" [ref=f24e809] [cursor=pointer]
+                          - listitem [ref=f24e814]:
+                            - generic [ref=f24e816]:
+                              - generic [ref=f24e817]: Availability for Sale
+                              - generic [ref=f24e818]:
+                                - generic [ref=f24e819]: Available for Sale
+                                - button "Edit Availability for Sale" [ref=f24e821] [cursor=pointer]
+                          - listitem [ref=f24e826]:
+                            - generic [ref=f24e828]:
+                              - generic [ref=f24e829]: Asset
+                              - generic [ref=f24e836]:
+                                - link "Asset for DEMO RS10 07 - Vehicle order status sync" [ref=f24e837] [cursor=pointer]:
+                                  - /url: /lightning/r/Asset/02iFV000UUgdG52YYE/view
+                                - button "Preview" [ref=f24e843] [cursor=pointer]
+                          - listitem [ref=f24e851]:
+                            - generic [ref=f24e853]:
+                              - generic [ref=f24e854]: Vehicle Identification Number
+                              - generic [ref=f24e855]:
+                                - generic [ref=f24e856]: ZFF95FLA000RS1007
+                                - button "Edit Vehicle Identification Number" [ref=f24e858] [cursor=pointer]
+                          - listitem [ref=f24e863]:
+                            - generic [ref=f24e865]:
+                              - generic [ref=f24e866]: Chassis Number
+                              - button "Edit Chassis Number" [ref=f24e868] [cursor=pointer]
+                          - listitem [ref=f24e873]:
+                            - generic [ref=f24e875]:
+                              - generic [ref=f24e876]: Engine Number
+                              - button "Edit Engine Number" [ref=f24e878] [cursor=pointer]
+                          - listitem [ref=f24e883]:
+                            - generic [ref=f24e885]:
+                              - generic [ref=f24e886]: Telematics Service Active
+                              - generic [ref=f24e887]:
+                                - generic [ref=f24e892]:
+                                  - generic "False" [ref=f24e893]
+                                  - generic [ref=f24e900]: Telematics Service Active
+                                - button "Edit Telematics Service Active" [ref=f24e901] [cursor=pointer]
+                  - generic [ref=f24e909]:
+                    - heading [level=3] [ref=f24e910]:
+                      - button "Odometer Readings" [expanded] [ref=f24e911] [cursor=pointer]
+                    - list [ref=f24e921]:
+                      - generic [ref=f24e922]:
+                        - generic [ref=f24e925]:
+                          - listitem [ref=f24e928]:
+                            - generic [ref=f24e930]:
+                              - generic [ref=f24e931]: Odometer Reading Date
+                              - button "Edit Odometer Reading Date" [ref=f24e933] [cursor=pointer]
+                          - listitem [ref=f24e938]:
+                            - generic [ref=f24e940]:
+                              - generic [ref=f24e941]: Condition Type
+                              - generic [ref=f24e942]:
+                                - generic [ref=f24e943]: New
+                                - button "Edit Condition Type" [ref=f24e945] [cursor=pointer]
+                        - generic [ref=f24e950]:
+                          - listitem [ref=f24e953]:
+                            - generic [ref=f24e955]:
+                              - generic [ref=f24e956]: Last Odometer Reading
+                              - button "Edit Last Odometer Reading" [ref=f24e958] [cursor=pointer]
+                          - listitem [ref=f24e963]:
+                            - generic [ref=f24e965]:
+                              - generic [ref=f24e966]: Odometer Reading Unit of Measure
+                              - button "Edit Odometer Reading Unit of Measure" [ref=f24e969] [cursor=pointer]
+                  - heading [level=3] [ref=f24e978]:
+                    - button "Market Price and Residual Value" [expanded] [ref=f24e979] [cursor=pointer]
+                  - heading [level=3] [ref=f24e996]:
+                    - button "Registration Details" [expanded] [ref=f24e997] [cursor=pointer]
+                  - heading [level=3] [ref=f24e1014]:
+                    - button "External and Internal Features" [expanded] [ref=f24e1015] [cursor=pointer]
+                  - heading [level=3] [ref=f24e1032]:
+                    - button "Powertrain and Head Unit" [expanded] [ref=f24e1033] [cursor=pointer]
+                  - heading [level=3] [ref=f24e1050]:
+                    - button "Manufacturing Details" [expanded] [ref=f24e1051] [cursor=pointer]
+                  - heading [level=3] [ref=f24e1068]:
+                    - button "Servicing and Recalls" [expanded] [ref=f24e1069] [cursor=pointer]
+                  - heading [level=3] [ref=f24e1086]:
+                    - button "Subscriptions and Warranties" [expanded] [ref=f24e1087] [cursor=pointer]
+            - generic [ref=f24e566]:
+              - generic [ref=f24e570]:
+                - generic [ref=f24e571]: Vehicle Media
+                - paragraph [ref=f24e583]: Ferrari 296 GTB - Brochure
+                - generic [ref=f24e584]:
+                  - button "Ferrari 296 GTB - Brochure" [ref=f24e585] [cursor=pointer]
+                  - button [ref=f24e595] [cursor=pointer]:
+                    - img "Ferrari 296 GTB - Photo" [ref=f24e596]
+              - generic [ref=f24e602]:
+                - banner [ref=f24e603]:
+                  - generic [ref=f24e605]:
+                    - navigation "Breadcrumbs" [ref=f24e606]:
+                      - list [ref=f24e607]:
+                        - listitem [ref=f24e608]:
+                          - link "Asset" [ref=f24e609] [cursor=pointer]:
+                            - /url: "#/sObject/Asset/home"
+                        - listitem [ref=f24e610]:
+                          - text: ">"
+                          - link "Asset for DEMO RS10 07 - Vehicle order status sync" [ref=f24e611] [cursor=pointer]:
+                            - /url: /lightning/r/02iFV000UUgdG52YYE/view
+                    - heading "Asset Hierarchy" [level=1] [ref=f24e612]
+                - treegrid [ref=f24e614]:
+                  - rowgroup [ref=f24e615]:
+                    - row [ref=f24e616]:
+                      - columnheader "Asset" [ref=f24e617]
+                      - columnheader "Status" [ref=f24e619]
+                      - columnheader "Product SKU" [ref=f24e621]
+                      - columnheader "Product Code" [ref=f24e623]
+                      - columnheader "Serial Number" [ref=f24e625]
+                      - columnheader "Last Modified Date" [ref=f24e627]
+                      - columnheader "Last Modified By" [ref=f24e629]
+                      - columnheader "Install Date" [ref=f24e631]
+                  - rowgroup
+                  - rowgroup [ref=f24e633]:
+                    - row [level=1] [ref=f24e634]:
+                      - rowheader "Asset for DEMO RS10 07 - Vehicle order status sync Current" [ref=f24e635]:
+                        - link "Asset for DEMO RS10 07 - Vehicle order status sync" [ref=f24e637] [cursor=pointer]:
+                          - /url: /lightning/r/02iFV000UUgdG52YYE/view
+                        - generic [ref=f24e638]: Current
+                      - gridcell [ref=f24e639]
+                      - gridcell [ref=f24e640]
+                      - gridcell [ref=f24e641]
+                      - gridcell [ref=f24e642]
+                      - gridcell "09/22/2026" [ref=f24e643]
+                      - gridcell [ref=f24e644]:
+                        - link "QA SalesRep2" [ref=f24e645] [cursor=pointer]:
+                          - /url: /lightning/r/005FV0082KfRrqeYQC/view
+                      - gridcell [ref=f24e646]
+  - generic:
+    - status

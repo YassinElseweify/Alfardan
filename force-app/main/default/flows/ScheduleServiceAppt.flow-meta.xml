@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Calls an Apex-based action that gets the values for an asset’s unique identifier based on a Context Definition ID.</description>
+        <name>GetAssetUniqueIdentifierFromContextDefinition</name>
+        <label>Get Asset Unique Identifier From Context Definition</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>QueryContextTags</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>GetLatitudeFromContextDefinition</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>context_id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>tagName</name>
+            <value>
+                <stringValue>assetUniqueIdentifier</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>QueryContextTags</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an Apex-based action that gets the values for the latitude of a service territory’s location based on a Context Definition ID.</description>
+        <name>GetLatitudeFromContextDefinition</name>
+        <label>Get Latitude From Context Definition</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <actionName>QueryContextTags</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>GetLongitudeFromContextDefinition</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>context_id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>tagName</name>
+            <value>
+                <stringValue>latitude</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>QueryContextTags</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an Apex-based action that gets the values for the longitude of a service territory’s location based on a Context Definition ID.</description>
+        <name>GetLongitudeFromContextDefinition</name>
+        <label>Get Longitude From Context Definition</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <actionName>QueryContextTags</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>GetWorkTypeGroup</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>context_id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>tagName</name>
+            <value>
+                <stringValue>longitude</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>QueryContextTags</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an action that creates a service appointment based on a diagnostic trouble code. The action takes the service territory IDs and Work Group ID as input and returns Service Appointment ID as an output.</description>
+        <name>ScheduleServiceAppointmentForActionableEvent</name>
+        <label>Schedule Service Appointment for Actionable Event</label>
+        <locationX>176</locationX>
+        <locationY>1082</locationY>
+        <actionName>scheduleSvcApptActnblEvntOrch</actionName>
+        <actionType>scheduleSvcApptActnblEvntOrch</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>workTypeGroupId</name>
+            <value>
+                <elementReference>GetWorkTypeGroup.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>serviceTerritoryIds</name>
+            <value>
+                <elementReference>ServiceTerritoryIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>GetAssetUniqueIdentifierFromContextDefinition.tagValue</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>scheduleSvcApptActnblEvntOrch</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Adds all service territory record IDs to a variable to iterate over them.</description>
+        <name>AddServiceTerritoriesToCollection</name>
+        <label>Add Service Territories to Collection</label>
+        <locationX>264</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>serviceTerritoryList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>IterateOverFilteredServiceTerritories.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IterateOverFilteredServiceTerritories</targetReference>
+        </connector>
+    </assignments>
+    <collectionProcessors>
+        <description>Filters records from Service Territories from GetServiceTerritories record collection where the latitude and longitude are within 20 miles of the latitude and longitude passed by the Apex actions in the flow. Stores the filtered collection results in the Service Territories from FilterServiceTerritoriesWithin20Miles record collection.</description>
+        <name>FilterServiceTerritoriesWithin20Miles</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Service Territories within 20 miles</label>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
+        <assignNextValueToReference>currentItem_FilterServiceTerritoriesWithin20Miles</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>GetServiceTerritories</collectionReference>
+        <conditionLogic>formula_evaluates_to_true</conditionLogic>
+        <connector>
+            <targetReference>IterateOverFilteredServiceTerritories</targetReference>
+        </connector>
+        <formula>IF(DISTANCE(GEOLOCATION({!currentItem_FilterServiceTerritoriesWithin20Miles.Latitude} , {!currentItem_FilterServiceTerritoriesWithin20Miles.Longitude}), GEOLOCATION(VALUE({!GetLatitudeFromContextDefinition.tagValue}),VALUE({!GetLongitudeFromContextDefinition.tagValue})), &apos;mi&apos;) &lt; 20, TRUE, FALSE)</formula>
+    </collectionProcessors>
+    <constants>
+        <name>WORK_TYPE_GROUP_NAME</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Periodic Maintenance</stringValue>
+        </value>
+    </constants>
+    <environments>Default</environments>
+    <formulas>
+        <description>comma-delimited list of Service Territory IDs</description>
+        <name>ServiceTerritoryIds</name>
+        <dataType>String</dataType>
+        <expression>MID({!serviceTerritoryList}, 2, LEN({!serviceTerritoryList}) - 2)</expression>
+    </formulas>
+    <interviewLabel>ScheduleServiceAppt {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ScheduleServiceAppt</label>
+    <loops>
+        <description>Repeats actions for each record in the FilterServiceTerritoriesWithin20Miles collection variable.</description>
+        <name>IterateOverFilteredServiceTerritories</name>
+        <label>Iterate Over Filtered Service Territories</label>
+        <locationX>176</locationX>
+        <locationY>782</locationY>
+        <collectionReference>FilterServiceTerritoriesWithin20Miles</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>AddServiceTerritoriesToCollection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>ScheduleServiceAppointmentForActionableEvent</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>ActionableEventManagementFlow</processType>
+    <recordLookups>
+        <description>Gets all Service Territory records.</description>
+        <name>GetServiceTerritories</name>
+        <label>Get Service Territories</label>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>FilterServiceTerritoriesWithin20Miles</targetReference>
+        </connector>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ServiceTerritory</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the Work Type Group record where Name matches the value of the context tag value workTypeGroupName of the context definition passed into the flow.</description>
+        <name>GetWorkTypeGroup</name>
+        <label>Get Work Type Group</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetServiceTerritories</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WORK_TYPE_GROUP_NAME</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkTypeGroup</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <sourceTemplate>ind_event_orch__SchdSrvcApptActnblEvnt</sourceTemplate>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetAssetUniqueIdentifierFromContextDefinition</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores the ID of the context definition that is passed into the flow.</description>
+        <name>context_id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Current service territory record in loop</description>
+        <name>currentItem_FilterServiceTerritoriesWithin20Miles</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceTerritory</objectType>
+    </variables>
+    <variables>
+        <description>Stores a comma-separated list of service territory IDs.</description>
+        <name>serviceTerritoryList</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

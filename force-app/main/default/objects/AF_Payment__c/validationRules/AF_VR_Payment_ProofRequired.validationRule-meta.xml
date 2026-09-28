@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Payment_ProofRequired</fullName>
+    <active>true</active>
+    <description>Cheque payments require an uploaded cheque copy; Bank Transfer payments require an uploaded Bank LPO. Both are captured as the Proof of Payment / Receipt Reference.</description>
+    <errorConditionFormula>AND(
+    OR(
+        ISPICKVAL(AF_PaymentMethod__c, &quot;Cheque&quot;),
+        ISPICKVAL(AF_PaymentMethod__c, &quot;Bank Transfer&quot;)
+    ),
+    ISBLANK(AF_ProofReference__c)
+)</errorConditionFormula>
+    <errorMessage>Proof of payment is required for this payment method: attach the cheque copy (Cheque) or Bank LPO (Bank Transfer) and record the reference before saving.</errorMessage>
+</ValidationRule>

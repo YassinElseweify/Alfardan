@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Lead_MandatoryFields</fullName>
+    <active>true</active>
+    <description>ALF-LM-01</description>
+    <errorConditionFormula>AND(ISNEW(), OR(ISBLANK(LastName), ISBLANK(Phone), ISBLANK(TEXT(LeadSource)), ISBLANK(TEXT(AF_Brand__c)), ISBLANK(TEXT(AF_VehicleOfInterest__c))))</errorConditionFormula>
+    <errorMessage>Name, Phone, Lead Source, Brand, and Vehicle of Interest are required. Email is not required.</errorMessage>
+</ValidationRule>

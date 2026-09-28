@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Determines whether the application action item record that triggered the orchestration is a review offer and has a related record ID that starts with 13Z.</description>
+        <name>IsRecordAReviewOffer</name>
+        <label>Is Record a Review Offer?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsReviewOffer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Review Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RelatedRecordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>13Z</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ProcessReviewOffer</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Allows the user assigned to a new review offer to review the associated application form product proposal record details and approve or reject the offer.</description>
+    <environments>Default</environments>
+    <interviewLabel>Action Item Orc {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Evaluate Review Offer Action Item for Vehicle Loans and Leases</label>
+    <orchestratedStages>
+        <description>Determines the username of the person assigned to the review offer and allows them to review and approve or reject the review offer.</description>
+        <name>ProcessReviewOffer</name>
+        <label>Process Review Offer</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Gets the username of the person assigned to the review offer item passed into the orchestration.</description>
+            <name>GetUsername</name>
+            <actionName>industriesdigitallending__GetUsername</actionName>
+            <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>userId</name>
+                <value>
+                    <elementReference>$Record.AssignedToId</elementReference>
+                </value>
+            </inputParameters>
+            <label>Get Username</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+        <stageSteps>
+            <description>Allows the assigned user to review the associated application form product proposal record details and approve or reject the review offer.</description>
+            <name>ReviewOffer</name>
+            <actionName>Digital_Lending_Review_Offer_Clone</actionName>
+            <actionType>stepInteractive</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>GetUsername.Outputs.username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <entryConditions>
+                <conditionType>EntryCondition</conditionType>
+                <leftValueReference>GetUsername.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </entryConditions>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>ApplicationActionItemDate</name>
+            </inputParameters>
+            <inputParameters>
+                <name>applicationFormProductId</name>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__RecordId</name>
+                <value>
+                    <elementReference>$Record.RelatedRecordId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__CustomEmailSubject</name>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__CustomEmailBody</name>
+            </inputParameters>
+            <label>Review Offer</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>InteractiveStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Orchestrator</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <sourceTemplate>industriesdigitallending__EvalRvwOfr</sourceTemplate>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>IsRecordAReviewOffer</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AssignedToId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>ApplicationActionItem</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

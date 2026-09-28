@@ -1,0 +1,245 @@
+- generic:
+  - generic [ref=f18e2]:
+    - generic [ref=f18e3]:
+      - link "Skip to Navigation" [ref=f18e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f18e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f18e8]:
+        - generic [ref=f18e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f18e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f18e11]:
+        - button "Search" [ref=f18e17]: Search...
+        - navigation "Global Header" [ref=f18e22]:
+          - list [ref=f18e24]:
+            - listitem [ref=f18e25]:
+              - group [ref=f18e26]:
+                - button "Add favorite" [ref=f18e28] [cursor=pointer]:
+                  - generic [ref=f18e29]:
+                    - tooltip "Add favorite"
+                - button [ref=f18e37] [cursor=pointer]:
+                  - generic [ref=f18e38]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f18e45]:
+              - button [ref=f18e1357] [cursor=pointer]:
+                - generic [ref=f18e1358]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f18e1365]:
+              - button [ref=f18e1367] [cursor=pointer]:
+                - generic [ref=f18e1368]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f18e54]:
+              - button [ref=f18e57] [cursor=pointer]:
+                - generic [ref=f18e58]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f18e65]:
+              - button [ref=f18e71] [cursor=pointer]:
+                - generic [ref=f18e72]:
+                  - tooltip "Setup"
+            - listitem [ref=f18e79]:
+              - button "2 Notifications" [ref=f18e1375] [cursor=pointer]:
+                - generic [ref=f18e83]:
+                  - generic [ref=f18e84]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f18e91]: 2 new notifications
+            - listitem [ref=f18e92]:
+              - button "View profile" [ref=f18e95] [cursor=pointer]:
+                - generic [ref=f18e96]:
+                  - tooltip "View profile"
+    - generic [ref=f18e100]:
+      - generic [ref=f18e103]:
+        - generic [ref=f18e105]:
+          - navigation "App" [ref=f18e106]:
+            - button "App Launcher" [ref=f18e108] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f18e120]
+        - navigation "Global" [ref=f18e124]:
+          - list [ref=f18e125]:
+            - listitem [ref=f18e126]:
+              - link "Home" [ref=f18e127] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f18e129]:
+              - link "Analytics" [ref=f18e130] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f18e132]:
+              - link "Opportunities" [ref=f18e133] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f18e138] [cursor=pointer]
+            - listitem [ref=f18e146]:
+              - link "Quotes" [ref=f18e147] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f18e152] [cursor=pointer]
+            - listitem [ref=f18e160] [cursor=pointer]:
+              - link "Leads" [ref=f18e161]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f18e166]
+            - listitem [ref=f18e174]:
+              - link "Tasks" [ref=f18e175] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f18e180] [cursor=pointer]
+            - listitem [ref=f18e188]:
+              - link "Files" [ref=f18e189] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f18e194] [cursor=pointer]
+            - listitem [ref=f18e202]:
+              - link "Accounts" [ref=f18e203] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f18e208] [cursor=pointer]
+            - listitem [ref=f18e216]:
+              - link "Contacts" [ref=f18e217] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f18e222] [cursor=pointer]
+            - listitem [ref=f18e230]:
+              - link "Campaigns" [ref=f18e231] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f18e236] [cursor=pointer]
+            - listitem [ref=f18e244]:
+              - link "Dashboards" [ref=f18e245] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f18e250] [cursor=pointer]
+            - listitem [ref=f18e258]:
+              - link "Reports" [ref=f18e259] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f18e264] [cursor=pointer]
+            - listitem [ref=f18e272]:
+              - link "Chatter" [ref=f18e273] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f18e275]:
+              - link "Groups" [ref=f18e276] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f18e281] [cursor=pointer]
+            - listitem [ref=f18e289]:
+              - button "Show more navigation items" [ref=f18e291] [cursor=pointer]:
+                - generic [ref=f18e292]: More
+            - listitem [ref=f18e300]:
+              - button "Edit nav items" [ref=f18e302] [cursor=pointer]
+      - main [ref=f18e309]:
+        - generic [ref=f18e319]:
+          - generic [ref=f18e321]:
+            - generic [ref=f18e322]:
+              - generic [ref=f18e329]:
+                - heading "Leads" [level=1] [ref=f18e333]
+                - generic [ref=f18e334]:
+                  - generic [ref=f18e336] [cursor=pointer]:
+                    - heading "Leads My Leads (AF)" [level=1] [ref=f18e337]:
+                      - generic [ref=f18e338]: Leads
+                      - generic [ref=f18e339]: My Leads (AF)
+                    - 'button "Select a List View: Leads" [ref=f18e342]'
+                  - button "Pin this list view." [ref=f18e351] [cursor=pointer]
+              - list [ref=f18e359]:
+                - listitem [ref=f18e360]:
+                  - button "New" [ref=f18e361] [cursor=pointer]
+                - listitem [ref=f18e363]:
+                  - button "Intelligence View" [ref=f18e364] [cursor=pointer]
+                - listitem [ref=f18e366]:
+                  - button "Change Owner" [ref=f18e367] [cursor=pointer]
+                - listitem [ref=f18e369]:
+                  - button "Printable View" [ref=f18e370] [cursor=pointer]
+                - listitem [ref=f18e372]:
+                  - button "Add to an Actionable List" [ref=f18e373] [cursor=pointer]
+                - listitem [ref=f18e375]:
+                  - button "Show more actions" [ref=f18e380] [cursor=pointer]
+            - generic [ref=f18e385]:
+              - paragraph [ref=f18e387]:
+                - generic [ref=f18e389]:
+                  - status "My Leads (AF)" [ref=f18e390]: 1 item • Sorted by Name •
+                  - text: Updated a few seconds ago
+              - generic [ref=f18e396]:
+                - generic [ref=f18e397]: Search this list...
+                - generic [ref=f18e398]:
+                  - searchbox "Search this list..." [active] [ref=f18e399]: RRcheck
+                  - button "Clear" [ref=f18e1744] [cursor=pointer]
+              - generic [ref=f18e403]:
+                - button "List View Controls" [ref=f18e407] [cursor=pointer]
+                - button "Select list display" [ref=f18e419] [cursor=pointer]
+                - generic [ref=f18e430]:
+                  - button "Refresh" [ref=f18e433] [cursor=pointer]
+                  - button "Column sort" [ref=f18e441] [cursor=pointer]
+                  - button "Edit List" [ref=f18e449] [cursor=pointer]
+                  - group [ref=f18e455]:
+                    - generic [ref=f18e457]:
+                      - button "Charts" [ref=f18e460] [cursor=pointer]
+                      - button "Filters" [ref=f18e468] [cursor=pointer]
+          - generic [ref=f18e480]:
+            - generic: Navigation Mode
+            - grid [ref=f18e485]:
+              - rowgroup:
+                - row "Row Number Choose a Row Select 1 item Name Lead Status Lead Source Phone Action":
+                  - columnheader "Row Number":
+                    - generic [ref=f18e488]:
+                      - generic "Row Number"
+                  - gridcell "Choose a Row Select 1 item":
+                    - generic [ref=f18e489]:
+                      - generic [ref=f18e490]: Choose a Row
+                      - generic [ref=f18e492]:
+                        - checkbox "Select 1 item" [ref=f18e1750]
+                        - generic [ref=f18e494]: Select 1 item
+                  - columnheader "Name":
+                    - generic [ref=f18e498]:
+                      - 'button "Sort by: Name" [ref=f18e499] [cursor=pointer]':
+                        - generic [ref=f18e500]: "Sort by:"
+                        - generic "Name" [ref=f18e501]
+                      - generic [ref=f18e506]: Sorted Ascending
+                      - button "Show Name column actions" [ref=f18e508] [cursor=pointer]
+                      - slider "Name column width" [ref=f18e514]: "720"
+                  - columnheader "Lead Status":
+                    - generic [ref=f18e518]:
+                      - 'button "Sort by: Lead Status" [ref=f18e519] [cursor=pointer]':
+                        - generic [ref=f18e520]: "Sort by:"
+                        - generic "Lead Status" [ref=f18e521]
+                      - generic [ref=f18e522]: "Sorted: None"
+                      - button "Show Lead Status column actions" [ref=f18e524] [cursor=pointer]
+                      - slider "Lead Status column width" [ref=f18e530]: "265"
+                  - columnheader "Lead Source":
+                    - generic [ref=f18e534]:
+                      - 'button "Sort by: Lead Source" [ref=f18e535] [cursor=pointer]':
+                        - generic [ref=f18e536]: "Sort by:"
+                        - generic "Lead Source" [ref=f18e537]
+                      - generic [ref=f18e538]: "Sorted: None"
+                      - button "Show Lead Source column actions" [ref=f18e540] [cursor=pointer]
+                      - slider "Lead Source column width" [ref=f18e546]: "204"
+                  - columnheader "Phone":
+                    - generic [ref=f18e550]:
+                      - 'button "Sort by: Phone" [ref=f18e551] [cursor=pointer]':
+                        - generic [ref=f18e552]: "Sort by:"
+                        - generic "Phone" [ref=f18e553]
+                      - generic [ref=f18e554]: "Sorted: None"
+                      - button "Show Phone column actions" [ref=f18e556] [cursor=pointer]
+                      - slider "Phone column width" [ref=f18e562]: "386"
+                  - columnheader "Action":
+                    - generic [ref=f18e567]:
+                      - generic "Action"
+              - rowgroup [ref=f18e568]:
+                - row [ref=f18e1751]:
+                  - gridcell [ref=f18e1194]
+                  - gridcell "Select Item 1 Choose a Row" [ref=f18e1752]:
+                    - generic [ref=f18e1199]:
+                      - checkbox "Select Item 1 Choose a Row" [ref=f18e1753]
+                      - generic [ref=f18e1201]: Select Item 1
+                  - rowheader [ref=f18e1678]:
+                    - generic [ref=f18e1205]:
+                      - link "QA test LM-05-RRcheck WorkingStatus" [ref=f18e1211] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A3smDtuu2EC/view
+                      - img "Locked Name" [ref=f18e1679]
+                  - gridcell "Working Edit Lead Status" [ref=f18e1683]:
+                    - generic [ref=f18e1214]:
+                      - generic [ref=f18e1215]: Working
+                      - button "Edit Lead Status" [ref=f18e1684] [cursor=pointer]
+                  - gridcell "Web Edit Lead Source" [ref=f18e1688]:
+                    - generic [ref=f18e1219]:
+                      - generic [ref=f18e1220]: Web
+                      - button "Edit Lead Source" [ref=f18e1689] [cursor=pointer]
+                  - gridcell [ref=f18e1693]:
+                    - generic [ref=f18e1224]:
+                      - link "+974 5512 5098" [ref=f18e1228] [cursor=pointer]:
+                        - /url: tel:+974 5512 5098
+                      - button "Edit Phone" [ref=f18e1694] [cursor=pointer]
+                  - gridcell [ref=f18e1229]:
+                    - button "Show Actions" [ref=f18e1235] [cursor=pointer]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f18e1340]:
+          - listitem [ref=f18e1341]:
+            - button "To Do List" [ref=f18e1344] [cursor=pointer]
+  - generic:
+    - status

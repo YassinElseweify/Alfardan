@@ -1,0 +1,210 @@
+- generic [ref=f1e4]:
+  - generic:
+    - status
+  - generic [ref=f1e10]:
+    - generic [ref=f1e14]:
+      - button "Toggle Panel" [ref=f1e18] [cursor=pointer]:
+        - generic [ref=f1e25]: Menu
+      - generic [ref=f1e26]: Sandbox (QA)
+    - button "Show menu" [ref=f1e47] [cursor=pointer]
+  - main [ref=f1e55]:
+    - generic [ref=f1e56]:
+      - banner "Header" [ref=f1e57]:
+        - generic [ref=f1e58]:
+          - link [ref=f1e60] [cursor=pointer]:
+            - /url: /lightning/setup/Flows/home
+            - generic "Back" [ref=f1e61]
+          - generic [aria-hidden] [ref=f1e75]: Flow Builder
+          - generic [ref=f1e77] [cursor=pointer]:
+            - heading "Appraisal Follow-Up Escalation - V1" [level=1] [ref=f1e84]:
+              - generic [ref=f1e85]: Appraisal Follow-Up Escalation
+              - generic [ref=f1e86]: "- V1"
+            - button "Versions" [ref=f1e88]
+          - generic [ref=f1e94]:
+            - button "User Preferences" [ref=f1e97] [cursor=pointer]
+            - button "Flow Builder Help" [ref=f1e106] [cursor=pointer]
+      - banner "Button bar" [ref=f1e116]:
+        - toolbar [ref=f1e117]:
+          - generic [ref=f1e118]:
+            - group [ref=f1e119]:
+              - generic [ref=f1e121]:
+                - generic:
+                  - button "Undo" [disabled]
+                - generic:
+                  - button "Undo" [disabled]
+            - button "Duplicate" [ref=f1e123] [cursor=pointer]
+            - button "Show errors panel" [ref=f1e136] [cursor=pointer]
+            - button "View properties" [ref=f1e142] [cursor=pointer]
+            - generic "Canvas Mode" [ref=f1e149]:
+              - generic [ref=f1e150]:
+                - generic: Canvas Mode
+                - combobox "Canvas Mode" [ref=f1e156] [cursor=pointer]:
+                  - generic [ref=f1e157]: Free-Form
+                - status
+          - generic [ref=f1e164]:
+            - 'generic "Version 1: Active" [ref=f1e165]': Last saved on ٣‏/٩‏/٢٠٢٦، ٠٧:٢٣ م
+            - generic "You can't save changes to the active version of a flow, but you can save it as a new version." [ref=f1e169]: Active
+            - group [ref=f1e171]:
+              - generic [ref=f1e173]:
+                - button "Run" [ref=f1e175] [cursor=pointer]
+                - button "Debug" [ref=f1e177] [cursor=pointer]
+            - button "View Tests" [ref=f1e179] [cursor=pointer]
+            - group [ref=f1e180]:
+              - generic [ref=f1e182]:
+                - button "Save As New Version" [ref=f1e184] [cursor=pointer]
+                - button "Show Menu" [ref=f1e186] [cursor=pointer]
+            - generic:
+              - button "Save" [disabled]
+            - button "Deactivate" [ref=f1e193] [cursor=pointer]
+    - generic [ref=f1e194]:
+      - complementary "Toolbox" [ref=f1e195]:
+        - generic [ref=f1e196]:
+          - generic [ref=f1e199]:
+            - heading "Debug" [level=2] [ref=f1e854]
+            - group [ref=f1e856]:
+              - button "Expand panel" [ref=f1e858] [cursor=pointer]
+          - generic [ref=f1e866]:
+            - generic [ref=f1e868]:
+              - tablist "Tabs" [ref=f1e870]:
+                - tab "Setup" [selected] [ref=f1e871] [cursor=pointer]
+              - tabpanel "Setup" [ref=f1e873]:
+                - list [ref=f1e879]:
+                  - generic [ref=f1e881]:
+                    - listitem [ref=f1e882]:
+                      - generic [ref=f1e884]:
+                        - heading [level=2] [ref=f1e886]:
+                          - button "Select Path" [expanded] [ref=f1e887] [cursor=pointer]
+                        - generic [ref=f1e895]:
+                          - generic [ref=f1e896]: You can debug only one path at a time in a record-triggered flow.
+                          - generic [ref=f1e898]:
+                            - generic [ref=f1e899]: Path for Debug Run
+                            - combobox "Path for Debug Run" [ref=f1e905] [cursor=pointer]:
+                              - generic [ref=f1e906]: Run Immediately
+                            - status
+                    - listitem [ref=f1e913]:
+                      - generic [ref=f1e915]:
+                        - heading [level=2] [ref=f1e917]:
+                          - button "Set Triggering Record" [expanded] [ref=f1e918] [cursor=pointer]
+                        - generic [ref=f1e926]:
+                          - generic [ref=f1e927]: For the debug run, we trigger the flow as if this record is created, updated, or deleted.
+                          - generic [ref=f1e932]:
+                            - generic [ref=f1e933]: Appraisal
+                            - combobox "Appraisal" [ref=f1e938]
+                    - listitem [ref=f1e946]:
+                      - generic [ref=f1e948]:
+                        - heading [level=2] [ref=f1e950]:
+                          - button "Select Debug Options" [expanded] [ref=f1e951] [cursor=pointer]
+                        - generic [ref=f1e960]:
+                          - generic [ref=f1e964]:
+                            - checkbox "Skip start condition requirements" [ref=f1e965] [cursor=pointer]
+                            - generic [ref=f1e966] [cursor=pointer]: Skip start condition requirements
+                            - button "Skip start condition requirements Help Info" [ref=f1e971] [cursor=pointer]
+                          - generic [ref=f1e980]:
+                            - checkbox "Run automation as another user" [disabled] [ref=f1e981]
+                            - generic [ref=f1e982]: Run automation as another user
+                            - button "Run automation as another user Help Info" [ref=f1e987] [cursor=pointer]
+                          - generic [ref=f1e996]:
+                            - checkbox "Run automation in rollback mode" [checked] [disabled] [ref=f1e997]
+                            - generic [ref=f1e998]: Run automation in rollback mode
+                            - button "Run automation in rollback mode Help Info" [ref=f1e1003] [cursor=pointer]
+            - generic [ref=f1e1010]:
+              - button "Reset Debug Settings" [ref=f1e1012] [cursor=pointer]
+              - button "Run" [ref=f1e1014] [cursor=pointer]
+          - separator "Resize panel" [ref=f1e1015]
+      - region "Canvas" [ref=f1e488]:
+        - generic [active] [ref=f1e490]:
+          - generic [ref=f1e491]:
+            - generic [ref=f1e492]:
+              - button "Select element" [ref=f1e494] [cursor=pointer]
+              - generic [ref=f1e504]:
+                - generic [ref=f1e505]:
+                  - generic [ref=f1e506]: Start
+                  - generic [ref=f1e507]: Record-Triggered Flow
+                - generic [ref=f1e508]:
+                  - generic [ref=f1e513]:
+                    - generic [ref=f1e514]:
+                      - generic [ref=f1e515]:
+                        - generic [ref=f1e516]: "Object:"
+                        - generic "Trade In" [ref=f1e517]
+                      - generic "Edit" [ref=f1e519]
+                    - generic "A record is created" [ref=f1e521]: "Trigger: A record is created"
+                    - generic "Actions and Related Records" [ref=f1e522]: Optimize for:Actions and Related Records
+                  - generic [ref=f1e527]:
+                    - generic [ref=f1e528]: Scheduled Paths:2
+                    - generic "Edit" [ref=f1e530]
+                  - generic [ref=f1e531]: Open Flow Trigger Explorer for Trade In
+            - generic "Decision element, \"Has Manager?\". To delete, press the Delete key." [ref=f1e540]:
+              - generic [ref=f1e541]:
+                - button "Select element" [ref=f1e543] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e553] [cursor=pointer]
+              - generic [ref=f1e555]:
+                - generic [ref=f1e556]: Decision
+                - generic [ref=f1e557]: Has Manager?
+            - generic "Decision element, \"Outcome Still Pending?\". To delete, press the Delete key." [ref=f1e558]:
+              - generic [ref=f1e559]:
+                - button "Select element" [ref=f1e561] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e571] [cursor=pointer]
+              - generic [ref=f1e573]:
+                - generic [ref=f1e574]: Decision
+                - generic [ref=f1e575]: Outcome Still Pending?
+            - generic "Decision element, \"Owner Active?\". To delete, press the Delete key." [ref=f1e576]:
+              - button "Select element" [ref=f1e579] [cursor=pointer]
+              - generic [ref=f1e589]:
+                - generic [ref=f1e590]: Decision
+                - generic [ref=f1e591]: Owner Active?
+            - generic "Create Records element, \"Create Escalation Task - Showroom Manager\". To delete, press the Delete key." [ref=f1e592]:
+              - generic [ref=f1e593]:
+                - button "Select element" [ref=f1e595] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e605] [cursor=pointer]
+              - generic [ref=f1e607]:
+                - generic [ref=f1e608]: Create Records
+                - generic [ref=f1e609]: Create Escalation Task - Showroom Manager
+            - generic "Create Records element, \"Create Follow-Up Task - Manager (Owner Inactive)\". To delete, press the Delete key." [ref=f1e610]:
+              - generic [ref=f1e611]:
+                - button "Select element" [ref=f1e613] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e623] [cursor=pointer]
+              - generic [ref=f1e625]:
+                - generic [ref=f1e626]: Create Records
+                - generic [ref=f1e627]: Create Follow-Up Task - Manager (Ow...
+            - generic "Create Records element, \"Create Follow-Up Task - Owner\". To delete, press the Delete key." [ref=f1e628]:
+              - generic [ref=f1e629]:
+                - button "Select element" [ref=f1e631] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e641] [cursor=pointer]
+              - generic [ref=f1e643]:
+                - generic [ref=f1e644]: Create Records
+                - generic [ref=f1e645]: Create Follow-Up Task - Owner
+            - generic "Get Records element, \"Get Appraisal Record\". To delete, press the Delete key." [ref=f1e646]:
+              - generic [ref=f1e647]:
+                - button "Select element" [ref=f1e649] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e659] [cursor=pointer]
+              - generic [ref=f1e661]:
+                - generic [ref=f1e662]: Get Records
+                - generic [ref=f1e663]: Get Appraisal Record
+            - generic "Get Records element, \"Get Owner User\". To delete, press the Delete key." [ref=f1e664]:
+              - generic [ref=f1e665]:
+                - button "Select element" [ref=f1e667] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e677] [cursor=pointer]
+              - generic [ref=f1e679]:
+                - generic [ref=f1e680]: Get Records
+                - generic [ref=f1e681]: Get Owner User
+            - generic "Get Records element, \"Get Owner User (Escalation)\". To delete, press the Delete key." [ref=f1e682]:
+              - generic [ref=f1e683]:
+                - button "Select element" [ref=f1e685] [cursor=pointer]
+                - button "Add a connector by dragging this node to the target element" [ref=f1e695] [cursor=pointer]
+              - generic [ref=f1e697]:
+                - generic [ref=f1e698]: Get Records
+                - generic [ref=f1e699]: Get Owner User (Escalation)
+            - generic "Run Immediately" [ref=f1e706]
+            - generic "Escalation Check" [ref=f1e713]
+            - generic "Manager Found" [ref=f1e720]
+            - generic "Still Pending" [ref=f1e727]
+            - generic "Inactive - Assign to Manager" [ref=f1e734]
+            - generic "Active" [ref=f1e741]
+          - generic [ref=f1e761]:
+            - button "Drag to select" [ref=f1e764] [cursor=pointer]
+            - group [ref=f1e770]:
+              - generic [ref=f1e772]:
+                - button "Zoom out" [ref=f1e774] [cursor=pointer]
+                - button "Fit to canvas" [ref=f1e781] [cursor=pointer]
+                - generic:
+                  - button "Zoom in" [disabled]

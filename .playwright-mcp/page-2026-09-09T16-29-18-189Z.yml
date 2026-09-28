@@ -1,0 +1,33 @@
+- generic [ref=f27e1]:
+  - generic [ref=f27e2]:
+    - generic [ref=f27e5]:
+      - generic [ref=f27e7]:
+        - img "Salesforce login" [ref=f27e8]
+        - generic [ref=f27e9]: Salesforce login
+      - generic [ref=f27e11]:
+        - generic [ref=f27e12]:
+          - heading "Salesforce login" [level=1] [ref=f27e13]
+          - generic [ref=f27e14]:
+            - text: Username
+            - textbox "Username" [active] [ref=f27e16]
+          - button "Log In to Sandbox" [ref=f27e17] [cursor=pointer]
+          - generic [ref=f27e18]:
+            - checkbox "Remember me" [ref=f27e19]
+            - generic [ref=f27e20]: Remember me
+        - link "Forgot Your Password?" [ref=f27e22] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us
+    - generic [ref=f27e23]: © 2026 Salesforce, Inc. All rights reserved.
+  - iframe [ref=f27e25]:
+    - main [ref=f28e3]:
+      - article [ref=f28e7]:
+        - img "Headshots of Dario Amodei, Co-Founder & CEO of Anthropic, and Marc Benioff CEO, Chair, Co-Founder of Salesforce" [ref=f28e9]
+        - generic [ref=f28e10]:
+          - generic [ref=f28e11]:
+            - generic [ref=f28e12]: San Francisco & Salesforce+ | September 15–17, 2026
+            - heading "A defining voice in AI takes the Dreamforce stage" [level=2] [ref=f28e14]
+            - paragraph [ref=f28e16]: "The #1 AI meets the #1 CRM. Hear Dario Amodei and Marc Benioff share their vision for the Claudeforce partnership, then experience Claude and Salesforce in action. Register for $1,899 and save $400 when you use code DF26LASTCALL."
+          - 'link "Register now: Dreamforce" [ref=f28e19] [cursor=pointer]':
+            - /url: https://www.salesforce.com/dreamforce/
+            - text: Register now
+  - generic: Login
+  - iframe [aria-hidden] [ref=f27e26]

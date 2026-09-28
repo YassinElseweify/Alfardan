@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Quote_Update_To_Collection</name>
+        <label>Add Quote Update to Collection</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>QuoteToUpdate.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_QuoteLines.QuoteId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>QuoteToUpdate.AF_VINDisplay__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VehicleIdentificationNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>QuotesToUpdateCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>QuoteToUpdate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_QuoteLines</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Has_Quotes_To_Update</name>
+        <label>Any Quotes to Update?</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>No Quotes</defaultConnectorLabel>
+        <rules>
+            <name>Quotes_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>QuotesToUpdateCollection</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Quotes</targetReference>
+            </connector>
+            <label>Quotes Present</label>
+        </rules>
+    </decisions>
+    <description>BRD ALF-RS-06 FR2: &quot;The Sales Representative may reissue the quotation with the VIN once the vehicle arrives in stock.&quot; AF_FL_QuoteLineItem_SyncVINDisplay only reacts to changes on the QuoteLineItem itself (Vehicle set/changed), so a Quote created while its Vehicle was In Transit/Ordered never picked up the VIN once that Vehicle later moved to In Stock. This flow closes that gap: when a Vehicle&apos;s AF_InventoryStatus__c changes to In Stock, finds every QuoteLineItem already referencing it and pushes the VIN onto each parent Quote automatically - a true automatic reissue, not a manual one.</description>
+    <environments>Default</environments>
+    <interviewLabel>Vehicle Sync VIN On Restock {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Vehicle Sync VIN On Restock</label>
+    <loops>
+        <name>Loop_QuoteLines</name>
+        <label>Loop Quote Lines Referencing This Vehicle</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Get_QuoteLines_For_Vehicle</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Quote_Update_To_Collection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Has_Quotes_To_Update</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_QuoteLines_For_Vehicle</name>
+        <label>Get Quote Lines For Vehicle</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_QuoteLines</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AF_Vehicle__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>QuoteLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Quotes</name>
+        <label>Update Quotes With VIN</label>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
+        <inputReference>QuotesToUpdateCollection</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_QuoteLines_For_Vehicle</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.AF_InventoryStatus__c}) &amp;&amp; ISPICKVAL({!$Record.AF_InventoryStatus__c}, &quot;In Stock&quot;)</filterFormula>
+        <object>Vehicle</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>QuotesToUpdateCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Quote</objectType>
+    </variables>
+    <variables>
+        <name>QuoteToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Quote</objectType>
+    </variables>
+</Flow>

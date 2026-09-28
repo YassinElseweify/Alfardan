@@ -1,0 +1,88 @@
+<template>
+    <div class="af-scheduler">
+        <div class="af-scheduler-toolbar">
+            <button class="af-back-button" onclick={handleBack}>
+                <lightning-icon icon-name="utility:chevronleft" size="x-small"></lightning-icon>
+                <span>Back</span>
+            </button>
+            <div class="af-scheduler-heading">Schedule Test Drive</div>
+        </div>
+
+        <div class="af-vehicle-summary">
+            <lightning-icon icon-name="standard:vehicle" size="small"></lightning-icon>
+            <span class="af-vehicle-summary-name">{vehicleName}</span>
+        </div>
+
+        <div class="af-scheduler-body">
+            <div class="af-scheduler-column af-scheduler-column-left">
+                <div class="af-scheduler-field">
+                    <label class="af-field-label" for="schedule-date">Date</label>
+                    <lightning-input
+                        id="schedule-date"
+                        type="date"
+                        variant="label-hidden"
+                        value={selectedDate}
+                        min={minDate}
+                        onchange={handleDateChange}>
+                    </lightning-input>
+                </div>
+
+                <div class="af-scheduler-field">
+                    <label class="af-field-label" for="schedule-location">Location / Showroom</label>
+                    <lightning-input
+                        id="schedule-location"
+                        type="text"
+                        variant="label-hidden"
+                        placeholder="e.g. Lusail Boulevard"
+                        value={location}
+                        onchange={handleLocationChange}>
+                    </lightning-input>
+                </div>
+            </div>
+
+            <div class="af-scheduler-column af-scheduler-column-right">
+                <span class="af-field-label">Available Slots</span>
+
+                <template if:true={isLoadingSlots}>
+                    <div class="af-spinner-container">
+                        <lightning-spinner alternative-text="Checking availability" size="small"></lightning-spinner>
+                    </div>
+                </template>
+
+                <template if:true={hasError}>
+                    <div class="af-error-container">
+                        <lightning-icon icon-name="utility:error" alternative-text="Error" size="small" variant="error"></lightning-icon>
+                        <p class="af-error-message">{error}</p>
+                    </div>
+                </template>
+
+                <template if:false={isLoadingSlots}>
+                    <div class="af-slot-grid">
+                        <template for:each={slotItems} for:item="slot">
+                            <button
+                                key={slot.label}
+                                class={slot.cssClass}
+                                data-slot={slot.label}
+                                disabled={slot.isBooked}
+                                onclick={handleSlotClick}>
+                                <template if:true={slot.isBooked}>
+                                    <lightning-icon icon-name="utility:lock" size="xx-small"></lightning-icon>
+                                </template>
+                                <template if:true={slot.isSelected}>
+                                    <lightning-icon icon-name="utility:check" size="xx-small" variant="inverse"></lightning-icon>
+                                </template>
+                                <span>{slot.label}</span>
+                            </button>
+                        </template>
+                    </div>
+                    <p class="af-slot-legend">Locked slots are already booked for this vehicle.</p>
+                </template>
+            </div>
+        </div>
+
+        <div class="af-scheduler-footer">
+            <button class="af-btn af-btn-secondary" onclick={handleBack}>Cancel</button>
+            <button class="af-btn af-btn-primary" onclick={handleConfirm} disabled={isSubmitting}>Confirm Booking</button>
+        </div>
+    </div>
+</template>

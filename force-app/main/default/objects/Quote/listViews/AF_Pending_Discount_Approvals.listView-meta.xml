@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_Pending_Discount_Approvals</fullName>
+    <columns>QUOTE.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>AF_DiscountAmount__c</columns>
+    <columns>AF_DiscountPercent__c</columns>
+    <columns>AF_DiscountTier__c</columns>
+    <columns>AF_DiscountApprovalStatus__c</columns>
+    <columns>QUOTE.SUBTOTAL</columns>
+    <columns>QUOTE.TOTALPRICE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AF_DiscountApprovalStatus__c</field>
+        <operation>equals</operation>
+        <value>Pending</value>
+    </filters>
+    <label>Pending Discount Approvals</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

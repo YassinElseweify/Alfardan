@@ -1,0 +1,384 @@
+- generic:
+  - generic [ref=f15e2]:
+    - generic [ref=f15e3]:
+      - link "Skip to Navigation" [ref=f15e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f15e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f15e254]:
+        - generic [ref=f15e255]: "Sandbox: QA |"
+        - link "Log out" [ref=f15e256] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f15e6]:
+        - button "Search" [ref=f15e12]: Search...
+        - navigation "Global Header" [ref=f15e17]:
+          - list [ref=f15e258]:
+            - listitem [ref=f15e259]:
+              - group [ref=f15e260]:
+                - button "Add favorite" [ref=f15e262] [cursor=pointer]:
+                  - generic [ref=f15e263]:
+                    - tooltip "Add favorite"
+                - button [ref=f15e271] [cursor=pointer]:
+                  - generic [ref=f15e272]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f15e279]:
+              - button [ref=f15e285] [cursor=pointer]:
+                - generic [ref=f15e286]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f15e293]:
+              - button [ref=f15e295] [cursor=pointer]:
+                - generic [ref=f15e296]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f15e303]:
+              - button [ref=f15e306] [cursor=pointer]:
+                - generic [ref=f15e307]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f15e314]:
+              - button [ref=f15e320] [cursor=pointer]:
+                - generic [ref=f15e321]:
+                  - tooltip "Setup"
+            - listitem [ref=f15e328]:
+              - button "9 Notifications" [ref=f15e331] [cursor=pointer]:
+                - generic [ref=f15e332]:
+                  - generic [ref=f15e333]: "9"
+                  - tooltip "Notifications"
+              - generic [ref=f15e342]: 9 new notifications
+            - listitem [ref=f15e343]:
+              - button "View profile" [ref=f15e346] [cursor=pointer]:
+                - generic [ref=f15e347]:
+                  - tooltip "View profile"
+    - generic [ref=f15e23]:
+      - generic [ref=f15e26]:
+        - generic [ref=f15e28]:
+          - navigation "App" [ref=f15e29]:
+            - button "App Launcher" [ref=f15e31] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f15e43]
+        - navigation "Global" [ref=f15e47]:
+          - list [ref=f15e48]:
+            - listitem [ref=f15e49]:
+              - link "Home" [ref=f15e50] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f15e52]:
+              - link "Analytics" [ref=f15e53] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f15e55]:
+              - link "Opportunities" [ref=f15e56] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f15e61] [cursor=pointer]
+            - listitem [ref=f15e69]:
+              - link "Quotes" [ref=f15e70] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f15e75] [cursor=pointer]
+            - listitem [ref=f15e83] [cursor=pointer]:
+              - link "Leads" [ref=f15e84]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f15e89]
+            - listitem [ref=f15e97]:
+              - link "Tasks" [ref=f15e98] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f15e103] [cursor=pointer]
+            - listitem [ref=f15e111]:
+              - link "Files" [ref=f15e112] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f15e117] [cursor=pointer]
+            - listitem [ref=f15e125]:
+              - link "Accounts" [ref=f15e126] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f15e131] [cursor=pointer]
+            - listitem [ref=f15e139]:
+              - link "Contacts" [ref=f15e140] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f15e145] [cursor=pointer]
+            - listitem [ref=f15e153]:
+              - link "Campaigns" [ref=f15e154] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f15e159] [cursor=pointer]
+            - listitem [ref=f15e167]:
+              - link "Dashboards" [ref=f15e168] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f15e173] [cursor=pointer]
+            - listitem [ref=f15e181]:
+              - link "Reports" [ref=f15e182] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f15e187] [cursor=pointer]
+            - listitem [ref=f15e195]:
+              - link "Chatter" [ref=f15e196] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f15e198]:
+              - link "Groups" [ref=f15e199] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f15e204] [cursor=pointer]
+            - listitem [ref=f15e212]:
+              - button "Show more navigation items" [ref=f15e214] [cursor=pointer]:
+                - generic [ref=f15e215]: More
+            - listitem [ref=f15e223]:
+              - button "Edit nav items" [ref=f15e225] [cursor=pointer]
+      - main [ref=f15e351]:
+        - generic [ref=f15e361]:
+          - generic [ref=f15e363]:
+            - generic [ref=f15e364]:
+              - generic [ref=f15e371]:
+                - heading "Leads" [level=1] [ref=f15e375]
+                - generic [ref=f15e376]:
+                  - generic [ref=f15e378] [cursor=pointer]:
+                    - heading "Leads AF Leads - SportsMotors" [level=1] [ref=f15e2390]:
+                      - generic [ref=f15e380]: Leads
+                      - generic [ref=f15e381]: AF Leads - SportsMotors
+                    - 'button "Select a List View: Leads" [active] [ref=f15e384]'
+                  - button "Pin this list view." [ref=f15e2391] [cursor=pointer]
+              - list [ref=f15e2395]:
+                - listitem [ref=f15e2396]:
+                  - button "New" [ref=f15e2397] [cursor=pointer]
+                - listitem [ref=f15e2399]:
+                  - button "Intelligence View" [ref=f15e2400] [cursor=pointer]
+                - listitem [ref=f15e2402]:
+                  - button "Accept" [ref=f15e2403] [cursor=pointer]
+                - listitem [ref=f15e2405]:
+                  - button "Change Owner" [ref=f15e2406] [cursor=pointer]
+                - listitem [ref=f15e2408]:
+                  - button "Printable View" [ref=f15e2409] [cursor=pointer]
+                - listitem [ref=f15e2411]:
+                  - button "Show more actions" [ref=f15e2416] [cursor=pointer]
+            - generic [ref=f15e417]:
+              - paragraph [ref=f15e419]:
+                - generic [ref=f15e421]:
+                  - status "AF Leads - SportsMotors" [ref=f15e2421]: 3 items • Sorted by Name •
+                  - text: Updated a few seconds ago
+              - generic [ref=f15e428]:
+                - generic [ref=f15e429]: Search this list...
+                - searchbox "Search this list..." [ref=f15e431]
+              - generic [ref=f15e435]:
+                - button "List View Controls" [ref=f15e439] [cursor=pointer]
+                - button "Select list display" [ref=f15e451] [cursor=pointer]
+                - generic [ref=f15e462]:
+                  - button "Refresh" [ref=f15e465] [cursor=pointer]
+                  - button "Column sort" [ref=f15e473] [cursor=pointer]
+                  - button "Edit List" [ref=f15e481] [cursor=pointer]
+                  - group [ref=f15e487]:
+                    - generic [ref=f15e489]:
+                      - button "Charts" [ref=f15e2424] [cursor=pointer]
+                      - button "Filters" [ref=f15e2432] [cursor=pointer]
+          - generic [ref=f15e496]:
+            - generic: Navigation Mode
+            - grid [ref=f15e501]:
+              - rowgroup:
+                - row "Row Number Choose a Row Select 3 items Name Company State/Province Email Lead Status Created Date Owner Alias Unread By Owner Action":
+                  - columnheader "Row Number":
+                    - generic [ref=f15e504]:
+                      - generic "Row Number"
+                  - gridcell "Choose a Row Select 3 items":
+                    - generic [ref=f15e505]:
+                      - generic [ref=f15e506]: Choose a Row
+                      - generic [ref=f15e508]:
+                        - checkbox "Select 3 items" [ref=f15e2438]
+                        - generic [ref=f15e510]: Select 3 items
+                  - columnheader "Name":
+                    - generic [ref=f15e514]:
+                      - 'button "Sort by: Name" [ref=f15e515] [cursor=pointer]':
+                        - generic [ref=f15e516]: "Sort by:"
+                        - generic "Name" [ref=f15e517]
+                      - generic [ref=f15e518]: Sorted Ascending
+                      - button "Show Name column actions" [ref=f15e520] [cursor=pointer]
+                      - slider "Name column width" [ref=f15e526]: "498"
+                  - columnheader "Company":
+                    - generic [ref=f15e2444]:
+                      - 'button "Sort by: Company" [ref=f15e2445] [cursor=pointer]':
+                        - generic [ref=f15e2446]: "Sort by:"
+                        - generic "Company" [ref=f15e2447]
+                      - generic [ref=f15e2448]: "Sorted: None"
+                      - button "Show Company column actions" [ref=f15e2450] [cursor=pointer]
+                      - slider "Company column width" [ref=f15e2456]: "78"
+                  - columnheader "State/Province":
+                    - generic [ref=f15e2460]:
+                      - 'button "Sort by: State/Province" [ref=f15e2461] [cursor=pointer]':
+                        - generic [ref=f15e2462]: "Sort by:"
+                        - generic "State/Province" [ref=f15e2463]
+                      - generic [ref=f15e2464]: "Sorted: None"
+                      - button "Show State/Province column actions" [ref=f15e2466] [cursor=pointer]
+                      - slider "State/Province column width" [ref=f15e2472]: "73"
+                  - columnheader "Email":
+                    - generic [ref=f15e2476]:
+                      - 'button "Sort by: Email" [ref=f15e2477] [cursor=pointer]':
+                        - generic [ref=f15e2478]: "Sort by:"
+                        - generic "Email" [ref=f15e2479]
+                      - generic [ref=f15e2480]: "Sorted: None"
+                      - button "Show Email column actions" [ref=f15e2482] [cursor=pointer]
+                      - slider "Email column width" [ref=f15e2488]: "78"
+                  - columnheader "Lead Status":
+                    - generic [ref=f15e2492]:
+                      - 'button "Sort by: Lead Status" [ref=f15e2493] [cursor=pointer]':
+                        - generic [ref=f15e2494]: "Sort by:"
+                        - generic "Lead Status" [ref=f15e2495]
+                      - generic [ref=f15e2496]: "Sorted: None"
+                      - button "Show Lead Status column actions" [ref=f15e2498] [cursor=pointer]
+                      - slider "Lead Status column width" [ref=f15e2504]: "198"
+                  - columnheader "Created Date":
+                    - generic [ref=f15e2508]:
+                      - 'button "Sort by: Created Date" [ref=f15e2509] [cursor=pointer]':
+                        - generic [ref=f15e2510]: "Sort by:"
+                        - generic "Created Date" [ref=f15e2511]
+                      - generic [ref=f15e2512]: "Sorted: None"
+                      - button "Show Created Date column actions" [ref=f15e2514] [cursor=pointer]
+                      - slider "Created Date column width" [ref=f15e2520]: "248"
+                  - columnheader "Owner Alias":
+                    - generic [ref=f15e2524]:
+                      - 'button "Sort by: Owner Alias" [ref=f15e2525] [cursor=pointer]':
+                        - generic [ref=f15e2526]: "Sort by:"
+                        - generic "Owner Alias" [ref=f15e2527]
+                      - generic [ref=f15e2528]: "Sorted: None"
+                      - button "Show Owner Alias column actions" [ref=f15e2530] [cursor=pointer]
+                      - slider "Owner Alias column width" [ref=f15e2536]: "304"
+                  - columnheader "Unread By Owner":
+                    - generic [ref=f15e2540]:
+                      - 'button "Sort by: Unread By Owner" [ref=f15e2541] [cursor=pointer]':
+                        - generic [ref=f15e2542]: "Sort by:"
+                        - generic "Unread By Owner" [ref=f15e2543]
+                      - generic [ref=f15e2544]: "Sorted: None"
+                      - button "Show Unread By Owner column actions" [ref=f15e2546] [cursor=pointer]
+                      - slider "Unread By Owner column width" [ref=f15e2552]: "95"
+                  - columnheader "Action":
+                    - generic [ref=f15e643]:
+                      - generic "Action"
+              - rowgroup [ref=f15e644]:
+                - row [ref=f15e2555]:
+                  - gridcell [ref=f15e2556]
+                  - gridcell "Select Item 1 Choose a Row" [ref=f15e2560]:
+                    - generic [ref=f15e2561]:
+                      - checkbox "Select Item 1 Choose a Row" [ref=f15e2562]
+                      - generic [ref=f15e2563]: Select Item 1
+                  - rowheader [ref=f15e2566]:
+                    - generic [ref=f15e2567]:
+                      - link "Khalid QA test LM-01-TC-001 UI Al-Mannai" [ref=f15e2573] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A2neEMe42EG/view
+                      - img "Locked Name" [ref=f15e2575]
+                  - gridcell [ref=f15e2579]:
+                    - generic [ref=f15e2580]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A2neEMe42EG/view
+                      - button "Edit Company" [ref=f15e2581] [cursor=pointer]
+                  - gridcell [ref=f15e2585]:
+                    - img "Locked State/Province" [ref=f15e2587]
+                  - gridcell [ref=f15e2591]:
+                    - button "Edit Email" [ref=f15e2593] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e2597]:
+                    - generic [ref=f15e2598]:
+                      - generic [ref=f15e2599]: New
+                      - button "Edit Lead Status" [ref=f15e2602] [cursor=pointer]
+                  - gridcell "٢٣/٨/٢٠٢٦, ١٢:٥٤ PM Locked Created Date" [ref=f15e2606]:
+                    - generic [ref=f15e2607]:
+                      - generic [ref=f15e2608]: ٢٣/٨/٢٠٢٦, ١٢:٥٤ PM
+                      - img "Locked Created Date" [ref=f15e2611]
+                  - gridcell "AF Leads - SportsMotors Locked Owner Alias" [ref=f15e2615]:
+                    - generic [ref=f15e2616]:
+                      - generic [ref=f15e2617]: AF Leads - SportsMotors
+                      - img "Locked Owner Alias" [ref=f15e2623]
+                  - gridcell "True Unread By Owner Locked Unread By Owner" [ref=f15e2627]:
+                    - generic [ref=f15e2628]:
+                      - generic [ref=f15e2634]:
+                        - generic "True" [ref=f15e2635]
+                        - generic [ref=f15e2642]: Unread By Owner
+                      - img "Locked Unread By Owner" [ref=f15e2643]
+                  - gridcell [ref=f15e2647]:
+                    - button "Show Actions" [ref=f15e2653] [cursor=pointer]
+                - row [ref=f15e2659]:
+                  - gridcell [ref=f15e2660]
+                  - gridcell "Select Item 2 Choose a Row" [ref=f15e2664]:
+                    - generic [ref=f15e2665]:
+                      - checkbox "Select Item 2 Choose a Row" [ref=f15e2666]
+                      - generic [ref=f15e2667]: Select Item 2
+                  - rowheader [ref=f15e2670]:
+                    - generic [ref=f15e2671]:
+                      - link "QA test LM-01-TC-003" [ref=f15e2677] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A2oIlhuO2ER/view
+                      - img "Locked Name" [ref=f15e2679]
+                  - gridcell [ref=f15e2683]:
+                    - generic [ref=f15e2684]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A2oIlhuO2ER/view
+                      - button "Edit Company" [ref=f15e2685] [cursor=pointer]
+                  - gridcell [ref=f15e2689]:
+                    - img "Locked State/Province" [ref=f15e2691]
+                  - gridcell [ref=f15e2695]:
+                    - button "Edit Email" [ref=f15e2697] [cursor=pointer]
+                  - gridcell "New Edit Lead Status" [ref=f15e2701]:
+                    - generic [ref=f15e2702]:
+                      - generic [ref=f15e2703]: New
+                      - button "Edit Lead Status" [ref=f15e2706] [cursor=pointer]
+                  - gridcell "٢٣/٨/٢٠٢٦, ١٢:٥٦ PM Locked Created Date" [ref=f15e2710]:
+                    - generic [ref=f15e2711]:
+                      - generic [ref=f15e2712]: ٢٣/٨/٢٠٢٦, ١٢:٥٦ PM
+                      - img "Locked Created Date" [ref=f15e2715]
+                  - gridcell "AF Leads - SportsMotors Locked Owner Alias" [ref=f15e2719]:
+                    - generic [ref=f15e2720]:
+                      - generic [ref=f15e2721]: AF Leads - SportsMotors
+                      - img "Locked Owner Alias" [ref=f15e2727]
+                  - gridcell "True Unread By Owner Locked Unread By Owner" [ref=f15e2731]:
+                    - generic [ref=f15e2732]:
+                      - generic [ref=f15e2738]:
+                        - generic "True" [ref=f15e2739]
+                        - generic [ref=f15e2746]: Unread By Owner
+                      - img "Locked Unread By Owner" [ref=f15e2747]
+                  - gridcell [ref=f15e2751]:
+                    - button "Show Actions" [ref=f15e2757] [cursor=pointer]
+                - row [ref=f15e2763]:
+                  - gridcell [ref=f15e2764]
+                  - gridcell "Select Item 3 Choose a Row" [ref=f15e2768]:
+                    - generic [ref=f15e2769]:
+                      - checkbox "Select Item 3 Choose a Row" [ref=f15e2770]
+                      - generic [ref=f15e2771]: Select Item 3
+                  - rowheader [ref=f15e2774]:
+                    - generic [ref=f15e2775]:
+                      - link "QA test LM-01-TC-014" [ref=f15e2781] [cursor=pointer]:
+                        - /url: /lightning/r/00QFV00A2pORbae2ED/view
+                      - img "Locked Name" [ref=f15e2783]
+                  - gridcell [ref=f15e2787]:
+                    - generic [ref=f15e2788]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link:
+                                  - /url: /lightning/r/00QFV00A2pORbae2ED/view
+                      - button "Edit Company" [ref=f15e2789] [cursor=pointer]
+                  - gridcell [ref=f15e2793]:
+                    - img "Locked State/Province" [ref=f15e2795]
+                  - gridcell [ref=f15e2799]:
+                    - button "Edit Email" [ref=f15e2801] [cursor=pointer]
+                  - gridcell "Disqualified Edit Lead Status" [ref=f15e2805]:
+                    - generic [ref=f15e2806]:
+                      - generic [ref=f15e2807]: Disqualified
+                      - button "Edit Lead Status" [ref=f15e2810] [cursor=pointer]
+                  - gridcell "٢٣/٨/٢٠٢٦, ١:٠٤ PM Locked Created Date" [ref=f15e2814]:
+                    - generic [ref=f15e2815]:
+                      - generic [ref=f15e2816]: ٢٣/٨/٢٠٢٦, ١:٠٤ PM
+                      - img "Locked Created Date" [ref=f15e2819]
+                  - gridcell "AF Leads - SportsMotors Locked Owner Alias" [ref=f15e2823]:
+                    - generic [ref=f15e2824]:
+                      - generic [ref=f15e2825]: AF Leads - SportsMotors
+                      - img "Locked Owner Alias" [ref=f15e2831]
+                  - gridcell "True Unread By Owner Locked Unread By Owner" [ref=f15e2835]:
+                    - generic [ref=f15e2836]:
+                      - generic [ref=f15e2842]:
+                        - generic "True" [ref=f15e2843]
+                        - generic [ref=f15e2850]: Unread By Owner
+                      - img "Locked Unread By Owner" [ref=f15e2851]
+                  - gridcell [ref=f15e2855]:
+                    - button "Show Actions" [ref=f15e2861] [cursor=pointer]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f15e239]:
+          - listitem [ref=f15e240]:
+            - button "To Do List" [ref=f15e243] [cursor=pointer]
+  - generic:
+    - status

@@ -1,0 +1,418 @@
+- generic:
+  - generic [ref=f23e2]:
+    - generic [ref=f23e3]:
+      - link "Skip to Navigation" [ref=f23e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f23e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f23e8]:
+        - generic [ref=f23e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f23e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f23e11]:
+        - button "Search" [ref=f23e18]: Search...
+        - navigation "Global Header" [ref=f23e23]:
+          - list [ref=f23e25]:
+            - listitem [ref=f23e26]:
+              - group [ref=f23e27]:
+                - button "Add favorite" [ref=f23e268] [cursor=pointer]:
+                  - generic [ref=f23e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f23e38] [cursor=pointer]:
+                  - generic [ref=f23e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f23e46]:
+              - button [ref=f23e273] [cursor=pointer]:
+                - generic [ref=f23e274]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f23e281]:
+              - button [ref=f23e283] [cursor=pointer]:
+                - generic [ref=f23e284]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f23e55]:
+              - button [ref=f23e58] [cursor=pointer]:
+                - generic [ref=f23e59]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f23e66]:
+              - button "3 Notifications" [ref=f23e291] [cursor=pointer]:
+                - generic [ref=f23e70]:
+                  - generic [ref=f23e71]: "3"
+                  - tooltip "Notifications"
+              - generic [ref=f23e78]: 3 new notifications
+            - listitem [ref=f23e79]:
+              - button "View profile" [ref=f23e82] [cursor=pointer]:
+                - generic [ref=f23e83]:
+                  - tooltip "View profile"
+    - generic [ref=f23e85]:
+      - generic [ref=f23e88]:
+        - generic [ref=f23e90]:
+          - navigation "App" [ref=f23e91]:
+            - button "App Launcher" [ref=f23e93] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f23e105]
+        - navigation "Global" [ref=f23e109]:
+          - list [ref=f23e110]:
+            - listitem [ref=f23e111]:
+              - link "Home" [ref=f23e112] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f23e114]:
+              - link "Vehicles" [ref=f23e115] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f23e120] [cursor=pointer]
+            - listitem [ref=f23e128]:
+              - link "Assets" [ref=f23e129] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f23e134] [cursor=pointer]
+            - listitem [ref=f23e142]:
+              - link "Vehicle Definitions" [ref=f23e143] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f23e148] [cursor=pointer]
+            - listitem [ref=f23e156]:
+              - link "Products" [ref=f23e157] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f23e162] [cursor=pointer]
+            - listitem [ref=f23e170] [cursor=pointer]:
+              - link "Accounts" [ref=f23e171]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f23e176]
+            - listitem [ref=f23e184]:
+              - link "Contacts" [ref=f23e185] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f23e190] [cursor=pointer]
+            - listitem [ref=f23e198]:
+              - link "Asset Milestones" [ref=f23e199] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f23e204] [cursor=pointer]
+            - listitem [ref=f23e212]:
+              - link "Asset Contact Participants" [ref=f23e213] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f23e218] [cursor=pointer]
+            - listitem [ref=f23e226]:
+              - link "Asset Account Participants" [ref=f23e227] [cursor=pointer]:
+                - /url: /lightning/o/AssetAccountParticipant/home
+              - button "Asset Account Participants List" [ref=f23e232] [cursor=pointer]
+            - listitem [ref=f23e240]:
+              - button "Show more navigation items" [ref=f23e242] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f23e243]: More
+            - listitem [ref=f23e251]:
+              - button "Edit nav items" [ref=f23e253] [cursor=pointer]
+      - main [ref=f23e260]:
+        - generic [ref=f23e307]:
+          - generic [ref=f23e316]:
+            - generic [ref=f23e317]:
+              - generic [ref=f23e318]:
+                - generic [ref=f23e327]:
+                  - generic [ref=f23e328]: Account
+                  - heading "DEMO RS10 Fleet - Qatar Foundation Fleet Services" [level=1] [ref=f23e330]
+                - button "View Account Hierarchy" [ref=f23e342] [cursor=pointer]
+              - button "Follow" [ref=f23e352] [cursor=pointer]
+              - generic "Edit" [ref=f23e364]:
+                - button "Edit" [ref=f23e369] [cursor=pointer]
+            - generic [ref=f23e370]:
+              - generic [ref=f23e372]:
+                - paragraph [ref=f23e373]: Type
+                - paragraph [ref=f23e374]:
+                  - generic [ref=f23e375]: Individual
+              - generic [ref=f23e377]:
+                - paragraph [ref=f23e378]: Phone
+                - paragraph
+              - generic [ref=f23e380]:
+                - paragraph [ref=f23e381]: Website
+                - paragraph
+              - generic [ref=f23e383]:
+                - paragraph [ref=f23e384]: Account Owner
+                - paragraph [ref=f23e385]:
+                  - generic [ref=f23e388]:
+                    - generic [ref=f23e395]:
+                      - link "QA SalesRep2" [ref=f23e396] [cursor=pointer]:
+                        - /url: /lightning/r/User/005FV0082KfRrqeYQC/view
+                      - button "Preview" [ref=f23e402] [cursor=pointer]
+                    - button "Change Owner" [ref=f23e409] [cursor=pointer]
+              - generic [ref=f23e416]:
+                - paragraph [ref=f23e417]: Account Site
+                - paragraph
+              - generic [ref=f23e419]:
+                - paragraph [ref=f23e420]: Industry
+                - paragraph
+          - generic [ref=f23e422]:
+            - generic [ref=f23e424]:
+              - generic [ref=f23e429]:
+                - article [ref=f23e431]:
+                  - heading "Tags" [level=2] [ref=f23e442]
+                - list [ref=f23e447]:
+                  - listitem [ref=f23e448]: Looks like you don’t have the right permissions to view this component. Contact your Salesforce admin for help.
+              - article [ref=f23e454]:
+                - generic [ref=f23e455]:
+                  - heading "Timeline" [level=2] [ref=f23e459]
+                  - generic [ref=f23e461]:
+                    - generic [ref=f23e464]:
+                      - generic [ref=f23e468]:
+                        - generic [ref=f23e469]:
+                          - heading "Customer Interactions" [level=2] [ref=f23e470]
+                          - menu [ref=f23e471]:
+                            - button "Show Timeline Menu" [ref=f23e472] [cursor=pointer]
+                        - generic [ref=f23e478]: All Events • Most Recent Event
+                      - generic [ref=f23e484]:
+                        - button "Refresh" [ref=f23e487] [cursor=pointer]
+                        - button "Date Range" [ref=f23e495] [cursor=pointer]
+                        - button "Event Type" [ref=f23e503] [cursor=pointer]
+                        - button "Sort" [ref=f23e511] [cursor=pointer]
+                    - generic [ref=f23e521]:
+                      - heading "Time to create some events" [level=2] [ref=f23e522]
+                      - paragraph [ref=f23e523]: After you create a timeline event, you’ll see it here.
+            - generic [ref=f23e525]:
+              - generic [ref=f23e526]: "Error: Failed to get generated module for forceGenerated:flexCard_ServiceExcellenceGenericAlertCard___salesforce___1___false: ui.services.exceptions.NoAccessException: You don't have access to this record. Ask your administrator for help or to request access."
+              - article [ref=f23e535]:
+                - article [ref=f23e540]:
+                  - heading "Action Launcher" [level=2] [ref=f23e544]
+                  - combobox [expanded] [ref=f23e563]:
+                    - generic [ref=f23e564]:
+                      - textbox "search-box" [ref=f23e565]:
+                        - /placeholder: Search actions...
+                      - generic: Approved
+              - generic [ref=f23e578]:
+                - heading "Tabs" [level=2] [ref=f23e579]
+                - tablist "Tabs" [ref=f23e581]:
+                  - tab "Financial Accounts" [ref=f23e582] [cursor=pointer]
+                  - tab "Details" [ref=f23e583] [cursor=pointer]
+                  - tab "Cases" [ref=f23e584] [cursor=pointer]
+                  - tab "Opportunities" [active] [selected] [ref=f23e585] [cursor=pointer]
+                  - tab "Contracts" [ref=f23e586] [cursor=pointer]
+                  - tab "Related List" [ref=f23e587] [cursor=pointer]
+                - tabpanel "Opportunities" [ref=f23e859]:
+                  - article "Opportunities" [ref=f23e867]:
+                    - generic [ref=f23e868]:
+                      - generic [ref=f23e869]:
+                        - generic [ref=f23e871]:
+                          - generic [ref=f23e872]:
+                            - heading [level=2] [ref=f23e880]:
+                              - link "Opportunities (10+)" [ref=f23e881] [cursor=pointer]:
+                                - /url: /lightning/r/Account/001FV00L3NRO3COYU1/related/Opportunities/view
+                                - generic "Opportunities" [ref=f23e882]
+                                - generic "(10+)" [ref=f23e883]
+                            - generic [ref=f23e885]:
+                              - button "List View Controls" [ref=f23e889] [cursor=pointer]
+                              - button "Refresh" [ref=f23e903] [cursor=pointer]
+                            - generic "New" [ref=f23e912]:
+                              - button "New" [ref=f23e917] [cursor=pointer]
+                          - paragraph [ref=f23e920]:
+                            - generic [ref=f23e922]:
+                              - status "Opportunities" [ref=f23e923]: 10+ items • Sorted by Close Date •
+                              - text: Updated a few seconds ago
+                        - generic [ref=f23e930]:
+                          - generic: Navigation Mode
+                          - grid "Opportunities" [ref=f23e935]:
+                            - rowgroup:
+                              - row "Row Number Choose a Row Select 10 items Opportunity Name Stage Amount Close Date Action":
+                                - columnheader "Row Number":
+                                  - generic [ref=f23e938]:
+                                    - generic "Row Number"
+                                - gridcell "Choose a Row Select 10 items":
+                                  - generic [ref=f23e939]:
+                                    - generic [ref=f23e940]: Choose a Row
+                                    - generic [ref=f23e942]:
+                                      - checkbox "Select 10 items" [ref=f23e943] [cursor=pointer]
+                                      - generic [ref=f23e944] [cursor=pointer]: Select 10 items
+                                - columnheader "Opportunity Name":
+                                  - generic [ref=f23e948]:
+                                    - 'button "Sort by: Opportunity Name" [ref=f23e949] [cursor=pointer]':
+                                      - generic [ref=f23e950]: "Sort by:"
+                                      - generic "Opportunity Name" [ref=f23e951]
+                                    - generic [ref=f23e952]: "Sorted: None"
+                                    - button "Show Opportunity Name column actions" [ref=f23e954] [cursor=pointer]
+                                    - slider "Opportunity Name column width" [ref=f23e960]: "354"
+                                - columnheader "Stage":
+                                  - generic [ref=f23e964]:
+                                    - 'button "Sort by: Stage" [ref=f23e965] [cursor=pointer]':
+                                      - generic [ref=f23e966]: "Sort by:"
+                                      - generic "Stage" [ref=f23e967]
+                                    - generic [ref=f23e968]: "Sorted: None"
+                                    - button "Show Stage column actions" [ref=f23e970] [cursor=pointer]
+                                    - slider "Stage column width" [ref=f23e976]: "139"
+                                - columnheader "Amount":
+                                  - generic [ref=f23e980]:
+                                    - 'button "Sort by: Amount" [ref=f23e981] [cursor=pointer]':
+                                      - generic [ref=f23e982]: "Sort by:"
+                                      - generic "Amount" [ref=f23e983]
+                                    - generic [ref=f23e984]: "Sorted: None"
+                                    - button "Show Amount column actions" [ref=f23e986] [cursor=pointer]
+                                    - slider "Amount column width" [ref=f23e992]: "264"
+                                - columnheader "Close Date":
+                                  - generic [ref=f23e996]:
+                                    - 'button "Sort by: Close Date" [ref=f23e997] [cursor=pointer]':
+                                      - generic [ref=f23e998]: "Sort by:"
+                                      - generic "Close Date" [ref=f23e999]
+                                    - generic [ref=f23e1004]: Sorted Descending
+                                    - button "Show Close Date column actions" [ref=f23e1006] [cursor=pointer]
+                                    - slider "Close Date column width" [ref=f23e1012]: "209"
+                                - columnheader "Action":
+                                  - generic [ref=f23e1017]:
+                                    - generic "Action"
+                            - rowgroup [ref=f23e1018]:
+                              - row [ref=f23e1019]:
+                                - gridcell [ref=f23e1020]
+                                - gridcell "Select Item 1 Choose a Row" [ref=f23e1025]:
+                                  - generic [ref=f23e1027]:
+                                    - checkbox "Select Item 1 Choose a Row" [ref=f23e1028] [cursor=pointer]
+                                    - generic [ref=f23e1029] [cursor=pointer]: Select Item 1
+                                - rowheader [ref=f23e1032]:
+                                  - generic [ref=f23e1041]:
+                                    - link "DEMO RS10 Fleet 001" [ref=f23e1042] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhD9nU16YUE/view
+                                    - button "Preview" [ref=f23e1048] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1054]
+                                - gridcell "AED 300,001.00" [ref=f23e1060]
+                                - gridcell "31/10/2026" [ref=f23e1066]
+                                - gridcell [ref=f23e1071]:
+                                  - button "Show Actions" [ref=f23e1078] [cursor=pointer]
+                              - row [ref=f23e1084]:
+                                - gridcell [ref=f23e1085]
+                                - gridcell "Select Item 2 Choose a Row" [ref=f23e1090]:
+                                  - generic [ref=f23e1092]:
+                                    - checkbox "Select Item 2 Choose a Row" [ref=f23e1093] [cursor=pointer]
+                                    - generic [ref=f23e1094] [cursor=pointer]: Select Item 2
+                                - rowheader [ref=f23e1097]:
+                                  - generic [ref=f23e1106]:
+                                    - link "DEMO RS10 Fleet 002" [ref=f23e1107] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhD9rgA8YUI/view
+                                    - button "Preview" [ref=f23e1113] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1119]
+                                - gridcell "AED 300,002.00" [ref=f23e1125]
+                                - gridcell "31/10/2026" [ref=f23e1131]
+                                - gridcell [ref=f23e1136]:
+                                  - button "Show Actions" [ref=f23e1143] [cursor=pointer]
+                              - row [ref=f23e1149]:
+                                - gridcell [ref=f23e1150]
+                                - gridcell "Select Item 3 Choose a Row" [ref=f23e1155]:
+                                  - generic [ref=f23e1157]:
+                                    - checkbox "Select Item 3 Choose a Row" [ref=f23e1158] [cursor=pointer]
+                                    - generic [ref=f23e1159] [cursor=pointer]: Select Item 3
+                                - rowheader [ref=f23e1162]:
+                                  - generic [ref=f23e1171]:
+                                    - link "DEMO RS10 Fleet 003" [ref=f23e1172] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhD9vsJAYUY/view
+                                    - button "Preview" [ref=f23e1178] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1184]
+                                - gridcell "AED 300,003.00" [ref=f23e1190]
+                                - gridcell "31/10/2026" [ref=f23e1196]
+                                - gridcell [ref=f23e1201]:
+                                  - button "Show Actions" [ref=f23e1208] [cursor=pointer]
+                              - row [ref=f23e1214]:
+                                - gridcell [ref=f23e1215]
+                                - gridcell "Select Item 4 Choose a Row" [ref=f23e1220]:
+                                  - generic [ref=f23e1222]:
+                                    - checkbox "Select Item 4 Choose a Row" [ref=f23e1223] [cursor=pointer]
+                                    - generic [ref=f23e1224] [cursor=pointer]: Select Item 4
+                                - rowheader [ref=f23e1227]:
+                                  - generic [ref=f23e1236]:
+                                    - link "DEMO RS10 Fleet 004" [ref=f23e1237] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhDA04SCYUZ/view
+                                    - button "Preview" [ref=f23e1243] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1249]
+                                - gridcell "AED 300,004.00" [ref=f23e1255]
+                                - gridcell "31/10/2026" [ref=f23e1261]
+                                - gridcell [ref=f23e1266]:
+                                  - button "Show Actions" [ref=f23e1273] [cursor=pointer]
+                              - row [ref=f23e1279]:
+                                - gridcell [ref=f23e1280]
+                                - gridcell "Select Item 5 Choose a Row" [ref=f23e1285]:
+                                  - generic [ref=f23e1287]:
+                                    - checkbox "Select Item 5 Choose a Row" [ref=f23e1288] [cursor=pointer]
+                                    - generic [ref=f23e1289] [cursor=pointer]: Select Item 5
+                                - rowheader [ref=f23e1292]:
+                                  - generic [ref=f23e1301]:
+                                    - link "DEMO RS10 Fleet 005" [ref=f23e1302] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhDA4GbEYUV/view
+                                    - button "Preview" [ref=f23e1308] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1314]
+                                - gridcell "AED 300,005.00" [ref=f23e1320]
+                                - gridcell "31/10/2026" [ref=f23e1326]
+                                - gridcell [ref=f23e1331]:
+                                  - button "Show Actions" [ref=f23e1338] [cursor=pointer]
+                              - row [ref=f23e1344]:
+                                - gridcell [ref=f23e1345]
+                                - gridcell "Select Item 6 Choose a Row" [ref=f23e1350]:
+                                  - generic [ref=f23e1352]:
+                                    - checkbox "Select Item 6 Choose a Row" [ref=f23e1353] [cursor=pointer]
+                                    - generic [ref=f23e1354] [cursor=pointer]: Select Item 6
+                                - rowheader [ref=f23e1357]:
+                                  - generic [ref=f23e1366]:
+                                    - link "DEMO RS10 Fleet 006" [ref=f23e1367] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhDA8SkGYUV/view
+                                    - button "Preview" [ref=f23e1373] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1379]
+                                - gridcell "AED 300,006.00" [ref=f23e1385]
+                                - gridcell "31/10/2026" [ref=f23e1391]
+                                - gridcell [ref=f23e1396]:
+                                  - button "Show Actions" [ref=f23e1403] [cursor=pointer]
+                              - row [ref=f23e1409]:
+                                - gridcell [ref=f23e1410]
+                                - gridcell "Select Item 7 Choose a Row" [ref=f23e1415]:
+                                  - generic [ref=f23e1417]:
+                                    - checkbox "Select Item 7 Choose a Row" [ref=f23e1418] [cursor=pointer]
+                                    - generic [ref=f23e1419] [cursor=pointer]: Select Item 7
+                                - rowheader [ref=f23e1422]:
+                                  - generic [ref=f23e1431]:
+                                    - link "DEMO RS10 Fleet 007" [ref=f23e1432] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhDACetIYUT/view
+                                    - button "Preview" [ref=f23e1438] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1444]
+                                - gridcell "AED 300,007.00" [ref=f23e1450]
+                                - gridcell "31/10/2026" [ref=f23e1456]
+                                - gridcell [ref=f23e1461]:
+                                  - button "Show Actions" [ref=f23e1468] [cursor=pointer]
+                              - row [ref=f23e1474]:
+                                - gridcell [ref=f23e1475]
+                                - gridcell "Select Item 8 Choose a Row" [ref=f23e1480]:
+                                  - generic [ref=f23e1482]:
+                                    - checkbox "Select Item 8 Choose a Row" [ref=f23e1483] [cursor=pointer]
+                                    - generic [ref=f23e1484] [cursor=pointer]: Select Item 8
+                                - rowheader [ref=f23e1487]:
+                                  - generic [ref=f23e1496]:
+                                    - link "DEMO RS10 Fleet 008" [ref=f23e1497] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhDAGr2KYUT/view
+                                    - button "Preview" [ref=f23e1503] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1509]
+                                - gridcell "AED 300,008.00" [ref=f23e1515]
+                                - gridcell "31/10/2026" [ref=f23e1521]
+                                - gridcell [ref=f23e1526]:
+                                  - button "Show Actions" [ref=f23e1533] [cursor=pointer]
+                              - row [ref=f23e1539]:
+                                - gridcell [ref=f23e1540]
+                                - gridcell "Select Item 9 Choose a Row" [ref=f23e1545]:
+                                  - generic [ref=f23e1547]:
+                                    - checkbox "Select Item 9 Choose a Row" [ref=f23e1548] [cursor=pointer]
+                                    - generic [ref=f23e1549] [cursor=pointer]: Select Item 9
+                                - rowheader [ref=f23e1552]:
+                                  - generic [ref=f23e1561]:
+                                    - link "DEMO RS10 Fleet 009" [ref=f23e1562] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhDAL3BMYU1/view
+                                    - button "Preview" [ref=f23e1568] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1574]
+                                - gridcell "AED 300,009.00" [ref=f23e1580]
+                                - gridcell "31/10/2026" [ref=f23e1586]
+                                - gridcell [ref=f23e1591]:
+                                  - button "Show Actions" [ref=f23e1598] [cursor=pointer]
+                              - row [ref=f23e1604]:
+                                - gridcell [ref=f23e1605]
+                                - gridcell "Select Item 10 Choose a Row" [ref=f23e1610]:
+                                  - generic [ref=f23e1612]:
+                                    - checkbox "Select Item 10 Choose a Row" [ref=f23e1613] [cursor=pointer]
+                                    - generic [ref=f23e1614] [cursor=pointer]: Select Item 10
+                                - rowheader [ref=f23e1617]:
+                                  - generic [ref=f23e1626]:
+                                    - link "DEMO RS10 Fleet 010" [ref=f23e1627] [cursor=pointer]:
+                                      - /url: /lightning/r/006FV00BhDAPFKOYU5/view
+                                    - button "Preview" [ref=f23e1633] [cursor=pointer]
+                                - gridcell "Select" [ref=f23e1639]
+                                - gridcell "AED 300,010.00" [ref=f23e1645]
+                                - gridcell "31/10/2026" [ref=f23e1651]
+                                - gridcell [ref=f23e1656]:
+                                  - button "Show Actions" [ref=f23e1663] [cursor=pointer]
+                      - link "View All Opportunities" [ref=f23e1669] [cursor=pointer]:
+                        - /url: /lightning/r/Account/001FV00L3NRO3COYU1/related/Opportunities/view
+                        - generic [ref=f23e1670]:
+                          - text: View All
+                          - generic [ref=f23e1671]: Opportunities
+  - generic:
+    - status

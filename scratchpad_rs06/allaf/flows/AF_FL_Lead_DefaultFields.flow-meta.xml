@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Brand_Default</name>
+        <label>Assign Brand Default</label>
+        <locationX>50</locationX>
+        <locationY>134</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_Brand__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.AF_DefaultBrand__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Needs_City_Default</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_City_Default</name>
+        <label>Assign City Default</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.City</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Doha</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Needs_Country_Default</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Country_Default</name>
+        <label>Assign Country Default</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Country</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Qatar</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Needs_Brand_Default</name>
+        <label>Needs Brand Default?</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Needs_City_Default</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Brand_Blank_And_User_Has_Default</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_Brand__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$User.AF_DefaultBrand__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Brand_Default</targetReference>
+            </connector>
+            <label>Brand Blank and User Has a Default</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Needs_City_Default</name>
+        <label>Needs City Default?</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Needs_Country_Default</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>City_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.City</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_City_Default</targetReference>
+            </connector>
+            <label>City Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Needs_Country_Default</name>
+        <label>Needs Country Default?</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Country_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Country</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Country_Default</targetReference>
+            </connector>
+            <label>Country Blank</label>
+        </rules>
+    </decisions>
+    <description>On manual/API Lead creation, defaults Brand from the operating user&apos;s AF_DefaultBrand__c (when identified and the field is still blank), and defaults City to &quot;Doha&quot; / Country to &quot;Qatar&quot; when the address block is blank. All three remain editable — this only fills gaps, never overwrites a value the creator already supplied.</description>
+    <environments>Default</environments>
+    <interviewLabel>AF Lead Default Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Default Fields</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Needs_Brand_Default</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>10</triggerOrder>
+</Flow>

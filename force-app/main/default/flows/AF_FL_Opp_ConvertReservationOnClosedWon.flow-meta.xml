@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_To_Collection</name>
+        <label>Add To Collection</label>
+        <locationX>176</locationX>
+        <locationY>430</locationY>
+        <assignmentItems>
+            <assignToReference>col_ReservationsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Reservations</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Reservations</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Converted_Status</name>
+        <label>Assign Converted Status</label>
+        <locationX>176</locationX>
+        <locationY>358</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Reservations.AF_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Converted</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_To_Collection</targetReference>
+        </connector>
+    </assignments>
+    <description>Found live 2026-09-20 (full retail cycle test on DEV): when an Opportunity reaches Closed Won, its Vehicle Reservation stayed &quot;Reserved&quot; forever - the Converted status already exists on the picklist and AF_VehicleReservationStatusSync&apos;s own doc comments already anticipated it as the terminal state for a real sale, but nothing ever set it. Left the Vehicle&apos;s AF_ReservationStatus__c mirror stuck on &quot;Reserved&quot; instead of ever reflecting the vehicle as sold/delivered. This closes that gap the same way AF_FL_Opp_CancellationReleaseReservation closes the Cancelled-status gap.</description>
+    <environments>Default</environments>
+    <interviewLabel>Opp Convert Reservation On Closed Won {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opp Convert Reservation On Closed Won</label>
+    <loops>
+        <name>Loop_Reservations</name>
+        <label>Loop Reservations</label>
+        <locationX>176</locationX>
+        <locationY>258</locationY>
+        <collectionReference>Get_Open_Reservations</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Converted_Status</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Reservations</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Open_Reservations</name>
+        <label>Get Open Reservations</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Reservations</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AF_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Reserved</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>AF_VehicleReservation__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Reservations</name>
+        <label>Update Reservations</label>
+        <locationX>176</locationX>
+        <locationY>558</locationY>
+        <inputReference>col_ReservationsToUpdate</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Open_Reservations</targetReference>
+        </connector>
+        <filterFormula>AND(
+  ISPICKVAL({!$Record.StageName}, &quot;Closed Won&quot;),
+  ISCHANGED({!$Record.StageName})
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>col_ReservationsToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AF_VehicleReservation__c</objectType>
+    </variables>
+</Flow>

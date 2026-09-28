@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Default_Initiating_Rep</name>
+        <label>Default Initiating Rep To Owner</label>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_InitiatingSalesRep__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.InitiatedById</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Real bug fix (found 2026-09-06 during RS-06 testing, ALF-RS-04): a standalone Trade-In created with only OwnerId set (the normal case for anyone creating one via the standard New button/API without knowing to also fill in the custom AF_InitiatingSalesRep__c field) left that field blank, which broke AF_FL_Appraisal_FollowUpEscalation with &quot;Assigned To ID: owner cannot be blank&quot; — that flow keys off AF_InitiatingSalesRep__c specifically (not OwnerId, since OwnerId gets reassigned to the AF_Q_UsedCarTeam queue mid-lifecycle) and had no fallback for it being genuinely empty. Before-save default: if AF_InitiatingSalesRep__c is blank on create, default it to OwnerId. Only ever fills a blank — never overwrites a value the creating process (e.g. AF_FL_Opp_CreateExploreSideProcesses) already set explicitly. Extended 2026-09-08 (user noticed there are TWO similarly-named fields on the Appraisal page layout - the standard Automotive Cloud &quot;Initiated By&quot; field, InitiatedById, polymorphic Account/Contact/User, and this custom &quot;Initiating Sales Rep&quot; field, AF_InitiatingSalesRep__c - and only the custom one was ever being populated by any automation, leaving InitiatedById confusingly blank next to it on every record. The BRD only ever refers to &quot;the Sales Representative who initiated the request&quot; with no separate initiating party, so InitiatedById now defaults to the same OwnerId value as a plain cosmetic fix - same blank-only guard, no new logic elsewhere depends on it.</description>
+    <environments>Default</environments>
+    <interviewLabel>Appraisal Default Initiating Rep {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Appraisal Default Initiating Rep</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Default_Initiating_Rep</targetReference>
+        </connector>
+        <filterFormula>NOT(ISBLANK({!$Record.OwnerId})) &amp;&amp; (ISBLANK({!$Record.AF_InitiatingSalesRep__c}) || ISBLANK({!$Record.InitiatedById}))</filterFormula>
+        <object>Appraisal</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

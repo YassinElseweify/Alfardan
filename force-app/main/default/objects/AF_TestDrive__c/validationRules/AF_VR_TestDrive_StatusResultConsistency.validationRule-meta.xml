@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_TestDrive_StatusResultConsistency</fullName>
+    <active>true</active>
+    <description>When Status is Completed or Refused, Result must carry the matching value — prevents the two outcome fields from disagreeing (found live: a record with Status=Refused but Result=Completed and no remarks).</description>
+    <errorConditionFormula>AND(
+    OR(
+        ISPICKVAL(AF_Status__c, &quot;Completed&quot;),
+        ISPICKVAL(AF_Status__c, &quot;Refused&quot;)
+    ),
+    NOT(TEXT(AF_Status__c) = TEXT(AF_Result__c))
+)</errorConditionFormula>
+    <errorMessage>Test Drive Result must match Status when Status is Completed or Refused — set Result to the same value.</errorMessage>
+</ValidationRule>

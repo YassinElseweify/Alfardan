@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Call_RoundRobin_Assigner</name>
+        <label>Call Round Robin Assigner</label>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
+        <actionName>roundRobinAssigner</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Get_Updated_Lead</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>groupName</name>
+            <value>
+                <elementReference>AF_Var_QueueName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>roundRobinAssigner</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Notification</name>
+        <label>Send Notification</label>
+        <locationX>176</locationX>
+        <locationY>910</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_NotificationType.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>var_RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>NotifTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotifBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+    </actionCalls>
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Queue_Automobiles</name>
+        <label>Assign Queue - Automobiles</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>AF_Var_QueueName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>AF Leads - Automobiles</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Call_RoundRobin_Assigner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Queue_PremierMotors</name>
+        <label>Assign Queue - Premier Motors</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>AF_Var_QueueName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>AF Leads - PremierMotors</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Call_RoundRobin_Assigner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Queue_Review</name>
+        <label>Assign Queue - Review</label>
+        <locationX>428</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>AF_Var_QueueName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>AF Leads - Review</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Call_RoundRobin_Assigner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Queue_SportsMotors</name>
+        <label>Assign Queue - Sports Motors</label>
+        <locationX>302</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>AF_Var_QueueName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>AF Leads - SportsMotors</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Call_RoundRobin_Assigner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_RecipientId</name>
+        <label>Assign Recipient Id</label>
+        <locationX>176</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>var_RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Updated_Lead.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Notification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decide_Queue_By_BU</name>
+        <label>Decide Queue By Business Unit</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Queue_Review</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Unmapped</defaultConnectorLabel>
+        <rules>
+            <name>BU_Automobiles</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AF_Var_BusinessUnit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Alfardan Automobiles</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Queue_Automobiles</targetReference>
+            </connector>
+            <label>Automobiles</label>
+        </rules>
+        <rules>
+            <name>BU_PremierMotors</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AF_Var_BusinessUnit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Alfardan Premier Motors</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Queue_PremierMotors</targetReference>
+            </connector>
+            <label>Premier Motors</label>
+        </rules>
+        <rules>
+            <name>BU_SportsMotors</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AF_Var_BusinessUnit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Alfardan Sports Motors</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Queue_SportsMotors</targetReference>
+            </connector>
+            <label>Sports Motors</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_New_Owner</name>
+        <label>Was Lead Assigned To A User?</label>
+        <locationX>176</locationX>
+        <locationY>790</locationY>
+        <defaultConnectorLabel>No Eligible Member - Skip Notification</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Is_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Updated_Lead.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_NotificationType</targetReference>
+            </connector>
+            <label>Owner Is User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Suppressed_Duplicate</name>
+        <label>Is Suppressed Duplicate?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Decide_Queue_By_BU</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Suppressed_Duplicate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_IsSuppressedDuplicate__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Queue_Review</targetReference>
+            </connector>
+            <label>Suppressed Duplicate</label>
+        </rules>
+    </decisions>
+    <description>LFRDN-606: deactivated. Business decided to stop automatic round-robin assignment — leads now route to the BU queue (AF_AR_Lead_Routing, unchanged) and are assigned to a specific agent by the CRM Manager/Supervisor, not auto-rotated or self-assigned. See AF_VR_Lead_OwnerAssignByManagerOnly. Left in Draft rather than deleted so the rotation logic and Round_Robin_Assignment__c pointer records aren&apos;t lost if this is ever revisited.
+
+Assigns new Leads directly to a rotating member of the target BU&apos;s Lead Queue, instead of leaving them queue-owned until someone manually claims one. Uses the roundRobinAssigner package (ported from the Palm Hills org 16 Aug 2026) — the Round_Robin_Assignment__c record tracks the rotation pointer per Queue.
+
+Business Unit is derived inline via AF_FL_Sub_DeriveBusinessUnit rather than reading AF_BusinessUnit__c, since that field is written by a separate after-save flow whose execution order relative to this one is not guaranteed.
+
+Suppressed-duplicate Leads (AF_IsSuppressedDuplicate__c = true) always route to the Review queue&apos;s rotation, regardless of Brand/BU, matching AF_AR_Lead_Routing&apos;s own priority order.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NotifBody</name>
+        <dataType>String</dataType>
+        <expression>&quot;You&apos;ve been assigned a new lead: &quot; &amp; {!Get_Updated_Lead.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>NotifTitle</name>
+        <dataType>String</dataType>
+        <expression>&quot;New Lead Assigned&quot;</expression>
+    </formulas>
+    <interviewLabel>Lead Round Robin Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Round Robin Assignment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_NotificationType</name>
+        <label>Get Notification Type</label>
+        <locationX>176</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_RecipientId</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>AF_NT_Alfardan_Alert</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Updated_Lead</name>
+        <label>Get Updated Lead</label>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_New_Owner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Derive_Business_Unit</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>Derive_Business_Unit</name>
+        <label>Derive Business Unit</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <connector>
+            <targetReference>Is_Suppressed_Duplicate</targetReference>
+        </connector>
+        <flowName>AF_FL_Sub_DeriveBusinessUnit</flowName>
+        <inputAssignments>
+            <name>AF_Brand</name>
+            <value>
+                <elementReference>$Record.AF_Brand__c</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>AF_Var_BusinessUnit</assignToReference>
+            <name>AF_BusinessUnit</name>
+        </outputAssignments>
+    </subflows>
+    <triggerOrder>30</triggerOrder>
+    <variables>
+        <name>AF_Var_BusinessUnit</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>AF_Var_QueueName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>var_RecipientIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

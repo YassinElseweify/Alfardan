@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>ALF-RS-04 FR5/FR6: fires when the Used Car Team records InitialValue on an AppraisalItem for the first time (FinalValue/TotalItemFinalValue/FinalAppraisalValue are Automotive Cloud&apos;s own calculated rollups off InitialValue + AppraisalAdjustment records — read-only, not writable, so this flow never touches them). Sets AF_ApprovalStatus__c=Pending only - does NOT touch OwnerId. CORRECTION 2026-09-08 (real bug hit live): this flow used to also reassign OwnerId to AF_InitiatingSalesRep__c here, at submission time. But the approval step&apos;s assigned approver is the AF_Q_UsedCarTeam queue itself, and AF_PS_UsedCarTeam_Access deliberately grants Appraisal access via queue ownership only (not viewAllRecords) - so reassigning ownership away from the queue right as the record enters Pending meant queue members lost all access to the very record they were being asked to approve (&quot;resource does not exist&quot; opening the approval work item). The record must stay queue-owned for the whole Pending/approval window; AF_FL_Appraisal_ApprovalApproved already reassigns Owner=AF_InitiatingSalesRep__c at the correct point (when AF_ApprovalStatus__c actually reaches Approved) and AF_FL_Appraisal_ApprovalRejected was given the same reassignment for the Rejected outcome, so ownership now only leaves the queue once a decision is made. Restructured 2026-09-08 (user question: &quot;what if I add 2 trade-in items at the same time?&quot;): this flow used to also send the evaluation-complete notification AND submit the approval directly, both keyed off Get_Appraisal.Id captured once per AppraisalItem interview. When two AppraisalItems got InitialValue set in the SAME transaction, both interviews independently reached Submit_For_Approval before either commit was visible to the other (no Flow recordLookup or Apex guard could fix this - Apex cannot query the Appraisal object at all in this org, confirmed via a failed &quot;sObject type Appraisal is not supported&quot; QueryException even with dynamic SOQL), producing two separate, simultaneously-Pending ProcessInstance rows on one Appraisal. Root fix: split responsibility so ONLY the idempotent field update (AF_ApprovalStatus__c=Pending, OwnerId=rep) stays keyed off AppraisalItem here; the actual notification + Submit_For_Approval was moved to AF_FL_Appraisal_EvaluationSubmit, a separate flow triggered directly off the Appraisal record&apos;s own AF_ApprovalStatus__c field changing to Pending (RecordAfterSave, ISCHANGED). Two sibling AppraisalItem interviews each calling Update_Appraisal on the SAME Appraisal row in the same transaction is safe - Salesforce serializes DML writes to the same record row, and only the value that is actually the FIRST committed change from Pending is a real ISCHANGED transition; the second write (Pending-to-Pending) is a no-op for ISCHANGED, so the downstream submit flow correctly fires only once. Verified live 2026-09-08: same 2-item-same-transaction test now produces exactly 1 ProcessInstance and 1 EmailMessage. SECOND real bug found and fixed 2026-09-08 (user hit it live on a normal, single-item InitialValue edit - not the dual-item race): Update_Appraisal previously had a faultConnector pointing back to Get_Appraisal. Get_Appraisal&apos;s own connector points forward to Update_Appraisal, so ANY fault on Update_Appraisal (a validation rule, a lock timeout, or - as actually happened - AF_FL_Appraisal_EvaluationSubmit&apos;s own governor limit propagating back up through the synchronous CurrentTransaction chain it triggers) caused an infinite retry loop within the same transaction, which is exactly the shape of failure that surfaces as Salesforce&apos;s generic &quot;Limit Exceeded&quot; CANNOT_EXECUTE_FLOW_TRIGGER error. Removed the faultConnector entirely - a fault now surfaces immediately as a normal, single error instead of looping. RESTRUCTURED 2026-09-09 (RS-04 per-item approval): approval now happens PER AppraisalItem instead of per Appraisal. This flow no longer touches the parent Appraisal at all - Get_Appraisal was removed (nothing else in this flow needed it) and Update_Appraisal was replaced with a self-referencing Update_Item that sets THIS item&apos;s own AF_ApprovalStatus__c=Pending. AF_FL_AppraisalItem_EvaluationSubmit (new, triggered off AppraisalItem.AF_ApprovalStatus__c reaching Pending) now does what AF_FL_Appraisal_EvaluationSubmit used to do, submitting the ITEM into AppraisalItem.AF_AP_AppraisalItem_Manager. The rollup back to the parent Appraisal&apos;s own AF_ApprovalStatus__c (reject-wins-immediately / approve-only-when-all-siblings-approved) is handled by a separate new flow, AF_FL_AppraisalItem_RollupApprovalToAppraisal, triggered on the item&apos;s AF_ApprovalStatus__c reaching Approved/Rejected - not by this flow.</description>
+    <environments>Default</environments>
+    <interviewLabel>Appraisal Item Evaluation Complete {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Appraisal Item Evaluation Complete</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Item</name>
+        <label>Set Item Pending Approval</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_ApprovalStatus__c</field>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </inputAssignments>
+        <object>AppraisalItem</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Item</targetReference>
+        </connector>
+        <filterFormula>(ISNEW() || ISCHANGED({!$Record.InitialValue})) &amp;&amp; NOT(ISBLANK({!$Record.InitialValue}))</filterFormula>
+        <object>AppraisalItem</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>20</triggerOrder>
+</Flow>

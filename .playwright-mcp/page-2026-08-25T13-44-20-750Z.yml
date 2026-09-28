@@ -1,0 +1,272 @@
+- generic:
+  - generic [ref=f46e3]:
+    - generic [ref=f46e4]:
+      - link "Skip to Navigation" [ref=f46e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f46e6] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f46e9]:
+        - generic [ref=f46e10]: "Sandbox: QA |"
+        - link "Log out" [ref=f46e11] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f46e12]:
+        - button "Search" [ref=f46e18]: Search...
+        - navigation "Global Header" [ref=f46e23]:
+          - list [ref=f46e25]:
+            - listitem [ref=f46e26]:
+              - group [ref=f46e27]:
+                - button "Add favorite" [ref=f46e29] [cursor=pointer]:
+                  - generic [ref=f46e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f46e38] [cursor=pointer]:
+                  - generic [ref=f46e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f46e46]:
+              - button [ref=f46e52] [cursor=pointer]:
+                - generic [ref=f46e53]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f46e60]:
+              - button [ref=f46e62] [cursor=pointer]:
+                - generic [ref=f46e63]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f46e70]:
+              - button [ref=f46e73] [cursor=pointer]:
+                - generic [ref=f46e74]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f46e81]:
+              - button [ref=f46e87] [cursor=pointer]:
+                - generic [ref=f46e88]:
+                  - tooltip "Setup"
+            - listitem [ref=f46e95]:
+              - button "1 Notifications" [ref=f46e98] [cursor=pointer]:
+                - generic [ref=f46e99]:
+                  - generic [ref=f46e100]: "1"
+                  - tooltip "Notifications"
+              - generic [ref=f46e109]: 1 new notifications
+            - listitem [ref=f46e110]:
+              - button "View profile" [ref=f46e113] [cursor=pointer]:
+                - generic [ref=f46e114]:
+                  - tooltip "View profile"
+    - generic [ref=f46e118]:
+      - generic [ref=f46e121]:
+        - generic [ref=f46e123]:
+          - navigation "App" [ref=f46e124]:
+            - button "App Launcher" [ref=f46e126] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f46e138]
+        - navigation "Global" [ref=f46e142]:
+          - list [ref=f46e143]:
+            - listitem [ref=f46e144]:
+              - link "Home" [ref=f46e145] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f46e147]:
+              - link "Analytics" [ref=f46e148] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f46e150]:
+              - link "Opportunities" [ref=f46e151] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f46e156] [cursor=pointer]
+            - listitem [ref=f46e164]:
+              - link "Quotes" [ref=f46e165] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f46e170] [cursor=pointer]
+            - listitem [ref=f46e178] [cursor=pointer]:
+              - link "Leads" [ref=f46e179]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f46e184]
+            - listitem [ref=f46e192]:
+              - link "Tasks" [ref=f46e193] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f46e198] [cursor=pointer]
+            - listitem [ref=f46e206]:
+              - link "Files" [ref=f46e207] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f46e212] [cursor=pointer]
+            - listitem [ref=f46e220]:
+              - link "Accounts" [ref=f46e221] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f46e226] [cursor=pointer]
+            - listitem [ref=f46e234]:
+              - link "Contacts" [ref=f46e235] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f46e240] [cursor=pointer]
+            - listitem [ref=f46e248]:
+              - link "Campaigns" [ref=f46e249] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f46e254] [cursor=pointer]
+            - listitem [ref=f46e262]:
+              - link "Dashboards" [ref=f46e263] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f46e268] [cursor=pointer]
+            - listitem [ref=f46e276]:
+              - link "Reports" [ref=f46e277] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f46e282] [cursor=pointer]
+            - listitem [ref=f46e290]:
+              - link "Chatter" [ref=f46e291] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f46e293]:
+              - link "Groups" [ref=f46e294] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f46e299] [cursor=pointer]
+            - listitem [ref=f46e307]:
+              - button "Show more navigation items" [ref=f46e309] [cursor=pointer]:
+                - generic [ref=f46e310]: More
+            - listitem [ref=f46e318]:
+              - button "Edit nav items" [ref=f46e320] [cursor=pointer]
+      - main [ref=f46e327]:
+        - generic [ref=f46e343]:
+          - generic [ref=f46e352]:
+            - generic [ref=f46e353]:
+              - heading "Lead Khalid Al-Mannai" [level=1] [ref=f46e361]:
+                - generic [ref=f46e362]: Lead
+                - generic [ref=f46e364]: Khalid Al-Mannai
+              - button "Follow" [ref=f46e369] [cursor=pointer]
+              - generic [ref=f46e380]:
+                - generic "Edit" [ref=f46e381]:
+                  - button "Edit" [ref=f46e386] [cursor=pointer]
+                - generic "Delete" [ref=f46e387]:
+                  - button "Delete" [ref=f46e392] [cursor=pointer]
+                - generic "Change Owner" [ref=f46e393]:
+                  - button "Change Owner" [ref=f46e398] [cursor=pointer]
+                - generic [ref=f46e399]:
+                  - button "Show more actions" [expanded] [ref=f46e400] [cursor=pointer]
+                  - menu "Show more actions" [ref=f46e758]:
+                    - generic "Clone" [ref=f46e760]:
+                      - menuitem "Clone" [active] [ref=f46e765] [cursor=pointer]
+            - generic [ref=f46e406]:
+              - generic [ref=f46e408]:
+                - paragraph [ref=f46e409]: Title
+                - paragraph
+              - generic [ref=f46e411]:
+                - paragraph [ref=f46e412]: Company
+                - paragraph
+              - generic [ref=f46e414]:
+                - button [ref=f46e415] [cursor=pointer]:
+                  - paragraph [ref=f46e416]: Phone (2)
+                - list [ref=f46e424]:
+                  - paragraph [ref=f46e428]:
+                    - link "+974 5512 3401" [ref=f46e432] [cursor=pointer]:
+                      - /url: tel:+974 5512 3401
+              - generic [ref=f46e434]:
+                - paragraph [ref=f46e435]: Email
+                - paragraph
+          - article [ref=f46e444]:
+            - generic [ref=f46e445]:
+              - heading "Path" [level=2] [ref=f46e446]
+              - generic [ref=f46e449]:
+                - listbox "Path Options" [ref=f46e454]:
+                  - option "New" [selected] [ref=f46e455] [cursor=pointer]
+                  - option "Working" [ref=f46e457] [cursor=pointer]
+                  - option "Follow-up" [ref=f46e459] [cursor=pointer]
+                  - option "On-Hold" [ref=f46e461] [cursor=pointer]
+                  - option "Qualified" [ref=f46e463] [cursor=pointer]
+                  - option "Disqualified" [ref=f46e465] [cursor=pointer]
+                  - option "Converted" [ref=f46e467] [cursor=pointer]
+                - button "Mark Status as Complete" [ref=f46e471] [cursor=pointer]
+          - generic [ref=f46e479]:
+            - generic [ref=f46e485]:
+              - heading "Tabs" [level=2] [ref=f46e486]
+              - generic "Tabs" [ref=f46e487]:
+                - generic [ref=f46e488]:
+                  - heading "Tabs" [level=2] [ref=f46e489]
+                  - tablist "Tabs" [ref=f46e491]:
+                    - tab "Activity" [selected] [ref=f46e492] [cursor=pointer]
+                    - tab "Details" [ref=f46e493] [cursor=pointer]
+                    - tab "Chatter" [ref=f46e494] [cursor=pointer]
+                  - tabpanel "Activity" [ref=f46e497]:
+                    - generic [ref=f46e503]:
+                      - heading "Activity Publisher" [level=2] [ref=f46e504]
+                      - generic [ref=f46e505]:
+                        - group [ref=f46e506]:
+                          - generic [ref=f46e508]:
+                            - button "New Task" [ref=f46e509] [cursor=pointer]
+                            - generic [ref=f46e518]:
+                              - button "No Additional New Task Actions" [disabled]
+                        - group [ref=f46e519]:
+                          - generic [ref=f46e521]:
+                            - button "Log a Call" [ref=f46e522] [cursor=pointer]
+                            - button "More Log a Call Actions" [ref=f46e532] [cursor=pointer]
+                        - group [ref=f46e538]:
+                          - generic [ref=f46e540]:
+                            - button "New Event" [ref=f46e541] [cursor=pointer]
+                            - button "More New Event Actions" [ref=f46e551] [cursor=pointer]
+                      - heading "Activity Timeline" [level=2] [ref=f46e557]
+                      - generic [ref=f46e559]:
+                        - link "Skip to the bottom of the activity timeline" [ref=f46e560] [cursor=pointer]:
+                          - /url: javascript:void(0);
+                        - generic [ref=f46e562]:
+                          - generic [ref=f46e563]: "Filters: All time • All activities • All types"
+                          - button "Timeline Settings" [ref=f46e565] [cursor=pointer]
+                        - generic [ref=f46e573]:
+                          - button "Refresh" [ref=f46e574] [cursor=pointer]
+                          - text: •
+                          - button "Expand All. Show details for activities in the timeline." [ref=f46e575] [cursor=pointer]: Expand All
+                          - text: •
+                          - button "View All" [ref=f46e576] [cursor=pointer]
+                        - generic [ref=f46e578]:
+                          - heading [level=3] [ref=f46e579]:
+                            - button "Upcoming & Overdue" [expanded] [ref=f46e580] [cursor=pointer]
+                          - list [ref=f46e587]:
+                            - listitem [ref=f46e588]:
+                              - generic [ref=f46e590]:
+                                - button "Show details for SLA Reminder — First Contact Due (15 min)" [ref=f46e593] [cursor=pointer]:
+                                  - generic "Details for SLA Reminder — First Contact Due (15 min)" [ref=f46e594]: Details for
+                                - generic [ref=f46e601]:
+                                  - img "Task" [ref=f46e606]
+                                  - generic [ref=f46e607]:
+                                    - generic [ref=f46e608]:
+                                      - generic [ref=f46e610]:
+                                        - generic [ref=f46e614]:
+                                          - checkbox "SLA Reminder — First Contact Due (15 min)" [ref=f46e615]
+                                          - generic [ref=f46e617]: SLA Reminder — First Contact Due (15 min)
+                                        - generic [ref=f46e619]:
+                                          - link "SLA Reminder — First Contact Due (15 min)" [ref=f46e621] [cursor=pointer]:
+                                            - /url: /lightning/r/00TFV00Ctxb4atw2EA/view
+                                          - img "High-Priority task" [ref=f46e624]
+                                      - generic [ref=f46e626]:
+                                        - generic [ref=f46e627]:
+                                          - text: Aug 23
+                                          - generic [ref=f46e628]: Overdue
+                                        - button "Show more actions - SLA Reminder — First Contact Due (15 min)" [ref=f46e630] [cursor=pointer]
+                                    - generic [ref=f46e638]:
+                                      - link "CRM Supervisor" [ref=f46e640] [cursor=pointer]:
+                                        - /url: javascript:void(0);
+                                      - text: has an upcoming task
+                        - status [ref=f46e642]:
+                          - generic [ref=f46e643]: No past activity. Past meetings and tasks marked as done show up here.
+                        - link "Skip to the top of the activity timeline" [ref=f46e644] [cursor=pointer]:
+                          - /url: javascript:void(0);
+            - generic [ref=f46e647]:
+              - generic [ref=f46e651]:
+                - heading "Tabs" [level=2] [ref=f46e652]
+                - generic "Tabs" [ref=f46e653]:
+                  - generic [ref=f46e654]:
+                    - heading "Tabs" [level=2] [ref=f46e655]
+                    - tablist "Tabs" [ref=f46e657]:
+                      - tab "Related" [selected] [ref=f46e658] [cursor=pointer]
+                    - tabpanel "Related" [ref=f46e661]:
+                      - generic [ref=f46e662]:
+                        - article [ref=f46e667]:
+                          - generic "We found no potential duplicates of this Lead." [ref=f46e678]
+                        - article "Service Appointments" [ref=f46e688]:
+                          - generic [ref=f46e693]:
+                            - heading [level=2] [ref=f46e701]:
+                              - link "Service Appointments (0)" [ref=f46e702] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QFV00A2fF3kke2EB/related/ServiceAppointments/view
+                                - generic "Service Appointments" [ref=f46e703]
+                                - generic "(0)" [ref=f46e704]
+                            - button "Show actions for Service Appointments" [ref=f46e708] [cursor=pointer]
+              - generic [ref=f46e720]:
+                - article [ref=f46e722]:
+                  - heading "Interest Tags" [level=2] [ref=f46e733]
+                - list [ref=f46e738]:
+                  - listitem [ref=f46e739]:
+                    - link "Looks like you don’t have the right permissions to view this component. Contact your Salesforce admin for help." [ref=f46e740] [cursor=pointer]:
+                      - /url: javascript:void(0);
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f46e744]:
+          - listitem [ref=f46e745]:
+            - button "To Do List" [ref=f46e748] [cursor=pointer]
+  - generic:
+    - status

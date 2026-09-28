@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_CreditNote_EvidenceRequired</fullName>
+    <active>true</active>
+    <description>Supporting evidence is required before a cancellation/refund request can be submitted for approval.</description>
+    <errorConditionFormula>ISPICKVAL(AF_ApprovalStatus__c, &quot;Pending&quot;) &amp;&amp; ISBLANK(AF_EvidenceReference__c)</errorConditionFormula>
+    <errorMessage>Supporting evidence is required before this cancellation/refund request can be submitted for approval.</errorMessage>
+</ValidationRule>

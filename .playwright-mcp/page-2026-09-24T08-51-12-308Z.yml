@@ -1,0 +1,170 @@
+- generic:
+  - generic:
+    - generic [ref=f93e2]:
+      - generic [ref=f93e3]:
+        - link "Skip to Navigation" [ref=f93e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f93e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f93e195]:
+          - generic [ref=f93e196]: "Sandbox: QA |"
+          - link "Log out" [ref=f93e197] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f93e6]:
+          - button "Search" [ref=f93e13]: Search...
+          - navigation "Global Header" [ref=f93e18]:
+            - list [ref=f93e199]:
+              - listitem [ref=f93e200]:
+                - group [ref=f93e201]:
+                  - button "Add favorite" [ref=f93e203] [cursor=pointer]:
+                    - generic [ref=f93e204]:
+                      - tooltip "Add favorite"
+                  - button [ref=f93e212] [cursor=pointer]:
+                    - generic [ref=f93e213]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f93e220]:
+                - button [ref=f93e226] [cursor=pointer]:
+                  - generic [ref=f93e227]:
+                    - tooltip "Global Actions"
+              - listitem [ref=f93e234]:
+                - button [ref=f93e236] [cursor=pointer]:
+                  - generic [ref=f93e237]:
+                    - tooltip "Guidance Center"
+              - listitem [ref=f93e244]:
+                - button [ref=f93e247] [cursor=pointer]:
+                  - generic [ref=f93e248]:
+                    - tooltip "Salesforce Help"
+              - listitem
+              - listitem [ref=f93e255]:
+                - button "20+ Notifications" [ref=f93e258] [cursor=pointer]:
+                  - generic [ref=f93e259]:
+                    - generic [ref=f93e260]: 20+
+                    - tooltip "Notifications"
+                - generic [ref=f93e269]: 28 new notifications
+              - listitem [ref=f93e270]:
+                - button "View profile" [ref=f93e273] [cursor=pointer]:
+                  - generic [ref=f93e274]:
+                    - tooltip "View profile"
+      - generic [ref=f93e24]:
+        - generic [ref=f93e27]:
+          - generic [ref=f93e29]:
+            - navigation "App" [ref=f93e30]:
+              - button "App Launcher" [ref=f93e32] [cursor=pointer]
+            - heading "Automotive" [level=1] [ref=f93e44]
+          - navigation "Global" [ref=f93e48]:
+            - list [ref=f93e49]:
+              - listitem [ref=f93e50]:
+                - link "Home" [ref=f93e51] [cursor=pointer]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f93e53]:
+                - link "Vehicles" [ref=f93e54] [cursor=pointer]:
+                  - /url: /lightning/o/Vehicle/home
+                - button "Vehicles List" [ref=f93e59] [cursor=pointer]
+              - listitem [ref=f93e67]:
+                - link "Assets" [ref=f93e68] [cursor=pointer]:
+                  - /url: /lightning/o/Asset/home
+                - button "Assets List" [ref=f93e73] [cursor=pointer]
+              - listitem [ref=f93e81]:
+                - link "Vehicle Definitions" [ref=f93e82] [cursor=pointer]:
+                  - /url: /lightning/o/VehicleDefinition/home
+                - button "Vehicle Definitions List" [ref=f93e87] [cursor=pointer]
+              - listitem [ref=f93e95]:
+                - link "Products" [ref=f93e96] [cursor=pointer]:
+                  - /url: /lightning/o/Product2/home
+                - button "Products List" [ref=f93e101] [cursor=pointer]
+              - listitem [ref=f93e109]:
+                - link "Accounts" [ref=f93e110] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f93e115] [cursor=pointer]
+              - listitem [ref=f93e123]:
+                - link "Contacts" [ref=f93e124] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f93e129] [cursor=pointer]
+              - listitem [ref=f93e137]:
+                - link "Asset Milestones" [ref=f93e138] [cursor=pointer]:
+                  - /url: /lightning/o/AssetMilestone/home
+                - button "Asset Milestones List" [ref=f93e143] [cursor=pointer]
+              - listitem [ref=f93e278] [cursor=pointer]:
+                - link "Opportunities" [ref=f93e279]:
+                  - /url: /lightning/o/Opportunity/home
+                - button "Opportunities List" [ref=f93e284]
+              - listitem [ref=f93e165]:
+                - button "Show more navigation items" [ref=f93e167] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f93e168]: More
+              - listitem [ref=f93e176]:
+                - button "Edit nav items" [ref=f93e178] [cursor=pointer]
+        - main [ref=f93e185]:
+          - generic [ref=f93e298]:
+            - paragraph [ref=f93e299]: Looks like there's a problem.
+            - paragraph [ref=f93e300]: Unfortunately, there was a problem. Please try again. If the problem continues, get in touch with your administrator with the error ID shown here and any other related details.
+            - paragraph [ref=f93e301]: We couldn't find the record you're trying to access. It may have been deleted by another user, or there may have been a system error. Ask your administrator for help.
+    - dialog [ref=f93e302]:
+      - generic [ref=f93e304]:
+        - heading "Search..." [level=2] [ref=f93e305]
+        - generic [ref=f93e306]:
+          - generic [ref=f93e307]:
+            - generic [ref=f93e308]:
+              - alert [ref=f93e309]
+              - generic [ref=f93e310]:
+                - generic [ref=f93e311]: Search by object type
+                - combobox "Search by object type" [ref=f93e319]: "Search: All"
+                - status
+            - generic [ref=f93e328]:
+              - generic [ref=f93e329]: Search...
+              - searchbox "Search..." [active] [ref=f93e331]
+          - generic [ref=f93e335]:
+            - generic [ref=f93e338]:
+              - listbox "Suggestions" [ref=f93e339]:
+                - generic [ref=f93e340]:
+                  - option "contacts with lead source facebook" [ref=f93e341] [cursor=pointer]:
+                    - generic [ref=f93e350]: contacts with lead source facebook
+                  - generic [ref=f93e352]: contacts with lead source facebook
+                - generic [ref=f93e353]:
+                  - option "my accounts" [ref=f93e354] [cursor=pointer]:
+                    - generic [ref=f93e363]: my accounts
+                  - generic [ref=f93e365]: my accounts
+                - generic [ref=f93e366]:
+                  - option "my contacts" [ref=f93e367] [cursor=pointer]:
+                    - generic [ref=f93e376]: my contacts
+                  - generic [ref=f93e378]: my contacts
+                - generic [ref=f93e380]:
+                  - option "All Users People List" [ref=f93e381] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f93e389]:
+                      - generic [ref=f93e390]: All Users
+                      - generic [ref=f93e392]: People List
+                  - generic [ref=f93e394]: All Users
+                - generic [ref=f93e395]:
+                  - option "All Opportunities Opportunities List" [ref=f93e396] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f93e404]:
+                      - generic [ref=f93e405]: All Opportunities
+                      - generic [ref=f93e407]: Opportunities List
+                  - generic [ref=f93e409]: All Opportunities
+                - generic [ref=f93e410]:
+                  - option "All Test Drives Test Drives List" [ref=f93e411] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f93e419]:
+                      - generic [ref=f93e420]: All Test Drives
+                      - generic [ref=f93e422]: Test Drives List
+                  - generic [ref=f93e424]: All Test Drives
+              - status:
+                - generic [ref=f93e426]: To scroll through your search results, press the arrow keys.
+            - region [ref=f93e428]:
+              - generic [ref=f93e430]:
+                - heading "Do more with Search!" [level=2] [ref=f93e433]
+                - generic [ref=f93e442]:
+                  - heading "Get the right answers by searching..." [level=3] [ref=f93e443]
+                  - list [ref=f93e444]:
+                    - listitem [ref=f93e445]:
+                      - generic [ref=f93e446]: "\"[user name] cases\""
+                    - listitem [ref=f93e448]:
+                      - generic [ref=f93e449]: "\"[account name] cases\""
+                - generic [ref=f93e459]:
+                  - heading "Get insights" [level=3] [ref=f93e460]
+                  - list [ref=f93e461]:
+                    - listitem [ref=f93e462]:
+                      - generic [ref=f93e463]: "\"accounts last quarter\""
+                    - listitem [ref=f93e464]:
+                      - generic [ref=f93e465]: "\"leads in Portland\""
+                - link "Learn More" [ref=f93e469] [cursor=pointer]:
+                  - /url: /HelpAndTrainingDoor?version=2&resource=https%3A%2F%2Fhelp.salesforce.com%2FarticleView%3Fid%3Dsearch_ai_natural_lang_examples.htm
+  - generic:
+    - status

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Payment NOC Only - Signed NOC</label>
+    <protected>false</protected>
+    <values>
+        <field>AF_DocumentCondition__c</field>
+        <value xsi:type="xsd:string">Payment_5_NOCOnly</value>
+    </values>
+    <values>
+        <field>AF_DocumentName__c</field>
+        <value xsi:type="xsd:string">Signed NOC</value>
+    </values>
+    <values>
+        <field>AF_ParentId__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>AF_Required__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

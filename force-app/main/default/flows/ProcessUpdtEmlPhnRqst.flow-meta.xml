@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Determines whether isProcessServiceCatalogRequestFailed from the ProcessUpdateEmailOrPhoneRequestAndNotifyAccount step of the ProcessUpdateEmailOrPhoneRequestAndNotifyStakeholders stage is set to True</description>
+        <name>HasUpdateEmailorPhoneRequestFailed</name>
+        <label>Has Update Email or Phone Request Failed?</label>
+        <locationX>248</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsFailed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ProcessUpdateEmailOrPhoneRequestAndNotifyAccount.Outputs.isProcessServiceCatalogRequestFailed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>NotifyCaseOwnerOfFailure</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the &apos;isRetryConnection&apos; variable in the NotifyCaseOwnerOfFailedRequest is set to True, indicating that the user has chosen to retry the ProcessUpdateEmailOrPhoneRequestAndNotifyStakeholders stage.</description>
+        <name>IsRetrySelected</name>
+        <label>Is Retry Selected?</label>
+        <locationX>50</locationX>
+        <locationY>719</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>RetrySelected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NotifyCaseOwnerOfFailedRequest.Outputs.isRetryConnection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>ProcessUpdateEmailOrPhoneRequestAndNotifyStakeholders</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>ProcessUpdtEmlPhnRqst {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ProcessUpdtEmlPhnRqst</label>
+    <orchestratedStages>
+        <description>Notifies the case owner that the update email or phone request failed.</description>
+        <name>NotifyCaseOwnerOfFailure</name>
+        <label>Notify Case Owner of Failure</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <connector>
+            <targetReference>IsRetrySelected</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Assigns a work item to the service catalog request record owner that displays a retry screen, notifying them that the update email or phone request failed.</description>
+            <name>NotifyCaseOwnerOfFailedRequest</name>
+            <actionName>serviceprocess__AsyncApexCalloutSts</actionName>
+            <actionType>stepInteractive</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>status</name>
+                <value>
+                    <elementReference>ProcessUpdateEmailOrPhoneRequestAndNotifyAccount.Outputs.failureMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__RecordId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Case Owner of Failed Request</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>InteractiveStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Notifies the account associated with the triggering service catalog request that an update email or phone request has been made for the account. If your process requires that you notify other stakeholders, add more steps to notify them in this stage.</description>
+        <name>NotifyStakeholdersOfRequest</name>
+        <label>Notify Stakeholders of Request</label>
+        <locationX>248</locationX>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>ProcessUpdateEmailOrPhoneRequestAndNotifyStakeholders</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Emails the person associated with the account of the triggering service catalog request record when an update email or phone request has been made for the account and when the associated email can be determined.</description>
+            <name>NotifyAccountOfUpdateEmailOrPhoneRequest</name>
+            <actionName>serviceprocess__UpdateContactDetails</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>inputRecordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Account of  Update Email or Phone Request</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Attempts to process the update email or phone request, close the case, and notify the account associated with the triggering service catalog request. If your process requires that you notify other stakeholders about the success or case change in status, add more steps to notify them in this stage.</description>
+        <name>ProcessUpdateEmailOrPhoneRequestAndNotifyStakeholders</name>
+        <label>Process Update Email or Phone Request and Notify Stakeholders</label>
+        <locationX>248</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>HasUpdateEmailorPhoneRequestFailed</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Processes an update email or phone request and, if the request succeeds, closes the associated case. If an email is available and the case is closed, emails the customer to notify them that their request was processed and the case is closed. If the update email or phone request fails, returns True for isProcessServiceCatalogRequestFailed and an error message for failureMessage</description>
+            <name>ProcessUpdateEmailOrPhoneRequestAndNotifyAccount</name>
+            <actionName>serviceprocess__UpdateCase</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>accountEmail</name>
+                <value>
+                    <elementReference>NotifyAccountOfUpdateEmailOrPhoneRequest.Outputs.accountEmail</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>caseId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>emailSubjectCaseClosed</name>
+                <value>
+                    <stringValue>Your service request to Update Email or Phone was closed</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>integrationDefinitionDevName</name>
+                <value>
+                    <stringValue>FSC_UpdateEmailOrPhone</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Process Update Email or Phone Request and Notify Account</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Orchestrator</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <sourceTemplate>serviceprocess__ProcessUpdtEmlPhnRqst</sourceTemplate>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>NotifyStakeholdersOfRequest</targetReference>
+        </connector>
+        <filterFormula>{!$Record.SvcCatalogItemDefinition.DeveloperName}=&apos;UpdateEmailorPhone&apos;</filterFormula>
+        <object>SvcCatalogRequest</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

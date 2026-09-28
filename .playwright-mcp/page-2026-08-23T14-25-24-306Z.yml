@@ -1,0 +1,39 @@
+- generic [ref=f40e1]:
+  - generic [ref=f40e4]:
+    - generic [ref=f40e5]: Salesforce login
+    - heading "Change Your Password" [level=2] [ref=f40e9]
+    - generic [ref=f40e12]:
+      - paragraph [ref=f40e13]: "Enter a new password for abc.ghs.a8lkkhh7ajrz.n62oqwekox20.2mtsr5.swjtvjooad8e@alfardan.com.qa.qa. Make sure to include at least:"
+      - list [ref=f40e16]:
+        - listitem [ref=f40e17]:
+          - img "Does not meet requirements" [ref=f40e18]
+          - text: 8 characters
+        - listitem [ref=f40e19]:
+          - img "Does not meet requirements" [ref=f40e20]
+          - text: 1 letter
+        - listitem [ref=f40e21]:
+          - img "Does not meet requirements" [ref=f40e22]
+          - text: 1 number
+      - generic [ref=f40e23]: "* Current Password"
+      - textbox "* Current Password" [active] [ref=f40e25]
+      - generic [ref=f40e26]: "* New Password"
+      - textbox "* New Password" [ref=f40e28]
+      - generic [ref=f40e29]: "* Confirm New Password"
+      - textbox "* Confirm New Password" [ref=f40e31]
+      - generic [ref=f40e32]: "* New Security Question"
+      - combobox "* New Security Question" [ref=f40e34]:
+        - option "In what city were you born?" [selected]
+        - option "What is your mother's maiden name?"
+        - option "What is your pet's name?"
+        - option "What was your childhood nickname?"
+        - option "In what city did you meet your spouse/significant other?"
+        - option "What is the name of your favorite childhood friend?"
+        - option "In what city was your first job?"
+      - generic [ref=f40e35]: "* New Answer"
+      - textbox "* New Answer" [ref=f40e37]
+      - generic [ref=f40e38]: "*=required"
+      - generic [ref=f40e39]:
+        - button "Cancel" [ref=f40e40] [cursor=pointer]
+        - button "Change Password" [disabled] [ref=f40e41]
+      - paragraph [ref=f40e42]: Password was last changed on ٢٣/٨/٢٠٢٦, ٥:٤٤ AM.
+  - generic [ref=f40e43]: © 2026 Salesforce, Inc. All rights reserved.

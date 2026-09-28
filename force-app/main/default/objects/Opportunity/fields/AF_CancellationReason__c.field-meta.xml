@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_CancellationReason__c</fullName>
+    <description>LFRDN-343 / ALF-RS-13 FR1. All values proposed — cancellation policy and reason list pending confirmation from business/finance per the story&apos;s Assumptions section.</description>
+    <label>Cancellation Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Changed Mind</fullName>
+                <default>false</default>
+                <label>Customer Changed Mind</label>
+            </value>
+            <value>
+                <fullName>Financing Fell Through</fullName>
+                <default>false</default>
+                <label>Financing Fell Through</label>
+            </value>
+            <value>
+                <fullName>Vehicle Delivery Delay</fullName>
+                <default>false</default>
+                <label>Vehicle Delivery Delay</label>
+            </value>
+            <value>
+                <fullName>Trade-In Issue</fullName>
+                <default>false</default>
+                <label>Trade-In Issue</label>
+            </value>
+            <value>
+                <fullName>Duplicate Order</fullName>
+                <default>false</default>
+                <label>Duplicate Order</label>
+            </value>
+            <value>
+                <fullName>Pricing / Commercial Dispute</fullName>
+                <default>false</default>
+                <label>Pricing / Commercial Dispute</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Category_Already_Set</name>
+        <label>Category Already Set?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Which_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Blank</defaultConnectorLabel>
+        <rules>
+            <name>Already_Set</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_ContactCategory__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Already Set</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Record_Type</name>
+        <label>Which Record Type?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
+        <rules>
+            <name>Is_Brand_Profile</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AF_Brand_Profile</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Brand_Profile</targetReference>
+            </connector>
+            <label>Is Brand Profile</label>
+        </rules>
+        <rules>
+            <name>Is_Related_Person</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AF_Related_Person</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Related_Person</targetReference>
+            </connector>
+            <label>Is Related Person</label>
+        </rules>
+    </decisions>
+    <description>Stamps Contact.AF_ContactCategory__c from the record type on create, since only AF_LeadConversionService.cls sets it today and any Contact created directly (e.g. via the standard New button under an Account) was left with a blank category. Before-save, no extra DML. Only fires when the field is blank so a deliberate manual value is never overwritten.</description>
+    <environments>Default</environments>
+    <interviewLabel>Contact Set Category {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact Set Category</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Brand_Profile</name>
+        <label>Set Category - Brand Profile</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>AF_ContactCategory__c</field>
+            <value>
+                <stringValue>Brand Profile</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Related_Person</name>
+        <label>Set Category - Related Person</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>AF_ContactCategory__c</field>
+            <value>
+                <stringValue>Related Person</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Category_Already_Set</targetReference>
+        </connector>
+        <object>Contact</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>10</triggerOrder>
+</Flow>

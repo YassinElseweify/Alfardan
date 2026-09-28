@@ -1,0 +1,98 @@
+- generic [active]:
+  - generic [ref=f247e2]:
+    - generic [ref=f247e3]:
+      - link "Skip to Navigation" [ref=f247e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f247e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f247e8]:
+        - generic [ref=f247e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f247e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f247e11]:
+        - button "Search" [ref=f247e18]: Search...
+        - navigation "Global Header" [ref=f247e23]:
+          - list [ref=f247e25]:
+            - listitem [ref=f247e26]:
+              - group [ref=f247e27]:
+                - button "This item doesn't support favorites" [ref=f247e29] [cursor=pointer]:
+                  - generic [ref=f247e30]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f247e38] [cursor=pointer]:
+                  - generic [ref=f247e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f247e46]:
+              - button [ref=f247e52] [cursor=pointer]:
+                - generic [ref=f247e53]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f247e60]:
+              - button [ref=f247e62] [cursor=pointer]:
+                - generic [ref=f247e63]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f247e70]:
+              - button [ref=f247e73] [cursor=pointer]:
+                - generic [ref=f247e74]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f247e81]:
+              - button "3 Notifications" [ref=f247e84] [cursor=pointer]:
+                - generic [ref=f247e85]:
+                  - generic [ref=f247e86]: "3"
+                  - tooltip "Notifications"
+              - generic [ref=f247e95]: 3 new notifications
+            - listitem [ref=f247e96]:
+              - button "View profile" [ref=f247e99] [cursor=pointer]:
+                - generic [ref=f247e100]:
+                  - tooltip "View profile"
+    - generic [ref=f247e104]:
+      - generic [ref=f247e107]:
+        - generic [ref=f247e109]:
+          - navigation "App" [ref=f247e110]:
+            - button "App Launcher" [ref=f247e112] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f247e124]
+        - navigation "Global" [ref=f247e128]:
+          - list [ref=f247e129]:
+            - listitem [ref=f247e130]:
+              - link "Home" [ref=f247e131] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f247e133]:
+              - link "Vehicles" [ref=f247e134] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f247e139] [cursor=pointer]
+            - listitem [ref=f247e147]:
+              - link "Assets" [ref=f247e148] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f247e153] [cursor=pointer]
+            - listitem [ref=f247e161]:
+              - link "Vehicle Definitions" [ref=f247e162] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f247e167] [cursor=pointer]
+            - listitem [ref=f247e175]:
+              - link "Products" [ref=f247e176] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f247e181] [cursor=pointer]
+            - listitem [ref=f247e189]:
+              - link "Accounts" [ref=f247e190] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f247e195] [cursor=pointer]
+            - listitem [ref=f247e203]:
+              - link "Contacts" [ref=f247e204] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f247e209] [cursor=pointer]
+            - listitem [ref=f247e217]:
+              - link "Asset Milestones" [ref=f247e218] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f247e223] [cursor=pointer]
+            - listitem [ref=f247e231]:
+              - button "* Show more navigation items" [ref=f247e233] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f247e234]: "*"
+                - generic [aria-hidden] [ref=f247e235]: More
+                - generic [ref=f247e242]: Show more navigation items
+            - listitem [ref=f247e243]:
+              - button "Edit nav items" [ref=f247e245] [cursor=pointer]
+      - main [ref=f247e252]:
+        - generic [ref=f247e264]:
+          - heading "Something went wrong" [level=3] [ref=f247e265]
+          - paragraph [ref=f247e266]: Unfortunately, the related list you're trying to view isn't in the layout. Please get in touch with your administrator.
+  - generic:
+    - status

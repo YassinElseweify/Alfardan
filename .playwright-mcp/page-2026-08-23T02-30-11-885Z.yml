@@ -1,0 +1,17 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e4]:
+    - generic [ref=f11e5]: Salesforce login
+    - heading "Verify Your Identity" [level=2] [ref=f11e9]
+    - generic [ref=f11e11]:
+      - paragraph [ref=f11e38]:
+        - text: You're trying to
+        - strong [ref=f11e39]: log in to Salesforce
+        - text: . For security reasons, we have to verify your identity. Use any passkey on your account.
+      - paragraph [ref=f11e40]: Account
+      - link "emea-delivery-operations@arcsen.com" [ref=f11e41] [cursor=pointer]:
+        - /url: /secur/logout.jsp
+      - paragraph [ref=f11e49]: Contact your admin and request a temporary verification code. If you still have issues, contact Salesforce Support.
+      - button "Verify Your Identity" [ref=f11e51] [cursor=pointer]
+      - link "Having Trouble?" [ref=f11e59] [cursor=pointer]:
+        - /url: https://help.salesforce.com/s/articleView?id=sf.use_built_in_authenticators_as_a_verification_method.htm&type=5
+  - generic [ref=f11e60]: © 2026 Salesforce, Inc. All rights reserved.

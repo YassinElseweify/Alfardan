@@ -1,0 +1,39 @@
+- generic [ref=f46e1]:
+  - generic [ref=f46e4]:
+    - generic [ref=f46e5]: Salesforce login
+    - heading "Change Your Password" [level=2] [ref=f46e9]
+    - generic [ref=f46e12]:
+      - paragraph [ref=f46e13]: "Enter a new password for salesreceptionist.v2.20260823@alfardan.com.qa.qa. Make sure to include at least:"
+      - list [ref=f46e16]:
+        - listitem [ref=f46e17]:
+          - img "Does not meet requirements" [ref=f46e18]
+          - text: 8 characters
+        - listitem [ref=f46e19]:
+          - img "Does not meet requirements" [ref=f46e20]
+          - text: 1 letter
+        - listitem [ref=f46e21]:
+          - img "Does not meet requirements" [ref=f46e22]
+          - text: 1 number
+      - generic [ref=f46e23]: "* Current Password"
+      - textbox "* Current Password" [active] [ref=f46e25]
+      - generic [ref=f46e26]: "* New Password"
+      - textbox "* New Password" [ref=f46e28]
+      - generic [ref=f46e29]: "* Confirm New Password"
+      - textbox "* Confirm New Password" [ref=f46e31]
+      - generic [ref=f46e32]: "* New Security Question"
+      - combobox "* New Security Question" [ref=f46e34]:
+        - option "In what city were you born?" [selected]
+        - option "What is your mother's maiden name?"
+        - option "What is your pet's name?"
+        - option "What was your childhood nickname?"
+        - option "In what city did you meet your spouse/significant other?"
+        - option "What is the name of your favorite childhood friend?"
+        - option "In what city was your first job?"
+      - generic [ref=f46e35]: "* New Answer"
+      - textbox "* New Answer" [ref=f46e37]
+      - generic [ref=f46e38]: "*=required"
+      - generic [ref=f46e39]:
+        - button "Cancel" [ref=f46e40] [cursor=pointer]
+        - button "Change Password" [disabled] [ref=f46e41]
+      - paragraph [ref=f46e42]: Password was last changed on ٢٣/٨/٢٠٢٦, ١٠:٣٠ AM.
+  - generic [ref=f46e43]: © 2026 Salesforce, Inc. All rights reserved.

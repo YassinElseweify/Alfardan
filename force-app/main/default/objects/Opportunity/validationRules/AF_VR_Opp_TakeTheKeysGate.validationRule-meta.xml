@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_TakeTheKeysGate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Take the Keys&quot;),
+    OR(
+        ISBLANK(AF_InvoiceSummary__c),
+        AF_InvoiceBalance__c &lt;&gt; 0
+    )
+)</errorConditionFormula>
+    <errorMessage>Take the Keys requires a settled Invoice Summary: either no invoice has been created for this deal yet (a reservation must be made first), or the invoice balance is not yet zero.</errorMessage>
+</ValidationRule>

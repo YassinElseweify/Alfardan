@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Vehicle_In_Stock</name>
+        <label>Vehicle In Stock?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Suppress_VIN</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not In Stock / No Vehicle</defaultConnectorLabel>
+        <rules>
+            <name>In_Stock</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Vehicle.AF_InventoryStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Stock</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_VIN</targetReference>
+            </connector>
+            <label>In Stock</label>
+        </rules>
+    </decisions>
+    <description>When a QuoteLineItem&apos;s Vehicle is set or its Vehicle&apos;s inventory status changes, pushes Vehicle.VehicleIdentificationNumber onto the parent Quote&apos;s AF_VINDisplay__c only when the Vehicle is In Stock; suppresses (blanks) it for In Transit, Ordered, or no vehicle. Fires after save on create and whenever AF_Vehicle__c changes, since a before-save flow cannot traverse to the parent Quote via update. 2026-09-10 fix: start filter used to fire on ISNEW() for ANY QuoteLineItem, not just Vehicle-type lines - creating an unrelated line (e.g. a &quot;Discount Adjustment&quot; line from AF_FL_Quote_ApplySelfAuthorizedDiscount/AF_FL_Quote_DiscountApproved) triggered this flow to update the same parent Quote that was already mid-save inside the flow that created the line, causing an opaque &quot;unhandled fault&quot; (CANNOT_EXECUTE_FLOW_TRIGGER) from the resulting same-record recursive-update collision. Narrowed the trigger to AF_LineItemType__c = &apos;Vehicle&apos; so only the line type this flow actually cares about can fire it.</description>
+    <environments>Default</environments>
+    <interviewLabel>Quote Line Item Sync VIN Display {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote Line Item Sync VIN Display</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Vehicle</name>
+        <label>Get Vehicle</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Vehicle_In_Stock</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Vehicle__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Vehicle</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Populate_VIN</name>
+        <label>Populate VIN on Quote</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.QuoteId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_VINDisplay__c</field>
+            <value>
+                <elementReference>Get_Vehicle.VehicleIdentificationNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Quote</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Suppress_VIN</name>
+        <label>Suppress VIN on Quote</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.QuoteId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_VINDisplay__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <object>Quote</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Vehicle</targetReference>
+        </connector>
+        <filterFormula>ISPICKVAL({!$Record.AF_LineItemType__c}, &quot;Vehicle&quot;) &amp;&amp; OR(ISNEW(), ISCHANGED({!$Record.AF_Vehicle__c}))</filterFormula>
+        <object>QuoteLineItem</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

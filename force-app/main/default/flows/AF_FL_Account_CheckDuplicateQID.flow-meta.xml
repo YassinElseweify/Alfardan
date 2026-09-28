@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Duplicate_Found</name>
+        <label>Assign Duplicate Found</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_DuplicateQIDFound__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Has_Duplicate</name>
+        <label>Has Duplicate?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Duplicate_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Find_Duplicate_QID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Duplicate_Found</targetReference>
+            </connector>
+            <label>Duplicate Found</label>
+        </rules>
+    </decisions>
+    <description>Replaces the native unique-field constraint&apos;s raw system error (&quot;AF_QID__c duplicates value on record with id: 001...&quot;) with a friendly one naming the conflicting field. AF_QID__c stays marked unique as a defense-in-depth safety net, but this flow + AF_VR_Account_BlockDuplicateQID intercept the normal case first.
+
+EXPANDED 2026-08-27: originally QID-only. Extended to also block on Phone and Other ID Number (AF_OtherIdNumber__c), per direct request — Account-level duplicate prevention should cover all 3 identity fields, not just QID. Single lookup with OR filter logic across all three fields (same pattern as AF_FL_Lead_CheckAccountMatch), using the same blank-safe sentinel-formula trick as AF_FL_Lead_ShortWindowGuard so two blank fields never falsely match each other. Reuses the existing AF_DuplicateQIDFound__c flag/field rather than adding a new one — it now means &quot;a duplicate was found on QID, Phone, or Other ID Number&quot;, not QID specifically.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_OtherIdMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.AF_OtherIdNumber__c}), &quot;___AF_NO_OTHERID___&quot;, {!$Record.AF_OtherIdNumber__c})</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_PhoneMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Phone}), &quot;___AF_NO_PHONE___&quot;, {!$Record.Phone})</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_QIDMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.AF_QID__c}), &quot;___AF_NO_QID___&quot;, {!$Record.AF_QID__c})</expression>
+    </formulas>
+    <interviewLabel>AF Account Check Duplicate QID {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Check Duplicate QID</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Find_Duplicate_QID</name>
+        <label>Find Duplicate Match</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Duplicate</targetReference>
+        </connector>
+        <filterLogic>(1 AND 2) AND (3 OR 4 OR 5)</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.RecordTypeId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_QID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_QIDMatchValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_PhoneMatchValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_OtherIdNumber__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_OtherIdMatchValue</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Find_Duplicate_QID</targetReference>
+        </connector>
+        <filterFormula>AND(
+    OR(NOT(ISBLANK({!$Record.AF_QID__c})), NOT(ISBLANK({!$Record.Phone})), NOT(ISBLANK({!$Record.AF_OtherIdNumber__c}))),
+    OR(ISNEW(), ISCHANGED({!$Record.AF_QID__c}), ISCHANGED({!$Record.Phone}), ISCHANGED({!$Record.AF_OtherIdNumber__c}))
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Before_Set_Gate_Passed</name>
+        <label>Set Stage Gate Passed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_StageGatePassed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_ResultRecorded</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Before-save on AF_TestDrive__c: sets AF_StageGatePassed__c = true once a Result is recorded (AF_VR_TestDrive_RefusedRemarksRequired already guarantees Remarks are present if Refused) — LFRDN-622. Paired with AF_FL_TestDrive_SyncOpportunityGate, the after-save flow that pushes this up to the parent Opportunity. Note 2026-09-09: the &quot;Cancelled&quot; status value was retired (merged into Refused, which always gets Result=Refused via AF_VR_TestDrive_StatusResultConsistency) — removed the old Status=Cancelled OR-branch, which existed only because Cancelled test drives never got a Result value; that gap no longer exists.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_ResultRecorded</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISBLANK(TEXT({!$Record.AF_Result__c})))</expression>
+    </formulas>
+    <interviewLabel>Test Drive Update Gate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Test Drive Update Gate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Before_Set_Gate_Passed</targetReference>
+        </connector>
+        <filterFormula>OR(ISNEW(), ISCHANGED({!$Record.AF_Result__c}), ISCHANGED({!$Record.AF_Status__c}))</filterFormula>
+        <object>AF_TestDrive__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

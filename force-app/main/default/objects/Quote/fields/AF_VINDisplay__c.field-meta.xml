@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VINDisplay__c</fullName>
+    <description>Populated when in-stock, suppressed when non-stock, reissued on arrival. Populate via automation — not a stored formula (depends on linked Vehicle stock status).</description>
+    <externalId>false</externalId>
+    <label>VIN Display</label>
+    <length>17</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

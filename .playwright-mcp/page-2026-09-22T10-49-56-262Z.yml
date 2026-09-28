@@ -1,0 +1,418 @@
+- generic [active]:
+  - generic [ref=f19e2]:
+    - generic [ref=f19e3]:
+      - link "Skip to Navigation" [ref=f19e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f19e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f19e27]:
+        - generic [ref=f19e28]: "Sandbox: QA |"
+        - link "Log out" [ref=f19e29] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f19e6]:
+        - button "Search" [ref=f19e34]: Search...
+        - navigation "Global Header" [ref=f19e9]:
+          - list [ref=f19e40]:
+            - listitem [ref=f19e41]:
+              - group [ref=f19e42]:
+                - button "Add favorite" [ref=f19e44] [cursor=pointer]:
+                  - generic [ref=f19e45]:
+                    - tooltip "Add favorite"
+                - button [ref=f19e53] [cursor=pointer]:
+                  - generic [ref=f19e54]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f19e61]:
+              - button [ref=f19e67] [cursor=pointer]:
+                - generic [ref=f19e68]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f19e75]:
+              - button [ref=f19e77] [cursor=pointer]:
+                - generic [ref=f19e78]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f19e85]:
+              - button [ref=f19e88] [cursor=pointer]:
+                - generic [ref=f19e89]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f19e96]:
+              - button "5 Notifications" [ref=f19e99] [cursor=pointer]:
+                - generic [ref=f19e100]:
+                  - generic [ref=f19e101]: "5"
+                  - tooltip "Notifications"
+              - generic [ref=f19e110]: 5 new notifications
+            - listitem [ref=f19e111]:
+              - button "View profile" [ref=f19e114] [cursor=pointer]:
+                - generic [ref=f19e115]:
+                  - tooltip "View profile"
+    - generic [ref=f19e15]:
+      - generic [ref=f19e121]:
+        - generic [ref=f19e123]:
+          - navigation "App" [ref=f19e124]:
+            - button "App Launcher" [ref=f19e126] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f19e138]
+        - navigation "Global" [ref=f19e142]:
+          - list [ref=f19e143]:
+            - listitem [ref=f19e144]:
+              - link "Home" [ref=f19e145] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f19e147]:
+              - link "Vehicles" [ref=f19e148] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f19e153] [cursor=pointer]
+            - listitem [ref=f19e161]:
+              - link "Assets" [ref=f19e162] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f19e167] [cursor=pointer]
+            - listitem [ref=f19e175]:
+              - link "Vehicle Definitions" [ref=f19e176] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f19e181] [cursor=pointer]
+            - listitem [ref=f19e189]:
+              - link "Products" [ref=f19e190] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f19e195] [cursor=pointer]
+            - listitem [ref=f19e203]:
+              - link "Accounts" [ref=f19e204] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f19e209] [cursor=pointer]
+            - listitem [ref=f19e217]:
+              - link "Contacts" [ref=f19e218] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f19e223] [cursor=pointer]
+            - listitem [ref=f19e231]:
+              - link "Asset Milestones" [ref=f19e232] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f19e237] [cursor=pointer]
+            - listitem [ref=f19e245] [cursor=pointer]:
+              - link "* RES-00137 | Vehicle Reservation" [ref=f19e246]:
+                - /url: /lightning/r/AF_VehicleReservation__c/a0WFV000ex3STxQ2AW/view
+                - generic "Not added to nav bar" [ref=f19e247]: "*"
+                - generic [ref=f19e248]: RES-00137 | Vehicle Reservation
+              - button "RES-00137 | Vehicle Reservation List" [ref=f19e252]
+              - button "Close tab" [ref=f19e260]
+            - listitem [ref=f19e268]:
+              - button "* Show more navigation items" [ref=f19e270] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f19e271]: "*"
+                - generic [aria-hidden] [ref=f19e272]: More
+                - generic [ref=f19e279]: Show more navigation items
+            - listitem [ref=f19e280]:
+              - button "Edit nav items" [ref=f19e282] [cursor=pointer]
+      - main [ref=f19e17]:
+        - generic [ref=f19e299]:
+          - generic [ref=f19e309]:
+            - generic [ref=f19e315]:
+              - generic [ref=f19e316]: Vehicle Reservation
+              - heading "RES-00137" [level=1] [ref=f19e318]
+            - button "Follow" [ref=f19e324] [cursor=pointer]
+            - generic [ref=f19e335]:
+              - generic "Edit" [ref=f19e336]:
+                - button "Edit" [ref=f19e341] [cursor=pointer]
+              - generic "Generate Reservation Contract" [ref=f19e342]:
+                - button "Generate Reservation Contract" [ref=f19e347] [cursor=pointer]
+          - generic [ref=f19e349]:
+            - generic [ref=f19e357]:
+              - heading "Tabs" [level=2] [ref=f19e358]
+              - tablist "Tabs" [ref=f19e360]:
+                - tab "Related" [ref=f19e361] [cursor=pointer]
+                - tab "Details" [selected] [ref=f19e362] [cursor=pointer]
+              - tabpanel "Details" [ref=f19e365]:
+                - generic [ref=f19e378]:
+                  - generic [ref=f19e380]:
+                    - heading [level=3] [ref=f19e381]:
+                      - button "Reservation Details" [expanded] [ref=f19e382] [cursor=pointer]
+                    - list [ref=f19e392]:
+                      - generic [ref=f19e393]:
+                        - generic [ref=f19e395]:
+                          - listitem [ref=f19e397]:
+                            - generic [ref=f19e398]:
+                              - generic [ref=f19e399]: Reservation Number
+                              - generic [ref=f19e400]: RES-00137
+                          - listitem [ref=f19e404]:
+                            - generic [ref=f19e405]:
+                              - generic [ref=f19e406]: Reservation Status
+                              - generic [ref=f19e407]:
+                                - generic [ref=f19e408]: Reserved
+                                - button "Edit Reservation Status" [ref=f19e410] [cursor=pointer]
+                        - generic [ref=f19e414]:
+                          - listitem [ref=f19e416]:
+                            - generic [ref=f19e417]:
+                              - generic [ref=f19e418]: Account
+                              - generic [ref=f19e419]:
+                                - generic [ref=f19e425]:
+                                  - link "DEMO RS10 Customer - Khalid Al-Mannai" [ref=f19e426] [cursor=pointer]:
+                                    - /url: /lightning/r/Account/001FV00L3Cqvq5UYUQ/view
+                                  - button "Preview" [ref=f19e432] [cursor=pointer]
+                                - button "Edit Account" [ref=f19e438] [cursor=pointer]
+                          - listitem [ref=f19e442]:
+                            - generic [ref=f19e443]:
+                              - generic [ref=f19e444]: Contract Type / Duration
+                              - generic [ref=f19e445]:
+                                - generic [ref=f19e446]: 3-Day (No Deposit)
+                                - button "Edit Contract Type / Duration" [ref=f19e448] [cursor=pointer]
+                        - generic [ref=f19e452]:
+                          - listitem [ref=f19e454]:
+                            - generic [ref=f19e455]:
+                              - generic [ref=f19e456]: Contact
+                              - button "Edit Contact" [ref=f19e459] [cursor=pointer]
+                          - listitem [ref=f19e463]:
+                            - generic [ref=f19e464]:
+                              - generic [ref=f19e465]: Reservation Start Date
+                              - generic [ref=f19e466]:
+                                - generic [ref=f19e467]: 22/09/2026
+                                - button "Edit Reservation Start Date" [ref=f19e469] [cursor=pointer]
+                        - generic [ref=f19e473]:
+                          - listitem [ref=f19e475]:
+                            - generic [ref=f19e476]:
+                              - generic [ref=f19e477]: Opportunity
+                              - generic [ref=f19e478]:
+                                - generic [ref=f19e484]:
+                                  - link "DEMO RS10 13 - Real retail cycle end to end" [ref=f19e485] [cursor=pointer]:
+                                    - /url: /lightning/r/Opportunity/006FV00Bhdn1CVAYE2/view
+                                  - button "Preview" [ref=f19e491] [cursor=pointer]
+                                - button "Edit Opportunity" [ref=f19e497] [cursor=pointer]
+                          - listitem [ref=f19e501]:
+                            - generic [ref=f19e502]:
+                              - generic [ref=f19e503]: Expiry Date
+                              - generic [ref=f19e504]:
+                                - generic [ref=f19e505]: 25/09/2026
+                                - button "Edit Expiry Date" [ref=f19e507] [cursor=pointer]
+                        - generic [ref=f19e511]:
+                          - listitem [ref=f19e513]:
+                            - generic [ref=f19e514]:
+                              - generic [ref=f19e515]: Quote
+                              - generic [ref=f19e516]:
+                                - generic [ref=f19e522]:
+                                  - link "DEMO RS10 13 - Real retail cycle end to end" [ref=f19e523] [cursor=pointer]:
+                                    - /url: /lightning/r/Quote/0Q0FV004UZQMx1I0YT/view
+                                  - button "Preview" [ref=f19e529] [cursor=pointer]
+                                - button "Edit Quote" [ref=f19e535] [cursor=pointer]
+                          - listitem [ref=f19e539]:
+                            - generic [ref=f19e540]:
+                              - generic [ref=f19e541]: Owner
+                              - generic [ref=f19e546]:
+                                - generic [ref=f19e553]:
+                                  - link "Arcsen Alfardan" [ref=f19e554] [cursor=pointer]:
+                                    - /url: /lightning/r/Name/005a3001vLvmFZ6AQM/view
+                                  - button "Preview" [ref=f19e560] [cursor=pointer]
+                                - button "Change Owner" [ref=f19e567] [cursor=pointer]
+                  - generic [ref=f19e574]:
+                    - heading [level=3] [ref=f19e575]:
+                      - button "Vehicle & Stock" [expanded] [ref=f19e576] [cursor=pointer]
+                    - list [ref=f19e586]:
+                      - generic [ref=f19e587]:
+                        - generic [ref=f19e589]:
+                          - listitem [ref=f19e591]:
+                            - generic [ref=f19e592]:
+                              - generic [ref=f19e593]: Vehicle Source Type
+                              - generic [ref=f19e594]:
+                                - generic [ref=f19e595]: In Transit / Ordered
+                                - button "Edit Vehicle Source Type" [ref=f19e597] [cursor=pointer]
+                          - listitem [ref=f19e601]:
+                            - generic [ref=f19e602]:
+                              - generic [ref=f19e603]: Product
+                              - button "Edit Product" [ref=f19e606] [cursor=pointer]
+                        - generic [ref=f19e610]:
+                          - listitem [ref=f19e612]:
+                            - generic [ref=f19e613]:
+                              - generic [ref=f19e614]: Vehicle
+                              - generic [ref=f19e615]:
+                                - generic [ref=f19e621]:
+                                  - link "Ferrari 296 GTB - In Transit (Awaiting VIN)" [ref=f19e622] [cursor=pointer]:
+                                    - /url: /lightning/r/Vehicle/0vLFV0004R4NNWG2Q4/view
+                                  - button "Preview" [ref=f19e628] [cursor=pointer]
+                                - button "Edit Vehicle" [ref=f19e634] [cursor=pointer]
+                          - listitem [ref=f19e638]:
+                            - generic [ref=f19e639]: Stock Release Status
+                        - listitem [ref=f19e645]:
+                          - generic [ref=f19e646]:
+                            - generic [ref=f19e647]: Vehicle Definition
+                            - generic [ref=f19e648]:
+                              - generic [ref=f19e654]:
+                                - 'link "VD: Ferrari 296 GTB" [ref=f19e655] [cursor=pointer]':
+                                  - /url: /lightning/r/VehicleDefinition/1PqFV0002sT3hsa0AB/view
+                                - button "Preview" [ref=f19e661] [cursor=pointer]
+                              - button "Edit Vehicle Definition" [ref=f19e667] [cursor=pointer]
+                  - generic [ref=f19e672]:
+                    - heading [level=3] [ref=f19e673]:
+                      - button "Deposit & Payment" [expanded] [ref=f19e674] [cursor=pointer]
+                    - list [ref=f19e684]:
+                      - generic [ref=f19e685]:
+                        - generic [ref=f19e687]:
+                          - listitem [ref=f19e689]:
+                            - generic [ref=f19e690]:
+                              - generic [ref=f19e691]: Deposit Required?
+                              - generic [ref=f19e692]:
+                                - generic [ref=f19e697]:
+                                  - generic "False" [ref=f19e698]
+                                  - generic [ref=f19e705]: Deposit Required?
+                                - button "Edit Deposit Required?" [ref=f19e706] [cursor=pointer]
+                          - listitem [ref=f19e710]:
+                            - generic [ref=f19e711]:
+                              - generic [ref=f19e712]: Vehicle Price + Add-Ons
+                              - generic [ref=f19e713]:
+                                - generic [ref=f19e714]: AED 398,300.00
+                                - button "Edit Vehicle Price + Add-Ons" [ref=f19e716] [cursor=pointer]
+                        - generic [ref=f19e720]:
+                          - listitem [ref=f19e722]:
+                            - generic [ref=f19e723]:
+                              - generic [ref=f19e724]: Deposit Amount
+                              - button "Edit Deposit Amount" [ref=f19e726] [cursor=pointer]
+                          - listitem [ref=f19e730]:
+                            - generic [ref=f19e731]:
+                              - generic [ref=f19e732]: Remaining Balance
+                              - generic [ref=f19e733]: AED 398,300.00
+                        - generic [ref=f19e737]:
+                          - listitem [ref=f19e739]:
+                            - generic [ref=f19e740]:
+                              - generic [ref=f19e741]: Trade-In Used As Deposit?
+                              - generic [ref=f19e742]:
+                                - generic [ref=f19e747]:
+                                  - generic "False" [ref=f19e748]
+                                  - generic [ref=f19e755]: Trade-In Used As Deposit?
+                                - button "Edit Trade-In Used As Deposit?" [ref=f19e756] [cursor=pointer]
+                          - listitem [ref=f19e760]:
+                            - generic [ref=f19e761]:
+                              - generic [ref=f19e762]: Payment
+                              - button "Edit Payment" [ref=f19e765] [cursor=pointer]
+                  - generic [ref=f19e769]:
+                    - heading [level=3] [ref=f19e770]:
+                      - button "Approval & Extension" [expanded] [ref=f19e771] [cursor=pointer]
+                    - list [ref=f19e781]:
+                      - generic [ref=f19e782]:
+                        - generic [ref=f19e784]:
+                          - listitem [ref=f19e786]:
+                            - generic [ref=f19e787]:
+                              - generic [ref=f19e788]: Approval Status
+                              - generic [ref=f19e789]: Not Required
+                          - listitem [ref=f19e793]:
+                            - generic [ref=f19e794]:
+                              - generic [ref=f19e795]: Is Extension?
+                              - generic [ref=f19e796]:
+                                - generic [ref=f19e801]:
+                                  - generic "False" [ref=f19e802]
+                                  - generic [ref=f19e809]: Is Extension?
+                                - button "Edit Is Extension?" [ref=f19e810] [cursor=pointer]
+                        - generic [ref=f19e814]:
+                          - listitem [ref=f19e816]:
+                            - generic [ref=f19e817]: Approval Reference
+                          - listitem [ref=f19e821]:
+                            - generic [ref=f19e822]:
+                              - generic [ref=f19e823]: Extended From Reservation
+                              - button "Edit Extended From Reservation" [ref=f19e826] [cursor=pointer]
+                        - listitem [ref=f19e833]:
+                          - generic [ref=f19e834]:
+                            - generic [ref=f19e835]: Requested Extra Days (No-Deposit)
+                            - button "Edit Requested Extra Days (No-Deposit)" [ref=f19e837] [cursor=pointer]
+                  - generic [ref=f19e841]:
+                    - heading [level=3] [ref=f19e842]:
+                      - button "Contract & Documents" [expanded] [ref=f19e843] [cursor=pointer]
+                    - list [ref=f19e853]:
+                      - generic [ref=f19e854]:
+                        - generic [ref=f19e856]:
+                          - listitem [ref=f19e858]:
+                            - generic [ref=f19e859]:
+                              - generic [ref=f19e860]: Required Documents Complete?
+                              - generic [ref=f19e861]:
+                                - generic [ref=f19e866]:
+                                  - generic "False" [ref=f19e867]
+                                  - generic [ref=f19e874]: Required Documents Complete?
+                                - button "Edit Required Documents Complete?" [ref=f19e875] [cursor=pointer]
+                          - listitem [ref=f19e879]:
+                            - generic [ref=f19e880]: Contract Document Reference
+                        - listitem [ref=f19e886]:
+                          - generic [ref=f19e887]: Contract Generated Date
+                  - generic [ref=f19e892]:
+                    - heading [level=3] [ref=f19e893]:
+                      - button "Reminders & Integration" [expanded] [ref=f19e894] [cursor=pointer]
+                    - list [ref=f19e904]:
+                      - generic [ref=f19e905]:
+                        - generic [ref=f19e907]:
+                          - listitem [ref=f19e909]:
+                            - generic [ref=f19e910]: Last Reminder Sent Date
+                          - listitem [ref=f19e914]:
+                            - generic [ref=f19e915]:
+                              - generic [ref=f19e916]: Keyloop Reservation Reference
+                              - button "Edit Keyloop Reservation Reference" [ref=f19e918] [cursor=pointer]
+                        - generic [ref=f19e922]:
+                          - listitem [ref=f19e924]:
+                            - generic [ref=f19e925]:
+                              - generic [ref=f19e926]: Reminder Count
+                              - generic [ref=f19e927]: "0"
+                          - listitem [ref=f19e931]:
+                            - generic [ref=f19e932]: Integration Status
+                        - listitem [ref=f19e939]:
+                          - generic [ref=f19e940]:
+                            - generic [ref=f19e941]: Invoice Summary
+                            - generic [ref=f19e942]:
+                              - generic [ref=f19e948]:
+                                - link "INVM-00074" [ref=f19e949] [cursor=pointer]:
+                                  - /url: /lightning/r/AF_InvoiceSummary__c/a0TFV00FrvtCkfM2ES/view
+                                - button "Preview" [ref=f19e955] [cursor=pointer]
+                              - button "Edit Invoice Summary" [ref=f19e961] [cursor=pointer]
+                  - generic [ref=f19e965]:
+                    - heading [level=3] [ref=f19e966]:
+                      - button "System Information" [expanded] [ref=f19e967] [cursor=pointer]
+                    - list [ref=f19e977]:
+                      - generic [ref=f19e980]:
+                        - listitem [ref=f19e982]:
+                          - generic [ref=f19e983]:
+                            - generic [ref=f19e984]: Created By
+                            - generic [ref=f19e988]:
+                              - generic [ref=f19e994]:
+                                - link "Arcsen Alfardan" [ref=f19e995] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f19e1001] [cursor=pointer]
+                              - text: ", 22/09/2026, 12:44 PM"
+                        - listitem [ref=f19e1008]:
+                          - generic [ref=f19e1009]:
+                            - generic [ref=f19e1010]: Last Modified By
+                            - generic [ref=f19e1014]:
+                              - generic [ref=f19e1020]:
+                                - link "Arcsen Alfardan" [ref=f19e1021] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f19e1027] [cursor=pointer]
+                              - text: ", 22/09/2026, 12:44 PM"
+            - generic [ref=f19e1040]:
+              - heading "Tabs" [level=2] [ref=f19e1041]
+              - tablist "Tabs" [ref=f19e1043]:
+                - tab "Activity" [selected] [ref=f19e1044] [cursor=pointer]
+              - tabpanel "Activity" [ref=f19e1047]:
+                - generic [ref=f19e1053]:
+                  - heading "Activity Publisher" [level=2] [ref=f19e1054]
+                  - generic [ref=f19e1055]:
+                    - group [ref=f19e1056]:
+                      - generic [ref=f19e1058]:
+                        - button "Log a Call" [ref=f19e1059] [cursor=pointer]
+                        - generic [ref=f19e1067]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f19e1068]:
+                      - generic [ref=f19e1070]:
+                        - button "New Task" [ref=f19e1071] [cursor=pointer]
+                        - generic [ref=f19e1079]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f19e1080]
+                  - generic [ref=f19e1082]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f19e1083] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f19e1085]:
+                      - generic [ref=f19e1086]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f19e1088] [cursor=pointer]
+                    - generic [ref=f19e1096]:
+                      - button "Refresh" [ref=f19e1097] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f19e1098] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f19e1099] [cursor=pointer]
+                    - generic [ref=f19e1101]:
+                      - heading [level=3] [ref=f19e1102]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f19e1103] [cursor=pointer]
+                      - generic [ref=f19e1108]:
+                        - generic:
+                          - list
+                        - generic [ref=f19e1109]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f19e1112]:
+                      - generic [ref=f19e1113]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f19e1114] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

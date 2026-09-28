@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_TestDriveGateBlocked__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flow-maintained: true whenever this Opportunity has at least one linked AF_TestDrive__c without a recorded Result. Read by AF_VR_Opp_TestDriveGate to block progression past Explore. Not user-editable.</description>
+    <label>Test Drive Gate Blocked?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

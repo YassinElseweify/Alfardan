@@ -1,0 +1,121 @@
+- generic [active]:
+  - generic [ref=f32e2]:
+    - generic [ref=f32e3]:
+      - link "Skip to Navigation" [ref=f32e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f32e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f32e8]:
+        - generic [ref=f32e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f32e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f32e11]:
+        - button "Search" [ref=f32e18]: Search...
+        - navigation "Global Header" [ref=f32e23]:
+          - list [ref=f32e25]:
+            - listitem [ref=f32e26]:
+              - group [ref=f32e27]:
+                - button "This item doesn't support favorites" [ref=f32e29] [cursor=pointer]:
+                  - generic [ref=f32e30]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f32e38] [cursor=pointer]:
+                  - generic [ref=f32e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f32e46]:
+              - button "Global Actions" [ref=f32e48]
+            - listitem [ref=f32e55]:
+              - button [ref=f32e58] [cursor=pointer]:
+                - generic [ref=f32e59]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f32e66]:
+              - button [ref=f32e69] [cursor=pointer]:
+                - generic [ref=f32e70]:
+                  - tooltip "Notifications"
+            - listitem [ref=f32e79]:
+              - button "View profile" [ref=f32e82] [cursor=pointer]:
+                - generic [ref=f32e83]:
+                  - tooltip "View profile"
+    - generic [ref=f32e87]:
+      - generic [ref=f32e90]:
+        - generic [ref=f32e92]:
+          - navigation "App" [ref=f32e93]:
+            - button "App Launcher" [ref=f32e95] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f32e107]
+        - navigation "Global" [ref=f32e111]:
+          - list [ref=f32e112]:
+            - listitem [ref=f32e113]:
+              - link "Home" [ref=f32e114] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f32e116]:
+              - link "Vehicles" [ref=f32e117] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f32e122] [cursor=pointer]
+            - listitem [ref=f32e130]:
+              - link "Assets" [ref=f32e131] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f32e136] [cursor=pointer]
+            - listitem [ref=f32e144]:
+              - link "Vehicle Definitions" [ref=f32e145] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f32e150] [cursor=pointer]
+            - listitem [ref=f32e158]:
+              - link "Products" [ref=f32e159] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f32e164] [cursor=pointer]
+            - listitem [ref=f32e172]:
+              - link "Accounts" [ref=f32e173] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f32e178] [cursor=pointer]
+            - listitem [ref=f32e186]:
+              - link "Contacts" [ref=f32e187] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f32e192] [cursor=pointer]
+            - listitem [ref=f32e200]:
+              - link "Asset Milestones" [ref=f32e201] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f32e206] [cursor=pointer]
+            - listitem [ref=f32e214]:
+              - link "Asset Contact Participants" [ref=f32e215] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f32e220] [cursor=pointer]
+            - listitem [ref=f32e228]:
+              - button "* Show more navigation items" [ref=f32e230] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f32e231]: "*"
+                - generic [aria-hidden] [ref=f32e232]: More
+                - generic [ref=f32e239]: Show more navigation items
+            - listitem [ref=f32e240]:
+              - button "Edit nav items" [ref=f32e242] [cursor=pointer]
+      - main [ref=f32e249]:
+        - article [ref=f32e256]:
+          - generic [ref=f32e258]:
+            - generic [ref=f32e260]:
+              - generic [ref=f32e268]:
+                - navigation "Breadcrumbs" [ref=f32e270]:
+                  - list [ref=f32e271]:
+                    - listitem [ref=f32e272]:
+                      - link "Vehicle Reservations" [ref=f32e273] [cursor=pointer]:
+                        - /url: /lightning/o/AF_VehicleReservation__c/home
+                    - listitem [ref=f32e274]:
+                      - text: ">"
+                      - link "RES-00178" [ref=f32e275] [cursor=pointer]:
+                        - /url: /lightning/r/a0WFV000g00AQ0m2AG/view
+                - heading "Payments" [level=1] [ref=f32e277]
+              - generic [ref=f32e278]:
+                - paragraph [ref=f32e280]:
+                  - generic [ref=f32e282]:
+                    - status "Payments"
+                    - text: Refresh this list to view the latest data
+                - generic [ref=f32e283]:
+                  - button "List View Controls" [ref=f32e287] [cursor=pointer]
+                  - generic [ref=f32e298]:
+                    - button "Refresh" [ref=f32e301] [cursor=pointer]
+                    - button "Column sort is disabled. To sort columns, a list view needs at least one row and two columns." [ref=f32e309] [cursor=pointer]
+                    - group [ref=f32e315]:
+                      - button "Show quick filters" [ref=f32e320] [cursor=pointer]
+            - generic [ref=f32e329]:
+              - article [ref=f32e333]
+              - generic [ref=f32e335]:
+                - status
+  - generic:
+    - status

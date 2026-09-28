@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Derives Opportunity.AF_BusinessUnit__c from AF_Brand__c via the single shared subflow, so Brand and Business Unit can never disagree. Fires after save on create AND whenever AF_Brand__c changes on update (before-save flows cannot call subflows on this platform) and writes the result back with one Update Records call. Real gap found and fixed 2026-09-08 (user noticed live: &quot;when he change the brand the bu doesnt get updated&quot;) - this flow originally only fired on Create, so a Sales Rep changing Brand on an already-existing Opportunity left AF_BusinessUnit__c permanently stale, silently disagreeing with the new Brand. Extended recordTriggerType to CreateAndUpdate with an ISCHANGED(AF_Brand__c) guard on the entry criteria, so the resulting Update Records call on a Brand-change transaction does not itself re-trigger this same flow again (ISCHANGED only evaluates true on the transaction that actually changed the field).</description>
+    <environments>Default</environments>
+    <interviewLabel>AF Opportunity Derive Business Unit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Derive Business Unit</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_BusinessUnit</name>
+        <label>Update Business Unit</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <inputAssignments>
+            <field>AF_BusinessUnit__c</field>
+            <value>
+                <elementReference>Call_DeriveBusinessUnit.AF_BusinessUnit</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_DeriveBusinessUnit</targetReference>
+        </connector>
+        <filterFormula>ISNEW() || ISCHANGED({!$Record.AF_Brand__c})</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_DeriveBusinessUnit</name>
+        <label>Call Derive Business Unit</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <connector>
+            <targetReference>Update_BusinessUnit</targetReference>
+        </connector>
+        <flowName>AF_FL_Sub_DeriveBusinessUnit</flowName>
+        <inputAssignments>
+            <name>AF_Brand</name>
+            <value>
+                <elementReference>$Record.AF_Brand__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <triggerOrder>10</triggerOrder>
+</Flow>

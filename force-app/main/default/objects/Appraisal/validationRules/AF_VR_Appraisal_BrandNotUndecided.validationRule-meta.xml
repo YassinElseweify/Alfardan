@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Appraisal_BrandNotUndecided</fullName>
+    <active>true</active>
+    <description>Mirrors AF_VR_Opp_BrandNotUndecided. Undecided is only meant for Lead. By the time an Appraisal exists, Brand must be a real value — blocks save rather than removing Undecided from the shared value set.</description>
+    <errorConditionFormula>ISPICKVAL(AF_Brand__c, &quot;Undecided&quot;)</errorConditionFormula>
+    <errorDisplayField>AF_Brand__c</errorDisplayField>
+    <errorMessage>Brand cannot be &quot;Undecided&quot; on a Trade-In. Please select an actual brand.</errorMessage>
+</ValidationRule>

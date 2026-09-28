@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Call_FinalDisposition_Target</name>
+        <label>Compute Final Disposition Target</label>
+        <locationX>176</locationX>
+        <locationY>839</locationY>
+        <actionName>AF_BusinessHoursService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Lead_SLA_Fields</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>businessHoursName</name>
+            <value>
+                <elementReference>AF_Formula_BusinessHoursName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>startDateTime</name>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>durationMillis</name>
+            <value>
+                <numberValue>1.296E8</numberValue>
+            </value>
+        </inputParameters>
+        <nameSegment>AF_BusinessHoursService</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Call_FirstContact_Target</name>
+        <label>Compute First Contact Target</label>
+        <locationX>176</locationX>
+        <locationY>623</locationY>
+        <actionName>AF_BusinessHoursService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Call_SecondCheckpoint_Target</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>businessHoursName</name>
+            <value>
+                <elementReference>AF_Formula_BusinessHoursName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>startDateTime</name>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>durationMillis</name>
+            <value>
+                <numberValue>900000.0</numberValue>
+            </value>
+        </inputParameters>
+        <nameSegment>AF_BusinessHoursService</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Call_SecondCheckpoint_Target</name>
+        <label>Compute Second Checkpoint Target</label>
+        <locationX>176</locationX>
+        <locationY>731</locationY>
+        <actionName>AF_BusinessHoursService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Call_FinalDisposition_Target</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>businessHoursName</name>
+            <value>
+                <elementReference>AF_Formula_BusinessHoursName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>startDateTime</name>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>durationMillis</name>
+            <value>
+                <numberValue>3600000.0</numberValue>
+            </value>
+        </inputParameters>
+        <nameSegment>AF_BusinessHoursService</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Is_Owner_A_User_Async_Backfill</name>
+        <label>Is Owner a User? (async backfill)</label>
+        <locationX>446</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Is_User_SLA_Targets_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_SLA_Target_FirstContact__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Call_FirstContact_Target</targetReference>
+            </connector>
+            <label>SLA Targets Still Blank (self-heal, User-owned only)</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Owner_Newly_A_User</name>
+        <label>Is Owner Newly a User?</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Is_User_On_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Call_FirstContact_Target</targetReference>
+            </connector>
+            <label>Owner Is User (newly set on update)</label>
+        </rules>
+    </decisions>
+    <description>Stamps AF_AssignedDateTime__c when OwnerId becomes a User (on create, or on an update that actually changes the owner — not on every edit), then calls AF_BusinessHoursService to compute the three SLA targets against the Lead&apos;s business-unit Business Hours record, so targets genuinely respect Friday-off / working-hours boundaries instead of plain calendar time.
+
+Runs after-save (before-save flows cannot call Apex actions), and writes back with one Update Records call keyed to $Record — this does not re-enter the flow&apos;s own entry criteria, since the resulting DML is an Update to fields other than OwnerId.
+
+FIXED 2026-08-16: Added entry criteria filterFormula NOT({!$Record.IsConverted}) to prevent flow from running during lead conversion, which was causing &quot;Unable to convert lead that is in use by workflow&quot; error due to record locks during the conversion transaction.
+
+CHANGED 2026-08-26 (business decision, BRD 8.6 open item &quot;SLA clock start point: lead creation vs. queue assignment&quot; — resolved by Yassin in favour of ASSIGNMENT): all rules require OwnerId to be a User (005 prefix). The SLA clock no longer starts while a Lead sits unassigned in a BU queue — it starts the moment a Manager/Supervisor assigns it to a real agent. This reverses the 2026-08-16 &quot;fire on ANY create regardless of owner type&quot; workaround, which was only ever needed because AF_FL_Lead_RoundRobinAssignment auto-assigned every Lead to a person at creation, so nothing ever genuinely sat in a queue. With round-robin retired (LFRDN-606) and AF_FL_Lead_QueueRouting now placing new Leads in the correct BU queue, queued Leads are the normal state and must NOT have a running SLA clock.
+
+FIXED 2026-08-27: the 2026-08-26 change had a race condition. Lead Assignment Rules (AF_AR_Lead_Routing) run AFTER after-save flows in Salesforce&apos;s save order — so on Lead creation, this flow&apos;s create-path branch always saw the record&apos;s temporary pre-routing owner (the creating user, a 005 Id) BEFORE AF_AR_Lead_Routing had a chance to reassign OwnerId to a BU Queue later in the same transaction. Result: SLA silently started for every new Lead regardless of whether it ended up Queue-owned, contradicting the 2026-08-26 decision — confirmed identically in both DEV and QA (a platform execution-order issue, not an environment misconfiguration). Fixed by removing the synchronous create-path branch entirely and moving the &quot;owner is a User but SLA still blank&quot; backfill onto a Run-Asynchronously scheduled path (0 hours after CreatedDate, timeSource RecordField — RecordTriggerEvent time source is rejected by the platform on a Create/CreateAndUpdate-triggered flow, &quot;Configure the flow to run only when a record is updated&quot;). Scheduled paths execute after the triggering transaction — including Assignment Rules — fully commits, so by the time this path evaluates OwnerId, routing has already resolved and the true final owner is visible. The synchronous &quot;Owner Is User (newly set on update)&quot; branch is kept for the common manual-reassignment case (Queue → Agent) so SLA appears immediately without waiting on the async path.
+
+FIXED 2026-08-27 (same day, follow-up): the new async scheduled path introduced a SECOND source of the exact RECORD_IN_USE_BY_WORKFLOW error already fought in AF_LeadConversionService.clearPendingSlaScheduledActions() (which bounces OwnerId to a Queue and back to cancel AF_FL_Lead_SLAEscalation&apos;s pending scheduled paths — that trick works because AF_FL_Lead_SLAEscalation&apos;s entry criteria depends on AF_IsOwnerAUser__c, so the OwnerId bounce makes it stop matching and Salesforce auto-cancels the pending action). This flow&apos;s filterFormula was only NOT({!$Record.IsConverted}) — it does not reference OwnerId at all, so the same queue-bounce trick did NOT cancel this flow&apos;s newly-added scheduled action, meaning any Lead with a still-pending async backfill action would hit the same conversion-blocking error again. Fixed by adding {!$Record.AF_IsOwnerAUser__c} to the filterFormula so this flow (and therefore its scheduled path registration) only ever enters when OwnerId currently resolves to a real User — harmless to intended behavior (both the update branch and the async backfill branch already require OwnerId StartsWith &quot;005&quot; internally to do anything), and now correctly cancellable by the exact same existing mitigation.
+
+FIXED 2026-08-28: Call_FinalDisposition_Target&apos;s durationMillis was 2.592E8 (72 hours = 3 x 24), assuming a 24-hour business day. The actual configured Business Hours (AF_BH_Automobiles/PremierMotors/SportsMotors) are only 08:00-20:00 (12 hours/day), 6 days/week (Friday off). BusinessHours.add() treats durationMillis as elapsed BUSINESS time, not calendar time, so 72 business-hours took 6 real working days to elapse (72 / 12), stretching a &quot;3 day&quot; SLA target out to roughly a full calendar week once the Friday closure was skipped over. The BRD (8.6 FR4) explicitly wants thresholds &quot;calculated against the configured working calendar&quot; (so business-hours-aware is correct), but the duration itself should represent 3 WORKING days, not 3 x 24 raw hours. Fixed to 1.296E8 (36 hours = 3 x 12, matching the actual configured business day length). Fragile: this hardcodes today&apos;s 12-hour business day; if any BU&apos;s Business Hours record is ever changed to a different daily length, this constant would need updating too — the other two targets (15 min, 1 hour) don&apos;t have this problem since they&apos;re far shorter than one business day.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_BusinessHoursName</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.AF_BusinessUnit__c}, &quot;Alfardan Automobiles&quot;, &quot;AF_BH_Automobiles&quot;, &quot;Alfardan Premier Motors&quot;, &quot;AF_BH_PremierMotors&quot;, &quot;Alfardan Sports Motors&quot;, &quot;AF_BH_SportsMotors&quot;, &quot;AF_BH_Automobiles&quot;)</expression>
+    </formulas>
+    <interviewLabel>AF Lead Owner Assignment SLA {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Owner Assignment SLA</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead_SLA_Fields</name>
+        <label>Update Lead SLA Fields</label>
+        <locationX>176</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>AF_AssignedDateTime__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_SLAStatus__c</field>
+            <value>
+                <stringValue>On Track</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_SLA_Target_FinalDisposition__c</field>
+            <value>
+                <elementReference>Call_FinalDisposition_Target.resultDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_SLA_Target_FirstContact__c</field>
+            <value>
+                <elementReference>Call_FirstContact_Target.resultDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_SLA_Target_SecondCheckpoint__c</field>
+            <value>
+                <elementReference>Call_SecondCheckpoint_Target.resultDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Owner_Newly_A_User</targetReference>
+        </connector>
+        <filterFormula>AND(NOT({!$Record.IsConverted}), {!$Record.AF_IsOwnerAUser__c})</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Async_Backfill_Path</name>
+            <connector>
+                <targetReference>Is_Owner_A_User_Async_Backfill</targetReference>
+            </connector>
+            <label>Async Backfill (after Assignment Rules settle)</label>
+            <offsetNumber>0</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>20</triggerOrder>
+</Flow>

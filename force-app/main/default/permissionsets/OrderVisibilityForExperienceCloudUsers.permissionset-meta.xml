@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gives Experience Cloud users access to a field required to use the Order Visibility app.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Order Visibility for Experience Cloud User</label>
+    <license>Partner Community</license>
+</PermissionSet>

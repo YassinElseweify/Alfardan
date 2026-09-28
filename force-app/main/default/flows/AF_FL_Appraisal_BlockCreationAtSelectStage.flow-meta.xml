@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Block_Creation</name>
+        <label>Block Creation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>A Trade-In cannot be created once the Opportunity has moved past Explore into Select — the vehicle and pricing are already being finalized at that point. Capture the trade-in earlier, in the Consider/Explore stages.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Is_Opportunity_At_Select</name>
+        <label>Is Opportunity At Select?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No — Allow</defaultConnectorLabel>
+        <rules>
+            <name>Blocked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Block_Creation</targetReference>
+            </connector>
+            <label>Blocked — Opportunity Is At Select</label>
+        </rules>
+    </decisions>
+    <description>ALF-RS-04: blocks manually or automatically creating a Trade-In (Appraisal) once the linked Opportunity has already progressed to the Select stage. Appraisal.ReferenceRecordId is polymorphic (Account or Opportunity) — Get_Opportunity simply returns no rows when it points at an Account instead, so this only ever blocks the Opportunity-linked creation path, never the standalone-from-Account one. Built as a before-save Flow (not a Validation Rule) because a Validation Rule cannot traverse a polymorphic lookup to read the related Opportunity&apos;s StageName.</description>
+    <environments>Default</environments>
+    <interviewLabel>AF Appraisal Block Creation At Select Stage {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Appraisal Block Creation At Select Stage</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Opportunity_At_Select</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ReferenceRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
+        <object>Appraisal</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

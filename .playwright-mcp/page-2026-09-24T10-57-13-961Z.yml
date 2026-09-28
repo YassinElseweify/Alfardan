@@ -1,0 +1,164 @@
+- generic [active]:
+  - generic [ref=f188e2]:
+    - generic [ref=f188e3]:
+      - link "Skip to Navigation" [ref=f188e489] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f188e490] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f188e8]:
+        - generic [ref=f188e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f188e491] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f188e11]:
+        - button "Search" [ref=f188e492]: Search...
+        - navigation "Global Header" [ref=f188e493]:
+          - list [ref=f188e25]:
+            - listitem [ref=f188e26]:
+              - group [ref=f188e27]:
+                - button "Add favorite" [ref=f188e494] [cursor=pointer]:
+                  - generic [ref=f188e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f188e495] [cursor=pointer]:
+                  - generic [ref=f188e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f188e46]:
+              - button [ref=f188e496] [cursor=pointer]:
+                - generic [ref=f188e269]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f188e276]:
+              - button [ref=f188e497] [cursor=pointer]:
+                - generic [ref=f188e279]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f188e55]:
+              - button [ref=f188e498] [cursor=pointer]:
+                - generic [ref=f188e59]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f188e66]:
+              - button "5 Notifications" [ref=f188e499] [cursor=pointer]:
+                - generic [ref=f188e70]:
+                  - generic [ref=f188e71]: "5"
+                  - tooltip "Notifications"
+              - generic [ref=f188e78]: 5 new notifications
+            - listitem [ref=f188e79]:
+              - button "View profile" [ref=f188e500] [cursor=pointer]:
+                - generic [ref=f188e83]:
+                  - tooltip "View profile"
+    - generic [ref=f188e85]:
+      - generic [ref=f188e88]:
+        - generic [ref=f188e90]:
+          - navigation "App" [ref=f188e501]:
+            - button "App Launcher" [ref=f188e502] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f188e503]
+        - navigation "Global" [ref=f188e505]:
+          - list [ref=f188e110]:
+            - listitem [ref=f188e111]:
+              - link "Home" [ref=f188e506] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f188e114]:
+              - link "Vehicles" [ref=f188e507] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f188e508] [cursor=pointer]
+            - listitem [ref=f188e128]:
+              - link "Assets" [ref=f188e509] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f188e510] [cursor=pointer]
+            - listitem [ref=f188e142]:
+              - link "Vehicle Definitions" [ref=f188e511] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f188e512] [cursor=pointer]
+            - listitem [ref=f188e156]:
+              - link "Products" [ref=f188e513] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f188e514] [cursor=pointer]
+            - listitem [ref=f188e170]:
+              - link "Accounts" [ref=f188e515] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f188e516] [cursor=pointer]
+            - listitem [ref=f188e184]:
+              - link "Contacts" [ref=f188e517] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f188e518] [cursor=pointer]
+            - listitem [ref=f188e198]:
+              - link "Asset Milestones" [ref=f188e519] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f188e520] [cursor=pointer]
+            - listitem [ref=f188e212]:
+              - link "* Opportunity" [ref=f188e521] [cursor=pointer]:
+                - /url: /lightning/r/ProcessInstanceWorkitem/04iFV001KodzMdEYIU/view
+                - generic "Not added to nav bar" [ref=f188e522]: "*"
+                - generic [ref=f188e215]: Opportunity
+              - button "Opportunity List" [ref=f188e523] [cursor=pointer]
+              - button "Close tab" [ref=f188e524] [cursor=pointer]
+            - listitem [ref=f188e235]:
+              - button "* Show more navigation items" [ref=f188e525] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f188e526]: "*"
+                - generic [aria-hidden] [ref=f188e239]: More
+                - generic [ref=f188e246]: Show more navigation items
+            - listitem [ref=f188e247]:
+              - button "Edit nav items" [ref=f188e527] [cursor=pointer]
+      - main [ref=f188e256]:
+        - generic [ref=f188e531]:
+          - generic "Highlights panel header" [ref=f188e534]:
+            - generic [ref=f188e535]:
+              - generic [ref=f188e536]:
+                - heading "Process Instance Step Opportunity Approval Approved" [level=1] [ref=f188e626]:
+                  - generic [ref=f188e543]: Process Instance Step
+                  - generic "Approved" [ref=f188e544]:
+                    - generic [ref=f188e545]:
+                      - generic [ref=f188e627]: Opportunity Approval
+                      - text: Approved
+                - group [ref=f188e546]
+              - generic [ref=f188e547]:
+                - generic "Submitter" [ref=f188e548]
+                - generic [ref=f188e549]: QA SalesRep2
+              - generic [ref=f188e551]:
+                - generic "Date Submitted" [ref=f188e552]
+                - generic [ref=f188e553]: 24 Sep 2026
+              - generic [ref=f188e555]:
+                - generic "Actual Approver" [ref=f188e556]
+                - generic [ref=f188e557]: QA SalesBrandManager2
+              - generic [ref=f188e559]:
+                - generic "Assigned To" [ref=f188e560]
+                - generic [ref=f188e561]: QA ShowroomManager2
+          - generic [ref=f188e564]:
+            - generic [ref=f188e566]:
+              - heading "Tabs" [level=2] [ref=f188e567]
+              - generic [ref=f188e568]:
+                - tablist [ref=f188e569]:
+                  - tab "Details" [selected] [ref=f188e570] [cursor=pointer]
+                - tabpanel [ref=f188e572]:
+                  - article [ref=f188e628]:
+                    - heading "Details" [level=2] [ref=f188e617]
+                    - group [ref=f188e631]:
+                      - heading "Approval Details" [level=3] [ref=f188e633]
+                      - list [ref=f188e636]:
+                        - listitem [ref=f188e637]:
+                          - generic [ref=f188e638]:
+                            - generic [ref=f188e639]: Cancellation Reason
+                            - generic [ref=f188e640]: Financing Fell Through
+                        - listitem [ref=f188e642]:
+                          - generic [ref=f188e643]:
+                            - generic [ref=f188e644]: Cancellation Evidence Reference
+                            - generic [ref=f188e645]: bank decline letter
+                        - listitem [ref=f188e647]:
+                          - generic [ref=f188e648]:
+                            - generic [ref=f188e649]: Cancellation Notes
+                            - generic [ref=f188e650]: QA RS13 03 - deposit of 40,000 only was paid
+                        - listitem [ref=f188e652]:
+                          - generic [ref=f188e653]:
+                            - generic [ref=f188e654]: Opportunity Name
+                            - link "DEMO RS13 03 - Deposit only, no Sales Order yet" [ref=f188e657] [cursor=pointer]:
+                              - /url: /lightning/r/006FV00Br6vxAuqYEE/view
+                        - listitem [ref=f188e658]:
+                          - generic [ref=f188e659]:
+                            - generic [ref=f188e660]: Opportunity Owner
+                            - link "QA SalesRep2" [ref=f188e663] [cursor=pointer]:
+                              - /url: /lightning/r/005FV0082KfRrqeYQC/view
+            - article [ref=f188e620]:
+              - heading "No Comments" [level=2] [ref=f188e624]
+              - generic:
+                - generic:
+                  - list
+  - generic:
+    - status

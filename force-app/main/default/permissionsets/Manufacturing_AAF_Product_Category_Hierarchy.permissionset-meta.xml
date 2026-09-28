@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows users to work with the quick start assets for product category hierarchy in advanced account forecasting.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_AdjustedForecastedQuantity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_AdjustedForecastedRevenue__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_ParentCategory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_ProductCategory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_SalesAgreementQuantityFromCategories__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_SalesAgreementQuantityFromProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_SalesAgreementRevenueFromCategories__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AdvAccountForecastFact.CH_SalesAgreementRevenueFromProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Manufacturing AAF Product Category Hierarchy</label>
+</PermissionSet>

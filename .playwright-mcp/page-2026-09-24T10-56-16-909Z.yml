@@ -1,0 +1,63 @@
+- generic [active]:
+  - generic [ref=f187e2]:
+    - generic [ref=f187e3]:
+      - link "Skip to Navigation" [ref=f187e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f187e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f187e6]:
+        - button "Search" [ref=f187e13]: Search...
+        - navigation "Global Header" [ref=f187e18]:
+          - list [ref=f187e19]:
+            - listitem [ref=f187e20]
+    - generic [ref=f187e24]:
+      - generic [ref=f187e27]:
+        - generic [ref=f187e29]:
+          - navigation "App" [ref=f187e30]:
+            - button "App Launcher" [ref=f187e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f187e44]
+        - navigation "Global" [ref=f187e48]:
+          - list [ref=f187e49]:
+            - listitem [ref=f187e50]:
+              - link "Home" [ref=f187e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f187e53]:
+              - link "Vehicles" [ref=f187e54] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f187e59] [cursor=pointer]
+            - listitem [ref=f187e67]:
+              - link "Assets" [ref=f187e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f187e73] [cursor=pointer]
+            - listitem [ref=f187e81]:
+              - link "Vehicle Definitions" [ref=f187e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f187e87] [cursor=pointer]
+            - listitem [ref=f187e95]:
+              - link "Products" [ref=f187e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f187e101] [cursor=pointer]
+            - listitem [ref=f187e109]:
+              - link "Accounts" [ref=f187e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f187e115] [cursor=pointer]
+            - listitem [ref=f187e123]:
+              - link "Contacts" [ref=f187e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f187e129] [cursor=pointer]
+            - listitem [ref=f187e137]:
+              - link "Asset Milestones" [ref=f187e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f187e143] [cursor=pointer]
+            - listitem [ref=f187e151]:
+              - link "Asset Contact Participants" [ref=f187e152] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f187e157] [cursor=pointer]
+            - listitem [ref=f187e165]:
+              - button "Show more navigation items" [ref=f187e167] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f187e168]: More
+            - listitem [ref=f187e176]:
+              - button "Edit nav items" [ref=f187e178] [cursor=pointer]
+      - main [ref=f187e185]
+  - generic:
+    - status

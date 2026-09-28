@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Has_Approved_Appraisal</name>
+        <label>Has Approved Appraisal?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnectorLabel>No Approved Trade-In - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Approved_Appraisal.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Reservation_Deposit</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
+    <description>ALF-RS-08 FR11: &quot;allow an agreed Trade-In value to be applied as part or whole of the reservation deposit where a Trade-In has been appraised and approved against the same Opportunity.&quot; Fires when AF_TradeInAsDeposit__c is checked on a Vehicle Reservation. Finds the Approved Appraisal linked to the same Opportunity (via Appraisal.ReferenceRecordId), sets AF_DepositAmount__c to that Appraisal&apos;s FinalAppraisalValue only if the deposit amount is still blank (never overwrites a value the rep already entered - same IF(ISBLANK(...)) convention as AF_FL_Opp_SyncTestDriveAccountContact), and closes the reverse link by stamping Appraisal.AF_RelatedVehicleReservation__c. If no Approved Appraisal exists on the Opportunity, the checkbox is simply left as-is with no deposit amount changed - this flow does not block or validate the checkbox, since the BRD explicitly allows the trade-in to cover only &quot;part&quot; of the deposit, meaning a manually-entered amount is equally valid.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_DepositAmount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(ISBLANK({!$Record.AF_DepositAmount__c}), {!Get_Approved_Appraisal.FinalAppraisalValue}, {!$Record.AF_DepositAmount__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Reservation Apply Trade-In Deposit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reservation Apply Trade-In Deposit</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Approved_Appraisal</name>
+        <label>Get Approved Appraisal On Same Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Approved_Appraisal</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ReferenceRecordId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_ApprovalStatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Appraisal</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Link_Appraisal_To_Reservation</name>
+        <label>Stamp Reverse Link On Appraisal</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Approved_Appraisal.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_RelatedVehicleReservation__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Appraisal</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Reservation_Deposit</name>
+        <label>Set Deposit Amount If Blank</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <connector>
+            <targetReference>Link_Appraisal_To_Reservation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_DepositAmount__c</field>
+            <value>
+                <elementReference>Formula_DepositAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AF_VehicleReservation__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Approved_Appraisal</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.AF_TradeInAsDeposit__c}) &amp;&amp; {!$Record.AF_TradeInAsDeposit__c} &amp;&amp; NOT(ISBLANK({!$Record.AF_Opportunity__c}))</filterFormula>
+        <object>AF_VehicleReservation__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

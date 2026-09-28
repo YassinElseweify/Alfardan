@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_ExploreRequiresVehicle</fullName>
+    <active>true</active>
+    <description>Requires either a Vehicle Model (catalogue-level) or a Selected Vehicle (specific inventory unit) from Explore stage onward — either satisfies the gate.</description>
+    <errorConditionFormula>AND(OR(ISPICKVAL(StageName, &quot;Explore&quot;), ISPICKVAL(StageName, &quot;Select&quot;), ISPICKVAL(StageName, &quot;Commit&quot;), ISPICKVAL(StageName, &quot;Take the Keys&quot;), ISPICKVAL(StageName, &quot;Closed Won&quot;)), ISBLANK(AF_VehicleModel__c), ISBLANK(AF_SelectedVehicle__c))</errorConditionFormula>
+    <errorMessage>A vehicle model or selected vehicle is required from Explore stage onward.</errorMessage>
+</ValidationRule>

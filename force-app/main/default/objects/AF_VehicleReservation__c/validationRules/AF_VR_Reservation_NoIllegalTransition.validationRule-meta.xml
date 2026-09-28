@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Reservation_NoIllegalTransition</fullName>
+    <active>true</active>
+    <description>QA fix (Defect #3): blocks moving a reservation backward out of Reserved/Expired/Converted/Cancelled into Requested/Pending Approval. Real system transitions never move backward, so this is untouched by legitimate automation.</description>
+    <errorConditionFormula>AND(
+  NOT(ISNEW()),
+  ISCHANGED(AF_Status__c),
+  OR(
+    ISPICKVAL(PRIORVALUE(AF_Status__c), &quot;Reserved&quot;),
+    ISPICKVAL(PRIORVALUE(AF_Status__c), &quot;Expired&quot;),
+    ISPICKVAL(PRIORVALUE(AF_Status__c), &quot;Converted&quot;),
+    ISPICKVAL(PRIORVALUE(AF_Status__c), &quot;Cancelled&quot;)
+  ),
+  OR(
+    ISPICKVAL(AF_Status__c, &quot;Requested&quot;),
+    ISPICKVAL(AF_Status__c, &quot;Pending Approval&quot;)
+  )
+)</errorConditionFormula>
+    <errorMessage>Illegal reservation status transition. A reservation cannot move backward from Reserved/Expired/Converted/Cancelled into Requested/Pending Approval.</errorMessage>
+</ValidationRule>

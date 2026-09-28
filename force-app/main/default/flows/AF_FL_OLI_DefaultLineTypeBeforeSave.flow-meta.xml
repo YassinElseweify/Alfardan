@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_LineType_Fallback</name>
+        <label>Set Line Type Fallback (Other)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_LineItemType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_LineType_FromQuoteLine</name>
+        <label>Set Line Type From Quote Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_LineItemType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Matching_QuoteLineItem.AF_LineItemType__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Found_Matching_QuoteLine</name>
+        <label>Found Matching Quote Line?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_LineType_Fallback</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Found - Fallback</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Matching_QuoteLineItem</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_LineType_FromQuoteLine</targetReference>
+            </connector>
+            <label>Yes — Found</label>
+        </rules>
+    </decisions>
+    <description>Fixes Quote Sync: Salesforce&apos;s native &quot;Sync with Opportunity&quot; engine copies a QuoteLineItem into a matching OpportunityLineItem using only standard fields — it can&apos;t populate AF_LineItemType__c (a custom field), so every Sync attempt in this org failed with &quot;Required fields are missing: [AF_LineItemType__c]&quot; while that field was required=true. A record-triggered AFTER-save flow can&apos;t fix this: the platform enforces a required field before any DML completes, so an after-save flow never runs on a record that failed for that reason. This is a BEFORE-save (fast field update) flow instead — it runs before required-field validation, so it can genuinely prevent the blank value from ever reaching validation. AF_LineItemType__c was changed to required=false to allow this flow to run at all; every other line-creation path in this org (Select Vehicle, Add Products, Create Quotation) already sets the field explicitly and is unaffected, since this flow only acts when the field is genuinely blank. Looks up the matching QuoteLineItem on the Opportunity&apos;s currently synced Quote (same Product2Id) and copies its AF_LineItemType__c; falls back to &quot;Other&quot; if no match is found (a line created some other way with the field left blank, not the Sync path this exists for).</description>
+    <environments>Default</environments>
+    <interviewLabel>OLI Default Line Type Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>OLI Default Line Type Before Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Matching_QuoteLineItem</name>
+        <label>Get Matching Quote Line Item</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Matching_QuoteLine</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>QuoteId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Opportunity.SyncedQuoteId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Product2Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Product2Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>QuoteLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Matching_QuoteLineItem</targetReference>
+        </connector>
+        <filterFormula>ISBLANK(TEXT({!$Record.AF_LineItemType__c}))</filterFormula>
+        <object>OpportunityLineItem</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

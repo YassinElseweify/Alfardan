@@ -1,0 +1,547 @@
+- generic:
+  - generic [ref=f18e2]:
+    - generic [ref=f18e3]:
+      - link "Skip to Navigation" [ref=f18e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f18e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f18e8]:
+        - generic [ref=f18e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f18e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f18e11]:
+        - button "Search" [ref=f18e17]: Search...
+        - navigation "Global Header" [ref=f18e22]:
+          - list [ref=f18e24]:
+            - listitem [ref=f18e25]:
+              - group [ref=f18e26]:
+                - button "Add favorite" [ref=f18e28] [cursor=pointer]:
+                  - generic [ref=f18e29]:
+                    - tooltip "Add favorite"
+                - button [ref=f18e37] [cursor=pointer]:
+                  - generic [ref=f18e38]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f18e45]:
+              - button [ref=f18e1357] [cursor=pointer]:
+                - generic [ref=f18e1358]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f18e1365]:
+              - button [ref=f18e1367] [cursor=pointer]:
+                - generic [ref=f18e1368]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f18e54]:
+              - button [ref=f18e57] [cursor=pointer]:
+                - generic [ref=f18e58]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f18e65]:
+              - button [ref=f18e71] [cursor=pointer]:
+                - generic [ref=f18e72]:
+                  - tooltip "Setup"
+            - listitem [ref=f18e79]:
+              - button "2 Notifications" [ref=f18e1375] [cursor=pointer]:
+                - generic [ref=f18e83]:
+                  - generic [ref=f18e84]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f18e91]: 2 new notifications
+            - listitem [ref=f18e92]:
+              - button "View profile" [ref=f18e95] [cursor=pointer]:
+                - generic [ref=f18e96]:
+                  - tooltip "View profile"
+    - generic [ref=f18e100]:
+      - generic [ref=f18e103]:
+        - generic [ref=f18e105]:
+          - navigation "App" [ref=f18e106]:
+            - button "App Launcher" [ref=f18e108] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f18e120]
+        - navigation "Global" [ref=f18e124]:
+          - list [ref=f18e125]:
+            - listitem [ref=f18e126]:
+              - link "Home" [ref=f18e127] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f18e129]:
+              - link "Analytics" [ref=f18e130] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f18e132]:
+              - link "Opportunities" [ref=f18e133] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f18e138] [cursor=pointer]
+            - listitem [ref=f18e146]:
+              - link "Quotes" [ref=f18e147] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f18e152] [cursor=pointer]
+            - listitem [ref=f18e160] [cursor=pointer]:
+              - link "Leads" [ref=f18e161]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f18e166]
+            - listitem [ref=f18e174]:
+              - link "Tasks" [ref=f18e175] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f18e180] [cursor=pointer]
+            - listitem [ref=f18e188]:
+              - link "Files" [ref=f18e189] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f18e194] [cursor=pointer]
+            - listitem [ref=f18e202]:
+              - link "Accounts" [ref=f18e203] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f18e208] [cursor=pointer]
+            - listitem [ref=f18e216]:
+              - link "Contacts" [ref=f18e217] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f18e222] [cursor=pointer]
+            - listitem [ref=f18e230]:
+              - link "Campaigns" [ref=f18e231] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f18e236] [cursor=pointer]
+            - listitem [ref=f18e244]:
+              - link "Dashboards" [ref=f18e245] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f18e250] [cursor=pointer]
+            - listitem [ref=f18e258]:
+              - link "Reports" [ref=f18e259] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f18e264] [cursor=pointer]
+            - listitem [ref=f18e289]:
+              - button "Show more navigation items" [ref=f18e291] [cursor=pointer]:
+                - generic [ref=f18e292]: More
+            - listitem [ref=f18e300]:
+              - button "Edit nav items" [ref=f18e302] [cursor=pointer]
+      - main [ref=f18e1754]:
+        - generic [ref=f18e1770]:
+          - generic [ref=f18e1779]:
+            - generic [ref=f18e1780]:
+              - heading "Lead QA test LM-05-RRcheck WorkingStatus" [level=1] [ref=f18e1788]:
+                - generic [ref=f18e1789]: Lead
+                - generic [ref=f18e1791]: QA test LM-05-RRcheck WorkingStatus
+              - button "Follow" [ref=f18e1796] [cursor=pointer]
+              - generic [ref=f18e2061]:
+                - generic "Edit" [ref=f18e2062]:
+                  - button "Edit" [ref=f18e2067] [cursor=pointer]
+                - generic "Delete" [ref=f18e2068]:
+                  - button "Delete" [ref=f18e2073] [cursor=pointer]
+                - generic "Change Owner" [ref=f18e2074]:
+                  - button "Change Owner" [ref=f18e2079] [cursor=pointer]
+                - button "Show more actions" [ref=f18e2081] [cursor=pointer]
+            - generic [ref=f18e1804]:
+              - generic [ref=f18e1806]:
+                - paragraph [ref=f18e1807]: Title
+                - paragraph
+              - generic [ref=f18e1809]:
+                - paragraph [ref=f18e1810]: Company
+                - paragraph
+              - generic [ref=f18e1812]:
+                - button [ref=f18e1813] [cursor=pointer]:
+                  - paragraph [ref=f18e1814]: Phone (2)
+                - list [ref=f18e1822]:
+                  - paragraph [ref=f18e1826]:
+                    - link "+974 5512 5098" [ref=f18e1830] [cursor=pointer]:
+                      - /url: tel:+974 5512 5098
+              - generic [ref=f18e1832]:
+                - paragraph [ref=f18e1833]: Email
+                - paragraph
+          - article [ref=f18e1841]:
+            - generic [ref=f18e1842]:
+              - heading "Path" [level=2] [ref=f18e2088]
+              - generic [ref=f18e2091]:
+                - listbox "Path Options" [ref=f18e2096]:
+                  - option "stage complete New" [ref=f18e2097] [cursor=pointer]:
+                    - generic [ref=f18e2098]: stage complete
+                    - generic [ref=f18e2106]: New
+                  - option "Working" [ref=f18e2107] [cursor=pointer]
+                  - option "Follow-up" [ref=f18e2109] [cursor=pointer]
+                  - option "On-Hold" [ref=f18e2111] [cursor=pointer]
+                  - option "Qualified" [selected] [ref=f18e2113] [cursor=pointer]
+                  - option "Disqualified" [ref=f18e2115] [cursor=pointer]
+                  - option "Converted" [ref=f18e2117] [cursor=pointer]
+                - button "Mark as Current Status" [ref=f18e2153] [cursor=pointer]
+          - generic [ref=f18e1856]:
+            - generic [ref=f18e1862]:
+              - heading "Tabs" [level=2] [ref=f18e1863]
+              - generic "Tabs" [ref=f18e1864]:
+                - generic [ref=f18e1865]:
+                  - heading "Tabs" [level=2] [ref=f18e1866]
+                  - tablist "Tabs" [ref=f18e1868]:
+                    - tab "Activity" [ref=f18e1869] [cursor=pointer]
+                    - tab "Details" [active] [selected] [ref=f18e1870] [cursor=pointer]
+                    - tab "Chatter" [ref=f18e1871] [cursor=pointer]
+                  - tabpanel "Details" [ref=f18e2251]:
+                    - generic [ref=f18e2264]:
+                      - list [ref=f18e2268]:
+                        - generic [ref=f18e2269]:
+                          - generic [ref=f18e2271]:
+                            - listitem [ref=f18e2273]:
+                              - generic [ref=f18e2274]:
+                                - generic [ref=f18e2275]: Lead Owner
+                                - generic [ref=f18e2280]:
+                                  - generic [ref=f18e2287]:
+                                    - link "CRM Agent" [ref=f18e2288] [cursor=pointer]:
+                                      - /url: /lightning/r/Name/005a3001tN2A5HAAQ0/view
+                                    - button "Preview" [ref=f18e2294] [cursor=pointer]
+                                  - button "Change Owner" [ref=f18e2301] [cursor=pointer]
+                            - listitem [ref=f18e2308]:
+                              - generic [ref=f18e2309]:
+                                - generic [ref=f18e2310]: Lead Status
+                                - generic [ref=f18e2311]:
+                                  - generic [ref=f18e2312]: Working
+                                  - button "Edit Lead Status" [ref=f18e2314] [cursor=pointer]
+                          - generic [ref=f18e2318]:
+                            - listitem [ref=f18e2320]:
+                              - generic [ref=f18e2321]:
+                                - generic [ref=f18e2322]: Name
+                                - generic [ref=f18e2323]:
+                                  - generic [ref=f18e2324]: QA test LM-05-RRcheck WorkingStatus
+                                  - button "Edit Name" [ref=f18e2326] [cursor=pointer]
+                            - listitem [ref=f18e2330]:
+                              - generic [ref=f18e2331]:
+                                - generic [ref=f18e2332]: Phone
+                                - generic [ref=f18e2333]:
+                                  - link "+974 5512 5098" [ref=f18e2338] [cursor=pointer]:
+                                    - /url: tel:+974 5512 5098
+                                  - button "Edit Phone" [ref=f18e2339] [cursor=pointer]
+                          - generic [ref=f18e2343]:
+                            - listitem [ref=f18e2345]:
+                              - generic [ref=f18e2346]:
+                                - generic [ref=f18e2347]: Company
+                                - button "Edit Company" [ref=f18e2349] [cursor=pointer]
+                            - listitem [ref=f18e2353]:
+                              - generic [ref=f18e2354]:
+                                - generic [ref=f18e2355]: Email
+                                - button "Edit Email" [ref=f18e2357] [cursor=pointer]
+                          - generic [ref=f18e2361]:
+                            - listitem [ref=f18e2363]:
+                              - generic [ref=f18e2364]:
+                                - generic [ref=f18e2365]: Title
+                                - button "Edit Title" [ref=f18e2367] [cursor=pointer]
+                            - listitem [ref=f18e2371]:
+                              - generic [ref=f18e2372]:
+                                - generic [ref=f18e2373]: Rating
+                                - button "Edit Rating" [ref=f18e2375] [cursor=pointer]
+                          - listitem [ref=f18e2381]:
+                            - generic [ref=f18e2382]:
+                              - generic [ref=f18e2383]: Earliest Interest Date
+                              - button "Edit Earliest Interest Date" [ref=f18e2385] [cursor=pointer]
+                          - listitem [ref=f18e2392]:
+                            - generic [ref=f18e2393]:
+                              - generic [ref=f18e2394]: Latest Interest Date
+                              - button "Edit Latest Interest Date" [ref=f18e2396] [cursor=pointer]
+                          - listitem [ref=f18e2403]:
+                            - generic [ref=f18e2404]:
+                              - generic [ref=f18e2405]: Nationality
+                              - generic [ref=f18e2406]:
+                                - generic [ref=f18e2407]: Qatari
+                                - button "Edit Nationality" [ref=f18e2409] [cursor=pointer]
+                          - listitem [ref=f18e2416]:
+                            - generic [ref=f18e2417]:
+                              - generic [ref=f18e2418]: Date of Birth
+                              - generic [ref=f18e2419]:
+                                - generic [ref=f18e2420]: ١/١/١٩٩٠
+                                - button "Edit Date of Birth" [ref=f18e2422] [cursor=pointer]
+                      - generic [ref=f18e2427]:
+                        - heading [level=3] [ref=f18e2428]:
+                          - button "Address Information" [expanded] [ref=f18e2429] [cursor=pointer]
+                        - list [ref=f18e2439]:
+                          - generic [ref=f18e2442]:
+                            - listitem [ref=f18e2444]:
+                              - generic [ref=f18e2445]:
+                                - generic [ref=f18e2446]: Address
+                                - generic [ref=f18e2447]:
+                                  - link "Doha Qatar" [ref=f18e2451] [cursor=pointer]:
+                                    - /url: https://www.google.com/maps?q=Doha%0AQatar
+                                    - generic [ref=f18e2452]: Doha
+                                    - generic [ref=f18e2453]: Qatar
+                                    - iframe [ref=f18e2457]:
+                                      - img "Map" [ref=f19e2]
+                                  - button "Edit Address" [ref=f18e2459] [cursor=pointer]
+                            - listitem [ref=f18e2463]:
+                              - generic [ref=f18e2464]:
+                                - generic [ref=f18e2465]: Website
+                                - button "Edit Website" [ref=f18e2467] [cursor=pointer]
+                      - generic [ref=f18e2471]:
+                        - heading [level=3] [ref=f18e2472]:
+                          - button "Additional Information" [expanded] [ref=f18e2473] [cursor=pointer]
+                        - list [ref=f18e2483]:
+                          - generic [ref=f18e2484]:
+                            - generic [ref=f18e2486]:
+                              - listitem [ref=f18e2488]:
+                                - generic [ref=f18e2489]:
+                                  - generic [ref=f18e2490]: No. of Employees
+                                  - button "Edit No. of Employees" [ref=f18e2492] [cursor=pointer]
+                              - listitem [ref=f18e2496]:
+                                - generic [ref=f18e2497]:
+                                  - generic [ref=f18e2498]: Lead Source
+                                  - generic [ref=f18e2499]:
+                                    - generic [ref=f18e2500]: Web
+                                    - button "Edit Lead Source" [ref=f18e2502] [cursor=pointer]
+                            - generic [ref=f18e2506]:
+                              - listitem [ref=f18e2508]:
+                                - generic [ref=f18e2509]:
+                                  - generic [ref=f18e2510]: Annual Revenue
+                                  - button "Edit Annual Revenue" [ref=f18e2512] [cursor=pointer]
+                              - listitem [ref=f18e2516]:
+                                - generic [ref=f18e2517]:
+                                  - generic [ref=f18e2518]: Industry
+                                  - button "Edit Industry" [ref=f18e2520] [cursor=pointer]
+                      - list [ref=f18e2526]:
+                        - listitem [ref=f18e2531]:
+                          - generic [ref=f18e2532]:
+                            - generic [ref=f18e2533]: Description
+                            - button "Edit Description" [ref=f18e2535] [cursor=pointer]
+                      - generic [ref=f18e2539]:
+                        - heading [level=3] [ref=f18e2540]:
+                          - button "Brand & Business Unit" [expanded] [ref=f18e2541] [cursor=pointer]
+                        - list [ref=f18e2551]:
+                          - generic [ref=f18e2552]:
+                            - generic [ref=f18e2554]:
+                              - listitem [ref=f18e2556]:
+                                - generic [ref=f18e2557]:
+                                  - generic [ref=f18e2558]: Brand
+                                  - generic [ref=f18e2559]:
+                                    - generic [ref=f18e2560]: Ferrari
+                                    - button "Edit Brand" [ref=f18e2562] [cursor=pointer]
+                              - listitem [ref=f18e2566]:
+                                - generic [ref=f18e2567]:
+                                  - generic [ref=f18e2568]: Business Unit
+                                  - generic [ref=f18e2569]: Alfardan Sports Motors
+                            - listitem [ref=f18e2575]:
+                              - generic [ref=f18e2576]:
+                                - generic [ref=f18e2577]: Showroom
+                                - button "Edit Showroom" [ref=f18e2579] [cursor=pointer]
+                      - generic [ref=f18e2584]:
+                        - heading [level=3] [ref=f18e2585]:
+                          - button "Source & Channel" [expanded] [ref=f18e2586] [cursor=pointer]
+                        - list [ref=f18e2596]:
+                          - generic [ref=f18e2597]:
+                            - generic [ref=f18e2599]:
+                              - listitem [ref=f18e2601]:
+                                - generic [ref=f18e2602]:
+                                  - generic [ref=f18e2603]: Lead Channel
+                                  - button "Edit Lead Channel" [ref=f18e2605] [cursor=pointer]
+                              - listitem [ref=f18e2609]:
+                                - generic [ref=f18e2610]:
+                                  - generic [ref=f18e2611]: Lead Medium
+                                  - button "Edit Lead Medium" [ref=f18e2613] [cursor=pointer]
+                            - generic [ref=f18e2617]:
+                              - listitem [ref=f18e2619]:
+                                - generic [ref=f18e2620]:
+                                  - generic [ref=f18e2621]: Source of Business
+                                  - button "Edit Source of Business" [ref=f18e2623] [cursor=pointer]
+                              - listitem [ref=f18e2627]:
+                                - generic [ref=f18e2628]:
+                                  - generic [ref=f18e2629]: Form Code
+                                  - button "Edit Form Code" [ref=f18e2631] [cursor=pointer]
+                      - generic [ref=f18e2635]:
+                        - heading [level=3] [ref=f18e2636]:
+                          - button "Identification" [expanded] [ref=f18e2637] [cursor=pointer]
+                        - list [ref=f18e2647]:
+                          - generic [ref=f18e2650]:
+                            - listitem [ref=f18e2652]:
+                              - generic [ref=f18e2653]:
+                                - generic [ref=f18e2654]: Qatar ID
+                                - button "Edit Qatar ID" [ref=f18e2656] [cursor=pointer]
+                            - listitem [ref=f18e2660]:
+                              - generic [ref=f18e2661]:
+                                - generic [ref=f18e2662]: Other ID Number
+                                - button "Edit Other ID Number" [ref=f18e2664] [cursor=pointer]
+                      - generic [ref=f18e2668]:
+                        - heading [level=3] [ref=f18e2669]:
+                          - button "Vehicle & Test Drive" [expanded] [ref=f18e2670] [cursor=pointer]
+                        - list [ref=f18e2680]:
+                          - generic [ref=f18e2681]:
+                            - generic [ref=f18e2683]:
+                              - listitem [ref=f18e2685]:
+                                - generic [ref=f18e2686]:
+                                  - generic [ref=f18e2687]: Vehicle of Interest
+                                  - generic [ref=f18e2688]:
+                                    - generic [ref=f18e2689]: Undecided
+                                    - button "Edit Vehicle of Interest" [ref=f18e2691] [cursor=pointer]
+                              - listitem [ref=f18e2695]:
+                                - generic [ref=f18e2696]:
+                                  - generic [ref=f18e2697]: Interested in Test Drive
+                                  - generic [ref=f18e2698]:
+                                    - generic [ref=f18e2703]:
+                                      - generic "False" [ref=f18e2704]
+                                      - generic [ref=f18e2711]: Interested in Test Drive
+                                    - button "Edit Interested in Test Drive" [ref=f18e2712] [cursor=pointer]
+                            - generic [ref=f18e2716]:
+                              - listitem [ref=f18e2718]:
+                                - generic [ref=f18e2719]:
+                                  - generic [ref=f18e2720]: Test Drive Date/Time
+                                  - button "Edit Test Drive Date/Time" [ref=f18e2722] [cursor=pointer]
+                              - listitem [ref=f18e2726]:
+                                - generic [ref=f18e2727]:
+                                  - generic [ref=f18e2728]: Test Drive Location
+                                  - button "Edit Test Drive Location" [ref=f18e2730] [cursor=pointer]
+                      - generic [ref=f18e2734]:
+                        - heading [level=3] [ref=f18e2735]:
+                          - button "Qualification" [expanded] [ref=f18e2736] [cursor=pointer]
+                        - list [ref=f18e2746]:
+                          - generic [ref=f18e2747]:
+                            - generic [ref=f18e2749]:
+                              - listitem [ref=f18e2751]:
+                                - generic [ref=f18e2752]:
+                                  - generic [ref=f18e2753]: Qualification Outcome
+                                  - button "Edit Qualification Outcome" [ref=f18e2755] [cursor=pointer]
+                              - listitem [ref=f18e2759]:
+                                - generic [ref=f18e2760]: Qualified Date
+                            - generic [ref=f18e2764]:
+                              - listitem [ref=f18e2766]:
+                                - generic [ref=f18e2767]:
+                                  - generic [ref=f18e2768]: Contact Validity
+                                  - button "Edit Contact Validity" [ref=f18e2770] [cursor=pointer]
+                              - listitem [ref=f18e2774]:
+                                - generic [ref=f18e2775]: Qualified By
+                      - generic [ref=f18e2780]:
+                        - heading [level=3] [ref=f18e2781]:
+                          - button "SLA Tracking" [expanded] [ref=f18e2782] [cursor=pointer]
+                        - list [ref=f18e2792]:
+                          - generic [ref=f18e2793]:
+                            - generic [ref=f18e2795]:
+                              - listitem [ref=f18e2797]:
+                                - generic [ref=f18e2798]:
+                                  - generic [ref=f18e2799]: Assigned Date/Time
+                                  - generic [ref=f18e2800]: ٢٣/٨/٢٠٢٦, ٩:٥١ PM
+                              - listitem [ref=f18e2804]:
+                                - generic [ref=f18e2805]:
+                                  - generic [ref=f18e2806]: First Contact Date/Time
+                                  - button "Edit First Contact Date/Time" [ref=f18e2808] [cursor=pointer]
+                            - generic [ref=f18e2812]:
+                              - listitem [ref=f18e2814]:
+                                - generic [ref=f18e2815]:
+                                  - generic [ref=f18e2816]: SLA Target — First Contact
+                                  - generic [ref=f18e2817]: ٢٤/٨/٢٠٢٦, ٨:١٥ AM
+                              - listitem [ref=f18e2821]:
+                                - generic [ref=f18e2822]:
+                                  - generic [ref=f18e2823]: SLA Target — Second Checkpoint
+                                  - generic [ref=f18e2824]: ٢٤/٨/٢٠٢٦, ٩:٠٠ AM
+                            - generic [ref=f18e2828]:
+                              - listitem [ref=f18e2830]:
+                                - generic [ref=f18e2831]:
+                                  - generic [ref=f18e2832]: SLA Target — Final Disposition
+                                  - generic [ref=f18e2833]: ٣٠/٨/٢٠٢٦, ٨:٠٠ PM
+                              - listitem [ref=f18e2837]:
+                                - generic [ref=f18e2838]:
+                                  - generic [ref=f18e2839]: SLA Status
+                                  - generic [ref=f18e2840]: On Track
+                      - generic [ref=f18e2844]:
+                        - heading [level=3] [ref=f18e2845]:
+                          - button "Disqualification" [expanded] [ref=f18e2846] [cursor=pointer]
+                        - list [ref=f18e2856]:
+                          - generic [ref=f18e2859]:
+                            - listitem [ref=f18e2861]:
+                              - generic [ref=f18e2862]:
+                                - generic [ref=f18e2863]: Disqualification Reason
+                                - button "Edit Disqualification Reason" [ref=f18e2865] [cursor=pointer]
+                            - listitem [ref=f18e2869]:
+                              - generic [ref=f18e2870]:
+                                - generic [ref=f18e2871]: Disqualification Notes
+                                - button "Edit Disqualification Notes" [ref=f18e2873] [cursor=pointer]
+                      - generic [ref=f18e2877]:
+                        - heading [level=3] [ref=f18e2878]:
+                          - button "Integration" [expanded] [ref=f18e2879] [cursor=pointer]
+                        - list [ref=f18e2889]:
+                          - generic [ref=f18e2890]:
+                            - generic [ref=f18e2892]:
+                              - listitem [ref=f18e2894]:
+                                - generic [ref=f18e2895]: Keyloop Lead Reference
+                              - listitem [ref=f18e2899]:
+                                - generic [ref=f18e2900]:
+                                  - generic [ref=f18e2901]: Integration Status
+                                  - generic [ref=f18e2902]: Pending
+                            - generic [ref=f18e2906]:
+                              - listitem [ref=f18e2908]:
+                                - generic [ref=f18e2909]: Integration Last Error
+                              - listitem [ref=f18e2913]:
+                                - generic [ref=f18e2914]:
+                                  - generic [ref=f18e2915]: Needs Manual Review
+                                  - generic [ref=f18e2916]:
+                                    - generic [ref=f18e2921]:
+                                      - generic "False" [ref=f18e2922]
+                                      - generic [ref=f18e2929]: Needs Manual Review
+                                    - button "Edit Needs Manual Review" [ref=f18e2930] [cursor=pointer]
+                            - listitem [ref=f18e2936]:
+                              - generic [ref=f18e2937]:
+                                - generic [ref=f18e2938]: Is Suppressed Duplicate
+                                - generic [ref=f18e2944]:
+                                  - generic "False" [ref=f18e2945]
+                                  - generic [ref=f18e2952]: Is Suppressed Duplicate
+                      - list [ref=f18e2957]:
+                        - generic [ref=f18e2960]:
+                          - listitem [ref=f18e2962]:
+                            - generic [ref=f18e2963]:
+                              - generic [ref=f18e2964]: Created By
+                              - generic [ref=f18e2968]:
+                                - generic [ref=f18e2974]:
+                                  - link "CRM Agent" [ref=f18e2975] [cursor=pointer]:
+                                    - /url: /lightning/r/User/005a3001tN2A5HAAQ0/view
+                                  - button "Preview" [ref=f18e2981] [cursor=pointer]
+                                - text: ", ٢٣/٨/٢٠٢٦, ٩:٥١ PM"
+                          - listitem [ref=f18e2988]:
+                            - generic [ref=f18e2989]:
+                              - generic [ref=f18e2990]: Last Modified By
+                              - generic [ref=f18e2994]:
+                                - generic [ref=f18e3000]:
+                                  - link "CRM Agent" [ref=f18e3001] [cursor=pointer]:
+                                    - /url: /lightning/r/User/005a3001tN2A5HAAQ0/view
+                                  - button "Preview" [ref=f18e3007] [cursor=pointer]
+                                - text: ", ٢٣/٨/٢٠٢٦, ٩:٥٢ PM"
+                      - generic [ref=f18e3014]:
+                        - heading [level=3] [ref=f18e3015]:
+                          - button "Custom Links" [expanded] [ref=f18e3016] [cursor=pointer]
+                        - list [ref=f18e3026]:
+                          - generic [ref=f18e3027]:
+                            - generic [ref=f18e3029]:
+                              - listitem [ref=f18e3031]:
+                                - generic "Google Search" [ref=f18e3036]:
+                                  - link "Google Search" [ref=f18e3037] [cursor=pointer]:
+                                    - /url: /servlet/servlet.Integration?lid=00ba3000HrBRGgG&eid=00QFV00A3smDtuu2EC&ic=1
+                              - listitem [ref=f18e3039]:
+                                - generic "Google Maps" [ref=f18e3044]:
+                                  - link "Google Maps" [ref=f18e3045] [cursor=pointer]:
+                                    - /url: /servlet/servlet.Integration?lid=00ba3000HrBIsOC&eid=00QFV00A3smDtuu2EC&ic=1
+                              - listitem [ref=f18e3047]:
+                                - generic "Send Gmail" [ref=f18e3052]:
+                                  - link "Send Gmail" [ref=f18e3053] [cursor=pointer]:
+                                    - /url: /servlet/servlet.Integration?lid=00ba3000HrBZeyK&eid=00QFV00A3smDtuu2EC&ic=1
+                            - generic [ref=f18e3055]:
+                              - listitem [ref=f18e3057]:
+                                - generic "Google News" [ref=f18e3062]:
+                                  - link "Google News" [ref=f18e3063] [cursor=pointer]:
+                                    - /url: /servlet/servlet.Integration?lid=00ba3000HrBN4XE&eid=00QFV00A3smDtuu2EC&ic=1
+                              - listitem [ref=f18e3065]:
+                                - generic "Hoovers Profile" [ref=f18e3070]:
+                                  - link "Hoovers Profile" [ref=f18e3071] [cursor=pointer]:
+                                    - /url: /servlet/servlet.Integration?lid=00ba3000HrBVSpI&eid=00QFV00A3smDtuu2EC&ic=1
+            - generic [ref=f18e1971]:
+              - generic [ref=f18e1975]:
+                - heading "Tabs" [level=2] [ref=f18e1976]
+                - generic "Tabs" [ref=f18e1977]:
+                  - generic [ref=f18e1978]:
+                    - heading "Tabs" [level=2] [ref=f18e1979]
+                    - tablist "Tabs" [ref=f18e1981]:
+                      - tab "Related" [selected] [ref=f18e1982] [cursor=pointer]
+                    - tabpanel "Related" [ref=f18e1985]:
+                      - generic [ref=f18e1986]:
+                        - article [ref=f18e1991]:
+                          - generic "We found no potential duplicates of this Lead." [ref=f18e2002]
+                        - article "Service Appointments" [ref=f18e2012]:
+                          - generic [ref=f18e2130]:
+                            - heading [level=2] [ref=f18e2138]:
+                              - link "Service Appointments (0)" [ref=f18e2139] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QFV00A3smDtuu2EC/related/ServiceAppointments/view
+                                - generic "Service Appointments" [ref=f18e2140]
+                                - generic "(0)" [ref=f18e2141]
+                            - button "Show actions for Service Appointments" [ref=f18e2145] [cursor=pointer]
+              - generic [ref=f18e2036]:
+                - article [ref=f18e2038]:
+                  - heading "Interest Tags" [level=2] [ref=f18e2049]
+                - list [ref=f18e2054]:
+                  - listitem [ref=f18e2055]:
+                    - link "Looks like you don’t have the right permissions to view this component. Contact your Salesforce admin for help." [ref=f18e2056] [cursor=pointer]:
+                      - /url: javascript:void(0);
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f18e1340]:
+          - listitem [ref=f18e1341]:
+            - button "To Do List" [ref=f18e1344] [cursor=pointer]
+  - generic:
+    - status

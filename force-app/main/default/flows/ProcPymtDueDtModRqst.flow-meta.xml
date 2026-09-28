@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Determines whether the case owner can retry processing the payment due date modification request.</description>
+        <name>CanRetryPaymentDueDateModificationCaseUpdate</name>
+        <label>Can Retry Payment Due Date Modification Case Update?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ShouldRetryPaymentDueDateModificationCaseUpdate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ShowUpdatePaymentDueDateModificationCaseFailedMessage.Outputs.isRetryConnection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>ProcessPaymentDueDateModificationCase</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines whether isProcessServiceCatalogRequestFailed from the ProcessPaymentDueDateModificationRequestAndCloseCase step of the ProcessPaymentDueDateModificationRequestAndUpdateCase stage is set to True.</description>
+        <name>HasPaymentDueDateModificationRequestFailed</name>
+        <label>Has Payment Due Date Modification Request Failed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>PaymentDueDateModificationFailed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UpdatePaymentDueDateModificationCaseRecord.Outputs.isProcessServiceCatalogRequestFailed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ProcessUpdatePaymentDueDateCaseModificationFailedNotification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Proc Pymt Due Dt Mod Rqst 258 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Proc Pymt Due Dt Mod Rqst 258</label>
+    <orchestratedStages>
+        <description>Processes the updates to the payment due date modification case record, such as Case ID, Account Email, integration definition name, and email subject if the case is closed.</description>
+        <name>ProcessPaymentDueDateModificationCase</name>
+        <label>Process Payment Due Date Modification Case</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>HasPaymentDueDateModificationRequestFailed</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Updates the payment due date modification case record with details, such as, Case ID, Account Email, integration definition name, email subject if the case is closed.</description>
+            <name>UpdatePaymentDueDateModificationCaseRecord</name>
+            <actionName>serviceprocess__UpdateCase</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>accountEmail</name>
+                <value>
+                    <elementReference>SendEmailOnPaymentDueDateModificationCaseCreation.Outputs.accountEmail</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>caseId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>emailSubjectCaseClosed</name>
+                <value>
+                    <stringValue>Payment due date modification request closed</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>integrationDefinitionDevName</name>
+                <value>
+                    <stringValue>AutoFinclSrvcsPymtDueDtModEnrl</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Update Payment Due Date Modification Case Record</label>
+            <outputConfigParams>
+                <name>isProcessServiceCatalogRequestFailed</name>
+                <value xsi:nil="true"/>
+            </outputConfigParams>
+            <outputConfigParams>
+                <name>recordId</name>
+                <value xsi:nil="true"/>
+            </outputConfigParams>
+            <outputConfigParams>
+                <name>failureMessage</name>
+                <value xsi:nil="true"/>
+            </outputConfigParams>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Processes the notification that’s sent to a customer about the case created for payment due date modification associated with their financial account.</description>
+        <name>ProcessPaymentDueDateModificationNotification</name>
+        <label>Process Payment Due Date Modification Notification</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>ProcessPaymentDueDateModificationCase</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Sends an email to the customer notifying them about the case that’s created on payment due date modification associated with their financial account.</description>
+            <name>SendEmailOnPaymentDueDateModificationCaseCreation</name>
+            <actionName>Send_Email_On_Payment_Terms_Modification_Clone_258</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>serviceCatalogItemDefinitionName</name>
+                <value>
+                    <elementReference>$Record.SvcCatalogItemDefinition.DeveloperName</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>serviceCatalogRequestId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Send Email On Payment Due Date Modification Case Creation</label>
+            <outputConfigParams>
+                <name>accountEmail</name>
+                <value xsi:nil="true"/>
+            </outputConfigParams>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Processes the notification that’s sent to a case owner about the failure to update the payment due date modification case record associated with a financial account.</description>
+        <name>ProcessUpdatePaymentDueDateCaseModificationFailedNotification</name>
+        <label>Process Update Payment Due Date Modification Case Failed Notification</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CanRetryPaymentDueDateModificationCaseUpdate</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Shows an error message if the update to the payment due date modification case record failed and prompts the case owner to retry processing the request.</description>
+            <name>ShowUpdatePaymentDueDateModificationCaseFailedMessage</name>
+            <actionName>serviceprocess__AsyncApexCalloutSts</actionName>
+            <actionType>stepInteractive</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>Resource</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>status</name>
+                <value>
+                    <elementReference>UpdatePaymentDueDateModificationCaseRecord.Outputs.failureMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__RecordId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__CustomEmailSubject</name>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__CustomEmailBody</name>
+            </inputParameters>
+            <label>Show Update Payment Due Date Modification Case Failed Message</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>InteractiveStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Orchestrator</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <sourceTemplate>AutoFinSvcProc__ProcPymtDueDtModRqst</sourceTemplate>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>ProcessPaymentDueDateModificationNotification</targetReference>
+        </connector>
+        <filterFormula>{!$Record.SvcCatalogItemDefinition.DeveloperName}=&apos;PaymentDueDateModification&apos; || {!$Record.Product.Id} = &apos;01tWs00000ANBMnIAP&apos;</filterFormula>
+        <object>SvcCatalogRequest</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

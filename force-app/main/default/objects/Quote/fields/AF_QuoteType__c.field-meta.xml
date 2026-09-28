@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_QuoteType__c</fullName>
+    <description>Field, not record type — same document structure for both types unless layouts diverge.</description>
+    <label>Quote Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Quotation</fullName>
+                <default>false</default>
+                <label>Customer Quotation</label>
+            </value>
+            <value>
+                <fullName>Bank Quotation</fullName>
+                <default>false</default>
+                <label>Bank Quotation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

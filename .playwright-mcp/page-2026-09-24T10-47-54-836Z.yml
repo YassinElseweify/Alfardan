@@ -1,0 +1,96 @@
+- generic [active]:
+  - generic:
+    - generic [ref=f129e2]:
+      - generic [ref=f129e3]:
+        - link "Skip to Navigation" [ref=f129e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f129e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f129e8]:
+          - generic [ref=f129e9]: "Sandbox: QA |"
+          - link "Log out" [ref=f129e10] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f129e11]:
+          - button "Search" [ref=f129e18]: Search...
+          - navigation "Global Header" [ref=f129e23]:
+            - list [ref=f129e25]:
+              - listitem [ref=f129e26]:
+                - group [ref=f129e27]:
+                  - button "This item doesn't support favorites" [ref=f129e29] [cursor=pointer]:
+                    - generic [ref=f129e30]:
+                      - tooltip "This item doesn't support favorites"
+                  - button [ref=f129e38] [cursor=pointer]:
+                    - generic [ref=f129e39]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f129e46]:
+                - button "Global Actions" [ref=f129e48]
+              - listitem [ref=f129e55]:
+                - button [ref=f129e58] [cursor=pointer]:
+                  - generic [ref=f129e59]:
+                    - tooltip "Salesforce Help"
+              - listitem
+              - listitem [ref=f129e66]:
+                - button [ref=f129e69] [cursor=pointer]:
+                  - generic [ref=f129e70]:
+                    - tooltip "Notifications"
+              - listitem [ref=f129e79]:
+                - button [ref=f129e82] [cursor=pointer]:
+                  - generic [ref=f129e83]:
+                    - tooltip "View profile"
+      - generic [ref=f129e85]:
+        - generic [ref=f129e88]:
+          - generic [ref=f129e90]:
+            - navigation "App" [ref=f129e91]:
+              - button "App Launcher" [ref=f129e93] [cursor=pointer]
+            - heading "Automotive" [level=1] [ref=f129e105]
+          - navigation "Global" [ref=f129e109]:
+            - list [ref=f129e110]:
+              - listitem [ref=f129e111]:
+                - link "Home" [ref=f129e112] [cursor=pointer]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f129e114]:
+                - link "Vehicles" [ref=f129e115] [cursor=pointer]:
+                  - /url: /lightning/o/Vehicle/home
+                - button "Vehicles List" [ref=f129e120] [cursor=pointer]
+              - listitem [ref=f129e128]:
+                - link "Assets" [ref=f129e129] [cursor=pointer]:
+                  - /url: /lightning/o/Asset/home
+                - button "Assets List" [ref=f129e134] [cursor=pointer]
+              - listitem [ref=f129e142]:
+                - link "Vehicle Definitions" [ref=f129e143] [cursor=pointer]:
+                  - /url: /lightning/o/VehicleDefinition/home
+                - button "Vehicle Definitions List" [ref=f129e148] [cursor=pointer]
+              - listitem [ref=f129e156]:
+                - link "Products" [ref=f129e157] [cursor=pointer]:
+                  - /url: /lightning/o/Product2/home
+                - button "Products List" [ref=f129e162] [cursor=pointer]
+              - listitem [ref=f129e170]:
+                - link "Accounts" [ref=f129e171] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f129e176] [cursor=pointer]
+              - listitem [ref=f129e184]:
+                - link "Contacts" [ref=f129e185] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f129e190] [cursor=pointer]
+              - listitem [ref=f129e198]:
+                - link "Asset Milestones" [ref=f129e199] [cursor=pointer]:
+                  - /url: /lightning/o/AssetMilestone/home
+                - button "Asset Milestones List" [ref=f129e204] [cursor=pointer]
+              - listitem [ref=f129e212] [cursor=pointer]:
+                - link "Opportunities" [ref=f129e213]:
+                  - /url: /lightning/o/Opportunity/home
+                - button "Opportunities List" [ref=f129e218]
+              - listitem [ref=f129e226]:
+                - button "* Show more navigation items" [ref=f129e228] [cursor=pointer]:
+                  - generic "Not added to nav bar" [ref=f129e229]: "*"
+                  - generic [aria-hidden] [ref=f129e230]: More
+                  - generic [ref=f129e237]: Show more navigation items
+              - listitem [ref=f129e238]:
+                - button "Edit nav items" [ref=f129e240] [cursor=pointer]
+        - main [ref=f129e247]
+    - dialog [ref=f129e256]:
+      - generic [ref=f129e257]:
+        - button "Cancel and close" [ref=f129e258] [cursor=pointer]
+        - status [ref=f129e264]
+  - generic:
+    - status

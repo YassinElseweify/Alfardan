@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VerifiedDate__c</fullName>
+    <description>Stamped by AF_FL_Payment_StampVerification when AF_Status__c becomes Paid / Verified. Gives the reservation contract an auditable &quot;deposit confirmed on&quot; date.</description>
+    <label>Verified Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

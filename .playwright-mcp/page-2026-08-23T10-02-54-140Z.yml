@@ -1,0 +1,100 @@
+- generic [active]:
+  - generic [ref=f49e2]:
+    - generic [ref=f49e3]:
+      - link "Skip to Navigation" [ref=f49e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f49e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f49e8]:
+        - generic [ref=f49e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f49e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f49e11]:
+        - button "Search" [ref=f49e17]: Search...
+        - navigation "Global Header" [ref=f49e22]:
+          - list [ref=f49e24]:
+            - listitem [ref=f49e25]:
+              - group [ref=f49e26]:
+                - button "This item doesn't support favorites" [ref=f49e28] [cursor=pointer]:
+                  - generic [ref=f49e29]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f49e37] [cursor=pointer]:
+                  - generic [ref=f49e38]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f49e45]:
+              - button "Global Actions" [ref=f49e47]
+            - listitem [ref=f49e54]:
+              - button [ref=f49e57] [cursor=pointer]:
+                - generic [ref=f49e58]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f49e65]:
+              - button [ref=f49e71] [cursor=pointer]:
+                - generic [ref=f49e72]:
+                  - tooltip "Setup"
+            - listitem [ref=f49e79]:
+              - button [ref=f49e82] [cursor=pointer]:
+                - generic [ref=f49e83]:
+                  - tooltip "Notifications"
+            - listitem [ref=f49e92]:
+              - button "View profile" [ref=f49e95] [cursor=pointer]:
+                - generic [ref=f49e96]:
+                  - tooltip "View profile"
+    - generic [ref=f49e100]:
+      - generic [ref=f49e103]:
+        - generic [ref=f49e105]:
+          - navigation "App" [ref=f49e106]:
+            - button "App Launcher" [ref=f49e108] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f49e120]
+        - navigation "Global" [ref=f49e124]:
+          - list [ref=f49e125]:
+            - listitem [ref=f49e126] [cursor=pointer]:
+              - link "Home" [ref=f49e127]:
+                - /url: /lightning/page/home
+            - listitem [ref=f49e129]:
+              - link "Analytics" [ref=f49e130] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f49e132]:
+              - link "Opportunities" [ref=f49e133] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f49e138] [cursor=pointer]
+            - listitem [ref=f49e146]:
+              - link "Leads" [ref=f49e147] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f49e152] [cursor=pointer]
+            - listitem [ref=f49e160]:
+              - link "Tasks" [ref=f49e161] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f49e166] [cursor=pointer]
+            - listitem [ref=f49e174]:
+              - link "Files" [ref=f49e175] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f49e180] [cursor=pointer]
+            - listitem [ref=f49e188]:
+              - link "Accounts" [ref=f49e189] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f49e194] [cursor=pointer]
+            - listitem [ref=f49e202]:
+              - link "Contacts" [ref=f49e203] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f49e208] [cursor=pointer]
+            - listitem [ref=f49e216]:
+              - link "Campaigns" [ref=f49e217] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f49e222] [cursor=pointer]
+            - listitem [ref=f49e230]:
+              - link "Dashboards" [ref=f49e231] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f49e236] [cursor=pointer]
+            - listitem [ref=f49e244]:
+              - button "Show more navigation items" [ref=f49e246] [cursor=pointer]:
+                - generic [ref=f49e247]: More
+            - listitem [ref=f49e255]:
+              - button "Edit nav items" [ref=f49e257] [cursor=pointer]
+      - main [ref=f49e264]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f49e272]:
+          - listitem [ref=f49e273]:
+            - button "To Do List" [ref=f49e276] [cursor=pointer]
+  - generic:
+    - status

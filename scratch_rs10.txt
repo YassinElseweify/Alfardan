@@ -1,0 +1,253 @@
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-001
+Test Case Description: Verify a Sales Order record is created and linked to the Opportunity once payment and reservation conditions are met
+Personas Involved: Sales Representative, System
+Preconditions: 1. Opportunity OPP-2026-004512 has reservation RSV-2026-00220 at Status Reserved with a signed contract uploaded.
+2. Invoice INV-2026-00455 is Fully Paid with proof attached to every payment.
+3. Vehicle VIN WBAJA7C50R9123456 is In Stock in Keyloop.
+Steps to Reproduce: 1. Open OPP-2026-004512 as sales.rep@alfardan.com.qa and initiate Sales Order generation.
+2. Respond to the full payment confirmation prompt.
+3. Inspect the created Sales Order record and its link to the Opportunity.
+4. Inspect the Sales Order for the vehicle, customer, price and reservation references.
+5. Attempt to generate a second Sales Order on the same Opportunity.
+Expected Result: 1. The Sales Order action is available and opens without error.
+2. The system prompts the Sales Representative to confirm full payment collection before proceeding, per FR4.
+3. A Sales Order record is created with an auto-generated number and is linked to OPP-2026-004512.
+4. Vehicle VIN, customer Khalid Al-Mannai, agreed price and reservation RSV-2026-00220 are all populated on the Sales Order.
+5. The second generation attempt is blocked; duplicate Sales Orders against one Opportunity would be double-counted in the ALF-RS-15 dashboards.
+Severity: Critical
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR1, FR4, AC1
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-002
+Test Case Description: Verify Sales Order generation is blocked before the payment and reservation preconditions are satisfied
+Personas Involved: Sales Representative, System
+Preconditions: 1. Opportunity OPP-2026-004777 has a reservation at Status Reserved.
+2. Invoice INV-2026-00460 is Partially Paid with only the deposit received.
+3. Opportunity OPP-2026-004888 is fully paid but has no reservation at all.
+Steps to Reproduce: 1. Attempt Sales Order generation on OPP-2026-004777 while the invoice is only Partially Paid.
+2. Decline the full payment confirmation prompt and observe the outcome.
+3. Attempt Sales Order generation on OPP-2026-004888 where no reservation exists.
+4. Attempt Sales Order generation on an opportunity whose reservation has Status Expired.
+5. Attempt Sales Order creation directly via the API, bypassing the Opportunity action.
+Expected Result: 1. Generation is blocked with a message naming the outstanding balance; no Sales Order record is created.
+2. Declining the prompt aborts generation cleanly with no partial record left behind.
+3. The behaviour must be defined and consistent: FR1 makes reservation conditions a precondition, so an unreserved opportunity should be blocked or the reservation requirement is not actually enforced.
+4. Generation is blocked because an expired reservation no longer holds the vehicle; proceeding would sell a car that has been released back to inventory.
+5. The API attempt is blocked by the same rules; validation that can be bypassed by the API is not enforcement.
+Severity: Critical
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR1, FR4, AC1
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-003
+Test Case Description: Verify whether a Sales Order can be generated for an in-transit or on-order vehicle, given FR5 blocks it while ALF-RS-08 FR4 permits reserving exactly those vehicles
+Personas Involved: Sales Representative, Ordering / Planning / Admin Team, System
+Preconditions: 1. ALF-RS-10 FR5 states the system should prevent Sales Order generation for opportunities linked to non-stock, on-order or in-transit vehicles.
+2. ALF-RS-08 FR4 states reservations are supported for in-stock and in-transit or ordered vehicles, with placeholder representation for pre-orders.
+3. Opportunity OPP-2026-004950 has a confirmed reservation and full payment against Land Rover Defender VIN SALEA7BU2R2123890, currently In Transit.
+4. FR3 requires On Order and In Transit states to be surfaced in Salesforce.
+Steps to Reproduce: 1. Confirm the reservation and full payment on OPP-2026-004950 for the in-transit vehicle.
+2. Attempt Sales Order generation and record the outcome and any message shown.
+3. Repeat on an opportunity whose vehicle is a pre-order placeholder with no VIN.
+4. Update the Keyloop status of VIN SALEA7BU2R2123890 to In Stock, let the sync run, and retry generation.
+5. Record what the customer-facing position is between full payment and vehicle arrival.
+Expected Result: 1. The reservation and payment complete successfully, confirming the customer has already paid for a vehicle that has not yet arrived.
+2. The outcome is recorded. FR5 requires a block; if the block is enforced, a fully paid customer cannot receive a Sales Order and the deal stalls with no defined path forward.
+3. The pre-order placeholder case behaves the same way as the in-transit case, with no separate handling defined anywhere in the story.
+4. Generation succeeds once the vehicle is In Stock, which confirms FR5 is enforced on the live Keyloop status rather than on the status at reservation time.
+5. This test is BLOCKED for a pass or fail verdict until the conflict between ALF-RS-10 FR5 and ALF-RS-08 FR4 is resolved. The rule must be defined and applied consistently, because the current text permits taking full payment for a vehicle that cannot then be ordered against a Sales Order.
+Severity: Critical
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR5 vs BRD 10.8 ALF-RS-08 FR4
+Status: Blocked
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-004
+Test Case Description: Verify the high-level order states On Order, In Transit and In Stock / Arrived are surfaced in Salesforce with brand sub-statuses where available
+Personas Involved: Sales Representative, System
+Preconditions: 1. Vehicle order records exist in Keyloop for BMW and Land Rover units.
+2. The Keyloop to Salesforce vehicle status sync is active via MuleSoft.
+3. FR3 defines three high-level states plus brand-specific sub-statuses where available.
+Steps to Reproduce: 1. Inspect the order status picklist in Salesforce and count the high-level values.
+2. Set a BMW unit to Ordered in Keyloop, run the sync, and inspect the Salesforce value.
+3. Move the same unit to In Transit in Keyloop, sync, and inspect the value.
+4. Move the unit to Arrived in Keyloop, sync, and inspect the value and any sub-status.
+5. Set a Land Rover unit to a brand-specific sub-status not shared by BMW, sync, and inspect the result.
+Expected Result: 1. Exactly three high-level states are present: On Order, In Transit and In Stock / Arrived, matching FR3.
+2. The Salesforce record shows On Order; note that FR3 names the state On Order while the Requirement Overview and AC name it Ordered, so the mapping from the Keyloop value must be explicit and documented.
+3. The Salesforce record shows In Transit, matching AC2.
+4. The Salesforce record shows In Stock / Arrived and any brand sub-status is displayed without overwriting the high-level state.
+5. The brand-specific sub-status is stored and displayed for Land Rover without breaking the shared high-level state; an unmapped sub-status must not leave the high-level state blank.
+Severity: High
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR2, FR3, AC2
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-005
+Test Case Description: Verify the vehicle status sync from Keyloop handles failure, replay and bulk volume without leaving Salesforce out of step
+Personas Involved: System
+Preconditions: 1. Twenty vehicle order records are linked to active Salesforce opportunities.
+2. The MuleSoft endpoint can be forced to fail in the test environment.
+3. An integration monitoring channel exists.
+Steps to Reproduce: 1. Force the sync endpoint to time out and run the scheduled sync.
+2. Inspect the Salesforce order statuses and check whether an alert was raised.
+3. Restore the endpoint and run the sync again.
+4. Replay the same status message twice for one vehicle and inspect the record and any notifications.
+5. Sync status changes for all 20 vehicles in a single run.
+Expected Result: 1. The sync fails without an unhandled exception and without partially committing some records and silently dropping others.
+2. Statuses remain at their last known values and an alert is raised to a monitored recipient; a silent sync failure leaves Sales staff quoting arrival dates from stale data.
+3. The statuses catch up to the current Keyloop values on the next successful run.
+4. The duplicate message leaves the record unchanged and does not send the customer a second arrival notification.
+5. All 20 records update in the single run, confirming the sync is bulkified and does not stop at the first record or hit a governor limit.
+Severity: Critical
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR2, Assumption 3; BRD 7 Cross-Cutting 3
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-006
+Test Case Description: Verify customer and internal notifications fire at meaningful order progress stages without duplication
+Personas Involved: Sales Representative, System
+Preconditions: 1. Opportunity OPP-2026-004950 has a Sales Order with the vehicle On Order.
+2. Customer Khalid Al-Mannai has a valid email address and communication consent recorded on the Contact.
+3. The assigned Sales Representative is sales.rep@alfardan.com.qa.
+Steps to Reproduce: 1. Move the vehicle status to In Transit and run the sync.
+2. Check which recipients received a notification and inspect the content.
+3. Move the vehicle status to In Stock / Arrived and run the sync.
+4. Re-run the sync with the status unchanged at In Stock / Arrived.
+5. Repeat the arrival sync for a customer whose Contact has opted out of communications.
+Expected Result: 1. The status updates to In Transit on the Sales Order.
+2. The notification recipients and content are recorded; FR6 requires both customer and internal users to be notified, and the content must name the vehicle and the order without exposing internal cost data.
+3. The customer receives a progress notification and the sales order is updated, per AC3.
+4. No duplicate notification is sent for an unchanged status; repeat notifications on every sync run are a defect that erodes customer trust.
+5. The opted-out customer receives no marketing-style communication; if a transactional exemption applies it must be defined explicitly rather than assumed.
+Severity: High
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR6, AC3
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-007
+Test Case Description: Verify the BMW and JLR special-order approval gate required by Assumption 1 before downpayment collection
+Personas Involved: Sales Representative, Ordering / Planning / Admin Team, System
+Preconditions: 1. Assumption 1 states that for BMW and JLR special orders where the vehicle is not in stock, the ordering and planning team must complete internal checks and approval before Sales can proceed to downpayment collection.
+2. Opportunity OPP-2026-005010 is a BMW special order with no stock vehicle available.
+3. No approval step for this scenario is defined in any numbered functional requirement.
+Steps to Reproduce: 1. Create a BMW special-order opportunity with no available stock vehicle.
+2. Attempt to collect a downpayment through the ALF-RS-08 reservation deposit path.
+3. Record whether any ordering and planning approval was requested or enforced.
+4. Repeat for a JLR special order.
+5. Repeat for a Ferrari special order, which Assumption 1 does not mention.
+Expected Result: 1. The special-order opportunity is created and a vehicle is represented as a pre-order placeholder.
+2. The outcome is recorded: Assumption 1 requires the gate, but no functional requirement implements it, so deposit collection is likely to proceed unchecked.
+3. If no approval is enforced, this is a control gap, not a passing test. A deposit taken on a special order that the planning team subsequently cannot fulfil must be refunded through the ALF-RS-13 exception path.
+4. The JLR case behaves identically to the BMW case.
+5. The Ferrari case shows whether the gate was implemented for the two named brands only or applied generally. This test is BLOCKED for a pass or fail verdict until the approval gate and sequencing are confirmed per Assumption 1.
+Severity: Critical
+BRD / SD Reference: BRD 10.10 ALF-RS-10 Assumption 1
+Status: Blocked
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-008
+Test Case Description: Verify the Sales Order is treated as an internal document and is never transmitted to the manufacturer or to the vehicle ordering process
+Personas Involved: Sales Representative, System
+Preconditions: 1. The Requirement Overview states the Sales Order is internal, is not sent to the manufacturer, and is not linked to the vehicle ordering process managed separately in Autoline.
+2. Sales Order SO-2026-00133 has been generated on OPP-2026-004512.
+3. Integration logs are accessible.
+Steps to Reproduce: 1. Generate Sales Order SO-2026-00133 and inspect the integration log for outbound calls triggered by the generation.
+2. Check whether any outbound message targets an OEM or manufacturer endpoint.
+3. Check whether the generation created or modified any vehicle order record in Autoline.
+4. Inspect the Sales Order document for any manufacturer-facing branding or addressing.
+5. Check whether the Sales Order is emailed to the customer automatically.
+Expected Result: 1. The generation completes with no unexpected outbound integration calls.
+2. No call is made to any manufacturer or OEM endpoint; OEM integration is explicitly out of scope per Assumption 2.
+3. No vehicle order record is created or modified in Autoline, confirming the two processes remain separate.
+4. The document is formatted as an internal record stored against the Opportunity, not as a manufacturer order form.
+5. Any automatic customer email is recorded and confirmed against the requirement; the story does not state the Sales Order is customer-facing, so automatic transmission would exceed scope.
+Severity: High
+BRD / SD Reference: BRD 10.10 ALF-RS-10 Overview, Assumption 2
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-009
+Test Case Description: Verify order status values sync correctly for a vehicle whose Keyloop status regresses or arrives out of sequence
+Personas Involved: System, Sales Representative
+Preconditions: 1. Vehicle VIN SALEA7BU2R2123890 is at In Transit in Salesforce.
+2. The sync can deliver messages out of order in the test environment.
+3. The customer has already received an In Transit notification.
+Steps to Reproduce: 1. Send an In Stock / Arrived message followed immediately by a delayed On Order message for the same VIN.
+2. Inspect the resulting Salesforce status.
+3. Send a status value from Keyloop that has no mapping in the Salesforce picklist.
+4. Send a status message for a VIN that has no Salesforce order record.
+5. Send a status change for a vehicle whose Sales Order has already been cancelled under ALF-RS-13.
+Expected Result: 1. Both messages are processed without error.
+2. The record must not regress to an earlier state on a late-arriving message; a vehicle showing On Order after it has physically arrived will trigger incorrect customer communication.
+3. The unmapped value is handled gracefully with an alert rather than blanking the status or failing the whole batch.
+4. The orphan message produces a handled error and a visible log entry rather than silently creating an unlinked record.
+5. The cancelled order is not resurrected by an inbound status update, and no arrival notification is sent to a customer whose order was cancelled.
+Severity: High
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR2, FR3, FR6
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-010
+Test Case Description: Verify the full payment confirmation prompt cannot be bypassed and is recorded against the Sales Order
+Personas Involved: Sales Representative, System
+Preconditions: 1. Opportunity OPP-2026-004512 has Invoice INV-2026-00455 at Fully Paid.
+2. FR4 requires the system to prompt the Sales Representative to confirm full payment collection before Sales Order generation.
+3. Audit fields are available on the Sales Order.
+Steps to Reproduce: 1. Initiate Sales Order generation and observe the confirmation prompt.
+2. Dismiss the prompt without confirming and check whether a Sales Order was created.
+3. Confirm the prompt and inspect where the confirmation is recorded.
+4. Attempt to create the Sales Order via the API, which has no UI prompt.
+5. Attempt generation on an invoice that is only Partially Paid and confirm the prompt anyway.
+Expected Result: 1. A prompt appears requiring explicit confirmation of full payment collection.
+2. Dismissing the prompt aborts generation and creates no record.
+3. The confirmation is stored with the confirming user and timestamp on the Sales Order, so the FR4 control is auditable rather than transient.
+4. The API path must apply the same underlying payment check; a prompt is a UI affordance and cannot be the only control, or the check is bypassable.
+5. Confirming the prompt on a Partially Paid invoice does not override the underlying validation; the generation is still blocked by the data-layer rule.
+Severity: Critical
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR4; BRD 10.9 ALF-RS-09 FR6
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-011
+Test Case Description: Verify Sales Order visibility and edit rights are restricted to the owning business unit and the Ordering / Planning / Admin Team
+Personas Involved: Sales Representative, Ordering / Planning / Admin Team, System
+Preconditions: 1. Sales Order SO-2026-00133 belongs to Alfardan Premier Motors.
+2. sales.rep3@alfardan.com.qa belongs to Alfardan Sports Motors.
+3. The Ordering / Planning / Admin Team is named in the Related Personas for this story but does not appear in the System Personas table in section 6 of the BRD.
+Steps to Reproduce: 1. As sales.rep3@alfardan.com.qa attempt to view SO-2026-00133 via search and direct URL.
+2. Run a Sales Order report as sales.rep3@alfardan.com.qa and inspect the business units returned.
+3. Identify the Salesforce profile or permission set that represents the Ordering / Planning / Admin Team.
+4. As that profile, attempt to view and update the order status on SO-2026-00133.
+5. As that profile, attempt to edit the agreed price on the Sales Order.
+Expected Result: 1. Access is denied by both search and direct URL.
+2. The report returns no Alfardan Sports Motors user visibility into Premier Motors orders.
+3. The profile or permission set is identified. If no such profile exists, the persona named in this story has no representation in the security model, which must be raised because section 6 of the BRD does not define this role.
+4. The role can view the order and update order-tracking fields as its responsibilities require.
+5. Commercial fields such as agreed price are not editable by the ordering team; an operational role able to change deal pricing after payment is a segregation-of-duties defect.
+Severity: High
+BRD / SD Reference: BRD 10.10 ALF-RS-10 Related Personas; BRD 6 System Personas; BRD 7 Cross-Cutting 1
+Status: Not Executed
+======================================================================
+User Story ID: ALF-RS-10
+Test Case ID: RS-10-TC-012
+Test Case Description: Verify order state fields remain accurate and performant when a single Account holds a high volume of Sales Orders
+Personas Involved: Sales Representative, System
+Preconditions: 1. Fleet account Qatar Foundation Fleet Services holds 150 Sales Orders across BMW and Land Rover.
+2. Vehicle statuses span On Order, In Transit and In Stock / Arrived.
+3. Related list and report views are configured on the Account.
+Steps to Reproduce: 1. Open the Qatar Foundation Fleet Services Account and load the Sales Orders related list.
+2. Sort and filter the list by order status.
+3. Run a report grouped by order status across all 150 orders.
+4. Trigger a sync updating the status of 50 of those orders in one run.
+5. Re-open the related list and the report and verify the counts.
+Expected Result: 1. The related list loads without timing out and shows the correct total count.
+2. Sorting and filtering return correct results without error.
+3. The report returns all 150 orders with correct grouping and no truncation warning that would hide records from management.
+4. All 50 orders update in the single run with no partial failure.
+5. The counts in the list and the report match the updated data exactly; a mismatch means the ALF-RS-15 dashboards will misreport pipeline.
+Severity: Medium
+BRD / SD Reference: BRD 10.10 ALF-RS-10 FR2, FR3; BRD 10.15 ALF-RS-15 FR1
+Status: Not Executed

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Notification</name>
+        <label>Send Notification</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_NotificationType.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>var_RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>NotifTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotifBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Owner_Confirmation</name>
+        <label>Send Owner Confirmation Email</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <actionName>AF_CreditNote__c.AF_EA_CreditNote_Approved</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Get_NotificationType</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>AF_CreditNote__c.AF_EA_CreditNote_Approved</nameSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_RecipientId</name>
+        <label>Assign Recipient Id</label>
+        <locationX>176</locationX>
+        <locationY>402</locationY>
+        <assignmentItems>
+            <assignToReference>var_RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Notification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Opportunity_Not_Already_Closed</name>
+        <label>Opportunity Not Already Closed?</label>
+        <locationX>176</locationX>
+        <locationY>50</locationY>
+        <defaultConnector>
+            <targetReference>Get_Owner_User_ForEmail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Already Closed - Do Nothing</defaultConnectorLabel>
+        <rules>
+            <name>Not_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_ForClose.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_ForClose.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opportunity_Closed</targetReference>
+            </connector>
+            <label>Not Already Closed</label>
+        </rules>
+    </decisions>
+    <description>Fires when AF_ApprovalStatus__c changes to Approved. Notifies the Credit Note Owner via email and Custom Notification - same dual-channel pattern as AF_FL_Reservation_Approved.
+
+LFRDN-725 fix: this flow only ever notified - approving a cancellation&apos;s Credit Note never closed the related Opportunity, leaving a cancelled deal sitting open indefinitely. Added Update_Opportunity_Closed, setting StageName to Closed Lost (the only closed-and-not-won stage this org&apos;s Stage picklist has - there is no dedicated Cancelled stage) whenever the Opportunity isn&apos;t already closed. Does not set AF_LostReason__c - none of its existing values describe a post-sale cancellation cleanly, and per this org&apos;s standing practice, business-specific picklist data is left to the reporter/BA rather than guessed.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_Subject</name>
+        <dataType>String</dataType>
+        <expression>&quot;Approved: Cancellation/Refund &quot; &amp; {!$Record.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>NotifBody</name>
+        <dataType>String</dataType>
+        <expression>&quot;Your cancellation/refund request &quot; &amp; {!$Record.Name} &amp; &quot; was approved.&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>NotifTitle</name>
+        <dataType>String</dataType>
+        <expression>&quot;Cancellation/Refund Approved: &quot; &amp; {!$Record.Name}</expression>
+    </formulas>
+    <interviewLabel>Credit Note Approved {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Credit Note Approved</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_NotificationType</name>
+        <label>Get Notification Type</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_RecipientId</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>AF_NT_Alfardan_Alert</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunity_ForClose</name>
+        <label>Get Opportunity For Close</label>
+        <locationX>176</locationX>
+        <locationY>26</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Opportunity_Not_Already_Closed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Owner_User_ForEmail</name>
+        <label>Get Owner User (for Email)</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_Owner_Confirmation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunity_Closed</name>
+        <label>Set Opportunity Closed Lost</label>
+        <locationX>176</locationX>
+        <locationY>26</locationY>
+        <connector>
+            <targetReference>Get_Owner_User_ForEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity_ForClose</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.AF_ApprovalStatus__c}) &amp;&amp; ISPICKVAL({!$Record.AF_ApprovalStatus__c}, &quot;Approved&quot;)</filterFormula>
+        <object>AF_CreditNote__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>var_RecipientIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Stamp_Verification</name>
+        <label>Stamp Verification</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_VerifiedDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_VerifiedBy__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>ALF-RS-08 FR12: stamps who verified a deposit payment and when, the moment AF_Status__c becomes Paid / Verified. Before-save so it costs no extra DML. The reservation contract prints this date as the &quot;deposit confirmed on&quot; evidence.</description>
+    <environments>Default</environments>
+    <interviewLabel>Payment Stamp Verification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Payment Stamp Verification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Stamp_Verification</targetReference>
+        </connector>
+        <filterFormula>AND(
+  ISPICKVAL({!$Record.AF_Status__c}, &quot;Paid / Verified&quot;),
+  ISBLANK({!$Record.AF_VerifiedDate__c})
+)</filterFormula>
+        <object>AF_Payment__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

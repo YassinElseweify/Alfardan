@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>2026-09-10 (LFRDN discount-price bug): Tier 0 (self-authorized, &lt;=2%) discounts never enter AF_AP_Quote_DiscountTiers at all - AF_FL_Quote_SetDiscountApprovalStatus (before-save) sets AF_DiscountApprovalStatus__c straight to Not Required without ever going Pending, so AF_FL_Quote_DiscountApproved (which only fires on the transition to Approved) never runs for this case, and Grand Total silently never reflected the discount even though Discount Amount/Discount % displayed correctly. This flow covers exactly that gap: fires only on the transition INTO Not Required, looks up the Quote&apos;s Vehicle line item (AF_LineItemType__c=Vehicle) and writes Quote.AF_DiscountPercent__c onto its native Discount (Percent) field, same mechanism AF_FL_Quote_DiscountApproved uses for the Approved case - Salesforce recalculates TotalPrice/Subtotal from Discount automatically. If the Quote has no Vehicle line, silently no-ops. Deliberately a separate flow from AF_FL_Quote_DiscountApproved rather than widening that one&apos;s trigger, since Tier 0 was never actually submitted for approval and that flow&apos;s own notification text (&quot;your discount request has been approved&quot;) would be factually wrong for a self-authorized discount nobody reviewed.</description>
+    <environments>Default</environments>
+    <interviewLabel>Quote Apply Self-Authorized Discount {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote Apply Self-Authorized Discount</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Vehicle_Line</name>
+        <label>Get Vehicle Line Item</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Apply_Discount_To_Line</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>QuoteId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_LineItemType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Vehicle</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>QuoteLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Apply_Discount_To_Line</name>
+        <label>Apply Discount to Vehicle Line</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Vehicle_Line.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Discount</field>
+            <value>
+                <elementReference>$Record.AF_DiscountPercent__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>QuoteLineItem</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Vehicle_Line</targetReference>
+        </connector>
+        <filterFormula>(ISCHANGED({!$Record.AF_DiscountApprovalStatus__c}) || ISCHANGED({!$Record.AF_DiscountAmount__c})) &amp;&amp; ISPICKVAL({!$Record.AF_DiscountApprovalStatus__c}, &quot;Not Required&quot;)</filterFormula>
+        <object>Quote</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

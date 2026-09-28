@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_CommitGate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(StageName, &quot;Commit&quot;), ISBLANK(SyncedQuoteId))</errorConditionFormula>
+    <errorMessage>Commit stage requires a synced Quote.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,303 @@
+- generic [active]:
+  - generic [ref=f16e2]:
+    - generic [ref=f16e3]:
+      - link "Skip to Navigation" [ref=f16e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f16e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f16e195]:
+        - generic [ref=f16e196]: "Sandbox: QA |"
+        - link "Log out" [ref=f16e197] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f16e6]:
+        - button "Search" [ref=f16e13]: Search...
+        - navigation "Global Header" [ref=f16e18]:
+          - list [ref=f16e199]:
+            - listitem [ref=f16e200]:
+              - group [ref=f16e201]:
+                - button "Add favorite" [ref=f16e203] [cursor=pointer]:
+                  - generic [ref=f16e204]:
+                    - tooltip "Add favorite"
+                - button [ref=f16e212] [cursor=pointer]:
+                  - generic [ref=f16e213]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f16e220]:
+              - button [ref=f16e226] [cursor=pointer]:
+                - generic [ref=f16e227]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f16e234]:
+              - button [ref=f16e236] [cursor=pointer]:
+                - generic [ref=f16e237]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f16e244]:
+              - button [ref=f16e247] [cursor=pointer]:
+                - generic [ref=f16e248]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f16e255]:
+              - button "5 Notifications" [ref=f16e258] [cursor=pointer]:
+                - generic [ref=f16e259]:
+                  - generic [ref=f16e260]: "5"
+                  - tooltip "Notifications"
+              - generic [ref=f16e269]: 5 new notifications
+            - listitem [ref=f16e270]:
+              - button "View profile" [ref=f16e273] [cursor=pointer]:
+                - generic [ref=f16e274]:
+                  - tooltip "View profile"
+    - generic [ref=f16e24]:
+      - generic [ref=f16e27]:
+        - generic [ref=f16e29]:
+          - navigation "App" [ref=f16e30]:
+            - button "App Launcher" [ref=f16e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f16e44]
+        - navigation "Global" [ref=f16e48]:
+          - list [ref=f16e49]:
+            - listitem [ref=f16e50]:
+              - link "Home" [ref=f16e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f16e53]:
+              - link "Vehicles" [ref=f16e54] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f16e59] [cursor=pointer]
+            - listitem [ref=f16e67]:
+              - link "Assets" [ref=f16e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f16e73] [cursor=pointer]
+            - listitem [ref=f16e81]:
+              - link "Vehicle Definitions" [ref=f16e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f16e87] [cursor=pointer]
+            - listitem [ref=f16e95]:
+              - link "Products" [ref=f16e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f16e101] [cursor=pointer]
+            - listitem [ref=f16e109]:
+              - link "Accounts" [ref=f16e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f16e115] [cursor=pointer]
+            - listitem [ref=f16e123]:
+              - link "Contacts" [ref=f16e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f16e129] [cursor=pointer]
+            - listitem [ref=f16e137]:
+              - link "Asset Milestones" [ref=f16e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f16e143] [cursor=pointer]
+            - listitem [ref=f16e278] [cursor=pointer]:
+              - link "* INVM-00074" [ref=f16e279]:
+                - /url: /lightning/r/AF_InvoiceSummary__c/a0TFV00FrvtCkfM2ES/view
+                - generic "Not added to nav bar" [ref=f16e280]: "*"
+                - generic [ref=f16e281]: INVM-00074
+              - button "INVM-00074 List" [ref=f16e285]
+              - button "Close tab" [ref=f16e293]
+            - listitem [ref=f16e165]:
+              - button "Show more navigation items" [ref=f16e167] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f16e168]: More
+            - listitem [ref=f16e176]:
+              - button "Edit nav items" [ref=f16e178] [cursor=pointer]
+      - main [ref=f16e185]:
+        - generic [ref=f16e312]:
+          - generic [ref=f16e322]:
+            - generic [ref=f16e328]:
+              - generic [ref=f16e329]: Invoice
+              - heading "INVM-00074" [level=1] [ref=f16e331]
+            - button "Follow" [ref=f16e337] [cursor=pointer]
+            - generic [ref=f16e348]:
+              - generic "Log a Call" [ref=f16e349]:
+                - button "Log a Call" [ref=f16e354] [cursor=pointer]
+              - generic "Edit" [ref=f16e355]:
+                - button "Edit" [ref=f16e360] [cursor=pointer]
+              - generic "Get Payment" [ref=f16e361]:
+                - button "Get Payment" [ref=f16e366] [cursor=pointer]
+              - button "Show more actions" [ref=f16e368] [cursor=pointer]
+          - generic [ref=f16e375]:
+            - generic [ref=f16e383]:
+              - heading "Tabs" [level=2] [ref=f16e384]
+              - tablist "Tabs" [ref=f16e386]:
+                - tab "Related" [ref=f16e387] [cursor=pointer]
+                - tab "Details" [selected] [ref=f16e388] [cursor=pointer]
+              - tabpanel "Details" [ref=f16e391]:
+                - generic [ref=f16e404]:
+                  - generic [ref=f16e406]:
+                    - heading [level=3] [ref=f16e407]:
+                      - button "Information" [expanded] [ref=f16e408] [cursor=pointer]
+                    - list [ref=f16e418]:
+                      - generic [ref=f16e419]:
+                        - generic [ref=f16e421]:
+                          - listitem [ref=f16e423]:
+                            - generic [ref=f16e424]:
+                              - generic [ref=f16e425]: Invoice Number
+                              - generic [ref=f16e426]: INVM-00074
+                          - listitem [ref=f16e430]:
+                            - generic [ref=f16e431]:
+                              - generic [ref=f16e432]: Invoice Status
+                              - generic [ref=f16e433]:
+                                - generic [ref=f16e434]: Unpaid
+                                - button "Edit Invoice Status" [ref=f16e436] [cursor=pointer]
+                        - generic [ref=f16e440]:
+                          - listitem [ref=f16e442]:
+                            - generic [ref=f16e443]:
+                              - generic [ref=f16e444]: Account
+                              - generic [ref=f16e445]:
+                                - generic [ref=f16e451]:
+                                  - link "DEMO RS10 Customer - Khalid Al-Mannai" [ref=f16e452] [cursor=pointer]:
+                                    - /url: /lightning/r/Account/001FV00L3Cqvq5UYUQ/view
+                                  - button "Preview" [ref=f16e458] [cursor=pointer]
+                                - button "Edit Account" [ref=f16e464] [cursor=pointer]
+                          - listitem [ref=f16e468]:
+                            - generic [ref=f16e469]:
+                              - generic [ref=f16e470]: Expected Total Amount
+                              - generic [ref=f16e471]: AED 398,300.00
+                        - generic [ref=f16e475]:
+                          - listitem [ref=f16e477]:
+                            - generic [ref=f16e478]:
+                              - generic [ref=f16e479]: Contact
+                              - button "Edit Contact" [ref=f16e482] [cursor=pointer]
+                          - listitem [ref=f16e486]:
+                            - generic [ref=f16e487]:
+                              - generic [ref=f16e488]: Paid Amount
+                              - generic [ref=f16e489]: AED 0.00
+                        - generic [ref=f16e493]:
+                          - listitem [ref=f16e495]:
+                            - generic [ref=f16e496]:
+                              - generic [ref=f16e497]: Opportunity
+                              - generic [ref=f16e498]:
+                                - generic [ref=f16e504]:
+                                  - link "DEMO RS10 13 - Real retail cycle end to end" [ref=f16e505] [cursor=pointer]:
+                                    - /url: /lightning/r/Opportunity/006FV00Bhdn1CVAYE2/view
+                                  - button "Preview" [ref=f16e511] [cursor=pointer]
+                                - button "Edit Opportunity" [ref=f16e517] [cursor=pointer]
+                          - listitem [ref=f16e521]:
+                            - generic [ref=f16e522]:
+                              - generic [ref=f16e523]: Balance Amount
+                              - generic [ref=f16e524]: AED 398,300.00
+                        - generic [ref=f16e528]:
+                          - listitem [ref=f16e530]:
+                            - generic [ref=f16e531]:
+                              - generic [ref=f16e532]: Quote
+                              - generic [ref=f16e533]:
+                                - generic [ref=f16e539]:
+                                  - link "DEMO RS10 13 - Real retail cycle end to end" [ref=f16e540] [cursor=pointer]:
+                                    - /url: /lightning/r/Quote/0Q0FV004UZQMx1I0YT/view
+                                  - button "Preview" [ref=f16e546] [cursor=pointer]
+                                - button "Edit Quote" [ref=f16e552] [cursor=pointer]
+                          - listitem [ref=f16e556]:
+                            - generic [ref=f16e557]:
+                              - generic [ref=f16e558]: Owner
+                              - generic [ref=f16e563]:
+                                - generic [ref=f16e570]:
+                                  - link "Arcsen Alfardan" [ref=f16e571] [cursor=pointer]:
+                                    - /url: /lightning/r/Name/005a3001vLvmFZ6AQM/view
+                                  - button "Preview" [ref=f16e577] [cursor=pointer]
+                                - button "Change Owner" [ref=f16e584] [cursor=pointer]
+                        - listitem [ref=f16e593]:
+                          - generic [ref=f16e594]:
+                            - generic [ref=f16e595]: Vehicle
+                            - generic [ref=f16e596]:
+                              - generic [ref=f16e602]:
+                                - link "Ferrari 296 GTB - In Transit (Awaiting VIN)" [ref=f16e603] [cursor=pointer]:
+                                  - /url: /lightning/r/Vehicle/0vLFV0004R4NNWG2Q4/view
+                                - button "Preview" [ref=f16e609] [cursor=pointer]
+                              - button "Edit Vehicle" [ref=f16e615] [cursor=pointer]
+                  - generic [ref=f16e620]:
+                    - heading [level=3] [ref=f16e621]:
+                      - button "Keyloop Mirror" [expanded] [ref=f16e622] [cursor=pointer]
+                    - list [ref=f16e632]:
+                      - generic [ref=f16e633]:
+                        - generic [ref=f16e635]:
+                          - listitem [ref=f16e637]:
+                            - generic [ref=f16e638]: Integration Status
+                          - listitem [ref=f16e642]:
+                            - generic [ref=f16e643]:
+                              - generic [ref=f16e644]: Legal Invoice?
+                              - generic [ref=f16e650]:
+                                - generic "False" [ref=f16e651]
+                                - generic [ref=f16e658]: Legal Invoice?
+                        - generic [ref=f16e660]:
+                          - listitem [ref=f16e662]:
+                            - generic [ref=f16e663]: Keyloop Invoice Reference
+                          - listitem [ref=f16e667]:
+                            - generic [ref=f16e668]:
+                              - generic [ref=f16e669]: Expected vs Keyloop Mismatch?
+                              - generic [ref=f16e675]:
+                                - generic "False" [ref=f16e676]
+                                - generic [ref=f16e683]: Expected vs Keyloop Mismatch?
+                        - generic [ref=f16e685]:
+                          - listitem [ref=f16e687]:
+                            - generic [ref=f16e688]: Keyloop Total Amount
+                          - listitem [ref=f16e692]:
+                            - generic [ref=f16e693]: Keyloop Document Reference
+                        - listitem [ref=f16e700]:
+                          - generic [ref=f16e701]:
+                            - generic [ref=f16e702]: Synced?
+                            - generic [ref=f16e708]:
+                              - generic "False" [ref=f16e709]
+                              - generic [ref=f16e716]: Synced?
+                  - generic [ref=f16e718]:
+                    - heading [level=3] [ref=f16e719]:
+                      - button "System Information" [expanded] [ref=f16e720] [cursor=pointer]
+                    - list [ref=f16e730]:
+                      - generic [ref=f16e733]:
+                        - listitem [ref=f16e735]:
+                          - generic [ref=f16e736]:
+                            - generic [ref=f16e737]: Created By
+                            - generic [ref=f16e741]:
+                              - generic [ref=f16e747]:
+                                - link "Arcsen Alfardan" [ref=f16e748] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f16e754] [cursor=pointer]
+                              - text: ", 22/09/2026, 12:44 PM"
+                        - listitem [ref=f16e761]:
+                          - generic [ref=f16e762]:
+                            - generic [ref=f16e763]: Last Modified By
+                            - generic [ref=f16e767]:
+                              - generic [ref=f16e773]:
+                                - link "Arcsen Alfardan" [ref=f16e774] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f16e780] [cursor=pointer]
+                              - text: ", 22/09/2026, 12:44 PM"
+            - generic [ref=f16e793]:
+              - heading "Tabs" [level=2] [ref=f16e794]
+              - tablist "Tabs" [ref=f16e796]:
+                - tab "Activity" [selected] [ref=f16e797] [cursor=pointer]
+                - tab "Chatter" [ref=f16e798] [cursor=pointer]
+              - tabpanel "Activity" [ref=f16e801]:
+                - generic [ref=f16e807]:
+                  - heading "Activity Publisher" [level=2] [ref=f16e808]
+                  - generic [ref=f16e809]:
+                    - group [ref=f16e810]:
+                      - generic [ref=f16e812]:
+                        - button "Log a Call" [ref=f16e813] [cursor=pointer]
+                        - generic [ref=f16e821]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f16e822]:
+                      - generic [ref=f16e824]:
+                        - button "New Task" [ref=f16e825] [cursor=pointer]
+                        - generic [ref=f16e833]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f16e834]
+                  - generic [ref=f16e836]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f16e837] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f16e839]:
+                      - generic [ref=f16e840]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f16e842] [cursor=pointer]
+                    - generic [ref=f16e850]:
+                      - button "Refresh" [ref=f16e851] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f16e852] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f16e853] [cursor=pointer]
+                    - generic [ref=f16e855]:
+                      - heading [level=3] [ref=f16e856]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f16e857] [cursor=pointer]
+                      - generic [ref=f16e862]:
+                        - generic:
+                          - list
+                        - generic [ref=f16e863]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f16e866]:
+                      - generic [ref=f16e867]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f16e868] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

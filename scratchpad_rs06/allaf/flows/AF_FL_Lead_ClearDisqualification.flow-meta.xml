@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Clear_Disqualification_Fields</name>
+        <label>Clear Disqualification Fields</label>
+        <locationX>50</locationX>
+        <locationY>120</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_DisqualificationReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_EmptyString</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_DisqualificationNotes__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_EmptyString</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>LFRDN-607 #2: clears Disqualification Reason/Notes whenever Status transitions away from Disqualified, regardless of entry point (direct field update, API/Keyloop sync, or the Reactivate quick action) — closes the gap where only AF_FL_Lead_Reactivate cleared these, so a direct Status change left stale disqualification data on an active Lead. Before-save fast field update, so it applies in the same transaction as the triggering change.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_EmptyString</name>
+        <dataType>String</dataType>
+        <expression>&quot;&quot;</expression>
+    </formulas>
+    <interviewLabel>Lead Clear Disqualification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Clear Disqualification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Clear_Disqualification_Fields</targetReference>
+        </connector>
+        <filterFormula>AND(
+    NOT(ISPICKVAL({!$Record.Status}, &quot;Disqualified&quot;)),
+    ISPICKVAL({!$Record__Prior.Status}, &quot;Disqualified&quot;)
+)</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

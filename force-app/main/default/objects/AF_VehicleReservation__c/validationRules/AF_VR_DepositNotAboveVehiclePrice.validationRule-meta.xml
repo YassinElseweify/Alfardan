@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_DepositNotAboveVehiclePrice</fullName>
+    <active>true</active>
+    <description>ALF-RS-08 FR10, QA fix (Defect #4): caps deposit at vehicle price. Uses AF_VehiclePriceTotal__c when priced; falls back to Vehicle.MarketPrice when no price total exists yet.</description>
+    <errorConditionFormula>OR(
+  AND(
+    NOT(ISBLANK(AF_VehiclePriceTotal__c)),
+    AF_VehiclePriceTotal__c &gt; 0,
+    NOT(ISBLANK(AF_DepositAmount__c)),
+    AF_DepositAmount__c &gt; AF_VehiclePriceTotal__c
+  ),
+  AND(
+    ISBLANK(AF_VehiclePriceTotal__c),
+    NOT(ISBLANK(AF_Vehicle__r.MarketPrice)),
+    AF_Vehicle__r.MarketPrice &gt; 0,
+    NOT(ISBLANK(AF_DepositAmount__c)),
+    AF_DepositAmount__c &gt; AF_Vehicle__r.MarketPrice
+  )
+)</errorConditionFormula>
+    <errorDisplayField>AF_DepositAmount__c</errorDisplayField>
+    <errorMessage>Deposit cannot exceed the vehicle price plus add-ons. Reduce the deposit or update the Vehicle Price + Add-Ons figure.</errorMessage>
+</ValidationRule>

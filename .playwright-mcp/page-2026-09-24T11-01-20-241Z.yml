@@ -1,0 +1,237 @@
+- generic [active]:
+  - generic [ref=f222e2]:
+    - generic [ref=f222e3]:
+      - link "Skip to Navigation" [ref=f222e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f222e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f222e196]:
+        - generic [ref=f222e197]: "Sandbox: QA |"
+        - link "Log out" [ref=f222e198] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f222e6]:
+        - button "Search" [ref=f222e13]: Search...
+        - navigation "Global Header" [ref=f222e18]:
+          - list [ref=f222e200]:
+            - listitem [ref=f222e201]:
+              - group [ref=f222e202]:
+                - button "Add favorite" [ref=f222e204] [cursor=pointer]:
+                  - generic [ref=f222e205]:
+                    - tooltip "Add favorite"
+                - button [ref=f222e213] [cursor=pointer]:
+                  - generic [ref=f222e214]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f222e221]:
+              - button [ref=f222e227] [cursor=pointer]:
+                - generic [ref=f222e228]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f222e235]:
+              - button [ref=f222e237] [cursor=pointer]:
+                - generic [ref=f222e238]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f222e245]:
+              - button [ref=f222e248] [cursor=pointer]:
+                - generic [ref=f222e249]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f222e256]:
+              - button "3 Notifications" [ref=f222e259] [cursor=pointer]:
+                - generic [ref=f222e260]:
+                  - generic [ref=f222e261]: "3"
+                  - tooltip "Notifications"
+              - generic [ref=f222e270]: 3 new notifications
+            - listitem [ref=f222e271]:
+              - button "View profile" [ref=f222e274] [cursor=pointer]:
+                - generic [ref=f222e275]:
+                  - tooltip "View profile"
+    - generic [ref=f222e24]:
+      - generic [ref=f222e27]:
+        - generic [ref=f222e29]:
+          - navigation "App" [ref=f222e30]:
+            - button "App Launcher" [ref=f222e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f222e44]
+        - navigation "Global" [ref=f222e48]:
+          - list [ref=f222e49]:
+            - listitem [ref=f222e50]:
+              - link "Home" [ref=f222e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f222e53] [cursor=pointer]:
+              - link "Vehicles" [ref=f222e54]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f222e59]
+            - listitem [ref=f222e67]:
+              - link "Assets" [ref=f222e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f222e73] [cursor=pointer]
+            - listitem [ref=f222e81]:
+              - link "Vehicle Definitions" [ref=f222e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f222e87] [cursor=pointer]
+            - listitem [ref=f222e95]:
+              - link "Products" [ref=f222e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f222e101] [cursor=pointer]
+            - listitem [ref=f222e109]:
+              - link "Accounts" [ref=f222e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f222e115] [cursor=pointer]
+            - listitem [ref=f222e123]:
+              - link "Contacts" [ref=f222e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f222e129] [cursor=pointer]
+            - listitem [ref=f222e137]:
+              - link "Asset Milestones" [ref=f222e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f222e143] [cursor=pointer]
+            - listitem [ref=f222e151]:
+              - link "Asset Contact Participants" [ref=f222e152] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f222e157] [cursor=pointer]
+            - listitem [ref=f222e165]:
+              - button "* Show more navigation items" [ref=f222e167] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f222e168]: "*"
+                - generic [aria-hidden] [ref=f222e169]: More
+                - generic [ref=f222e176]: Show more navigation items
+            - listitem [ref=f222e177]:
+              - button "Edit nav items" [ref=f222e179] [cursor=pointer]
+      - main [ref=f222e186]:
+        - generic [ref=f222e290]:
+          - generic [ref=f222e299]:
+            - generic [ref=f222e300]:
+              - generic [ref=f222e306]:
+                - generic [ref=f222e307]: Vehicle
+                - heading "Ferrari 296 GTB - Rosso Scuderia RS13-04" [level=1] [ref=f222e309]
+              - generic [ref=f222e314]:
+                - generic "Change Record Type" [ref=f222e315]:
+                  - button "Change Record Type" [ref=f222e320] [cursor=pointer]
+                - generic "Edit" [ref=f222e321]:
+                  - button "Edit" [ref=f222e326] [cursor=pointer]
+                - generic "Delete" [ref=f222e327]:
+                  - button "Delete" [ref=f222e332] [cursor=pointer]
+                - button "Show more actions" [ref=f222e334] [cursor=pointer]
+            - generic [ref=f222e340]:
+              - generic [ref=f222e342]:
+                - paragraph [ref=f222e343]: Vehicle Identification Number
+                - paragraph [ref=f222e344]:
+                  - generic [ref=f222e345]: ZFF99SLA000RS1304
+              - generic [ref=f222e347]:
+                - paragraph [ref=f222e348]: Engine Number
+                - paragraph
+              - generic [ref=f222e350]:
+                - paragraph [ref=f222e351]: Current Owner
+                - paragraph
+              - generic [ref=f222e353]:
+                - paragraph [ref=f222e354]: Status
+                - paragraph
+              - generic [ref=f222e356]:
+                - paragraph [ref=f222e357]: Last Odometer Reading
+                - paragraph
+              - generic [ref=f222e359]:
+                - paragraph [ref=f222e360]: Odometer Reading Unit of Measure
+                - paragraph
+          - generic [ref=f222e362]:
+            - generic [ref=f222e370]:
+              - heading "Tabs" [level=2] [ref=f222e371]
+              - tablist "Tabs" [ref=f222e373]:
+                - tab "Overview" [selected] [ref=f222e374] [cursor=pointer]
+                - tab "Details" [ref=f222e375] [cursor=pointer]
+                - tab "Assets" [ref=f222e376] [cursor=pointer]
+                - tab "Claims" [ref=f222e377] [cursor=pointer]
+                - tab "Warranties" [ref=f222e378] [cursor=pointer]
+                - tab "Parts & Accessories" [ref=f222e379] [cursor=pointer]
+                - tab "Appointments" [ref=f222e380] [cursor=pointer]
+                - button "More Tabs" [ref=f222e382] [cursor=pointer]:
+                  - text: More
+                  - generic [ref=f222e387]: Tabs
+              - tabpanel "Overview" [ref=f222e390]:
+                - generic [ref=f222e391]:
+                  - article [ref=f222e397]:
+                    - generic [ref=f222e398]:
+                      - heading "Timeline" [level=2] [ref=f222e402]
+                      - generic [ref=f222e404]:
+                        - generic [ref=f222e407]:
+                          - generic [ref=f222e411]:
+                            - generic [ref=f222e412]:
+                              - heading "Vehicle Timeline" [level=2] [ref=f222e413]
+                              - menu [ref=f222e414]:
+                                - button "Show Timeline Menu" [ref=f222e415] [cursor=pointer]
+                            - generic [ref=f222e421]: All Events • Most Recent Event
+                          - generic [ref=f222e427]:
+                            - button "Refresh" [ref=f222e430] [cursor=pointer]
+                            - button "Date Range" [ref=f222e438] [cursor=pointer]
+                            - button "Event Type" [ref=f222e446] [cursor=pointer]
+                            - button "Sort" [ref=f222e454] [cursor=pointer]
+                        - generic [ref=f222e464]:
+                          - heading "Time to create some events" [level=2] [ref=f222e465]
+                          - paragraph [ref=f222e466]: After you create a timeline event, you’ll see it here.
+                  - article "Notes & Attachments" [ref=f222e475]:
+                    - generic [ref=f222e476]:
+                      - heading [level=2] [ref=f222e482]:
+                        - link "Notes & Attachments (0)" [ref=f222e483] [cursor=pointer]:
+                          - /url: /lightning/r/Vehicle/0vLFV000593uevM2AQ/related/CombinedAttachments/view
+                          - generic "Notes & Attachments" [ref=f222e484]
+                          - generic "(0)" [ref=f222e485]
+                      - list [ref=f222e488]:
+                        - listitem [ref=f222e489]:
+                          - button "Upload Files" [ref=f222e490] [cursor=pointer]
+                    - generic [ref=f222e497]:
+                      - generic [ref=f222e498]: Drop Files
+                      - generic [ref=f222e507]:
+                        - generic [ref=f222e509]:
+                          - generic [ref=f222e513]:
+                            - button "Upload Files Or drop files" [ref=f222e514]
+                            - generic [ref=f222e515]:
+                              - generic [ref=f222e516]: Upload Files
+                              - generic [ref=f222e521]: Or drop files
+                          - status
+                        - list
+            - generic [ref=f222e523]:
+              - generic [ref=f222e527]:
+                - generic [ref=f222e528]: Vehicle Media
+                - paragraph [ref=f222e540]: Ferrari 296 GTB - Brochure
+                - generic [ref=f222e541]:
+                  - button "Ferrari 296 GTB - Brochure" [ref=f222e542] [cursor=pointer]
+                  - button [ref=f222e552] [cursor=pointer]:
+                    - img "Ferrari 296 GTB - Photo" [ref=f222e553]
+              - generic [ref=f222e559]:
+                - banner [ref=f222e560]:
+                  - generic [ref=f222e562]:
+                    - navigation "Breadcrumbs" [ref=f222e563]:
+                      - list [ref=f222e564]:
+                        - listitem [ref=f222e565]:
+                          - link "Asset" [ref=f222e566] [cursor=pointer]:
+                            - /url: "#/sObject/Asset/home"
+                        - listitem [ref=f222e567]:
+                          - text: ">"
+                          - link "Ferrari 296 GTB - RS13 unit 4" [ref=f222e568] [cursor=pointer]:
+                            - /url: /lightning/r/02iFV000VNvEI0OYYW/view
+                    - heading "Asset Hierarchy" [level=1] [ref=f222e569]
+                - treegrid [ref=f222e571]:
+                  - rowgroup [ref=f222e572]:
+                    - row [ref=f222e573]:
+                      - columnheader "Asset" [ref=f222e574]
+                      - columnheader "Status" [ref=f222e576]
+                      - columnheader "Product SKU" [ref=f222e578]
+                      - columnheader "Product Code" [ref=f222e580]
+                      - columnheader "Serial Number" [ref=f222e582]
+                      - columnheader "Last Modified Date" [ref=f222e584]
+                      - columnheader "Last Modified By" [ref=f222e586]
+                      - columnheader "Install Date" [ref=f222e588]
+                  - rowgroup
+                  - rowgroup [ref=f222e590]:
+                    - row [level=1] [ref=f222e591]:
+                      - rowheader "Ferrari 296 GTB - RS13 unit 4 Current" [ref=f222e592]:
+                        - link "Ferrari 296 GTB - RS13 unit 4" [ref=f222e594] [cursor=pointer]:
+                          - /url: /lightning/r/02iFV000VNvEI0OYYW/view
+                        - generic [ref=f222e595]: Current
+                      - gridcell [ref=f222e596]
+                      - gridcell [ref=f222e597]
+                      - gridcell [ref=f222e598]
+                      - gridcell [ref=f222e599]
+                      - gridcell "09/24/2026" [ref=f222e600]
+                      - gridcell [ref=f222e601]:
+                        - link "Arcsen Alfardan" [ref=f222e602] [cursor=pointer]:
+                          - /url: /lightning/r/005a3001vLvmFZ6AQM/view
+                      - gridcell [ref=f222e603]
+  - generic:
+    - status

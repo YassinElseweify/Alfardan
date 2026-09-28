@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Vehicles</fullName>
+    <columns>Name</columns>
+    <columns>VehicleIdentificationNumber</columns>
+    <columns>ChassisNumber</columns>
+    <columns>Asset</columns>
+    <columns>CurrentOwner</columns>
+    <columns>Status</columns>
+    <columns>LastOdometerReading</columns>
+    <columns>OdometerReadingUom</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Vehicles</label>
+</ListView>

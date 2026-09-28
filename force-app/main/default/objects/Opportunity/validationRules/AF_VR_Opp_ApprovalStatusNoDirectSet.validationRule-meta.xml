@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_ApprovalStatusNoDirectSet</fullName>
+    <active>true</active>
+    <description>QA fix (Defect #2): blocks direct edit of these 3 approval-status fields to Approved/Rejected, bypassing the real Approval Process. Approval-process field updates run outside VR evaluation, so real approvals are unaffected.</description>
+    <errorConditionFormula>OR(
+  AND(
+    ISCHANGED(AF_CancellationApprovalStatus__c),
+    OR(ISPICKVAL(AF_CancellationApprovalStatus__c, &quot;Approved&quot;), ISPICKVAL(AF_CancellationApprovalStatus__c, &quot;Rejected&quot;))
+  ),
+  AND(
+    ISCHANGED(AF_LostApprovalStatus__c),
+    OR(ISPICKVAL(AF_LostApprovalStatus__c, &quot;Approved&quot;), ISPICKVAL(AF_LostApprovalStatus__c, &quot;Rejected&quot;))
+  ),
+  AND(
+    ISCHANGED(AF_RequisitionStatus__c),
+    OR(ISPICKVAL(AF_RequisitionStatus__c, &quot;Approved&quot;), ISPICKVAL(AF_RequisitionStatus__c, &quot;Rejected&quot;))
+  )
+)</errorConditionFormula>
+    <errorMessage>This approval status field can only change to Approved or Rejected through its real Approval Process (Submit, then Approve/Reject) - not by direct edit.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_CarriedTestDriveInterest__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Carried over from Lead.AF_InterestedInTestDrive__c at conversion, so Explore-stage Test Drive creation knows the customer already flagged interest before an Opportunity existed to hold it.</description>
+    <label>Carried Test Drive Interest</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

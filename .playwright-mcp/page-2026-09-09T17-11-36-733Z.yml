@@ -1,0 +1,836 @@
+- generic:
+  - generic [ref=f84e2]:
+    - generic [ref=f84e3]:
+      - link "Skip to Navigation" [ref=f84e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f84e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f84e244]:
+        - generic [ref=f84e245]: "Sandbox: QA |"
+        - link "Log out" [ref=f84e246] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f84e6]:
+        - button "Search" [ref=f84e13]: Search...
+        - navigation "Global Header" [ref=f84e18]:
+          - list [ref=f84e248]:
+            - listitem [ref=f84e249]:
+              - group [ref=f84e250]:
+                - button "Add favorite" [ref=f84e252] [cursor=pointer]:
+                  - generic [ref=f84e253]:
+                    - tooltip "Add favorite"
+                - button [ref=f84e261] [cursor=pointer]:
+                  - generic [ref=f84e262]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f84e269]:
+              - button [ref=f84e275] [cursor=pointer]:
+                - generic [ref=f84e276]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f84e283]:
+              - button [ref=f84e285] [cursor=pointer]:
+                - generic [ref=f84e286]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f84e293]:
+              - button [ref=f84e296] [cursor=pointer]:
+                - generic [ref=f84e297]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f84e304]:
+              - button "5 Notifications" [ref=f84e307] [cursor=pointer]:
+                - generic [ref=f84e308]:
+                  - generic [ref=f84e309]: "5"
+                  - tooltip "Notifications"
+              - generic [ref=f84e318]: 5 new notifications
+            - listitem [ref=f84e319]:
+              - button "View profile" [ref=f84e322] [cursor=pointer]:
+                - generic [ref=f84e323]:
+                  - tooltip "View profile"
+    - generic [ref=f84e24]:
+      - generic [ref=f84e27]:
+        - generic [ref=f84e29]:
+          - navigation "App" [ref=f84e30]:
+            - button "App Launcher" [ref=f84e32] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f84e44]
+        - navigation "Global" [ref=f84e48]:
+          - list [ref=f84e49]:
+            - listitem [ref=f84e50]:
+              - link "Home" [ref=f84e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f84e53]:
+              - link "Analytics" [ref=f84e54] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f84e56] [cursor=pointer]:
+              - link "Opportunities" [ref=f84e57]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f84e62]
+            - listitem [ref=f84e70]:
+              - link "Quotes" [ref=f84e71] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f84e76] [cursor=pointer]
+            - listitem [ref=f84e84]:
+              - link "Tasks" [ref=f84e85] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f84e90] [cursor=pointer]
+            - listitem [ref=f84e98]:
+              - link "Files" [ref=f84e99] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f84e104] [cursor=pointer]
+            - listitem [ref=f84e112]:
+              - link "Accounts" [ref=f84e113] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f84e118] [cursor=pointer]
+            - listitem [ref=f84e126]:
+              - link "Contacts" [ref=f84e127] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f84e132] [cursor=pointer]
+            - listitem [ref=f84e140]:
+              - link "Campaigns" [ref=f84e141] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f84e146] [cursor=pointer]
+            - listitem [ref=f84e154]:
+              - link "Chatter" [ref=f84e155] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f84e157]:
+              - link "Groups" [ref=f84e158] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f84e163] [cursor=pointer]
+            - listitem [ref=f84e171]:
+              - link "Calendar" [ref=f84e172] [cursor=pointer]:
+                - /url: /lightning/o/Event/home
+              - button "Calendar List" [ref=f84e177] [cursor=pointer]
+            - listitem [ref=f84e185]:
+              - link "People" [ref=f84e186] [cursor=pointer]:
+                - /url: /lightning/o/User/home
+              - button "People List" [ref=f84e191] [cursor=pointer]
+            - listitem [ref=f84e199]:
+              - link "Email Templates" [ref=f84e200] [cursor=pointer]:
+                - /url: /lightning/o/EmailTemplate/home
+              - button "Email Templates List" [ref=f84e205] [cursor=pointer]
+            - listitem [ref=f84e213]:
+              - button "Edit nav items" [ref=f84e215] [cursor=pointer]
+      - main [ref=f84e327]:
+        - generic [ref=f84e337]:
+          - generic [ref=f84e339]:
+            - generic [ref=f84e340]:
+              - generic [ref=f84e347]:
+                - heading "Opportunities" [level=1] [ref=f84e351]
+                - generic [ref=f84e352]:
+                  - generic [ref=f84e353]:
+                    - generic [ref=f84e354] [cursor=pointer]:
+                      - heading "Opportunities Recently Viewed" [level=1] [ref=f84e355]:
+                        - generic [ref=f84e356]: Opportunities
+                        - generic [ref=f84e357]: Recently Viewed
+                      - 'button "Select a List View: Opportunities" [ref=f84e360]'
+                    - dialog [ref=f84e2072]:
+                      - generic [ref=f84e2080]:
+                        - generic [ref=f84e2081]: Search lists...
+                        - generic [ref=f84e2086]:
+                          - combobox "Search lists..." [expanded] [active] [ref=f84e2089]
+                          - listbox "Search lists..." [ref=f84e2096]:
+                            - group "Recent List Views" [ref=f84e2097]:
+                              - text: Recent List Views
+                              - option "All Opportunities" [ref=f84e2098]
+                              - option "My Opportunities" [ref=f84e2100]
+                              - option "Recently Viewed (Pinned list)" [checked] [selected] [ref=f84e2102]
+                            - group "All Other Lists" [ref=f84e2111]:
+                              - text: All Other Lists
+                              - option "Closing Next Month" [ref=f84e2112]
+                              - option "Closing This Month" [ref=f84e2114]
+                              - option "New This Week" [ref=f84e2116]
+                              - option "Opportunity Pipeline" [ref=f84e2118]
+                              - option "Recently Viewed Opportunities" [ref=f84e2120]
+                              - option "Won" [ref=f84e2122]
+                        - status
+                  - button "This list is pinned." [disabled] [ref=f84e369] [cursor=pointer]
+              - list [ref=f84e377]:
+                - listitem [ref=f84e378]:
+                  - button "New" [ref=f84e379] [cursor=pointer]
+            - generic [ref=f84e381]:
+              - paragraph [ref=f84e383]:
+                - generic [ref=f84e385]:
+                  - status "Recently Viewed" [ref=f84e386]: 20 items •
+                  - text: Updated a few seconds ago
+              - generic [ref=f84e392]:
+                - generic [ref=f84e393]: Search this list...
+                - searchbox "Search this list..." [ref=f84e395]
+              - generic [ref=f84e399]:
+                - button "List View Controls" [ref=f84e403] [cursor=pointer]
+                - button "Select list display" [ref=f84e415] [cursor=pointer]
+                - generic [ref=f84e426]:
+                  - button "Refresh" [ref=f84e429] [cursor=pointer]
+                  - button "Column sort" [ref=f84e437] [cursor=pointer]
+                  - button "Edit List" [ref=f84e445] [cursor=pointer]
+                  - group [ref=f84e451]:
+                    - generic [ref=f84e453]:
+                      - generic:
+                        - generic:
+                          - button "Charts" [disabled]
+                      - generic:
+                        - generic:
+                          - button "Filters" [disabled]
+          - generic [ref=f84e460]:
+            - generic: Navigation Mode
+            - grid "Recently Viewed" [ref=f84e465]:
+              - rowgroup:
+                - row "Row Number Choose a Row Select 20 items Opportunity Name Account Name Account Site Stage Close Date Opportunity Owner Alias Action":
+                  - columnheader "Row Number":
+                    - generic [ref=f84e468]:
+                      - generic "Row Number"
+                  - gridcell "Choose a Row Select 20 items":
+                    - generic [ref=f84e469]:
+                      - generic [ref=f84e470]: Choose a Row
+                      - generic [ref=f84e472]:
+                        - checkbox "Select 20 items" [ref=f84e473] [cursor=pointer]
+                        - generic [ref=f84e474] [cursor=pointer]: Select 20 items
+                  - columnheader "Opportunity Name":
+                    - generic [ref=f84e478]:
+                      - 'button "Sort by: Opportunity Name" [ref=f84e479] [cursor=pointer]':
+                        - generic [ref=f84e480]: "Sort by:"
+                        - generic "Opportunity Name" [ref=f84e481]
+                      - generic [ref=f84e482]: "Sorted: None"
+                      - button "Show Opportunity Name column actions" [ref=f84e484] [cursor=pointer]
+                      - slider "Opportunity Name column width" [ref=f84e490]: "622"
+                  - columnheader "Account Name":
+                    - generic [ref=f84e494]:
+                      - 'button "Sort by: Account Name" [ref=f84e495] [cursor=pointer]':
+                        - generic [ref=f84e496]: "Sort by:"
+                        - generic "Account Name" [ref=f84e497]
+                      - generic [ref=f84e498]: "Sorted: None"
+                      - button "Show Account Name column actions" [ref=f84e500] [cursor=pointer]
+                      - slider "Account Name column width" [ref=f84e506]: "351"
+                  - columnheader "Account Site":
+                    - generic [ref=f84e510]:
+                      - 'button "Sort by: Account Site" [ref=f84e511] [cursor=pointer]':
+                        - generic [ref=f84e512]: "Sort by:"
+                        - generic "Account Site" [ref=f84e513]
+                      - generic [ref=f84e514]: "Sorted: None"
+                      - button "Show Account Site column actions" [ref=f84e516] [cursor=pointer]
+                      - slider "Account Site column width" [ref=f84e522]: "81"
+                  - columnheader "Stage":
+                    - generic [ref=f84e526]:
+                      - 'button "Sort by: Stage" [ref=f84e527] [cursor=pointer]':
+                        - generic [ref=f84e528]: "Sort by:"
+                        - generic "Stage" [ref=f84e529]
+                      - generic [ref=f84e530]: "Sorted: None"
+                      - button "Show Stage column actions" [ref=f84e532] [cursor=pointer]
+                      - slider "Stage column width" [ref=f84e538]: "196"
+                  - columnheader "Close Date":
+                    - generic [ref=f84e542]:
+                      - 'button "Sort by: Close Date" [ref=f84e543] [cursor=pointer]':
+                        - generic [ref=f84e544]: "Sort by:"
+                        - generic "Close Date" [ref=f84e545]
+                      - generic [ref=f84e546]: "Sorted: None"
+                      - button "Show Close Date column actions" [ref=f84e548] [cursor=pointer]
+                      - slider "Close Date column width" [ref=f84e554]: "204"
+                  - columnheader "Opportunity Owner Alias":
+                    - generic [ref=f84e558]:
+                      - 'button "Sort by: Opportunity Owner Alias" [ref=f84e559] [cursor=pointer]':
+                        - generic [ref=f84e560]: "Sort by:"
+                        - generic "Opportunity Owner Alias" [ref=f84e561]
+                      - generic [ref=f84e562]: "Sorted: None"
+                      - button "Show Opportunity Owner Alias column actions" [ref=f84e564] [cursor=pointer]
+                      - slider "Opportunity Owner Alias column width" [ref=f84e570]: "118"
+                  - columnheader "Action":
+                    - generic [ref=f84e575]:
+                      - generic "Action"
+              - rowgroup [ref=f84e576]:
+                - row [ref=f84e577]:
+                  - gridcell [ref=f84e578]
+                  - gridcell "Select Item 1 Choose a Row" [ref=f84e582]:
+                    - generic [ref=f84e583]:
+                      - checkbox "Select Item 1 Choose a Row" [ref=f84e584] [cursor=pointer]
+                      - generic [ref=f84e585] [cursor=pointer]: Select Item 1
+                  - rowheader [ref=f84e588]:
+                    - generic [ref=f84e589]:
+                      - link "QA test RS04-flexcard-check SalesRep" [ref=f84e595] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AozkFJaOYEW/view
+                      - button "Edit Opportunity Name" [ref=f84e597] [cursor=pointer]
+                  - gridcell [ref=f84e601]:
+                    - generic [ref=f84e602]:
+                      - link "Test Bugs" [ref=f84e607] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e609] [cursor=pointer]
+                  - gridcell [ref=f84e613]:
+                    - img "Locked Account Site" [ref=f84e615]
+                  - gridcell "Consider Edit Stage" [ref=f84e619]:
+                    - generic [ref=f84e620]:
+                      - generic [ref=f84e621]: Consider
+                      - button "Edit Stage" [ref=f84e624] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e628]:
+                    - generic [ref=f84e629]:
+                      - generic [ref=f84e630]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e632] [cursor=pointer]
+                  - gridcell [ref=f84e636]:
+                    - generic [ref=f84e637]:
+                      - link "jstev" [ref=f84e642] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e644]
+                  - gridcell [ref=f84e648]:
+                    - button "Show Actions" [ref=f84e654] [cursor=pointer]
+                - row [ref=f84e660]:
+                  - gridcell [ref=f84e661]
+                  - gridcell "Select Item 2 Choose a Row" [ref=f84e665]:
+                    - generic [ref=f84e666]:
+                      - checkbox "Select Item 2 Choose a Row" [ref=f84e667] [cursor=pointer]
+                      - generic [ref=f84e668] [cursor=pointer]: Select Item 2
+                  - rowheader [ref=f84e671]:
+                    - generic [ref=f84e672]:
+                      - link "QA test RS04-full TC001-005 SalesRep" [ref=f84e678] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00ApAsTHOOYU4/view
+                      - button "Edit Opportunity Name" [ref=f84e680] [cursor=pointer]
+                  - gridcell [ref=f84e684]:
+                    - generic [ref=f84e685]:
+                      - link "Test Bugs" [ref=f84e690] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e692] [cursor=pointer]
+                  - gridcell [ref=f84e696]:
+                    - img "Locked Account Site" [ref=f84e698]
+                  - gridcell "Select Edit Stage" [ref=f84e702]:
+                    - generic [ref=f84e703]:
+                      - generic [ref=f84e704]: Select
+                      - button "Edit Stage" [ref=f84e707] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e711]:
+                    - generic [ref=f84e712]:
+                      - generic [ref=f84e713]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e715] [cursor=pointer]
+                  - gridcell [ref=f84e719]:
+                    - generic [ref=f84e720]:
+                      - link "jstev" [ref=f84e725] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e727]
+                  - gridcell [ref=f84e731]:
+                    - button "Show Actions" [ref=f84e737] [cursor=pointer]
+                - row [ref=f84e743]:
+                  - gridcell [ref=f84e744]
+                  - gridcell "Select Item 3 Choose a Row" [ref=f84e748]:
+                    - generic [ref=f84e749]:
+                      - checkbox "Select Item 3 Choose a Row" [ref=f84e750] [cursor=pointer]
+                      - generic [ref=f84e751] [cursor=pointer]: Select Item 3
+                  - rowheader [ref=f84e754]:
+                    - generic [ref=f84e755]:
+                      - link "Sprint 2 — Showroom Walk-In" [ref=f84e761] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AoPpiGf6YUE/view
+                      - button "Edit Opportunity Name" [ref=f84e763] [cursor=pointer]
+                  - gridcell [ref=f84e767]:
+                    - generic [ref=f84e768]:
+                      - link "Sprint 2" [ref=f84e773] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00JDOYoRMCY23/view
+                      - button "Edit Account Name" [ref=f84e775] [cursor=pointer]
+                  - gridcell [ref=f84e779]:
+                    - img "Locked Account Site" [ref=f84e781]
+                  - gridcell "Select Edit Stage" [ref=f84e785]:
+                    - generic [ref=f84e786]:
+                      - generic [ref=f84e787]: Select
+                      - button "Edit Stage" [ref=f84e790] [cursor=pointer]
+                  - gridcell "٨/١٢/٢٠٢٦ Edit Close Date" [ref=f84e794]:
+                    - generic [ref=f84e795]:
+                      - generic [ref=f84e796]: ٨/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e798] [cursor=pointer]
+                  - gridcell [ref=f84e802]:
+                    - generic [ref=f84e803]:
+                      - link "jstev" [ref=f84e808] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e810]
+                  - gridcell [ref=f84e814]:
+                    - button "Show Actions" [ref=f84e820] [cursor=pointer]
+                - row [ref=f84e826]:
+                  - gridcell [ref=f84e827]
+                  - gridcell "Select Item 4 Choose a Row" [ref=f84e831]:
+                    - generic [ref=f84e832]:
+                      - checkbox "Select Item 4 Choose a Row" [ref=f84e833] [cursor=pointer]
+                      - generic [ref=f84e834] [cursor=pointer]: Select Item 4
+                  - rowheader [ref=f84e837]:
+                    - generic [ref=f84e838]:
+                      - link "QA test RS03-full-retest TC001-008 SalesRep" [ref=f84e844] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00Aow8uqpwYEA/view
+                      - button "Edit Opportunity Name" [ref=f84e846] [cursor=pointer]
+                  - gridcell [ref=f84e850]:
+                    - generic [ref=f84e851]:
+                      - link "Test Bugs" [ref=f84e856] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e858] [cursor=pointer]
+                  - gridcell [ref=f84e862]:
+                    - img "Locked Account Site" [ref=f84e864]
+                  - gridcell "Select Edit Stage" [ref=f84e868]:
+                    - generic [ref=f84e869]:
+                      - generic [ref=f84e870]: Select
+                      - button "Edit Stage" [ref=f84e873] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e877]:
+                    - generic [ref=f84e878]:
+                      - generic [ref=f84e879]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e881] [cursor=pointer]
+                  - gridcell [ref=f84e885]:
+                    - generic [ref=f84e886]:
+                      - link "jstev" [ref=f84e891] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e893]
+                  - gridcell [ref=f84e897]:
+                    - button "Show Actions" [ref=f84e903] [cursor=pointer]
+                - row [ref=f84e909]:
+                  - gridcell [ref=f84e910]
+                  - gridcell "Select Item 5 Choose a Row" [ref=f84e914]:
+                    - generic [ref=f84e915]:
+                      - checkbox "Select Item 5 Choose a Row" [ref=f84e916] [cursor=pointer]
+                      - generic [ref=f84e917] [cursor=pointer]: Select Item 5
+                  - rowheader [ref=f84e920]:
+                    - generic [ref=f84e921]:
+                      - link "QA test RS03-full-retest TC010-022 SalesRep" [ref=f84e927] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00Ap3mZwSiYEK/view
+                      - button "Edit Opportunity Name" [ref=f84e929] [cursor=pointer]
+                  - gridcell [ref=f84e933]:
+                    - generic [ref=f84e934]:
+                      - link "Test Bugs" [ref=f84e939] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e941] [cursor=pointer]
+                  - gridcell [ref=f84e945]:
+                    - img "Locked Account Site" [ref=f84e947]
+                  - gridcell "Consider Edit Stage" [ref=f84e951]:
+                    - generic [ref=f84e952]:
+                      - generic [ref=f84e953]: Consider
+                      - button "Edit Stage" [ref=f84e956] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e960]:
+                    - generic [ref=f84e961]:
+                      - generic [ref=f84e962]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e964] [cursor=pointer]
+                  - gridcell [ref=f84e968]:
+                    - generic [ref=f84e969]:
+                      - link "jstev" [ref=f84e974] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e976]
+                  - gridcell [ref=f84e980]:
+                    - button "Show Actions" [ref=f84e986] [cursor=pointer]
+                - row [ref=f84e992]:
+                  - gridcell [ref=f84e993]
+                  - gridcell "Select Item 6 Choose a Row" [ref=f84e997]:
+                    - generic [ref=f84e998]:
+                      - checkbox "Select Item 6 Choose a Row" [ref=f84e999] [cursor=pointer]
+                      - generic [ref=f84e1000] [cursor=pointer]: Select Item 6
+                  - rowheader [ref=f84e1003]:
+                    - generic [ref=f84e1004]:
+                      - link "QA test RS03-full-retest TC026 SalesRep" [ref=f84e1010] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AopvEQb6YEG/view
+                      - button "Edit Opportunity Name" [ref=f84e1012] [cursor=pointer]
+                  - gridcell [ref=f84e1016]:
+                    - generic [ref=f84e1017]:
+                      - link "Test Bugs" [ref=f84e1022] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e1024] [cursor=pointer]
+                  - gridcell [ref=f84e1028]:
+                    - img "Locked Account Site" [ref=f84e1030]
+                  - gridcell "Select Edit Stage" [ref=f84e1034]:
+                    - generic [ref=f84e1035]:
+                      - generic [ref=f84e1036]: Select
+                      - button "Edit Stage" [ref=f84e1039] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e1043]:
+                    - generic [ref=f84e1044]:
+                      - generic [ref=f84e1045]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1047] [cursor=pointer]
+                  - gridcell [ref=f84e1051]:
+                    - generic [ref=f84e1052]:
+                      - link "jstev" [ref=f84e1057] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1059]
+                  - gridcell [ref=f84e1063]:
+                    - button "Show Actions" [ref=f84e1069] [cursor=pointer]
+                - row [ref=f84e1075]:
+                  - gridcell [ref=f84e1076]
+                  - gridcell "Select Item 7 Choose a Row" [ref=f84e1080]:
+                    - generic [ref=f84e1081]:
+                      - checkbox "Select Item 7 Choose a Row" [ref=f84e1082] [cursor=pointer]
+                      - generic [ref=f84e1083] [cursor=pointer]: Select Item 7
+                  - rowheader [ref=f84e1086]:
+                    - generic [ref=f84e1087]:
+                      - link "QA test RS03-resession TC001-008" [ref=f84e1093] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00Aobja91oYEA/view
+                      - button "Edit Opportunity Name" [ref=f84e1095] [cursor=pointer]
+                  - gridcell [ref=f84e1099]:
+                    - generic [ref=f84e1100]:
+                      - link "Test Bugs" [ref=f84e1105] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e1107] [cursor=pointer]
+                  - gridcell [ref=f84e1111]:
+                    - img "Locked Account Site" [ref=f84e1113]
+                  - gridcell "Consider Edit Stage" [ref=f84e1117]:
+                    - generic [ref=f84e1118]:
+                      - generic [ref=f84e1119]: Consider
+                      - button "Edit Stage" [ref=f84e1122] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e1126]:
+                    - generic [ref=f84e1127]:
+                      - generic [ref=f84e1128]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1130] [cursor=pointer]
+                  - gridcell [ref=f84e1134]:
+                    - generic [ref=f84e1135]:
+                      - link "jstev" [ref=f84e1140] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1142]
+                  - gridcell [ref=f84e1146]:
+                    - button "Show Actions" [ref=f84e1152] [cursor=pointer]
+                - row [ref=f84e1158]:
+                  - gridcell [ref=f84e1159]
+                  - gridcell "Select Item 8 Choose a Row" [ref=f84e1163]:
+                    - generic [ref=f84e1164]:
+                      - checkbox "Select Item 8 Choose a Row" [ref=f84e1165] [cursor=pointer]
+                      - generic [ref=f84e1166] [cursor=pointer]: Select Item 8
+                  - rowheader [ref=f84e1169]:
+                    - generic [ref=f84e1170]:
+                      - link "Test Demo 2 - Rolls-Royce" [ref=f84e1176] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00ABujcvkyYMA/view
+                      - button "Edit Opportunity Name" [ref=f84e1178] [cursor=pointer]
+                  - gridcell [ref=f84e1182]:
+                    - generic [ref=f84e1183]:
+                      - link "Test Demo 2" [ref=f84e1188] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00IIYjNQ5cY2G/view
+                      - button "Edit Account Name" [ref=f84e1190] [cursor=pointer]
+                  - gridcell [ref=f84e1194]:
+                    - img "Locked Account Site" [ref=f84e1196]
+                  - gridcell "Explore Edit Stage" [ref=f84e1200]:
+                    - generic [ref=f84e1201]:
+                      - generic [ref=f84e1202]: Explore
+                      - button "Edit Stage" [ref=f84e1205] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e1209]:
+                    - generic [ref=f84e1210]:
+                      - generic [ref=f84e1211]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1213] [cursor=pointer]
+                  - gridcell [ref=f84e1217]:
+                    - generic [ref=f84e1218]:
+                      - link "jstev" [ref=f84e1223] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1225]
+                  - gridcell [ref=f84e1229]:
+                    - button "Show Actions" [ref=f84e1235] [cursor=pointer]
+                - row [ref=f84e1241]:
+                  - gridcell [ref=f84e1242]
+                  - gridcell "Select Item 9 Choose a Row" [ref=f84e1246]:
+                    - generic [ref=f84e1247]:
+                      - checkbox "Select Item 9 Choose a Row" [ref=f84e1248] [cursor=pointer]
+                      - generic [ref=f84e1249] [cursor=pointer]: Select Item 9
+                  - rowheader [ref=f84e1252]:
+                    - generic [ref=f84e1253]:
+                      - link "QA test RS-05 AddProducts NoBrand" [ref=f84e1259] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AcSfrSrsYUE/view
+                      - button "Edit Opportunity Name" [ref=f84e1261] [cursor=pointer]
+                  - gridcell [ref=f84e1265]:
+                    - generic [ref=f84e1266]:
+                      - link "Test Demo 2" [ref=f84e1271] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00IIYjNQ5cY2G/view
+                      - button "Edit Account Name" [ref=f84e1273] [cursor=pointer]
+                  - gridcell [ref=f84e1277]:
+                    - img "Locked Account Site" [ref=f84e1279]
+                  - gridcell "Consider Edit Stage" [ref=f84e1283]:
+                    - generic [ref=f84e1284]:
+                      - generic [ref=f84e1285]: Consider
+                      - button "Edit Stage" [ref=f84e1288] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e1292]:
+                    - generic [ref=f84e1293]:
+                      - generic [ref=f84e1294]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1296] [cursor=pointer]
+                  - gridcell [ref=f84e1300]:
+                    - generic [ref=f84e1301]:
+                      - link "jstev" [ref=f84e1306] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1308]
+                  - gridcell [ref=f84e1312]:
+                    - button "Show Actions" [ref=f84e1318] [cursor=pointer]
+                - row [ref=f84e1324]:
+                  - gridcell [ref=f84e1325]
+                  - gridcell "Select Item 10 Choose a Row" [ref=f84e1329]:
+                    - generic [ref=f84e1330]:
+                      - checkbox "Select Item 10 Choose a Row" [ref=f84e1331] [cursor=pointer]
+                      - generic [ref=f84e1332] [cursor=pointer]: Select Item 10
+                  - rowheader [ref=f84e1335]:
+                    - generic [ref=f84e1336]:
+                      - link "QA test RS-05-TC-011 - SelectedVehicle only" [ref=f84e1342] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AcZ754FAYUY/view
+                      - button "Edit Opportunity Name" [ref=f84e1344] [cursor=pointer]
+                  - gridcell [ref=f84e1348]:
+                    - generic [ref=f84e1349]:
+                      - link "Test Demo 2" [ref=f84e1354] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00IIYjNQ5cY2G/view
+                      - button "Edit Account Name" [ref=f84e1356] [cursor=pointer]
+                  - gridcell [ref=f84e1360]:
+                    - img "Locked Account Site" [ref=f84e1362]
+                  - gridcell "Explore Edit Stage" [ref=f84e1366]:
+                    - generic [ref=f84e1367]:
+                      - generic [ref=f84e1368]: Explore
+                      - button "Edit Stage" [ref=f84e1371] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e1375]:
+                    - generic [ref=f84e1376]:
+                      - generic [ref=f84e1377]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1379] [cursor=pointer]
+                  - gridcell [ref=f84e1383]:
+                    - generic [ref=f84e1384]:
+                      - link "jstev" [ref=f84e1389] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1391]
+                  - gridcell [ref=f84e1395]:
+                    - button "Show Actions" [ref=f84e1401] [cursor=pointer]
+                - row [ref=f84e1407]:
+                  - gridcell [ref=f84e1408]
+                  - gridcell "Select Item 11 Choose a Row" [ref=f84e1412]:
+                    - generic [ref=f84e1413]:
+                      - checkbox "Select Item 11 Choose a Row" [ref=f84e1414] [cursor=pointer]
+                      - generic [ref=f84e1415] [cursor=pointer]: Select Item 11
+                  - rowheader [ref=f84e1418]:
+                    - generic [ref=f84e1419]:
+                      - link "QA test RS-05-TC-011 - VehicleModel only" [ref=f84e1425] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AcCd5xUiYUI/view
+                      - button "Edit Opportunity Name" [ref=f84e1427] [cursor=pointer]
+                  - gridcell [ref=f84e1431]:
+                    - generic [ref=f84e1432]:
+                      - link "Test Demo 2" [ref=f84e1437] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00IIYjNQ5cY2G/view
+                      - button "Edit Account Name" [ref=f84e1439] [cursor=pointer]
+                  - gridcell [ref=f84e1443]:
+                    - img "Locked Account Site" [ref=f84e1445]
+                  - gridcell "Explore Edit Stage" [ref=f84e1449]:
+                    - generic [ref=f84e1450]:
+                      - generic [ref=f84e1451]: Explore
+                      - button "Edit Stage" [ref=f84e1454] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e1458]:
+                    - generic [ref=f84e1459]:
+                      - generic [ref=f84e1460]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1462] [cursor=pointer]
+                  - gridcell [ref=f84e1466]:
+                    - generic [ref=f84e1467]:
+                      - link "jstev" [ref=f84e1472] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1474]
+                  - gridcell [ref=f84e1478]:
+                    - button "Show Actions" [ref=f84e1484] [cursor=pointer]
+                - row [ref=f84e1490]:
+                  - gridcell [ref=f84e1491]
+                  - gridcell "Select Item 12 Choose a Row" [ref=f84e1495]:
+                    - generic [ref=f84e1496]:
+                      - checkbox "Select Item 12 Choose a Row" [ref=f84e1497] [cursor=pointer]
+                      - generic [ref=f84e1498] [cursor=pointer]: Select Item 12
+                  - rowheader [ref=f84e1501]:
+                    - generic [ref=f84e1502]:
+                      - link "QA test RS-05-TC-011 - NeitherControl" [ref=f84e1508] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AcTepy7wYUA/view
+                      - button "Edit Opportunity Name" [ref=f84e1510] [cursor=pointer]
+                  - gridcell [ref=f84e1514]:
+                    - generic [ref=f84e1515]:
+                      - link "Test Demo 2" [ref=f84e1520] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00IIYjNQ5cY2G/view
+                      - button "Edit Account Name" [ref=f84e1522] [cursor=pointer]
+                  - gridcell [ref=f84e1526]:
+                    - img "Locked Account Site" [ref=f84e1528]
+                  - gridcell "Consider Edit Stage" [ref=f84e1532]:
+                    - generic [ref=f84e1533]:
+                      - generic [ref=f84e1534]: Consider
+                      - button "Edit Stage" [ref=f84e1537] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e1541]:
+                    - generic [ref=f84e1542]:
+                      - generic [ref=f84e1543]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1545] [cursor=pointer]
+                  - gridcell [ref=f84e1549]:
+                    - generic [ref=f84e1550]:
+                      - link "jstev" [ref=f84e1555] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1557]
+                  - gridcell [ref=f84e1561]:
+                    - button "Show Actions" [ref=f84e1567] [cursor=pointer]
+                - row [ref=f84e1573]:
+                  - gridcell [ref=f84e1574]
+                  - gridcell "Select Item 13 Choose a Row" [ref=f84e1578]:
+                    - generic [ref=f84e1579]:
+                      - checkbox "Select Item 13 Choose a Row" [ref=f84e1580] [cursor=pointer]
+                      - generic [ref=f84e1581] [cursor=pointer]: Select Item 13
+                  - rowheader [ref=f84e1584]:
+                    - generic [ref=f84e1585]:
+                      - link "QA test RS-05-TC-011 - FreeTextOnly" [ref=f84e1591] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AcZDqeoOYUR/view
+                      - button "Edit Opportunity Name" [ref=f84e1593] [cursor=pointer]
+                  - gridcell [ref=f84e1597]:
+                    - generic [ref=f84e1598]:
+                      - link "Test Demo 2" [ref=f84e1603] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00IIYjNQ5cY2G/view
+                      - button "Edit Account Name" [ref=f84e1605] [cursor=pointer]
+                  - gridcell [ref=f84e1609]:
+                    - img "Locked Account Site" [ref=f84e1611]
+                  - gridcell "Consider Edit Stage" [ref=f84e1615]:
+                    - generic [ref=f84e1616]:
+                      - generic [ref=f84e1617]: Consider
+                      - button "Edit Stage" [ref=f84e1620] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e1624]:
+                    - generic [ref=f84e1625]:
+                      - generic [ref=f84e1626]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1628] [cursor=pointer]
+                  - gridcell [ref=f84e1632]:
+                    - generic [ref=f84e1633]:
+                      - link "jstev" [ref=f84e1638] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1640]
+                  - gridcell [ref=f84e1644]:
+                    - button "Show Actions" [ref=f84e1650] [cursor=pointer]
+                - row [ref=f84e1656]:
+                  - gridcell [ref=f84e1657]
+                  - gridcell "Select Item 14 Choose a Row" [ref=f84e1661]:
+                    - generic [ref=f84e1662]:
+                      - checkbox "Select Item 14 Choose a Row" [ref=f84e1663] [cursor=pointer]
+                      - generic [ref=f84e1664] [cursor=pointer]: Select Item 14
+                  - rowheader [ref=f84e1667]:
+                    - generic [ref=f84e1668]:
+                      - link "Test Demo 2 - Rolls-Royce" [ref=f84e1674] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AC2oIBVcYMO/view
+                      - button "Edit Opportunity Name" [ref=f84e1676] [cursor=pointer]
+                  - gridcell [ref=f84e1680]:
+                    - generic [ref=f84e1681]:
+                      - link "Test Demo 2" [ref=f84e1686] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00IIYjNQ5cY2G/view
+                      - button "Edit Account Name" [ref=f84e1688] [cursor=pointer]
+                  - gridcell [ref=f84e1692]:
+                    - img "Locked Account Site" [ref=f84e1694]
+                  - gridcell "Consider Edit Stage" [ref=f84e1698]:
+                    - generic [ref=f84e1699]:
+                      - generic [ref=f84e1700]: Consider
+                      - button "Edit Stage" [ref=f84e1703] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e1707]:
+                    - generic [ref=f84e1708]:
+                      - generic [ref=f84e1709]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1711] [cursor=pointer]
+                  - gridcell [ref=f84e1715]:
+                    - generic [ref=f84e1716]:
+                      - link "jstev" [ref=f84e1721] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1723]
+                  - gridcell [ref=f84e1727]:
+                    - button "Show Actions" [ref=f84e1733] [cursor=pointer]
+                - row [ref=f84e1739]:
+                  - gridcell [ref=f84e1740]
+                  - gridcell "Select Item 15 Choose a Row" [ref=f84e1744]:
+                    - generic [ref=f84e1745]:
+                      - checkbox "Select Item 15 Choose a Row" [ref=f84e1746] [cursor=pointer]
+                      - generic [ref=f84e1747] [cursor=pointer]: Select Item 15
+                  - rowheader [ref=f84e1750]:
+                    - generic [ref=f84e1751]:
+                      - link "QA test RS-03 - Final UI Verification" [ref=f84e1757] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AbseUdEKYE0/view
+                      - button "Edit Opportunity Name" [ref=f84e1759] [cursor=pointer]
+                  - gridcell [ref=f84e1763]:
+                    - generic [ref=f84e1764]:
+                      - link "Test Bugs" [ref=f84e1769] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e1771] [cursor=pointer]
+                  - gridcell [ref=f84e1775]:
+                    - img "Locked Account Site" [ref=f84e1777]
+                  - gridcell "Explore Edit Stage" [ref=f84e1781]:
+                    - generic [ref=f84e1782]:
+                      - generic [ref=f84e1783]: Explore
+                      - button "Edit Stage" [ref=f84e1786] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e1790]:
+                    - generic [ref=f84e1791]:
+                      - generic [ref=f84e1792]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1794] [cursor=pointer]
+                  - gridcell [ref=f84e1798]:
+                    - generic [ref=f84e1799]:
+                      - link "jstev" [ref=f84e1804] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1806]
+                  - gridcell [ref=f84e1810]:
+                    - button "Show Actions" [ref=f84e1816] [cursor=pointer]
+                - row [ref=f84e1822]:
+                  - gridcell [ref=f84e1823]
+                  - gridcell "Select Item 16 Choose a Row" [ref=f84e1827]:
+                    - generic [ref=f84e1828]:
+                      - checkbox "Select Item 16 Choose a Row" [ref=f84e1829] [cursor=pointer]
+                      - generic [ref=f84e1830] [cursor=pointer]: Select Item 16
+                  - rowheader [ref=f84e1833]:
+                    - generic [ref=f84e1834]:
+                      - link "QA test RS-03-TC-028 - Gate Arithmetic" [ref=f84e1840] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00Ab9FFT1QYEX/view
+                      - button "Edit Opportunity Name" [ref=f84e1842] [cursor=pointer]
+                  - gridcell [ref=f84e1846]:
+                    - generic [ref=f84e1847]:
+                      - link "Test Bugs" [ref=f84e1852] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e1854] [cursor=pointer]
+                  - gridcell [ref=f84e1858]:
+                    - img "Locked Account Site" [ref=f84e1860]
+                  - gridcell "Select Edit Stage" [ref=f84e1864]:
+                    - generic [ref=f84e1865]:
+                      - generic [ref=f84e1866]: Select
+                      - button "Edit Stage" [ref=f84e1869] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e1873]:
+                    - generic [ref=f84e1874]:
+                      - generic [ref=f84e1875]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1877] [cursor=pointer]
+                  - gridcell [ref=f84e1881]:
+                    - generic [ref=f84e1882]:
+                      - link "jstev" [ref=f84e1887] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1889]
+                  - gridcell [ref=f84e1893]:
+                    - button "Show Actions" [ref=f84e1899] [cursor=pointer]
+                - row [ref=f84e1905]:
+                  - gridcell [ref=f84e1906]
+                  - gridcell "Select Item 17 Choose a Row" [ref=f84e1910]:
+                    - generic [ref=f84e1911]:
+                      - checkbox "Select Item 17 Choose a Row" [ref=f84e1912] [cursor=pointer]
+                      - generic [ref=f84e1913] [cursor=pointer]: Select Item 17
+                  - rowheader [ref=f84e1916]:
+                    - generic [ref=f84e1917]:
+                      - link "QA test RS-03-TC-026 - Cancelled Gate" [ref=f84e1923] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00Ab9FBGsOYEX/view
+                      - button "Edit Opportunity Name" [ref=f84e1925] [cursor=pointer]
+                  - gridcell [ref=f84e1929]:
+                    - generic [ref=f84e1930]:
+                      - link "Test Bugs" [ref=f84e1935] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00Il8k5zHIYEY/view
+                      - button "Edit Account Name" [ref=f84e1937] [cursor=pointer]
+                  - gridcell [ref=f84e1941]:
+                    - img "Locked Account Site" [ref=f84e1943]
+                  - gridcell "Explore Edit Stage" [ref=f84e1947]:
+                    - generic [ref=f84e1948]:
+                      - generic [ref=f84e1949]: Explore
+                      - button "Edit Stage" [ref=f84e1952] [cursor=pointer]
+                  - gridcell "٣١/١٢/٢٠٢٦ Edit Close Date" [ref=f84e1956]:
+                    - generic [ref=f84e1957]:
+                      - generic [ref=f84e1958]: ٣١/١٢/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e1960] [cursor=pointer]
+                  - gridcell [ref=f84e1964]:
+                    - generic [ref=f84e1965]:
+                      - link "jstev" [ref=f84e1970] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e1972]
+                  - gridcell [ref=f84e1976]:
+                    - button "Show Actions" [ref=f84e1982] [cursor=pointer]
+                - row [ref=f84e1988]:
+                  - gridcell [ref=f84e1989]
+                  - gridcell "Select Item 18 Choose a Row" [ref=f84e1993]:
+                    - generic [ref=f84e1994]:
+                      - checkbox "Select Item 18 Choose a Row" [ref=f84e1995] [cursor=pointer]
+                      - generic [ref=f84e1996] [cursor=pointer]: Select Item 18
+                  - rowheader [ref=f84e1999]:
+                    - generic [ref=f84e2000]:
+                      - link "QA Test RS-03-TC-002 - Ferrari" [ref=f84e2006] [cursor=pointer]:
+                        - /url: /lightning/r/006FV00AaAKs9qOYUR/view
+                      - button "Edit Opportunity Name" [ref=f84e2008] [cursor=pointer]
+                  - gridcell [ref=f84e2012]:
+                    - generic [ref=f84e2013]:
+                      - link "QA Test RS-03-TC-002" [ref=f84e2018] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00JDXBaQX6Y2N/view
+                      - button "Edit Account Name" [ref=f84e2020] [cursor=pointer]
+                  - gridcell [ref=f84e2024]:
+                    - img "Locked Account Site" [ref=f84e2026]
+                  - gridcell "Select Edit Stage" [ref=f84e2030]:
+                    - generic [ref=f84e2031]:
+                      - generic [ref=f84e2032]: Select
+                      - button "Edit Stage" [ref=f84e2035] [cursor=pointer]
+                  - gridcell "٣٠/٩/٢٠٢٦ Edit Close Date" [ref=f84e2039]:
+                    - generic [ref=f84e2040]:
+                      - generic [ref=f84e2041]: ٣٠/٩/٢٠٢٦
+                      - button "Edit Close Date" [ref=f84e2043] [cursor=pointer]
+                  - gridcell [ref=f84e2047]:
+                    - generic [ref=f84e2048]:
+                      - link "jstev" [ref=f84e2053] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001tN36pJcAQI/view
+                      - img "Locked Opportunity Owner Alias" [ref=f84e2055]
+                  - gridcell [ref=f84e2059]:
+                    - button "Show Actions" [ref=f84e2065] [cursor=pointer]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f84e229]:
+          - listitem [ref=f84e230]:
+            - button "To Do List" [ref=f84e233] [cursor=pointer]
+  - generic:
+    - status

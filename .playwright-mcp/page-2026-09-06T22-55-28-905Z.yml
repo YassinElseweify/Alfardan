@@ -1,0 +1,41 @@
+- generic [ref=f123e1]:
+  - generic [ref=f123e4]:
+    - generic [ref=f123e6]:
+      - img "Salesforce login" [ref=f123e7]
+      - generic [ref=f123e8]: Salesforce login
+    - heading "Change Your Password" [level=2] [ref=f123e9]
+    - generic [ref=f123e12]:
+      - paragraph [ref=f123e13]: "Enter a new password for jstev_sales.z58pnjv0sn9u.cuosciyzsimv.hg.u6jbyrt9b0lw@alfardan.com.qa.qa. Make sure to include at least:"
+      - list [ref=f123e16]:
+        - listitem [ref=f123e17]:
+          - img "Does not meet requirements" [ref=f123e18]
+          - text: 8 characters
+        - listitem [ref=f123e19]:
+          - img "Does not meet requirements" [ref=f123e20]
+          - text: 1 letter
+        - listitem [ref=f123e21]:
+          - img "Does not meet requirements" [ref=f123e22]
+          - text: 1 number
+      - generic [ref=f123e23]: "* Current Password"
+      - textbox "* Current Password" [active] [ref=f123e25]
+      - generic [ref=f123e26]: "* New Password"
+      - textbox "* New Password" [ref=f123e28]
+      - generic [ref=f123e29]: "* Confirm New Password"
+      - textbox "* Confirm New Password" [ref=f123e31]
+      - generic [ref=f123e32]: "* New Security Question"
+      - combobox "* New Security Question" [ref=f123e34]:
+        - option "In what city were you born?" [selected]
+        - option "What is your mother's maiden name?"
+        - option "What is your pet's name?"
+        - option "What was your childhood nickname?"
+        - option "In what city did you meet your spouse/significant other?"
+        - option "What is the name of your favorite childhood friend?"
+        - option "In what city was your first job?"
+      - generic [ref=f123e35]: "* New Answer"
+      - textbox "* New Answer" [ref=f123e37]
+      - generic [ref=f123e38]: "*=required"
+      - generic [ref=f123e39]:
+        - button "Cancel" [ref=f123e40] [cursor=pointer]
+        - button "Change Password" [disabled] [ref=f123e41]
+      - paragraph [ref=f123e42]: Password was last changed on ٢٣/٨/٢٠٢٦, ٥:٤٤ AM.
+  - generic [ref=f123e43]: © 2026 Salesforce, Inc. All rights reserved.

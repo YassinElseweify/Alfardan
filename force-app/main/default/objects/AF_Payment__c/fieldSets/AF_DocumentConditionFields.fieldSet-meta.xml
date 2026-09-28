@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_DocumentConditionFields</fullName>
+    <description>ALF-RS-11 (LFRDN-341), reusing the LFRDN-342 AF_Document__mdt engine. Fields AF_DocumentConditionEvaluator may reference when evaluating AF_DocumentCondition__mdt rows scoped to AF_Payment__c via AF_DynamicObject__mdt: AF_PaymentMethod__c drives the Cheque Copy/Bank LPO branches, AF_NOCRecorded__c drives the Signed NOC branch (gated on the Cashier&apos;s own checkbox rather than a computed payee-mismatch, since the condition grammar has no field-to-field comparison).</description>
+    <displayedFields>
+        <field>AF_PaymentMethod__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>AF_NOCRecorded__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>AF Document Condition Fields</label>
+</FieldSet>

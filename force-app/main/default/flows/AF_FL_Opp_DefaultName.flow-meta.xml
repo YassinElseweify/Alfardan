@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Default_Name</name>
+        <label>Assign Default Name</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_DefaultName</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Fixes a real bug found 16 Aug 2026: standard Salesforce Lead Convert creates the Opportunity with no explicit Name, so the platform&apos;s own bare default lands as &quot;{Account Name}-&quot; — a trailing dash with nothing after it. This before-save flow only steps in when Name is blank or ends in a bare &quot;-&quot; (i.e. a genuinely broken/default name), so it never overwrites the deliberate names the walk-in flows already set (e.g. &quot;Account — Showroom Walk-In&quot;).</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_DefaultName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account.Name} &amp; &quot; - &quot; &amp; IF(ISBLANK(TEXT({!$Record.AF_Brand__c})), &quot;Opportunity&quot;, TEXT({!$Record.AF_Brand__c}))</expression>
+    </formulas>
+    <interviewLabel>Opportunity Default Name {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Default Name</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Default_Name</targetReference>
+        </connector>
+        <filterFormula>OR(ISBLANK({!$Record.Name}), RIGHT(TRIM({!$Record.Name}), 1) = &quot;-&quot;)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>10</triggerOrder>
+</Flow>

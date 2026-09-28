@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_BankLPO_Entity</name>
+        <label>Add Bank LPO Entity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>var_PaymentIdsWithBankLPOText</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>|{!Loop_ContentDocumentLinks.LinkedEntityId}|</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_SignedNOC_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_ChequeCopy_Entity</name>
+        <label>Add Cheque Copy Entity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>var_PaymentIdsWithChequeCopyText</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>|{!Loop_ContentDocumentLinks.LinkedEntityId}|</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_BankLPO_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Linked_Entity_To_Collection</name>
+        <label>Add Linked Entity To Collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>var_PaymentIdsWithFileText</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>|{!Loop_ContentDocumentLinks.LinkedEntityId}|</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_ChequeCopy_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Payment_Id_To_Collection</name>
+        <label>Add Payment Id To Collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>col_PaymentIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Build_PaymentIds.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Build_PaymentIds</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_SignedNOC_Entity</name>
+        <label>Add Signed NOC Entity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>var_PaymentIdsWithSignedNOCText</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>|{!Loop_ContentDocumentLinks.LinkedEntityId}|</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_ContentDocumentLinks</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_Current_Payment_Id</name>
+        <label>Copy Current Payment Id</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>var_CurrentPaymentId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_All_Payments.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Payment_Has_File</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Mark_Missing_Proof</name>
+        <label>Mark Missing Proof</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>var_MissingProofFound</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_All_Payments</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Mark_Missing_Typed_Doc</name>
+        <label>Mark Missing Typed Document</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>var_MissingTypedDocFound</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_All_Payments</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Stamp_Close_Date</name>
+        <label>Stamp Close Date</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CloseDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <customErrors>
+        <name>Block_Closed_Won_Balance</name>
+        <label>Block Closed Won - Balance Not Zero</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>Closed Won requires the Invoice balance to be zero (ALF-RS-09 FR6). Check the Invoice Summary - a balance remains outstanding.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Block_Closed_Won_Handover</name>
+        <label>Block Closed Won - Handover Incomplete</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>Closed Won requires registration and delivery confirmation on the linked Handover (ALF-RS-11 FR1): the Traffic Form must be uploaded and Customer Sign-Off must be Physically Signed.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Block_Closed_Won_Missing_Proof</name>
+        <label>Block Closed Won - Missing Proof</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>Closed Won requires every Payment to have proof attached (ALF-RS-09 FR6). At least one Payment has no file attached under Files - upload one, or check its Required Documents checklist for the specific document type needed.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Block_Closed_Won_Missing_Typed_Doc</name>
+        <label>Block Closed Won - Missing Required Document Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>Closed Won requires the correct typed document per Payment (ALF-RS-11 FR3/FR4/FR5): Cheque needs Cheque Copy, Bank Transfer needs Bank LPO, NOC Recorded needs Signed NOC. Check the Required Documents checklist on each Payment.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Block_Closed_Won_No_Invoice</name>
+        <label>Block Closed Won - No Invoice Summary</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>Closed Won requires an Invoice Summary on this Opportunity, and its balance must be zero (ALF-RS-09 FR6). No Invoice Summary exists yet.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Block_Closed_Won_Unverified_Payment</name>
+        <label>Block Closed Won - Unverified Payment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>Closed Won requires every Payment to be Paid / Verified (or Keyloop-synced) (ALF-RS-09 FR6). Check the Payment related list for one that is not yet verified.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Any_Unverified_Payments</name>
+        <label>Any Unverified Payments?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_All_Payments</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None Unverified — Check Proof</defaultConnectorLabel>
+        <rules>
+            <name>Unverified_Payments_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Unverified_Payments</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Block_Closed_Won_Unverified_Payment</targetReference>
+            </connector>
+            <label>Unverified Payments Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Balance_Is_Zero</name>
+        <label>Invoice Balance Is Zero?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Block_Closed_Won_Balance</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Invoice, or Balance Not Zero — Block</defaultConnectorLabel>
+        <rules>
+            <name>Balance_Zero</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Invoice_Summary.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Invoice_Summary.AF_Balance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Handover</targetReference>
+            </connector>
+            <label>Balance Is Zero</label>
+        </rules>
+        <rules>
+            <name>No_Invoice_Summary</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Invoice_Summary.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Block_Closed_Won_No_Invoice</targetReference>
+            </connector>
+            <label>No Invoice Summary</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_BankLPO_Type</name>
+        <label>Is This File a Bank LPO?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_SignedNOC_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Bank LPO</defaultConnectorLabel>
+        <rules>
+            <name>Is_BankLPO</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_ContentDocumentLinks.ContentDocument.LatestPublishedVersion.AF_FileUpload__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Bank LPO</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_BankLPO_Entity</targetReference>
+            </connector>
+            <label>Is Bank LPO</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_ChequeCopy_Type</name>
+        <label>Is This File a Cheque Copy?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_BankLPO_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Cheque Copy</defaultConnectorLabel>
+        <rules>
+            <name>Is_ChequeCopy</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_ContentDocumentLinks.ContentDocument.LatestPublishedVersion.AF_FileUpload__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cheque Copy</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_ChequeCopy_Entity</targetReference>
+            </connector>
+            <label>Is Cheque Copy</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_SignedNOC_Type</name>
+        <label>Is This File a Signed NOC?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Loop_ContentDocumentLinks</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Signed NOC</defaultConnectorLabel>
+        <rules>
+            <name>Is_SignedNOC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_ContentDocumentLinks.ContentDocument.LatestPublishedVersion.AF_FileUpload__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Signed NOC</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_SignedNOC_Entity</targetReference>
+            </connector>
+            <label>Is Signed NOC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Handover_Conditions_Met</name>
+        <label>Handover Conditions Met?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Block_Closed_Won_Handover</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No / No Handover — Block</defaultConnectorLabel>
+        <rules>
+            <name>Handover_Ok</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Handover.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Handover.AF_TrafficFormUploaded__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Handover.AF_CustomerSignOff__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Physically Signed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Unverified_Payments</targetReference>
+            </connector>
+            <label>Handover Ok</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Closing_Won</name>
+        <label>Is Closing Won?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No — Allow</defaultConnectorLabel>
+        <rules>
+            <name>Closing_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Invoice_Summary</targetReference>
+            </connector>
+            <label>Closing Won</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Missing_Proof_After_Loop</name>
+        <label>Missing Proof After Loop?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Missing_Typed_Doc_After_Loop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>All Proofed — Check Typed Docs</defaultConnectorLabel>
+        <rules>
+            <name>Was_Missing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>var_MissingProofFound</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Block_Closed_Won_Missing_Proof</targetReference>
+            </connector>
+            <label>Was Missing</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Missing_Typed_Doc_After_Loop</name>
+        <label>Missing Required Typed Document After Loop?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Stamp_Close_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>All Typed Docs Present — Allow</defaultConnectorLabel>
+        <rules>
+            <name>Was_Missing_Typed_Doc</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>var_MissingTypedDocFound</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Block_Closed_Won_Missing_Typed_Doc</targetReference>
+            </connector>
+            <label>Was Missing Typed Doc</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Payment_Has_File</name>
+        <label>Does This Payment Have a File?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Mark_Missing_Proof</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No File — Missing Proof</defaultConnectorLabel>
+        <rules>
+            <name>Has_File</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Formula_CurrentPaymentHasFile</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Payment_Has_Required_Typed_Docs</targetReference>
+            </connector>
+            <label>Has File</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Payment_Has_Required_Typed_Docs</name>
+        <label>Does This Payment Have Its Required Typed Documents?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Mark_Missing_Typed_Doc</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Missing a Required Type — Block</defaultConnectorLabel>
+        <rules>
+            <name>Has_Required_Typed_Docs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Formula_CurrentPaymentHasRequiredTypedDocs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_All_Payments</targetReference>
+            </connector>
+            <label>Has Required Typed Docs</label>
+        </rules>
+    </decisions>
+    <description>ALF-RS-09 (LFRDN-339) FR6: blocks StageName -&gt; Closed Won unless every AF_Payment__c on the Opportunity is verified (Paid / Verified or Keyloop Synced), each has a real attached proof document (ContentDocumentLink - BRD FR6 says &quot;attaching the receipt or deposit document&quot; / &quot;carries an attached payment proof&quot;, not a text reference), and the Invoice Summary balance is zero. Before-save Flow (not the Apex AF_Opportunity_ClosedWonPaymentGate class directly - before-save Flow context cannot call Apex Actions, confirmed against Salesforce&apos;s own Flow documentation) so this enforces on every save path (UI, API, Data Loader, other flows), not just a screen action someone remembers to click. Bulkified deliberately: the ContentDocumentLink lookup for every Payment on the Opportunity runs ONCE before the payment-checking loop (Get_ContentDocumentLinks_For_Payments, filtered by an IN-list built from Get_All_Payments via Loop_Build_PaymentIds), collected into var_PaymentIdsWithFileText (a pipe-delimited string, e.g. |Id1|Id2|) via a separate small loop over the file-link results - Get Records inside the payment-checking loop is a documented Flow anti-pattern that blows the 100-SOQL limit under bulk Opportunity updates. A Decision&apos;s In operator rejects a plain Text variable as the left operand at deploy time (&quot;A condition doesn&apos;t support ... In&quot;) even though the same operator accepts collections fine on the right side of an In filter on a Get Records element - worked around with a CONTAINS() formula against the delimited string instead, which Flow formulas fully support regardless of that Decision-element restriction. Mirrors the exact same dual-verification rule (AF_Status__c = &apos;Paid / Verified&apos; OR AF_IntegrationStatus__c = &apos;Synced&apos;) and file-attachment check that AF_Opportunity_ClosedWonPaymentGate.cls already implements for a callable/testable UI path - if that class&apos;s rule ever changes, this flow must be updated to match, since there is no way to share logic between an Apex class and a before-save Flow.
+
+ALF-RS-11 (LFRDN-341) FR1/FR6 additions: Get_Handover/Handover_Conditions_Met block Closed Won unless the Opportunity&apos;s linked AF_Handover__c has AF_TrafficFormUploaded__c = true (registration) and AF_CustomerSignOff__c = &apos;Physically Signed&apos; (signed delivery note) - read via the Opportunity.AF_Handover__c lookup rather than new Opportunity mirror fields, since AF_HandoverComplete__c/AF_DeliveryConfirmation__c above are already-known unwired manual checkboxes and the new conditions deliberately don&apos;t repeat that gap. Stamp_Close_Date sets CloseDate = TODAY() only on the path where every condition actually passes (FR6: &quot;Closed Won date... based on when the agreed completion conditions are satisfied, not on an earlier sales milestone&quot;), overriding whatever value a rep had typed in earlier.
+
+ALF-RS-11 FR3/FR4/FR5 (payee/NOC, Cheque copy, Bank LPO) were originally enforced only by AF_Opportunity_ClosedWonPaymentGate.cls via the LFRDN-342 AF_Document__mdt engine (AF_DocumentService.areRequiredDocumentsUploaded per Payment) - see LFRDN-682 below for why that changed.
+
+LFRDN-682 (found live 2026-09-22, fixed 2026-09-22): the manual Path close was observed succeeding while AF_Opportunity_ClosedWonPaymentGate.check() on the same record returned allowed=false for a missing typed document (Bank LPO/Signed NOC) - this Flow&apos;s generic file-attached check passed even though the Apex class&apos;s typed-document check would not have. The full LFRDN-342 AF_Document__mdt interpreter is generic/dynamic-SOQL-driven and genuinely can&apos;t be replicated in Flow, but its 5 AF_DocumentCondition__mdt rows for Payment collapse to exactly 3 independent, static rules once read together: Cheque Copy is required when AF_PaymentMethod__c = &apos;Cheque&apos;, Bank LPO when AF_PaymentMethod__c = &apos;Bank Transfer&apos;, and Signed NOC when AF_NOCRecorded__c = true - each fires or doesn&apos;t regardless of the others, so no combinatorial condition-matching engine is actually needed for this one object. Reimplemented those 3 rules declaratively: Get_ContentDocumentLinks_For_Payments (already bulkified per the pattern above) is now also split by ContentDocument.LatestPublishedVersion.AF_FileUpload__c into 3 additional pipe-delimited ID collections (one per document type, mirroring var_PaymentIdsWithFileText&apos;s existing pattern), and Formula_CurrentPaymentHasRequiredTypedDocs checks each Payment against only the type(s) its own method/NOC state actually requires. If AF_DocumentCondition__mdt for Payment is ever restructured beyond these 3 independent rules (e.g. a document required by a genuine AND of two conditions that isn&apos;t already covered by one of the 5 existing rows), this formula must be rebuilt to match - it is not a general interpreter, only a correct model of the specific 5 rows that exist today.
+
+LFRDN-687 (fixed 2026-09-22): Block_Closed_Won was previously a single custom error reused by all four failure branches (no invoice, balance not zero, handover incomplete, unverified/unproofed payment), so every refusal showed the same payment-focused message even when payments were the one thing already correct. Split into five error elements (Block_Closed_Won_No_Invoice, _Balance, _Handover, _Unverified_Payment, _Missing_Proof), one per branch, each naming the actual unmet condition - matching the per-condition messages AF_Opportunity_ClosedWonPaymentGate.cls already produces on the automatic path.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_CurrentPaymentHasFile</name>
+        <dataType>Boolean</dataType>
+        <expression>CONTAINS({!var_PaymentIdsWithFileText}, &quot;|&quot; &amp; {!var_CurrentPaymentId} &amp; &quot;|&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>LFRDN-682: mirrors the 5 AF_DocumentCondition__mdt Payment rows (collapsed to their 3 independent underlying rules, since the mdt rows are just every combination of them) - Cheque Copy required when PaymentMethod=Cheque, Bank LPO required when PaymentMethod=Bank Transfer, Signed NOC required when NOCRecorded=true. Each clause short-circuits to true when its own condition doesn&apos;t apply, so a payment only needs the document types it actually triggers.</description>
+        <name>Formula_CurrentPaymentHasRequiredTypedDocs</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    OR(
+        NOT(TEXT({!Loop_All_Payments.AF_PaymentMethod__c}) = &quot;Cheque&quot;),
+        CONTAINS({!var_PaymentIdsWithChequeCopyText}, &quot;|&quot; &amp; {!Loop_All_Payments.Id} &amp; &quot;|&quot;)
+    ),
+    OR(
+        NOT(TEXT({!Loop_All_Payments.AF_PaymentMethod__c}) = &quot;Bank Transfer&quot;),
+        CONTAINS({!var_PaymentIdsWithBankLPOText}, &quot;|&quot; &amp; {!Loop_All_Payments.Id} &amp; &quot;|&quot;)
+    ),
+    OR(
+        NOT({!Loop_All_Payments.AF_NOCRecorded__c}),
+        CONTAINS({!var_PaymentIdsWithSignedNOCText}, &quot;|&quot; &amp; {!Loop_All_Payments.Id} &amp; &quot;|&quot;)
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Opp Closed Won Payment Gate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opp Closed Won Payment Gate</label>
+    <loops>
+        <name>Loop_All_Payments</name>
+        <label>Loop All Payments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_All_Payments</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Copy_Current_Payment_Id</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Missing_Proof_After_Loop</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Build_PaymentIds</name>
+        <label>Loop Build Payment Ids</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_All_Payments</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Payment_Id_To_Collection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_ContentDocumentLinks_For_Payments</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_ContentDocumentLinks</name>
+        <label>Loop ContentDocumentLinks</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_ContentDocumentLinks_For_Payments</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Linked_Entity_To_Collection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Loop_All_Payments</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_All_Payments</name>
+        <label>Get All Payments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Build_PaymentIds</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AF_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>AF_Payment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_ContentDocumentLinks_For_Payments</name>
+        <label>Get ContentDocumentLinks For Payments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_ContentDocumentLinks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>col_PaymentIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Handover</name>
+        <label>Get Handover</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Handover_Conditions_Met</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Handover__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AF_Handover__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Invoice_Summary</name>
+        <label>Get Invoice Summary</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Balance_Is_Zero</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_InvoiceSummary__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AF_InvoiceSummary__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Unverified_Payments</name>
+        <label>Get Unverified Payments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Any_Unverified_Payments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AF_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Paid / Verified</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_IntegrationStatus__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Synced</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AF_Payment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Closing_Won</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.StageName})</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>col_PaymentIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>var_CurrentPaymentId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>var_MissingProofFound</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>var_MissingTypedDocFound</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>var_PaymentIdsWithBankLPOText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>var_PaymentIdsWithChequeCopyText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>var_PaymentIdsWithFileText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>var_PaymentIdsWithSignedNOCText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_RelatedQuoteLine__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Pairs with QuoteLineItem.AF_RelatedTradeIn__c — negative trade-in deduction line.</description>
+    <label>Related Quote Line</label>
+    <referenceTo>QuoteLineItem</referenceTo>
+    <relationshipLabel>Appraisals</relationshipLabel>
+    <relationshipName>AF_Appraisals</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

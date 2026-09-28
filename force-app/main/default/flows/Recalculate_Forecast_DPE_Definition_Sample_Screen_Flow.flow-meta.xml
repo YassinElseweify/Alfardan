@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Calls an action that starts a batch job to run the Recalculate Category Sample-Advanced Account Forecast Data Processing Engine definition. Stores outputs in IsAccepted and BatchJobId.</description>
+        <name>RunDpeDefinition</name>
+        <label>Run DPE Definition</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <actionName>Recalculate_Category_Forecast_Sample</actionName>
+        <actionType>dataProcessingEngineAction</actionType>
+        <connector>
+            <targetReference>GetBatchJob</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>SendFailureEmail</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>AccountId</name>
+            <value>
+                <elementReference>AccountID</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>AdvAccountForecastSetId</name>
+            <value>
+                <elementReference>AccountForecastSetId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Recalculate_Category_Forecast_Sample</nameSegment>
+        <outputParameters>
+            <assignToReference>IsAccepted</assignToReference>
+            <name>accepted</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>BatchJobId</assignToReference>
+            <name>batchJobId</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an action that sends an email to the Salesforce admin notifying them that the RunDpeDefinition action failed.</description>
+        <name>SendFailureEmail</name>
+        <label>Send Failure Email</label>
+        <locationX>440</locationX>
+        <locationY>398</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>FailureMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce Manufacturing Cloud job {!BatchJobId} failed</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an action that sends an email to the Salesforce admin notifying them that the batch job that runs RunDpeDefinition has started.</description>
+        <name>SendJobStartedEmail</name>
+        <label>Send Job Started Email</label>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>DisplaySuccessMessage</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>StartedEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce batch job {!BatchJobId} with the Recalculate Account Forecast Data Processing Engine Definition has started</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Recalculate account forecasts using the Recalculate Account Forecast Data Processing Engine definition available with Advanced Account Forecasting.</description>
+    <environments>Default</environments>
+    <interviewLabel>Recalculate Forecast DPE Definition (Sample Screen Flow) {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Recalculate Forecast DPE Definition (Sample Screen Flow)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Gets the batch job associated with the BatchJobId returned by RunDpeDefinition. Stores the record in Batch Job from GetBatchJob.</description>
+        <name>GetBatchJob</name>
+        <label>Get Batch Job</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SendJobStartedEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>BatchJobId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>BatchJob</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <description>Collects the account ID and the forecast set record ID from the flow user.</description>
+        <name>CollectDPEInformation</name>
+        <label>Collect DPE Information</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>RunDpeDefinition</targetReference>
+        </connector>
+        <fields>
+            <name>AccountForecastSetId</name>
+            <dataType>String</dataType>
+            <fieldText>Account Forecast Set ID</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Enter a valid advance account forecast set ID.&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>AccountID</name>
+            <dataType>String</dataType>
+            <fieldText>Account ID</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Informs the user running the flow that the Recalculate Category Forecast Sample-AdvancedAccountForecast job was created.</description>
+        <name>DisplaySuccessMessage</name>
+        <label>Display Success Message</label>
+        <locationX>176</locationX>
+        <locationY>638</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>DisplaySuccessMessage_0</name>
+            <fieldText>&lt;p&gt;{!SuccessMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CollectDPEInformation</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Stores the message that informs the user running the flow that the RunDpeDefinition action failed.</description>
+        <name>FailureMessage</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Hello admin,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;The batch job {batch job ID} in the &quot;{Flow Name}&quot; flow failed. To view more details, go to Monitor Workflow Jobs in Setup.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Salesforce Manufacturing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Stores the body of the email that’s sent to the Salesforce admin to notify them that the RunDpeDefinition has started.</description>
+        <name>StartedEmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Hello admin,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;The &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: 10.5pt;&quot;&gt;Recalculate Forecast DPE batch job&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt; {!BatchJobId} has started. To view more details, go to Monitor Workflow Jobs in Setup.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial; font-size: 11pt;&quot;&gt;Salesforce Manufacturing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Stores the message that informs the user that the batch job.</description>
+        <name>SuccessMessage</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-family: Roboto, sans-serif; font-size: 10pt;&quot;&gt;The Process Recalculate Advance Account Forecast Calculation Job was created.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-family: Roboto, sans-serif; font-size: 10pt;&quot;&gt;Job ID : {!BatchJobId}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-family: Roboto, sans-serif; font-size: 10pt;&quot;&gt;To see more details, go to&amp;nbsp; Setup -&amp;gt; Monitor Workflow Jobs.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Stores the ID for the batch job that ran the  Recalculate Category Sample-Advanced Account Forecast core action invoked in RunDpeDefinition.</description>
+        <name>BatchJobId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>tores a Boolean value that indicates whether the DPE output was accepted.</description>
+        <name>IsAccepted</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

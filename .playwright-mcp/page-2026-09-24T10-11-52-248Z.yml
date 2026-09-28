@@ -1,0 +1,192 @@
+- generic:
+  - generic:
+    - generic [ref=f93e2]:
+      - generic [ref=f93e3]:
+        - link "Skip to Navigation" [ref=f93e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f93e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f93e195]:
+          - generic [ref=f93e196]: "Sandbox: QA |"
+          - link "Log out" [ref=f93e197] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f93e6]:
+          - button "Search" [ref=f93e13]: Search...
+          - navigation "Global Header" [ref=f93e18]:
+            - list [ref=f93e199]:
+              - listitem [ref=f93e200]:
+                - group [ref=f93e201]:
+                  - button "Add favorite" [ref=f93e203] [cursor=pointer]:
+                    - generic [ref=f93e204]:
+                      - tooltip "Add favorite"
+                  - button [ref=f93e212] [cursor=pointer]:
+                    - generic [ref=f93e213]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f93e220]:
+                - button [ref=f93e226] [cursor=pointer]:
+                  - generic [ref=f93e227]:
+                    - tooltip "Global Actions"
+              - listitem [ref=f93e234]:
+                - button [ref=f93e236] [cursor=pointer]:
+                  - generic [ref=f93e237]:
+                    - tooltip "Guidance Center"
+              - listitem [ref=f93e244]:
+                - button [ref=f93e247] [cursor=pointer]:
+                  - generic [ref=f93e248]:
+                    - tooltip "Salesforce Help"
+              - listitem
+              - listitem [ref=f93e255]:
+                - button "20+ Notifications" [ref=f93e258] [cursor=pointer]:
+                  - generic [ref=f93e259]:
+                    - generic [ref=f93e260]: 20+
+                    - tooltip "Notifications"
+                - generic [ref=f93e269]: 30 new notifications
+              - listitem [ref=f93e270]:
+                - button "View profile" [ref=f93e273] [cursor=pointer]:
+                  - generic [ref=f93e274]:
+                    - tooltip "View profile"
+      - generic [ref=f93e24]:
+        - generic [ref=f93e27]:
+          - generic [ref=f93e29]:
+            - navigation "App" [ref=f93e30]:
+              - button "App Launcher" [ref=f93e32] [cursor=pointer]
+            - heading "Automotive" [level=1] [ref=f93e44]
+          - navigation "Global" [ref=f93e48]:
+            - list [ref=f93e49]:
+              - listitem [ref=f93e50]:
+                - link "Home" [ref=f93e51] [cursor=pointer]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f93e53]:
+                - link "Vehicles" [ref=f93e54] [cursor=pointer]:
+                  - /url: /lightning/o/Vehicle/home
+                - button "Vehicles List" [ref=f93e59] [cursor=pointer]
+              - listitem [ref=f93e67]:
+                - link "Assets" [ref=f93e68] [cursor=pointer]:
+                  - /url: /lightning/o/Asset/home
+                - button "Assets List" [ref=f93e73] [cursor=pointer]
+              - listitem [ref=f93e81]:
+                - link "Vehicle Definitions" [ref=f93e82] [cursor=pointer]:
+                  - /url: /lightning/o/VehicleDefinition/home
+                - button "Vehicle Definitions List" [ref=f93e87] [cursor=pointer]
+              - listitem [ref=f93e95]:
+                - link "Products" [ref=f93e96] [cursor=pointer]:
+                  - /url: /lightning/o/Product2/home
+                - button "Products List" [ref=f93e101] [cursor=pointer]
+              - listitem [ref=f93e109] [cursor=pointer]:
+                - link "Accounts" [ref=f93e110]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f93e115]
+              - listitem [ref=f93e123]:
+                - link "Contacts" [ref=f93e124] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f93e129] [cursor=pointer]
+              - listitem [ref=f93e137]:
+                - link "Asset Milestones" [ref=f93e138] [cursor=pointer]:
+                  - /url: /lightning/o/AssetMilestone/home
+                - button "Asset Milestones List" [ref=f93e143] [cursor=pointer]
+              - listitem [ref=f93e151]:
+                - link "Asset Contact Participants" [ref=f93e152] [cursor=pointer]:
+                  - /url: /lightning/o/AssetContactParticipant/home
+                - button "Asset Contact Participants List" [ref=f93e157] [cursor=pointer]
+              - listitem [ref=f93e165]:
+                - button "Show more navigation items" [ref=f93e167] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f93e168]: More
+              - listitem [ref=f93e176]:
+                - button "Edit nav items" [ref=f93e178] [cursor=pointer]
+        - main [ref=f93e472]:
+          - generic [ref=f93e482]:
+            - generic [ref=f93e484]:
+              - generic [ref=f93e485]:
+                - generic [ref=f93e492]:
+                  - heading "Accounts" [level=1] [ref=f93e496]
+                  - generic [ref=f93e497]:
+                    - generic [ref=f93e499] [cursor=pointer]:
+                      - heading "Accounts Recently Viewed" [level=1] [ref=f93e500]:
+                        - generic [ref=f93e501]: Accounts
+                        - generic [ref=f93e502]: Recently Viewed
+                      - 'button "Select a List View: Accounts" [ref=f93e505]'
+                    - button "This list is pinned." [disabled] [ref=f93e514] [cursor=pointer]
+                - list [ref=f93e522]:
+                  - listitem [ref=f93e523]:
+                    - button "New" [ref=f93e524] [cursor=pointer]
+              - generic [ref=f93e526]:
+                - paragraph [ref=f93e528]:
+                  - generic [ref=f93e530]:
+                    - status "Recently Viewed" [ref=f93e531]: 2 items •
+                    - text: Updated an hour ago
+                - generic [ref=f93e537]:
+                  - generic [ref=f93e538]: Search this list...
+                  - searchbox "Search this list..." [ref=f93e540]
+                - generic [ref=f93e544]:
+                  - button "List View Controls" [ref=f93e548] [cursor=pointer]
+                  - button "Select list display" [ref=f93e560] [cursor=pointer]
+                  - generic [ref=f93e571]:
+                    - button "Refresh" [ref=f93e574] [cursor=pointer]
+                    - button "Column sort" [ref=f93e582] [cursor=pointer]
+                    - button "Inline Edit is disabled. To edit, filter by one record type." [ref=f93e590] [cursor=pointer]
+                    - group [ref=f93e596]:
+                      - generic [ref=f93e598]:
+                        - generic:
+                          - generic:
+                            - button "Charts" [disabled]
+                        - generic:
+                          - generic:
+                            - button "Filters" [disabled]
+            - generic [ref=f93e605]:
+              - generic: Navigation Mode
+              - grid "Recently Viewed" [ref=f93e610]:
+                - rowgroup:
+                  - row "Row Number Account Name Account Owner Alias Action":
+                    - columnheader "Row Number":
+                      - generic [ref=f93e613]:
+                        - generic "Row Number"
+                    - columnheader "Account Name":
+                      - generic [ref=f93e615]:
+                        - 'button "Sort by: Account Name" [ref=f93e616] [cursor=pointer]':
+                          - generic [ref=f93e617]: "Sort by:"
+                          - generic "Account Name" [ref=f93e618]
+                        - generic [ref=f93e619]: "Sorted: None"
+                        - button "Show Account Name column actions" [ref=f93e621] [cursor=pointer]
+                        - slider "Account Name column width" [ref=f93e627]: "1036"
+                    - columnheader "Account Owner Alias":
+                      - generic [ref=f93e631]:
+                        - 'button "Sort by: Account Owner Alias" [ref=f93e632] [cursor=pointer]':
+                          - generic [ref=f93e633]: "Sort by:"
+                          - generic "Account Owner Alias" [ref=f93e634]
+                        - generic [ref=f93e635]: "Sorted: None"
+                        - button "Show Account Owner Alias column actions" [ref=f93e637] [cursor=pointer]
+                        - slider "Account Owner Alias column width" [ref=f93e643]: "363"
+                    - columnheader "Action":
+                      - generic [ref=f93e648]:
+                        - generic "Action"
+                - rowgroup [ref=f93e649]:
+                  - row [ref=f93e650]:
+                    - gridcell [ref=f93e651]
+                    - rowheader [active] [ref=f93e655]:
+                      - link "Aisha Al-Naimi" [ref=f93e662] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00KAKqBF1wY2G/view
+                    - gridcell [ref=f93e664]:
+                      - link "aalfa" [ref=f93e670] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001vLvmFZ6AQM/view
+                    - gridcell [ref=f93e672]:
+                      - button "Show Actions" [ref=f93e678] [cursor=pointer]
+                  - row [ref=f93e684]:
+                    - gridcell [ref=f93e685]
+                    - rowheader [ref=f93e689]:
+                      - link "Ahmed Al-Muftah" [ref=f93e696] [cursor=pointer]:
+                        - /url: /lightning/r/001FV00KAKqJdK0Y2K/view
+                    - gridcell [ref=f93e698]:
+                      - link "aalfa" [ref=f93e704] [cursor=pointer]:
+                        - /url: /lightning/r/005a3001vLvmFZ6AQM/view
+                    - gridcell [ref=f93e706]:
+                      - button "Show Actions" [ref=f93e712] [cursor=pointer]
+    - generic [ref=f93e192]:
+      - generic: View profile
+      - generic: Notifications
+      - generic: Salesforce Help
+      - generic: Guidance Center
+      - generic: Add favorite
+  - generic:
+    - status
+  - iframe [aria-hidden] [ref=f93e719]
+  - iframe [aria-hidden] [ref=f93e720]

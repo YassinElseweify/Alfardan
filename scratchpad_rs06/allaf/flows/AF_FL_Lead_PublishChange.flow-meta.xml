@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Publishes AF_LeadChange__e on create and on meaningful field changes (Status, Owner, qualification outcome, phone, email) for MuleSoft to subscribe to. Starting field contract — exact payload pending MuleSoft agreement.
+
+FIXED 2026-08-16: Added NOT({!$Record.IsConverted}) to entry criteria to prevent flow from running during lead conversion, which was causing &quot;Unable to convert lead that is in use by workflow&quot; error due to platform event publishing during the conversion transaction.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_ChangeType</name>
+        <dataType>String</dataType>
+        <expression>IF(ISNEW(), &quot;Created&quot;, &quot;Updated&quot;)</expression>
+    </formulas>
+    <interviewLabel>AF Lead Publish Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Publish Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Publish_LeadChange</name>
+        <label>Publish Lead Change</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <inputAssignments>
+            <field>AF_ChangeType__c</field>
+            <value>
+                <elementReference>AF_Formula_ChangeType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_LeadId__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_NewOwnerId__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AF_NewStatus__c</field>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AF_LeadChange__e</object>
+    </recordCreates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Publish_LeadChange</targetReference>
+        </connector>
+        <filterFormula>AND(NOT({!$Record.IsConverted}), OR(ISNEW(), ISCHANGED({!$Record.Status}), ISCHANGED({!$Record.OwnerId}), ISCHANGED({!$Record.AF_QualificationOutcome__c}), ISCHANGED({!$Record.Phone}), ISCHANGED({!$Record.Email})))</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>50</triggerOrder>
+</Flow>

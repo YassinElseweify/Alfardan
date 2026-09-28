@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Lead_DisqualifyReason</fullName>
+    <active>true</active>
+    <description>ALF-LM-07</description>
+    <errorConditionFormula>AND(ISPICKVAL(Status, &quot;Disqualified&quot;), OR(ISBLANK(TEXT(AF_DisqualificationReason__c)), AND(ISPICKVAL(AF_DisqualificationReason__c, &quot;Other&quot;), ISBLANK(AF_DisqualificationNotes__c))))</errorConditionFormula>
+    <errorMessage>A Disqualified Lead requires a Disqualification Reason, and Notes if the reason is Other.</errorMessage>
+</ValidationRule>

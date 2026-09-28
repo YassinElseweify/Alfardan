@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VehicleDefinition__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>No-VIN path. At least one of Vehicle / Vehicle Definition required.</description>
+    <label>Vehicle Definition</label>
+    <referenceTo>VehicleDefinition</referenceTo>
+    <relationshipLabel>Vehicle Reservations</relationshipLabel>
+    <relationshipName>AF_VehicleReservations</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

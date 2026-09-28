@@ -1,0 +1,334 @@
+- generic:
+  - generic [ref=f18e2]:
+    - generic [ref=f18e3]:
+      - link "Skip to Navigation" [ref=f18e1581] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f18e1582] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f18e154]:
+        - generic [ref=f18e155]: "Sandbox: QA |"
+        - link "Log out" [ref=f18e1583] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f18e6]:
+        - button "Search" [ref=f18e1584]: Search...
+        - navigation "Global Header" [ref=f18e1585]:
+          - list [ref=f18e157]:
+            - listitem [ref=f18e158]:
+              - group [ref=f18e159]:
+                - button "Add favorite" [ref=f18e1586] [cursor=pointer]:
+                  - generic [ref=f18e162]:
+                    - tooltip "Add favorite"
+                - button [ref=f18e1587] [cursor=pointer]:
+                  - generic [ref=f18e171]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f18e178]:
+              - button [ref=f18e1588] [cursor=pointer]:
+                - generic [ref=f18e185]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f18e192]:
+              - button [ref=f18e1589] [cursor=pointer]:
+                - generic [ref=f18e195]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f18e202]:
+              - button [ref=f18e1590] [cursor=pointer]:
+                - generic [ref=f18e206]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f18e213]:
+              - button [ref=f18e1591] [cursor=pointer]:
+                - generic [ref=f18e220]:
+                  - tooltip "Setup"
+            - listitem [ref=f18e227]:
+              - button "20+ Notifications" [ref=f18e1592] [cursor=pointer]:
+                - generic [ref=f18e231]:
+                  - generic [ref=f18e232]: 20+
+                  - tooltip "Notifications"
+              - generic [ref=f18e241]: 22 new notifications
+            - listitem [ref=f18e242]:
+              - button "View profile" [ref=f18e1593] [cursor=pointer]:
+                - generic [ref=f18e246]:
+                  - tooltip "View profile"
+    - generic [ref=f18e24]:
+      - generic [ref=f18e27]:
+        - generic [ref=f18e29]:
+          - navigation "App" [ref=f18e1594]:
+            - button "App Launcher" [ref=f18e1595] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f18e1596]
+        - navigation "Global" [ref=f18e1598]:
+          - list [ref=f18e49]:
+            - listitem [ref=f18e50]:
+              - link "Home" [ref=f18e1599] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f18e53]:
+              - link "Analytics" [ref=f18e1600] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f18e56]:
+              - link "Opportunities" [ref=f18e1601] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f18e1602] [cursor=pointer]
+            - listitem [ref=f18e250] [cursor=pointer]:
+              - link "* TD-00020 | Test Drive" [ref=f18e1603]:
+                - /url: /lightning/r/AF_TestDrive__c/a0VFV0095iDUF5M2AX/view
+                - generic "Not added to nav bar" [ref=f18e1604]: "*"
+                - generic [ref=f18e253]: TD-00020 | Test Drive
+              - button "TD-00020 | Test Drive List" [ref=f18e1605]
+              - button "Close tab" [ref=f18e1606]
+            - listitem [ref=f18e112]:
+              - button "Show more navigation items" [ref=f18e1607] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f18e115]: More
+            - listitem [ref=f18e123]:
+              - button "Edit nav items" [ref=f18e1608] [cursor=pointer]
+      - main [ref=f18e132]:
+        - generic [ref=f18e284]:
+          - generic [ref=f18e293]:
+            - generic [ref=f18e294]:
+              - generic [ref=f18e300]:
+                - generic [ref=f18e301]: Test Drive
+                - heading "TD-00020" [level=1] [ref=f18e1609]
+              - button "Follow" [ref=f18e1610] [cursor=pointer]
+              - generic [ref=f18e320]:
+                - generic "Edit" [ref=f18e1611]:
+                  - button "Edit" [active] [ref=f18e1612] [cursor=pointer]
+                - generic "Clone" [ref=f18e1613]:
+                  - button "Clone" [ref=f18e1614] [cursor=pointer]
+            - generic [ref=f18e339]:
+              - generic [ref=f18e341]:
+                - paragraph [ref=f18e342]: Test Drive Status
+                - paragraph [ref=f18e343]:
+                  - generic [ref=f18e344]: Scheduled
+              - generic [ref=f18e346]:
+                - paragraph [ref=f18e347]: Test Drive Result
+                - paragraph
+              - generic [ref=f18e349]:
+                - paragraph [ref=f18e350]: Assigned Sales Consultant
+                - paragraph
+              - generic [ref=f18e352]:
+                - paragraph [ref=f18e353]: Scheduled Date / Time
+                - paragraph [ref=f18e1615]:
+                  - generic [ref=f18e1616]: ١٢/٩/٢٠٢٦, ١٢:٠٠ PM
+          - generic [ref=f18e355]:
+            - generic [ref=f18e363]:
+              - heading "Tabs" [level=2] [ref=f18e1617]
+              - tablist "Tabs" [ref=f18e1618]:
+                - tab "Related" [ref=f18e1619] [cursor=pointer]
+                - tab "Details" [selected] [ref=f18e1620] [cursor=pointer]
+              - tabpanel "Details" [ref=f18e1621]:
+                - generic [ref=f18e384]:
+                  - generic [ref=f18e386]:
+                    - heading [level=3] [ref=f18e1622]:
+                      - button "Test Drive Details" [expanded] [ref=f18e1623] [cursor=pointer]
+                    - list [ref=f18e398]:
+                      - generic [ref=f18e399]:
+                        - generic [ref=f18e401]:
+                          - listitem [ref=f18e403]:
+                            - generic [ref=f18e404]:
+                              - generic [ref=f18e405]: Test Drive Number
+                              - generic [ref=f18e406]: TD-00020
+                          - listitem [ref=f18e410]:
+                            - generic [ref=f18e411]:
+                              - generic [ref=f18e412]: Test Drive Status
+                              - generic [ref=f18e413]:
+                                - generic [ref=f18e414]: Scheduled
+                                - button "Edit Test Drive Status" [ref=f18e1624] [cursor=pointer]
+                        - generic [ref=f18e420]:
+                          - listitem [ref=f18e422]:
+                            - generic [ref=f18e423]:
+                              - generic [ref=f18e424]: Opportunity
+                              - generic [ref=f18e425]:
+                                - generic [ref=f18e431]:
+                                  - link "Test Demo 2 - Rolls-Royce" [ref=f18e1625] [cursor=pointer]:
+                                    - /url: /lightning/r/Opportunity/006FV00ABujcvkyYMA/view
+                                  - button "Preview" [ref=f18e1626] [cursor=pointer]
+                                - button "Edit Opportunity" [ref=f18e1627] [cursor=pointer]
+                          - listitem [ref=f18e448]:
+                            - generic [ref=f18e449]:
+                              - generic [ref=f18e450]: Owner
+                              - generic [ref=f18e455]:
+                                - generic [ref=f18e462]:
+                                  - link "Sales Representative" [ref=f18e1628] [cursor=pointer]:
+                                    - /url: /lightning/r/Name/005a3001tN36pJcAQI/view
+                                  - button "Preview" [ref=f18e1629] [cursor=pointer]
+                                - button "Change Owner" [ref=f18e1630] [cursor=pointer]
+                        - listitem [ref=f18e485]:
+                          - generic [ref=f18e486]:
+                            - generic [ref=f18e487]: Account
+                            - button "Edit Account" [ref=f18e1631] [cursor=pointer]
+                        - listitem [ref=f18e497]:
+                          - generic [ref=f18e498]:
+                            - generic [ref=f18e499]: Contact
+                            - button "Edit Contact" [ref=f18e1632] [cursor=pointer]
+                  - generic [ref=f18e507]:
+                    - heading [level=3] [ref=f18e1633]:
+                      - button "Vehicle" [expanded] [ref=f18e1634] [cursor=pointer]
+                    - list [ref=f18e519]:
+                      - generic [ref=f18e520]:
+                        - generic [ref=f18e522]:
+                          - listitem [ref=f18e524]:
+                            - generic [ref=f18e525]:
+                              - generic [ref=f18e526]: Vehicle
+                              - button "Edit Vehicle" [ref=f18e1635] [cursor=pointer]
+                          - listitem [ref=f18e533]:
+                            - generic [ref=f18e534]:
+                              - generic [ref=f18e535]: Product
+                              - button "Edit Product" [ref=f18e1636] [cursor=pointer]
+                        - listitem [ref=f18e544]:
+                          - generic [ref=f18e545]:
+                            - generic [ref=f18e546]: Vehicle Definition
+                            - button "Edit Vehicle Definition" [ref=f18e1637] [cursor=pointer]
+                  - generic [ref=f18e554]:
+                    - heading [level=3] [ref=f18e1638]:
+                      - button "Scheduling" [expanded] [ref=f18e1639] [cursor=pointer]
+                    - list [ref=f18e566]:
+                      - generic [ref=f18e567]:
+                        - generic [ref=f18e569]:
+                          - listitem [ref=f18e571]:
+                            - generic [ref=f18e572]:
+                              - generic [ref=f18e573]: Scheduled Date / Time
+                              - generic [ref=f18e574]:
+                                - generic [ref=f18e1640]: ١٢/٩/٢٠٢٦, ١٢:٠٠ PM
+                                - button "Edit Scheduled Date / Time" [ref=f18e1642] [cursor=pointer]
+                          - listitem [ref=f18e579]:
+                            - generic [ref=f18e580]:
+                              - generic [ref=f18e581]: Location / Showroom
+                              - generic [ref=f18e582]:
+                                - generic [ref=f18e583]: QA test RS-03-TC-003 showroom
+                                - button "Edit Location / Showroom" [ref=f18e1643] [cursor=pointer]
+                        - generic [ref=f18e589]:
+                          - listitem [ref=f18e591]:
+                            - generic [ref=f18e592]:
+                              - generic [ref=f18e593]: Time Slot
+                              - button "Edit Time Slot" [ref=f18e1644] [cursor=pointer]
+                          - listitem [ref=f18e599]:
+                            - generic [ref=f18e600]:
+                              - generic [ref=f18e601]: Assigned Sales Consultant
+                              - button "Edit Assigned Sales Consultant" [ref=f18e1645] [cursor=pointer]
+                  - generic [ref=f18e608]:
+                    - heading [level=3] [ref=f18e1646]:
+                      - button "Result & Feedback" [expanded] [ref=f18e1647] [cursor=pointer]
+                    - list [ref=f18e620]:
+                      - generic [ref=f18e621]:
+                        - generic [ref=f18e623]:
+                          - listitem [ref=f18e625]:
+                            - generic [ref=f18e626]:
+                              - generic [ref=f18e627]: Test Drive Result
+                              - button "Edit Test Drive Result" [ref=f18e1648] [cursor=pointer]
+                          - listitem [ref=f18e633]:
+                            - generic [ref=f18e634]:
+                              - generic [ref=f18e635]: Product Feedback
+                              - button "Edit Product Feedback" [ref=f18e1649] [cursor=pointer]
+                        - generic [ref=f18e641]:
+                          - listitem [ref=f18e643]:
+                            - generic [ref=f18e644]:
+                              - generic [ref=f18e645]: Refused Remarks
+                              - button "Edit Refused Remarks" [ref=f18e1650] [cursor=pointer]
+                          - listitem [ref=f18e651]:
+                            - generic [ref=f18e652]:
+                              - generic [ref=f18e653]: CRM Experience Feedback
+                              - button "Edit CRM Experience Feedback" [ref=f18e1651] [cursor=pointer]
+                  - generic [ref=f18e659]:
+                    - heading [level=3] [ref=f18e1652]:
+                      - button "Integration & System Flags" [expanded] [ref=f18e1653] [cursor=pointer]
+                    - list [ref=f18e671]:
+                      - generic [ref=f18e672]:
+                        - generic [ref=f18e674]:
+                          - listitem [ref=f18e676]:
+                            - generic [ref=f18e677]:
+                              - generic [ref=f18e678]: Stage Gate Passed?
+                              - generic [ref=f18e684]:
+                                - generic "False" [ref=f18e1654]
+                                - generic [ref=f18e692]: Stage Gate Passed?
+                          - listitem [ref=f18e694]:
+                            - generic [ref=f18e695]: TEST_DRIVE_BOOKED Sync Status
+                        - generic [ref=f18e699]:
+                          - listitem [ref=f18e701]:
+                            - generic [ref=f18e702]:
+                              - generic [ref=f18e703]: Keyloop Visibility Required?
+                              - generic [ref=f18e709]:
+                                - generic "False" [ref=f18e1655]
+                                - generic [ref=f18e717]: Keyloop Visibility Required?
+                          - listitem [ref=f18e719]:
+                            - generic [ref=f18e720]: TEST_DRIVE_COMPLETED Sync Status
+                        - listitem [ref=f18e727]:
+                          - generic [ref=f18e728]: Integration Status
+                  - generic [ref=f18e732]:
+                    - heading [level=3] [ref=f18e1656]:
+                      - button "System Information" [expanded] [ref=f18e1657] [cursor=pointer]
+                    - list [ref=f18e744]:
+                      - generic [ref=f18e747]:
+                        - listitem [ref=f18e749]:
+                          - generic [ref=f18e750]:
+                            - generic [ref=f18e751]: Created By
+                            - generic [ref=f18e755]:
+                              - generic [ref=f18e761]:
+                                - link "Sales Representative" [ref=f18e1658] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001tN36pJcAQI/view
+                                - button "Preview" [ref=f18e1659] [cursor=pointer]
+                              - text: ", ٦/٩/٢٠٢٦, ٣:٢٨ PM"
+                        - listitem [ref=f18e775]:
+                          - generic [ref=f18e776]:
+                            - generic [ref=f18e777]: Last Modified By
+                            - generic [ref=f18e781]:
+                              - generic [ref=f18e787]:
+                                - link "Sales Representative" [ref=f18e1660] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001tN36pJcAQI/view
+                                - button "Preview" [ref=f18e1661] [cursor=pointer]
+                              - text: ", ٦/٩/٢٠٢٦, ٣:٢٩ PM"
+            - generic [ref=f18e807]:
+              - heading "Tabs" [level=2] [ref=f18e1662]
+              - tablist "Tabs" [ref=f18e1663]:
+                - tab "Activity" [selected] [ref=f18e1664] [cursor=pointer]
+                - tab "Chatter" [ref=f18e1665] [cursor=pointer]
+              - tabpanel "Activity" [ref=f18e1666]:
+                - generic [ref=f18e821]:
+                  - heading "Activity Publisher" [level=2] [ref=f18e1667]
+                  - heading "Activity Timeline" [level=2] [ref=f18e1668]
+                  - generic [ref=f18e825]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f18e1669] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f18e828]:
+                      - generic [ref=f18e829]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f18e1670] [cursor=pointer]
+                    - generic [ref=f18e839]:
+                      - button "Refresh" [ref=f18e1671] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f18e1672] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f18e1673] [cursor=pointer]
+                    - generic [ref=f18e844]:
+                      - heading [level=3] [ref=f18e1674]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f18e1675] [cursor=pointer]
+                      - list [ref=f18e853]:
+                        - listitem [ref=f18e1676]:
+                          - generic [ref=f18e1678]:
+                            - button "Show details for Complete Test Drive Details" [ref=f18e1681] [cursor=pointer]:
+                              - generic "Details for Complete Test Drive Details" [ref=f18e1682]
+                            - generic [ref=f18e1689]:
+                              - img "Task" [ref=f18e1694]
+                              - generic [ref=f18e1695]:
+                                - generic [ref=f18e1696]:
+                                  - generic [ref=f18e1698]:
+                                    - generic [ref=f18e1702]:
+                                      - checkbox "Complete Test Drive Details" [ref=f18e1703] [cursor=pointer]
+                                      - generic [ref=f18e1705]: Complete Test Drive Details
+                                    - link "Complete Test Drive Details" [ref=f18e1709] [cursor=pointer]:
+                                      - /url: /lightning/r/00TFV00EIL0yIeq22E/view
+                                  - generic [ref=f18e1711]:
+                                    - generic [ref=f18e1712]: Tomorrow
+                                    - button "Show more actions - Complete Test Drive Details" [ref=f18e1715] [cursor=pointer]
+                                - generic [ref=f18e1719]: You have an upcoming task
+                    - status [ref=f18e1723]:
+                      - generic [ref=f18e1724]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f18e1725] [cursor=pointer]:
+                      - /url: javascript:void(0);
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f18e139]:
+          - listitem [ref=f18e140]:
+            - button "To Do List" [ref=f18e1726] [cursor=pointer]
+  - generic:
+    - generic [ref=f18e1728]:
+      - generic [ref=f18e1729]: Success notification.
+      - generic [ref=f18e1736]:
+        - generic [ref=f18e1737]: Test Drive "TD-00020" was saved.
+        - generic [ref=f18e1740]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f18e1742] [cursor=pointer]
+    - status

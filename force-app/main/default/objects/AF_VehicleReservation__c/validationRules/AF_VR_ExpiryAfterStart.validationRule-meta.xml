@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_ExpiryAfterStart</fullName>
+    <active>true</active>
+    <description>Guards manual edits to the flow-derived expiry date: a reservation cannot expire before it starts.</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(AF_ExpiryDate__c)),
+  NOT(ISBLANK(AF_StartDate__c)),
+  AF_ExpiryDate__c &lt; AF_StartDate__c
+)</errorConditionFormula>
+    <errorDisplayField>AF_ExpiryDate__c</errorDisplayField>
+    <errorMessage>Expiry date cannot be earlier than the reservation start date.</errorMessage>
+</ValidationRule>

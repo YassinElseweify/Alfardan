@@ -1,0 +1,296 @@
+- generic [ref=f1e1]:
+  - generic [ref=f1e4]:
+    - generic:
+      - status
+    - generic [ref=f1e10]:
+      - generic [ref=f1e14]:
+        - button "Toggle Panel" [ref=f1e18] [cursor=pointer]:
+          - generic [ref=f1e25]: Menu
+        - generic [ref=f1e26]: Sandbox (QA)
+      - button "Show menu" [ref=f1e47] [cursor=pointer]
+    - main [ref=f1e55]:
+      - generic [ref=f1e56]:
+        - banner "Header" [ref=f1e57]:
+          - generic [ref=f1e58]:
+            - link [ref=f1e60] [cursor=pointer]:
+              - /url: /lightning/setup/Flows/home
+              - generic "Back" [ref=f1e61]
+            - generic [aria-hidden] [ref=f1e75]: Flow Builder
+            - generic [ref=f1e77] [cursor=pointer]:
+              - heading "Appraisal Follow-Up Escalation - V1" [level=1] [ref=f1e84]:
+                - generic [ref=f1e85]: Appraisal Follow-Up Escalation
+                - generic [ref=f1e86]: "- V1"
+              - button "Versions" [ref=f1e88]
+            - generic [ref=f1e94]:
+              - button "User Preferences" [ref=f1e97] [cursor=pointer]
+              - button "Flow Builder Help" [ref=f1e106] [cursor=pointer]
+        - banner "Button bar" [ref=f1e116]:
+          - toolbar [ref=f1e117]:
+            - generic [ref=f1e118]:
+              - group [ref=f1e119]:
+                - generic [ref=f1e121]:
+                  - generic:
+                    - button "Undo" [disabled]
+                  - generic:
+                    - button "Undo" [disabled]
+              - button "Duplicate" [ref=f1e123] [cursor=pointer]
+              - button "Show errors panel" [ref=f1e136] [cursor=pointer]
+              - button "View properties" [ref=f1e142] [cursor=pointer]
+              - generic "Canvas Mode" [ref=f1e149]:
+                - generic [ref=f1e150]:
+                  - generic: Canvas Mode
+                  - combobox "Canvas Mode" [ref=f1e156] [cursor=pointer]:
+                    - generic [ref=f1e157]: Free-Form
+                  - status
+            - generic [ref=f1e164]:
+              - 'generic "Version 1: Active" [ref=f1e165]': Last saved on ٣‏/٩‏/٢٠٢٦، ٠٧:٢٣ م
+              - generic "You can't save changes to the active version of a flow, but you can save it as a new version." [ref=f1e169]: Active
+              - group [ref=f1e171]:
+                - generic [ref=f1e173]:
+                  - button "Run" [ref=f1e175] [cursor=pointer]
+                  - button "Debug" [ref=f1e177] [cursor=pointer]
+              - button "View Tests" [ref=f1e179] [cursor=pointer]
+              - group [ref=f1e180]:
+                - generic [ref=f1e182]:
+                  - button "Save As New Version" [ref=f1e184] [cursor=pointer]
+                  - button "Show Menu" [ref=f1e186] [cursor=pointer]
+              - generic:
+                - button "Save" [disabled]
+              - button "Deactivate" [ref=f1e193] [cursor=pointer]
+      - generic [ref=f1e194]:
+        - complementary "Toolbox" [ref=f1e195]:
+          - generic [ref=f1e196]:
+            - generic [ref=f1e199]:
+              - heading "Toolbox" [level=2] [ref=f1e200]
+              - generic:
+                - group
+            - generic [ref=f1e204]:
+              - tablist "Tabs" [ref=f1e206]:
+                - tab "Elements" [selected] [ref=f1e207] [cursor=pointer]
+                - tab "Manager" [ref=f1e208] [cursor=pointer]
+              - tabpanel "Elements" [ref=f1e210]:
+                - region "Elements" [ref=f1e212]:
+                  - generic [ref=f1e213]:
+                    - list [ref=f1e216]:
+                      - generic [ref=f1e218]:
+                        - listitem [ref=f1e219]:
+                          - generic [ref=f1e221]:
+                            - heading [level=2] [ref=f1e223]:
+                              - button "Interaction (3)" [expanded] [ref=f1e224] [cursor=pointer]
+                            - grid "Interaction (3)" [ref=f1e233]:
+                              - rowgroup [ref=f1e234]:
+                                - row [ref=f1e235]:
+                                  - gridcell "Action Perform an action outside the flow, like Send Email or Submit for Approval." [ref=f1e236]:
+                                    - generic [ref=f1e238]:
+                                      - generic [ref=f1e239]: Action
+                                      - button "Perform an action outside the flow, like Send Email or Submit for Approval." [ref=f1e248] [cursor=pointer]: Action
+                                - row [ref=f1e249]:
+                                  - gridcell "Subflow Launch another active flow." [ref=f1e250]:
+                                    - generic [ref=f1e252]:
+                                      - generic [ref=f1e253]: Subflow
+                                      - button "Launch another active flow." [ref=f1e262] [cursor=pointer]: Subflow
+                                - row [ref=f1e263]:
+                                  - gridcell "Custom Error Create a custom error message to show on a record page or a specific field on that page." [ref=f1e264]:
+                                    - generic [ref=f1e266]:
+                                      - generic [ref=f1e267]: Custom Error
+                                      - button "Create a custom error message to show on a record page or a specific field on that page." [ref=f1e276] [cursor=pointer]: Custom Error
+                        - listitem [ref=f1e277]:
+                          - generic [ref=f1e279]:
+                            - heading [level=2] [ref=f1e281]:
+                              - button "Logic (8)" [expanded] [ref=f1e282] [cursor=pointer]
+                            - grid "Logic (8)" [ref=f1e291]:
+                              - rowgroup [ref=f1e292]:
+                                - row [ref=f1e293]:
+                                  - gridcell "Assignment Set variable values." [ref=f1e294]:
+                                    - generic [ref=f1e296]:
+                                      - generic [ref=f1e297]: Assignment
+                                      - button "Set variable values." [ref=f1e306] [cursor=pointer]: Assignment
+                                - row [ref=f1e307]:
+                                  - gridcell "Decision Create paths for the flow to take based on specified conditions." [ref=f1e308]:
+                                    - generic [ref=f1e310]:
+                                      - generic [ref=f1e311]: Decision
+                                      - button "Create paths for the flow to take based on specified conditions." [ref=f1e320] [cursor=pointer]: Decision
+                                - row [ref=f1e321]:
+                                  - gridcell "Split by Date Send records down different paths based on date data." [ref=f1e322]:
+                                    - generic [ref=f1e324]:
+                                      - generic [ref=f1e325]: Split by Date
+                                      - button "Send records down different paths based on date data." [ref=f1e334] [cursor=pointer]: Split by Date
+                                - row [ref=f1e335]:
+                                  - gridcell "Split by Field Value Send records down different paths based on field values." [ref=f1e336]:
+                                    - generic [ref=f1e338]:
+                                      - generic [ref=f1e339]: Split by Field Value
+                                      - button "Send records down different paths based on field values." [ref=f1e348] [cursor=pointer]: Split by Field Value
+                                - row [ref=f1e349]:
+                                  - gridcell "Loop Iterate over a collection of values or records." [ref=f1e350]:
+                                    - generic [ref=f1e352]:
+                                      - generic [ref=f1e353]: Loop
+                                      - button "Iterate over a collection of values or records." [ref=f1e362] [cursor=pointer]: Loop
+                                - row [ref=f1e363]:
+                                  - gridcell "Transform Transform your source data into a new target dataset that uses new formats, structures, or values." [ref=f1e364]:
+                                    - generic [ref=f1e366]:
+                                      - generic [ref=f1e367]: Transform
+                                      - button "Transform your source data into a new target dataset that uses new formats, structures, or values." [ref=f1e376] [cursor=pointer]: Transform
+                                - row [ref=f1e377]:
+                                  - gridcell "Collection Sort Reorder items and optionally limit the number of items in a collection." [ref=f1e378]:
+                                    - generic [ref=f1e380]:
+                                      - generic [ref=f1e381]: Collection Sort
+                                      - button "Reorder items and optionally limit the number of items in a collection." [ref=f1e390] [cursor=pointer]: Collection Sort
+                                - row [ref=f1e391]:
+                                  - gridcell "Collection Filter Create a collection that's a subset of the original collection based on specified conditions. The original collection isn't changed." [ref=f1e392]:
+                                    - generic [ref=f1e394]:
+                                      - generic [ref=f1e395]: Collection Filter
+                                      - button "Create a collection that's a subset of the original collection based on specified conditions. The original collection isn't changed." [ref=f1e404] [cursor=pointer]: Collection Filter
+                        - listitem [ref=f1e405]:
+                          - generic [ref=f1e407]:
+                            - heading [level=2] [ref=f1e409]:
+                              - button "Data (4)" [expanded] [ref=f1e410] [cursor=pointer]
+                            - grid "Data (4)" [ref=f1e419]:
+                              - rowgroup [ref=f1e420]:
+                                - row [ref=f1e421]:
+                                  - gridcell "Create Records Create Salesforce records using values from the flow." [ref=f1e422]:
+                                    - generic [ref=f1e424]:
+                                      - generic [ref=f1e425]: Create Records
+                                      - button "Create Salesforce records using values from the flow." [ref=f1e434] [cursor=pointer]: Create Records
+                                - row [ref=f1e435]:
+                                  - gridcell "Update Records Update Salesforce records using values from the flow." [ref=f1e436]:
+                                    - generic [ref=f1e438]:
+                                      - generic [ref=f1e439]: Update Records
+                                      - button "Update Salesforce records using values from the flow." [ref=f1e448] [cursor=pointer]: Update Records
+                                - row [ref=f1e449]:
+                                  - gridcell "Get Records Find Salesforce records and store their field values to use later in the flow." [ref=f1e450]:
+                                    - generic [ref=f1e452]:
+                                      - generic [ref=f1e453]: Get Records
+                                      - button "Find Salesforce records and store their field values to use later in the flow." [ref=f1e462] [cursor=pointer]: Get Records
+                                - row [ref=f1e463]:
+                                  - gridcell "Delete Records Delete Salesforce records." [ref=f1e464]:
+                                    - generic [ref=f1e466]:
+                                      - generic [ref=f1e467]: Delete Records
+                                      - button "Delete Salesforce records." [ref=f1e478] [cursor=pointer]: Delete Records
+                    - link "Get more on the AppExchange" [ref=f1e483] [cursor=pointer]:
+                      - /url: /HelpAndTrainingDoor?version=2&resource=https%3A%2F%2Fappexchange.salesforce.com%2FappxStore%3Ftype%3DFlow
+        - region "Canvas" [ref=f1e488]:
+          - generic [ref=f1e490]:
+            - generic [ref=f1e491]:
+              - generic [ref=f1e492]:
+                - button "Select element" [ref=f1e494] [cursor=pointer]
+                - generic [ref=f1e504]:
+                  - generic [ref=f1e505]:
+                    - generic [ref=f1e506]: Start
+                    - generic [ref=f1e507]: Record-Triggered Flow
+                  - generic [ref=f1e508]:
+                    - generic [ref=f1e513]:
+                      - generic [ref=f1e514]:
+                        - generic [ref=f1e515]:
+                          - generic [ref=f1e516]: "Object:"
+                          - generic "Trade In" [ref=f1e517]
+                        - generic "Edit" [ref=f1e519]
+                      - generic "A record is created" [ref=f1e521]: "Trigger: A record is created"
+                      - generic "Actions and Related Records" [ref=f1e522]: Optimize for:Actions and Related Records
+                    - generic [ref=f1e527]:
+                      - generic [ref=f1e528]: Scheduled Paths:2
+                      - generic "Edit" [ref=f1e530]
+                    - generic [ref=f1e531]: Open Flow Trigger Explorer for Trade In
+              - generic "Decision element, \"Has Manager?\". To delete, press the Delete key." [ref=f1e540]:
+                - generic [ref=f1e541]:
+                  - button "Select element" [ref=f1e543] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e553] [cursor=pointer]
+                - generic [ref=f1e555]:
+                  - generic [ref=f1e556]: Decision
+                  - generic [ref=f1e557]: Has Manager?
+              - generic "Decision element, \"Outcome Still Pending?\". To delete, press the Delete key." [ref=f1e558]:
+                - generic [ref=f1e559]:
+                  - button "Select element" [ref=f1e561] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e571] [cursor=pointer]
+                - generic [ref=f1e573]:
+                  - generic [ref=f1e574]: Decision
+                  - generic [ref=f1e575]: Outcome Still Pending?
+              - generic "Decision element, \"Owner Active?\". To delete, press the Delete key." [ref=f1e576]:
+                - button "Select element" [ref=f1e579] [cursor=pointer]
+                - generic [ref=f1e589]:
+                  - generic [ref=f1e590]: Decision
+                  - generic [ref=f1e591]: Owner Active?
+              - generic "Create Records element, \"Create Escalation Task - Showroom Manager\". To delete, press the Delete key." [ref=f1e592]:
+                - generic [ref=f1e593]:
+                  - button "Select element" [ref=f1e595] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e605] [cursor=pointer]
+                - generic [ref=f1e607]:
+                  - generic [ref=f1e608]: Create Records
+                  - generic [ref=f1e609]: Create Escalation Task - Showroom Manager
+              - generic "Create Records element, \"Create Follow-Up Task - Manager (Owner Inactive)\". To delete, press the Delete key." [ref=f1e610]:
+                - generic [ref=f1e611]:
+                  - button "Select element" [ref=f1e613] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e623] [cursor=pointer]
+                - generic [ref=f1e625]:
+                  - generic [ref=f1e626]: Create Records
+                  - generic [ref=f1e627]: Create Follow-Up Task - Manager (Ow...
+              - generic "Create Records element, \"Create Follow-Up Task - Owner\". To delete, press the Delete key." [ref=f1e628]:
+                - generic [ref=f1e629]:
+                  - button "Select element" [ref=f1e631] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e641] [cursor=pointer]
+                - generic [ref=f1e643]:
+                  - generic [ref=f1e644]: Create Records
+                  - generic [ref=f1e645]: Create Follow-Up Task - Owner
+              - generic "Get Records element, \"Get Appraisal Record\". To delete, press the Delete key." [ref=f1e646]:
+                - generic [ref=f1e647]:
+                  - button "Select element" [ref=f1e649] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e659] [cursor=pointer]
+                - generic [ref=f1e661]:
+                  - generic [ref=f1e662]: Get Records
+                  - generic [ref=f1e663]: Get Appraisal Record
+              - generic "Get Records element, \"Get Owner User\". To delete, press the Delete key." [ref=f1e664]:
+                - generic [ref=f1e665]:
+                  - button "Select element" [ref=f1e667] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e677] [cursor=pointer]
+                - generic [ref=f1e679]:
+                  - generic [ref=f1e680]: Get Records
+                  - generic [ref=f1e681]: Get Owner User
+              - generic "Get Records element, \"Get Owner User (Escalation)\". To delete, press the Delete key." [ref=f1e682]:
+                - generic [ref=f1e683]:
+                  - button "Select element" [ref=f1e685] [cursor=pointer]
+                  - button "Add a connector by dragging this node to the target element" [ref=f1e695] [cursor=pointer]
+                - generic [ref=f1e697]:
+                  - generic [ref=f1e698]: Get Records
+                  - generic [ref=f1e699]: Get Owner User (Escalation)
+              - generic "Run Immediately" [ref=f1e706]
+              - generic "Escalation Check" [ref=f1e713]
+              - generic "Manager Found" [ref=f1e720]
+              - generic "Still Pending" [ref=f1e727]
+              - generic "Inactive - Assign to Manager" [ref=f1e734]
+              - generic "Active" [ref=f1e741]
+            - generic [ref=f1e761]:
+              - button "Drag to select" [ref=f1e764] [cursor=pointer]
+              - group [ref=f1e770]:
+                - generic [ref=f1e772]:
+                  - button "Zoom out" [ref=f1e774] [cursor=pointer]
+                  - button "Fit to canvas" [ref=f1e781] [cursor=pointer]
+                  - generic:
+                    - button "Zoom in" [disabled]
+  - generic:
+    - generic:
+      - dialog [ref=f1e788]:
+        - generic [ref=f1e789]:
+          - generic [ref=f1e790]:
+            - dialog [ref=f1e792]:
+              - heading "Something went wrong" [level=2] [ref=f1e793]
+              - paragraph [ref=f1e794]: Something went wrong
+            - button "Close" [ref=f1e795] [cursor=pointer]
+          - generic [ref=f1e803]:
+            - paragraph [ref=f1e806]: "Hmm, that didn't work. Please try again. Error ID: 1583554355"
+            - status [ref=f1e807]
+          - button "OK" [ref=f1e810] [cursor=pointer]
+      - dialog [ref=f1e812]:
+        - generic [ref=f1e813]:
+          - generic [ref=f1e814]:
+            - dialog [ref=f1e816]:
+              - heading "Something went wrong" [level=2] [ref=f1e817]
+              - paragraph [ref=f1e818]: Something went wrong
+            - button "Close" [ref=f1e819] [cursor=pointer]
+          - generic [ref=f1e827]:
+            - generic [ref=f1e829]:
+              - paragraph [ref=f1e830]: "Save your flow and refresh the page. If the problem persists, contact Salesforce Customer Support. Error ID: -604074594."
+              - list [ref=f1e831]:
+                - listitem [ref=f1e834]:
+                  - heading [level=2] [ref=f1e838]:
+                    - button "Error Details" [active] [ref=f1e839] [cursor=pointer]
+            - status [ref=f1e844]
+          - button "Got It" [ref=f1e847] [cursor=pointer]

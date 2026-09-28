@@ -1,0 +1,131 @@
+- generic [active]:
+  - generic [ref=f15e2]:
+    - generic [ref=f15e3]:
+      - link "Skip to Navigation" [ref=f15e1373] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f15e1374] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f15e254]:
+        - generic [ref=f15e255]: "Sandbox: QA |"
+        - link "Log out" [ref=f15e1375] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f15e6]:
+        - button "Search" [ref=f15e1376]: Search...
+        - navigation "Global Header" [ref=f15e1377]:
+          - list [ref=f15e258]:
+            - listitem [ref=f15e259]:
+              - group [ref=f15e260]:
+                - button "Add favorite" [ref=f15e1378] [cursor=pointer]:
+                  - generic [ref=f15e263]:
+                    - tooltip "Add favorite"
+                - button [ref=f15e1379] [cursor=pointer]:
+                  - generic [ref=f15e272]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f15e279]:
+              - button [ref=f15e1380] [cursor=pointer]:
+                - generic [ref=f15e286]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f15e293]:
+              - button [ref=f15e1381] [cursor=pointer]:
+                - generic [ref=f15e296]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f15e303]:
+              - button [ref=f15e1382] [cursor=pointer]:
+                - generic [ref=f15e307]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f15e314]:
+              - button [ref=f15e1383] [cursor=pointer]:
+                - generic [ref=f15e321]:
+                  - tooltip "Setup"
+            - listitem [ref=f15e328]:
+              - button [ref=f15e1384] [cursor=pointer]:
+                - generic [ref=f15e332]:
+                  - tooltip "Notifications"
+            - listitem [ref=f15e341]:
+              - button "View profile" [ref=f15e1385] [cursor=pointer]:
+                - generic [ref=f15e345]:
+                  - tooltip "View profile"
+    - generic [ref=f15e23]:
+      - generic [ref=f15e26]:
+        - generic [ref=f15e28]:
+          - navigation "App" [ref=f15e1386]:
+            - button "App Launcher" [ref=f15e1387] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f15e1388]
+        - navigation "Global" [ref=f15e1390]:
+          - list [ref=f15e48]:
+            - listitem [ref=f15e49]:
+              - link "Home" [ref=f15e1391] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f15e52]:
+              - link "Analytics" [ref=f15e1392] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f15e55]:
+              - link "Opportunities" [ref=f15e1393] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f15e1394] [cursor=pointer]
+            - listitem [ref=f15e69]:
+              - link "Quotes" [ref=f15e1395] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f15e1396] [cursor=pointer]
+            - listitem [ref=f15e83]:
+              - link "Leads" [ref=f15e1397] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f15e1398] [cursor=pointer]
+            - listitem [ref=f15e97]:
+              - link "Tasks" [ref=f15e1399] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f15e1400] [cursor=pointer]
+            - listitem [ref=f15e111]:
+              - link "Files" [ref=f15e1401] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f15e1402] [cursor=pointer]
+            - listitem [ref=f15e125] [cursor=pointer]:
+              - link "Accounts" [ref=f15e1403]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f15e1404]
+            - listitem [ref=f15e139]:
+              - link "Contacts" [ref=f15e1405] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f15e1406] [cursor=pointer]
+            - listitem [ref=f15e153]:
+              - link "Campaigns" [ref=f15e1407] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f15e1408] [cursor=pointer]
+            - listitem [ref=f15e167]:
+              - link "Dashboards" [ref=f15e1409] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f15e1410] [cursor=pointer]
+            - listitem [ref=f15e181]:
+              - link "Reports" [ref=f15e1411] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f15e1412] [cursor=pointer]
+            - listitem [ref=f15e195]:
+              - link "Chatter" [ref=f15e1413] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f15e198]:
+              - link "Groups" [ref=f15e1414] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f15e1415] [cursor=pointer]
+            - listitem [ref=f15e212]:
+              - button "Show more navigation items" [ref=f15e1416] [cursor=pointer]:
+                - generic [ref=f15e215]: More
+            - listitem [ref=f15e223]:
+              - button "Edit nav items" [ref=f15e1417] [cursor=pointer]
+      - main [ref=f15e232]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f15e239]:
+          - listitem [ref=f15e240]:
+            - button "To Do List" [ref=f15e1419] [cursor=pointer]
+  - generic:
+    - generic [ref=f15e1421]:
+      - generic [ref=f15e1422]: Success notification.
+      - generic [ref=f15e1429]:
+        - generic [ref=f15e1432]:
+          - text: Account "
+          - link "QA test AC-01A-TC-001 UI CRMAgent NoQIDPossible" [ref=f15e1433] [cursor=pointer]:
+            - /url: javascript:void(0)
+          - text: "\" was created."
+        - generic [ref=f15e1435]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f15e1437] [cursor=pointer]
+    - status

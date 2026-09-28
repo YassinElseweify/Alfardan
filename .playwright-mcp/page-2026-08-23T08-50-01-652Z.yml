@@ -1,0 +1,640 @@
+- generic:
+  - generic:
+    - generic [ref=f18e2]:
+      - generic [ref=f18e3]:
+        - link "Skip to Navigation" [ref=f18e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f18e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f18e8]:
+          - generic [ref=f18e9]: "Sandbox: QA |"
+          - link "Log out" [ref=f18e10] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f18e11]:
+          - button "Search" [ref=f18e15]: Search...
+          - navigation "Global Header" [ref=f18e20]:
+            - list [ref=f18e170]:
+              - listitem [ref=f18e171]:
+                - group [ref=f18e172]:
+                  - button "This item doesn't support favorites" [ref=f18e647] [cursor=pointer]:
+                    - generic [ref=f18e175]:
+                      - tooltip "This item doesn't support favorites"
+                  - button [ref=f18e183] [cursor=pointer]:
+                    - generic [ref=f18e184]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f18e191]:
+                - button [ref=f18e197] [cursor=pointer]:
+                  - generic [ref=f18e198]:
+                    - tooltip "Global Actions"
+              - listitem [ref=f18e205]:
+                - button [ref=f18e207] [cursor=pointer]:
+                  - generic [ref=f18e208]:
+                    - tooltip "Guidance Center"
+              - listitem [ref=f18e215]:
+                - button [ref=f18e218] [cursor=pointer]:
+                  - generic [ref=f18e219]:
+                    - tooltip "Salesforce Help"
+              - listitem [ref=f18e226]:
+                - button [ref=f18e232] [cursor=pointer]:
+                  - generic [ref=f18e233]:
+                    - tooltip "Setup"
+              - listitem [ref=f18e240]:
+                - button [ref=f18e243] [cursor=pointer]:
+                  - generic [ref=f18e244]:
+                    - tooltip "Notifications"
+              - listitem [ref=f18e253]:
+                - button "View profile" [ref=f18e256] [cursor=pointer]:
+                  - generic [ref=f18e257]:
+                    - tooltip "View profile"
+      - generic [ref=f18e28]:
+        - generic [ref=f18e31]:
+          - generic [ref=f18e33]:
+            - navigation "App" [ref=f18e34]:
+              - button "App Launcher" [ref=f18e36] [cursor=pointer]
+            - heading "Sales" [level=1] [ref=f18e48]
+          - navigation "Global" [ref=f18e52]:
+            - list [ref=f18e53]:
+              - listitem [ref=f18e54]:
+                - link "Home" [ref=f18e55] [cursor=pointer]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f18e57]:
+                - link "Analytics" [ref=f18e58] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+              - listitem [ref=f18e60]:
+                - link "Opportunities" [ref=f18e61] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                - button "Opportunities List" [ref=f18e66] [cursor=pointer]
+              - listitem [ref=f18e74]:
+                - link "Quotes" [ref=f18e75] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                - button "Quotes List" [ref=f18e80] [cursor=pointer]
+              - listitem [ref=f18e88] [cursor=pointer]:
+                - link "Leads" [ref=f18e89]:
+                  - /url: /lightning/o/Lead/home
+                - button "Leads List" [ref=f18e94]
+              - listitem [ref=f18e102]:
+                - link "Tasks" [ref=f18e103] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                - button "Tasks List" [ref=f18e108] [cursor=pointer]
+              - listitem [ref=f18e116]:
+                - link "Files" [ref=f18e117] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                - button "Files List" [ref=f18e122] [cursor=pointer]
+              - listitem [ref=f18e130]:
+                - button "Show more navigation items" [ref=f18e132] [cursor=pointer]:
+                  - generic [ref=f18e133]: More
+              - listitem [ref=f18e141]:
+                - button "Edit nav items" [ref=f18e143] [cursor=pointer]
+        - main [ref=f18e261]:
+          - generic [ref=f18e271]:
+            - generic [ref=f18e273]:
+              - generic [ref=f18e274]:
+                - generic [ref=f18e281]:
+                  - heading "Leads" [level=1] [ref=f18e285]
+                  - generic [ref=f18e286]:
+                    - generic [ref=f18e288] [cursor=pointer]:
+                      - heading "Leads Recently Viewed" [level=1] [ref=f18e289]:
+                        - generic [ref=f18e290]: Leads
+                        - generic [ref=f18e291]: Recently Viewed
+                      - 'button "Select a List View: Leads" [ref=f18e294]'
+                    - button "This list is pinned." [disabled] [ref=f18e303] [cursor=pointer]
+                - list [ref=f18e311]:
+                  - listitem [ref=f18e312]:
+                    - button "New" [ref=f18e313] [cursor=pointer]
+                  - listitem [ref=f18e315]:
+                    - button "Intelligence View" [ref=f18e316] [cursor=pointer]
+                  - listitem [ref=f18e318]:
+                    - button "Change Owner" [ref=f18e319] [cursor=pointer]
+                  - listitem [ref=f18e321]:
+                    - button "Add to an Actionable List" [ref=f18e322] [cursor=pointer]
+                  - listitem [ref=f18e324]:
+                    - button "Assign Label" [ref=f18e325] [cursor=pointer]
+              - generic [ref=f18e327]:
+                - paragraph [ref=f18e329]:
+                  - generic [ref=f18e331]:
+                    - status "Recently Viewed" [ref=f18e332]: 1 item •
+                    - text: Updated a minute ago
+                - generic [ref=f18e338]:
+                  - generic [ref=f18e339]: Search this list...
+                  - searchbox "Search this list..." [ref=f18e341]
+                - generic [ref=f18e345]:
+                  - button "List View Controls" [ref=f18e349] [cursor=pointer]
+                  - button "Select list display" [ref=f18e361] [cursor=pointer]
+                  - generic [ref=f18e372]:
+                    - button "Refresh" [ref=f18e375] [cursor=pointer]
+                    - button "Column sort" [ref=f18e383] [cursor=pointer]
+                    - button "Edit List" [ref=f18e391] [cursor=pointer]
+                    - group [ref=f18e397]:
+                      - generic [ref=f18e399]:
+                        - generic:
+                          - generic:
+                            - button "Charts" [disabled]
+                        - generic:
+                          - generic:
+                            - button "Filters" [disabled]
+            - generic [ref=f18e406]:
+              - generic: Navigation Mode
+              - grid [ref=f18e411]:
+                - rowgroup:
+                  - row "Row Number Choose a Row Select 1 item Name Title Company Phone Mobile Email Lead Status Owner Alias Action":
+                    - columnheader "Row Number":
+                      - generic [ref=f18e414]:
+                        - generic "Row Number"
+                    - gridcell "Choose a Row Select 1 item":
+                      - generic [ref=f18e415]:
+                        - generic [ref=f18e416]: Choose a Row
+                        - generic [ref=f18e418]:
+                          - checkbox "Select 1 item" [ref=f18e419]
+                          - generic [ref=f18e420]: Select 1 item
+                    - columnheader "Name":
+                      - generic [ref=f18e424]:
+                        - 'button "Sort by: Name" [ref=f18e425] [cursor=pointer]':
+                          - generic [ref=f18e426]: "Sort by:"
+                          - generic "Name" [ref=f18e427]
+                        - generic [ref=f18e428]: "Sorted: None"
+                        - button "Show Name column actions" [ref=f18e430] [cursor=pointer]
+                        - slider "Name column width" [ref=f18e436]: "160"
+                    - columnheader "Title":
+                      - generic [ref=f18e440]:
+                        - 'button "Sort by: Title" [ref=f18e441] [cursor=pointer]':
+                          - generic [ref=f18e442]: "Sort by:"
+                          - generic "Title" [ref=f18e443]
+                        - generic [ref=f18e444]: "Sorted: None"
+                        - button "Show Title column actions" [ref=f18e446] [cursor=pointer]
+                        - slider "Title column width" [ref=f18e452]: "79"
+                    - columnheader "Company":
+                      - generic [ref=f18e456]:
+                        - 'button "Sort by: Company" [ref=f18e457] [cursor=pointer]':
+                          - generic [ref=f18e458]: "Sort by:"
+                          - generic "Company" [ref=f18e459]
+                        - generic [ref=f18e460]: "Sorted: None"
+                        - button "Show Company column actions" [ref=f18e462] [cursor=pointer]
+                        - slider "Company column width" [ref=f18e468]: "79"
+                    - columnheader "Phone":
+                      - generic [ref=f18e472]:
+                        - 'button "Sort by: Phone" [ref=f18e473] [cursor=pointer]':
+                          - generic [ref=f18e474]: "Sort by:"
+                          - generic "Phone" [ref=f18e475]
+                        - generic [ref=f18e476]: "Sorted: None"
+                        - button "Show Phone column actions" [ref=f18e478] [cursor=pointer]
+                        - slider "Phone column width" [ref=f18e484]: "167"
+                    - columnheader "Mobile":
+                      - generic [ref=f18e488]:
+                        - 'button "Sort by: Mobile" [ref=f18e489] [cursor=pointer]':
+                          - generic [ref=f18e490]: "Sort by:"
+                          - generic "Mobile" [ref=f18e491]
+                        - generic [ref=f18e492]: "Sorted: None"
+                        - button "Show Mobile column actions" [ref=f18e494] [cursor=pointer]
+                        - slider "Mobile column width" [ref=f18e500]: "60"
+                    - columnheader "Email":
+                      - generic [ref=f18e504]:
+                        - 'button "Sort by: Email" [ref=f18e505] [cursor=pointer]':
+                          - generic [ref=f18e506]: "Sort by:"
+                          - generic "Email" [ref=f18e507]
+                        - generic [ref=f18e508]: "Sorted: None"
+                        - button "Show Email column actions" [ref=f18e510] [cursor=pointer]
+                        - slider "Email column width" [ref=f18e516]: "79"
+                    - columnheader "Lead Status":
+                      - generic [ref=f18e520]:
+                        - 'button "Sort by: Lead Status" [ref=f18e521] [cursor=pointer]':
+                          - generic [ref=f18e522]: "Sort by:"
+                          - generic "Lead Status" [ref=f18e523]
+                        - generic [ref=f18e524]: "Sorted: None"
+                        - button "Show Lead Status column actions" [ref=f18e526] [cursor=pointer]
+                        - slider "Lead Status column width" [ref=f18e532]: "76"
+                    - columnheader "Owner Alias":
+                      - generic [ref=f18e536]:
+                        - 'button "Sort by: Owner Alias" [ref=f18e537] [cursor=pointer]':
+                          - generic [ref=f18e538]: "Sort by:"
+                          - generic "Owner Alias" [ref=f18e539]
+                        - generic [ref=f18e540]: "Sorted: None"
+                        - button "Show Owner Alias column actions" [ref=f18e542] [cursor=pointer]
+                        - slider "Owner Alias column width" [ref=f18e548]: "60"
+                    - columnheader "Action":
+                      - generic [ref=f18e553]:
+                        - generic "Action"
+                - rowgroup [ref=f18e554]:
+                  - row [ref=f18e555]:
+                    - gridcell [ref=f18e556]
+                    - gridcell "Select Item 1 Choose a Row" [ref=f18e560]:
+                      - generic [ref=f18e561]:
+                        - checkbox "Select Item 1 Choose a Row" [ref=f18e562]
+                        - generic [ref=f18e563]: Select Item 1
+                    - rowheader [ref=f18e566]:
+                      - generic [ref=f18e567]:
+                        - link "Khalid Al-Mannai" [ref=f18e573] [cursor=pointer]:
+                          - /url: /lightning/r/00QFV00A2fF3kke2EB/view
+                        - img "Locked Name" [ref=f18e575]
+                    - gridcell [ref=f18e579]:
+                      - button "Edit Title" [ref=f18e581] [cursor=pointer]
+                    - gridcell [ref=f18e585]:
+                      - generic [ref=f18e586]:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - link:
+                                    - /url: /lightning/r/00QFV00A2fF3kke2EB/view
+                        - button "Edit Company" [ref=f18e587] [cursor=pointer]
+                    - gridcell [ref=f18e591]:
+                      - generic [ref=f18e592]:
+                        - link "+974 5512 3401" [ref=f18e596] [cursor=pointer]:
+                          - /url: tel:+974 5512 3401
+                        - button "Edit Phone" [ref=f18e597] [cursor=pointer]
+                    - gridcell [ref=f18e601]:
+                      - img "Locked Mobile" [ref=f18e603]
+                    - gridcell [ref=f18e607]:
+                      - button "Edit Email" [ref=f18e609] [cursor=pointer]
+                    - gridcell "New Edit Lead Status" [ref=f18e613]:
+                      - generic [ref=f18e614]:
+                        - generic [ref=f18e615]: New
+                        - button "Edit Lead Status" [ref=f18e618] [cursor=pointer]
+                    - gridcell [ref=f18e622]:
+                      - generic [ref=f18e623]:
+                        - link "sukh" [ref=f18e628] [cursor=pointer]:
+                          - /url: /lightning/r/005a3001tN1p6Y0AQI/view
+                        - img "Locked Owner Alias" [ref=f18e630]
+                    - gridcell [ref=f18e634]:
+                      - button "Show Actions" [ref=f18e640] [cursor=pointer]
+      - generic:
+        - contentinfo "Utility Bar":
+          - list [ref=f18e157]:
+            - listitem [ref=f18e158]:
+              - button "To Do List" [ref=f18e161] [cursor=pointer]
+    - dialog "New Lead" [ref=f18e649]:
+      - generic [ref=f18e650]:
+        - button "Cancel and close" [ref=f18e651] [cursor=pointer]
+        - generic [ref=f18e657]:
+          - generic [ref=f18e664]:
+            - heading "New Lead" [level=2] [ref=f18e666]
+            - generic [ref=f18e668]:
+              - generic [ref=f18e669]: "* = Required Information"
+              - generic [ref=f18e671]:
+                - generic [ref=f18e676]:
+                  - generic [ref=f18e678]:
+                    - heading "Lead Information" [level=3] [ref=f18e679]
+                    - list [ref=f18e682]:
+                      - generic [ref=f18e683]:
+                        - generic [ref=f18e685]:
+                          - listitem [ref=f18e687]:
+                            - generic [ref=f18e688]:
+                              - generic [ref=f18e689]: Lead Owner
+                              - generic [ref=f18e690]: CRM Agent
+                          - listitem [ref=f18e703]:
+                            - generic [ref=f18e710]:
+                              - generic [ref=f18e711]: "*Lead Status"
+                              - combobox "Lead Status" [active] [ref=f18e717] [cursor=pointer]:
+                                - generic [ref=f18e718]: New
+                              - status
+                        - generic [ref=f18e726]:
+                          - listitem [ref=f18e728]:
+                            - group "Name required" [ref=f18e733]:
+                              - generic [ref=f18e734]:
+                                - text: "*Name"
+                                - generic "required" [ref=f18e735]
+                              - generic [ref=f18e737]:
+                                - generic [ref=f18e741]:
+                                  - generic [ref=f18e742]: Salutation
+                                  - combobox "Salutation" [ref=f18e748] [cursor=pointer]:
+                                    - generic [ref=f18e749]: "--None--"
+                                  - status
+                                - generic [ref=f18e759]:
+                                  - generic [ref=f18e760]: First Name
+                                  - textbox "First Name" [ref=f18e762]
+                                - generic [ref=f18e766]:
+                                  - generic [ref=f18e767]: "*Last Name"
+                                  - textbox "Last Name" [ref=f18e769]
+                          - listitem [ref=f18e771]:
+                            - generic [ref=f18e776]:
+                              - generic [ref=f18e777]: Phone
+                              - textbox "Phone" [ref=f18e779]
+                        - generic [ref=f18e781]:
+                          - listitem [ref=f18e783]:
+                            - generic [ref=f18e789]:
+                              - generic [ref=f18e790]: Company
+                              - textbox "Company" [ref=f18e792]
+                          - listitem [ref=f18e794]:
+                            - generic [ref=f18e799]:
+                              - generic [ref=f18e800]: Email
+                              - textbox "Email" [ref=f18e802]
+                        - generic [ref=f18e804]:
+                          - listitem [ref=f18e806]:
+                            - generic [ref=f18e812]:
+                              - generic [ref=f18e813]: Title
+                              - textbox "Title" [ref=f18e815]
+                          - listitem [ref=f18e817]:
+                            - generic [ref=f18e824]:
+                              - generic [ref=f18e825]: Rating
+                              - combobox "Rating" [ref=f18e831] [cursor=pointer]:
+                                - generic [ref=f18e832]: "--None--"
+                              - status
+                        - listitem [ref=f18e842]:
+                          - generic [ref=f18e846]:
+                            - group [ref=f18e847]:
+                              - generic [ref=f18e848]: Earliest Interest Date
+                              - generic [ref=f18e849]:
+                                - textbox "Earliest Interest Date" [ref=f18e850]
+                                - button "Select a date for Earliest Interest Date" [ref=f18e852] [cursor=pointer]
+                            - generic [ref=f18e858]: "Format: ٣١/١٢/٢٠٢٤"
+                        - listitem [ref=f18e863]:
+                          - generic [ref=f18e867]:
+                            - group [ref=f18e868]:
+                              - generic [ref=f18e869]: Latest Interest Date
+                              - generic [ref=f18e870]:
+                                - textbox "Latest Interest Date" [ref=f18e871]
+                                - button "Select a date for Latest Interest Date" [ref=f18e873] [cursor=pointer]
+                            - generic [ref=f18e879]: "Format: ٣١/١٢/٢٠٢٤"
+                        - listitem [ref=f18e884]:
+                          - generic [ref=f18e891]:
+                            - generic [ref=f18e892]: "*Nationality"
+                            - combobox "Nationality" [ref=f18e898] [cursor=pointer]:
+                              - generic [ref=f18e899]: "--None--"
+                            - status
+                        - listitem [ref=f18e910]:
+                          - generic [ref=f18e914]:
+                            - group [ref=f18e915]:
+                              - generic [ref=f18e916]: "*Date of Birth"
+                              - generic [ref=f18e917]:
+                                - textbox "Date of Birth" [ref=f18e918]
+                                - button "Select a date for Date of Birth" [ref=f18e920] [cursor=pointer]
+                            - generic [ref=f18e926]: "Format: ٣١/١٢/٢٠٢٤"
+                  - generic [ref=f18e929]:
+                    - heading "Address Information" [level=3] [ref=f18e930]
+                    - list [ref=f18e933]:
+                      - generic [ref=f18e936]:
+                        - listitem [ref=f18e938]:
+                          - group "Address" [ref=f18e943]:
+                            - generic [ref=f18e946]:
+                              - status [ref=f18e947]
+                              - generic [ref=f18e951]:
+                                - generic [ref=f18e952]: Country
+                                - combobox "Country" [ref=f18e960]: "--None--"
+                                - status
+                              - generic [ref=f18e968]:
+                                - generic [ref=f18e969]: Street
+                                - textbox "Street" [ref=f18e971]
+                                - status
+                              - generic [ref=f18e972]:
+                                - generic [ref=f18e975]:
+                                  - generic [ref=f18e976]: City
+                                  - textbox "City" [ref=f18e978]
+                                - generic [ref=f18e981]:
+                                  - generic [ref=f18e982]: State/Province
+                                  - combobox "State/Province" [ref=f18e990]: "--None--"
+                                  - status
+                              - generic [ref=f18e1000]:
+                                - generic [ref=f18e1001]: Zip/Postal Code
+                                - textbox "Zip/Postal Code" [ref=f18e1003]
+                        - listitem [ref=f18e1005]:
+                          - generic [ref=f18e1010]:
+                            - generic [ref=f18e1011]: Website
+                            - textbox "Website" [ref=f18e1013]
+                  - generic [ref=f18e1015]:
+                    - heading "Additional Information" [level=3] [ref=f18e1016]
+                    - list [ref=f18e1019]:
+                      - generic [ref=f18e1020]:
+                        - generic [ref=f18e1022]:
+                          - listitem [ref=f18e1024]:
+                            - generic [ref=f18e1029]:
+                              - generic [ref=f18e1030]: No. of Employees
+                              - spinbutton "No. of Employees" [ref=f18e1032]
+                          - listitem [ref=f18e1034]:
+                            - generic [ref=f18e1041]:
+                              - generic [ref=f18e1042]: Lead Source
+                              - combobox "Lead Source" [ref=f18e1048] [cursor=pointer]:
+                                - generic [ref=f18e1049]: "--None--"
+                              - status
+                        - generic [ref=f18e1057]:
+                          - listitem [ref=f18e1059]:
+                            - generic [ref=f18e1065]:
+                              - generic [ref=f18e1066]: Annual Revenue
+                              - spinbutton "Annual Revenue" [ref=f18e1068]
+                          - listitem [ref=f18e1070]:
+                            - generic [ref=f18e1077]:
+                              - generic [ref=f18e1078]: Industry
+                              - combobox "Industry" [ref=f18e1084] [cursor=pointer]:
+                                - generic [ref=f18e1085]: "--None--"
+                              - status
+                  - generic [ref=f18e1093]:
+                    - heading "Description Information" [level=3] [ref=f18e1094]
+                    - list [ref=f18e1097]:
+                      - listitem [ref=f18e1102]:
+                        - generic [ref=f18e1106]:
+                          - generic [ref=f18e1107]: Description
+                          - textbox "Description" [ref=f18e1109]
+                          - status
+                  - generic [ref=f18e1111]:
+                    - heading "Brand & Business Unit" [level=3] [ref=f18e1112]
+                    - list [ref=f18e1115]:
+                      - generic [ref=f18e1116]:
+                        - generic [ref=f18e1118]:
+                          - listitem [ref=f18e1120]:
+                            - generic [ref=f18e1124]:
+                              - generic [ref=f18e1127]:
+                                - generic [ref=f18e1128]: Brand
+                                - combobox "Brand" [ref=f18e1134] [cursor=pointer]:
+                                  - generic [ref=f18e1135]: "--None--"
+                                - status
+                              - link "View all dependencies for Brand" [ref=f18e1144] [cursor=pointer]:
+                                - /url: javascript:void(0)
+                                - text: View all dependencies
+                          - listitem [ref=f18e1146]:
+                            - generic [ref=f18e1147]: Business Unit
+                        - listitem [ref=f18e1153]:
+                          - generic [ref=f18e1157]:
+                            - generic [ref=f18e1160]:
+                              - generic [ref=f18e1161]: Showroom
+                              - combobox "Showroom" [disabled] [ref=f18e1167]:
+                                - generic [ref=f18e1168]: "--None--"
+                              - status
+                            - link "View all dependencies for Showroom" [ref=f18e1177] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - text: View all dependencies
+                  - generic [ref=f18e1180]:
+                    - heading "Source & Channel" [level=3] [ref=f18e1181]
+                    - list [ref=f18e1184]:
+                      - generic [ref=f18e1185]:
+                        - generic [ref=f18e1187]:
+                          - listitem [ref=f18e1189]:
+                            - generic [ref=f18e1196]:
+                              - generic [ref=f18e1197]: Lead Channel
+                              - combobox "Lead Channel" [ref=f18e1203] [cursor=pointer]:
+                                - generic [ref=f18e1204]: "--None--"
+                              - status
+                          - listitem [ref=f18e1212]:
+                            - generic [ref=f18e1219]:
+                              - generic [ref=f18e1220]: Lead Medium
+                              - combobox "Lead Medium" [ref=f18e1226] [cursor=pointer]:
+                                - generic [ref=f18e1227]: "--None--"
+                              - status
+                        - generic [ref=f18e1235]:
+                          - listitem [ref=f18e1237]:
+                            - generic [ref=f18e1244]:
+                              - generic [ref=f18e1245]: Source of Business
+                              - combobox "Source of Business" [ref=f18e1251] [cursor=pointer]:
+                                - generic [ref=f18e1252]: "--None--"
+                              - status
+                          - listitem [ref=f18e1260]:
+                            - generic [ref=f18e1266]:
+                              - generic [ref=f18e1267]: Form Code
+                              - textbox "Form Code" [ref=f18e1269]
+                  - generic [ref=f18e1271]:
+                    - heading "Identification" [level=3] [ref=f18e1272]
+                    - list [ref=f18e1275]:
+                      - generic [ref=f18e1278]:
+                        - listitem [ref=f18e1280]:
+                          - generic [ref=f18e1286]:
+                            - generic [ref=f18e1287]: Qatar ID
+                            - textbox "Qatar ID" [ref=f18e1289]
+                        - listitem [ref=f18e1291]:
+                          - generic [ref=f18e1297]:
+                            - generic [ref=f18e1298]: Other ID Number
+                            - textbox "Other ID Number" [ref=f18e1300]
+                  - generic [ref=f18e1302]:
+                    - heading "Vehicle & Test Drive" [level=3] [ref=f18e1303]
+                    - list [ref=f18e1306]:
+                      - generic [ref=f18e1307]:
+                        - generic [ref=f18e1309]:
+                          - listitem [ref=f18e1311]:
+                            - generic [ref=f18e1315]:
+                              - generic [ref=f18e1318]:
+                                - generic [ref=f18e1319]: Vehicle of Interest
+                                - combobox "Vehicle of Interest" [disabled] [ref=f18e1325]:
+                                  - generic [ref=f18e1326]: "--None--"
+                                - status
+                              - link "View all dependencies for Vehicle of Interest" [ref=f18e1335] [cursor=pointer]:
+                                - /url: javascript:void(0)
+                                - text: View all dependencies
+                          - listitem [ref=f18e1337]:
+                            - generic [ref=f18e1342]:
+                              - generic [ref=f18e1343]: Interested in Test Drive
+                              - checkbox "Interested in Test Drive" [ref=f18e1346]
+                        - generic [ref=f18e1348]:
+                          - listitem [ref=f18e1350]:
+                            - group "Test Drive Date/Time" [ref=f18e1357]:
+                              - generic [ref=f18e1361]:
+                                - generic [ref=f18e1362]:
+                                  - group [ref=f18e1363]:
+                                    - generic [ref=f18e1364]: Date
+                                    - generic [ref=f18e1365]:
+                                      - textbox "Date" [ref=f18e1366]
+                                      - button "Select a date for Date" [ref=f18e1368] [cursor=pointer]
+                                  - generic [ref=f18e1374]: "Format: ٣١/١٢/٢٠٢٤"
+                                - generic [ref=f18e1375]:
+                                  - generic [ref=f18e1376]: Time
+                                  - combobox "Time" [ref=f18e1383]
+                          - listitem [ref=f18e1391]:
+                            - generic [ref=f18e1397]:
+                              - generic [ref=f18e1398]: Test Drive Location
+                              - textbox "Test Drive Location" [ref=f18e1400]
+                  - generic [ref=f18e1402]:
+                    - heading "Qualification" [level=3] [ref=f18e1403]
+                    - list [ref=f18e1406]:
+                      - generic [ref=f18e1407]:
+                        - generic [ref=f18e1409]:
+                          - listitem [ref=f18e1411]:
+                            - generic [ref=f18e1418]:
+                              - generic [ref=f18e1419]: Qualification Outcome
+                              - combobox "Qualification Outcome" [ref=f18e1425] [cursor=pointer]:
+                                - generic [ref=f18e1426]: "--None--"
+                              - status
+                          - listitem [ref=f18e1434]:
+                            - generic [ref=f18e1435]: Qualified Date
+                        - generic [ref=f18e1439]:
+                          - listitem [ref=f18e1441]:
+                            - generic [ref=f18e1448]:
+                              - generic [ref=f18e1449]: Contact Validity
+                              - combobox "Contact Validity" [ref=f18e1455] [cursor=pointer]:
+                                - generic [ref=f18e1456]: "--None--"
+                              - status
+                          - listitem [ref=f18e1464]:
+                            - generic [ref=f18e1465]: Qualified By
+                  - generic [ref=f18e1470]:
+                    - heading "SLA Tracking" [level=3] [ref=f18e1471]
+                    - list [ref=f18e1474]:
+                      - generic [ref=f18e1475]:
+                        - generic [ref=f18e1477]:
+                          - listitem [ref=f18e1479]:
+                            - generic [ref=f18e1480]: Assigned Date/Time
+                          - listitem [ref=f18e1484]:
+                            - group "First Contact Date/Time" [ref=f18e1491]:
+                              - generic [ref=f18e1495]:
+                                - generic [ref=f18e1496]:
+                                  - group [ref=f18e1497]:
+                                    - generic [ref=f18e1498]: Date
+                                    - generic [ref=f18e1499]:
+                                      - textbox "Date" [ref=f18e1500]
+                                      - button "Select a date for Date" [ref=f18e1502] [cursor=pointer]
+                                  - generic [ref=f18e1508]: "Format: ٣١/١٢/٢٠٢٤"
+                                - generic [ref=f18e1509]:
+                                  - generic [ref=f18e1510]: Time
+                                  - combobox "Time" [ref=f18e1517]
+                        - generic [ref=f18e1525]:
+                          - listitem [ref=f18e1527]:
+                            - generic [ref=f18e1528]: SLA Target — First Contact
+                          - listitem [ref=f18e1532]:
+                            - generic [ref=f18e1533]: SLA Target — Second Checkpoint
+                        - generic [ref=f18e1537]:
+                          - listitem [ref=f18e1539]:
+                            - generic [ref=f18e1540]: SLA Target — Final Disposition
+                          - listitem [ref=f18e1544]:
+                            - generic [ref=f18e1545]:
+                              - generic [ref=f18e1546]: SLA Status
+                              - generic [ref=f18e1547]: On Track
+                  - generic [ref=f18e1551]:
+                    - heading "Disqualification" [level=3] [ref=f18e1552]
+                    - list [ref=f18e1555]:
+                      - generic [ref=f18e1558]:
+                        - listitem [ref=f18e1560]:
+                          - generic [ref=f18e1567]:
+                            - generic [ref=f18e1568]: Disqualification Reason
+                            - combobox "Disqualification Reason" [ref=f18e1574] [cursor=pointer]:
+                              - generic [ref=f18e1575]: "--None--"
+                            - status
+                        - listitem [ref=f18e1583]:
+                          - generic [ref=f18e1587]:
+                            - generic [ref=f18e1588]: Disqualification Notes
+                            - textbox "Disqualification Notes" [ref=f18e1590]
+                            - status
+                  - generic [ref=f18e1592]:
+                    - heading "Integration" [level=3] [ref=f18e1593]
+                    - list [ref=f18e1596]:
+                      - generic [ref=f18e1597]:
+                        - generic [ref=f18e1599]:
+                          - listitem [ref=f18e1601]:
+                            - generic [ref=f18e1602]: Keyloop Lead Reference
+                          - listitem [ref=f18e1606]:
+                            - generic [ref=f18e1607]:
+                              - generic [ref=f18e1608]: Integration Status
+                              - generic [ref=f18e1609]: Pending
+                        - generic [ref=f18e1613]:
+                          - listitem [ref=f18e1615]:
+                            - generic [ref=f18e1616]: Integration Last Error
+                          - listitem [ref=f18e1620]:
+                            - generic [ref=f18e1625]:
+                              - generic [ref=f18e1626]: Needs Manual Review
+                              - checkbox "Needs Manual Review" [ref=f18e1629]
+                        - listitem [ref=f18e1633]:
+                          - generic [ref=f18e1634]:
+                            - generic [ref=f18e1635]: Is Suppressed Duplicate
+                            - generic [ref=f18e1641]:
+                              - generic "False" [ref=f18e1642]
+                              - generic [ref=f18e1649]: Is Suppressed Duplicate
+                - generic [ref=f18e1652]:
+                  - list [ref=f18e1655]:
+                    - listitem [ref=f18e1656]:
+                      - generic "Assign using active assignment rule" [ref=f18e1657]:
+                        - generic [ref=f18e1660]:
+                          - checkbox "Assign using active assignment rule" [checked] [ref=f18e1661]
+                          - generic [ref=f18e1662]: Assign using active assignment rule
+                  - generic [ref=f18e1666]:
+                    - generic "Cancel" [ref=f18e1667]:
+                      - button "Cancel" [ref=f18e1672] [cursor=pointer]
+                    - generic "Save & New" [ref=f18e1673]:
+                      - button "Save & New" [ref=f18e1678] [cursor=pointer]
+                    - generic "Save" [ref=f18e1679]:
+                      - button "Save" [ref=f18e1684] [cursor=pointer]
+          - status [ref=f18e1685]
+  - generic:
+    - status

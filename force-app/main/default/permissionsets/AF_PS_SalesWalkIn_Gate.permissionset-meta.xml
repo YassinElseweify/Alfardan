@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AF_CanUseSalesWalkIn</name>
+    </customPermissions>
+    <description>Grants only AF_CanUseSalesWalkIn. Attached to AF_PSG_Receptionist_Sales so the Sales Walk-In intake path can be enabled per-BU by whether that BU&apos;s receptionists are in the group, per ALF-RS-01.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Walk-In Gate</label>
+</PermissionSet>

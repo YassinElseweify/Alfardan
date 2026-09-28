@@ -1,0 +1,32 @@
+- generic [ref=f35e1]:
+  - generic [ref=f35e2]:
+    - generic [ref=f35e5]:
+      - generic [ref=f35e7]:
+        - img "Salesforce login" [ref=f35e8]
+        - generic [ref=f35e9]: Salesforce login
+      - generic [ref=f35e11]:
+        - generic [ref=f35e12]:
+          - heading "Salesforce login" [level=1] [ref=f35e13]
+          - generic [ref=f35e14]:
+            - text: Username
+            - textbox "Username" [active] [ref=f35e16]
+          - button "Log In to Sandbox" [ref=f35e17] [cursor=pointer]
+          - generic [ref=f35e18]:
+            - checkbox "Remember me" [ref=f35e19]
+            - generic [ref=f35e20]: Remember me
+        - link "Forgot Your Password?" [ref=f35e22] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us
+    - generic [ref=f35e23]: © 2026 Salesforce, Inc. All rights reserved.
+  - iframe [ref=f35e25]:
+    - main [ref=f36e3]:
+      - article [ref=f36e7]:
+        - img "Headshots of Dario Amodei, Co-Founder & CEO of Anthropic, and Marc Benioff CEO, Chair, Co-Founder of Salesforce" [ref=f36e9]
+        - generic [ref=f36e10]:
+          - generic [ref=f36e11]:
+            - heading "Stream sessions, industry and product keynotes, and more." [level=2] [ref=f36e12]
+            - paragraph [ref=f36e14]: The biggest launches, the boldest ideas, the moments that change everything. Stream 400+ sessions, virtual hands-on trainings, and the world’s most influential voices. Leave with the skills and clarity to move your business forward.
+          - 'link "Watch now: Dreamforce" [ref=f36e17] [cursor=pointer]':
+            - /url: https://www.salesforce.com/plus/experience/dreamforce_2026
+            - text: Watch now on Salesforce+
+  - generic: Login
+  - iframe [aria-hidden] [ref=f35e26]

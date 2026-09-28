@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_SODocumentConditionFields</fullName>
+    <description>ALF-RS-10 (LFRDN-340). Fields AF_DocumentConditionEvaluator may reference when evaluating AF_DocumentCondition__mdt rows scoped to Opportunity via AF_DynamicObject__mdt, for Sales Order required documents. The initial condition is unconditional (&quot;true&quot;) - no AF_Document__mdt rows exist yet since the BRD does not name specific Sales Order documents. AF_Brand__c is included so a future branch (e.g. BMW/JLR-specific requirements) can be added without a field-set/deploy change.</description>
+    <displayedFields>
+        <field>AF_Brand__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>AF SO Document Condition Fields</label>
+</FieldSet>

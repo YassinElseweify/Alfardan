@@ -1,0 +1,41 @@
+- generic [ref=f48e1]:
+  - generic [ref=f48e4]:
+    - generic [ref=f48e6]:
+      - img "Salesforce login" [ref=f48e7]
+      - generic [ref=f48e8]: Salesforce login
+    - heading "Change Your Password" [level=2] [ref=f48e9]
+    - generic [ref=f48e12]:
+      - paragraph [ref=f48e13]: "Enter a new password for alfardan.qa.salesrep2@alfardan.com.qa.qa. Make sure to include at least:"
+      - list [ref=f48e16]:
+        - listitem [ref=f48e17]:
+          - img "Does not meet requirements" [ref=f48e18]
+          - text: 8 characters
+        - listitem [ref=f48e19]:
+          - img "Does not meet requirements" [ref=f48e20]
+          - text: 1 letter
+        - listitem [ref=f48e21]:
+          - img "Does not meet requirements" [ref=f48e22]
+          - text: 1 number
+      - generic [ref=f48e23]: "* Current Password"
+      - textbox "* Current Password" [active] [ref=f48e25]
+      - generic [ref=f48e26]: "* New Password"
+      - textbox "* New Password" [ref=f48e28]
+      - generic [ref=f48e29]: "* Confirm New Password"
+      - textbox "* Confirm New Password" [ref=f48e31]
+      - generic [ref=f48e32]: "* New Security Question"
+      - combobox "* New Security Question" [ref=f48e34]:
+        - option "In what city were you born?" [selected]
+        - option "What is your mother's maiden name?"
+        - option "What is your pet's name?"
+        - option "What was your childhood nickname?"
+        - option "In what city did you meet your spouse/significant other?"
+        - option "What is the name of your favorite childhood friend?"
+        - option "In what city was your first job?"
+      - generic [ref=f48e35]: "* New Answer"
+      - textbox "* New Answer" [ref=f48e37]
+      - generic [ref=f48e38]: "*=required"
+      - generic [ref=f48e39]:
+        - button "Cancel" [ref=f48e40] [cursor=pointer]
+        - button "Change Password" [disabled] [ref=f48e41]
+      - paragraph [ref=f48e42]: Password was last changed on 22/09/2026, 11:15 AM.
+  - generic [ref=f48e43]: © 2026 Salesforce, Inc. All rights reserved.

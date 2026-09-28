@@ -1,0 +1,82 @@
+- generic [active]:
+  - generic [ref=f32e2]:
+    - generic [ref=f32e3]:
+      - link "Skip to Navigation" [ref=f32e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f32e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f32e6]:
+        - generic [ref=f32e11]:
+          - button "Search" [disabled]: Search...
+        - navigation "Global Header" [ref=f32e12]:
+          - list [ref=f32e13]:
+            - listitem [ref=f32e14]
+    - generic [ref=f32e18]:
+      - generic [ref=f32e21]:
+        - generic [ref=f32e23]:
+          - navigation "App" [ref=f32e24]:
+            - button "App Launcher" [ref=f32e26] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f32e38]
+        - navigation "Global" [ref=f32e42]:
+          - list [ref=f32e43]:
+            - listitem [ref=f32e44]:
+              - link "Home" [ref=f32e45] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f32e47]:
+              - link "Analytics" [ref=f32e48] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f32e50]:
+              - link "Opportunities" [ref=f32e51] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f32e56] [cursor=pointer]
+            - listitem [ref=f32e62]:
+              - link "Quotes" [ref=f32e63] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f32e68] [cursor=pointer]
+            - listitem [ref=f32e74]:
+              - link "Leads" [ref=f32e75] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f32e80] [cursor=pointer]
+            - listitem [ref=f32e86]:
+              - link "Tasks" [ref=f32e87] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f32e92] [cursor=pointer]
+            - listitem [ref=f32e98]:
+              - link "Files" [ref=f32e99] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f32e104] [cursor=pointer]
+            - listitem [ref=f32e110]:
+              - link "Accounts" [ref=f32e111] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f32e116] [cursor=pointer]
+            - listitem [ref=f32e122]:
+              - link "Contacts" [ref=f32e123] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f32e128] [cursor=pointer]
+            - listitem [ref=f32e134]:
+              - link "Campaigns" [ref=f32e135] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f32e140] [cursor=pointer]
+            - listitem [ref=f32e146]:
+              - link "Dashboards" [ref=f32e147] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f32e152] [cursor=pointer]
+            - listitem [ref=f32e158]:
+              - link "Reports" [ref=f32e159] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f32e164] [cursor=pointer]
+            - listitem [ref=f32e170]:
+              - link "Chatter" [ref=f32e171] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f32e173]:
+              - link "Groups" [ref=f32e174] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f32e179] [cursor=pointer]
+            - listitem [ref=f32e185]:
+              - button "Show more navigation items" [ref=f32e187] [cursor=pointer]:
+                - generic [ref=f32e188]: More
+            - listitem [ref=f32e194]:
+              - button "Edit nav items" [ref=f32e196] [cursor=pointer]
+      - main [ref=f32e201]
+  - generic:
+    - status

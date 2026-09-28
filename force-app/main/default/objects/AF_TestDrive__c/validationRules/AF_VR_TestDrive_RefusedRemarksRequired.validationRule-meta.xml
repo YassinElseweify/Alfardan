@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_TestDrive_RefusedRemarksRequired</fullName>
+    <active>true</active>
+    <description>Refused Remarks is mandatory when either Result or Status is Refused — both fields carry a Refused value and either can be set by a user, so both are checked.</description>
+    <errorConditionFormula>AND(
+    OR(
+        ISPICKVAL(AF_Result__c, &quot;Refused&quot;),
+        ISPICKVAL(AF_Status__c, &quot;Refused&quot;)
+    ),
+    ISBLANK(AF_RefusedRemarks__c)
+)</errorConditionFormula>
+    <errorMessage>Refused Remarks is required when the Test Drive Result is Refused.</errorMessage>
+</ValidationRule>

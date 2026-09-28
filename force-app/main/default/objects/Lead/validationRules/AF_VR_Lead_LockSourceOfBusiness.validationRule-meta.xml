@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Lead_LockSourceOfBusiness</fullName>
+    <active>true</active>
+    <description>ALF-LM-10</description>
+    <errorConditionFormula>AND(NOT(ISNEW()), ISCHANGED(AF_SourceOfBusiness__c), NOT($Permission.AF_CanEditSourceOfBusiness))</errorConditionFormula>
+    <errorMessage>Source of Business cannot be changed after creation without the &quot;Edit Source of Business&quot; permission.</errorMessage>
+</ValidationRule>

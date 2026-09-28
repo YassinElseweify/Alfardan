@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_DiscountAmount__c</fullName>
+    <description>Sales Rep enters the discount as a numeric value here (not a percentage). AF_DiscountPercent__c derives the equivalent percentage automatically. The platform-standard AppliedDiscountAmount field is not available in this org, so this custom field is the discount entry point.</description>
+    <label>Discount Amount</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

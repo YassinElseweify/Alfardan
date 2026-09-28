@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Checklist_Complete</name>
+        <label>Set Checklist Complete</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_ChecklistComplete__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_ChecklistComplete</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_ClosedWon_Gate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_ClosedWon_Gate</name>
+        <label>Set Closed Won Gate Passed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_ClosedWonGatePassed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_Formula_ClosedWonGatePassed</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Checklist_Complete_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Status_Completed</name>
+        <label>Set Status Completed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Checklist_Complete_Decision</name>
+        <label>Checklist Complete?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No / Cancelled</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Not_Cancelled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AF_Formula_ChecklistComplete</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Status_Completed</targetReference>
+            </connector>
+            <label>Yes, not Cancelled</label>
+        </rules>
+    </decisions>
+    <description>Before-save on AF_Handover__c: AF_ChecklistComplete__c is derived as all 8 handover documents (Vehicle Sale Agreement, Warranty Agreement, Service Contract Agreement, Vehicle Repair Disclaimer, Buyer Acknowledgement, Delivery Note, Traffic Form, Insurance Form) marked complete/uploaded - ALF-RS-12 (LFRDN-342), per the user&apos;s direction that the handover is complete once every document is done (no separate physical-items checklist for now). AF_ClosedWonGatePassed__c additionally requires AF_CustomerSignOff__c = Physically Signed (digital signature excluded from R1). Paired with AF_FL_Handover_SyncOpportunityGate, the after-save flow that pushes this up to Opportunity.AF_HandoverComplete__c/AF_SOStatus__c and (once fully paid) auto-progresses the Opportunity to Closed Won.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_ChecklistComplete</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    {!$Record.AF_VehicleSaleAgreementComplete__c},
+    {!$Record.AF_WarrantyAgreementComplete__c},
+    {!$Record.AF_ServiceContractAgreementComplete__c},
+    {!$Record.AF_VehicleRepairDisclaimerComplete__c},
+    {!$Record.AF_BuyerAcknowledgementComplete__c},
+    {!$Record.AF_DeliveryNoteGenerated__c},
+    {!$Record.AF_TrafficFormUploaded__c},
+    {!$Record.AF_InsuranceFormUploaded__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_ClosedWonGatePassed</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    {!AF_Formula_ChecklistComplete},
+    ISPICKVAL({!$Record.AF_CustomerSignOff__c}, &quot;Physically Signed&quot;)
+)</expression>
+    </formulas>
+    <interviewLabel>Handover Update Checklist Gate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Handover Update Checklist Gate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Checklist_Complete</targetReference>
+        </connector>
+        <object>AF_Handover__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

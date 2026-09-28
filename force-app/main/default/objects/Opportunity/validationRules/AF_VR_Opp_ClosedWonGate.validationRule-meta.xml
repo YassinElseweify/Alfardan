@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_ClosedWonGate</fullName>
+    <active>true</active>
+    <description>Checks payment directly since jumping straight to Closed Won skips the Take the Keys payment checkpoint entirely. LFRDN-341 FR1 added registration (Traffic Form) and signed delivery note (Customer Sign-Off) via AF_Handover__c.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    OR(
+        NOT(AF_HandoverComplete__c),
+        NOT(AF_DeliveryConfirmation__c),
+        ISBLANK(AF_InvoiceSummary__c),
+        AF_InvoiceBalance__c &lt;&gt; 0,
+        ISBLANK(AF_Handover__c),
+        NOT(AF_Handover__r.AF_TrafficFormUploaded__c),
+        ISPICKVAL(AF_Handover__r.AF_CustomerSignOff__c, &quot;Pending&quot;)
+    )
+)</errorConditionFormula>
+    <errorMessage>Closed Won requires Handover Complete, Delivery Confirmation, full payment (Invoice Balance = 0), the Traffic Form (registration) uploaded, and Customer Sign-Off (signed delivery note) on the linked Handover.</errorMessage>
+</ValidationRule>

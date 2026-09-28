@@ -1,0 +1,238 @@
+- generic [active]:
+  - generic [ref=f32e2]:
+    - generic [ref=f32e3]:
+      - link "Skip to Navigation" [ref=f32e1554] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f32e1555] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f32e209]:
+        - generic [ref=f32e210]: "Sandbox: QA |"
+        - link "Log out" [ref=f32e1556] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f32e6]:
+        - button "Search" [ref=f32e1557]: Search...
+        - navigation "Global Header" [ref=f32e1558]:
+          - list [ref=f32e218]:
+            - listitem [ref=f32e219]:
+              - group [ref=f32e220]:
+                - button "Add favorite" [ref=f32e1559] [cursor=pointer]:
+                  - generic [ref=f32e223]:
+                    - tooltip "Add favorite"
+                - button [ref=f32e1560] [cursor=pointer]:
+                  - generic [ref=f32e232]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f32e239]:
+              - button [ref=f32e1561] [cursor=pointer]:
+                - generic [ref=f32e246]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f32e253]:
+              - button [ref=f32e1562] [cursor=pointer]:
+                - generic [ref=f32e256]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f32e263]:
+              - button [ref=f32e1563] [cursor=pointer]:
+                - generic [ref=f32e267]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f32e274]:
+              - button [ref=f32e1564] [cursor=pointer]:
+                - generic [ref=f32e281]:
+                  - tooltip "Setup"
+            - listitem [ref=f32e288]:
+              - button "1 Notifications" [ref=f32e1565] [cursor=pointer]:
+                - generic [ref=f32e292]:
+                  - generic [ref=f32e293]: "1"
+                  - tooltip "Notifications"
+              - generic [ref=f32e302]: 1 new notifications
+            - listitem [ref=f32e303]:
+              - button "View profile" [ref=f32e1566] [cursor=pointer]:
+                - generic [ref=f32e307]:
+                  - tooltip "View profile"
+    - generic [ref=f32e18]:
+      - generic [ref=f32e21]:
+        - generic [ref=f32e23]:
+          - navigation "App" [ref=f32e1567]:
+            - button "App Launcher" [ref=f32e1568] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f32e1569]
+        - navigation "Global" [ref=f32e1571]:
+          - list [ref=f32e43]:
+            - listitem [ref=f32e44]:
+              - link "Home" [ref=f32e1572] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f32e47]:
+              - link "Analytics" [ref=f32e1573] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f32e50]:
+              - link "Opportunities" [ref=f32e1574] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f32e1575] [cursor=pointer]
+            - listitem [ref=f32e62]:
+              - link "Quotes" [ref=f32e1576] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f32e1577] [cursor=pointer]
+            - listitem [ref=f32e74]:
+              - link "Leads" [ref=f32e1578] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f32e1579] [cursor=pointer]
+            - listitem [ref=f32e86]:
+              - link "Tasks" [ref=f32e1580] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f32e1581] [cursor=pointer]
+            - listitem [ref=f32e98]:
+              - link "Files" [ref=f32e1582] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f32e1583] [cursor=pointer]
+            - listitem [ref=f32e110] [cursor=pointer]:
+              - link "Accounts" [ref=f32e1584]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f32e1585]
+            - listitem [ref=f32e122]:
+              - link "Contacts" [ref=f32e1586] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f32e1587] [cursor=pointer]
+            - listitem [ref=f32e134]:
+              - link "Campaigns" [ref=f32e1588] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f32e1589] [cursor=pointer]
+            - listitem [ref=f32e146]:
+              - link "Dashboards" [ref=f32e1590] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f32e1591] [cursor=pointer]
+            - listitem [ref=f32e158]:
+              - link "Reports" [ref=f32e1592] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f32e1593] [cursor=pointer]
+            - listitem [ref=f32e170]:
+              - link "Chatter" [ref=f32e1594] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f32e173]:
+              - link "Groups" [ref=f32e1595] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f32e1596] [cursor=pointer]
+            - listitem [ref=f32e185]:
+              - button "Show more navigation items" [ref=f32e1597] [cursor=pointer]:
+                - generic [ref=f32e188]: More
+            - listitem [ref=f32e194]:
+              - button "Edit nav items" [ref=f32e1598] [cursor=pointer]
+      - main [ref=f32e201]:
+        - generic [ref=f32e1610]:
+          - generic [ref=f32e1619]:
+            - generic [ref=f32e1620]:
+              - generic [ref=f32e1621]:
+                - heading "Account Manual Duplicate Test - User Session" [level=1] [ref=f32e1631]:
+                  - generic [ref=f32e1632]: Account
+                  - generic [ref=f32e1634]: Manual Duplicate Test - User Session
+                - button "View Account Hierarchy" [ref=f32e1645] [cursor=pointer]
+              - button "Follow" [ref=f32e1655] [cursor=pointer]
+              - generic [ref=f32e1665]:
+                - generic "New Case" [ref=f32e1666]:
+                  - button "New Case" [ref=f32e1671] [cursor=pointer]
+                - generic "New Note" [ref=f32e1672]:
+                  - button "New Note" [ref=f32e1677] [cursor=pointer]
+                - generic "New Opportunity" [ref=f32e1678]:
+                  - button "New Opportunity" [ref=f32e1683] [cursor=pointer]
+                - button "Show more actions" [ref=f32e1685] [cursor=pointer]
+            - generic [ref=f32e1691]:
+              - generic [ref=f32e1693]:
+                - paragraph [ref=f32e1694]: Type
+                - paragraph
+              - generic [ref=f32e1696]:
+                - paragraph [ref=f32e1697]: Phone
+                - paragraph [ref=f32e1698]:
+                  - link "+97444782200" [ref=f32e1702] [cursor=pointer]:
+                    - /url: tel:+97444782200
+              - generic [ref=f32e1704]:
+                - paragraph [ref=f32e1705]: Website
+                - paragraph
+              - generic [ref=f32e1707]:
+                - paragraph [ref=f32e1708]: Account Owner
+                - paragraph [ref=f32e1709]:
+                  - generic [ref=f32e1712]:
+                    - generic [ref=f32e1719]:
+                      - link "CRM Agent" [ref=f32e1720] [cursor=pointer]:
+                        - /url: /lightning/r/User/005a3001tN2A5HAAQ0/view
+                      - button "Preview" [ref=f32e1726] [cursor=pointer]
+                    - button "Change Owner" [ref=f32e1733] [cursor=pointer]
+              - generic [ref=f32e1740]:
+                - paragraph [ref=f32e1741]: Account Site
+                - paragraph
+              - generic [ref=f32e1743]:
+                - paragraph [ref=f32e1744]: Industry
+                - paragraph
+          - generic [ref=f32e1745]:
+            - generic [ref=f32e1747]:
+              - generic [ref=f32e1752]:
+                - article [ref=f32e1754]:
+                  - heading "Tags" [level=2] [ref=f32e1765]
+                - list [ref=f32e1770]:
+                  - listitem [ref=f32e1771]:
+                    - link "Looks like you don’t have the right permissions to view this component. Contact your Salesforce admin for help." [ref=f32e1772] [cursor=pointer]:
+                      - /url: javascript:void(0);
+              - article [ref=f32e1778]:
+                - generic [ref=f32e1779]:
+                  - heading "Timeline" [level=2] [ref=f32e1783]
+                  - generic [ref=f32e1785]:
+                    - generic [ref=f32e1788]:
+                      - generic [ref=f32e1792]:
+                        - generic [ref=f32e1793]:
+                          - heading "Customer Interactions" [level=2] [ref=f32e1794]
+                          - menu [ref=f32e1795]:
+                            - button "Show Timeline Menu" [ref=f32e1796] [cursor=pointer]
+                        - generic [ref=f32e1802]: All Events • Most Recent Event
+                      - generic [ref=f32e1808]:
+                        - button "Refresh" [ref=f32e1811] [cursor=pointer]
+                        - button "Date Range" [ref=f32e1819] [cursor=pointer]
+                        - button "Event Type" [ref=f32e1827] [cursor=pointer]
+                        - button "Sort" [ref=f32e1835] [cursor=pointer]
+                    - generic [ref=f32e1845]:
+                      - alert "Time to create some events" [ref=f32e1846]
+                      - paragraph [ref=f32e1847]: After you create a timeline event, you’ll see it here.
+            - generic [ref=f32e1849]:
+              - generic [ref=f32e1851]:
+                - alert:
+                  - generic [ref=f32e1852]: Loading content...
+              - article [ref=f32e1860]:
+                - article [ref=f32e1865]:
+                  - heading "Service Process Capabilities" [level=2] [ref=f32e1869]
+                  - combobox [expanded] [ref=f32e1888]:
+                    - generic [ref=f32e1889]:
+                      - textbox "search-box" [ref=f32e1890]:
+                        - /placeholder: Search actions...
+                      - generic: Approved
+              - generic [ref=f32e1901]:
+                - heading "Tabs" [level=2] [ref=f32e1902]
+                - generic "Tabs" [ref=f32e1903]:
+                  - generic [ref=f32e1904]:
+                    - heading "Tabs" [level=2] [ref=f32e1905]
+                    - tablist "Tabs" [ref=f32e1907]:
+                      - tab "Financial Accounts" [selected] [ref=f32e1908] [cursor=pointer]
+                      - tab "Details" [ref=f32e1909] [cursor=pointer]
+                      - tab "Cases" [ref=f32e1910] [cursor=pointer]
+                      - tab "Opportunities" [ref=f32e1911] [cursor=pointer]
+                      - tab "Contracts" [ref=f32e1912] [cursor=pointer]
+                      - tab "Related List" [ref=f32e1913] [cursor=pointer]
+                      - tab "ARC View" [ref=f32e1914] [cursor=pointer]
+                    - tabpanel "Financial Accounts" [ref=f32e1917]:
+                      - generic:
+                        - generic [ref=f32e1919]:
+                          - alert:
+                            - generic [ref=f32e1920]: Loading content...
+                        - generic [ref=f32e1925]:
+                          - alert:
+                            - generic [ref=f32e1926]: Loading content...
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f32e897]:
+          - listitem [ref=f32e898]:
+            - button "To Do List" [ref=f32e1931] [cursor=pointer]
+  - generic:
+    - generic [ref=f32e1933]:
+      - generic [ref=f32e1934]: Success notification.
+      - generic [ref=f32e1941]:
+        - generic [ref=f32e1944]:
+          - text: Account "
+          - link "Manual Duplicate Test - User Session" [ref=f32e1945] [cursor=pointer]:
+            - /url: javascript:void(0)
+          - text: "\" was created."
+        - generic [ref=f32e1947]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f32e1949] [cursor=pointer]
+    - status

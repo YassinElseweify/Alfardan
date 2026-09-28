@@ -1,0 +1,92 @@
+- generic [active]:
+  - generic [ref=f7e2]:
+    - generic [ref=f7e3]:
+      - link "Skip to Navigation" [ref=f7e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f7e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f7e8]:
+        - generic [ref=f7e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f7e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f7e11]:
+        - button "Search" [ref=f7e18]: Search...
+        - navigation "Global Header" [ref=f7e23]:
+          - list [ref=f7e25]:
+            - listitem [ref=f7e26]:
+              - group [ref=f7e27]:
+                - button "This item doesn't support favorites" [ref=f7e29] [cursor=pointer]:
+                  - generic [ref=f7e30]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f7e38] [cursor=pointer]:
+                  - generic [ref=f7e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f7e46]:
+              - button "Global Actions" [ref=f7e48]
+            - listitem [ref=f7e55]:
+              - button [ref=f7e58] [cursor=pointer]:
+                - generic [ref=f7e59]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f7e66]:
+              - button [ref=f7e69] [cursor=pointer]:
+                - generic [ref=f7e70]:
+                  - tooltip "Notifications"
+            - listitem [ref=f7e79]:
+              - generic [ref=f7e81]:
+                - button "View profile":
+                  - generic:
+                    - tooltip "View profile"
+    - generic [ref=f7e82]:
+      - generic [ref=f7e85]:
+        - generic [ref=f7e87]:
+          - navigation "App" [ref=f7e88]:
+            - button "App Launcher" [ref=f7e90] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f7e102]
+        - navigation "Global" [ref=f7e106]:
+          - list [ref=f7e107]:
+            - listitem [ref=f7e108]:
+              - link "Home" [ref=f7e109] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f7e111]:
+              - link "Vehicles" [ref=f7e112] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f7e117] [cursor=pointer]
+            - listitem [ref=f7e125]:
+              - link "Assets" [ref=f7e126] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f7e131] [cursor=pointer]
+            - listitem [ref=f7e139]:
+              - link "Vehicle Definitions" [ref=f7e140] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f7e145] [cursor=pointer]
+            - listitem [ref=f7e153]:
+              - link "Products" [ref=f7e154] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f7e159] [cursor=pointer]
+            - listitem [ref=f7e167]:
+              - link "Accounts" [ref=f7e168] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f7e173] [cursor=pointer]
+            - listitem [ref=f7e181]:
+              - link "Contacts" [ref=f7e182] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f7e187] [cursor=pointer]
+            - listitem [ref=f7e195]:
+              - link "Asset Milestones" [ref=f7e196] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f7e201] [cursor=pointer]
+            - listitem [ref=f7e209]:
+              - link "Asset Contact Participants" [ref=f7e210] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f7e215] [cursor=pointer]
+            - listitem [ref=f7e223]:
+              - button "* Show more navigation items" [ref=f7e225] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f7e226]: "*"
+                - generic [aria-hidden] [ref=f7e227]: More
+                - generic [ref=f7e234]: Show more navigation items
+            - listitem [ref=f7e235]:
+              - button "Edit nav items" [ref=f7e237] [cursor=pointer]
+      - main [ref=f7e244]
+  - generic:
+    - status

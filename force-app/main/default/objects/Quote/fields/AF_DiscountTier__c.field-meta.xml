@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_DiscountTier__c</fullName>
+    <description>Stamped by AF_FL_Quote_SetDiscountApprovalStatus from the AF_DiscountApprovalTier__mdt record whose Min/Max Percent band contains AF_DiscountPercent__c. Quote.AF_AP_Quote_DiscountTiers routes on this stable number (0=self-authorized, 1=Showroom Manager, 2=Sales/Brand Manager, 3=General Manager, 4=CEO), not on the raw percentage, so the business can edit the % boundaries in AF_DiscountApprovalTier__mdt without any Flow/Approval Process change.</description>
+    <externalId>false</externalId>
+    <label>Discount Tier</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_NotRequired</name>
+        <label>Set Not Required</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_ApprovalStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Required</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Reserved</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_DepositRequired__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_DepositRequired_Formula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Pending</name>
+        <label>Set Pending</label>
+        <locationX>302</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.AF_ApprovalStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending Approval</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AF_DepositRequired__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AF_DepositRequired_Formula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Decide_Contract_Type</name>
+        <label>Contract Type?</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Set_Pending</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>VIP / Extended</defaultConnectorLabel>
+        <rules>
+            <name>No_Deposit_3Day_Extended</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_ContractType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3-Day (No Deposit)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_RequestedExtraDays__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_RequestedExtraDays__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Pending</targetReference>
+            </connector>
+            <label>3-Day, Extended Beyond Standard Window (FR8c)</label>
+        </rules>
+        <rules>
+            <name>No_Deposit_3Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_ContractType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3-Day (No Deposit)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_NotRequired</targetReference>
+            </connector>
+            <label>3-Day (No Deposit), Standard Window</label>
+        </rules>
+        <rules>
+            <name>Deposit_7Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_ContractType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7-Day (Deposit)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Deposit_Threshold</targetReference>
+            </connector>
+            <label>7-Day (Deposit)</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_Is_Extension</name>
+        <label>Is Extension?</label>
+        <locationX>176</locationX>
+        <locationY>50</locationY>
+        <defaultConnector>
+            <targetReference>Decide_Contract_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not An Extension</defaultConnectorLabel>
+        <rules>
+            <name>Is_Extension</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_IsExtension__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Pending</targetReference>
+            </connector>
+            <label>Is Extension</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_Meets_Threshold</name>
+        <label>Deposit Meets Threshold?</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Set_Pending</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Threshold Configured / Below Threshold</defaultConnectorLabel>
+        <rules>
+            <name>Meets_Threshold</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Deposit_Threshold</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_DepositAmount__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Deposit_Threshold.AF_ThresholdAmount__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_NotRequired</targetReference>
+            </connector>
+            <label>Meets Threshold</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_Status_Not_Terminal</name>
+        <label>Status Not Terminal?</label>
+        <locationX>176</locationX>
+        <locationY>10</locationY>
+        <defaultConnector>
+            <targetReference>Decide_Is_Extension</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Terminal</defaultConnectorLabel>
+        <rules>
+            <name>Is_Terminal</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Converted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Is Terminal</label>
+        </rules>
+    </decisions>
+    <description>Before-save on AF_VehicleReservation__c. Routes AF_ApprovalStatus__c. Any extension goes straight to Pending regardless of tier or deposit (FR9). Otherwise: 3-Day (No Deposit) with AF_RequestedExtraDays__c &gt; 0 -&gt; Pending (FR8c: &quot;reservations beyond the standard 3-day window with no deposit are routed to manager approval&quot;); plain 3-Day (No Deposit) -&gt; Not Required; VIP/Extended -&gt; Pending (FR8/AC3, resolved once the manager sets a real expiry - see AF_VR_VIPExpiryRequiredOnApproval); 7-Day (Deposit) -&gt; looks up the active AF_DepositThreshold__mdt row matching the Opportunity&apos;s Brand AND Business Unit (the FR7 per-brand and per-business-unit matrix) - deposit at or above threshold -&gt; Not Required (auto-flow, AC4), otherwise -&gt; Pending. A missing threshold row is deliberately treated as &quot;needs approval,&quot; never as &quot;no limit.&quot;
+
+Also sets AF_Status__c alongside AF_ApprovalStatus__c: Not Required -&gt; Reserved, Pending -&gt; Pending Approval. Added because nothing in the original build ever moved AF_Status__c forward at all - a reservation that needed no approval sat at &quot;Requested&quot; forever (found via a real click-through, RES-00029). Guarded by Decide_Status_Not_Terminal at entry so an Expired/Converted/Cancelled reservation is never dragged back to Reserved/Pending Approval if this flow re-fires for any reason. The post-approval case (a manager actually approving a Pending reservation) is handled separately by AF_FL_Reservation_Approved, since that&apos;s a later transaction this flow&apos;s own trigger conditions don&apos;t fire on.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_DepositRequired_Formula</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISPICKVAL({!$Record.AF_ContractType__c}, &quot;3-Day (No Deposit)&quot;))</expression>
+    </formulas>
+    <interviewLabel>Reservation Evaluate Approval {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reservation Evaluate Approval</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Deposit_Threshold</name>
+        <label>Get Deposit Threshold</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decide_Meets_Threshold</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AF_Brand__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__r.AF_Brand__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_BusinessUnit__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__r.AF_BusinessUnit__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_Active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AF_DepositThreshold__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decide_Status_Not_Terminal</targetReference>
+        </connector>
+        <filterFormula>OR(ISNEW(), ISCHANGED({!$Record.AF_ContractType__c}), ISCHANGED({!$Record.AF_DepositAmount__c}), ISCHANGED({!$Record.AF_IsExtension__c}), ISCHANGED({!$Record.AF_RequestedExtraDays__c}))</filterFormula>
+        <object>AF_VehicleReservation__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

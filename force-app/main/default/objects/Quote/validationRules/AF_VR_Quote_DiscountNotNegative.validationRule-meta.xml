@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Quote_DiscountNotNegative</fullName>
+    <active>true</active>
+    <description>LFRDN-650: A negative discount is a surcharge and escapes approval entirely - AF_FL_Quote_SetDiscountApprovalStatus only fires when AF_DiscountAmount__c &gt; 0, so a negative value stamps no tier and raises no approval.</description>
+    <errorConditionFormula>AF_DiscountAmount__c &lt; 0</errorConditionFormula>
+    <errorMessage>A discount cannot be negative. To record a price increase, adjust the quote line pricing instead.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_LockCloseDateAfterWon</fullName>
+    <active>true</active>
+    <description>LFRDN-684: Close Date was freely editable after Closed Won, letting a deal be back-dated into an earlier accounting period. Locks it once Closed Won, exempting AF_CanBypassStageGates for a genuine, attributable correction.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(CloseDate),
+    PRIORVALUE(IsWon),
+    NOT($Permission.AF_CanBypassStageGates)
+)</errorConditionFormula>
+    <errorMessage>Close Date cannot be changed after the deal is Closed Won - it records when FR6&apos;s completion conditions were satisfied. Requires the &quot;Bypass Stage Gates&quot; permission for a genuine correction.</errorMessage>
+</ValidationRule>

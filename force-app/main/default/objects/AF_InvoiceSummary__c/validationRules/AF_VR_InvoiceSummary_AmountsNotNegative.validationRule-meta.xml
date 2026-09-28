@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_InvoiceSummary_AmountsNotNegative</fullName>
+    <active>true</active>
+    <description>ALF-RS-09 (LFRDN-339): guards the amounts AF_InvoiceSummaryService writes on every Payment recalculation - expected total and paid amount can never be negative.</description>
+    <errorConditionFormula>OR(
+    AF_ExpectedTotalAmount__c &lt; 0,
+    AF_PaidAmount__c &lt; 0
+)</errorConditionFormula>
+    <errorMessage>Expected Total Amount and Paid Amount cannot be negative.</errorMessage>
+</ValidationRule>

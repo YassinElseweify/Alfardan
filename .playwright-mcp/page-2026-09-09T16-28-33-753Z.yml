@@ -1,0 +1,49 @@
+- generic [ref=f19e1]:
+  - generic [ref=f19e4]:
+    - generic [ref=f19e6]:
+      - img "Salesforce login" [ref=f19e7]
+      - generic [ref=f19e8]: Salesforce login
+    - heading "Change Your Password" [level=2] [ref=f19e9]
+    - generic [ref=f19e12]:
+      - paragraph [ref=f19e13]: "Enter a new password for jstev_sales.z58pnjv0sn9u.cuosciyzsimv.hg.u6jbyrt9b0lw@alfardan.com.qa.qa. Make sure to include at least:"
+      - generic [ref=f19e14]:
+        - generic [ref=f19e15]: 1 number Meets requirement
+        - list [ref=f19e16]:
+          - listitem [ref=f19e17]:
+            - img "Meets requirement" [ref=f19e44]
+            - text: 8 characters
+          - listitem [ref=f19e19]:
+            - img "Meets requirement" [ref=f19e45]
+            - text: 1 letter
+          - listitem [ref=f19e21]:
+            - img "Meets requirement" [ref=f19e46]
+            - text: 1 number
+      - generic [ref=f19e23]: "* Current Password"
+      - textbox "* Current Password" [ref=f19e25]: Arcsen@2026!
+      - generic [ref=f19e26]: "* New Password"
+      - generic [ref=f19e27]:
+        - textbox "* New Password" [ref=f19e28]: Arcsen@2027QA!
+        - generic: Good
+      - generic [ref=f19e29]: "* Confirm New Password"
+      - generic [ref=f19e30]:
+        - textbox "* Confirm New Password" [ref=f19e31]: Arcsen@2027QA!
+        - generic: Match
+      - generic [ref=f19e32]: "* New Security Question"
+      - combobox "* New Security Question" [ref=f19e34]:
+        - option "In what city were you born?" [selected]
+        - option "What is your mother's maiden name?"
+        - option "What is your pet's name?"
+        - option "What was your childhood nickname?"
+        - option "In what city did you meet your spouse/significant other?"
+        - option "What is the name of your favorite childhood friend?"
+        - option "In what city was your first job?"
+      - generic [ref=f19e35]: "* New Answer"
+      - generic [ref=f19e36]:
+        - textbox "* New Answer" [active] [ref=f19e37]: Doha
+        - generic: Too weak
+      - generic [ref=f19e38]: "*=required"
+      - generic [ref=f19e39]:
+        - button "Cancel" [ref=f19e40] [cursor=pointer]
+        - button "Change Password" [disabled] [ref=f19e41]
+      - paragraph [ref=f19e42]: Password was last changed on ٢٣/٨/٢٠٢٦, ٥:٤٤ AM.
+  - generic [ref=f19e43]: © 2026 Salesforce, Inc. All rights reserved.

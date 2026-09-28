@@ -1,0 +1,273 @@
+- generic [active]:
+  - generic:
+    - generic [ref=f235e2]:
+      - generic [ref=f235e3]:
+        - link "Skip to Navigation" [ref=f235e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f235e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f235e182]:
+          - generic [ref=f235e183]: "Sandbox: QA |"
+          - link "Log out" [ref=f235e184] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f235e6]:
+          - button "Search" [ref=f235e13]: Search...
+          - navigation "Global Header" [ref=f235e18]:
+            - list [ref=f235e186]:
+              - listitem [ref=f235e187]:
+                - group [ref=f235e188]:
+                  - button "Add favorite" [ref=f235e190] [cursor=pointer]:
+                    - generic [ref=f235e191]:
+                      - tooltip "Add favorite"
+                  - button [ref=f235e199] [cursor=pointer]:
+                    - generic [ref=f235e200]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f235e207]:
+                - button "Global Actions" [ref=f235e209]
+              - listitem [ref=f235e216]:
+                - button [ref=f235e219] [cursor=pointer]:
+                  - generic [ref=f235e220]:
+                    - tooltip "Salesforce Help"
+              - listitem
+              - listitem [ref=f235e227]:
+                - button [ref=f235e230] [cursor=pointer]:
+                  - generic [ref=f235e231]:
+                    - tooltip "Notifications"
+              - listitem [ref=f235e240]:
+                - button "View profile" [ref=f235e243] [cursor=pointer]:
+                  - generic [ref=f235e244]:
+                    - tooltip "View profile"
+      - generic [ref=f235e24]:
+        - generic [ref=f235e27]:
+          - generic [ref=f235e29]:
+            - navigation "App" [ref=f235e30]:
+              - button "App Launcher" [ref=f235e32] [cursor=pointer]
+            - heading "Automotive" [level=1] [ref=f235e44]
+          - navigation "Global" [ref=f235e48]:
+            - list [ref=f235e49]:
+              - listitem [ref=f235e50]:
+                - link "Home" [ref=f235e51] [cursor=pointer]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f235e53]:
+                - link "Vehicles" [ref=f235e54] [cursor=pointer]:
+                  - /url: /lightning/o/Vehicle/home
+                - button "Vehicles List" [ref=f235e59] [cursor=pointer]
+              - listitem [ref=f235e67]:
+                - link "Assets" [ref=f235e68] [cursor=pointer]:
+                  - /url: /lightning/o/Asset/home
+                - button "Assets List" [ref=f235e73] [cursor=pointer]
+              - listitem [ref=f235e81]:
+                - link "Vehicle Definitions" [ref=f235e82] [cursor=pointer]:
+                  - /url: /lightning/o/VehicleDefinition/home
+                - button "Vehicle Definitions List" [ref=f235e87] [cursor=pointer]
+              - listitem [ref=f235e95]:
+                - link "Products" [ref=f235e96] [cursor=pointer]:
+                  - /url: /lightning/o/Product2/home
+                - button "Products List" [ref=f235e101] [cursor=pointer]
+              - listitem [ref=f235e109]:
+                - link "Accounts" [ref=f235e110] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f235e115] [cursor=pointer]
+              - listitem [ref=f235e123]:
+                - link "Contacts" [ref=f235e124] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f235e129] [cursor=pointer]
+              - listitem [ref=f235e137]:
+                - link "Asset Milestones" [ref=f235e138] [cursor=pointer]:
+                  - /url: /lightning/o/AssetMilestone/home
+                - button "Asset Milestones List" [ref=f235e143] [cursor=pointer]
+              - listitem [ref=f235e151]:
+                - button "* Show more navigation items" [ref=f235e153] [cursor=pointer]:
+                  - generic "Not added to nav bar" [ref=f235e154]: "*"
+                  - generic [aria-hidden] [ref=f235e155]: More
+                  - generic [ref=f235e162]: Show more navigation items
+              - listitem [ref=f235e163]:
+                - button "Edit nav items" [ref=f235e165] [cursor=pointer]
+        - main [ref=f235e172]
+    - dialog "Edit HO-00057" [ref=f235e249]:
+      - generic [ref=f235e250]:
+        - button "Cancel and close" [ref=f235e251] [cursor=pointer]
+        - generic [ref=f235e257]:
+          - generic [ref=f235e265]:
+            - heading "Edit HO-00057" [level=2] [ref=f235e267]
+            - generic [ref=f235e269]:
+              - generic [ref=f235e270]: "* = Required Information"
+              - generic [ref=f235e272]:
+                - generic [ref=f235e277]:
+                  - generic [ref=f235e279]:
+                    - heading "Handover Information" [level=3] [ref=f235e280]
+                    - list [ref=f235e283]:
+                      - generic [ref=f235e284]:
+                        - generic [ref=f235e286]:
+                          - listitem [ref=f235e288]:
+                            - generic [ref=f235e289]:
+                              - generic [ref=f235e290]: Handover Number
+                              - generic [ref=f235e291]: HO-00057
+                          - listitem [ref=f235e295]:
+                            - generic [ref=f235e296]:
+                              - generic [ref=f235e297]: Owner
+                              - generic [ref=f235e298]: QA SalesRep2
+                        - generic [ref=f235e311]:
+                          - listitem [ref=f235e313]:
+                            - generic [ref=f235e319]:
+                              - generic [ref=f235e320]: "*Opportunity"
+                              - generic [ref=f235e325]:
+                                - generic [ref=f235e326]: Opportunity
+                                - combobox "Opportunity" [ref=f235e335]: QA RETEST R2 - Sales Order and handover fixes (674 696 697 699 700 701 704 706)
+                                - button "Clear Opportunity Selection" [ref=f235e336] [cursor=pointer]
+                              - status
+                          - listitem [ref=f235e343]:
+                            - generic [ref=f235e349]:
+                              - generic [ref=f235e350]: Handover Location
+                              - textbox "Handover Location" [ref=f235e352]
+                        - generic [ref=f235e354]:
+                          - listitem [ref=f235e356]:
+                            - generic [ref=f235e363]:
+                              - generic [ref=f235e364]: "*Handover Status"
+                              - combobox "Handover Status" [ref=f235e370] [cursor=pointer]:
+                                - generic [ref=f235e371]: Pending
+                              - status
+                          - listitem [ref=f235e379]:
+                            - generic [ref=f235e385]:
+                              - generic [ref=f235e386]: Invoice Summary
+                              - generic [ref=f235e391]:
+                                - generic [ref=f235e392]: Invoice
+                                - combobox "Invoice Summary" [ref=f235e401]: INVM-00105
+                                - button "Clear Invoice Summary Selection" [ref=f235e402] [cursor=pointer]
+                              - status
+                        - generic [ref=f235e409]:
+                          - listitem [ref=f235e411]:
+                            - group "Handover Date" [ref=f235e418]:
+                              - generic [ref=f235e422]:
+                                - generic [ref=f235e423]:
+                                  - group [ref=f235e424]:
+                                    - generic [ref=f235e425]: Date
+                                    - generic [ref=f235e426]:
+                                      - textbox "Date" [ref=f235e427]
+                                      - button "Select a date for Date" [ref=f235e429] [cursor=pointer]
+                                  - generic [ref=f235e435]: "Format: 31/12/2024"
+                                - generic [ref=f235e436]:
+                                  - generic [ref=f235e437]: Time
+                                  - combobox "Time" [ref=f235e444]
+                          - listitem [ref=f235e452]:
+                            - generic [ref=f235e453]:
+                              - generic [ref=f235e454]: Closed Won Gate Passed?
+                              - generic [ref=f235e460]:
+                                - generic "False" [ref=f235e461]
+                                - generic [ref=f235e468]: Closed Won Gate Passed?
+                  - generic [ref=f235e470]:
+                    - heading "Customer & Vehicle" [level=3] [ref=f235e471]
+                    - list [ref=f235e474]:
+                      - generic [ref=f235e475]:
+                        - generic [ref=f235e477]:
+                          - listitem [ref=f235e479]:
+                            - generic [ref=f235e485]:
+                              - generic [ref=f235e486]: Account
+                              - combobox "Account" [ref=f235e494]
+                              - status
+                          - listitem [ref=f235e502]:
+                            - generic [ref=f235e508]:
+                              - generic [ref=f235e509]: Vehicle
+                              - generic [ref=f235e514]:
+                                - generic [ref=f235e515]: Vehicle
+                                - combobox "Vehicle" [ref=f235e524]: Ferrari 296 GTB - Rosso Scuderia RT24-02
+                                - button "Clear Vehicle Selection" [ref=f235e525] [cursor=pointer]
+                              - status
+                        - listitem [ref=f235e534]:
+                          - generic [ref=f235e540]:
+                            - generic [ref=f235e541]: Contact
+                            - combobox "Contact" [ref=f235e549]
+                            - status
+                  - generic [ref=f235e558]:
+                    - heading "Required Documents Checklist" [level=3] [ref=f235e559]
+                    - list [ref=f235e562]:
+                      - generic [ref=f235e563]:
+                        - generic [ref=f235e565]:
+                          - listitem [ref=f235e567]:
+                            - generic [ref=f235e572]:
+                              - generic [ref=f235e573]: Vehicle Sale Agreement Complete?
+                              - checkbox "Vehicle Sale Agreement Complete?" [ref=f235e576] [cursor=pointer]
+                          - listitem [ref=f235e578]:
+                            - generic [ref=f235e583]:
+                              - generic [ref=f235e584]: Buyer Acknowledgement Complete?
+                              - checkbox "Buyer Acknowledgement Complete?" [ref=f235e587] [cursor=pointer]
+                        - generic [ref=f235e589]:
+                          - listitem [ref=f235e591]:
+                            - generic [ref=f235e596]:
+                              - generic [ref=f235e597]: Warranty Agreement Complete?
+                              - checkbox "Warranty Agreement Complete?" [ref=f235e600] [cursor=pointer]
+                          - listitem [ref=f235e602]:
+                            - generic [ref=f235e603]:
+                              - generic [ref=f235e604]: Insurance Form Uploaded?
+                              - generic [ref=f235e610]:
+                                - generic "False" [ref=f235e611]
+                                - generic [ref=f235e618]: Insurance Form Uploaded?
+                        - generic [ref=f235e620]:
+                          - listitem [ref=f235e622]:
+                            - generic [ref=f235e627]:
+                              - generic [ref=f235e628]: Service Contract Agreement Complete?
+                              - checkbox "Service Contract Agreement Complete?" [ref=f235e631] [cursor=pointer]
+                          - listitem [ref=f235e633]:
+                            - generic [ref=f235e634]:
+                              - generic [ref=f235e635]: Traffic Form Uploaded?
+                              - generic [ref=f235e641]:
+                                - generic "False" [ref=f235e642]
+                                - generic [ref=f235e649]: Traffic Form Uploaded?
+                        - generic [ref=f235e651]:
+                          - listitem [ref=f235e653]:
+                            - generic [ref=f235e658]:
+                              - generic [ref=f235e659]: Vehicle Repair Disclaimer Complete?
+                              - checkbox "Vehicle Repair Disclaimer Complete?" [ref=f235e662] [cursor=pointer]
+                          - listitem [ref=f235e664]:
+                            - generic [ref=f235e665]:
+                              - generic [ref=f235e666]: Checklist Complete?
+                              - generic [ref=f235e672]:
+                                - generic "False" [ref=f235e673]
+                                - generic [ref=f235e680]: Checklist Complete?
+                  - generic [ref=f235e682]:
+                    - heading "Sign-Off & Delivery" [level=3] [ref=f235e683]
+                    - list [ref=f235e686]:
+                      - generic [ref=f235e687]:
+                        - generic [ref=f235e689]:
+                          - listitem [ref=f235e691]:
+                            - generic [ref=f235e698]:
+                              - generic [ref=f235e699]: Customer Sign-Off
+                              - combobox "Customer Sign-Off" [ref=f235e705] [cursor=pointer]:
+                                - generic [ref=f235e706]: "--None--"
+                              - status
+                          - listitem [ref=f235e714]:
+                            - generic [ref=f235e719]:
+                              - generic [ref=f235e720]: Follow-Up Task Created?
+                              - checkbox "Follow-Up Task Created?" [ref=f235e723] [cursor=pointer]
+                        - listitem [ref=f235e727]:
+                          - generic [ref=f235e728]:
+                            - generic [ref=f235e729]: Delivery Note Generated?
+                            - generic [ref=f235e735]:
+                              - generic "False" [ref=f235e736]
+                              - generic [ref=f235e743]: Delivery Note Generated?
+                  - generic [ref=f235e746]:
+                    - heading "System Information" [level=3] [ref=f235e747]
+                    - list [ref=f235e750]:
+                      - generic [ref=f235e753]:
+                        - listitem [ref=f235e755]:
+                          - generic [ref=f235e756]:
+                            - generic [ref=f235e757]: Created By
+                            - generic [ref=f235e761]:
+                              - generic [ref=f235e762]: QA SalesRep2
+                              - text: ", 24/09/2026, 3:27 PM"
+                        - listitem [ref=f235e769]:
+                          - generic [ref=f235e770]:
+                            - generic [ref=f235e771]: Last Modified By
+                            - generic [ref=f235e775]:
+                              - generic [ref=f235e776]: QA SalesRep2
+                              - text: ", 24/09/2026, 3:27 PM"
+                - generic [ref=f235e786]:
+                  - generic "Cancel" [ref=f235e787]:
+                    - button "Cancel" [ref=f235e792] [cursor=pointer]
+                  - generic "Save & New" [ref=f235e793]:
+                    - button "Save & New" [ref=f235e798] [cursor=pointer]
+                  - generic "Save" [ref=f235e799]:
+                    - button "Save" [ref=f235e804] [cursor=pointer]
+          - status [ref=f235e805]
+  - generic:
+    - status

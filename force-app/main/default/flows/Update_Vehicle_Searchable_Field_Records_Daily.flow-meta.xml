@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Run_DPE</name>
+        <label>Run DPE</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <actionName>Update_Vehicle_Searchable_Field_Values_Neo_Motors</actionName>
+        <actionType>dataProcessingEngineAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>Update_Vehicle_Searchable_Field_Values_Neo_Motors</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>Update Vehicle Searchable Field Records Daily {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Vehicle Searchable Field Records Daily</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Run_DPE</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ProcessType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CriteriaBsdSearchAndFilter</stringValue>
+            </value>
+        </filters>
+        <object>BatchCalcJobDefinition</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-07-19</startDate>
+            <startTime>00:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,136 @@
+- generic:
+  - generic:
+    - generic [ref=f171e2]:
+      - generic [ref=f171e3]:
+        - link "Skip to Navigation" [ref=f171e1154] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f171e1155] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f171e25]:
+          - generic [ref=f171e26]: "Sandbox: QA |"
+          - link "Log out" [ref=f171e1156] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f171e6]:
+          - button "Search" [ref=f171e1157]: Search...
+          - navigation "Global Header" [ref=f171e1158]:
+            - list [ref=f171e38]:
+              - listitem [ref=f171e39]:
+                - group [ref=f171e40]:
+                  - button "Add favorite" [ref=f171e1159] [cursor=pointer]:
+                    - generic [ref=f171e43]:
+                      - tooltip "Add favorite"
+                  - button [ref=f171e1160] [cursor=pointer]:
+                    - generic [ref=f171e52]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f171e59]:
+                - button [ref=f171e1161] [cursor=pointer]:
+                  - generic [ref=f171e66]:
+                    - tooltip "Global Actions"
+              - listitem [ref=f171e73]:
+                - button [ref=f171e1162] [cursor=pointer]:
+                  - generic [ref=f171e76]:
+                    - tooltip "Guidance Center"
+              - listitem [ref=f171e83]:
+                - button [ref=f171e1163] [cursor=pointer]:
+                  - generic [ref=f171e87]:
+                    - tooltip "Salesforce Help"
+              - listitem [ref=f171e94]:
+                - button [ref=f171e1164] [cursor=pointer]:
+                  - generic [ref=f171e101]:
+                    - tooltip "Setup"
+              - listitem [ref=f171e108]:
+                - button [ref=f171e1165] [cursor=pointer]:
+                  - generic [ref=f171e112]:
+                    - tooltip "Notifications"
+                - generic [ref=f171e122]: 16 new notifications
+              - listitem [ref=f171e123]:
+                - button "View profile" [ref=f171e1166] [cursor=pointer]:
+                  - generic [ref=f171e127]:
+                    - tooltip "View profile"
+      - generic [ref=f171e15]:
+        - generic [ref=f171e133]:
+          - generic [ref=f171e135]:
+            - navigation "App" [ref=f171e1167]:
+              - button "App Launcher" [ref=f171e1168] [cursor=pointer]
+            - heading "Sales" [level=1] [ref=f171e1169]
+          - navigation "Global" [ref=f171e1171]:
+            - list [ref=f171e155]:
+              - listitem [ref=f171e156]:
+                - link "Home" [ref=f171e1172] [cursor=pointer]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f171e159]:
+                - link "Analytics" [ref=f171e1173] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+              - listitem [ref=f171e162]:
+                - link "Opportunities" [ref=f171e1174] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                - button "Opportunities List" [ref=f171e1175] [cursor=pointer]
+              - listitem [ref=f171e176]:
+                - link "Quotes" [ref=f171e1176] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                - button "Quotes List" [ref=f171e1177] [cursor=pointer]
+              - listitem [ref=f171e190]:
+                - link "Leads" [ref=f171e1178] [cursor=pointer]:
+                  - /url: /lightning/o/Lead/home
+                - button "Leads List" [ref=f171e1179] [cursor=pointer]
+              - listitem [ref=f171e204]:
+                - link "Tasks" [ref=f171e1180] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                - button "Tasks List" [ref=f171e1181] [cursor=pointer]
+              - listitem [ref=f171e218]:
+                - link "Files" [ref=f171e1182] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                - button "Files List" [ref=f171e1183] [cursor=pointer]
+              - listitem [ref=f171e232]:
+                - link "Accounts" [ref=f171e1184] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f171e1185] [cursor=pointer]
+              - listitem [ref=f171e246]:
+                - link "Contacts" [ref=f171e1186] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f171e1187] [cursor=pointer]
+              - listitem [ref=f171e260]:
+                - link "Campaigns" [ref=f171e1188] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                - button "Campaigns List" [ref=f171e1189] [cursor=pointer]
+              - listitem [ref=f171e274]:
+                - link "Dashboards" [ref=f171e1190] [cursor=pointer]:
+                  - /url: /lightning/o/Dashboard/home
+                - button "Dashboards List" [ref=f171e1191] [cursor=pointer]
+              - listitem [ref=f171e947]:
+                - link "* QA RS07 H1-tier1-approve Approval" [ref=f171e1192] [cursor=pointer]:
+                  - /url: /lightning/r/ProcessInstanceWorkitem/04iFV001DV6V7UuYYK/view
+                  - generic "Not added to nav bar" [ref=f171e1193]: "*"
+                  - generic [ref=f171e950]: QA RS07 H1-tier1-approve Approval
+                - button "QA RS07 H1-tier1-approve Approval List" [ref=f171e1194] [cursor=pointer]
+                - button "Close tab" [ref=f171e1195] [cursor=pointer]
+              - listitem [ref=f171e319]:
+                - button "Show more navigation items" [ref=f171e1196] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f171e322]: More
+              - listitem [ref=f171e330]:
+                - button "Edit nav items" [ref=f171e1197] [cursor=pointer]
+        - main [ref=f171e17]:
+          - generic [ref=f171e1201]:
+            - generic "Highlights panel header" [ref=f171e1204]
+            - generic [ref=f171e1228]:
+              - generic [ref=f171e1230]:
+                - heading "Tabs" [level=2] [ref=f171e1231]
+                - generic [ref=f171e1232]:
+                  - tablist [ref=f171e1233]:
+                    - tab "Details" [selected] [ref=f171e1234] [cursor=pointer]
+                  - tabpanel [ref=f171e1236]:
+                    - generic [ref=f171e1238]:
+                      - article:
+                        - heading "Details" [level=2] [ref=f171e1281]
+              - article [ref=f171e1284]:
+                - generic:
+                  - generic:
+                    - list
+      - generic:
+        - contentinfo "Utility Bar":
+          - list [ref=f171e720]:
+            - listitem [ref=f171e721]:
+              - button "To Do List" [ref=f171e1285] [cursor=pointer]
+    - generic [ref=f171e22]: Notifications
+  - generic:
+    - status

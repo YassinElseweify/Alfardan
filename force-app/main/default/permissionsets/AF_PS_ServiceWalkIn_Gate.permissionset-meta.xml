@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AF_CanUseServiceWalkIn</name>
+    </customPermissions>
+    <description>Grants only AF_CanUseServiceWalkIn. Attached to AF_PSG_Receptionist_Service so the Service Walk-In intake path can be enabled per-BU by whether that BU&apos;s receptionists are in the group, per ALF-RS-01.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Service Walk-In Gate</label>
+</PermissionSet>

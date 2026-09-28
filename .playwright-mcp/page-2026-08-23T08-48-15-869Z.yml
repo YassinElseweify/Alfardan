@@ -1,0 +1,63 @@
+- generic [active]:
+  - generic [ref=f18e2]:
+    - generic [ref=f18e3]:
+      - link "Skip to Navigation" [ref=f18e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f18e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f18e8]:
+        - generic [ref=f18e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f18e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f18e11]:
+        - button "Search" [ref=f18e15]: Search...
+        - navigation "Global Header" [ref=f18e20]:
+          - list [ref=f18e21]:
+            - listitem [ref=f18e22]
+    - generic [ref=f18e28]:
+      - generic [ref=f18e31]:
+        - generic [ref=f18e33]:
+          - navigation "App" [ref=f18e34]:
+            - button "App Launcher" [ref=f18e36] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f18e48]
+        - navigation "Global" [ref=f18e52]:
+          - list [ref=f18e53]:
+            - listitem [ref=f18e54]:
+              - link "Home" [ref=f18e55] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f18e57]:
+              - link "Analytics" [ref=f18e58] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f18e60]:
+              - link "Opportunities" [ref=f18e61] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f18e66] [cursor=pointer]
+            - listitem [ref=f18e74]:
+              - link "Quotes" [ref=f18e75] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f18e80] [cursor=pointer]
+            - listitem [ref=f18e88]:
+              - link "Leads" [ref=f18e89] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f18e94] [cursor=pointer]
+            - listitem [ref=f18e102]:
+              - link "Tasks" [ref=f18e103] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f18e108] [cursor=pointer]
+            - listitem [ref=f18e116]:
+              - link "Files" [ref=f18e117] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f18e122] [cursor=pointer]
+            - listitem [ref=f18e130]:
+              - button "Show more navigation items" [ref=f18e132] [cursor=pointer]:
+                - generic [ref=f18e133]: More
+            - listitem [ref=f18e141]:
+              - button "Edit nav items" [ref=f18e143] [cursor=pointer]
+      - main [ref=f18e150]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f18e157]:
+          - listitem [ref=f18e158]:
+            - button "To Do List" [ref=f18e161] [cursor=pointer]
+  - generic:
+    - status

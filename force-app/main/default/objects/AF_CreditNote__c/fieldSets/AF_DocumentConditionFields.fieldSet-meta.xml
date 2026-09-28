@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_DocumentConditionFields</fullName>
+    <description>Reuses the LFRDN-342 AF_Document__mdt engine so the refund evidence AF_VR_CreditNote_EvidenceRequired only checks as a typed text field also requires a genuinely attached file before the approval-submit flow (AF_FL_CreditNote_SubmitApproval) fires - same tightening already applied to Payment proof under LFRDN-341. The condition here is unconditional (matches Handover&apos;s pattern), so no fields are strictly required by a branch yet; AF_RefundPath__c is exposed for a future path-specific split if the business ever wants Refund vs Credit Retained to require different evidence.</description>
+    <displayedFields>
+        <field>AF_RefundPath__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>AF Document Condition Fields</label>
+</FieldSet>

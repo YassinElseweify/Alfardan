@@ -1,0 +1,322 @@
+- generic:
+  - generic [ref=f237e2]:
+    - generic [ref=f237e3]:
+      - link "Skip to Navigation" [ref=f237e948] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f237e949] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f237e182]:
+        - generic [ref=f237e183]: "Sandbox: QA |"
+        - link "Log out" [ref=f237e950] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f237e6]:
+        - button "Search" [ref=f237e951]: Search...
+        - navigation "Global Header" [ref=f237e952]:
+          - list [ref=f237e186]:
+            - listitem [ref=f237e187]:
+              - group [ref=f237e188]:
+                - button "Add favorite" [ref=f237e953] [cursor=pointer]:
+                  - generic [ref=f237e191]:
+                    - tooltip "Add favorite"
+                - button [ref=f237e954] [cursor=pointer]:
+                  - generic [ref=f237e200]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f237e207]:
+              - button [ref=f237e955] [cursor=pointer]:
+                - generic [ref=f237e214]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f237e221]:
+              - button [ref=f237e956] [cursor=pointer]:
+                - generic [ref=f237e224]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f237e231]:
+              - button [ref=f237e957] [cursor=pointer]:
+                - generic [ref=f237e235]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f237e242]:
+              - button "3 Notifications" [ref=f237e958] [cursor=pointer]:
+                - generic [ref=f237e246]:
+                  - generic [ref=f237e247]: "3"
+                  - tooltip "Notifications"
+              - generic [ref=f237e256]: 3 new notifications
+            - listitem [ref=f237e257]:
+              - button "View profile" [ref=f237e959] [cursor=pointer]:
+                - generic [ref=f237e261]:
+                  - tooltip "View profile"
+    - generic [ref=f237e24]:
+      - generic [ref=f237e27]:
+        - generic [ref=f237e29]:
+          - navigation "App" [ref=f237e960]:
+            - button "App Launcher" [ref=f237e961] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f237e962]
+        - navigation "Global" [ref=f237e964]:
+          - list [ref=f237e49]:
+            - listitem [ref=f237e50]:
+              - link "Home" [ref=f237e965] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f237e53]:
+              - link "Vehicles" [ref=f237e966] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f237e967] [cursor=pointer]
+            - listitem [ref=f237e67]:
+              - link "Assets" [ref=f237e968] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f237e969] [cursor=pointer]
+            - listitem [ref=f237e81]:
+              - link "Vehicle Definitions" [ref=f237e970] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f237e971] [cursor=pointer]
+            - listitem [ref=f237e95]:
+              - link "Products" [ref=f237e972] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f237e973] [cursor=pointer]
+            - listitem [ref=f237e109]:
+              - link "Accounts" [ref=f237e974] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f237e975] [cursor=pointer]
+            - listitem [ref=f237e265] [cursor=pointer]:
+              - link "* HO-00057 | Handover" [ref=f237e976]:
+                - /url: /lightning/r/AF_Handover__c/a0SFV001QA8ioh22YA/view
+                - generic "Not added to nav bar" [ref=f237e977]: "*"
+                - generic [ref=f237e268]: HO-00057 | Handover
+              - button "HO-00057 | Handover List" [ref=f237e978]
+              - button "Close tab" [ref=f237e979]
+            - listitem [ref=f237e151]:
+              - button "* Show more navigation items" [ref=f237e980] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f237e981]: "*"
+                - generic [aria-hidden] [ref=f237e155]: More
+                - generic [ref=f237e162]: Show more navigation items
+            - listitem [ref=f237e163]:
+              - button "Edit nav items" [ref=f237e982] [cursor=pointer]
+      - main [ref=f237e172]:
+        - generic [ref=f237e299]:
+          - generic [ref=f237e309]:
+            - generic [ref=f237e315]:
+              - generic [ref=f237e316]: Handover
+              - heading "HO-00057" [level=1] [ref=f237e983]
+            - button "Follow" [ref=f237e984] [cursor=pointer]
+            - generic [ref=f237e335]:
+              - generic "Edit" [ref=f237e985]:
+                - button "Edit" [ref=f237e986] [cursor=pointer]
+              - generic "Generate Documents" [ref=f237e987]:
+                - button "Generate Documents" [active] [ref=f237e988] [cursor=pointer]
+          - generic [ref=f237e349]:
+            - generic [ref=f237e357]:
+              - heading "Tabs" [level=2] [ref=f237e989]
+              - tablist "Tabs" [ref=f237e990]:
+                - tab "Details" [ref=f237e991] [cursor=pointer]
+                - tab "Related" [selected] [ref=f237e992] [cursor=pointer]
+              - tabpanel "Related" [ref=f237e993]:
+                - generic [ref=f237e366]:
+                  - generic [ref=f237e370]:
+                    - article "Approval History" [ref=f237e994]:
+                      - heading [level=2] [ref=f237e995]:
+                        - link "Approval History (0)" [ref=f237e996] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Handover__c/a0SFV001QA8ioh22YA/related/ProcessSteps/view
+                          - generic "Approval History" [ref=f237e997]
+                          - generic "(0)" [ref=f237e998]
+                    - article "Handover History" [ref=f237e999]:
+                      - generic [ref=f237e395]:
+                        - generic [ref=f237e396]:
+                          - heading [level=2] [ref=f237e1000]:
+                            - link "Handover History (1)" [ref=f237e1001] [cursor=pointer]:
+                              - /url: /lightning/r/AF_Handover__c/a0SFV001QA8ioh22YA/related/Histories/view
+                              - generic "Handover History" [ref=f237e1002]
+                              - generic "(1)" [ref=f237e1003]
+                          - generic [ref=f237e417]:
+                            - generic: Navigation Mode
+                            - grid "Handover History" [ref=f237e1004]:
+                              - rowgroup:
+                                - row "Date Field User Original Value New Value":
+                                  - columnheader "Date":
+                                    - generic "Date" [ref=f237e1005]
+                                  - columnheader "Field":
+                                    - generic "Field" [ref=f237e1006]
+                                  - columnheader "User":
+                                    - generic "User" [ref=f237e1007]
+                                  - columnheader "Original Value":
+                                    - generic "Original Value" [ref=f237e1008]
+                                  - columnheader "New Value":
+                                    - generic "New Value" [ref=f237e1009]
+                              - rowgroup [ref=f237e443]:
+                                - row [ref=f237e1010]:
+                                  - rowheader "24/09/2026, 3:27 PM" [ref=f237e1011]
+                                  - gridcell "Created." [ref=f237e1012]
+                                  - gridcell [ref=f237e1013]:
+                                    - link "QA SalesRep2" [ref=f237e1014] [cursor=pointer]:
+                                      - /url: /lightning/r/005FV0082KfRrqeYQC/view
+                                  - gridcell [ref=f237e466]
+                                  - gridcell [ref=f237e467]
+                        - link "View All Handover History" [ref=f237e1015] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Handover__c/a0SFV001QA8ioh22YA/related/Histories/view
+                          - generic [ref=f237e469]:
+                            - text: View All
+                            - generic [ref=f237e470]: Handover History
+                    - article "Notes & Attachments" [ref=f237e1016]:
+                      - generic [ref=f237e479]:
+                        - heading [level=2] [ref=f237e1017]:
+                          - link "Notes & Attachments (0)" [ref=f237e1018] [cursor=pointer]:
+                            - /url: /lightning/r/AF_Handover__c/a0SFV001QA8ioh22YA/related/CombinedAttachments/view
+                            - generic "Notes & Attachments" [ref=f237e1019]
+                            - generic "(0)" [ref=f237e1020]
+                        - list [ref=f237e491]:
+                          - listitem [ref=f237e492]:
+                            - button "Upload Files" [ref=f237e1021] [cursor=pointer]
+                      - generic [ref=f237e500]:
+                        - generic [ref=f237e501]: Drop Files
+                        - generic [ref=f237e510]:
+                          - generic [ref=f237e512]:
+                            - generic [ref=f237e516]:
+                              - button "Upload Files Or drop files" [ref=f237e1023]
+                              - generic [ref=f237e518]:
+                                - generic [ref=f237e519]: Upload Files
+                                - generic [ref=f237e524]: Or drop files
+                            - status
+                          - list
+                  - article [ref=f237e529]:
+                    - heading "Required Documents" [level=2] [ref=f237e1024]
+                    - generic [ref=f237e544]:
+                      - generic [ref=f237e545]:
+                        - generic [ref=f237e547]:
+                          - text: Buyer Acknowledgement
+                          - generic [ref=f237e548]: Missing
+                        - generic [ref=f237e553]:
+                          - generic [ref=f237e554]: Upload
+                          - generic [ref=f237e558]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1025]
+                            - generic [ref=f237e560]:
+                              - generic [ref=f237e561]: Upload Files
+                              - generic [ref=f237e566]: Or drop files
+                          - status
+                      - generic [ref=f237e567]:
+                        - generic [ref=f237e569]:
+                          - text: Delivery Note
+                          - generic [ref=f237e570]: Missing
+                        - generic [ref=f237e575]:
+                          - generic [ref=f237e576]: Upload
+                          - generic [ref=f237e580]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1026]
+                            - generic [ref=f237e582]:
+                              - generic [ref=f237e583]: Upload Files
+                              - generic [ref=f237e588]: Or drop files
+                          - status
+                      - generic [ref=f237e589]:
+                        - generic [ref=f237e591]:
+                          - text: Insurance Form
+                          - generic [ref=f237e592]: Missing
+                        - generic [ref=f237e597]:
+                          - generic [ref=f237e598]: Upload
+                          - generic [ref=f237e602]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1027]
+                            - generic [ref=f237e604]:
+                              - generic [ref=f237e605]: Upload Files
+                              - generic [ref=f237e610]: Or drop files
+                          - status
+                      - generic [ref=f237e611]:
+                        - generic [ref=f237e613]:
+                          - text: Service Contract Agreement
+                          - generic [ref=f237e614]: Missing
+                        - generic [ref=f237e619]:
+                          - generic [ref=f237e620]: Upload
+                          - generic [ref=f237e624]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1028]
+                            - generic [ref=f237e626]:
+                              - generic [ref=f237e627]: Upload Files
+                              - generic [ref=f237e632]: Or drop files
+                          - status
+                      - generic [ref=f237e633]:
+                        - generic [ref=f237e635]:
+                          - text: Traffic Form
+                          - generic [ref=f237e636]: Missing
+                        - generic [ref=f237e641]:
+                          - generic [ref=f237e642]: Upload
+                          - generic [ref=f237e646]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1029]
+                            - generic [ref=f237e648]:
+                              - generic [ref=f237e649]: Upload Files
+                              - generic [ref=f237e654]: Or drop files
+                          - status
+                      - generic [ref=f237e655]:
+                        - generic [ref=f237e657]:
+                          - text: Vehicle Repair Disclaimer
+                          - generic [ref=f237e658]: Missing
+                        - generic [ref=f237e663]:
+                          - generic [ref=f237e664]: Upload
+                          - generic [ref=f237e668]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1030]
+                            - generic [ref=f237e670]:
+                              - generic [ref=f237e671]: Upload Files
+                              - generic [ref=f237e676]: Or drop files
+                          - status
+                      - generic [ref=f237e677]:
+                        - generic [ref=f237e679]:
+                          - text: Vehicle Sale Agreement
+                          - generic [ref=f237e680]: Missing
+                        - generic [ref=f237e685]:
+                          - generic [ref=f237e686]: Upload
+                          - generic [ref=f237e690]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1031]
+                            - generic [ref=f237e692]:
+                              - generic [ref=f237e693]: Upload Files
+                              - generic [ref=f237e698]: Or drop files
+                          - status
+                      - generic [ref=f237e699]:
+                        - generic [ref=f237e701]:
+                          - text: Warranty Agreement
+                          - generic [ref=f237e702]: Missing
+                        - generic [ref=f237e707]:
+                          - generic [ref=f237e708]: Upload
+                          - generic [ref=f237e712]:
+                            - button "Upload Upload Files Or drop files" [ref=f237e1032]
+                            - generic [ref=f237e714]:
+                              - generic [ref=f237e715]: Upload Files
+                              - generic [ref=f237e720]: Or drop files
+                          - status
+            - generic [ref=f237e728]:
+              - heading "Tabs" [level=2] [ref=f237e1033]
+              - tablist "Tabs" [ref=f237e1034]:
+                - tab "Activity" [selected] [ref=f237e1035] [cursor=pointer]
+              - tabpanel "Activity" [ref=f237e1036]:
+                - generic [ref=f237e741]:
+                  - heading "Activity Publisher" [level=2] [ref=f237e1037]
+                  - generic [ref=f237e743]:
+                    - group [ref=f237e744]:
+                      - generic [ref=f237e746]:
+                        - button "Log a Call" [ref=f237e1038] [cursor=pointer]
+                        - generic [ref=f237e755]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f237e756]:
+                      - generic [ref=f237e758]:
+                        - button "New Task" [ref=f237e1039] [cursor=pointer]
+                        - generic [ref=f237e767]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f237e1040]
+                  - generic [ref=f237e770]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f237e1041] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f237e773]:
+                      - generic [ref=f237e774]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f237e1042] [cursor=pointer]
+                    - generic [ref=f237e784]:
+                      - button "Refresh" [ref=f237e1043] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f237e1044] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f237e1045] [cursor=pointer]
+                    - generic [ref=f237e789]:
+                      - heading [level=3] [ref=f237e1046]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f237e1047] [cursor=pointer]
+                      - generic [ref=f237e796]:
+                        - generic:
+                          - list
+                        - generic [ref=f237e797]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - generic:
+                      - alert:
+                        - generic:
+                          - status:
+                            - generic [ref=f237e1048]: Loading...
+                    - link "Skip to the top of the activity timeline" [ref=f237e1051] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

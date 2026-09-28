@@ -1,0 +1,238 @@
+- generic:
+  - generic [ref=f172e2]:
+    - generic [ref=f172e3]:
+      - link "Skip to Navigation" [ref=f172e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f172e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f172e25]:
+        - generic [ref=f172e26]: "Sandbox: QA |"
+        - link "Log out" [ref=f172e27] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f172e6]:
+        - button "Search" [ref=f172e32]: Search...
+        - navigation "Global Header" [ref=f172e7]:
+          - list [ref=f172e37]:
+            - listitem [ref=f172e38]:
+              - group [ref=f172e39]:
+                - button "Add favorite" [ref=f172e41] [cursor=pointer]:
+                  - generic [ref=f172e42]:
+                    - tooltip "Add favorite"
+                - button [ref=f172e50] [cursor=pointer]:
+                  - generic [ref=f172e51]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f172e58]:
+              - button [ref=f172e64] [cursor=pointer]:
+                - generic [ref=f172e65]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f172e72]:
+              - button [ref=f172e74] [cursor=pointer]:
+                - generic [ref=f172e75]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f172e82]:
+              - button [ref=f172e85] [cursor=pointer]:
+                - generic [ref=f172e86]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f172e93]:
+              - button [ref=f172e99] [cursor=pointer]:
+                - generic [ref=f172e100]:
+                  - tooltip "Setup"
+            - listitem [ref=f172e107]:
+              - button "6 Notifications" [ref=f172e110] [cursor=pointer]:
+                - generic [ref=f172e111]:
+                  - generic [ref=f172e112]: "6"
+                  - tooltip "Notifications"
+              - generic [ref=f172e121]: 6 new notifications
+            - listitem [ref=f172e122]:
+              - button "View profile" [ref=f172e125] [cursor=pointer]:
+                - generic [ref=f172e126]:
+                  - tooltip "View profile"
+    - generic [ref=f172e15]:
+      - generic [ref=f172e132]:
+        - generic [ref=f172e134]:
+          - navigation "App" [ref=f172e135]:
+            - button "App Launcher" [ref=f172e137] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f172e149]
+        - navigation "Global" [ref=f172e153]:
+          - list [ref=f172e154]:
+            - listitem [ref=f172e155]:
+              - link "Home" [ref=f172e156] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f172e158]:
+              - link "Analytics" [ref=f172e159] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f172e161]:
+              - link "Opportunities" [ref=f172e162] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f172e167] [cursor=pointer]
+            - listitem [ref=f172e175]:
+              - link "Quotes" [ref=f172e176] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f172e181] [cursor=pointer]
+            - listitem [ref=f172e189]:
+              - link "Leads" [ref=f172e190] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f172e195] [cursor=pointer]
+            - listitem [ref=f172e203]:
+              - link "Tasks" [ref=f172e204] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f172e209] [cursor=pointer]
+            - listitem [ref=f172e217]:
+              - button "Show more navigation items" [ref=f172e219] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f172e220]: More
+            - listitem [ref=f172e228]:
+              - button "Edit nav items" [ref=f172e230] [cursor=pointer]
+      - main [ref=f172e17]:
+        - generic [ref=f172e247]:
+          - generic [ref=f172e257]:
+            - generic [ref=f172e263]:
+              - generic [ref=f172e264]: Trade In
+              - heading "APL-000000037" [level=1] [ref=f172e266]
+            - generic [ref=f172e271]:
+              - generic "Edit" [ref=f172e272]:
+                - button "Edit" [ref=f172e277] [cursor=pointer]
+              - generic "Delete" [ref=f172e278]:
+                - button "Delete" [ref=f172e283] [cursor=pointer]
+              - generic "Clone" [ref=f172e284]:
+                - button "Clone" [ref=f172e289] [cursor=pointer]
+              - generic [ref=f172e290]:
+                - button "Show more actions" [expanded] [ref=f172e291] [cursor=pointer]
+                - menu "Show more actions" [ref=f172e669]:
+                  - generic "Submit for Evaluation" [ref=f172e671]:
+                    - menuitem "Submit for Evaluation" [active] [ref=f172e676] [cursor=pointer]
+          - generic [ref=f172e298]:
+            - generic [ref=f172e306]:
+              - heading "Tabs" [level=2] [ref=f172e307]
+              - tablist "Tabs" [ref=f172e309]:
+                - tab "Related" [ref=f172e310] [cursor=pointer]
+                - tab "Details" [selected] [ref=f172e311] [cursor=pointer]
+              - tabpanel "Details" [ref=f172e314]:
+                - generic [ref=f172e327]:
+                  - generic [ref=f172e329]:
+                    - heading [level=3] [ref=f172e330]:
+                      - button "Basic Information" [expanded] [ref=f172e331] [cursor=pointer]
+                    - list [ref=f172e341]:
+                      - generic [ref=f172e342]:
+                        - generic [ref=f172e344]:
+                          - listitem [ref=f172e346]:
+                            - generic [ref=f172e347]:
+                              - generic [ref=f172e348]: Name
+                              - generic [ref=f172e349]: APL-000000037
+                          - listitem [ref=f172e353]:
+                            - generic [ref=f172e354]:
+                              - generic [ref=f172e355]: Reference Record
+                              - generic "Help Reference Record" [ref=f172e356]:
+                                - button "Help Reference Record" [ref=f172e359] [cursor=pointer]
+                              - generic [ref=f172e365]:
+                                - generic [ref=f172e371]:
+                                  - link "Test Demo 2 - Rolls-Royce" [ref=f172e372] [cursor=pointer]:
+                                    - /url: /lightning/r/Name/006FV00ABujcvkyYMA/view
+                                  - button "Preview" [ref=f172e378] [cursor=pointer]
+                                - button "Edit Reference Record" [ref=f172e384] [cursor=pointer]
+                        - generic [ref=f172e388]:
+                          - listitem [ref=f172e390]:
+                            - generic [ref=f172e391]:
+                              - generic [ref=f172e392]: Purpose Type
+                              - generic [ref=f172e393]:
+                                - generic [ref=f172e394]: Trade-In
+                                - button "Edit Purpose Type" [ref=f172e396] [cursor=pointer]
+                          - listitem [ref=f172e400]:
+                            - generic [ref=f172e401]:
+                              - generic [ref=f172e402]: Owner Name
+                              - generic [ref=f172e407]:
+                                - generic [ref=f172e414]:
+                                  - link "Sales Manager" [ref=f172e415] [cursor=pointer]:
+                                    - /url: /lightning/r/Name/005a3001tN3B1SeAQK/view
+                                  - button "Preview" [ref=f172e421] [cursor=pointer]
+                                - button "Change Owner" [ref=f172e428] [cursor=pointer]
+                  - generic [ref=f172e435]:
+                    - heading [level=3] [ref=f172e436]:
+                      - button "Additional Information" [expanded] [ref=f172e437] [cursor=pointer]
+                    - list [ref=f172e447]:
+                      - listitem [ref=f172e452]:
+                        - generic [ref=f172e453]:
+                          - generic [ref=f172e454]: Usage Type
+                          - generic [ref=f172e455]:
+                            - generic [ref=f172e456]: Automotive
+                            - button "Edit Usage Type" [ref=f172e458] [cursor=pointer]
+                  - generic [ref=f172e463]:
+                    - heading [level=3] [ref=f172e464]:
+                      - button "System Information" [expanded] [ref=f172e465] [cursor=pointer]
+                    - list [ref=f172e475]:
+                      - generic [ref=f172e478]:
+                        - listitem [ref=f172e480]:
+                          - generic [ref=f172e481]:
+                            - generic [ref=f172e482]: Created By
+                            - generic [ref=f172e486]:
+                              - generic [ref=f172e492]:
+                                - link "Arcsen Alfardan" [ref=f172e493] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f172e499] [cursor=pointer]
+                              - text: ", ٧/٩/٢٠٢٦, ٢:٣٧ AM"
+                        - listitem [ref=f172e506]:
+                          - generic [ref=f172e507]:
+                            - generic [ref=f172e508]: Last Modified By
+                            - generic [ref=f172e512]:
+                              - generic [ref=f172e518]:
+                                - link "Arcsen Alfardan" [ref=f172e519] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f172e525] [cursor=pointer]
+                              - text: ", ٧/٩/٢٠٢٦, ٢:٣٧ AM"
+            - generic [ref=f172e532]:
+              - generic [ref=f172e533]: "Error: Failed to get generated module for forceGenerated:flexCard_AppraisalManagementCreateItemAndRelatedRecordsCard___salesforce___1___false: ui.services.exceptions.NoAccessException: You don't have access to this record. Ask your administrator for help or to request access."
+              - generic [ref=f172e541]:
+                - generic [ref=f172e542]: Trade-In 360° Photos
+                - paragraph [ref=f172e550]: Couldn't load media for this trade-in.
+              - generic [ref=f172e556]:
+                - heading "Tabs" [level=2] [ref=f172e557]
+                - tablist "Tabs" [ref=f172e559]:
+                  - tab "Activity" [selected] [ref=f172e560] [cursor=pointer]
+                - tabpanel "Activity" [ref=f172e563]:
+                  - generic [ref=f172e569]:
+                    - heading "Activity Publisher" [level=2] [ref=f172e570]
+                    - heading "Activity Timeline" [level=2] [ref=f172e571]
+                    - generic [ref=f172e573]:
+                      - link "Skip to the bottom of the activity timeline" [ref=f172e574] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                      - generic [ref=f172e576]:
+                        - generic [ref=f172e577]: "Filters: All time • All activities • All types"
+                        - button "Timeline Settings" [ref=f172e579] [cursor=pointer]
+                      - generic [ref=f172e587]:
+                        - button "Refresh" [ref=f172e588] [cursor=pointer]
+                        - text: •
+                        - button "Expand All. Show details for activities in the timeline." [ref=f172e589] [cursor=pointer]: Expand All
+                        - text: •
+                        - button "View All" [ref=f172e590] [cursor=pointer]
+                      - generic [ref=f172e592]:
+                        - heading [level=3] [ref=f172e593]:
+                          - button "Upcoming & Overdue" [expanded] [ref=f172e594] [cursor=pointer]
+                        - list [ref=f172e601]:
+                          - listitem [ref=f172e602]:
+                            - generic [ref=f172e604]:
+                              - button "Show details for Complete Trade-In Appraisal Follow-Up" [ref=f172e607] [cursor=pointer]:
+                                - generic "Details for Complete Trade-In Appraisal Follow-Up" [ref=f172e608]: Details for
+                              - generic [ref=f172e615]:
+                                - img "Task" [ref=f172e620]
+                                - generic [ref=f172e621]:
+                                  - generic [ref=f172e622]:
+                                    - generic [ref=f172e624]:
+                                      - generic [ref=f172e628]:
+                                        - checkbox "Complete Trade-In Appraisal Follow-Up" [ref=f172e629] [cursor=pointer]
+                                        - generic [ref=f172e631]: Complete Trade-In Appraisal Follow-Up
+                                      - link "Complete Trade-In Appraisal Follow-Up" [ref=f172e635] [cursor=pointer]:
+                                        - /url: /lightning/r/00TFV00EKhOIEYe2MP/view
+                                    - generic [ref=f172e637]:
+                                      - generic [ref=f172e638]: Tomorrow
+                                      - button "Show more actions - Complete Trade-In Appraisal Follow-Up" [ref=f172e641] [cursor=pointer]
+                                  - generic [ref=f172e645]: You have an upcoming task
+                      - status [ref=f172e649]:
+                        - generic [ref=f172e650]: No past activity. Past meetings and tasks marked as done show up here.
+                      - link "Skip to the top of the activity timeline" [ref=f172e651] [cursor=pointer]:
+                        - /url: javascript:void(0);
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f172e656]:
+          - listitem [ref=f172e657]:
+            - button "To Do List" [ref=f172e660] [cursor=pointer]
+  - generic:
+    - status

@@ -1,0 +1,21 @@
+- generic [ref=f110e1]:
+  - generic [ref=f110e2]:
+    - generic [ref=f110e5]:
+      - generic [ref=f110e7]:
+        - img "Salesforce login" [ref=f110e8]
+        - generic [ref=f110e9]: Salesforce login
+      - generic [ref=f110e11]:
+        - generic [ref=f110e12]:
+          - heading "Salesforce login" [level=1] [ref=f110e13]
+          - generic [ref=f110e14]:
+            - text: Username
+            - textbox "Username" [active] [ref=f110e16]
+          - button "Log In to Sandbox" [ref=f110e17] [cursor=pointer]
+          - generic [ref=f110e18]:
+            - checkbox "Remember me" [ref=f110e19]
+            - generic [ref=f110e20]: Remember me
+        - link "Forgot Your Password?" [ref=f110e22] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us
+    - generic [ref=f110e23]: © 2026 Salesforce, Inc. All rights reserved.
+  - generic: Login
+  - iframe [aria-hidden] [ref=f110e24]

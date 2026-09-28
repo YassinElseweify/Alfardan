@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_VIPExpiryRequiredOnApproval</fullName>
+    <active>false</active>
+    <description>LFRDN-691: deactivated, not deleted. Replaced by AF_FL_Reservation_VIPExpiryRequiredOnApproval (before-save Flow, Custom Error) - VRs wrap raw errors when blocked from an Approval action; Flow Custom Error does not.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(AF_ContractType__c, &quot;VIP / Extended&quot;),
+  OR(
+    ISPICKVAL(AF_ApprovalStatus__c, &quot;Approved&quot;),
+    ISPICKVAL(AF_Status__c, &quot;Reserved&quot;)
+  ),
+  ISBLANK(AF_ExpiryDate__c)
+)</errorConditionFormula>
+    <errorDisplayField>AF_ExpiryDate__c</errorDisplayField>
+    <errorMessage>Set Expiry Date to the extended period being granted before approving this VIP / Extended reservation.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_ExtensionRequiresSource</fullName>
+    <active>true</active>
+    <description>ALF-RS-08 FR9: an extension must say what it extends, so the approving manager can see the original reservation and its history.</description>
+    <errorConditionFormula>AND(
+  AF_IsExtension__c,
+  ISBLANK(AF_ExtendedFromReservation__c)
+)</errorConditionFormula>
+    <errorDisplayField>AF_ExtendedFromReservation__c</errorDisplayField>
+    <errorMessage>Mark an extension against the reservation it extends: set &quot;Extended From Reservation&quot;.</errorMessage>
+</ValidationRule>

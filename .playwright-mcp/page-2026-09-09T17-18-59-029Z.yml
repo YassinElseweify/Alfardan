@@ -1,0 +1,15 @@
+- main [ref=f89e3]:
+  - generic [ref=f89e4]:
+    - heading "Create Quotation" [level=2] [ref=f89e9]
+    - group "Quote Type" [ref=f89e22]:
+      - generic [ref=f89e23]:
+        - text: "*"
+        - generic [ref=f89e24]: Quote Type
+      - generic [ref=f89e25]:
+        - generic [ref=f89e26]:
+          - radio "Customer Quotation" [checked] [active] [ref=f89e27]
+          - generic [ref=f89e28] [cursor=pointer]: Customer Quotation
+        - generic [ref=f89e32]:
+          - radio "Bank Quotation" [ref=f89e33]
+          - generic [ref=f89e34] [cursor=pointer]: Bank Quotation
+    - button "Next" [ref=f89e42] [cursor=pointer]

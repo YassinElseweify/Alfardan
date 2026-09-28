@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_PreLostStage__c</fullName>
+    <description>QA fix (Defect #9): captures StageName at the moment a Closed Lost request is submitted (AF_FL_Opp_RequestClosure), so AF_FL_Opp_LostRejected can restore it if the Showroom Manager rejects the request. Never shown to users; internal bookkeeping only.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Internal - captures the stage the Opportunity was in before a Closed Lost request was submitted, so rejection can restore it.</inlineHelpText>
+    <label>Stage Before Lost Request</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

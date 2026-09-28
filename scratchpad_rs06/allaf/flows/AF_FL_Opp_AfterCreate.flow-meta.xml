@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Decide_Duplicate_Found</name>
+        <label>Duplicate Found?</label>
+        <locationX>50</locationX>
+        <locationY>120</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Duplicate_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Duplicate_Opportunities.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Flag_Duplicate</targetReference>
+            </connector>
+            <label>Duplicate Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_Owner_Changed</name>
+        <label>Owner Changed on Service Walk-In?</label>
+        <locationX>302</locationX>
+        <locationY>120</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Changed_ServiceWalkIn</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_OpportunityOrigin__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Service Walk-in</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Reassignment_Notification_Task</targetReference>
+            </connector>
+            <label>Owner Changed on Service Walk-In</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_ShowroomManager_Found</name>
+        <label>Showroom Manager Found?</label>
+        <locationX>50</locationX>
+        <locationY>300</locationY>
+        <defaultConnectorLabel>Not Found</defaultConnectorLabel>
+        <rules>
+            <name>ShowroomManager_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_ShowroomManager_User.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Duplicate_Notification_Task</targetReference>
+            </connector>
+            <label>Showroom Manager Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_Trigger_Context</name>
+        <label>Create or Update?</label>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
+        <defaultConnector>
+            <targetReference>Decide_Owner_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update</defaultConnectorLabel>
+        <rules>
+            <name>Is_Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Duplicate_Opportunities</targetReference>
+            </connector>
+            <label>Is Create</label>
+        </rules>
+    </decisions>
+    <description>(Assumptions #1/#2): on Opportunity create, checks for another open Opportunity (not Closed Won/Lost) on the same Account for the same Brand; if found, flags AF_PossibleDuplicate__c=true (the on-record warning) and notifies the Showroom Manager of that Business Unit via Task. On update, if OwnerId changes on an AF_OpportunityOrigin__c = &quot;Service Walk-in&quot; Opportunity, notifies the new owner via Task — this is the Showroom-Manager-to-Sales-Rep reassignment step from FR5, kept centralized here instead of inside AF_FL_Opp_ServiceWalkIn. Uses $Record__Prior.Id being null to distinguish create from update, since RecordAfterSave triggers on CreateAndUpdate. The duplicate flag is always set regardless of whether a Showroom Manager is found - Decide_ShowroomManager_Found skips the notification Task (rather than crashing with a blank-owner DML error) when no active user holds the resolved Showroom Manager role for that Business Unit.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_ShowroomManagerRoleName</name>
+        <dataType>String</dataType>
+        <expression>CASE(TEXT({!$Record.AF_Showroom__c}),
+    &quot;Alsadd&quot;, &quot;AF_Role_ShowroomManager_Alsadd&quot;,
+    &quot;Lusail Boulevard&quot;, &quot;AF_Role_ShowroomManager_LusailBoulevard&quot;,
+    &quot;Towers&quot;, &quot;AF_Role_ShowroomManager_Towers&quot;,
+    &quot;Jery Al Samur&quot;, &quot;AF_Role_ShowroomManager_JeryAlSamur&quot;,
+    &quot;Pearl (Rolls Royce)&quot;, &quot;AF_Role_ShowroomManager_PearlRollsRoyce&quot;,
+    &quot;Pearl (Motorcycles)&quot;, &quot;AF_Role_ShowroomManager_PearlMotorcycles&quot;,
+    &quot;Lusail&quot;, &quot;AF_Role_ShowroomManager_Lusail&quot;,
+    &quot;Pearl&quot;, &quot;AF_Role_ShowroomManager_Pearl&quot;,
+    &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>AF Opportunity After Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity After Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Duplicate_Notification_Task</name>
+        <label>Create Duplicate Notification Task</label>
+        <locationX>50</locationX>
+        <locationY>336</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_ShowroomManager_User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Possible Duplicate Opportunity Created</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Reassignment_Notification_Task</name>
+        <label>Create Reassignment Notification Task</label>
+        <locationX>302</locationX>
+        <locationY>192</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Opportunity Assigned to You</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Duplicate_Opportunities</name>
+        <label>Get Other Open Opportunities (Same Account/Brand)</label>
+        <locationX>50</locationX>
+        <locationY>48</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decide_Duplicate_Found</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND 5</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_Brand__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Brand__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_ShowroomManager_Role</name>
+        <label>Get Showroom Manager Role</label>
+        <locationX>50</locationX>
+        <locationY>192</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_ShowroomManager_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_ShowroomManagerRoleName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>UserRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_ShowroomManager_User</name>
+        <label>Get Showroom Manager User</label>
+        <locationX>50</locationX>
+        <locationY>264</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decide_ShowroomManager_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>UserRoleId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_ShowroomManager_Role.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Flag_Duplicate</name>
+        <label>Flag Possible Duplicate</label>
+        <locationX>50</locationX>
+        <locationY>156</locationY>
+        <connector>
+            <targetReference>Get_ShowroomManager_Role</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AF_PossibleDuplicate__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decide_Trigger_Context</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>20</triggerOrder>
+</Flow>

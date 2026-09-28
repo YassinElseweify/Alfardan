@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_SourceOfBusiness__c</fullName>
+    <description>Must also map to Keyloop&apos;s equivalent field — mapping TBP.</description>
+    <label>Source of Business</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Showroom Walk-in</fullName>
+                <default>false</default>
+                <label>Showroom Walk-in</label>
+            </value>
+            <value>
+                <fullName>Digital Campaign</fullName>
+                <default>false</default>
+                <label>Digital Campaign</label>
+            </value>
+            <value>
+                <fullName>Referral — Customer</fullName>
+                <default>false</default>
+                <label>Referral — Customer</label>
+            </value>
+            <value>
+                <fullName>Referral — Employee</fullName>
+                <default>false</default>
+                <label>Referral — Employee</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>Repeat Customer</fullName>
+                <default>false</default>
+                <label>Repeat Customer</label>
+            </value>
+            <value>
+                <fullName>Fleet / Corporate</fullName>
+                <default>false</default>
+                <label>Fleet / Corporate</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

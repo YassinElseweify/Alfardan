@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Lead_ConversionGate</fullName>
+    <active>true</active>
+    <description>ALF-LM-05 / ALF-LM-08. Extended 2026-08-14 to also block converting a Lead that was Disqualified immediately before this save (checked via PRIORVALUE, since Convert overwrites Status in the same DML).</description>
+    <errorConditionFormula>AND(
+    IsConverted,
+    OR(
+        ISBLANK(TEXT(AF_QualificationOutcome__c)),
+        ISPICKVAL(PRIORVALUE(Status), &quot;Disqualified&quot;)
+    )
+)</errorConditionFormula>
+    <errorMessage>A Lead cannot be converted without a recorded Qualification Outcome, and a Disqualified Lead must be reactivated and re-qualified before it can be converted.</errorMessage>
+</ValidationRule>

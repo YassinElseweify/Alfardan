@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_Handover__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Handover</label>
+    <referenceTo>AF_Handover__c</referenceTo>
+    <relationshipLabel>Opportunities (Handover)</relationshipLabel>
+    <relationshipName>AF_PrimaryOpportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_ProofReference__c</fullName>
+    <description>Rep-attached receipt file reference; required for Closed Won gate. Actual file lives via ContentDocumentLink.</description>
+    <externalId>false</externalId>
+    <label>Proof of Payment / Receipt Reference</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

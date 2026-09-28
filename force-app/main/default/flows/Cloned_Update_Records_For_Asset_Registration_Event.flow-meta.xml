@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Calls an Apex-based action that gets the values for an asset’s unique identifier based on a Context Definition ID.</description>
+        <name>GetAssetUniqueIdentifierFromContextDefinition</name>
+        <label>Get Asset Unique Identifier From Context Definition</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <actionName>QueryTagsApex</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>GetAsset</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>context_id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>tagName</name>
+            <value>
+                <elementReference>UniqueIdentifier</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>QueryTagsApex</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls the Persist Context Data action with a specific context ID that was passed into the flow.</description>
+        <name>persist_context</name>
+        <label>Persist Data for a Context Definition</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <actionName>persistContextData</actionName>
+        <actionType>persistContextData</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>context_id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>persistContextData</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>A cloned and activated version of the OOB &apos;Update Records for Asset Registration actionable event orchestration&apos; template is used for record updates, including upgrading warranties, modifying support entitlements, and updating milestone statuses.</description>
+        <name>Update_Records_for_Asset_Registration_Event_EventOrchestration</name>
+        <label>Update Records for Asset Registration Event-EventOrchestration</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <actionName>AssetRegistrationUpdateTemplate</actionName>
+        <actionType>runExpressionSet</actionType>
+        <connector>
+            <targetReference>persist_context</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>AssetRegistrationUpdateRecordDetails__stdctxId</name>
+            <value>
+                <elementReference>context_id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>AssetRegistrationUpdateTemplate</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <constants>
+        <description>Stores the value for the asset’s unique identifier context mapping tag based on the selected context definition ID.</description>
+        <name>UniqueIdentifier</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>UniqueIdentifier</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Determines whether Asset records were found by checking if the GetAssetUniqueIdentifierFromContextDefinition variable is true.</description>
+        <name>DoesAssetExistWithUniqueIdentifier</name>
+        <label>Does An Asset Exist with A Unique Identifier?</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>AssetExistsWithUniqueIdentifier</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetAsset</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_for_Asset_Registration_Event_EventOrchestration</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Cloned - Update Records For Asset Registration Event {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Cloned - Update Records For Asset Registration Event</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>ActionableEventManagementFlow</processType>
+    <recordLookups>
+        <description>Gets the asset record where either the ID or the Serial Number matches the asset unique identifier that was passed into the flow.</description>
+        <name>GetAsset</name>
+        <label>Get Asset</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>DoesAssetExistWithUniqueIdentifier</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetAssetUniqueIdentifierFromContextDefinition.tagValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SerialNumber</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetAssetUniqueIdentifierFromContextDefinition.tagValue</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Asset</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <sourceTemplate>ind_event_orch__UpdateRecAsstRgstrEvnt</sourceTemplate>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetAssetUniqueIdentifierFromContextDefinition</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>context_id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,289 @@
+- generic:
+  - generic [ref=f147e2]:
+    - generic [ref=f147e3]:
+      - link "Skip to Navigation" [ref=f147e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f147e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f147e27]:
+        - generic [ref=f147e28]: "Sandbox: QA |"
+        - link "Log out" [ref=f147e29] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f147e6]:
+        - button "Search" [ref=f147e34]: Search...
+        - navigation "Global Header" [ref=f147e9]:
+          - list [ref=f147e40]:
+            - listitem [ref=f147e41]:
+              - group [ref=f147e42]:
+                - button "Add favorite" [ref=f147e44] [cursor=pointer]:
+                  - generic [ref=f147e45]:
+                    - tooltip "Add favorite"
+                - button [ref=f147e53] [cursor=pointer]:
+                  - generic [ref=f147e54]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f147e61]:
+              - button [ref=f147e67] [cursor=pointer]:
+                - generic [ref=f147e68]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f147e75]:
+              - button [ref=f147e77] [cursor=pointer]:
+                - generic [ref=f147e78]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f147e85]:
+              - button [ref=f147e88] [cursor=pointer]:
+                - generic [ref=f147e89]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f147e96]:
+              - button "9 Notifications" [ref=f147e99] [cursor=pointer]:
+                - generic [ref=f147e100]:
+                  - generic [ref=f147e101]: "9"
+                  - tooltip "Notifications"
+              - generic [ref=f147e110]: 9 new notifications
+            - listitem [ref=f147e111]:
+              - button "View profile" [ref=f147e114] [cursor=pointer]:
+                - generic [ref=f147e115]:
+                  - tooltip "View profile"
+    - generic [ref=f147e15]:
+      - generic [ref=f147e121]:
+        - generic [ref=f147e123]:
+          - navigation "App" [ref=f147e124]:
+            - button "App Launcher" [ref=f147e126] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f147e138]
+        - navigation "Global" [ref=f147e142]:
+          - list [ref=f147e143]:
+            - listitem [ref=f147e144]:
+              - link "Home" [ref=f147e145] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f147e147]:
+              - link "Vehicles" [ref=f147e148] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f147e153] [cursor=pointer]
+            - listitem [ref=f147e161]:
+              - link "Assets" [ref=f147e162] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f147e167] [cursor=pointer]
+            - listitem [ref=f147e175]:
+              - link "Vehicle Definitions" [ref=f147e176] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f147e181] [cursor=pointer]
+            - listitem [ref=f147e189]:
+              - link "Products" [ref=f147e190] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f147e195] [cursor=pointer]
+            - listitem [ref=f147e203]:
+              - link "Accounts" [ref=f147e204] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f147e209] [cursor=pointer]
+            - listitem [ref=f147e217]:
+              - link "Contacts" [ref=f147e218] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f147e223] [cursor=pointer]
+            - listitem [ref=f147e231] [cursor=pointer]:
+              - link "* DEMO RS11 22 - Confirmation test after fixes | Quote" [ref=f147e232]:
+                - /url: /lightning/r/Quote/0Q0FV004Uc2rInk0IE/view
+                - generic "Not added to nav bar" [ref=f147e233]: "*"
+                - generic [ref=f147e234]: DEMO RS11 22 - Confirmation test after fixes | Quote
+              - button "DEMO RS11 22 - Confirmation test after fixes | Quote List" [ref=f147e238]
+              - button "Close tab" [ref=f147e246]
+            - listitem [ref=f147e254]:
+              - button "* Show more navigation items" [ref=f147e256] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f147e257]: "*"
+                - generic [aria-hidden] [ref=f147e258]: More
+                - generic [ref=f147e265]: Show more navigation items
+            - listitem [ref=f147e266]:
+              - button "Edit nav items" [ref=f147e268] [cursor=pointer]
+      - main [ref=f147e17]:
+        - generic [ref=f147e285]:
+          - generic [ref=f147e294]:
+            - generic [ref=f147e295]:
+              - generic [ref=f147e301]:
+                - generic [ref=f147e302]: Quote
+                - heading "DEMO RS11 22 - Confirmation test after fixes" [level=1] [ref=f147e304]
+              - generic [ref=f147e310]:
+                - generic "Edit" [ref=f147e311]:
+                  - button "Edit" [ref=f147e316] [cursor=pointer]
+                - generic "Create Reservation" [ref=f147e317]:
+                  - button "Create Reservation" [ref=f147e322] [cursor=pointer]
+                - generic "Change Owner" [ref=f147e323]:
+                  - button "Change Owner" [ref=f147e328] [cursor=pointer]
+                - generic [ref=f147e329]:
+                  - button "Show more actions" [expanded] [ref=f147e330] [cursor=pointer]
+                  - menu "Show more actions" [ref=f147e844]:
+                    - generic [ref=f147e845]:
+                      - generic "Create PDF" [ref=f147e846]:
+                        - menuitem "Create PDF" [active] [ref=f147e851] [cursor=pointer]
+                      - generic "Start Sync" [ref=f147e853]:
+                        - menuitem "Start Sync" [ref=f147e858] [cursor=pointer]
+            - generic [ref=f147e336]:
+              - generic [ref=f147e338]:
+                - paragraph [ref=f147e339]: Quote Number
+                - paragraph [ref=f147e340]:
+                  - generic [ref=f147e341]: "00000186"
+              - generic [ref=f147e343]:
+                - paragraph [ref=f147e344]: Expiration Date
+                - paragraph
+              - generic [ref=f147e346]:
+                - paragraph [ref=f147e347]: Syncing
+                - paragraph [ref=f147e348]:
+                  - generic [ref=f147e352]:
+                    - generic "False" [ref=f147e353]
+                    - generic [ref=f147e360]: Syncing
+              - generic [ref=f147e362]:
+                - paragraph [ref=f147e363]: Opportunity Name
+                - paragraph [ref=f147e364]:
+                  - generic [ref=f147e369]:
+                    - link "DEMO RS11 22 - Confirmation test after fixes" [ref=f147e370] [cursor=pointer]:
+                      - /url: /lightning/r/Opportunity/006FV00BiG6RDvQYUW/view
+                    - button "Preview" [ref=f147e376] [cursor=pointer]
+              - generic [ref=f147e383]:
+                - paragraph [ref=f147e384]: Account Name
+                - paragraph [ref=f147e385]:
+                  - generic [ref=f147e390]:
+                    - link "DEMO RS10 Customer - Khalid Al-Mannai" [ref=f147e391] [cursor=pointer]:
+                      - /url: /lightning/r/Account/001FV00L3Cqvq5UYUQ/view
+                    - button "Preview" [ref=f147e397] [cursor=pointer]
+              - generic [ref=f147e404]:
+                - paragraph [ref=f147e405]: Grand Total
+                - paragraph [ref=f147e406]:
+                  - generic [ref=f147e407]: AED 675,000.00
+          - article [ref=f147e416]:
+            - generic [ref=f147e417]:
+              - heading "Path" [level=2] [ref=f147e418]
+              - generic [ref=f147e421]:
+                - listbox "Path Options" [ref=f147e426]:
+                  - option "Draft" [ref=f147e427] [cursor=pointer]:
+                    - generic [ref=f147e428]: stage complete
+                  - option "Needs Review" [ref=f147e437] [cursor=pointer]:
+                    - generic [ref=f147e438]: stage complete
+                  - option "In Review" [ref=f147e447] [cursor=pointer]:
+                    - generic [ref=f147e448]: stage complete
+                  - option "Approved" [ref=f147e457] [cursor=pointer]:
+                    - generic [ref=f147e458]: stage complete
+                  - option "Rejected" [ref=f147e467] [cursor=pointer]:
+                    - generic [ref=f147e468]: stage complete
+                  - option "Presented" [ref=f147e477] [cursor=pointer]:
+                    - generic [ref=f147e478]: stage complete
+                  - option "Accepted" [selected] [ref=f147e487] [cursor=pointer]
+                  - option "Denied" [ref=f147e489] [cursor=pointer]
+                - button "Mark Status as Complete" [ref=f147e493] [cursor=pointer]
+          - generic [ref=f147e501]:
+            - generic [ref=f147e509]:
+              - heading "Tabs" [level=2] [ref=f147e510]
+              - tablist "Tabs" [ref=f147e512]:
+                - tab "Related" [selected] [ref=f147e513] [cursor=pointer]
+                - tab "Details" [ref=f147e514] [cursor=pointer]
+              - tabpanel "Related" [ref=f147e517]:
+                - generic [ref=f147e522]:
+                  - article "Approval History" [ref=f147e530]:
+                    - heading [level=2] [ref=f147e537]:
+                      - link "Approval History (0)" [ref=f147e538] [cursor=pointer]:
+                        - /url: /lightning/r/Quote/0Q0FV004Uc2rInk0IE/related/ProcessSteps/view
+                        - generic "Approval History" [ref=f147e539]
+                        - generic "(0)" [ref=f147e540]
+                  - article "Quote Line Items" [ref=f147e546]:
+                    - generic [ref=f147e547]:
+                      - generic [ref=f147e548]:
+                        - heading [level=2] [ref=f147e559]:
+                          - link "Quote Line Items (2)" [ref=f147e560] [cursor=pointer]:
+                            - /url: /lightning/r/Quote/0Q0FV004Uc2rInk0IE/related/QuoteLineItems/view
+                            - generic "Quote Line Items" [ref=f147e561]
+                            - generic "(2)" [ref=f147e562]
+                        - generic [ref=f147e569]:
+                          - generic: Navigation Mode
+                          - grid "Quote Line Items" [ref=f147e574]:
+                            - rowgroup:
+                              - row "Product Sales Price Quantity Subtotal Action":
+                                - columnheader "Product":
+                                  - generic "Product" [ref=f147e578]
+                                - columnheader "Sales Price":
+                                  - generic "Sales Price" [ref=f147e582]
+                                - columnheader "Quantity":
+                                  - generic "Quantity" [ref=f147e586]
+                                - columnheader "Subtotal":
+                                  - generic "Subtotal" [ref=f147e590]
+                                - columnheader "Action":
+                                  - generic [ref=f147e593]:
+                                    - generic "Action"
+                            - rowgroup [ref=f147e594]:
+                              - row [ref=f147e595]:
+                                - rowheader [ref=f147e596]:
+                                  - generic [ref=f147e605]:
+                                    - link "Ferrari SF90 Stradale" [ref=f147e606] [cursor=pointer]:
+                                      - /url: /lightning/r/0QLFV000QZGi9BA4YZ/view
+                                    - button "Preview" [ref=f147e612] [cursor=pointer]
+                                - gridcell "AED 625,000.00" [ref=f147e618]
+                                - gridcell "1.00" [ref=f147e624]
+                                - gridcell "AED 625,000.00" [ref=f147e629]
+                                - gridcell [ref=f147e635]:
+                                  - button "Show Actions" [ref=f147e642] [cursor=pointer]
+                              - row [ref=f147e648]:
+                                - rowheader [ref=f147e649]:
+                                  - generic [ref=f147e658]:
+                                    - link "Assetto Fiorano Package" [ref=f147e659] [cursor=pointer]:
+                                      - /url: /lightning/r/0QLFV000QZGmLKC4Y3/view
+                                    - button "Preview" [ref=f147e665] [cursor=pointer]
+                                - gridcell "AED 50,000.00" [ref=f147e671]
+                                - gridcell "1.00" [ref=f147e677]
+                                - gridcell "AED 50,000.00" [ref=f147e682]
+                                - gridcell [ref=f147e688]:
+                                  - button "Show Actions" [ref=f147e695] [cursor=pointer]
+                      - link "View All Quote Line Items" [ref=f147e701] [cursor=pointer]:
+                        - /url: /lightning/r/Quote/0Q0FV004Uc2rInk0IE/related/QuoteLineItems/view
+                        - generic [ref=f147e702]:
+                          - text: View All
+                          - generic [ref=f147e703]: Quote Line Items
+                  - article [ref=f147e709]:
+                    - heading "Vehicle Reservations" [level=2] [ref=f147e713]
+                  - article [ref=f147e720]:
+                    - heading "Invoices" [level=2] [ref=f147e724]
+                  - article [ref=f147e731]:
+                    - heading "Payments" [level=2] [ref=f147e735]
+                  - article [ref=f147e742]:
+                    - heading "Quote PDFs" [level=2] [ref=f147e746]
+                  - article [ref=f147e753]:
+                    - heading "Notes & Attachments" [level=2] [ref=f147e757]
+            - generic [ref=f147e766]:
+              - heading "Tabs" [level=2] [ref=f147e767]
+              - tablist "Tabs" [ref=f147e769]:
+                - tab "Activity" [selected] [ref=f147e770] [cursor=pointer]
+              - tabpanel "Activity" [ref=f147e773]:
+                - generic [ref=f147e779]:
+                  - heading "Activity Publisher" [level=2] [ref=f147e780]
+                  - generic [ref=f147e781]:
+                    - group [ref=f147e782]:
+                      - generic [ref=f147e784]:
+                        - button "Log a Call" [ref=f147e785] [cursor=pointer]
+                        - generic [ref=f147e793]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f147e794]:
+                      - generic [ref=f147e796]:
+                        - button "New Task" [ref=f147e797] [cursor=pointer]
+                        - generic [ref=f147e805]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f147e806]
+                  - generic [ref=f147e808]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f147e809] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f147e811]:
+                      - generic [ref=f147e812]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f147e814] [cursor=pointer]
+                    - generic [ref=f147e822]:
+                      - button "Refresh" [ref=f147e823] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f147e824] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f147e825] [cursor=pointer]
+                    - generic [ref=f147e827]:
+                      - heading [level=3] [ref=f147e828]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f147e829] [cursor=pointer]
+                      - generic [ref=f147e834]:
+                        - generic:
+                          - list
+                        - generic [ref=f147e835]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f147e838]:
+                      - generic [ref=f147e839]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f147e840] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

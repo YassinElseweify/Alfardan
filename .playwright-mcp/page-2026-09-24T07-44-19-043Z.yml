@@ -1,0 +1,258 @@
+- generic:
+  - generic [ref=f52e2]:
+    - generic [ref=f52e3]:
+      - link "Skip to Navigation" [ref=f52e1420] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f52e1421] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f52e196]:
+        - generic [ref=f52e197]: "Sandbox: QA |"
+        - link "Log out" [ref=f52e1422] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f52e6]:
+        - button "Search" [ref=f52e1423]: Search...
+        - navigation "Global Header" [ref=f52e1424]:
+          - list [ref=f52e200]:
+            - listitem [ref=f52e201]:
+              - group [ref=f52e202]:
+                - button "Add favorite" [ref=f52e1425] [cursor=pointer]:
+                  - generic [ref=f52e205]:
+                    - tooltip "Add favorite"
+                - button [ref=f52e1426] [cursor=pointer]:
+                  - generic [ref=f52e214]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f52e221]:
+              - button [ref=f52e1427] [cursor=pointer]:
+                - generic [ref=f52e228]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f52e235]:
+              - button [ref=f52e1428] [cursor=pointer]:
+                - generic [ref=f52e238]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f52e245]:
+              - button [ref=f52e1429] [cursor=pointer]:
+                - generic [ref=f52e249]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f52e256]:
+              - button "2 Notifications" [ref=f52e1430] [cursor=pointer]:
+                - generic [ref=f52e260]:
+                  - generic [ref=f52e261]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f52e270]: 2 new notifications
+            - listitem [ref=f52e271]:
+              - button "View profile" [ref=f52e1431] [cursor=pointer]:
+                - generic [ref=f52e275]:
+                  - tooltip "View profile"
+    - generic [ref=f52e24]:
+      - generic [ref=f52e27]:
+        - generic [ref=f52e29]:
+          - navigation "App" [ref=f52e1432]:
+            - button "App Launcher" [ref=f52e1433] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f52e1434]
+        - navigation "Global" [ref=f52e1436]:
+          - list [ref=f52e49]:
+            - listitem [ref=f52e50]:
+              - link "Home" [ref=f52e1437] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f52e53]:
+              - link "Vehicles" [ref=f52e1438] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f52e1439] [cursor=pointer]
+            - listitem [ref=f52e67]:
+              - link "Assets" [ref=f52e1440] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f52e1441] [cursor=pointer]
+            - listitem [ref=f52e81]:
+              - link "Vehicle Definitions" [ref=f52e1442] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f52e1443] [cursor=pointer]
+            - listitem [ref=f52e95]:
+              - link "Products" [ref=f52e1444] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f52e1445] [cursor=pointer]
+            - listitem [ref=f52e109]:
+              - link "Accounts" [ref=f52e1446] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f52e1447] [cursor=pointer]
+            - listitem [ref=f52e123]:
+              - link "Contacts" [ref=f52e1448] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f52e1449] [cursor=pointer]
+            - listitem [ref=f52e137]:
+              - link "Asset Milestones" [ref=f52e1450] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f52e1451] [cursor=pointer]
+            - listitem [ref=f52e279] [cursor=pointer]:
+              - link "* PAY-00050 | Payment" [ref=f52e1452]:
+                - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/view
+                - generic "Not added to nav bar" [ref=f52e1453]: "*"
+                - generic [ref=f52e282]: PAY-00050 | Payment
+              - button "PAY-00050 | Payment List" [ref=f52e1454]
+              - button "Close tab" [ref=f52e1455]
+            - listitem [ref=f52e165]:
+              - button "* Show more navigation items" [ref=f52e1456] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f52e1457]: "*"
+                - generic [aria-hidden] [ref=f52e169]: More
+                - generic [ref=f52e176]: Show more navigation items
+            - listitem [ref=f52e177]:
+              - button "Edit nav items" [ref=f52e1458] [cursor=pointer]
+      - main [ref=f52e186]:
+        - generic [ref=f52e313]:
+          - generic [ref=f52e323]:
+            - generic [ref=f52e329]:
+              - generic [ref=f52e330]: Payment
+              - heading "PAY-00050" [level=1] [ref=f52e1459]
+            - button "Follow" [ref=f52e1460] [cursor=pointer]
+            - generic "Edit" [ref=f52e1461]:
+              - button "Edit" [ref=f52e1462] [cursor=pointer]
+          - generic [ref=f52e357]:
+            - generic [ref=f52e365]:
+              - heading "Tabs" [level=2] [ref=f52e1463]
+              - tablist "Tabs" [ref=f52e1464]:
+                - tab "Details" [ref=f52e1465] [cursor=pointer]
+                - tab "Related" [selected] [ref=f52e1466] [cursor=pointer]
+              - tabpanel "Related" [ref=f52e1467]:
+                - generic [ref=f52e983]:
+                  - generic [ref=f52e987]:
+                    - article "Approval History" [ref=f52e1468]:
+                      - heading [level=2] [ref=f52e1469]:
+                        - link "Approval History (0)" [ref=f52e1470] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/related/ProcessSteps/view
+                          - generic "Approval History" [ref=f52e1471]
+                          - generic "(0)" [ref=f52e1472]
+                    - article "Payment History" [ref=f52e1473]:
+                      - generic [ref=f52e1012]:
+                        - generic [ref=f52e1013]:
+                          - heading [level=2] [ref=f52e1474]:
+                            - link "Payment History (1)" [ref=f52e1475] [cursor=pointer]:
+                              - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/related/Histories/view
+                              - generic "Payment History" [ref=f52e1476]
+                              - generic "(1)" [ref=f52e1477]
+                          - generic [ref=f52e1034]:
+                            - generic: Navigation Mode
+                            - grid "Payment History" [ref=f52e1478]:
+                              - rowgroup:
+                                - row "Date Field User Original Value New Value":
+                                  - columnheader "Date":
+                                    - generic "Date" [ref=f52e1479]
+                                  - columnheader "Field":
+                                    - generic "Field" [ref=f52e1480]
+                                  - columnheader "User":
+                                    - generic "User" [ref=f52e1481]
+                                  - columnheader "Original Value":
+                                    - generic "Original Value" [ref=f52e1482]
+                                  - columnheader "New Value":
+                                    - generic "New Value" [ref=f52e1483]
+                              - rowgroup [ref=f52e1060]:
+                                - row [ref=f52e1484]:
+                                  - rowheader "24/09/2026, 10:26 AM" [ref=f52e1485]
+                                  - gridcell "Created." [ref=f52e1486]
+                                  - gridcell [ref=f52e1487]:
+                                    - link "QA SalesRep2" [ref=f52e1488] [cursor=pointer]:
+                                      - /url: /lightning/r/005FV0082KfRrqeYQC/view
+                                  - gridcell [ref=f52e1083]
+                                  - gridcell [ref=f52e1084]
+                        - link "View All Payment History" [ref=f52e1489] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/related/Histories/view
+                          - generic [ref=f52e1086]:
+                            - text: View All
+                            - generic [ref=f52e1087]: Payment History
+                    - article "Credit Notes" [ref=f52e1490]:
+                      - heading [level=2] [ref=f52e1491]:
+                        - link "Credit Notes (0)" [ref=f52e1492] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/related/AF_CreditNotes__r/view
+                          - generic "Credit Notes" [ref=f52e1493]
+                          - generic "(0)" [ref=f52e1494]
+                    - article "Vehicle Reservations" [ref=f52e1495]:
+                      - heading [level=2] [ref=f52e1496]:
+                        - link "Vehicle Reservations (0)" [ref=f52e1497] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/related/AF_VehicleReservations__r/view
+                          - generic "Vehicle Reservations" [ref=f52e1498]
+                          - generic "(0)" [ref=f52e1499]
+                    - article "Notes & Attachments" [ref=f52e1500]:
+                      - generic [ref=f52e1204]:
+                        - heading [level=2] [ref=f52e1501]:
+                          - link "Notes & Attachments (1)" [ref=f52e1502] [cursor=pointer]:
+                            - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/related/CombinedAttachments/view
+                            - generic "Notes & Attachments" [ref=f52e1503]
+                            - generic "(1)" [ref=f52e1504]
+                        - list [ref=f52e1216]:
+                          - listitem [ref=f52e1217]:
+                            - button "Upload Files" [ref=f52e1505] [cursor=pointer]
+                      - generic [ref=f52e1225]:
+                        - generic [ref=f52e1226]: Drop Files
+                        - list [ref=f52e1236]:
+                          - listitem [ref=f52e1237]:
+                            - button "Keyloop Payment Advice - KL-PAY-DEMO-C01 24 Sep 2026• 169B •txt" [ref=f52e1507] [cursor=pointer]:
+                              - generic [ref=f52e1244]:
+                                - generic "Keyloop Payment Advice - KL-PAY-DEMO-C01" [ref=f52e1508]
+                                - paragraph [ref=f52e1246]:
+                                  - text: 24 Sep 2026•
+                                  - generic [ref=f52e1247]:
+                                    - generic [ref=f52e1248]: 169B
+                                    - text: •
+                                  - text: txt
+                      - link "View All Notes & Attachments" [ref=f52e1509] [cursor=pointer]:
+                        - /url: /lightning/r/AF_Payment__c/a0UFV005tbUHQ482AH/related/CombinedAttachments/view
+                        - generic [ref=f52e1251]:
+                          - text: View All
+                          - generic [ref=f52e1252]: Notes & Attachments
+                  - article [ref=f52e1158]:
+                    - heading "Required Documents" [level=2] [ref=f52e1510]
+                    - generic [ref=f52e1174]:
+                      - generic [ref=f52e1176]:
+                        - text: Bank LPO
+                        - generic [ref=f52e1177]: Missing
+                      - generic [ref=f52e1182]:
+                        - generic [ref=f52e1183]: Upload
+                        - generic [ref=f52e1187]:
+                          - button "Upload Upload Files Or drop files" [active] [ref=f52e1511]
+                          - generic [ref=f52e1189]:
+                            - generic [ref=f52e1190]: Upload Files
+                            - generic [ref=f52e1195]: Or drop files
+                        - status
+            - generic [ref=f52e905]:
+              - heading "Tabs" [level=2] [ref=f52e1512]
+              - tablist "Tabs" [ref=f52e1513]:
+                - tab "Activity" [selected] [ref=f52e1514] [cursor=pointer]
+              - tabpanel "Activity" [ref=f52e1515]:
+                - generic [ref=f52e918]:
+                  - heading "Activity Publisher" [level=2] [ref=f52e1516]
+                  - generic [ref=f52e920]:
+                    - group [ref=f52e921]:
+                      - generic [ref=f52e923]:
+                        - button "Log a Call" [ref=f52e1517] [cursor=pointer]
+                        - generic [ref=f52e932]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f52e933]:
+                      - generic [ref=f52e935]:
+                        - button "New Task" [ref=f52e1518] [cursor=pointer]
+                        - generic [ref=f52e944]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f52e1519]
+                  - generic [ref=f52e947]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f52e1520] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f52e950]:
+                      - generic [ref=f52e951]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f52e1521] [cursor=pointer]
+                    - generic [ref=f52e961]:
+                      - button "Refresh" [ref=f52e1522] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f52e1523] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f52e1524] [cursor=pointer]
+                    - generic [ref=f52e966]:
+                      - heading [level=3] [ref=f52e1525]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f52e1526] [cursor=pointer]
+                      - generic [ref=f52e973]:
+                        - generic:
+                          - list
+                        - generic [ref=f52e974]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f52e977]:
+                      - generic [ref=f52e978]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f52e1527] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

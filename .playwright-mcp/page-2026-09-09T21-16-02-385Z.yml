@@ -1,0 +1,460 @@
+- generic:
+  - generic:
+    - generic [ref=f171e2]:
+      - generic [ref=f171e3]:
+        - link "Skip to Navigation" [ref=f171e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f171e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f171e25]:
+          - generic [ref=f171e26]: "Sandbox: QA |"
+          - link "Log out" [ref=f171e27] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f171e6]:
+          - button "Search" [ref=f171e32]: Search...
+          - navigation "Global Header" [ref=f171e9]:
+            - list [ref=f171e38]:
+              - listitem [ref=f171e39]:
+                - group [ref=f171e40]:
+                  - button "This item doesn't support favorites" [ref=f171e42] [cursor=pointer]:
+                    - generic [ref=f171e43]:
+                      - tooltip "This item doesn't support favorites"
+                  - button [ref=f171e51] [cursor=pointer]:
+                    - generic [ref=f171e52]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f171e59]:
+                - button [ref=f171e65] [cursor=pointer]:
+                  - generic [ref=f171e66]:
+                    - tooltip "Global Actions"
+              - listitem [ref=f171e73]:
+                - button [ref=f171e75] [cursor=pointer]:
+                  - generic [ref=f171e76]:
+                    - tooltip "Guidance Center"
+              - listitem [ref=f171e83]:
+                - button [ref=f171e86] [cursor=pointer]:
+                  - generic [ref=f171e87]:
+                    - tooltip "Salesforce Help"
+              - listitem [ref=f171e94]:
+                - button [ref=f171e100] [cursor=pointer]:
+                  - generic [ref=f171e101]:
+                    - tooltip "Setup"
+              - listitem [ref=f171e108]:
+                - button [ref=f171e732] [cursor=pointer]:
+                  - generic [ref=f171e112]:
+                    - tooltip "Notifications"
+                - generic [ref=f171e122]: 16 new notifications
+              - listitem [ref=f171e123]:
+                - button "View profile" [ref=f171e126] [cursor=pointer]:
+                  - generic [ref=f171e127]:
+                    - tooltip "View profile"
+      - generic [ref=f171e15]:
+        - generic [ref=f171e133]:
+          - generic [ref=f171e135]:
+            - navigation "App" [ref=f171e136]:
+              - button "App Launcher" [ref=f171e138] [cursor=pointer]
+            - heading "Sales" [level=1] [ref=f171e150]
+          - navigation "Global" [ref=f171e154]:
+            - list [ref=f171e155]:
+              - listitem [ref=f171e156] [cursor=pointer]:
+                - link "Home" [ref=f171e157]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f171e159]:
+                - link "Analytics" [ref=f171e160] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+              - listitem [ref=f171e162]:
+                - link "Opportunities" [ref=f171e163] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                - button "Opportunities List" [ref=f171e168] [cursor=pointer]
+              - listitem [ref=f171e176]:
+                - link "Quotes" [ref=f171e177] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                - button "Quotes List" [ref=f171e182] [cursor=pointer]
+              - listitem [ref=f171e190]:
+                - link "Leads" [ref=f171e191] [cursor=pointer]:
+                  - /url: /lightning/o/Lead/home
+                - button "Leads List" [ref=f171e196] [cursor=pointer]
+              - listitem [ref=f171e204]:
+                - link "Tasks" [ref=f171e205] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                - button "Tasks List" [ref=f171e210] [cursor=pointer]
+              - listitem [ref=f171e218]:
+                - link "Files" [ref=f171e219] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                - button "Files List" [ref=f171e224] [cursor=pointer]
+              - listitem [ref=f171e232]:
+                - link "Accounts" [ref=f171e233] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f171e238] [cursor=pointer]
+              - listitem [ref=f171e246]:
+                - link "Contacts" [ref=f171e247] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f171e252] [cursor=pointer]
+              - listitem [ref=f171e260]:
+                - link "Campaigns" [ref=f171e261] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                - button "Campaigns List" [ref=f171e266] [cursor=pointer]
+              - listitem [ref=f171e274]:
+                - link "Dashboards" [ref=f171e275] [cursor=pointer]:
+                  - /url: /lightning/o/Dashboard/home
+                - button "Dashboards List" [ref=f171e280] [cursor=pointer]
+              - listitem [ref=f171e288]:
+                - link "Reports" [ref=f171e289] [cursor=pointer]:
+                  - /url: /lightning/o/Report/home
+                - button "Reports List" [ref=f171e294] [cursor=pointer]
+              - listitem [ref=f171e302]:
+                - link "Chatter" [ref=f171e303] [cursor=pointer]:
+                  - /url: /lightning/page/chatter
+              - listitem [ref=f171e305]:
+                - link "Groups" [ref=f171e306] [cursor=pointer]:
+                  - /url: /lightning/o/CollaborationGroup/home
+                - button "Groups List" [ref=f171e311] [cursor=pointer]
+              - listitem [ref=f171e319]:
+                - button "Show more navigation items" [ref=f171e321] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f171e322]: More
+              - listitem [ref=f171e330]:
+                - button "Edit nav items" [ref=f171e332] [cursor=pointer]
+        - main [ref=f171e17]:
+          - generic [ref=f171e341]:
+            - heading "Home" [level=1] [ref=f171e342]
+            - article [ref=f171e344]:
+              - heading "Seller HomeGood morning, Sales. Let's get selling!" [level=1] [ref=f171e345]
+            - generic [ref=f171e346]:
+              - article [ref=f171e349]:
+                - heading "Close Deals" [level=2] [ref=f171e353]
+                - generic [ref=f171e354]:
+                  - generic [ref=f171e355]: Opportunities owned by me and closing this quarter
+                  - generic [ref=f171e356]:
+                    - generic [ref=f171e359]:
+                      - generic [ref=f171e360]: Donut chart with accompanying data table, Total Pipeline
+                      - generic [ref=f171e364]:
+                        - generic [ref=f171e365]: ‏٨٧٦ ألف ر.ق.‏
+                        - generic [ref=f171e366]: Total Pipeline
+                    - generic [ref=f171e368]:
+                      - generic [ref=f171e369]: ‏٨٧٦ ألف ر.ق.‏ Open
+                      - generic [ref=f171e375]: ‏٠ ر.ق.‏ Won
+                      - generic [ref=f171e381]: ‏٠ ر.ق.‏ Lost
+                - button "View Opportunities (opens in new tab)" [ref=f171e388] [cursor=pointer]: View Opportunities
+              - article [ref=f171e391]:
+                - heading "Plan My Accounts" [level=2] [ref=f171e395]
+                - generic [ref=f171e396]:
+                  - generic [ref=f171e397]: Accounts owned by me
+                  - generic [ref=f171e398]:
+                    - generic [ref=f171e401]:
+                      - generic [ref=f171e402]: Donut chart with accompanying data table, Accounts
+                      - generic [ref=f171e406]:
+                        - generic [ref=f171e407]: ٠
+                        - generic [ref=f171e408]: Accounts
+                    - generic [ref=f171e410]:
+                      - generic [ref=f171e411]: ٠ Upcoming Activity
+                      - generic [ref=f171e417]: ٠ Past Activity
+                      - generic [ref=f171e423]: ٠ No Activity
+                - button "View Accounts (opens in new tab)" [ref=f171e430] [cursor=pointer]: View Accounts
+              - article [ref=f171e433]:
+                - heading "Grow Relationships" [level=2] [ref=f171e437]
+                - generic [ref=f171e438]:
+                  - generic [ref=f171e439]: Contacts owned by me and created in the last 90 days
+                  - generic [ref=f171e440]:
+                    - generic [ref=f171e443]:
+                      - generic [ref=f171e444]: Donut chart with accompanying data table, Contacts
+                      - generic [ref=f171e448]:
+                        - generic [ref=f171e449]: ٠
+                        - generic [ref=f171e450]: Contacts
+                    - generic [ref=f171e452]:
+                      - generic [ref=f171e453]: ٠ Upcoming Activity
+                      - generic [ref=f171e459]: ٠ Past Activity
+                      - generic [ref=f171e465]: ٠ No Activity
+                - button "View Contacts (opens in new tab)" [ref=f171e472] [cursor=pointer]: View Contacts
+              - article [ref=f171e475]:
+                - heading "Build Pipeline" [level=2] [ref=f171e479]
+                - generic [ref=f171e480]:
+                  - generic [ref=f171e481]: Leads owned by me and created in the last 30 days
+                  - generic [ref=f171e482]:
+                    - generic [ref=f171e485]:
+                      - generic [ref=f171e486]: Donut chart with accompanying data table, Leads
+                      - generic [ref=f171e490]:
+                        - generic [ref=f171e491]: ٠
+                        - generic [ref=f171e492]: Leads
+                    - generic [ref=f171e494]:
+                      - generic [ref=f171e495]: ٠ Upcoming Activity
+                      - generic [ref=f171e501]: ٠ Past Activity
+                      - generic [ref=f171e507]: ٠ No Activity
+                - button "View Leads (opens in new tab)" [ref=f171e514] [cursor=pointer]: View Leads
+              - generic [ref=f171e517]:
+                - article [ref=f171e520]:
+                  - generic [ref=f171e523]:
+                    - heading "My Goals" [level=2] [ref=f171e524]
+                    - button "Edit my goals" [ref=f171e527] [cursor=pointer]
+                  - generic [ref=f171e532]:
+                    - generic [ref=f171e533]: Set personal weekly or monthly goals for emails, calls, and meetings.
+                    - button "Set goals" [ref=f171e535] [cursor=pointer]
+                - article [ref=f171e538]:
+                  - heading "Set Goals" [level=2] [ref=f171e542]
+                  - generic [ref=f171e544]:
+                    - generic [ref=f171e545]:
+                      - generic [ref=f171e546]: Forecast Commit
+                      - generic [ref=f171e547]: If your Salesforce admin has added a quota, you see your progress against that quota compared to your commit, including adjustments.
+                    - generic [ref=f171e548]:
+                      - generic [ref=f171e552]:
+                        - generic [ref=f171e553]: Meetings
+                        - spinbutton "Meetings" [disabled] [ref=f171e555]
+                      - generic [ref=f171e559]:
+                        - generic [ref=f171e560]: Calls
+                        - spinbutton "Calls" [disabled] [ref=f171e562]
+                      - generic [ref=f171e566]:
+                        - generic [ref=f171e567]: Emails
+                        - spinbutton "Emails" [disabled] [ref=f171e569]
+                      - generic [ref=f171e572]:
+                        - generic [ref=f171e573]: Time Frame
+                        - combobox "Time Frame" [disabled] [ref=f171e579]:
+                          - generic [ref=f171e580]: Monthly
+                        - status
+                    - generic [ref=f171e587]:
+                      - generic:
+                        - button "Cancel" [disabled]
+                      - generic:
+                        - button "Save" [disabled]
+              - article [ref=f171e590]:
+                - heading "Today's Events" [level=2] [ref=f171e594]
+                - generic [ref=f171e596]: Looks like you're free and clear the rest of the day.
+                - button "View Calendar" [ref=f171e603] [cursor=pointer]
+              - article [ref=f171e606]:
+                - generic [ref=f171e607]:
+                  - heading "Today’s Tasks" [level=2] [ref=f171e610]
+                  - button "Select a view of your tasks" [ref=f171e614] [cursor=pointer]
+                - list [ref=f171e623]:
+                  - listitem [ref=f171e624]:
+                    - generic [ref=f171e625]:
+                      - generic [ref=f171e629]:
+                        - checkbox "Complete Trade-In Appraisal Follow-Up" [ref=f171e630] [cursor=pointer]
+                        - generic [ref=f171e632]: Complete Trade-In Appraisal Follow-Up
+                      - generic [ref=f171e633]:
+                        - generic [ref=f171e634]: Today
+                        - generic [ref=f171e637]:
+                          - generic [ref=f171e639]:
+                            - generic [ref=f171e640]: Complete Trade-In Appraisal Follow-Up
+                            - link "Complete Trade-In Appraisal Follow-Up" [ref=f171e642] [cursor=pointer]:
+                              - /url: /lightning/r/00TFV00EdeStEHE2E3/view
+                          - list [ref=f171e643]:
+                            - listitem [ref=f171e644]:
+                              - link "APL-000000060" [ref=f171e646] [cursor=pointer]:
+                                - /url: /lightning/r/9ALFV0000ikmCqe4AE/view
+                - button "View All Tasks" [ref=f171e648] [cursor=pointer]: View All
+              - article [ref=f171e651]:
+                - heading "Recent Records" [level=2] [ref=f171e655]
+                - list [ref=f171e658]:
+                  - listitem [ref=f171e659]:
+                    - link "Test Demo 2 - Rolls-Royce" [ref=f171e667] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                  - listitem [ref=f171e668]:
+                    - link "Sales Manager" [ref=f171e676] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                  - listitem [ref=f171e677]:
+                    - link "QA test RS-05 AddProducts NoBrand" [ref=f171e685] [cursor=pointer]:
+                      - /url: /lightning/r/006FV00AcSfrSrsYUE/view
+              - article [ref=f171e688]:
+                - heading "Salesblazer" [level=2] [ref=f171e692]
+                - generic [ref=f171e693]:
+                  - heading [level=3] [ref=f171e694]:
+                    - link "How Salesforce Migrated 30,000+ Sellers to Spiff, a Single Comp Management Tool (Link opens in new window)" [ref=f171e697] [cursor=pointer]:
+                      - /url: /HelpAndTrainingDoor?version=2&resource=https%3A%2F%2Fwww.salesforce.com%2Fblog%2Fsales%2Fsalesforce-spiff-migration%2F
+                      - generic [ref=f171e699]:
+                        - text: How Salesforce Migrated 30,000+ Sellers to Spiff, a Single Comp Management Tool
+                        - generic [ref=f171e700]: (Link opens in new window)
+                  - generic [ref=f171e707]: A methodical, six-step approach with broad buy-in and phased rollout ensured success.
+                  - paragraph [ref=f171e708]: 9 minute read
+                - button "Join the Community (Link opens in new window)" [ref=f171e710] [cursor=pointer]:
+                  - text: Join the Community
+                  - generic [ref=f171e711]: (Link opens in new window)
+      - generic:
+        - contentinfo "Utility Bar":
+          - list [ref=f171e720]:
+            - listitem [ref=f171e721]:
+              - button "To Do List" [ref=f171e724] [cursor=pointer]
+    - generic [ref=f171e22]:
+      - generic: Notifications
+      - dialog "Notifications" [ref=f171e733]:
+        - generic [ref=f171e734]:
+          - button "Close Notifications" [ref=f171e735] [cursor=pointer]
+          - generic [ref=f171e742]:
+            - generic [ref=f171e744]:
+              - heading "Notifications" [level=2] [ref=f171e745]
+              - button "Mark all as read" [active] [ref=f171e748] [cursor=pointer]
+            - list [ref=f171e752]:
+              - listitem [ref=f171e753]:
+                - 'link "Sales Representative is requesting approval for quote Quote Name: QA RS07 H7-selfapprove • Owner Name: Arcsen Alfardan 2 minutes ago Unread" [ref=f171e754] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e759]:
+                    - heading "Sales Representative is requesting approval for quote" [level=3] [ref=f171e760]
+                    - generic [ref=f171e761]: "Quote Name: QA RS07 H7-selfapprove • Owner Name: Arcsen Alfardan"
+                    - generic "١٠/٠٩/٢٠٢٦, ١٢:١٤ AM" [ref=f171e762]:
+                      - text: 2 minutes ago
+                      - generic [ref=f171e763]:
+                        - text: ●
+                        - generic [ref=f171e764]: Unread
+              - listitem [ref=f171e765]:
+                - 'link "Sales Representative is requesting approval for quote Quote Name: QA RS07 H6-bulk-3 • Owner Name: Arcsen Alfardan 2 minutes ago Unread" [ref=f171e766] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e771]:
+                    - heading "Sales Representative is requesting approval for quote" [level=3] [ref=f171e772]
+                    - generic [ref=f171e773]: "Quote Name: QA RS07 H6-bulk-3 • Owner Name: Arcsen Alfardan"
+                    - generic "١٠/٠٩/٢٠٢٦, ١٢:١٤ AM" [ref=f171e774]:
+                      - text: 2 minutes ago
+                      - generic [ref=f171e775]:
+                        - text: ●
+                        - generic [ref=f171e776]: Unread
+              - listitem [ref=f171e777]:
+                - 'link "Sales Representative is requesting approval for quote Quote Name: QA RS07 H5-bulk-2 • Owner Name: Arcsen Alfardan 2 minutes ago Unread" [ref=f171e778] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e783]:
+                    - heading "Sales Representative is requesting approval for quote" [level=3] [ref=f171e784]
+                    - generic [ref=f171e785]: "Quote Name: QA RS07 H5-bulk-2 • Owner Name: Arcsen Alfardan"
+                    - generic "١٠/٠٩/٢٠٢٦, ١٢:١٤ AM" [ref=f171e786]:
+                      - text: 2 minutes ago
+                      - generic [ref=f171e787]:
+                        - text: ●
+                        - generic [ref=f171e788]: Unread
+              - listitem [ref=f171e789]:
+                - 'link "Sales Representative is requesting approval for quote Quote Name: QA RS07 H4-bulk-1 • Owner Name: Arcsen Alfardan 2 minutes ago Unread" [ref=f171e790] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e795]:
+                    - heading "Sales Representative is requesting approval for quote" [level=3] [ref=f171e796]
+                    - generic [ref=f171e797]: "Quote Name: QA RS07 H4-bulk-1 • Owner Name: Arcsen Alfardan"
+                    - generic "١٠/٠٩/٢٠٢٦, ١٢:١٤ AM" [ref=f171e798]:
+                      - text: 2 minutes ago
+                      - generic [ref=f171e799]:
+                        - text: ●
+                        - generic [ref=f171e800]: Unread
+              - listitem [ref=f171e801]:
+                - 'link "Sales Representative is requesting approval for quote Quote Name: QA RS07 H3-tier3-reject • Owner Name: Arcsen Alfardan 2 minutes ago Unread" [ref=f171e802] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e807]:
+                    - heading "Sales Representative is requesting approval for quote" [level=3] [ref=f171e808]
+                    - generic [ref=f171e809]: "Quote Name: QA RS07 H3-tier3-reject • Owner Name: Arcsen Alfardan"
+                    - generic "١٠/٠٩/٢٠٢٦, ١٢:١٤ AM" [ref=f171e810]:
+                      - text: 2 minutes ago
+                      - generic [ref=f171e811]:
+                        - text: ●
+                        - generic [ref=f171e812]: Unread
+              - listitem [ref=f171e813]:
+                - 'link "Sales Representative is requesting approval for quote Quote Name: QA RS07 H2-tier4-escalate • Owner Name: Arcsen Alfardan 2 minutes ago Unread" [ref=f171e814] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e819]:
+                    - heading "Sales Representative is requesting approval for quote" [level=3] [ref=f171e820]
+                    - generic [ref=f171e821]: "Quote Name: QA RS07 H2-tier4-escalate • Owner Name: Arcsen Alfardan"
+                    - generic "١٠/٠٩/٢٠٢٦, ١٢:١٤ AM" [ref=f171e822]:
+                      - text: 2 minutes ago
+                      - generic [ref=f171e823]:
+                        - text: ●
+                        - generic [ref=f171e824]: Unread
+              - listitem [ref=f171e825]:
+                - 'link "Sales Representative is requesting approval for quote Quote Name: QA RS07 H1-tier1-approve • Owner Name: Arcsen Alfardan 2 minutes ago Unread" [ref=f171e826] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e831]:
+                    - heading "Sales Representative is requesting approval for quote" [level=3] [ref=f171e832]
+                    - generic [ref=f171e833]: "Quote Name: QA RS07 H1-tier1-approve • Owner Name: Arcsen Alfardan"
+                    - generic "١٠/٠٩/٢٠٢٦, ١٢:١٤ AM" [ref=f171e834]:
+                      - text: 2 minutes ago
+                      - generic [ref=f171e835]:
+                        - text: ●
+                        - generic [ref=f171e836]: Unread
+              - listitem [ref=f171e837]:
+                - link "Test Drive Needs Details Complete the details on Test Drive TD-00084 10 hours ago Unread" [ref=f171e838] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e843]:
+                    - heading "Test Drive Needs Details" [level=3] [ref=f171e844]
+                    - generic [ref=f171e845]: Complete the details on Test Drive TD-00084
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e846]:
+                      - text: 10 hours ago
+                      - generic [ref=f171e847]:
+                        - text: ●
+                        - generic [ref=f171e848]: Unread
+              - listitem [ref=f171e849]:
+                - link "New Opportunity Assigned An Opportunity has been created and assigned to you from a converted Lead. 10 hours ago Unread" [ref=f171e850] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e855]:
+                    - heading "New Opportunity Assigned" [level=3] [ref=f171e856]
+                    - generic [ref=f171e857]: An Opportunity has been created and assigned to you from a converted Lead.
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e858]:
+                      - text: 10 hours ago
+                      - generic [ref=f171e859]:
+                        - text: ●
+                        - generic [ref=f171e860]: Unread
+              - listitem [ref=f171e861]:
+                - 'link "Trade-In Approved: APL-000000021 The trade-in valuation for APL-000000021 was approved. Record the customer outcome and continue with the quotation. ٠٨/٠٩/٢٠٢٦, ٢:٥٦ PM Unread" [ref=f171e862] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e867]:
+                    - 'heading "Trade-In Approved: APL-000000021" [level=3] [ref=f171e868]'
+                    - generic [ref=f171e869]: The trade-in valuation for APL-000000021 was approved. Record the customer outcome and continue with the quotation.
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e870]:
+                      - text: ٠٨/٠٩/٢٠٢٦, ٢:٥٦ PM
+                      - generic [ref=f171e871]:
+                        - text: ●
+                        - generic [ref=f171e872]: Unread
+              - listitem [ref=f171e873]:
+                - 'link "Test Drive Assigned You''ve been assigned a test drive: TD-00051 ٠٦/٠٩/٢٠٢٦, ١٠:٥٢ PM Unread" [ref=f171e874] [cursor=pointer]':
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e879]:
+                    - heading "Test Drive Assigned" [level=3] [ref=f171e880]
+                    - generic [ref=f171e881]: "You've been assigned a test drive: TD-00051"
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e882]:
+                      - text: ٠٦/٠٩/٢٠٢٦, ١٠:٥٢ PM
+                      - generic [ref=f171e883]:
+                        - text: ●
+                        - generic [ref=f171e884]: Unread
+              - listitem [ref=f171e885]:
+                - link "Test Drive Needs Details Complete the details on Test Drive TD-00019 ٠٦/٠٩/٢٠٢٦, ٢:٢٦ PM Unread" [ref=f171e886] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e891]:
+                    - heading "Test Drive Needs Details" [level=3] [ref=f171e892]
+                    - generic [ref=f171e893]: Complete the details on Test Drive TD-00019
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e894]:
+                      - text: ٠٦/٠٩/٢٠٢٦, ٢:٢٦ PM
+                      - generic [ref=f171e895]:
+                        - text: ●
+                        - generic [ref=f171e896]: Unread
+              - listitem [ref=f171e897]:
+                - link "New Opportunity Assigned An Opportunity has been created and assigned to you from a converted Lead. ٠٦/٠٩/٢٠٢٦, ٢:٢٦ PM Unread" [ref=f171e898] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e903]:
+                    - heading "New Opportunity Assigned" [level=3] [ref=f171e904]
+                    - generic [ref=f171e905]: An Opportunity has been created and assigned to you from a converted Lead.
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e906]:
+                      - text: ٠٦/٠٩/٢٠٢٦, ٢:٢٦ PM
+                      - generic [ref=f171e907]:
+                        - text: ●
+                        - generic [ref=f171e908]: Unread
+              - listitem [ref=f171e909]:
+                - link "Test Drive Needs Details Complete the details on Test Drive TD-00014 ٠٦/٠٩/٢٠٢٦, ١٠:٤٣ AM Unread" [ref=f171e910] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e915]:
+                    - heading "Test Drive Needs Details" [level=3] [ref=f171e916]
+                    - generic [ref=f171e917]: Complete the details on Test Drive TD-00014
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e918]:
+                      - text: ٠٦/٠٩/٢٠٢٦, ١٠:٤٣ AM
+                      - generic [ref=f171e919]:
+                        - text: ●
+                        - generic [ref=f171e920]: Unread
+              - listitem [ref=f171e921]:
+                - link "New Opportunity Assigned An Opportunity has been created and assigned to you from a converted Lead. ٠٦/٠٩/٢٠٢٦, ١٠:٣٥ AM Unread" [ref=f171e922] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e927]:
+                    - heading "New Opportunity Assigned" [level=3] [ref=f171e928]
+                    - generic [ref=f171e929]: An Opportunity has been created and assigned to you from a converted Lead.
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e930]:
+                      - text: ٠٦/٠٩/٢٠٢٦, ١٠:٣٥ AM
+                      - generic [ref=f171e931]:
+                        - text: ●
+                        - generic [ref=f171e932]: Unread
+              - listitem [ref=f171e933]:
+                - link "New Opportunity Assigned An Opportunity has been created and assigned to you from a converted Lead. ٣٠/٠٨/٢٠٢٦, ٢:٢٢ PM Unread" [ref=f171e934] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - generic [ref=f171e939]:
+                    - heading "New Opportunity Assigned" [level=3] [ref=f171e940]
+                    - generic [ref=f171e941]: An Opportunity has been created and assigned to you from a converted Lead.
+                    - generic "٠٩/٠٩/٢٠٢٦, ٢:٣٧ PM" [ref=f171e942]:
+                      - text: ٣٠/٠٨/٢٠٢٦, ٢:٢٢ PM
+                      - generic [ref=f171e943]:
+                        - text: ●
+                        - generic [ref=f171e944]: Unread
+  - generic:
+    - status

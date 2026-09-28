@@ -1,0 +1,85 @@
+- generic [active]:
+  - generic [ref=f31e2]:
+    - generic [ref=f31e3]:
+      - link "Skip to Navigation" [ref=f31e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f31e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f31e8]:
+        - generic [ref=f31e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f31e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f31e11]:
+        - button "Search" [ref=f31e15]: Search...
+        - navigation "Global Header" [ref=f31e20]:
+          - list [ref=f31e23]:
+            - listitem [ref=f31e24]:
+              - group [ref=f31e25]:
+                - button "This item doesn't support favorites" [ref=f31e27] [cursor=pointer]:
+                  - generic [ref=f31e28]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f31e36] [cursor=pointer]:
+                  - generic [ref=f31e37]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f31e44]:
+              - button "Global Actions" [ref=f31e46]
+            - listitem [ref=f31e53]:
+              - button [ref=f31e56] [cursor=pointer]:
+                - generic [ref=f31e57]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f31e64]:
+              - button [ref=f31e70] [cursor=pointer]:
+                - generic [ref=f31e71]:
+                  - tooltip "Setup"
+            - listitem [ref=f31e78]:
+              - button [ref=f31e81] [cursor=pointer]:
+                - generic [ref=f31e82]:
+                  - tooltip "Notifications"
+            - listitem [ref=f31e91]:
+              - generic [ref=f31e93]:
+                - button "View profile":
+                  - generic:
+                    - tooltip "View profile"
+    - generic [ref=f31e94]:
+      - generic [ref=f31e97]:
+        - generic [ref=f31e99]:
+          - navigation "App" [ref=f31e100]:
+            - button "App Launcher" [ref=f31e102] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f31e114]
+        - navigation "Global" [ref=f31e118]:
+          - list [ref=f31e119]:
+            - listitem [ref=f31e120] [cursor=pointer]:
+              - link "Home" [ref=f31e121]:
+                - /url: /lightning/page/home
+            - listitem [ref=f31e123]:
+              - link "Analytics" [ref=f31e124] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f31e126]:
+              - link "Opportunities" [ref=f31e127] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f31e132] [cursor=pointer]
+            - listitem [ref=f31e140]:
+              - link "Quotes" [ref=f31e141] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f31e146] [cursor=pointer]
+            - listitem [ref=f31e154]:
+              - link "Leads" [ref=f31e155] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f31e160] [cursor=pointer]
+            - listitem [ref=f31e168]:
+              - link "Tasks" [ref=f31e169] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f31e174] [cursor=pointer]
+            - listitem [ref=f31e182]:
+              - button "Show more navigation items" [ref=f31e184] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f31e185]: More
+            - listitem [ref=f31e193]:
+              - button "Edit nav items" [ref=f31e195] [cursor=pointer]
+      - main [ref=f31e202]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f31e210]:
+          - listitem [ref=f31e211]:
+            - button "To Do List" [ref=f31e214] [cursor=pointer]
+  - generic:
+    - status

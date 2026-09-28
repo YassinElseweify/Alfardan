@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_ChecklistComplete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Derived: all checklist items true. Populate via flow, not a stored formula (checklist item set is still flat/pending client, 10.12 ASS-1).</description>
+    <label>Checklist Complete?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

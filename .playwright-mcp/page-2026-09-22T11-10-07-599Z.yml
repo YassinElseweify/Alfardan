@@ -1,0 +1,579 @@
+- generic [active]:
+  - generic [ref=f97e2]:
+    - generic [ref=f97e3]:
+      - link "Skip to Navigation" [ref=f97e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f97e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f97e195]:
+        - generic [ref=f97e196]: "Sandbox: QA |"
+        - link "Log out" [ref=f97e197] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f97e6]:
+        - button "Search" [ref=f97e13]: Search...
+        - navigation "Global Header" [ref=f97e18]:
+          - list [ref=f97e199]:
+            - listitem [ref=f97e200]:
+              - group [ref=f97e201]:
+                - button "Add favorite" [ref=f97e203] [cursor=pointer]:
+                  - generic [ref=f97e204]:
+                    - tooltip "Add favorite"
+                - button [ref=f97e212] [cursor=pointer]:
+                  - generic [ref=f97e213]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f97e220]:
+              - button [ref=f97e226] [cursor=pointer]:
+                - generic [ref=f97e227]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f97e234]:
+              - button [ref=f97e236] [cursor=pointer]:
+                - generic [ref=f97e237]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f97e244]:
+              - button [ref=f97e247] [cursor=pointer]:
+                - generic [ref=f97e248]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f97e255]:
+              - button "7 Notifications" [ref=f97e258] [cursor=pointer]:
+                - generic [ref=f97e259]:
+                  - generic [ref=f97e260]: "7"
+                  - tooltip "Notifications"
+              - generic [ref=f97e269]: 7 new notifications
+            - listitem [ref=f97e270]:
+              - button "View profile" [ref=f97e273] [cursor=pointer]:
+                - generic [ref=f97e274]:
+                  - tooltip "View profile"
+    - generic [ref=f97e24]:
+      - generic [ref=f97e27]:
+        - generic [ref=f97e29]:
+          - navigation "App" [ref=f97e30]:
+            - button "App Launcher" [ref=f97e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f97e44]
+        - navigation "Global" [ref=f97e48]:
+          - list [ref=f97e49]:
+            - listitem [ref=f97e50]:
+              - link "Home" [ref=f97e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f97e53]:
+              - link "Vehicles" [ref=f97e54] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f97e59] [cursor=pointer]
+            - listitem [ref=f97e67]:
+              - link "Assets" [ref=f97e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f97e73] [cursor=pointer]
+            - listitem [ref=f97e81]:
+              - link "Vehicle Definitions" [ref=f97e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f97e87] [cursor=pointer]
+            - listitem [ref=f97e95]:
+              - link "Products" [ref=f97e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f97e101] [cursor=pointer]
+            - listitem [ref=f97e109]:
+              - link "Accounts" [ref=f97e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f97e115] [cursor=pointer]
+            - listitem [ref=f97e123]:
+              - link "Contacts" [ref=f97e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f97e129] [cursor=pointer]
+            - listitem [ref=f97e137]:
+              - link "Asset Milestones" [ref=f97e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f97e143] [cursor=pointer]
+            - listitem [ref=f97e278] [cursor=pointer]:
+              - link "Opportunities" [ref=f97e279]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f97e284]
+            - listitem [ref=f97e165]:
+              - button "Show more navigation items" [ref=f97e167] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f97e168]: More
+            - listitem [ref=f97e176]:
+              - button "Edit nav items" [ref=f97e178] [cursor=pointer]
+      - main [ref=f97e185]:
+        - generic [ref=f97e303]:
+          - generic [ref=f97e312]:
+            - generic [ref=f97e313]:
+              - generic [ref=f97e319]:
+                - generic [ref=f97e320]: Opportunity
+                - heading "DEMO RS11 21 - Quoted but never reserved, keys gate" [level=1] [ref=f97e322]
+              - button "Follow" [ref=f97e328] [cursor=pointer]
+              - generic [ref=f97e339]:
+                - generic "Log a Call" [ref=f97e340]:
+                  - button "Log a Call" [ref=f97e345] [cursor=pointer]
+                - generic "Edit" [ref=f97e346]:
+                  - button "Edit" [ref=f97e351] [cursor=pointer]
+                - generic "Request Closure" [ref=f97e352]:
+                  - button "Request Closure" [ref=f97e357] [cursor=pointer]
+                - button "Show more actions" [ref=f97e359] [cursor=pointer]
+            - generic [ref=f97e365]:
+              - generic [ref=f97e367]:
+                - paragraph [ref=f97e368]: Account Name
+                - paragraph [ref=f97e369]:
+                  - generic [ref=f97e374]:
+                    - link "DEMO RS10 Customer - Khalid Al-Mannai" [ref=f97e375] [cursor=pointer]:
+                      - /url: /lightning/r/Account/001FV00L3Cqvq5UYUQ/view
+                    - button "Preview" [ref=f97e381] [cursor=pointer]
+              - generic [ref=f97e388]:
+                - paragraph [ref=f97e389]: Close Date
+                - paragraph [ref=f97e390]:
+                  - generic [ref=f97e391]: 22/10/2026
+              - generic [ref=f97e393]:
+                - paragraph [ref=f97e394]: Amount
+                - paragraph [ref=f97e395]:
+                  - generic [ref=f97e396]: AED 560,000.00
+              - generic [ref=f97e398]:
+                - paragraph [ref=f97e399]: Opportunity Owner
+                - paragraph [ref=f97e400]:
+                  - generic [ref=f97e403]:
+                    - generic [ref=f97e410]:
+                      - link "QA SalesRep2" [ref=f97e411] [cursor=pointer]:
+                        - /url: /lightning/r/User/005FV0082KfRrqeYQC/view
+                      - button "Preview" [ref=f97e417] [cursor=pointer]
+                    - button "Change Owner" [ref=f97e424] [cursor=pointer]
+          - article [ref=f97e438]:
+            - generic [ref=f97e439]:
+              - heading "Path" [level=2] [ref=f97e440]
+              - generic [ref=f97e443]:
+                - listbox "Path Options" [ref=f97e448]:
+                  - option "Consider" [ref=f97e449] [cursor=pointer]:
+                    - generic [ref=f97e450]: stage complete
+                  - option "Explore" [ref=f97e459] [cursor=pointer]:
+                    - generic [ref=f97e460]: stage complete
+                  - option "Select" [ref=f97e469] [cursor=pointer]:
+                    - generic [ref=f97e470]: stage complete
+                  - option "Commit" [selected] [ref=f97e479] [cursor=pointer]
+                  - option "Take the Keys" [ref=f97e481] [cursor=pointer]
+                  - option "Closed" [ref=f97e483] [cursor=pointer]
+                - button "Mark Stage as Complete" [ref=f97e487] [cursor=pointer]
+          - generic [ref=f97e495]:
+            - generic [ref=f97e503]:
+              - heading "Tabs" [level=2] [ref=f97e504]
+              - tablist "Tabs" [ref=f97e506]:
+                - tab "Activity" [ref=f97e507] [cursor=pointer]
+                - tab "Details" [selected] [ref=f97e508] [cursor=pointer]
+                - tab "Chatter" [ref=f97e509] [cursor=pointer]
+              - tabpanel "Details" [ref=f97e512]:
+                - generic [ref=f97e525]:
+                  - generic [ref=f97e527]:
+                    - heading [level=3] [ref=f97e528]:
+                      - button "Opportunity Information" [expanded] [ref=f97e529] [cursor=pointer]
+                    - list [ref=f97e539]:
+                      - generic [ref=f97e540]:
+                        - generic [ref=f97e542]:
+                          - listitem [ref=f97e544]:
+                            - generic [ref=f97e545]:
+                              - generic [ref=f97e546]: Opportunity Owner
+                              - generic [ref=f97e551]:
+                                - generic [ref=f97e558]:
+                                  - link "QA SalesRep2" [ref=f97e559] [cursor=pointer]:
+                                    - /url: /lightning/r/User/005FV0082KfRrqeYQC/view
+                                  - button "Preview" [ref=f97e565] [cursor=pointer]
+                                - button "Change Owner" [ref=f97e572] [cursor=pointer]
+                          - listitem [ref=f97e579]:
+                            - generic [ref=f97e580]:
+                              - generic [ref=f97e581]: Close Date
+                              - generic [ref=f97e582]:
+                                - generic [ref=f97e583]: 22/10/2026
+                                - button "Edit Close Date" [ref=f97e585] [cursor=pointer]
+                        - generic [ref=f97e589]:
+                          - listitem [ref=f97e591]:
+                            - generic [ref=f97e592]:
+                              - generic [ref=f97e593]: Opportunity Name
+                              - generic [ref=f97e594]:
+                                - generic [ref=f97e595]: DEMO RS11 21 - Quoted but never reserved, keys gate
+                                - button "Edit Opportunity Name" [ref=f97e597] [cursor=pointer]
+                          - listitem [ref=f97e601]:
+                            - generic [ref=f97e602]:
+                              - generic [ref=f97e603]: Stage
+                              - generic [ref=f97e604]:
+                                - generic [ref=f97e605]: Commit
+                                - button "Edit Stage" [ref=f97e607] [cursor=pointer]
+                        - generic [ref=f97e611]:
+                          - listitem [ref=f97e613]:
+                            - generic [ref=f97e614]:
+                              - generic [ref=f97e615]: Account Name
+                              - generic [ref=f97e616]:
+                                - generic [ref=f97e622]:
+                                  - link "DEMO RS10 Customer - Khalid Al-Mannai" [ref=f97e623] [cursor=pointer]:
+                                    - /url: /lightning/r/Account/001FV00L3Cqvq5UYUQ/view
+                                  - button "Preview" [ref=f97e629] [cursor=pointer]
+                                - button "Edit Account Name" [ref=f97e635] [cursor=pointer]
+                          - listitem [ref=f97e639]:
+                            - generic [ref=f97e640]:
+                              - generic [ref=f97e641]: Probability (%)
+                              - generic [ref=f97e642]:
+                                - generic [ref=f97e643]: 75%
+                                - button "Edit Probability (%)" [ref=f97e645] [cursor=pointer]
+                        - generic [ref=f97e649]:
+                          - listitem [ref=f97e651]:
+                            - generic [ref=f97e652]:
+                              - generic [ref=f97e653]: Type
+                              - button "Edit Type" [ref=f97e655] [cursor=pointer]
+                          - listitem [ref=f97e659]:
+                            - generic [ref=f97e660]:
+                              - generic [ref=f97e661]: Amount
+                              - generic [ref=f97e662]: AED 560,000.00
+                        - listitem [ref=f97e669]:
+                          - generic [ref=f97e670]:
+                            - generic [ref=f97e671]: Primary Campaign Source
+                            - button "Edit Primary Campaign Source" [ref=f97e674] [cursor=pointer]
+                  - heading [level=3] [ref=f97e680]:
+                    - button "Additional Information" [ref=f97e681] [cursor=pointer]
+                  - generic [ref=f97e691]:
+                    - heading [level=3] [ref=f97e692]:
+                      - button "Description Information" [expanded] [ref=f97e693] [cursor=pointer]
+                    - list [ref=f97e703]:
+                      - listitem [ref=f97e708]:
+                        - generic [ref=f97e709]:
+                          - generic [ref=f97e710]: Description
+                          - button "Edit Description" [ref=f97e712] [cursor=pointer]
+                  - generic [ref=f97e716]:
+                    - heading [level=3] [ref=f97e717]:
+                      - button "Brand & Origin" [expanded] [ref=f97e718] [cursor=pointer]
+                    - list [ref=f97e728]:
+                      - generic [ref=f97e729]:
+                        - generic [ref=f97e731]:
+                          - listitem [ref=f97e733]:
+                            - generic [ref=f97e734]:
+                              - generic [ref=f97e735]: Brand
+                              - button "Edit Brand" [ref=f97e737] [cursor=pointer]
+                          - listitem [ref=f97e741]:
+                            - generic [ref=f97e742]:
+                              - generic [ref=f97e743]: Business Unit
+                              - generic [ref=f97e744]: UNMAPPED
+                        - generic [ref=f97e748]:
+                          - listitem [ref=f97e750]:
+                            - generic [ref=f97e751]:
+                              - generic [ref=f97e752]: Showroom
+                              - button "Edit Showroom" [ref=f97e754] [cursor=pointer]
+                          - listitem [ref=f97e758]:
+                            - generic [ref=f97e759]:
+                              - generic [ref=f97e760]: Opportunity Origin
+                              - button "Edit Opportunity Origin" [ref=f97e762] [cursor=pointer]
+                        - listitem [ref=f97e768]:
+                          - generic [ref=f97e769]:
+                            - generic [ref=f97e770]: Possible Duplicate
+                            - generic [ref=f97e776]:
+                              - generic "True" [ref=f97e777]
+                              - generic [ref=f97e784]: Possible Duplicate
+                  - generic [ref=f97e787]:
+                    - heading [level=3] [ref=f97e788]:
+                      - button "Vehicle & Order" [expanded] [ref=f97e789] [cursor=pointer]
+                    - list [ref=f97e799]:
+                      - generic [ref=f97e800]:
+                        - generic [ref=f97e802]:
+                          - listitem [ref=f97e804]:
+                            - generic [ref=f97e805]:
+                              - generic [ref=f97e806]: Vehicle Model
+                              - generic [ref=f97e807]:
+                                - generic [ref=f97e813]:
+                                  - 'link "VD: Rolls-Royce Cullinan" [ref=f97e814] [cursor=pointer]':
+                                    - /url: /lightning/r/VehicleDefinition/1PqFV0002sFWWk80AH/view
+                                  - button "Preview" [ref=f97e820] [cursor=pointer]
+                                - button "Edit Vehicle Model" [ref=f97e826] [cursor=pointer]
+                          - listitem [ref=f97e830]:
+                            - generic [ref=f97e831]: Invoice Balance
+                        - generic [ref=f97e835]:
+                          - listitem [ref=f97e837]:
+                            - generic [ref=f97e838]:
+                              - generic [ref=f97e839]: Selected Vehicle
+                              - generic [ref=f97e840]:
+                                - generic [ref=f97e846]:
+                                  - link "Rolls-Royce Cullinan - British Racing Green" [ref=f97e847] [cursor=pointer]:
+                                    - /url: /lightning/r/Vehicle/0vLFV0004HttpnI2QQ/view
+                                  - button "Preview" [ref=f97e853] [cursor=pointer]
+                                - button "Edit Selected Vehicle" [ref=f97e859] [cursor=pointer]
+                          - listitem [ref=f97e863]:
+                            - generic [ref=f97e864]:
+                              - generic [ref=f97e865]: Invoice Summary
+                              - button "Edit Invoice Summary" [ref=f97e868] [cursor=pointer]
+                        - generic [ref=f97e872]:
+                          - listitem [ref=f97e874]:
+                            - generic [ref=f97e875]:
+                              - generic [ref=f97e876]: Primary Quote
+                              - button "Edit Primary Quote" [ref=f97e879] [cursor=pointer]
+                          - listitem [ref=f97e883]:
+                            - generic [ref=f97e884]:
+                              - generic [ref=f97e885]: Delivery Confirmation
+                              - generic [ref=f97e886]:
+                                - generic [ref=f97e891]:
+                                  - generic "False" [ref=f97e892]
+                                  - generic [ref=f97e899]: Delivery Confirmation
+                                - button "Edit Delivery Confirmation" [ref=f97e900] [cursor=pointer]
+                        - generic [ref=f97e904]:
+                          - listitem [ref=f97e906]:
+                            - generic [ref=f97e907]:
+                              - generic [ref=f97e908]: Vehicle Reservation
+                              - button "Edit Vehicle Reservation" [ref=f97e911] [cursor=pointer]
+                          - listitem [ref=f97e915]:
+                            - generic [ref=f97e916]:
+                              - generic [ref=f97e917]: Handover Complete
+                              - generic [ref=f97e923]:
+                                - generic "False" [ref=f97e924]
+                                - generic [ref=f97e931]: Handover Complete
+                        - listitem [ref=f97e936]:
+                          - generic [ref=f97e937]:
+                            - generic [ref=f97e938]: Handover
+                            - generic [ref=f97e939]:
+                              - generic [ref=f97e945]:
+                                - link "HO-00033" [ref=f97e946] [cursor=pointer]:
+                                  - /url: /lightning/r/AF_Handover__c/a0SFV001MkNcaSy2IJ/view
+                                - button "Preview" [ref=f97e952] [cursor=pointer]
+                              - button "Edit Handover" [ref=f97e958] [cursor=pointer]
+                  - generic [ref=f97e962]:
+                    - heading [level=3] [ref=f97e963]:
+                      - button "Sales Order" [expanded] [ref=f97e964] [cursor=pointer]
+                    - list [ref=f97e974]:
+                      - generic [ref=f97e975]:
+                        - generic [ref=f97e977]:
+                          - listitem [ref=f97e979]:
+                            - generic [ref=f97e980]:
+                              - generic [ref=f97e981]: Sales Order Status
+                              - generic [ref=f97e982]:
+                                - generic [ref=f97e983]: Not Generated
+                                - button "Edit Sales Order Status" [ref=f97e985] [cursor=pointer]
+                          - listitem [ref=f97e989]:
+                            - generic [ref=f97e990]: Sales Order Document Reference
+                        - generic [ref=f97e994]:
+                          - listitem [ref=f97e996]:
+                            - generic [ref=f97e997]: Sales Order Generated Date
+                          - listitem [ref=f97e1001]:
+                            - generic [ref=f97e1002]: Transaction Summary Doc Reference
+                  - generic [ref=f97e1006]:
+                    - heading [level=3] [ref=f97e1007]:
+                      - button "Cancellation" [expanded] [ref=f97e1008] [cursor=pointer]
+                    - list [ref=f97e1018]:
+                      - generic [ref=f97e1019]:
+                        - generic [ref=f97e1021]:
+                          - listitem [ref=f97e1023]:
+                            - generic [ref=f97e1024]:
+                              - generic [ref=f97e1025]: Cancellation Approval Status
+                              - generic [ref=f97e1026]: Not Submitted
+                          - listitem [ref=f97e1030]:
+                            - generic [ref=f97e1031]:
+                              - generic [ref=f97e1032]: Cancellation Notes
+                              - button "Edit Cancellation Notes" [ref=f97e1034] [cursor=pointer]
+                        - generic [ref=f97e1038]:
+                          - listitem [ref=f97e1040]:
+                            - generic [ref=f97e1041]:
+                              - generic [ref=f97e1042]: Cancellation Reason
+                              - button "Edit Cancellation Reason" [ref=f97e1044] [cursor=pointer]
+                          - listitem [ref=f97e1048]:
+                            - generic [ref=f97e1049]:
+                              - generic [ref=f97e1050]: Cancellation Evidence Reference
+                              - button "Edit Cancellation Evidence Reference" [ref=f97e1052] [cursor=pointer]
+                        - listitem [ref=f97e1058]:
+                          - generic [ref=f97e1059]:
+                            - generic [ref=f97e1060]: Cancellation Requested Date
+                            - button "Edit Cancellation Requested Date" [ref=f97e1062] [cursor=pointer]
+                  - generic [ref=f97e1067]:
+                    - heading [level=3] [ref=f97e1068]:
+                      - button "Lost Sale" [expanded] [ref=f97e1069] [cursor=pointer]
+                    - list [ref=f97e1079]:
+                      - generic [ref=f97e1080]:
+                        - generic [ref=f97e1082]:
+                          - listitem [ref=f97e1084]:
+                            - generic [ref=f97e1085]:
+                              - generic [ref=f97e1086]: Lost Reason
+                              - button "Edit Lost Reason" [ref=f97e1088] [cursor=pointer]
+                          - listitem [ref=f97e1092]:
+                            - generic [ref=f97e1093]:
+                              - generic [ref=f97e1094]: Competitor Outcome
+                              - button "Edit Competitor Outcome" [ref=f97e1096] [cursor=pointer]
+                        - generic [ref=f97e1100]:
+                          - listitem [ref=f97e1102]:
+                            - generic [ref=f97e1103]:
+                              - generic [ref=f97e1104]: Lost Notes
+                              - button "Edit Lost Notes" [ref=f97e1106] [cursor=pointer]
+                          - listitem [ref=f97e1110]:
+                            - generic [ref=f97e1111]:
+                              - generic [ref=f97e1112]: Lost Approval Status
+                              - generic [ref=f97e1113]: Not Submitted
+                  - generic [ref=f97e1117]:
+                    - heading [level=3] [ref=f97e1118]:
+                      - button "System Information" [expanded] [ref=f97e1119] [cursor=pointer]
+                    - list [ref=f97e1129]:
+                      - generic [ref=f97e1132]:
+                        - listitem [ref=f97e1134]:
+                          - generic [ref=f97e1135]:
+                            - generic [ref=f97e1136]: Created By
+                            - generic [ref=f97e1140]:
+                              - generic [ref=f97e1146]:
+                                - link "Arcsen Alfardan" [ref=f97e1147] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f97e1153] [cursor=pointer]
+                              - text: ", 22/09/2026, 1:58 PM"
+                        - listitem [ref=f97e1160]:
+                          - generic [ref=f97e1161]:
+                            - generic [ref=f97e1162]: Last Modified By
+                            - generic [ref=f97e1166]:
+                              - generic [ref=f97e1172]:
+                                - link "Arcsen Alfardan" [ref=f97e1173] [cursor=pointer]:
+                                  - /url: /lightning/r/User/005a3001vLvmFZ6AQM/view
+                                - button "Preview" [ref=f97e1179] [cursor=pointer]
+                              - text: ", 22/09/2026, 2:09 PM"
+            - generic [ref=f97e1192]:
+              - heading "Tabs" [level=2] [ref=f97e1193]
+              - tablist "Tabs" [ref=f97e1195]:
+                - tab "Related" [selected] [ref=f97e1196] [cursor=pointer]
+              - tabpanel "Related" [ref=f97e1199]:
+                - generic [ref=f97e1200]:
+                  - article "Approval History" [ref=f97e1209]:
+                    - generic [ref=f97e1210]:
+                      - heading [level=2] [ref=f97e1216]:
+                        - link "Approval History (0)" [ref=f97e1217] [cursor=pointer]:
+                          - /url: /lightning/r/Opportunity/006FV00BhMDdpSuYUJ/related/ProcessSteps/view
+                          - generic "Approval History" [ref=f97e1218]
+                          - generic "(0)" [ref=f97e1219]
+                      - button "Show actions for Approval History" [ref=f97e1223] [cursor=pointer]
+                  - article "Test Drives" [ref=f97e1237]:
+                    - generic [ref=f97e1238]:
+                      - generic [ref=f97e1239]:
+                        - heading [level=2] [ref=f97e1250]:
+                          - link "Test Drives (1)" [ref=f97e1251] [cursor=pointer]:
+                            - /url: /lightning/r/Opportunity/006FV00BhMDdpSuYUJ/related/AF_TestDrives__r/view
+                            - generic "Test Drives" [ref=f97e1252]
+                            - generic "(1)" [ref=f97e1253]
+                        - article "TD-00192" [ref=f97e1264]:
+                          - heading [level=3] [ref=f97e1267]:
+                            - generic [ref=f97e1273]:
+                              - link "TD-00192" [ref=f97e1274] [cursor=pointer]:
+                                - /url: /lightning/r/a0VFV009wMhQezY2QS/view
+                              - button "Preview" [ref=f97e1280] [cursor=pointer]
+                          - button "Show Actions" [ref=f97e1290] [cursor=pointer]
+                      - link "View All Test Drives" [ref=f97e1296] [cursor=pointer]:
+                        - /url: /lightning/r/Opportunity/006FV00BhMDdpSuYUJ/related/AF_TestDrives__r/view
+                        - generic [ref=f97e1297]:
+                          - text: View All
+                          - generic [ref=f97e1298]: Test Drives
+                  - article "Trade Ins" [ref=f97e1305]:
+                    - generic [ref=f97e1306]:
+                      - generic [ref=f97e1307]:
+                        - generic [ref=f97e1310]:
+                          - heading [level=2] [ref=f97e1318]:
+                            - link "Trade Ins (1)" [ref=f97e1319] [cursor=pointer]:
+                              - /url: /lightning/r/Opportunity/006FV00BhMDdpSuYUJ/related/Appraisals/view
+                              - generic "Trade Ins" [ref=f97e1320]
+                              - generic "(1)" [ref=f97e1321]
+                          - button "Show actions for Trade Ins" [ref=f97e1325] [cursor=pointer]
+                        - article "APL-000000123" [ref=f97e1343]:
+                          - generic [ref=f97e1344]:
+                            - heading [level=3] [ref=f97e1346]:
+                              - generic [ref=f97e1352]:
+                                - link "APL-000000123" [ref=f97e1353] [cursor=pointer]:
+                                  - /url: /lightning/r/9ALFV0000uDN8VM4A1/view
+                                - button "Preview" [ref=f97e1359] [cursor=pointer]
+                            - generic [ref=f97e1366]:
+                              - term [ref=f97e1367]: "Status:"
+                              - definition [ref=f97e1368]:
+                                - generic [ref=f97e1369]: Initial Valuation
+                              - term [ref=f97e1371]: "Active:"
+                              - definition [ref=f97e1372]:
+                                - generic [ref=f97e1377]:
+                                  - generic "False" [ref=f97e1378]
+                                  - generic [ref=f97e1385]: Active
+                              - term [ref=f97e1386]: "Final Trade In Value:"
+                              - definition [ref=f97e1387]:
+                                - generic [ref=f97e1388]: AED 0.00
+                          - button "Show Actions" [ref=f97e1394] [cursor=pointer]
+                      - link "View All Trade Ins" [ref=f97e1400] [cursor=pointer]:
+                        - /url: /lightning/r/Opportunity/006FV00BhMDdpSuYUJ/related/Appraisals/view
+                        - generic [ref=f97e1401]:
+                          - text: View All
+                          - generic [ref=f97e1402]: Trade Ins
+                  - article [ref=f97e1409]:
+                    - heading "Products" [level=2] [ref=f97e1413]
+                  - article [ref=f97e1421]:
+                    - heading "Quotes" [level=2] [ref=f97e1425]
+                  - article [ref=f97e1433]:
+                    - heading "Payments" [level=2] [ref=f97e1437]
+                  - article [ref=f97e1445]:
+                    - heading "Vehicle Reservations" [level=2] [ref=f97e1449]
+                  - article [ref=f97e1457]:
+                    - heading "Invoices" [level=2] [ref=f97e1461]
+                  - article [ref=f97e1469]:
+                    - heading "Notes & Attachments" [level=2] [ref=f97e1473]
+                  - generic [ref=f97e1479]:
+                    - heading "Activity Publisher" [level=2] [ref=f97e1480]
+                    - generic [ref=f97e1481]:
+                      - group [ref=f97e1482]:
+                        - generic [ref=f97e1484]:
+                          - button "New Task" [ref=f97e1485] [cursor=pointer]
+                          - generic [ref=f97e1493]:
+                            - button "No Additional New Task Actions" [disabled]
+                      - group [ref=f97e1494]:
+                        - generic [ref=f97e1496]:
+                          - button "Log a Call" [ref=f97e1497] [cursor=pointer]
+                          - generic [ref=f97e1505]:
+                            - button "No Additional Log a Call Actions" [disabled]
+                    - heading "Activity Timeline" [level=2] [ref=f97e1506]
+                    - generic [ref=f97e1508]:
+                      - link "Skip to the bottom of the activity timeline" [ref=f97e1509] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                      - generic [ref=f97e1511]:
+                        - generic [ref=f97e1512]: "Filters: All time • All activities • All types"
+                        - button "Timeline Settings" [ref=f97e1514] [cursor=pointer]
+                      - generic [ref=f97e1522]:
+                        - button "Refresh" [ref=f97e1523] [cursor=pointer]
+                        - text: •
+                        - button "Expand All. Show details for activities in the timeline." [ref=f97e1524] [cursor=pointer]: Expand All
+                        - text: •
+                        - button "View All" [ref=f97e1525] [cursor=pointer]
+                      - generic [ref=f97e1527]:
+                        - heading [level=3] [ref=f97e1528]:
+                          - button "Upcoming & Overdue" [expanded] [ref=f97e1529] [cursor=pointer]
+                        - generic [ref=f97e1534]:
+                          - list [ref=f97e1536]:
+                            - listitem [ref=f97e1537]:
+                              - generic [ref=f97e1539]:
+                                - button "Show details for Possible Duplicate Opportunity Created" [ref=f97e1542] [cursor=pointer]:
+                                  - generic "Details for Possible Duplicate Opportunity Created" [ref=f97e1543]: Details for
+                                - generic [ref=f97e1550]:
+                                  - img "Task" [ref=f97e1555]
+                                  - generic [ref=f97e1556]:
+                                    - generic [ref=f97e1557]:
+                                      - generic [ref=f97e1559]:
+                                        - generic [ref=f97e1563]:
+                                          - checkbox "Possible Duplicate Opportunity Created" [ref=f97e1564] [cursor=pointer]
+                                          - generic [ref=f97e1566]: Possible Duplicate Opportunity Created
+                                        - generic [ref=f97e1568]:
+                                          - link "Possible Duplicate Opportunity Created" [ref=f97e1570] [cursor=pointer]:
+                                            - /url: /lightning/r/00TFV00Fs3aJpim2EC/view
+                                          - img "High-Priority task" [ref=f97e1573]
+                                      - generic [ref=f97e1575]:
+                                        - generic [ref=f97e1576]: Today
+                                        - button "Show more actions - Possible Duplicate Opportunity Created" [ref=f97e1579] [cursor=pointer]
+                                    - generic [ref=f97e1587]:
+                                      - link "Sales Receptionist" [ref=f97e1589] [cursor=pointer]:
+                                        - /url: /lightning/r/005FV0074kYJxfgYAD/view
+                                      - text: has an upcoming task
+                            - listitem [ref=f97e1590]:
+                              - generic [ref=f97e1592]:
+                                - button "Show details for Tell customer about Trade-In option" [ref=f97e1595] [cursor=pointer]:
+                                  - generic "Details for Tell customer about Trade-In option" [ref=f97e1596]: Details for
+                                - generic [ref=f97e1603]:
+                                  - img "Task" [ref=f97e1608]
+                                  - generic [ref=f97e1609]:
+                                    - generic [ref=f97e1610]:
+                                      - generic [ref=f97e1612]:
+                                        - generic [ref=f97e1616]:
+                                          - checkbox "Tell customer about Trade-In option" [ref=f97e1617] [cursor=pointer]
+                                          - generic [ref=f97e1619]: Tell customer about Trade-In option
+                                        - link "Tell customer about Trade-In option" [ref=f97e1623] [cursor=pointer]:
+                                          - /url: /lightning/r/00TFV00Fscmj9f22EA/view
+                                      - generic [ref=f97e1625]:
+                                        - generic [ref=f97e1626]: Today
+                                        - button "Show more actions - Tell customer about Trade-In option" [ref=f97e1629] [cursor=pointer]
+                                    - generic [ref=f97e1633]: You have an upcoming task
+                          - button "View More" [ref=f97e1638] [cursor=pointer]
+                      - status [ref=f97e1639]:
+                        - generic [ref=f97e1640]: No past activity. Past meetings and tasks marked as done show up here.
+                      - link "Skip to the top of the activity timeline" [ref=f97e1641] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                  - article [ref=f97e1647]:
+                    - heading "Required Documents" [level=2] [ref=f97e1658]
+  - generic:
+    - status

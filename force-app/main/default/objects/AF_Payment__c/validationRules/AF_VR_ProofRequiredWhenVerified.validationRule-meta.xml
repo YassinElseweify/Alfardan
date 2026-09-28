@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_ProofRequiredWhenVerified</fullName>
+    <active>true</active>
+    <description>ALF-RS-08 FR12: the verified payment gates contract generation, so a payment cannot reach Paid / Verified without a proof reference - otherwise the gate could open on an unevidenced payment.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(AF_Status__c, &quot;Paid / Verified&quot;),
+  ISBLANK(AF_ProofReference__c)
+)</errorConditionFormula>
+    <errorDisplayField>AF_ProofReference__c</errorDisplayField>
+    <errorMessage>Record the proof of payment / receipt reference before marking this payment as Paid / Verified.</errorMessage>
+</ValidationRule>

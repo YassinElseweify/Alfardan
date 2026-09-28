@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_SFPaymentReference__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Idempotent inbound match key for the Keyloop payment-confirmation event.</description>
+    <externalId>true</externalId>
+    <label>Salesforce Payment Reference ID</label>
+    <length>50</length>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

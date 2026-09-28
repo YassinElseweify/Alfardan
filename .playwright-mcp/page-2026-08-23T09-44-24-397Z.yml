@@ -1,0 +1,742 @@
+- generic:
+  - generic:
+    - generic [ref=f23e2]:
+      - generic [ref=f23e3]:
+        - link "Skip to Navigation" [ref=f23e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=f23e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=f23e25]:
+          - generic [ref=f23e26]: "Sandbox: QA |"
+          - link "Log out" [ref=f23e27] [cursor=pointer]:
+            - /url: /secur/logout.jsp
+        - generic [ref=f23e6]:
+          - button "Search" [ref=f23e31]: Search...
+          - navigation "Global Header" [ref=f23e9]:
+            - list [ref=f23e37]:
+              - listitem [ref=f23e38]:
+                - group [ref=f23e39]:
+                  - button "This item doesn't support favorites" [ref=f23e41] [cursor=pointer]:
+                    - generic [ref=f23e42]:
+                      - tooltip "This item doesn't support favorites"
+                  - button [ref=f23e50] [cursor=pointer]:
+                    - generic [ref=f23e51]:
+                      - tooltip "Favorites list"
+              - listitem [ref=f23e58]:
+                - button [ref=f23e64] [cursor=pointer]:
+                  - generic [ref=f23e65]:
+                    - tooltip "Global Actions"
+              - listitem [ref=f23e72]:
+                - button [ref=f23e74] [cursor=pointer]:
+                  - generic [ref=f23e75]:
+                    - tooltip "Guidance Center"
+              - listitem [ref=f23e82]:
+                - button [ref=f23e85] [cursor=pointer]:
+                  - generic [ref=f23e86]:
+                    - tooltip "Salesforce Help"
+              - listitem [ref=f23e93]:
+                - button [ref=f23e99] [cursor=pointer]:
+                  - generic [ref=f23e100]:
+                    - tooltip "Setup"
+              - listitem [ref=f23e107]:
+                - button [ref=f23e110] [cursor=pointer]:
+                  - generic [ref=f23e111]:
+                    - tooltip "Notifications"
+                - generic [ref=f23e119]: 2 new notifications
+              - listitem [ref=f23e120]:
+                - button "View profile" [ref=f23e123] [cursor=pointer]:
+                  - generic [ref=f23e124]:
+                    - tooltip "View profile"
+      - generic [ref=f23e15]:
+        - generic [ref=f23e130]:
+          - generic [ref=f23e132]:
+            - navigation "App" [ref=f23e133]:
+              - button "App Launcher" [ref=f23e135] [cursor=pointer]
+            - heading "Sales" [level=1] [ref=f23e147]
+          - navigation "Global" [ref=f23e151]:
+            - list [ref=f23e152]:
+              - listitem [ref=f23e153]:
+                - link "Home" [ref=f23e154] [cursor=pointer]:
+                  - /url: /lightning/page/home
+              - listitem [ref=f23e156]:
+                - link "Analytics" [ref=f23e157] [cursor=pointer]:
+                  - /url: /lightning/page/analytics
+              - listitem [ref=f23e159]:
+                - link "Opportunities" [ref=f23e160] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                - button "Opportunities List" [ref=f23e165] [cursor=pointer]
+              - listitem [ref=f23e173]:
+                - link "Quotes" [ref=f23e174] [cursor=pointer]:
+                  - /url: /lightning/o/Quote/home
+                - button "Quotes List" [ref=f23e179] [cursor=pointer]
+              - listitem [ref=f23e187] [cursor=pointer]:
+                - link "Leads" [ref=f23e188]:
+                  - /url: /lightning/o/Lead/home
+                - button "Leads List" [ref=f23e193]
+              - listitem [ref=f23e201]:
+                - link "Tasks" [ref=f23e202] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                - button "Tasks List" [ref=f23e207] [cursor=pointer]
+              - listitem [ref=f23e215]:
+                - link "Files" [ref=f23e216] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                - button "Files List" [ref=f23e221] [cursor=pointer]
+              - listitem [ref=f23e229]:
+                - link "Accounts" [ref=f23e230] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                - button "Accounts List" [ref=f23e235] [cursor=pointer]
+              - listitem [ref=f23e243]:
+                - link "Contacts" [ref=f23e244] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                - button "Contacts List" [ref=f23e249] [cursor=pointer]
+              - listitem [ref=f23e257]:
+                - link "Campaigns" [ref=f23e258] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                - button "Campaigns List" [ref=f23e263] [cursor=pointer]
+              - listitem [ref=f23e271]:
+                - link "Dashboards" [ref=f23e272] [cursor=pointer]:
+                  - /url: /lightning/o/Dashboard/home
+                - button "Dashboards List" [ref=f23e277] [cursor=pointer]
+              - listitem [ref=f23e285]:
+                - link "Reports" [ref=f23e286] [cursor=pointer]:
+                  - /url: /lightning/o/Report/home
+                - button "Reports List" [ref=f23e291] [cursor=pointer]
+              - listitem [ref=f23e299]:
+                - link "Chatter" [ref=f23e300] [cursor=pointer]:
+                  - /url: /lightning/page/chatter
+              - listitem [ref=f23e302]:
+                - link "Groups" [ref=f23e303] [cursor=pointer]:
+                  - /url: /lightning/o/CollaborationGroup/home
+                - button "Groups List" [ref=f23e308] [cursor=pointer]
+              - listitem [ref=f23e316]:
+                - button "Show more navigation items" [ref=f23e318] [cursor=pointer]:
+                  - generic [ref=f23e319]: More
+              - listitem [ref=f23e327]:
+                - button "Edit nav items" [ref=f23e329] [cursor=pointer]
+        - main [ref=f23e17]:
+          - generic [ref=f23e746]:
+            - generic [ref=f23e748]:
+              - generic [ref=f23e750]:
+                - generic "Lead" [ref=f23e752]
+                - generic [ref=f23e761]:
+                  - heading "Leads" [level=1] [ref=f23e762]
+                  - generic [ref=f23e767] [cursor=pointer]:
+                    - heading "Leads My Leads" [level=1] [ref=f23e768]:
+                      - generic [ref=f23e769]: Leads
+                      - generic [ref=f23e770]: My Leads
+                    - 'button "Select a List View: Leads" [ref=f23e773]'
+              - group [ref=f23e782]:
+                - generic "Lead View Settings" [ref=f23e784]:
+                  - button "Lead View Settings" [ref=f23e785] [cursor=pointer]
+                - button "Refresh" [ref=f23e795] [cursor=pointer]
+                - button "Edit List" [ref=f23e804] [cursor=pointer]
+                - group [ref=f23e811]:
+                  - generic [ref=f23e813]:
+                    - button "New" [ref=f23e815] [cursor=pointer]
+                    - button "List View" [ref=f23e817] [cursor=pointer]
+            - generic [ref=f23e819]:
+              - generic [ref=f23e823]:
+                - generic [ref=f23e824]:
+                  - generic [ref=f23e825]:
+                    - generic [ref=f23e826]: Created
+                    - 'button "Time Period Filter: This Quarter" [ref=f23e832] [cursor=pointer]': This Quarter
+                  - generic [ref=f23e837]:
+                    - generic [ref=f23e838]: Owner
+                    - 'button "Lead owner filter: Me" [ref=f23e844] [cursor=pointer]': Me
+                - group [ref=f23e851]:
+                  - generic [ref=f23e853]:
+                    - generic [ref=f23e854]:
+                      - button "Important Leads" [ref=f23e857] [cursor=pointer]
+                      - generic [ref=f23e863]: Apply Important Leads Filter
+                    - tooltip "Shows the leads you mark as important. If you filter your view, the same filters apply." [ref=f23e864]
+                  - button "Show filters" [ref=f23e868] [cursor=pointer]
+              - group "Key Performance Indicators" [ref=f23e876]:
+                - button [pressed] [ref=f23e878] [cursor=pointer]:
+                  - generic [ref=f23e879]:
+                    - paragraph [ref=f23e881]: Total Leads
+                    - paragraph [ref=f23e882]: ٢
+                - generic [ref=f23e883]:
+                  - button [ref=f23e884] [cursor=pointer]:
+                    - generic [ref=f23e885]:
+                      - paragraph [ref=f23e887]: No Activity
+                      - paragraph [ref=f23e889]: ٢
+                  - button "Help" [ref=f23e893] [cursor=pointer]
+                - generic [ref=f23e899]:
+                  - button [ref=f23e900] [cursor=pointer]:
+                    - generic [ref=f23e901]:
+                      - paragraph [ref=f23e903]: Idle
+                      - paragraph [ref=f23e905]: ٠
+                  - button "Help" [ref=f23e909] [cursor=pointer]
+                - generic [ref=f23e915]:
+                  - button [ref=f23e916] [cursor=pointer]:
+                    - generic [ref=f23e917]:
+                      - paragraph [ref=f23e919]: No Upcoming
+                      - paragraph [ref=f23e921]: ٠
+                  - button "Help" [ref=f23e925] [cursor=pointer]
+                - button [ref=f23e932] [cursor=pointer]:
+                  - generic [ref=f23e933]:
+                    - paragraph [ref=f23e935]: Overdue
+                    - paragraph [ref=f23e936]: ٠
+                - button [ref=f23e938] [cursor=pointer]:
+                  - generic [ref=f23e939]:
+                    - paragraph [ref=f23e941]: Due Today
+                    - paragraph [ref=f23e942]: ١
+                - generic [ref=f23e943]:
+                  - button [ref=f23e944] [cursor=pointer]:
+                    - generic [ref=f23e945]:
+                      - paragraph [ref=f23e947]: Upcoming
+                      - paragraph [ref=f23e949]: ٠
+                  - button "Help" [ref=f23e953] [cursor=pointer]
+              - generic [ref=f23e960]:
+                - generic [ref=f23e962]:
+                  - status [ref=f23e966]: 2 items • Filtered by Created Date, Me, Total Leads
+                  - group [ref=f23e969]:
+                    - generic [ref=f23e971]:
+                      - button "Change Owner" [ref=f23e973] [cursor=pointer]
+                      - button "Add to an Actionable List" [ref=f23e975] [cursor=pointer]
+                      - button "Assign Label" [ref=f23e977] [cursor=pointer]
+                - generic [ref=f23e980]:
+                  - generic [ref=f23e989]:
+                    - generic: Navigation Mode
+                    - grid [ref=f23e994]:
+                      - rowgroup:
+                        - row "Row Number Choose a Row Select 2 items Name Important Title Company Lead Status Lead Source Last Activity Actions Action":
+                          - columnheader "Row Number":
+                            - generic [ref=f23e997]:
+                              - generic "Row Number"
+                          - gridcell "Choose a Row Select 2 items":
+                            - generic [ref=f23e998]:
+                              - generic [ref=f23e999]: Choose a Row
+                              - generic [ref=f23e1001]:
+                                - checkbox "Select 2 items" [ref=f23e1002]
+                                - generic [ref=f23e1003]: Select 2 items
+                          - columnheader "Name":
+                            - generic [ref=f23e1007]:
+                              - 'button "Sort by: Name" [ref=f23e1008] [cursor=pointer]':
+                                - generic [ref=f23e1009]: "Sort by:"
+                                - generic "Name" [ref=f23e1010]
+                              - generic [ref=f23e1011]: "Sorted: None"
+                              - button "Show Name column actions" [ref=f23e1013] [cursor=pointer]
+                              - slider "Name column width" [ref=f23e1019]: "381"
+                          - columnheader "Important":
+                            - generic "Important" [ref=f23e1026]
+                          - columnheader "Title":
+                            - generic [ref=f23e1034]:
+                              - 'button "Sort by: Title" [ref=f23e1035] [cursor=pointer]':
+                                - generic [ref=f23e1036]: "Sort by:"
+                                - generic "Title" [ref=f23e1037]
+                              - generic [ref=f23e1038]: "Sorted: None"
+                              - button "Show Title column actions" [ref=f23e1040] [cursor=pointer]
+                              - slider "Title column width" [ref=f23e1046]: "160"
+                          - columnheader "Company":
+                            - generic [ref=f23e1050]:
+                              - 'button "Sort by: Company" [ref=f23e1051] [cursor=pointer]':
+                                - generic [ref=f23e1052]: "Sort by:"
+                                - generic "Company" [ref=f23e1053]
+                              - generic [ref=f23e1054]: "Sorted: None"
+                              - button "Show Company column actions" [ref=f23e1056] [cursor=pointer]
+                              - slider "Company column width" [ref=f23e1062]: "160"
+                          - columnheader "Lead Status":
+                            - generic [ref=f23e1066]:
+                              - 'button "Sort by: Lead Status" [ref=f23e1067] [cursor=pointer]':
+                                - generic [ref=f23e1068]: "Sort by:"
+                                - generic "Lead Status" [ref=f23e1069]
+                              - generic [ref=f23e1070]: "Sorted: None"
+                              - button "Show Lead Status column actions" [ref=f23e1072] [cursor=pointer]
+                              - slider "Lead Status column width" [ref=f23e1078]: "193"
+                          - columnheader "Lead Source":
+                            - generic [ref=f23e1082]:
+                              - 'button "Sort by: Lead Source" [ref=f23e1083] [cursor=pointer]':
+                                - generic [ref=f23e1084]: "Sort by:"
+                                - generic "Lead Source" [ref=f23e1085]
+                              - generic [ref=f23e1086]: "Sorted: None"
+                              - button "Show Lead Source column actions" [ref=f23e1088] [cursor=pointer]
+                              - slider "Lead Source column width" [ref=f23e1094]: "349"
+                          - columnheader "Last Activity":
+                            - generic [ref=f23e1098]:
+                              - 'button "Sort by: Last Activity" [ref=f23e1099] [cursor=pointer]':
+                                - generic [ref=f23e1100]: "Sort by:"
+                                - generic "Last Activity" [ref=f23e1101]
+                              - generic [ref=f23e1102]: "Sorted: None"
+                              - button "Show Last Activity column actions" [ref=f23e1104] [cursor=pointer]
+                              - slider "Last Activity column width" [ref=f23e1110]: "155"
+                          - columnheader "Actions":
+                            - generic "Actions" [ref=f23e1116]
+                          - columnheader "Action":
+                            - generic [ref=f23e1119]:
+                              - generic "Action"
+                      - rowgroup [ref=f23e1120]:
+                        - row [ref=f23e1121]:
+                          - gridcell [ref=f23e1122]
+                          - gridcell "Select Item 1 Choose a Row" [ref=f23e1127]:
+                            - generic [ref=f23e1129]:
+                              - checkbox "Select Item 1 Choose a Row" [ref=f23e1130]
+                              - generic [ref=f23e1131]: Select Item 1
+                          - rowheader [ref=f23e1134]:
+                            - generic [ref=f23e1136]:
+                              - generic [ref=f23e1140]:
+                                - link "TC004Blank" [ref=f23e1143] [cursor=pointer]:
+                                  - /url: /lightning/r/Lead/00QFV00A2f8QYTU2E4/view
+                                - 'button "View Activity: TC004Blank" [ref=f23e1146] [cursor=pointer]'
+                              - img "Locked Name" [ref=f23e1152]
+                          - gridcell [ref=f23e1157]:
+                            - 'button "Mark Important: TC004Blank" [ref=f23e1166] [cursor=pointer]'
+                          - gridcell [ref=f23e1172]:
+                            - button "Edit Title" [ref=f23e1175] [cursor=pointer]
+                          - gridcell [ref=f23e1181]:
+                            - button "Edit Company" [ref=f23e1184] [cursor=pointer]
+                          - gridcell "New Edit Lead Status" [ref=f23e1190]:
+                            - generic [ref=f23e1192]:
+                              - generic [ref=f23e1193]: New
+                              - button "Edit Lead Status" [ref=f23e1196] [cursor=pointer]
+                          - gridcell "Advertisement Edit Lead Source" [ref=f23e1202]:
+                            - generic [ref=f23e1204]:
+                              - generic [ref=f23e1205]: Advertisement
+                              - button "Edit Lead Source" [ref=f23e1208] [cursor=pointer]
+                          - gridcell [ref=f23e1214]:
+                            - img "Locked Last Activity" [ref=f23e1217]
+                          - gridcell [ref=f23e1222]:
+                            - group [ref=f23e1229]:
+                              - generic [ref=f23e1231]:
+                                - generic:
+                                  - button "Email" [disabled]
+                                - button "Call" [ref=f23e1233] [cursor=pointer]
+                          - gridcell [ref=f23e1239]:
+                            - button "Show Actions" [ref=f23e1246] [cursor=pointer]
+                        - row [ref=f23e1252]:
+                          - gridcell [ref=f23e1253]
+                          - gridcell "Select Item 2 Choose a Row" [ref=f23e1258]:
+                            - generic [ref=f23e1260]:
+                              - checkbox "Select Item 2 Choose a Row" [ref=f23e1261]
+                              - generic [ref=f23e1262]: Select Item 2
+                          - rowheader [ref=f23e1265]:
+                            - generic [ref=f23e1267]:
+                              - generic [ref=f23e1271]:
+                                - link "Khalid QA test LM-01-TC-001 Al-Mannai" [ref=f23e1274] [cursor=pointer]:
+                                  - /url: /lightning/r/Lead/00QFV00A2mEBV762EH/view
+                                - 'button "View Activity: Khalid QA test LM-01-TC-001 Al-Mannai" [ref=f23e1277] [cursor=pointer]'
+                              - img "Locked Name" [ref=f23e1283]
+                          - gridcell [ref=f23e1288]:
+                            - 'button "Mark Important: Khalid QA test LM-01-TC-001 Al-Mannai" [ref=f23e1297] [cursor=pointer]'
+                          - gridcell [ref=f23e1303]:
+                            - button "Edit Title" [ref=f23e1306] [cursor=pointer]
+                          - gridcell [ref=f23e1312]:
+                            - button "Edit Company" [ref=f23e1315] [cursor=pointer]
+                          - gridcell "New Edit Lead Status" [ref=f23e1321]:
+                            - generic [ref=f23e1323]:
+                              - generic [ref=f23e1324]: New
+                              - button "Edit Lead Status" [ref=f23e1327] [cursor=pointer]
+                          - gridcell "Incoming Call Edit Lead Source" [ref=f23e1333]:
+                            - generic [ref=f23e1335]:
+                              - generic [ref=f23e1336]: Incoming Call
+                              - button "Edit Lead Source" [ref=f23e1339] [cursor=pointer]
+                          - gridcell [ref=f23e1345]:
+                            - img "Locked Last Activity" [ref=f23e1348]
+                          - gridcell [ref=f23e1353]:
+                            - group [ref=f23e1360]:
+                              - generic [ref=f23e1362]:
+                                - generic:
+                                  - button "Email" [disabled]
+                                - button "Call" [ref=f23e1364] [cursor=pointer]
+                          - gridcell [ref=f23e1370]:
+                            - button "Show Actions" [ref=f23e1377] [cursor=pointer]
+                  - generic:
+                    - dialog
+                  - generic:
+                    - dialog
+                  - generic:
+                    - dialog
+                  - generic:
+                    - dialog
+                  - generic:
+                    - dialog
+                  - generic:
+                    - dialog
+                  - generic:
+                    - dialog
+                  - generic:
+                    - dialog
+      - generic:
+        - contentinfo "Utility Bar":
+          - list [ref=f23e731]:
+            - listitem [ref=f23e732]:
+              - button "To Do List" [ref=f23e735] [cursor=pointer]
+    - dialog "New Lead" [ref=f23e1384]:
+      - generic [ref=f23e1385]:
+        - button "Cancel and close" [ref=f23e1386] [cursor=pointer]
+        - generic [ref=f23e1392]:
+          - generic [ref=f23e1399]:
+            - heading "New Lead" [level=2] [ref=f23e1401]
+            - generic [ref=f23e1403]:
+              - generic [ref=f23e1404]: "* = Required Information"
+              - generic [ref=f23e1406]:
+                - generic [ref=f23e1411]:
+                  - generic [ref=f23e1413]:
+                    - heading "Lead Information" [level=3] [ref=f23e1414]
+                    - list [ref=f23e1417]:
+                      - generic [ref=f23e1418]:
+                        - generic [ref=f23e1420]:
+                          - listitem [ref=f23e1422]:
+                            - generic [ref=f23e1423]:
+                              - generic [ref=f23e1424]: Lead Owner
+                              - generic [ref=f23e1425]: CRM Agent
+                          - listitem [ref=f23e1438]:
+                            - generic [ref=f23e1445]:
+                              - generic [ref=f23e1446]: "*Lead Status"
+                              - combobox "Lead Status" [active] [ref=f23e1452] [cursor=pointer]:
+                                - generic [ref=f23e1453]: New
+                              - status
+                        - generic [ref=f23e1461]:
+                          - listitem [ref=f23e1463]:
+                            - group "Name required" [ref=f23e1468]:
+                              - generic [ref=f23e1469]:
+                                - text: "*Name"
+                                - generic "required" [ref=f23e1470]
+                              - generic [ref=f23e1472]:
+                                - generic [ref=f23e1476]:
+                                  - generic [ref=f23e1477]: Salutation
+                                  - combobox "Salutation" [ref=f23e1483] [cursor=pointer]:
+                                    - generic [ref=f23e1484]: "--None--"
+                                  - status
+                                - generic [ref=f23e1494]:
+                                  - generic [ref=f23e1495]: First Name
+                                  - textbox "First Name" [ref=f23e1497]
+                                - generic [ref=f23e1501]:
+                                  - generic [ref=f23e1502]: "*Last Name"
+                                  - textbox "Last Name" [ref=f23e1504]
+                          - listitem [ref=f23e1506]:
+                            - generic [ref=f23e1511]:
+                              - generic [ref=f23e1512]: Phone
+                              - textbox "Phone" [ref=f23e1514]
+                        - generic [ref=f23e1516]:
+                          - listitem [ref=f23e1518]:
+                            - generic [ref=f23e1524]:
+                              - generic [ref=f23e1525]: Company
+                              - textbox "Company" [ref=f23e1527]
+                          - listitem [ref=f23e1529]:
+                            - generic [ref=f23e1534]:
+                              - generic [ref=f23e1535]: Email
+                              - textbox "Email" [ref=f23e1537]
+                        - generic [ref=f23e1539]:
+                          - listitem [ref=f23e1541]:
+                            - generic [ref=f23e1547]:
+                              - generic [ref=f23e1548]: Title
+                              - textbox "Title" [ref=f23e1550]
+                          - listitem [ref=f23e1552]:
+                            - generic [ref=f23e1559]:
+                              - generic [ref=f23e1560]: Rating
+                              - combobox "Rating" [ref=f23e1566] [cursor=pointer]:
+                                - generic [ref=f23e1567]: "--None--"
+                              - status
+                        - listitem [ref=f23e1577]:
+                          - generic [ref=f23e1581]:
+                            - group [ref=f23e1582]:
+                              - generic [ref=f23e1583]: Earliest Interest Date
+                              - generic [ref=f23e1584]:
+                                - textbox "Earliest Interest Date" [ref=f23e1585]
+                                - button "Select a date for Earliest Interest Date" [ref=f23e1587] [cursor=pointer]
+                            - generic [ref=f23e1593]: "Format: ٣١/١٢/٢٠٢٤"
+                        - listitem [ref=f23e1598]:
+                          - generic [ref=f23e1602]:
+                            - group [ref=f23e1603]:
+                              - generic [ref=f23e1604]: Latest Interest Date
+                              - generic [ref=f23e1605]:
+                                - textbox "Latest Interest Date" [ref=f23e1606]
+                                - button "Select a date for Latest Interest Date" [ref=f23e1608] [cursor=pointer]
+                            - generic [ref=f23e1614]: "Format: ٣١/١٢/٢٠٢٤"
+                        - listitem [ref=f23e1619]:
+                          - generic [ref=f23e1626]:
+                            - generic [ref=f23e1627]: "*Nationality"
+                            - combobox "Nationality" [ref=f23e1633] [cursor=pointer]:
+                              - generic [ref=f23e1634]: "--None--"
+                            - status
+                        - listitem [ref=f23e1645]:
+                          - generic [ref=f23e1649]:
+                            - group [ref=f23e1650]:
+                              - generic [ref=f23e1651]: "*Date of Birth"
+                              - generic [ref=f23e1652]:
+                                - textbox "Date of Birth" [ref=f23e1653]
+                                - button "Select a date for Date of Birth" [ref=f23e1655] [cursor=pointer]
+                            - generic [ref=f23e1661]: "Format: ٣١/١٢/٢٠٢٤"
+                  - generic [ref=f23e1664]:
+                    - heading "Address Information" [level=3] [ref=f23e1665]
+                    - list [ref=f23e1668]:
+                      - generic [ref=f23e1671]:
+                        - listitem [ref=f23e1673]:
+                          - group "Address" [ref=f23e1678]:
+                            - generic [ref=f23e1681]:
+                              - generic [ref=f23e1683]:
+                                - generic [ref=f23e1684]: Address Search
+                                - combobox "Address Search" [ref=f23e1691]
+                              - status [ref=f23e1698]
+                              - generic [ref=f23e1702]:
+                                - generic [ref=f23e1703]: Country
+                                - combobox "Country" [ref=f23e1711]: "--None--"
+                                - status
+                              - generic [ref=f23e1719]:
+                                - generic [ref=f23e1720]: Street
+                                - textbox "Street" [ref=f23e1722]
+                                - status
+                              - generic [ref=f23e1723]:
+                                - generic [ref=f23e1726]:
+                                  - generic [ref=f23e1727]: City
+                                  - textbox "City" [ref=f23e1729]
+                                - generic [ref=f23e1732]:
+                                  - generic [ref=f23e1733]: State/Province
+                                  - combobox "State/Province" [ref=f23e1741]: "--None--"
+                                  - status
+                              - generic [ref=f23e1751]:
+                                - generic [ref=f23e1752]: Zip/Postal Code
+                                - textbox "Zip/Postal Code" [ref=f23e1754]
+                        - listitem [ref=f23e1756]:
+                          - generic [ref=f23e1761]:
+                            - generic [ref=f23e1762]: Website
+                            - textbox "Website" [ref=f23e1764]
+                  - generic [ref=f23e1766]:
+                    - heading "Additional Information" [level=3] [ref=f23e1767]
+                    - list [ref=f23e1770]:
+                      - generic [ref=f23e1771]:
+                        - generic [ref=f23e1773]:
+                          - listitem [ref=f23e1775]:
+                            - generic [ref=f23e1780]:
+                              - generic [ref=f23e1781]: No. of Employees
+                              - spinbutton "No. of Employees" [ref=f23e1783]
+                          - listitem [ref=f23e1785]:
+                            - generic [ref=f23e1792]:
+                              - generic [ref=f23e1793]: Lead Source
+                              - combobox "Lead Source" [ref=f23e1799] [cursor=pointer]:
+                                - generic [ref=f23e1800]: "--None--"
+                              - status
+                        - generic [ref=f23e1808]:
+                          - listitem [ref=f23e1810]:
+                            - generic [ref=f23e1816]:
+                              - generic [ref=f23e1817]: Annual Revenue
+                              - spinbutton "Annual Revenue" [ref=f23e1819]
+                          - listitem [ref=f23e1821]:
+                            - generic [ref=f23e1828]:
+                              - generic [ref=f23e1829]: Industry
+                              - combobox "Industry" [ref=f23e1835] [cursor=pointer]:
+                                - generic [ref=f23e1836]: "--None--"
+                              - status
+                  - generic [ref=f23e1844]:
+                    - heading "Description Information" [level=3] [ref=f23e1845]
+                    - list [ref=f23e1848]:
+                      - listitem [ref=f23e1853]:
+                        - generic [ref=f23e1857]:
+                          - generic [ref=f23e1858]: Description
+                          - textbox "Description" [ref=f23e1860]
+                          - status
+                  - generic [ref=f23e1862]:
+                    - heading "Brand & Business Unit" [level=3] [ref=f23e1863]
+                    - list [ref=f23e1866]:
+                      - generic [ref=f23e1867]:
+                        - generic [ref=f23e1869]:
+                          - listitem [ref=f23e1871]:
+                            - generic [ref=f23e1875]:
+                              - generic [ref=f23e1878]:
+                                - generic [ref=f23e1879]: Brand
+                                - combobox "Brand" [ref=f23e1885] [cursor=pointer]:
+                                  - generic [ref=f23e1886]: "--None--"
+                                - status
+                              - link "View all dependencies for Brand" [ref=f23e1895] [cursor=pointer]:
+                                - /url: javascript:void(0)
+                                - text: View all dependencies
+                          - listitem [ref=f23e1897]:
+                            - generic [ref=f23e1898]: Business Unit
+                        - listitem [ref=f23e1904]:
+                          - generic [ref=f23e1908]:
+                            - generic [ref=f23e1911]:
+                              - generic [ref=f23e1912]: Showroom
+                              - combobox "Showroom" [disabled] [ref=f23e1918]:
+                                - generic [ref=f23e1919]: "--None--"
+                              - status
+                            - link "View all dependencies for Showroom" [ref=f23e1928] [cursor=pointer]:
+                              - /url: javascript:void(0)
+                              - text: View all dependencies
+                  - generic [ref=f23e1931]:
+                    - heading "Source & Channel" [level=3] [ref=f23e1932]
+                    - list [ref=f23e1935]:
+                      - generic [ref=f23e1936]:
+                        - generic [ref=f23e1938]:
+                          - listitem [ref=f23e1940]:
+                            - generic [ref=f23e1947]:
+                              - generic [ref=f23e1948]: Lead Channel
+                              - combobox "Lead Channel" [ref=f23e1954] [cursor=pointer]:
+                                - generic [ref=f23e1955]: "--None--"
+                              - status
+                          - listitem [ref=f23e1963]:
+                            - generic [ref=f23e1970]:
+                              - generic [ref=f23e1971]: Lead Medium
+                              - combobox "Lead Medium" [ref=f23e1977] [cursor=pointer]:
+                                - generic [ref=f23e1978]: "--None--"
+                              - status
+                        - generic [ref=f23e1986]:
+                          - listitem [ref=f23e1988]:
+                            - generic [ref=f23e1995]:
+                              - generic [ref=f23e1996]: Source of Business
+                              - combobox "Source of Business" [ref=f23e2002] [cursor=pointer]:
+                                - generic [ref=f23e2003]: "--None--"
+                              - status
+                          - listitem [ref=f23e2011]:
+                            - generic [ref=f23e2017]:
+                              - generic [ref=f23e2018]: Form Code
+                              - textbox "Form Code" [ref=f23e2020]
+                  - generic [ref=f23e2022]:
+                    - heading "Identification" [level=3] [ref=f23e2023]
+                    - list [ref=f23e2026]:
+                      - generic [ref=f23e2029]:
+                        - listitem [ref=f23e2031]:
+                          - generic [ref=f23e2037]:
+                            - generic [ref=f23e2038]: Qatar ID
+                            - textbox "Qatar ID" [ref=f23e2040]
+                        - listitem [ref=f23e2042]:
+                          - generic [ref=f23e2048]:
+                            - generic [ref=f23e2049]: Other ID Number
+                            - textbox "Other ID Number" [ref=f23e2051]
+                  - generic [ref=f23e2053]:
+                    - heading "Vehicle & Test Drive" [level=3] [ref=f23e2054]
+                    - list [ref=f23e2057]:
+                      - generic [ref=f23e2058]:
+                        - generic [ref=f23e2060]:
+                          - listitem [ref=f23e2062]:
+                            - generic [ref=f23e2066]:
+                              - generic [ref=f23e2069]:
+                                - generic [ref=f23e2070]: Vehicle of Interest
+                                - combobox "Vehicle of Interest" [disabled] [ref=f23e2076]:
+                                  - generic [ref=f23e2077]: "--None--"
+                                - status
+                              - link "View all dependencies for Vehicle of Interest" [ref=f23e2086] [cursor=pointer]:
+                                - /url: javascript:void(0)
+                                - text: View all dependencies
+                          - listitem [ref=f23e2088]:
+                            - generic [ref=f23e2093]:
+                              - generic [ref=f23e2094]: Interested in Test Drive
+                              - checkbox "Interested in Test Drive" [ref=f23e2097]
+                        - generic [ref=f23e2099]:
+                          - listitem [ref=f23e2101]:
+                            - group "Test Drive Date/Time" [ref=f23e2108]:
+                              - generic [ref=f23e2112]:
+                                - generic [ref=f23e2113]:
+                                  - group [ref=f23e2114]:
+                                    - generic [ref=f23e2115]: Date
+                                    - generic [ref=f23e2116]:
+                                      - textbox "Date" [ref=f23e2117]
+                                      - button "Select a date for Date" [ref=f23e2119] [cursor=pointer]
+                                  - generic [ref=f23e2125]: "Format: ٣١/١٢/٢٠٢٤"
+                                - generic [ref=f23e2126]:
+                                  - generic [ref=f23e2127]: Time
+                                  - combobox "Time" [ref=f23e2134]
+                          - listitem [ref=f23e2142]:
+                            - generic [ref=f23e2148]:
+                              - generic [ref=f23e2149]: Test Drive Location
+                              - textbox "Test Drive Location" [ref=f23e2151]
+                  - generic [ref=f23e2153]:
+                    - heading "Qualification" [level=3] [ref=f23e2154]
+                    - list [ref=f23e2157]:
+                      - generic [ref=f23e2158]:
+                        - generic [ref=f23e2160]:
+                          - listitem [ref=f23e2162]:
+                            - generic [ref=f23e2169]:
+                              - generic [ref=f23e2170]: Qualification Outcome
+                              - combobox "Qualification Outcome" [ref=f23e2176] [cursor=pointer]:
+                                - generic [ref=f23e2177]: "--None--"
+                              - status
+                          - listitem [ref=f23e2185]:
+                            - generic [ref=f23e2186]: Qualified Date
+                        - generic [ref=f23e2190]:
+                          - listitem [ref=f23e2192]:
+                            - generic [ref=f23e2199]:
+                              - generic [ref=f23e2200]: Contact Validity
+                              - combobox "Contact Validity" [ref=f23e2206] [cursor=pointer]:
+                                - generic [ref=f23e2207]: "--None--"
+                              - status
+                          - listitem [ref=f23e2215]:
+                            - generic [ref=f23e2216]: Qualified By
+                  - generic [ref=f23e2221]:
+                    - heading "SLA Tracking" [level=3] [ref=f23e2222]
+                    - list [ref=f23e2225]:
+                      - generic [ref=f23e2226]:
+                        - generic [ref=f23e2228]:
+                          - listitem [ref=f23e2230]:
+                            - generic [ref=f23e2231]: Assigned Date/Time
+                          - listitem [ref=f23e2235]:
+                            - group "First Contact Date/Time" [ref=f23e2242]:
+                              - generic [ref=f23e2246]:
+                                - generic [ref=f23e2247]:
+                                  - group [ref=f23e2248]:
+                                    - generic [ref=f23e2249]: Date
+                                    - generic [ref=f23e2250]:
+                                      - textbox "Date" [ref=f23e2251]
+                                      - button "Select a date for Date" [ref=f23e2253] [cursor=pointer]
+                                  - generic [ref=f23e2259]: "Format: ٣١/١٢/٢٠٢٤"
+                                - generic [ref=f23e2260]:
+                                  - generic [ref=f23e2261]: Time
+                                  - combobox "Time" [ref=f23e2268]
+                        - generic [ref=f23e2276]:
+                          - listitem [ref=f23e2278]:
+                            - generic [ref=f23e2279]: SLA Target — First Contact
+                          - listitem [ref=f23e2283]:
+                            - generic [ref=f23e2284]: SLA Target — Second Checkpoint
+                        - generic [ref=f23e2288]:
+                          - listitem [ref=f23e2290]:
+                            - generic [ref=f23e2291]: SLA Target — Final Disposition
+                          - listitem [ref=f23e2295]:
+                            - generic [ref=f23e2296]:
+                              - generic [ref=f23e2297]: SLA Status
+                              - generic [ref=f23e2298]: On Track
+                  - generic [ref=f23e2302]:
+                    - heading "Disqualification" [level=3] [ref=f23e2303]
+                    - list [ref=f23e2306]:
+                      - generic [ref=f23e2309]:
+                        - listitem [ref=f23e2311]:
+                          - generic [ref=f23e2318]:
+                            - generic [ref=f23e2319]: Disqualification Reason
+                            - combobox "Disqualification Reason" [ref=f23e2325] [cursor=pointer]:
+                              - generic [ref=f23e2326]: "--None--"
+                            - status
+                        - listitem [ref=f23e2334]:
+                          - generic [ref=f23e2338]:
+                            - generic [ref=f23e2339]: Disqualification Notes
+                            - textbox "Disqualification Notes" [ref=f23e2341]
+                            - status
+                  - generic [ref=f23e2343]:
+                    - heading "Integration" [level=3] [ref=f23e2344]
+                    - list [ref=f23e2347]:
+                      - generic [ref=f23e2348]:
+                        - generic [ref=f23e2350]:
+                          - listitem [ref=f23e2352]:
+                            - generic [ref=f23e2353]: Keyloop Lead Reference
+                          - listitem [ref=f23e2357]:
+                            - generic [ref=f23e2358]:
+                              - generic [ref=f23e2359]: Integration Status
+                              - generic [ref=f23e2360]: Pending
+                        - generic [ref=f23e2364]:
+                          - listitem [ref=f23e2366]:
+                            - generic [ref=f23e2367]: Integration Last Error
+                          - listitem [ref=f23e2371]:
+                            - generic [ref=f23e2376]:
+                              - generic [ref=f23e2377]: Needs Manual Review
+                              - checkbox "Needs Manual Review" [ref=f23e2380]
+                        - listitem [ref=f23e2384]:
+                          - generic [ref=f23e2385]:
+                            - generic [ref=f23e2386]: Is Suppressed Duplicate
+                            - generic [ref=f23e2392]:
+                              - generic "False" [ref=f23e2393]
+                              - generic [ref=f23e2400]: Is Suppressed Duplicate
+                - generic [ref=f23e2403]:
+                  - list [ref=f23e2406]:
+                    - listitem [ref=f23e2407]:
+                      - generic "Assign using active assignment rule" [ref=f23e2408]:
+                        - generic [ref=f23e2411]:
+                          - checkbox "Assign using active assignment rule" [checked] [ref=f23e2412]
+                          - generic [ref=f23e2413]: Assign using active assignment rule
+                  - generic [ref=f23e2417]:
+                    - generic "Cancel" [ref=f23e2418]:
+                      - button "Cancel" [ref=f23e2423] [cursor=pointer]
+                    - generic "Save & New" [ref=f23e2424]:
+                      - button "Save & New" [ref=f23e2429] [cursor=pointer]
+                    - generic "Save" [ref=f23e2430]:
+                      - button "Save" [ref=f23e2435] [cursor=pointer]
+          - status [ref=f23e2436]
+  - generic:
+    - status

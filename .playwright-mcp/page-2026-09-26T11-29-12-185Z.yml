@@ -1,0 +1,59 @@
+- generic [active]:
+  - generic [ref=f60e2]:
+    - generic [ref=f60e3]:
+      - link "Skip to Navigation" [ref=f60e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f60e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f60e6]:
+        - button "Search" [ref=f60e13]: Search...
+        - navigation "Global Header" [ref=f60e18]:
+          - list [ref=f60e19]:
+            - listitem [ref=f60e20]
+    - generic [ref=f60e24]:
+      - generic [ref=f60e27]:
+        - generic [ref=f60e29]:
+          - navigation "App" [ref=f60e30]:
+            - button "App Launcher" [ref=f60e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f60e44]
+        - navigation "Global" [ref=f60e48]:
+          - list [ref=f60e49]:
+            - listitem [ref=f60e50]:
+              - link "Home" [ref=f60e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f60e53]:
+              - link "Vehicles" [ref=f60e54] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f60e59] [cursor=pointer]
+            - listitem [ref=f60e67]:
+              - link "Assets" [ref=f60e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f60e73] [cursor=pointer]
+            - listitem [ref=f60e81]:
+              - link "Vehicle Definitions" [ref=f60e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f60e87] [cursor=pointer]
+            - listitem [ref=f60e95]:
+              - link "Products" [ref=f60e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f60e101] [cursor=pointer]
+            - listitem [ref=f60e109]:
+              - link "Accounts" [ref=f60e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f60e115] [cursor=pointer]
+            - listitem [ref=f60e123]:
+              - link "Contacts" [ref=f60e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f60e129] [cursor=pointer]
+            - listitem [ref=f60e137]:
+              - link "Asset Milestones" [ref=f60e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f60e143] [cursor=pointer]
+            - listitem [ref=f60e151]:
+              - button "Show more navigation items" [ref=f60e153] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f60e154]: More
+            - listitem [ref=f60e162]:
+              - button "Edit nav items" [ref=f60e164] [cursor=pointer]
+      - main [ref=f60e171]
+  - generic:
+    - status

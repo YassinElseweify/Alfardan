@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Already_Merged</name>
+        <label>Already Marked Merged?</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status_None</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Merged</defaultConnectorLabel>
+        <rules>
+            <name>Is_Already_Merged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_DuplicateStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Merged</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Already Merged</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Duplicate_Match_Found</name>
+        <label>Duplicate Match Found?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Already_Merged</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Match</defaultConnectorLabel>
+        <rules>
+            <name>Match_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Matching_Accounts</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_Potential</targetReference>
+            </connector>
+            <label>Match Found</label>
+        </rules>
+    </decisions>
+    <description>Wires Account.AF_DuplicateStatus__c to the org&apos;s existing AF_MR_Account_PhoneEmailQID matching-rule criteria (exact QID, phone, email match), since Salesforce&apos;s native Duplicate Rule (Standard_Account_Duplicate_Rule) only shows a UI alert on save and never writes back to a custom field. Runs after-save on create and whenever QID, Phone, or Email changes; blank-guards all three match values so two Accounts with blank QID/Phone/Email never false-positive against each other (AF_Formula_QIDMatchValue / AF_Formula_PhoneMatchValue / AF_Formula_EmailMatchValue). Never downgrades a record already marked Merged back to None.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_EmailMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.AF_Email__c}), &quot;___AF_NO_EMAIL___&quot;, {!$Record.AF_Email__c})</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_PhoneMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Phone}), &quot;___AF_NO_PHONE___&quot;, {!$Record.Phone})</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_QIDMatchValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.AF_QID__c}), &quot;___AF_NO_QID___&quot;, {!$Record.AF_QID__c})</expression>
+    </formulas>
+    <interviewLabel>Account Duplicate Check {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Duplicate Check</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Matching_Accounts</name>
+        <label>Get Matching Accounts</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Duplicate_Match_Found</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3 OR 4)</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_QID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_QIDMatchValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_PhoneMatchValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_Email__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AF_Formula_EmailMatchValue</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Status_None</name>
+        <label>Update Status - None</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_DuplicateStatus__c</field>
+            <value>
+                <stringValue>None</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status_Potential</name>
+        <label>Update Status - Potential Duplicate</label>
+        <locationX>302</locationX>
+        <locationY>350</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_DuplicateStatus__c</field>
+            <value>
+                <stringValue>Potential Duplicate</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Matching_Accounts</targetReference>
+        </connector>
+        <filterFormula>OR(ISNEW(), ISCHANGED({!$Record.AF_QID__c}), ISCHANGED({!$Record.Phone}), ISCHANGED({!$Record.AF_Email__c}))</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

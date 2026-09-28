@@ -1,0 +1,5 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" access="global">
+    <aura:if isTrue="{!not(empty(v.recordId))}">
+        <c:afDemoVehicleExplorerLauncher record-id="{!v.recordId}" onlaunched="{!c.handleLaunched}"></c:afDemoVehicleExplorerLauncher>
+    </aura:if>
+</aura:component>

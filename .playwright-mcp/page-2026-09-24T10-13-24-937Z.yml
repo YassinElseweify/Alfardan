@@ -1,0 +1,204 @@
+- generic [active]:
+  - generic [ref=f123e2]:
+    - generic [ref=f123e3]:
+      - link "Skip to Navigation" [ref=f123e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f123e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f123e8]:
+        - generic [ref=f123e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f123e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f123e11]:
+        - button "Search" [ref=f123e18]: Search...
+        - navigation "Global Header" [ref=f123e23]:
+          - list [ref=f123e25]:
+            - listitem [ref=f123e26]:
+              - group [ref=f123e27]:
+                - button "Add favorite" [ref=f123e251] [cursor=pointer]:
+                  - generic [ref=f123e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f123e38] [cursor=pointer]:
+                  - generic [ref=f123e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f123e46]:
+              - button "Global Actions" [ref=f123e48]
+            - listitem [ref=f123e55]:
+              - button [ref=f123e58] [cursor=pointer]:
+                - generic [ref=f123e59]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f123e66]:
+              - button [ref=f123e69] [cursor=pointer]:
+                - generic [ref=f123e70]:
+                  - tooltip "Notifications"
+            - listitem [ref=f123e79]:
+              - button "View profile" [ref=f123e252] [cursor=pointer]:
+                - generic [ref=f123e253]:
+                  - tooltip "View profile"
+    - generic [ref=f123e82]:
+      - generic [ref=f123e85]:
+        - generic [ref=f123e87]:
+          - navigation "App" [ref=f123e88]:
+            - button "App Launcher" [ref=f123e90] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f123e102]
+        - navigation "Global" [ref=f123e106]:
+          - list [ref=f123e107]:
+            - listitem [ref=f123e108]:
+              - link "Home" [ref=f123e109] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f123e111]:
+              - link "Vehicles" [ref=f123e112] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f123e117] [cursor=pointer]
+            - listitem [ref=f123e125]:
+              - link "Assets" [ref=f123e126] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f123e131] [cursor=pointer]
+            - listitem [ref=f123e139]:
+              - link "Vehicle Definitions" [ref=f123e140] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f123e145] [cursor=pointer]
+            - listitem [ref=f123e153]:
+              - link "Products" [ref=f123e154] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f123e159] [cursor=pointer]
+            - listitem [ref=f123e167]:
+              - link "Accounts" [ref=f123e168] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f123e173] [cursor=pointer]
+            - listitem [ref=f123e181]:
+              - link "Contacts" [ref=f123e182] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f123e187] [cursor=pointer]
+            - listitem [ref=f123e195]:
+              - link "Asset Milestones" [ref=f123e196] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f123e201] [cursor=pointer]
+            - listitem [ref=f123e257] [cursor=pointer]:
+              - link "* HO-00040 | Handover" [ref=f123e258]:
+                - /url: /lightning/r/AF_Handover__c/a0SFV001PraEY6e2IG/view
+                - generic "Not added to nav bar" [ref=f123e259]: "*"
+                - generic [ref=f123e260]: HO-00040 | Handover
+              - button "HO-00040 | Handover List" [ref=f123e264]
+              - button "Close tab" [ref=f123e272]
+            - listitem [ref=f123e223]:
+              - button "Show more navigation items" [ref=f123e225] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f123e226]: More
+            - listitem [ref=f123e234]:
+              - button "Edit nav items" [ref=f123e236] [cursor=pointer]
+      - main [ref=f123e243]:
+        - generic [ref=f123e291]:
+          - generic [ref=f123e301]:
+            - generic [ref=f123e307]:
+              - generic [ref=f123e308]: Handover
+              - heading "HO-00040" [level=1] [ref=f123e310]
+            - button "Follow" [ref=f123e316] [cursor=pointer]
+            - generic [ref=f123e327]:
+              - generic "Edit" [ref=f123e328]:
+                - button "Edit" [ref=f123e333] [cursor=pointer]
+              - generic "Generate Documents" [ref=f123e334]:
+                - button "Generate Documents" [ref=f123e339] [cursor=pointer]
+          - generic [ref=f123e340]:
+            - generic [ref=f123e348]:
+              - heading "Tabs" [level=2] [ref=f123e349]
+              - tablist "Tabs" [ref=f123e351]:
+                - tab "Details" [ref=f123e352] [cursor=pointer]
+                - tab "Related" [selected] [ref=f123e353] [cursor=pointer]
+              - tabpanel "Related" [ref=f123e356]:
+                - generic [ref=f123e357]:
+                  - generic [ref=f123e361]:
+                    - article "Approval History" [ref=f123e369]:
+                      - heading [level=2] [ref=f123e376]:
+                        - link "Approval History (0)" [ref=f123e377] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Handover__c/a0SFV001PraEY6e2IG/related/ProcessSteps/view
+                          - generic "Approval History" [ref=f123e378]
+                          - generic "(0)" [ref=f123e379]
+                    - article "Handover History" [ref=f123e385]:
+                      - generic [ref=f123e386]:
+                        - generic [ref=f123e387]:
+                          - heading [level=2] [ref=f123e398]:
+                            - link "Handover History (1)" [ref=f123e399] [cursor=pointer]:
+                              - /url: /lightning/r/AF_Handover__c/a0SFV001PraEY6e2IG/related/Histories/view
+                              - generic "Handover History" [ref=f123e400]
+                              - generic "(1)" [ref=f123e401]
+                          - generic [ref=f123e408]:
+                            - generic: Navigation Mode
+                            - grid "Handover History" [ref=f123e413]:
+                              - rowgroup:
+                                - row "Date Field User Original Value New Value":
+                                  - columnheader "Date":
+                                    - generic "Date" [ref=f123e417]
+                                  - columnheader "Field":
+                                    - generic "Field" [ref=f123e421]
+                                  - columnheader "User":
+                                    - generic "User" [ref=f123e425]
+                                  - columnheader "Original Value":
+                                    - generic "Original Value" [ref=f123e429]
+                                  - columnheader "New Value":
+                                    - generic "New Value" [ref=f123e433]
+                              - rowgroup [ref=f123e434]:
+                                - row [ref=f123e435]:
+                                  - rowheader "24/09/2026, 11:31 AM" [ref=f123e436]
+                                  - gridcell "Created." [ref=f123e442]
+                                  - gridcell [ref=f123e448]:
+                                    - link "QA SalesRep2" [ref=f123e455] [cursor=pointer]:
+                                      - /url: /lightning/r/005FV0082KfRrqeYQC/view
+                                  - gridcell [ref=f123e457]
+                                  - gridcell [ref=f123e458]
+                        - link "View All Handover History" [ref=f123e459] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Handover__c/a0SFV001PraEY6e2IG/related/Histories/view
+                          - generic [ref=f123e460]:
+                            - text: View All
+                            - generic [ref=f123e461]: Handover History
+                    - article [ref=f123e468]:
+                      - heading "Notes & Attachments" [level=2] [ref=f123e472]
+                  - article [ref=f123e478]:
+                    - heading "Required Documents" [level=2] [ref=f123e489]
+                    - generic [ref=f123e492]:
+                      - status:
+                        - generic [ref=f123e493]: Loading
+            - generic [ref=f123e503]:
+              - heading "Tabs" [level=2] [ref=f123e504]
+              - tablist "Tabs" [ref=f123e506]:
+                - tab "Activity" [selected] [ref=f123e507] [cursor=pointer]
+              - tabpanel "Activity" [ref=f123e510]:
+                - generic [ref=f123e516]:
+                  - heading "Activity Publisher" [level=2] [ref=f123e517]
+                  - generic [ref=f123e518]:
+                    - group [ref=f123e519]:
+                      - generic [ref=f123e521]:
+                        - button "Log a Call" [ref=f123e522] [cursor=pointer]
+                        - generic [ref=f123e530]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f123e531]:
+                      - generic [ref=f123e533]:
+                        - button "New Task" [ref=f123e534] [cursor=pointer]
+                        - generic [ref=f123e542]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f123e543]
+                  - generic [ref=f123e545]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f123e546] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f123e548]:
+                      - generic [ref=f123e549]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f123e551] [cursor=pointer]
+                    - generic [ref=f123e559]:
+                      - button "Refresh" [ref=f123e560] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f123e561] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f123e562] [cursor=pointer]
+                    - generic [ref=f123e564]:
+                      - heading [level=3] [ref=f123e565]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f123e566] [cursor=pointer]
+                      - generic [ref=f123e571]:
+                        - generic:
+                          - list
+                        - generic [ref=f123e572]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f123e575]:
+                      - generic [ref=f123e576]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f123e577] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

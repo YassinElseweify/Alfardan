@@ -1,0 +1,47 @@
+- generic [ref=f15e1]:
+  - generic [ref=f15e4]:
+    - generic [ref=f15e5]: Salesforce login
+    - heading "Change Your Password" [level=2] [ref=f15e9]
+    - generic [ref=f15e12]:
+      - paragraph [ref=f15e13]: "Enter a new password for jeff.ross.0to8ufepac1j.6kukvekpouzd.itsy.ttuu7svtokzc@alfardan.com.qa.qa. Make sure to include at least:"
+      - generic [ref=f15e14]:
+        - generic [ref=f15e15]: 1 number Meets requirement
+        - list [ref=f15e16]:
+          - listitem [ref=f15e17]:
+            - img "Meets requirement" [ref=f15e44]
+            - text: 8 characters
+          - listitem [ref=f15e19]:
+            - img "Meets requirement" [ref=f15e45]
+            - text: 1 letter
+          - listitem [ref=f15e21]:
+            - img "Meets requirement" [ref=f15e46]
+            - text: 1 number
+      - generic [ref=f15e23]: "* Current Password"
+      - textbox "* Current Password" [ref=f15e25]: Arcsen@2026!
+      - generic [ref=f15e26]: "* New Password"
+      - generic [ref=f15e27]:
+        - textbox "* New Password" [ref=f15e28]: Arcsen@2026UI!
+        - generic: Good
+      - generic [ref=f15e29]: "* Confirm New Password"
+      - generic [ref=f15e30]:
+        - textbox "* Confirm New Password" [active] [ref=f15e31]: Arcsen@2026UI!
+        - generic: Match
+      - generic [ref=f15e32]: "* New Security Question"
+      - combobox "* New Security Question" [ref=f15e34]:
+        - option "In what city were you born?" [selected]
+        - option "What is your mother's maiden name?"
+        - option "What is your pet's name?"
+        - option "What was your childhood nickname?"
+        - option "In what city did you meet your spouse/significant other?"
+        - option "What is the name of your favorite childhood friend?"
+        - option "In what city was your first job?"
+      - generic [ref=f15e35]: "* New Answer"
+      - generic [ref=f15e36]:
+        - textbox "* New Answer" [ref=f15e37]: Doha
+        - generic: Too weak
+      - generic [ref=f15e38]: "*=required"
+      - generic [ref=f15e39]:
+        - button "Cancel" [ref=f15e40] [cursor=pointer]
+        - button "Change Password" [disabled] [ref=f15e41]
+      - paragraph [ref=f15e42]: Password was last changed on ٢٣/٨/٢٠٢٦, ٥:٤٤ AM.
+  - generic [ref=f15e43]: © 2026 Salesforce, Inc. All rights reserved.

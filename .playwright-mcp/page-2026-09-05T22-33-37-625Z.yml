@@ -1,0 +1,24 @@
+- generic [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - generic [ref=f10e5]:
+      - generic [ref=f10e7]:
+        - img "Salesforce login" [ref=f10e8]
+        - generic [ref=f10e9]: Salesforce login
+      - generic [ref=f10e11]:
+        - generic [ref=f10e12]:
+          - generic [ref=f10e13]: "Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator."
+          - heading "Salesforce login" [level=1] [ref=f10e14]
+          - generic [ref=f10e15]:
+            - text: Username
+            - textbox "Username" [ref=f10e17]: jstev_sales.z58pnjv0sn9u.cuosciyzsimv.hg.u6jbyrt9b0lw@alfardan.com.qa.qa
+          - text: Password
+          - textbox "Password" [active] [ref=f10e18]
+          - button "Log In to Sandbox" [ref=f10e19] [cursor=pointer]
+          - generic [ref=f10e20]:
+            - checkbox "Remember me" [ref=f10e21]
+            - generic [ref=f10e22]: Remember me
+        - link "Forgot Your Password?" [ref=f10e24] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us
+    - generic [ref=f10e25]: © 2026 Salesforce, Inc. All rights reserved.
+  - generic: Login
+  - iframe [aria-hidden] [ref=f10e26]

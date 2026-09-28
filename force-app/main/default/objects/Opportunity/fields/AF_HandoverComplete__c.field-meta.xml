@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_HandoverComplete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flow-maintained — pushed from Handover via a child-side flow on every save. Not user-editable.</description>
+    <label>Handover Complete</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

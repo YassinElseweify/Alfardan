@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Opp_BrandNotUndecided</fullName>
+    <active>true</active>
+    <description>Undecided is only meant for Lead (pre-qualification, avoids a dependent-picklist deadlock). By the time a real Opportunity exists, Brand must be a real value — blocks the save instead of removing Undecided from the shared global value set.</description>
+    <errorConditionFormula>ISPICKVAL(AF_Brand__c, &quot;Undecided&quot;)</errorConditionFormula>
+    <errorDisplayField>AF_Brand__c</errorDisplayField>
+    <errorMessage>Brand cannot be &quot;Undecided&quot; on an Opportunity. Please select an actual brand.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,576 @@
+<title>Retail Demo Run-Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f6f3; --surface:#ffffff; --ink:#1b222b; --muted:#5b6570; --line:#dde1dc;
+  --accent:#0f6b67; --accent-soft:#e3f1ef;
+  --warn:#8a5a00; --warn-bg:#fdf3dc; --warn-line:#efd69a;
+  --stop:#a3261f; --stop-bg:#fbe7e5; --stop-line:#f0bcb7;
+  --ok:#2d6a2f; --ok-bg:#e6f2e3;
+  --p-rec:#6b3fa0; --p-rep:#0f6b67; --p-mgr:#9a4a12; --p-uct:#2f5d9a; --p-sys:#56606b;
+  --code-bg:#eef0ec;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12171d; --surface:#1a2129; --ink:#e7ebee; --muted:#9aa5b0; --line:#2c3540;
+    --accent:#5cc2bb; --accent-soft:#16312f;
+    --warn:#f0c46a; --warn-bg:#2d2512; --warn-line:#5a4720;
+    --stop:#f19189; --stop-bg:#34191a; --stop-line:#63302d;
+    --ok:#8fd192; --ok-bg:#18301a;
+    --p-rec:#b996e6; --p-rep:#5cc2bb; --p-mgr:#f0a36b; --p-uct:#8fb5ec; --p-sys:#a9b3bd;
+    --code-bg:#232c36;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12171d; --surface:#1a2129; --ink:#e7ebee; --muted:#9aa5b0; --line:#2c3540;
+  --accent:#5cc2bb; --accent-soft:#16312f;
+  --warn:#f0c46a; --warn-bg:#2d2512; --warn-line:#5a4720;
+  --stop:#f19189; --stop-bg:#34191a; --stop-line:#63302d;
+  --ok:#8fd192; --ok-bg:#18301a;
+  --p-rec:#b996e6; --p-rep:#5cc2bb; --p-mgr:#f0a36b; --p-uct:#8fb5ec; --p-sys:#a9b3bd;
+  --code-bg:#232c36;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.6;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:900px;margin:0 auto}
+h1,h2,h3{text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:2.1rem;font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.45rem;font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.08rem;font-weight:700}
+p{margin:0}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.86em}
+code{background:var(--code-bg);padding:.08em .38em;border-radius:4px;white-space:nowrap}
+a{color:var(--accent)}
+header.top{padding-block:40px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.lede{color:var(--muted);max-width:66ch;font-size:1.02rem}
+.meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.86rem;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;padding-block:18px;border-bottom:1px solid var(--line)}
+nav.toc a{font-size:.84rem;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface);padding:5px 11px;border-radius:999px}
+nav.toc a:hover,nav.toc a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+section{padding-block:36px 8px;display:grid;gap:18px;scroll-margin-top:12px}
+.sec-head{display:grid;gap:6px}
+.sec-head p{color:var(--muted);max-width:68ch}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.pill.must{background:var(--stop-bg);color:var(--stop);border:1px solid var(--stop-line)}
+.pill.avoid{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-line)}
+.pill.fine{background:var(--ok-bg);color:var(--ok)}
+.persona{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.persona::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.p-rec{color:var(--p-rec)} .p-rep{color:var(--p-rep)} .p-mgr{color:var(--p-mgr)} .p-uct{color:var(--p-uct)} .p-sys{color:var(--p-sys)}
+ul.plain{margin:0;padding-left:1.15em;display:grid;gap:6px}
+.callout{border:1px solid var(--warn-line);background:var(--warn-bg);border-radius:8px;padding:12px 14px;display:grid;gap:6px;font-size:.93rem}
+.callout.stop{border-color:var(--stop-line);background:var(--stop-bg)}
+.callout .ct{font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.callout .ct{color:var(--warn)} .callout.stop .ct{color:var(--stop)}
+.deal{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;display:grid;gap:14px}
+.deal-head{display:grid;gap:8px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px 18px;font-size:.87rem}
+.facts div{display:grid;gap:1px}
+.facts span{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps>li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:4px 12px;padding-block:14px;border-top:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);grid-row:span 9;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.85rem;color:var(--muted);width:30px;height:30px;border:1.5px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.st-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.st-head h3{font-size:1rem}
+.where{font-size:.86rem;color:var(--muted)}
+.do{display:grid;gap:4px}
+.do ol,.do ul{margin:0;padding-left:1.2em;display:grid;gap:3px}
+.expect{font-size:.9rem}
+.expect b{color:var(--ok)}
+.watch{font-size:.88rem;color:var(--warn);background:var(--warn-bg);border-left:3px solid var(--warn-line);padding:6px 10px;border-radius:0 6px 6px 0}
+.watch.stop{color:var(--stop);background:var(--stop-bg);border-left-color:var(--stop-line)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:8px;align-content:start}
+.card h3{font-size:.95rem}
+.small{font-size:.86rem;color:var(--muted)}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+@media (max-width:520px){h1{font-size:1.7rem} ol.steps>li{grid-template-columns:1fr} ol.steps>li::before{grid-row:auto}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Al-Fardan Automobiles · Retail Sales · QA sandbox</div>
+  <h1>Retail demo run-book: walk-in to Closed Won</h1>
+  <p class="lede">Every click for the live demo, in order: who is logged in, where to click, what to type, and what should appear. Four deals are covered, each showing a different path through the cycle. Warnings mark the places where a known bug can show up, with what to do if it does.</p>
+  <div class="meta">
+    <div><b>Org</b> <span class="mono">alfardanautomobiles--qa.sandbox.my.salesforce.com</span></div>
+    <div><b>Prepared</b> 26 Sep 2026</div>
+    <div><b>Brand</b> Ferrari · Lusail showroom</div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <a href="#before">Before the demo</a>
+  <a href="#setup">Logins &amp; windows</a>
+  <a href="#deal1">Deal 1 · Cash sale</a>
+  <a href="#deal2">Deal 2 · Trade-in</a>
+  <a href="#deal3">Deal 3 · 3-day hold</a>
+  <a href="#deal4">Deal 4 · Lost deal</a>
+  <a href="#service">Service Walk-In</a>
+  <a href="#recover">If something goes wrong</a>
+</nav>
+
+<!-- BEFORE -->
+<section id="before">
+  <div class="sec-head">
+    <h2>Before the demo: fixes that must be deployed</h2>
+    <p>Two bugs stop the demo on screen and must be fixed and deployed to QA first. Two more can be avoided by following this run-book, and one feature is left out of the demo.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Jira</th><th>Problem</th><th>Status for the demo</th><th>If it is not fixed</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">LFRDN-695</td><td>Create Reservation fails for the rep, and the deposit field never appears</td><td><span class="pill must">Must fix</span></td><td>No deal can get past the Quote. QA can create the reservation from the rep's session beforehand, but the audience won't see that step.</td></tr>
+        <tr><td class="mono">LFRDN-752</td><td>Sales Walk-In shows "Something went wrong", although the deal is created</td><td><span class="pill must">Must fix</span></td><td>The very first screen of the demo is an error. Say that the deal was created, don't run it again, and switch to the rep.</td></tr>
+        <tr><td class="mono">LFRDN-754</td><td>Deal stays open after handover sign-off if the Bank LPO is missing</td><td><span class="pill avoid">Avoid</span></td><td>Upload the Bank LPO straight after Get Payment (it's a step below).</td></tr>
+        <tr><td class="mono">LFRDN-755</td><td>An approved discount comes off wrong when the quote has a trade-in</td><td><span class="pill avoid">Avoid</span></td><td>Show the discount only on Deal 1, which has no trade-in.</td></tr>
+        <tr><td class="mono">LFRDN-753</td><td>Service Walk-In fails and creates no deal</td><td><span class="pill avoid">Leave out</span></td><td>Describe it verbally. See <a href="#service">Service Walk-In</a>.</td></tr>
+        <tr><td class="mono">LFRDN-756</td><td>The trade-in deduction only reaches the quote after the rep accepts the vehicle line</td><td><span class="pill fine">Handled in steps</span></td><td>Deal 2 accepts the line before the quote is created.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <div class="ct">Do a full rehearsal first</div>
+    <p>Run every deal once, end to end, the day before, using a spare set of records. The records named in this run-book are used up by the live run. Ask QA to create a fresh set for the rehearsal, or afterwards if you have already rehearsed on these.</p>
+  </div>
+</section>
+
+<!-- SETUP -->
+<section id="setup">
+  <div class="sec-head">
+    <h2>Logins and browser windows</h2>
+    <p>Open one browser window per persona before you start, so you never log out during the demo. Use separate Chrome profiles, or one normal window plus private windows in different browsers. Keep them in this order on the taskbar.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Window</th><th>Persona</th><th>Username</th><th>App</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><span class="persona p-rec">Receptionist</span></td><td class="mono">salesreceptionist.v2.20260823@alfardan.com.qa.qa</td><td>Sales</td></tr>
+        <tr><td>2</td><td><span class="persona p-rep">Sales Rep</span> QA SalesRep2</td><td class="mono">alfardan.qa.salesrep2@alfardan.com.qa.qa</td><td>Automotive</td></tr>
+        <tr><td>3</td><td><span class="persona p-mgr">Sales/Brand Manager</span></td><td class="mono">alfardan.qa.salesbrandmanager2@alfardan.com.qa.qa</td><td>Automotive</td></tr>
+        <tr><td>4</td><td><span class="persona p-uct">Used Car Team</span></td><td class="mono">alfardan.qa.usedcarteam2@alfardan.com.qa.qa</td><td>Automotive</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Logging in</h3>
+      <ul class="plain small">
+        <li>Passwords are shared by QA separately.</li>
+        <li>Login is two steps: username, then password.</li>
+        <li>If <i>Change Your Password</i> appears, click <b>Cancel</b>.</li>
+        <li>Switch apps with the App Launcher (9 dots) → <b>Automotive</b>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Approving things</h3>
+      <ul class="plain small">
+        <li>Approvals appear on the approver's <b>Home</b> page under <b>Items to Approve</b>.</li>
+        <li>Clicking the record name does not open the approval. Use the row's <b>▾ Show Actions → Approve</b> instead.</li>
+        <li>Refresh Home if a new item hasn't appeared yet.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Files to upload</h3>
+      <p class="small">Sample PDFs and images are in <code>demo-docs/e2e/</code> in the QA repo. Copy them to the demo laptop's Desktop. Wait for each upload to show <b>Done</b> before you leave the page, or it won't be recorded.</p>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Deal</th><th>Customer (search "DEMO E2E")</th><th>Contact</th><th>Car</th><th>What it shows</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>DEMO E2E H1 Customer - Nasser Al-Attiyah</td><td>Nasser Al-Attiyah</td><td class="mono">STK-DEMO-E2E-01<br>Rosso Imola</td><td>Test drive, accessory, discount approval, deposit above threshold, full delivery, Closed Won</td></tr>
+        <tr><td>2</td><td>DEMO E2E H2 Customer - Aisha Al-Marri</td><td>Aisha Al-Marri</td><td class="mono">STK-DEMO-E2E-02<br>Giallo Modena</td><td>Trade-in valuation, deposit below threshold with manager approval</td></tr>
+        <tr><td>3</td><td>DEMO E2E H3 Customer - Yousef Al-Hajri</td><td>Yousef Al-Hajri</td><td class="mono">STK-DEMO-E2E-03<br>Argento Nurburgring</td><td>Test drive refused, 3-day reservation without deposit</td></tr>
+        <tr><td>4</td><td>DEMO E2E H5 Customer - Khalifa Al-Naimi</td><td>Khalifa Al-Naimi</td><td class="mono">STK-DEMO-E2E-04<br>Blu Corsa</td><td>Lost deal with manager approval</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- DEAL 1 -->
+<section id="deal1">
+  <div class="deal">
+    <div class="deal-head">
+      <div class="eyebrow">Deal 1 · main storyline · about 35 minutes</div>
+      <h2>Cash sale with discount, from showroom walk-in to delivery</h2>
+      <div class="facts">
+        <div><span>Customer</span>Nasser Al-Attiyah</div>
+        <div><span>Car</span>296 GTB · Rosso Imola</div>
+        <div><span>Deposit</span>AED 45,000 (above 10%)</div>
+        <div><span>Payment</span>Bank transfer</div>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="st-head"><h3>Create the deal with Sales Walk-In</h3><span class="persona p-rec">Receptionist</span></div>
+        <div class="where">Contacts → <b>Nasser Al-Attiyah</b> → <b>▾ Show more actions</b> → <b>Sales Walk-In</b></div>
+        <div class="do"><ol>
+          <li>Brand <code>Ferrari</code>, Showroom <code>Lusail</code>, Source of Business <code>Showroom Walk-in</code> → <b>Next</b>.</li>
+          <li>Sales Representative <code>QA SalesRep2</code> → <b>Next</b>.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> "The Opportunity has been created under this Account and assigned to the selected Sales Representative." The rep gets a bell notification and a task.</p>
+        <p class="watch stop">If "Something went wrong" appears (LFRDN-752 not yet deployed): the deal <u>was</u> created. Don't run it again. Go on to window 2.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Open the new deal</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Bell icon → the walk-in notification, or <b>Opportunities</b> → <i>Recently Viewed</i> / <i>My Opportunities</i></div>
+        <p class="expect"><b>Expect:</b> the deal at stage <b>Consider</b>, owned by QA SalesRep2.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Select the vehicle</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → <b>Select Vehicle</b></div>
+        <div class="do"><ol>
+          <li>Pick model <code>Ferrari 296 GTB</code>.</li>
+          <li>Pick the car <code>STK-DEMO-E2E-01</code> (Rosso Imola).</li>
+          <li>Pick a line package if offered (e.g. <code>GTS Package</code>) → <b>Confirm Line</b>.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> the car appears on the deal and the amount is filled in (≈ AED 398,300 with the GTS package).</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Move to Explore</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Path at the top → <b>Mark Stage as Complete</b></div>
+        <p class="expect"><b>Expect:</b> stage <b>Explore</b>. A <b>Test Drive</b> and an empty <b>Trade In</b> are created automatically under Related. The customer is emailed a "trade in your car" invitation.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Book the test drive</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → Related → <b>Test Drives</b> → open the TD record → <b>Select Demo Vehicle</b></div>
+        <div class="do"><ol>
+          <li>Showroom <code>Lusail</code> → pick a demo car and a free slot → <b>Confirm Booking</b>.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> Test Drive status <b>Scheduled</b>.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Complete the test drive</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Test Drive → <b>Edit</b></div>
+        <div class="do"><ol>
+          <li>Status <code>Completed</code>, Result <code>Completed</code>, Product Feedback <code>Loved the handling; wants the GTS package</code> → <b>Save</b>.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> Test Drive <b>Completed</b>.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Move to Select and add an accessory</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → Path → <b>Mark Stage as Complete</b> → then <b>Add Products</b></div>
+        <div class="do"><ol>
+          <li>Add a window tint (or any accessory) → Save.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> stage <b>Select</b>. The accessory is added to the products.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Create the quotation</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → <b>▾ Show more actions</b> → <b>Create Quotation</b></div>
+        <div class="do"><ol><li>Choose <code>Customer Quotation</code> → finish.</li></ol></div>
+        <p class="expect"><b>Expect:</b> a Quote under Related → Quotes. Its lines show the specific car, the package and the accessory. Note the quote's <b>Subtotal</b> (e.g. AED 399,500).</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Request a discount</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Quote → <b>Edit</b> → <i>Discount Amount</i></div>
+        <div class="do"><ol>
+          <li>Enter exactly <b>3%</b> of the Subtotal. For a Subtotal of 399,500, that's <code>11,985</code>. Save.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> <i>Discount %</i> <b>3.00</b>, <i>Discount Tier</i> <b>1</b>, status <b>Pending Approval</b>. A discount of 2% or less needs no approval.</p>
+        <p class="watch">Pick an amount that makes a round percentage. The percentage is stored with two decimals and applied to each line, so a figure like 10,000 (2.503%) comes out a few dirhams short.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Approve the discount</h3><span class="persona p-mgr">Sales/Brand Manager</span></div>
+        <div class="where">Home → <b>Items to Approve</b> → row <b>▾</b> → <b>Approve</b></div>
+        <p class="expect"><b>Expect:</b> Quote discount status <b>Approved</b>. The Grand Total drops by the amount you entered.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Sync the quote</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Quote → <b>▾ Show more actions</b> → <b>Start Sync</b> → <b>Sync</b></div>
+        <p class="expect"><b>Expect:</b> the quote is marked as syncing. Without this, the move to Commit later is refused with "Commit stage requires a synced Quote."</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Create the reservation, 7-Day with deposit</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Quote → <b>Create Reservation</b></div>
+        <div class="do"><ol>
+          <li>Reservation type <code>7-Day</code>. Leave <i>Trade-In Used As Deposit?</i> unticked.</li>
+          <li>Deposit Amount <code>45,000</code> (more than 10% of the price) → finish.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> a Reservation (RES-…) with status <b>Reserved</b> straight away, and approval <b>Not Required</b>. An invoice is created on the deal.</p>
+        <p class="watch stop">If there is no deposit field and "We couldn't create the reservation" appears, LFRDN-695 is not deployed. Stop the live flow and switch to a deal QA pre-reserved.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Take the payment</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → <b>Invoice Summary</b> → open the invoice → <b>Get Payment</b></div>
+        <div class="do"><ol>
+          <li>Payment reference <code>KL-PAY-DEMO-01</code> → <b>Next</b> → <i>No, I'm done</i>.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> Payment <b>Paid / Verified</b> (Bank Transfer); invoice <b>Fully Paid</b>. Get Payment always records the full balance, not only the deposit.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Upload the Bank LPO, straight away</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Payment (PAY-…) → Related → <b>Required Documents</b> → <b>Bank LPO</b> → <b>Upload</b></div>
+        <p class="expect"><b>Expect:</b> the Bank LPO row reads <b>Uploaded</b>.</p>
+        <p class="watch">Don't skip this. Without the LPO, the deal silently stays open after the handover (LFRDN-754).</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Reservation documents and contract</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Reservation → Related → <b>Required Documents</b> → then the header button <b>Generate Reservation Contract</b></div>
+        <div class="do"><ol>
+          <li>Upload a file against each listed document (4 for this deal). Wait for <b>Done</b> each time.</li>
+          <li>Click <b>Generate Reservation Contract</b>.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> every document row reads <b>Uploaded</b>. The contract PDF appears under Notes &amp; Attachments / Files.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Move to Commit</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → Path → <b>Mark Stage as Complete</b></div>
+        <p class="expect"><b>Expect:</b> stage <b>Commit</b>.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Generate the Sales Order</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → <b>▾ Show more actions</b> → <b>Generate Sales Order</b></div>
+        <div class="do"><ol><li>Choose <i>Yes, full payment has been received</i> → <b>Next</b>.</li></ol></div>
+        <p class="expect"><b>Expect:</b> the Sales Order is generated and its PDF attached.</p>
+        <p class="watch">The confirmation and the PDF say <b>QAR</b> instead of AED (LFRDN-678, deferred). Don't dwell on the PDF.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Move to Take the Keys</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → Path → <b>Mark Stage as Complete</b></div>
+        <p class="expect"><b>Expect:</b> stage <b>Take the Keys</b>. A <b>Handover</b> (HO-…) is created with the car, contact, account and invoice linked, plus <b>5 agreements</b> generated automatically.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Schedule the handover</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Handover → <b>Edit</b></div>
+        <div class="do"><ol>
+          <li>Handover Location <code>Lusail</code>, Status <code>In Progress</code>, Date = tomorrow.</li>
+          <li>Time: <b>clear the pre-filled "12:00 PM" first</b>, then type e.g. <code>4:00 PM</code>.</li>
+          <li>Repair Remarks, e.g. <code>Minor stone chip on front bumper touched up</code> → <b>Save</b>.</li>
+        </ol></div>
+        <p class="watch">Enter the remarks <u>before</u> Generate Documents. Adding them afterwards duplicates the repair disclaimer (LFRDN-708).</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Generate the delivery documents</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Handover header → <b>Generate Documents</b></div>
+        <p class="expect"><b>Expect:</b> the Delivery Note is generated.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Upload Traffic and Insurance forms</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Handover → Related → required documents → <b>Traffic Form</b> and <b>Insurance Form</b> → <b>Upload</b></div>
+        <p class="expect"><b>Expect:</b> both rows read <b>Uploaded</b>.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Customer signs off, and the deal closes</h3><span class="persona p-rep">Sales Rep</span> <span class="persona p-sys">System</span></div>
+        <div class="where">Handover → <b>Edit</b> → <i>Customer Sign-Off</i> <code>Physically Signed</code> → <b>Save</b></div>
+        <p class="expect"><b>Expect:</b> Handover <b>Completed</b>, Sales Order <b>Delivered</b>, and on refreshing the Opportunity, stage <b>Closed Won</b> automatically.</p>
+        <p class="watch">If the stage is still Take the Keys: check the Bank LPO on the Payment, then edit and re-save the handover (LFRDN-754).</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- DEAL 2 -->
+<section id="deal2">
+  <div class="deal">
+    <div class="deal-head">
+      <div class="eyebrow">Deal 2 · trade-in · about 25 minutes</div>
+      <h2>Trade-in valuation and a manager-approved low deposit</h2>
+      <div class="facts">
+        <div><span>Customer</span>Aisha Al-Marri</div>
+        <div><span>Car</span>296 GTB · Giallo Modena</div>
+        <div><span>Trade-in</span>Range Rover Sport · AED 135,000</div>
+        <div><span>Deposit</span>AED 10,000 (below 10%)</div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="ct">No discount on this deal</div>
+      <p>A discount on a quote with a trade-in comes off at the wrong amount (LFRDN-755). The discount is shown in Deal 1 only.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="st-head"><h3>Walk-in, vehicle, Explore, test drive</h3><span class="persona p-rec">Receptionist</span> <span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Repeat Deal 1 steps 1–6 with Contact <b>Aisha Al-Marri</b> and car <code>STK-DEMO-E2E-02</code> (Giallo Modena)</div>
+        <p class="expect"><b>Expect:</b> deal at <b>Explore</b>, test drive <b>Completed</b>, an empty Trade In (APL-…) under Related.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Add the customer's car to the trade-in</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → Related → <b>Trade Ins</b> → open APL-… → Related → <b>Trade In Items</b> card → <b>New</b></div>
+        <div class="do"><ul>
+          <li>Type <code>Vehicle</code>; VIN <code>SALWA2FK7MA123456</code>; Make <code>Land Rover</code>; Model <code>Range Rover Sport</code>; Year <code>2021</code>; Plate <code>123456</code></li>
+          <li>Condition and Usage (any values, e.g. mileage <code>42,000</code>); Inspection Done ✓ with notes <code>Full service history</code></li>
+          <li>Source, and Asking Value <code>150,000</code> → <b>Save</b></li>
+        </ul></div>
+        <p class="watch">Use the <b>New</b> button inside the <i>Trade In Items</i> card. The New at the top of the page opens a different record type (Appraisal Adjustment).</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Attach the 360° photo and submit</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Trade In Item → Related → Files → <b>Upload</b> an image → back to the Trade In → <b>Submit for Evaluation</b></div>
+        <p class="expect"><b>Expect:</b> "Submitted". Submitting without an item and a photo is refused, which is worth showing once.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Value the car</h3><span class="persona p-uct">Used Car Team</span></div>
+        <div class="where">Trade In Item (APLI-…) → <b>Edit</b> → <i>Initial Value</i> <code>135,000</code> → <b>Save</b></div>
+        <p class="expect"><b>Expect:</b> the valuation goes for approval to the Used Car Team queue.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Approve the valuation</h3><span class="persona p-uct">Used Car Team</span></div>
+        <div class="where">Home → <b>Items to Approve</b> → row <b>▾</b> → <b>Approve</b></div>
+        <p class="expect"><b>Expect:</b> the trade-in header shows Trade-In Outcome <b>Accepted</b>.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Record the customer's acceptance</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Trade In Item → <b>Edit</b> → <i>Trade-In Outcome</i> <code>Accepted</code> → <b>Save</b></div>
+        <p class="expect"><b>Expect:</b> the Trade In's <i>Active Trade-In Value</i> reads <b>135,000</b>.</p>
+        <p class="watch">Do this <u>before</u> creating the quote. Until the vehicle line itself is Accepted, the quote has no trade-in deduction (LFRDN-756).</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Select, then Create Quotation</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Path → <b>Mark Stage as Complete</b> (Select) → <b>▾ Show more actions</b> → <b>Create Quotation</b> → <code>Customer Quotation</code></div>
+        <p class="expect"><b>Expect:</b> the quote includes a <b>−135,000 Trade-In Deduction</b> line, and the Grand Total is net of the trade-in.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Sync the quote</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Quote → <b>▾ Show more actions</b> → <b>Start Sync</b> → <b>Sync</b></div>
+      </li>
+      <li>
+        <div class="st-head"><h3>Create the reservation with a low deposit</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Quote → <b>Create Reservation</b></div>
+        <div class="do"><ol>
+          <li>Type <code>7-Day</code>; <i>Trade-In Used As Deposit?</i> unticked; Deposit Amount <code>10,000</code> → finish.</li>
+        </ol></div>
+        <p class="expect"><b>Expect:</b> Reservation status <b>Pending Approval</b>, because the deposit is under the Ferrari 10% threshold.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Manager approves the low deposit</h3><span class="persona p-mgr">Sales/Brand Manager</span></div>
+        <div class="where">Home → <b>Items to Approve</b> → row <b>▾</b> → <b>Approve</b></div>
+        <p class="expect"><b>Expect:</b> Reservation <b>Reserved</b>. Its Required Documents now list <b>5</b> items, including an Approval Reference.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Finish the deal</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Continue with Deal 1 steps 13–22 (payment, Bank LPO, reservation documents, Commit, Sales Order, handover)</div>
+        <p class="expect"><b>Expect:</b> <b>Closed Won</b>. The invoice amount is the net price after the trade-in.</p>
+        <p class="small">Short on time? Stop after the approved reservation and say the rest is the same as Deal 1.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- DEAL 3 -->
+<section id="deal3">
+  <div class="deal">
+    <div class="deal-head">
+      <div class="eyebrow">Deal 3 · short · about 10 minutes</div>
+      <h2>Refused test drive and a 3-day hold without deposit</h2>
+      <div class="facts">
+        <div><span>Customer</span>Yousef Al-Hajri</div>
+        <div><span>Car</span>296 GTB · Argento Nurburgring</div>
+        <div><span>Source</span>Referral</div>
+        <div><span>Reservation</span>3-Day, no deposit</div>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="st-head"><h3>Walk-in and vehicle</h3><span class="persona p-rec">Receptionist</span> <span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Deal 1 steps 1–4 with Contact <b>Yousef Al-Hajri</b>, Source of Business <code>Referral</code>, car <code>STK-DEMO-E2E-03</code></div>
+      </li>
+      <li>
+        <div class="st-head"><h3>Customer refuses the test drive</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Test Drive → <b>Edit</b> → Status <code>Refused</code>, Refused Remarks <code>Customer already drove this model abroad</code> → <b>Save</b></div>
+        <p class="expect"><b>Expect:</b> the deal can move to <b>Select</b> without a completed test drive.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Quote, sync, 3-day reservation</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Path → Select → <b>Create Quotation</b> → Quote <b>Start Sync</b> → <b>Create Reservation</b> → type <code>3-Day</code></div>
+        <p class="expect"><b>Expect:</b> no deposit is asked for. Reservation <b>Reserved</b>, with <b>3</b> Required Documents.</p>
+        <p class="small">You can stop here. Finishing the deal repeats Deal 1 steps 13–22.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- DEAL 4 -->
+<section id="deal4">
+  <div class="deal">
+    <div class="deal-head">
+      <div class="eyebrow">Deal 4 · short · about 5 minutes</div>
+      <h2>Lost deal with manager approval</h2>
+      <div class="facts">
+        <div><span>Customer</span>Khalifa Al-Naimi</div>
+        <div><span>Car</span>296 GTB · Blu Corsa</div>
+        <div><span>Outcome</span>Closed Lost</div>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="st-head"><h3>Walk-in and vehicle</h3><span class="persona p-rec">Receptionist</span> <span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Deal 1 steps 1–3 with Contact <b>Khalifa Al-Naimi</b> and car <code>STK-DEMO-E2E-04</code></div>
+      </li>
+      <li>
+        <div class="st-head"><h3>Request closure</h3><span class="persona p-rep">Sales Rep</span></div>
+        <div class="where">Opportunity → <b>Request Closure</b> → reason <code>Chose a Different Brand</code> → <b>Submit</b></div>
+        <p class="expect"><b>Expect:</b> the request goes to the Sales/Brand Manager for approval.</p>
+      </li>
+      <li>
+        <div class="st-head"><h3>Manager approves</h3><span class="persona p-mgr">Sales/Brand Manager</span></div>
+        <div class="where">Home → <b>Items to Approve</b> → row <b>▾</b> → <b>Approve</b></div>
+        <p class="expect"><b>Expect:</b> the Opportunity is <b>Closed Lost</b> with the reason recorded.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service">
+  <div class="sec-head">
+    <h2>Service Walk-In: explain it, don't click it</h2>
+    <p>Service Walk-In is for a customer at <b>service reception</b> who says they are interested in a new car. The Service Receptionist runs it on the Contact and picks the brand and preferred dealership. The deal goes to that dealership's <b>Showroom Manager</b> with a "contact within 15 minutes" task, and the manager then hands it to a rep. From there the cycle is the same as Deal 1.</p>
+  </div>
+  <div class="callout stop">
+    <div class="ct">Leave it out of the live run unless all three are true</div>
+    <ul class="plain">
+      <li>LFRDN-753 is fixed and deployed. Today the flow fails with "An unhandled fault has occurred" and creates nothing.</li>
+      <li>A <b>Service Receptionist</b> user exists. There is none in QA today.</li>
+      <li>The chosen dealership has a <b>Showroom Manager</b>. Only <b>Alsadd</b> has one today.</li>
+    </ul>
+  </div>
+  <p class="small">If all three are ready: Service Receptionist → Contact <b>Latifa Al-Kuwari</b> → <b>▾ Show more actions → Service Walk-In</b> → Brand of Interest <code>Ferrari</code>, Preferred Dealership <code>Alsadd</code>, Source <code>Showroom Walk-in</code> → <b>Next</b>. Then, as the Showroom Manager, open the deal → <b>Change Owner</b> → <code>QA SalesRep2</code>. The rep gets an "Opportunity Assigned to You" task.</p>
+</section>
+
+<!-- RECOVER -->
+<section id="recover">
+  <div class="sec-head">
+    <h2>If something goes wrong on screen</h2>
+    <p>Say what the system is doing, apply the fix and carry on. None of these lose data.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>You see</th><th>Why</th><th>Do this</th></tr></thead>
+      <tbody>
+        <tr><td>"Something went wrong" after Sales Walk-In</td><td>LFRDN-752. The deal was created.</td><td>Don't retry. Open the deal as the rep.</td></tr>
+        <tr><td>"Commit stage requires a synced Quote."</td><td>The quote wasn't synced.</td><td>Quote → Show more actions → <b>Start Sync</b>, then Commit again.</td></tr>
+        <tr><td>No deposit field; "We couldn't create the reservation"</td><td>LFRDN-695 isn't deployed.</td><td>Switch to a deal QA pre-reserved.</td></tr>
+        <tr><td>Quote has no trade-in line</td><td>The trade-in item isn't Accepted yet (LFRDN-756).</td><td>Trade In Item → Edit → Trade-In Outcome <b>Accepted</b>. The line is added to the existing quote.</td></tr>
+        <tr><td>Discount came off more than approved</td><td>Discount on a trade-in deal (LFRDN-755).</td><td>Avoid it. Show the discount on Deal 1 only.</td></tr>
+        <tr><td>After sign-off the deal is still at Take the Keys</td><td>Bank LPO missing on the Payment (LFRDN-754).</td><td>Upload the LPO on the Payment, then Edit → Save the Handover.</td></tr>
+        <tr><td>Closed Won via the Path is refused</td><td>Delivery Confirmation is only set by the automatic close.</td><td>Same as above: re-save the Handover.</td></tr>
+        <tr><td>Uploaded file doesn't show as Uploaded</td><td>You left the page before the upload finished.</td><td>Upload again and wait for <b>Done</b>.</td></tr>
+        <tr><td>The item doesn't open from Items to Approve</td><td>The name link doesn't navigate.</td><td>Use the row's <b>▾ → Approve</b>.</td></tr>
+        <tr><td>Time field shows "12:00 PM4:00 PM"</td><td>The field is pre-filled.</td><td>Clear the field fully, then type the time.</td></tr>
+        <tr><td>Change Your Password screen</td><td>Sandbox password policy.</td><td>Click <b>Cancel</b>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Source: QA end-to-end run of 26 Sep 2026 (deals E2E C1–C5). Full findings are in <span class="mono">reports/E2E-DEMO-walkin-to-closed-won-report.md</span>. Bugs are LFRDN-752 to LFRDN-756, plus LFRDN-695, 678 and 708.
+</footer>
+
+</div>

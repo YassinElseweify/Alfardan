@@ -1,0 +1,65 @@
+- generic [active]:
+  - generic [ref=f18e2]:
+    - generic [ref=f18e3]:
+      - link "Skip to Navigation" [ref=f18e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f18e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f18e8]:
+        - generic [ref=f18e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f18e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f18e11]:
+        - button "Search" [ref=f18e17]: Search...
+        - navigation "Global Header" [ref=f18e22]:
+          - list [ref=f18e24]:
+            - listitem [ref=f18e25]:
+              - group [ref=f18e26]:
+                - button "Add favorite" [ref=f18e28] [cursor=pointer]:
+                  - generic [ref=f18e29]:
+                    - tooltip "Add favorite"
+                - button [ref=f18e37] [cursor=pointer]:
+                  - generic [ref=f18e38]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f18e45]:
+              - button "Global Actions" [ref=f18e47]
+            - listitem [ref=f18e54]:
+              - button [ref=f18e57] [cursor=pointer]:
+                - generic [ref=f18e58]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f18e65]:
+              - button [ref=f18e71] [cursor=pointer]:
+                - generic [ref=f18e72]:
+                  - tooltip "Setup"
+            - listitem [ref=f18e79]:
+              - button [ref=f18e82] [cursor=pointer]:
+                - generic [ref=f18e83]:
+                  - tooltip "Notifications"
+            - listitem [ref=f18e92]:
+              - generic [ref=f18e94]:
+                - button "View profile":
+                  - generic:
+                    - tooltip "View profile"
+    - generic [ref=f18e95]:
+      - generic [ref=f18e98]:
+        - generic [ref=f18e100]:
+          - navigation "App" [ref=f18e101]:
+            - button "App Launcher" [ref=f18e103] [cursor=pointer]
+          - heading "Automotive Cloud In-app Learning" [level=1] [ref=f18e115]
+        - navigation "Global" [ref=f18e119]:
+          - list [ref=f18e120]:
+            - listitem [ref=f18e121] [cursor=pointer]:
+              - link "Home" [ref=f18e122]:
+                - /url: /lightning/n/Home
+            - listitem [ref=f18e124]:
+              - link "Pre-Built Assets Home" [ref=f18e125] [cursor=pointer]:
+                - /url: /lightning/n/Prebuilt_Apps_Home
+            - listitem [ref=f18e127]:
+              - link "Enablement Landing Page" [ref=f18e128] [cursor=pointer]:
+                - /url: /lightning/n/Enablement_Landing_Page
+            - listitem [ref=f18e130]:
+              - button "Edit nav items" [ref=f18e132] [cursor=pointer]
+      - main [ref=f18e139]:
+        - heading "Home" [level=1] [ref=f18e154]
+  - generic:
+    - status

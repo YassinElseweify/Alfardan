@@ -1,0 +1,402 @@
+- generic:
+  - generic [ref=f44e2]:
+    - generic [ref=f44e3]:
+      - link "Skip to Navigation" [ref=f44e1085] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f44e1086] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f44e27]:
+        - generic [ref=f44e28]: "Sandbox: QA |"
+        - link "Log out" [ref=f44e1087] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f44e6]:
+        - button "Search" [ref=f44e1088]: Search...
+        - navigation "Global Header" [ref=f44e1089]:
+          - list [ref=f44e40]:
+            - listitem [ref=f44e41]:
+              - group [ref=f44e42]:
+                - button "Add favorite" [ref=f44e1090] [cursor=pointer]:
+                  - generic [ref=f44e45]:
+                    - tooltip "Add favorite"
+                - button [ref=f44e1091] [cursor=pointer]:
+                  - generic [ref=f44e54]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f44e61]:
+              - button [ref=f44e1092] [cursor=pointer]:
+                - generic [ref=f44e68]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f44e75]:
+              - button [ref=f44e1093] [cursor=pointer]:
+                - generic [ref=f44e78]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f44e85]:
+              - button [ref=f44e1094] [cursor=pointer]:
+                - generic [ref=f44e89]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f44e96]:
+              - button "2 Notifications" [ref=f44e1095] [cursor=pointer]:
+                - generic [ref=f44e100]:
+                  - generic [ref=f44e101]: "2"
+                  - tooltip "Notifications"
+              - generic [ref=f44e110]: 2 new notifications
+            - listitem [ref=f44e111]:
+              - button "View profile" [ref=f44e1096] [cursor=pointer]:
+                - generic [ref=f44e115]:
+                  - tooltip "View profile"
+    - generic [ref=f44e15]:
+      - generic [ref=f44e121]:
+        - generic [ref=f44e123]:
+          - navigation "App" [ref=f44e1097]:
+            - button "App Launcher" [ref=f44e1098] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f44e1099]
+        - navigation "Global" [ref=f44e1101]:
+          - list [ref=f44e143]:
+            - listitem [ref=f44e144]:
+              - link "Home" [ref=f44e1102] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f44e147]:
+              - link "Vehicles" [ref=f44e1103] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f44e1104] [cursor=pointer]
+            - listitem [ref=f44e161]:
+              - link "Assets" [ref=f44e1105] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f44e1106] [cursor=pointer]
+            - listitem [ref=f44e175]:
+              - link "Vehicle Definitions" [ref=f44e1107] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f44e1108] [cursor=pointer]
+            - listitem [ref=f44e189]:
+              - link "Products" [ref=f44e1109] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f44e1110] [cursor=pointer]
+            - listitem [ref=f44e203]:
+              - link "Accounts" [ref=f44e1111] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f44e1112] [cursor=pointer]
+            - listitem [ref=f44e217]:
+              - link "Contacts" [ref=f44e1113] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f44e1114] [cursor=pointer]
+            - listitem [ref=f44e231]:
+              - link "Asset Milestones" [ref=f44e1115] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f44e1116] [cursor=pointer]
+            - listitem [ref=f44e245] [cursor=pointer]:
+              - link "* HO-00037 | Handover" [ref=f44e1117]:
+                - /url: /lightning/r/AF_Handover__c/a0SFV001PomVg8q2IC/view
+                - generic "Not added to nav bar" [ref=f44e1118]: "*"
+                - generic [ref=f44e248]: HO-00037 | Handover
+              - button "HO-00037 | Handover List" [ref=f44e1119]
+              - button "Close tab" [ref=f44e1120]
+            - listitem [ref=f44e268]:
+              - button "* Show more navigation items" [ref=f44e1121] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f44e1122]: "*"
+                - generic [aria-hidden] [ref=f44e272]: More
+                - generic [ref=f44e279]: Show more navigation items
+            - listitem [ref=f44e280]:
+              - button "Edit nav items" [ref=f44e1123] [cursor=pointer]
+      - main [ref=f44e17]:
+        - generic [ref=f44e299]:
+          - generic [ref=f44e309]:
+            - generic [ref=f44e315]:
+              - generic [ref=f44e316]: Handover
+              - heading "HO-00037" [level=1] [ref=f44e1124]
+            - button "Follow" [ref=f44e1125] [cursor=pointer]
+            - generic [ref=f44e335]:
+              - generic "Edit" [ref=f44e1126]:
+                - button "Edit" [ref=f44e1127] [cursor=pointer]
+              - generic "Generate Documents" [ref=f44e1128]:
+                - button "Generate Documents" [ref=f44e1129] [cursor=pointer]
+          - generic [ref=f44e349]:
+            - generic [ref=f44e357]:
+              - heading "Tabs" [level=2] [ref=f44e1130]
+              - tablist "Tabs" [ref=f44e1131]:
+                - tab "Details" [ref=f44e1132] [cursor=pointer]
+                - tab "Related" [selected] [ref=f44e1133] [cursor=pointer]
+              - tabpanel "Related" [ref=f44e1134]:
+                - generic [ref=f44e366]:
+                  - generic [ref=f44e370]:
+                    - article "Approval History" [ref=f44e1135]:
+                      - heading [level=2] [ref=f44e1136]:
+                        - link "Approval History (0)" [ref=f44e1137] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Handover__c/a0SFV001PomVg8q2IC/related/ProcessSteps/view
+                          - generic "Approval History" [ref=f44e1138]
+                          - generic "(0)" [ref=f44e1139]
+                    - article "Handover History" [ref=f44e1140]:
+                      - generic [ref=f44e395]:
+                        - generic [ref=f44e396]:
+                          - heading [level=2] [ref=f44e1141]:
+                            - link "Handover History (1)" [ref=f44e1142] [cursor=pointer]:
+                              - /url: /lightning/r/AF_Handover__c/a0SFV001PomVg8q2IC/related/Histories/view
+                              - generic "Handover History" [ref=f44e1143]
+                              - generic "(1)" [ref=f44e1144]
+                          - generic [ref=f44e417]:
+                            - generic: Navigation Mode
+                            - grid "Handover History" [ref=f44e1145]:
+                              - rowgroup:
+                                - row "Date Field User Original Value New Value":
+                                  - columnheader "Date":
+                                    - generic "Date" [ref=f44e1146]
+                                  - columnheader "Field":
+                                    - generic "Field" [ref=f44e1147]
+                                  - columnheader "User":
+                                    - generic "User" [ref=f44e1148]
+                                  - columnheader "Original Value":
+                                    - generic "Original Value" [ref=f44e1149]
+                                  - columnheader "New Value":
+                                    - generic "New Value" [ref=f44e1150]
+                              - rowgroup [ref=f44e443]:
+                                - row [ref=f44e1151]:
+                                  - rowheader "24/09/2026, 10:33 AM" [ref=f44e1152]
+                                  - gridcell "Created." [ref=f44e1153]
+                                  - gridcell [ref=f44e1154]:
+                                    - link "QA SalesRep2" [ref=f44e1155] [cursor=pointer]:
+                                      - /url: /lightning/r/005FV0082KfRrqeYQC/view
+                                  - gridcell [ref=f44e466]
+                                  - gridcell [ref=f44e467]
+                        - link "View All Handover History" [ref=f44e1156] [cursor=pointer]:
+                          - /url: /lightning/r/AF_Handover__c/a0SFV001PomVg8q2IC/related/Histories/view
+                          - generic [ref=f44e469]:
+                            - text: View All
+                            - generic [ref=f44e470]: Handover History
+                    - article "Notes & Attachments" [ref=f44e1157]:
+                      - generic [ref=f44e479]:
+                        - heading [level=2] [ref=f44e1158]:
+                          - link "Notes & Attachments (5)" [ref=f44e1159] [cursor=pointer]:
+                            - /url: /lightning/r/AF_Handover__c/a0SFV001PomVg8q2IC/related/CombinedAttachments/view
+                            - generic "Notes & Attachments" [ref=f44e1160]
+                            - generic "(5)" [ref=f44e1161]
+                        - list [ref=f44e491]:
+                          - listitem [ref=f44e492]:
+                            - button "Upload Files" [ref=f44e1162] [cursor=pointer]
+                      - generic [ref=f44e500]:
+                        - generic [ref=f44e501]: Drop Files
+                        - list [ref=f44e511]:
+                          - listitem [ref=f44e512]:
+                            - button "Vehicle Sale Agreement - HO-00037 24 Sep 2026• 2KB •pdf" [ref=f44e1164] [cursor=pointer]:
+                              - generic [ref=f44e519]:
+                                - generic "Vehicle Sale Agreement - HO-00037" [ref=f44e1165]
+                                - paragraph [ref=f44e521]:
+                                  - text: 24 Sep 2026•
+                                  - generic [ref=f44e522]:
+                                    - generic [ref=f44e523]: 2KB
+                                    - text: •
+                                  - text: pdf
+                          - listitem [ref=f44e524]:
+                            - button "Warranty Agreement - HO-00037 24 Sep 2026• 2KB •pdf" [ref=f44e1166] [cursor=pointer]:
+                              - generic [ref=f44e531]:
+                                - generic "Warranty Agreement - HO-00037" [ref=f44e1167]
+                                - paragraph [ref=f44e533]:
+                                  - text: 24 Sep 2026•
+                                  - generic [ref=f44e534]:
+                                    - generic [ref=f44e535]: 2KB
+                                    - text: •
+                                  - text: pdf
+                          - listitem [ref=f44e536]:
+                            - button "Service Contract Agreement - HO-00037 24 Sep 2026• 2KB •pdf" [ref=f44e1168] [cursor=pointer]:
+                              - generic [ref=f44e543]:
+                                - generic "Service Contract Agreement - HO-00037" [ref=f44e1169]
+                                - paragraph [ref=f44e545]:
+                                  - text: 24 Sep 2026•
+                                  - generic [ref=f44e546]:
+                                    - generic [ref=f44e547]: 2KB
+                                    - text: •
+                                  - text: pdf
+                          - listitem [ref=f44e548]:
+                            - button "Vehicle Repair Disclaimer - HO-00037 24 Sep 2026• 2KB •pdf" [ref=f44e1170] [cursor=pointer]:
+                              - generic [ref=f44e555]:
+                                - generic "Vehicle Repair Disclaimer - HO-00037" [ref=f44e1171]
+                                - paragraph [ref=f44e557]:
+                                  - text: 24 Sep 2026•
+                                  - generic [ref=f44e558]:
+                                    - generic [ref=f44e559]: 2KB
+                                    - text: •
+                                  - text: pdf
+                          - listitem [ref=f44e560]:
+                            - button "Buyer Acknowledgement - HO-00037 24 Sep 2026• 2KB •pdf" [ref=f44e1172] [cursor=pointer]:
+                              - generic [ref=f44e567]:
+                                - generic "Buyer Acknowledgement - HO-00037" [ref=f44e1173]
+                                - paragraph [ref=f44e569]:
+                                  - text: 24 Sep 2026•
+                                  - generic [ref=f44e570]:
+                                    - generic [ref=f44e571]: 2KB
+                                    - text: •
+                                  - text: pdf
+                      - link "View All Notes & Attachments" [ref=f44e1174] [cursor=pointer]:
+                        - /url: /lightning/r/AF_Handover__c/a0SFV001PomVg8q2IC/related/CombinedAttachments/view
+                        - generic [ref=f44e574]:
+                          - text: View All
+                          - generic [ref=f44e575]: Notes & Attachments
+                  - article [ref=f44e580]:
+                    - heading "Required Documents" [level=2] [ref=f44e1175]
+                    - generic [ref=f44e595]:
+                      - generic [ref=f44e596]:
+                        - generic [ref=f44e598]:
+                          - text: Buyer Acknowledgement
+                          - generic [ref=f44e599]: Uploaded
+                        - list [ref=f44e601]:
+                          - listitem [ref=f44e602]:
+                            - generic [ref=f44e603]: Buyer Acknowledgement - HO-00037
+                            - button "Remove" [ref=f44e1176] [cursor=pointer]
+                        - generic [ref=f44e614]:
+                          - generic [ref=f44e615]: Upload
+                          - generic [ref=f44e619]:
+                            - button "Upload Upload Files Or drop files" [ref=f44e1177]
+                            - generic [ref=f44e621]:
+                              - generic [ref=f44e622]: Upload Files
+                              - generic [ref=f44e627]: Or drop files
+                          - status
+                      - generic [ref=f44e628]:
+                        - generic [ref=f44e630]:
+                          - text: Delivery Note
+                          - generic [ref=f44e631]: Missing
+                        - generic [ref=f44e636]:
+                          - generic [ref=f44e637]: Upload
+                          - generic [ref=f44e641]:
+                            - button "Upload Upload Files Or drop files" [ref=f44e1178]
+                            - generic [ref=f44e643]:
+                              - generic [ref=f44e644]: Upload Files
+                              - generic [ref=f44e649]: Or drop files
+                          - status
+                      - generic [ref=f44e650]:
+                        - generic [ref=f44e652]:
+                          - text: Insurance Form
+                          - generic [ref=f44e653]: Missing
+                        - generic [ref=f44e658]:
+                          - generic [ref=f44e659]: Upload
+                          - generic [ref=f44e663]:
+                            - button "Upload Upload Files Or drop files" [active] [ref=f44e1179]
+                            - generic [ref=f44e665]:
+                              - generic [ref=f44e666]: Upload Files
+                              - generic [ref=f44e671]: Or drop files
+                          - status
+                      - generic [ref=f44e672]:
+                        - generic [ref=f44e674]:
+                          - text: Service Contract Agreement
+                          - generic [ref=f44e675]: Uploaded
+                        - list [ref=f44e677]:
+                          - listitem [ref=f44e678]:
+                            - generic [ref=f44e679]: Service Contract Agreement - HO-00037
+                            - button "Remove" [ref=f44e1180] [cursor=pointer]
+                        - generic [ref=f44e690]:
+                          - generic [ref=f44e691]: Upload
+                          - generic [ref=f44e695]:
+                            - button "Upload Upload Files Or drop files" [ref=f44e1181]
+                            - generic [ref=f44e697]:
+                              - generic [ref=f44e698]: Upload Files
+                              - generic [ref=f44e703]: Or drop files
+                          - status
+                      - generic [ref=f44e704]:
+                        - generic [ref=f44e706]:
+                          - text: Traffic Form
+                          - generic [ref=f44e707]: Missing
+                        - generic [ref=f44e712]:
+                          - generic [ref=f44e713]: Upload
+                          - generic [ref=f44e717]:
+                            - button "Upload Upload Files Or drop files" [ref=f44e1182]
+                            - generic [ref=f44e719]:
+                              - generic [ref=f44e720]: Upload Files
+                              - generic [ref=f44e725]: Or drop files
+                          - status
+                      - generic [ref=f44e726]:
+                        - generic [ref=f44e728]:
+                          - text: Vehicle Repair Disclaimer
+                          - generic [ref=f44e729]: Uploaded
+                        - list [ref=f44e731]:
+                          - listitem [ref=f44e732]:
+                            - generic [ref=f44e733]: Vehicle Repair Disclaimer - HO-00037
+                            - button "Remove" [ref=f44e1183] [cursor=pointer]
+                        - generic [ref=f44e744]:
+                          - generic [ref=f44e745]: Upload
+                          - generic [ref=f44e749]:
+                            - button "Upload Upload Files Or drop files" [ref=f44e1184]
+                            - generic [ref=f44e751]:
+                              - generic [ref=f44e752]: Upload Files
+                              - generic [ref=f44e757]: Or drop files
+                          - status
+                      - generic [ref=f44e758]:
+                        - generic [ref=f44e760]:
+                          - text: Vehicle Sale Agreement
+                          - generic [ref=f44e761]: Uploaded
+                        - list [ref=f44e763]:
+                          - listitem [ref=f44e764]:
+                            - generic [ref=f44e765]: Vehicle Sale Agreement - HO-00037
+                            - button "Remove" [ref=f44e1185] [cursor=pointer]
+                        - generic [ref=f44e776]:
+                          - generic [ref=f44e777]: Upload
+                          - generic [ref=f44e781]:
+                            - button "Upload Upload Files Or drop files" [ref=f44e1186]
+                            - generic [ref=f44e783]:
+                              - generic [ref=f44e784]: Upload Files
+                              - generic [ref=f44e789]: Or drop files
+                          - status
+                      - generic [ref=f44e790]:
+                        - generic [ref=f44e792]:
+                          - text: Warranty Agreement
+                          - generic [ref=f44e793]: Uploaded
+                        - list [ref=f44e795]:
+                          - listitem [ref=f44e796]:
+                            - generic [ref=f44e797]: Warranty Agreement - HO-00037
+                            - button "Remove" [ref=f44e1187] [cursor=pointer]
+                        - generic [ref=f44e808]:
+                          - generic [ref=f44e809]: Upload
+                          - generic [ref=f44e813]:
+                            - button "Upload Upload Files Or drop files" [ref=f44e1188]
+                            - generic [ref=f44e815]:
+                              - generic [ref=f44e816]: Upload Files
+                              - generic [ref=f44e821]: Or drop files
+                          - status
+            - generic [ref=f44e829]:
+              - heading "Tabs" [level=2] [ref=f44e1189]
+              - tablist "Tabs" [ref=f44e1190]:
+                - tab "Activity" [selected] [ref=f44e1191] [cursor=pointer]
+              - tabpanel "Activity" [ref=f44e1192]:
+                - generic [ref=f44e842]:
+                  - heading "Activity Publisher" [level=2] [ref=f44e1193]
+                  - generic [ref=f44e844]:
+                    - group [ref=f44e845]:
+                      - generic [ref=f44e847]:
+                        - button "Log a Call" [ref=f44e1194] [cursor=pointer]
+                        - generic [ref=f44e856]:
+                          - button "No Additional Log a Call Actions" [disabled]
+                    - group [ref=f44e857]:
+                      - generic [ref=f44e859]:
+                        - button "New Task" [ref=f44e1195] [cursor=pointer]
+                        - generic [ref=f44e868]:
+                          - button "No Additional New Task Actions" [disabled]
+                  - heading "Activity Timeline" [level=2] [ref=f44e1196]
+                  - generic [ref=f44e871]:
+                    - link "Skip to the bottom of the activity timeline" [ref=f44e1197] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=f44e874]:
+                      - generic [ref=f44e875]: "Filters: All time • All activities • All types"
+                      - button "Timeline Settings" [ref=f44e1198] [cursor=pointer]
+                    - generic [ref=f44e885]:
+                      - button "Refresh" [ref=f44e1199] [cursor=pointer]
+                      - text: •
+                      - button "Expand All. Show details for activities in the timeline." [ref=f44e1200] [cursor=pointer]: Expand All
+                      - text: •
+                      - button "View All" [ref=f44e1201] [cursor=pointer]
+                    - generic [ref=f44e890]:
+                      - heading [level=3] [ref=f44e1202]:
+                        - button "Upcoming & Overdue" [expanded] [ref=f44e1203] [cursor=pointer]
+                      - generic [ref=f44e897]:
+                        - generic:
+                          - list
+                        - generic [ref=f44e898]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                    - status [ref=f44e901]:
+                      - generic [ref=f44e902]: No past activity. Past meetings and tasks marked as done show up here.
+                    - link "Skip to the top of the activity timeline" [ref=f44e1204] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - generic [ref=f44e1206]:
+      - generic [ref=f44e1207]: Success notification.
+      - generic [ref=f44e1214]:
+        - generic [ref=f44e1215]:
+          - generic [ref=f44e1216]: Uploaded
+          - generic [ref=f44e1217]: Insurance Form uploaded.
+        - generic [ref=f44e1218]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f44e1220] [cursor=pointer]
+    - status

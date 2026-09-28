@@ -1,0 +1,294 @@
+- generic [active]:
+  - generic [ref=f54e2]:
+    - generic [ref=f54e3]:
+      - link "Skip to Navigation" [ref=f54e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f54e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f54e196]:
+        - generic [ref=f54e197]: "Sandbox: QA |"
+        - link "Log out" [ref=f54e198] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f54e6]:
+        - button "Search" [ref=f54e13]: Search...
+        - navigation "Global Header" [ref=f54e18]:
+          - list [ref=f54e200]:
+            - listitem [ref=f54e201]:
+              - group [ref=f54e202]:
+                - button "This item doesn't support favorites" [ref=f54e204] [cursor=pointer]:
+                  - generic [ref=f54e205]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f54e213] [cursor=pointer]:
+                  - generic [ref=f54e214]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f54e221]:
+              - button [ref=f54e381] [cursor=pointer]:
+                - generic [ref=f54e382]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f54e230]:
+              - button [ref=f54e232] [cursor=pointer]:
+                - generic [ref=f54e233]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f54e240]:
+              - button "4 Notifications" [ref=f54e389] [cursor=pointer]:
+                - generic [ref=f54e244]:
+                  - generic [ref=f54e245]: "4"
+                  - tooltip "Notifications"
+              - generic [ref=f54e252]: 4 new notifications
+            - listitem [ref=f54e253]:
+              - button "View profile" [ref=f54e256] [cursor=pointer]:
+                - generic [ref=f54e257]:
+                  - tooltip "View profile"
+    - generic [ref=f54e24]:
+      - generic [ref=f54e27]:
+        - generic [ref=f54e29]:
+          - navigation "App" [ref=f54e30]:
+            - button "App Launcher" [ref=f54e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f54e44]
+        - navigation "Global" [ref=f54e48]:
+          - list [ref=f54e49]:
+            - listitem [ref=f54e50] [cursor=pointer]:
+              - link "Home" [ref=f54e51]:
+                - /url: /lightning/page/home
+            - listitem [ref=f54e53]:
+              - link "Vehicles" [ref=f54e54] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f54e59] [cursor=pointer]
+            - listitem [ref=f54e67]:
+              - link "Assets" [ref=f54e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f54e73] [cursor=pointer]
+            - listitem [ref=f54e81]:
+              - link "Vehicle Definitions" [ref=f54e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f54e87] [cursor=pointer]
+            - listitem [ref=f54e95]:
+              - link "Products" [ref=f54e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f54e101] [cursor=pointer]
+            - listitem [ref=f54e109]:
+              - link "Accounts" [ref=f54e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f54e115] [cursor=pointer]
+            - listitem [ref=f54e123]:
+              - link "Contacts" [ref=f54e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f54e129] [cursor=pointer]
+            - listitem [ref=f54e137]:
+              - link "Asset Milestones" [ref=f54e138] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f54e143] [cursor=pointer]
+            - listitem [ref=f54e151]:
+              - link "Asset Contact Participants" [ref=f54e152] [cursor=pointer]:
+                - /url: /lightning/o/AssetContactParticipant/home
+              - button "Asset Contact Participants List" [ref=f54e157] [cursor=pointer]
+            - listitem [ref=f54e165]:
+              - button "Show more navigation items" [ref=f54e167] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f54e168]: More
+            - listitem [ref=f54e176]:
+              - button "Edit nav items" [ref=f54e178] [cursor=pointer]
+      - main [ref=f54e185]:
+        - generic [ref=f54e261]:
+          - generic [ref=f54e262]:
+            - heading "Home" [level=1] [ref=f54e263]
+            - article [ref=f54e268]:
+              - generic [ref=f54e270]:
+                - heading "My Approval Requests" [level=2] [ref=f54e277]
+                - generic [ref=f54e279]: No items selected
+              - generic [ref=f54e397]:
+                - generic [ref=f54e399]:
+                  - generic: Navigation Mode
+                  - grid "Approval requests awaiting your decision" [ref=f54e404]:
+                    - rowgroup:
+                      - row "Choose a Row Select 9 items Request Type Detail Amount Submitted By Submitted":
+                        - gridcell "Choose a Row Select 9 items":
+                          - generic [ref=f54e405]:
+                            - generic [ref=f54e406]: Choose a Row
+                            - generic [ref=f54e408]:
+                              - checkbox "Select 9 items" [ref=f54e409] [cursor=pointer]
+                              - generic [ref=f54e410] [cursor=pointer]: Select 9 items
+                        - columnheader "Request":
+                          - generic [ref=f54e415]:
+                            - generic "Request" [ref=f54e416]
+                            - button "Show Request column actions" [ref=f54e418] [cursor=pointer]
+                        - columnheader "Type":
+                          - generic [ref=f54e426]:
+                            - generic "Type" [ref=f54e427]
+                            - button "Show Type column actions" [ref=f54e429] [cursor=pointer]
+                        - columnheader "Detail":
+                          - generic [ref=f54e437]:
+                            - generic "Detail" [ref=f54e438]
+                            - button "Show Detail column actions" [ref=f54e440] [cursor=pointer]
+                        - columnheader "Amount":
+                          - generic [ref=f54e448]:
+                            - generic "Amount" [ref=f54e449]
+                            - button "Show Amount column actions" [ref=f54e451] [cursor=pointer]
+                        - columnheader "Submitted By":
+                          - generic [ref=f54e459]:
+                            - generic "Submitted By" [ref=f54e460]
+                            - button "Show Submitted By column actions" [ref=f54e462] [cursor=pointer]
+                        - columnheader "Submitted":
+                          - generic [ref=f54e470]:
+                            - generic "Submitted" [ref=f54e471]
+                            - button "Show Submitted column actions" [ref=f54e473] [cursor=pointer]
+                    - rowgroup [ref=f54e479]:
+                      - row [ref=f54e480]:
+                        - gridcell "Select Item 1 Choose a Row" [ref=f54e481]:
+                          - generic [ref=f54e483]:
+                            - checkbox "Select Item 1 Choose a Row" [ref=f54e484] [cursor=pointer]
+                            - generic [ref=f54e485] [cursor=pointer]: Select Item 1
+                        - rowheader [ref=f54e488]:
+                          - link "CN-00011" [ref=f54e493] [cursor=pointer]:
+                            - /url: /a0PFV0047jh8hCW2AY
+                        - gridcell "Credit Note Cancellation" [ref=f54e494]
+                        - gridcell [ref=f54e498]
+                        - gridcell [ref=f54e499]
+                        - gridcell "QA SalesRep2" [ref=f54e500]
+                        - gridcell "25 Sep, 03:42 AM" [ref=f54e504]
+                      - row [ref=f54e508]:
+                        - gridcell "Select Item 2 Choose a Row" [ref=f54e509]:
+                          - generic [ref=f54e511]:
+                            - checkbox "Select Item 2 Choose a Row" [ref=f54e512] [cursor=pointer]
+                            - generic [ref=f54e513] [cursor=pointer]: Select Item 2
+                        - rowheader [ref=f54e516]:
+                          - link "QA RT13 T1 - Refund approved on its own" [ref=f54e521] [cursor=pointer]:
+                            - /url: /006FV00BtPUTf4mYUD
+                        - gridcell "Opportunity Approval" [ref=f54e522]
+                        - gridcell "Commit" [ref=f54e526]
+                        - gridcell "AED 369,300.00" [ref=f54e530]
+                        - gridcell "QA SalesRep2" [ref=f54e534]
+                        - gridcell "25 Sep, 03:42 AM" [ref=f54e538]
+                      - row [ref=f54e542]:
+                        - gridcell "Select Item 3 Choose a Row" [ref=f54e543]:
+                          - generic [ref=f54e545]:
+                            - checkbox "Select Item 3 Choose a Row" [ref=f54e546] [cursor=pointer]
+                            - generic [ref=f54e547] [cursor=pointer]: Select Item 3
+                        - rowheader [ref=f54e550]:
+                          - link "CN-00012" [ref=f54e555] [cursor=pointer]:
+                            - /url: /a0PFV0047jnuHlk2AE
+                        - gridcell "Credit Note Cancellation" [ref=f54e556]
+                        - gridcell [ref=f54e560]
+                        - gridcell [ref=f54e561]
+                        - gridcell "QA SalesRep2" [ref=f54e562]
+                        - gridcell "25 Sep, 03:43 AM" [ref=f54e566]
+                      - row [ref=f54e570]:
+                        - gridcell "Select Item 4 Choose a Row" [ref=f54e571]:
+                          - generic [ref=f54e573]:
+                            - checkbox "Select Item 4 Choose a Row" [ref=f54e574] [cursor=pointer]
+                            - generic [ref=f54e575] [cursor=pointer]: Select Item 4
+                        - rowheader [ref=f54e578]:
+                          - link "CN-00013" [ref=f54e583] [cursor=pointer]:
+                            - /url: /a0PFV0047jufsKy2AI
+                        - gridcell "Credit Note Cancellation" [ref=f54e584]
+                        - gridcell [ref=f54e588]
+                        - gridcell [ref=f54e589]
+                        - gridcell "QA SalesRep2" [ref=f54e590]
+                        - gridcell "25 Sep, 03:43 AM" [ref=f54e594]
+                      - row [ref=f54e598]:
+                        - gridcell "Select Item 5 Choose a Row" [ref=f54e599]:
+                          - generic [ref=f54e601]:
+                            - checkbox "Select Item 5 Choose a Row" [ref=f54e602] [cursor=pointer]
+                            - generic [ref=f54e603] [cursor=pointer]: Select Item 5
+                        - rowheader [ref=f54e606]:
+                          - link "CN-00016" [ref=f54e611] [cursor=pointer]:
+                            - /url: /a0PFV0047kg30JY2AY
+                        - gridcell "Credit Note Cancellation" [ref=f54e612]
+                        - gridcell [ref=f54e616]
+                        - gridcell [ref=f54e617]
+                        - gridcell "QA SalesRep2" [ref=f54e618]
+                        - gridcell "25 Sep, 03:52 AM" [ref=f54e622]
+                      - row [ref=f54e626]:
+                        - gridcell "Select Item 6 Choose a Row" [ref=f54e627]:
+                          - generic [ref=f54e629]:
+                            - checkbox "Select Item 6 Choose a Row" [ref=f54e630] [cursor=pointer]
+                            - generic [ref=f54e631] [cursor=pointer]: Select Item 6
+                        - rowheader [ref=f54e634]:
+                          - link "QA RT13 T2 - Cancellation rejected then resubmitted" [ref=f54e639] [cursor=pointer]:
+                            - /url: /006FV00BtPUXrDoYUL
+                        - gridcell "Opportunity Approval" [ref=f54e640]
+                        - gridcell "Commit" [ref=f54e644]
+                        - gridcell "AED 369,300.00" [ref=f54e648]
+                        - gridcell "QA SalesRep2" [ref=f54e652]
+                        - gridcell "25 Sep, 03:52 AM" [ref=f54e656]
+                      - row [ref=f54e660]:
+                        - gridcell "Select Item 7 Choose a Row" [ref=f54e661]:
+                          - generic [ref=f54e663]:
+                            - checkbox "Select Item 7 Choose a Row" [ref=f54e664] [cursor=pointer]
+                            - generic [ref=f54e665] [cursor=pointer]: Select Item 7
+                        - rowheader [ref=f54e668]:
+                          - link "QA RT27 C1 - Cancel approved, evidence and refund" [ref=f54e673] [cursor=pointer]:
+                            - /url: /006FV00C3c99bgSYEQ
+                        - gridcell "Opportunity Approval" [ref=f54e674]
+                        - gridcell "Commit" [ref=f54e678]
+                        - gridcell "AED 369,300.00" [ref=f54e682]
+                        - gridcell "QA SalesRep2" [ref=f54e686]
+                        - gridcell "27 Sep, 07:34 PM" [ref=f54e690]
+                      - row [ref=f54e694]:
+                        - gridcell "Select Item 8 Choose a Row" [ref=f54e695]:
+                          - generic [ref=f54e697]:
+                            - checkbox "Select Item 8 Choose a Row" [ref=f54e698] [cursor=pointer]
+                            - generic [ref=f54e699] [cursor=pointer]: Select Item 8
+                        - rowheader [ref=f54e702]:
+                          - link "QA RT27 C2 - Cancel rejected then resubmitted" [ref=f54e707] [cursor=pointer]:
+                            - /url: /006FV00C3c9DnpUYES
+                        - gridcell "Opportunity Approval" [ref=f54e708]
+                        - gridcell "Commit" [ref=f54e712]
+                        - gridcell "AED 369,300.00" [ref=f54e716]
+                        - gridcell "QA SalesRep2" [ref=f54e720]
+                        - gridcell "27 Sep, 07:34 PM" [ref=f54e724]
+                      - row [ref=f54e728]:
+                        - gridcell "Select Item 9 Choose a Row" [ref=f54e729]:
+                          - generic [ref=f54e731]:
+                            - checkbox "Select Item 9 Choose a Row" [ref=f54e732] [cursor=pointer]
+                            - generic [ref=f54e733] [cursor=pointer]: Select Item 9
+                        - rowheader [ref=f54e736]:
+                          - link "QA RT27 C7 - Cancelled deal cannot progress" [ref=f54e741] [cursor=pointer]:
+                            - /url: /006FV00C3c9YmYeYEK
+                        - gridcell "Opportunity Approval" [ref=f54e742]
+                        - gridcell "Commit" [ref=f54e746]
+                        - gridcell "AED 369,300.00" [ref=f54e750]
+                        - gridcell "QA SalesRep2" [ref=f54e754]
+                        - gridcell "27 Sep, 07:34 PM" [ref=f54e758]
+                - generic [ref=f54e763]:
+                  - generic [ref=f54e764]: Comments (optional)
+                  - textbox "Comments (optional)" [ref=f54e766]:
+                    - /placeholder: Applied to every selected request
+                  - status
+                - generic [ref=f54e767]:
+                  - generic:
+                    - button "Approve Selected" [disabled]
+                  - generic:
+                    - button "Reject Selected" [disabled]
+          - generic [ref=f54e284]:
+            - article [ref=f54e287]:
+              - generic [ref=f54e288]:
+                - heading "Today’s Tasks" [level=2] [ref=f54e291]
+                - button "Select a view of your tasks" [ref=f54e295] [cursor=pointer]
+              - generic [ref=f54e301]: Nothing due today. Be a go-getter, and check back soon.
+              - button "View All Tasks" [ref=f54e308] [cursor=pointer]: View All
+            - article [ref=f54e311]:
+              - heading "Today's Events" [level=2] [ref=f54e315]
+              - generic [ref=f54e317]: Looks like you're free and clear the rest of the day.
+              - button "View Calendar" [ref=f54e324] [cursor=pointer]
+            - article [ref=f54e327]:
+              - heading "Recent Records" [level=2] [ref=f54e331]
+              - list [ref=f54e768]:
+                - listitem [ref=f54e769]:
+                  - link "QA SalesBrandManager2" [ref=f54e777] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f54e778]:
+                  - link "Trade-In Conversion" [ref=f54e786] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f54e787]:
+                  - link "Reservation Aging" [ref=f54e795] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f54e796]:
+                  - link "Opportunity Pipeline by Stage" [ref=f54e804] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                - listitem [ref=f54e805]:
+                  - link "Lead SLA Compliance" [ref=f54e813] [cursor=pointer]:
+                    - /url: /lightning/r/00OFV001ulhj6Y42AI/view
+              - button "View All Recent Records" [ref=f54e376] [cursor=pointer]: View All
+  - generic:
+    - status

@@ -1,0 +1,192 @@
+- generic [active]:
+  - generic [ref=f161e2]:
+    - generic [ref=f161e3]:
+      - link "Skip to Navigation" [ref=f161e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f161e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f161e195]:
+        - generic [ref=f161e196]: "Sandbox: QA |"
+        - link "Log out" [ref=f161e197] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f161e6]:
+        - button "Search" [ref=f161e13]: Search...
+        - navigation "Global Header" [ref=f161e18]:
+          - list [ref=f161e199]:
+            - listitem [ref=f161e200]:
+              - group [ref=f161e201]:
+                - button "Add favorite" [ref=f161e203] [cursor=pointer]:
+                  - generic [ref=f161e204]:
+                    - tooltip "Add favorite"
+                - button [ref=f161e212] [cursor=pointer]:
+                  - generic [ref=f161e213]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f161e220]:
+              - button [ref=f161e226] [cursor=pointer]:
+                - generic [ref=f161e227]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f161e234]:
+              - button [ref=f161e236] [cursor=pointer]:
+                - generic [ref=f161e237]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f161e244]:
+              - button [ref=f161e247] [cursor=pointer]:
+                - generic [ref=f161e248]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f161e255]:
+              - button "1 Notifications" [ref=f161e258] [cursor=pointer]:
+                - generic [ref=f161e259]:
+                  - generic [ref=f161e260]: "1"
+                  - tooltip "Notifications"
+              - generic [ref=f161e269]: 1 new notifications
+            - listitem [ref=f161e270]:
+              - button "View profile" [ref=f161e273] [cursor=pointer]:
+                - generic [ref=f161e274]:
+                  - tooltip "View profile"
+    - generic [ref=f161e24]:
+      - generic [ref=f161e27]:
+        - generic [ref=f161e29]:
+          - navigation "App" [ref=f161e30]:
+            - button "App Launcher" [ref=f161e32] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f161e44]
+        - navigation "Global" [ref=f161e48]:
+          - list [ref=f161e49]:
+            - listitem [ref=f161e50]:
+              - link "Home" [ref=f161e51] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f161e53]:
+              - link "Vehicles" [ref=f161e54] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f161e59] [cursor=pointer]
+            - listitem [ref=f161e67]:
+              - link "Assets" [ref=f161e68] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f161e73] [cursor=pointer]
+            - listitem [ref=f161e81]:
+              - link "Vehicle Definitions" [ref=f161e82] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f161e87] [cursor=pointer]
+            - listitem [ref=f161e95]:
+              - link "Products" [ref=f161e96] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f161e101] [cursor=pointer]
+            - listitem [ref=f161e109]:
+              - link "Accounts" [ref=f161e110] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f161e115] [cursor=pointer]
+            - listitem [ref=f161e123]:
+              - link "Contacts" [ref=f161e124] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f161e129] [cursor=pointer]
+            - listitem [ref=f161e278] [cursor=pointer]:
+              - link "* Sales Order - DEMO RS11 22 - Confirmation test after fixes" [ref=f161e279]:
+                - /url: /lightning/r/ContentDocument/069FV007OlrFLaeYIG/view
+                - generic "Not added to nav bar" [ref=f161e280]: "*"
+                - generic [ref=f161e281]: Sales Order - DEMO RS11 22 - Confirmation test after fixes
+              - button "Sales Order - DEMO RS11 22 - Confirmation test after fixes List" [ref=f161e285]
+              - button "Close tab" [ref=f161e293]
+            - listitem [ref=f161e165]:
+              - button "* Show more navigation items" [ref=f161e301] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f161e302]: "*"
+                - generic [aria-hidden] [ref=f161e168]: More
+                - generic [ref=f161e175]: Show more navigation items
+            - listitem [ref=f161e176]:
+              - button "Edit nav items" [ref=f161e178] [cursor=pointer]
+      - main [ref=f161e185]:
+        - generic [ref=f161e306]:
+          - generic "Highlights panel header" [ref=f161e309]:
+            - generic [ref=f161e310]:
+              - generic [ref=f161e311]:
+                - generic [ref=f161e312]:
+                  - generic [ref=f161e313]: Adobe PDF
+                  - heading "File Sales Order - DEMO RS11 22 - Confirmation test after fixes" [level=1] [ref=f161e323]:
+                    - generic [ref=f161e324]: File
+                    - generic "Sales Order - DEMO RS11 22 - Confirmation test after fixes" [ref=f161e325]
+                - group [ref=f161e326]:
+                  - button "Follow" [ref=f161e330] [cursor=pointer]
+                  - list [ref=f161e338]:
+                    - listitem [ref=f161e339]:
+                      - button "Download" [ref=f161e340] [cursor=pointer]
+                    - listitem [ref=f161e342]:
+                      - button "Share" [ref=f161e343] [cursor=pointer]
+                    - listitem [ref=f161e345]:
+                      - link "Upload New Version" [ref=f161e346] [cursor=pointer]:
+                        - /url: "?navigationLocation=DETAIL"
+                    - listitem [ref=f161e348]:
+                      - button "Show 2 more actions" [ref=f161e353] [cursor=pointer]
+              - generic [ref=f161e358]:
+                - generic "Size" [ref=f161e359]
+                - generic [ref=f161e360]: 3KB
+              - generic [ref=f161e364]:
+                - generic "File Extension" [ref=f161e365]
+                - generic [ref=f161e366]: pdf
+              - generic [ref=f161e368]:
+                - generic "Owner" [ref=f161e369]
+                - link "QA SalesRep2" [ref=f161e372] [cursor=pointer]:
+                  - /url: /lightning/r/005FV0082KfRrqeYQC/view
+          - generic [ref=f161e374]:
+            - generic [ref=f161e376]:
+              - heading "Tabs" [level=2] [ref=f161e377]
+              - generic [ref=f161e378]:
+                - tablist [ref=f161e379]:
+                  - tab "Preview" [selected] [ref=f161e380] [cursor=pointer]
+                  - tab "Details" [ref=f161e382] [cursor=pointer]
+                - tabpanel [ref=f161e384]:
+                  - generic [ref=f161e387] [cursor=pointer]:
+                    - button "View File" [ref=f161e388]
+                    - img "Sales Order - DEMO RS11 22 - Confirmation test after fixes" [ref=f161e398]
+            - generic [ref=f161e399]:
+              - article [ref=f161e402]:
+                - generic [ref=f161e403]:
+                  - generic:
+                    - generic:
+                      - heading [level=2]
+                - generic [ref=f161e404]:
+                  - generic [ref=f161e406]:
+                    - heading "File Engagement" [level=2] [ref=f161e408]
+                    - button "Help" [ref=f161e414] [cursor=pointer]
+                  - list [ref=f161e421]:
+                    - listitem [ref=f161e422]:
+                      - heading "Views" [level=3] [ref=f161e423]
+                      - paragraph [ref=f161e424]: "0"
+                    - listitem [ref=f161e425]:
+                      - heading "Downloads" [level=3] [ref=f161e426]
+                      - paragraph [ref=f161e427]: "0"
+              - generic [ref=f161e430]:
+                - article "Shared with" [ref=f161e432]:
+                  - generic [ref=f161e433]:
+                    - heading [level=2] [ref=f161e439]:
+                      - link "Shared with (2)" [ref=f161e440] [cursor=pointer]:
+                        - /url: /lightning/r/ContentDocument/069FV007OlrFLaeYIG/related/ContentDocumentLinks/view
+                        - generic "Shared with" [ref=f161e441]
+                        - generic "(2)" [ref=f161e442]
+                    - button "Show actions for Shared with" [ref=f161e446] [cursor=pointer]
+                  - list [ref=f161e459]:
+                    - listitem [ref=f161e460]:
+                      - link "QA SalesRep2 Owner" [ref=f161e461] [cursor=pointer]:
+                        - /url: javascript:void(0)
+                        - generic [ref=f161e465]:
+                          - generic [ref=f161e466]: QA SalesRep2
+                          - generic [ref=f161e467]: Owner
+                    - listitem [ref=f161e468]:
+                      - link "DEMO RS11 22 - Confirmation test after fixes Set by Record" [ref=f161e469] [cursor=pointer]:
+                        - /url: javascript:void(0)
+                        - generic [ref=f161e473]:
+                          - generic [ref=f161e474]: DEMO RS11 22 - Confirmation test after fixes
+                          - generic [ref=f161e475]: Set by Record
+                  - link "View All Shared with" [ref=f161e476] [cursor=pointer]:
+                    - /url: /lightning/r/ContentDocument/069FV007OlrFLaeYIG/related/ContentDocumentLinks/view
+                    - generic [ref=f161e478]:
+                      - text: View All
+                      - generic [ref=f161e479]: Shared with
+                - article "Versions" [ref=f161e481]:
+                  - heading [level=2] [ref=f161e486]:
+                    - link "Versions" [ref=f161e487] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                - article "Followers" [ref=f161e490]:
+                  - heading [level=2] [ref=f161e495]:
+                    - link "Followers" [ref=f161e496] [cursor=pointer]:
+                      - /url: javascript:void(0);
+  - generic:
+    - status

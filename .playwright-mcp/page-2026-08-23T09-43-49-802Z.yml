@@ -1,0 +1,202 @@
+- generic:
+  - generic [ref=f23e2]:
+    - generic [ref=f23e3]:
+      - link "Skip to Navigation" [ref=f23e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f23e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f23e25]:
+        - generic [ref=f23e26]: "Sandbox: QA |"
+        - link "Log out" [ref=f23e27] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f23e6]:
+        - button "Search" [ref=f23e31]: Search...
+        - navigation "Global Header" [ref=f23e9]:
+          - list [ref=f23e37]:
+            - listitem [ref=f23e38]:
+              - group [ref=f23e39]:
+                - button "This item doesn't support favorites" [ref=f23e41] [cursor=pointer]:
+                  - generic [ref=f23e42]:
+                    - tooltip "This item doesn't support favorites"
+                - button [ref=f23e50] [cursor=pointer]:
+                  - generic [ref=f23e51]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f23e58]:
+              - button [ref=f23e64] [cursor=pointer]:
+                - generic [ref=f23e65]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f23e72]:
+              - button [ref=f23e74] [cursor=pointer]:
+                - generic [ref=f23e75]:
+                  - tooltip "Guidance Center"
+            - listitem [ref=f23e82]:
+              - button [ref=f23e85] [cursor=pointer]:
+                - generic [ref=f23e86]:
+                  - tooltip "Salesforce Help"
+            - listitem [ref=f23e93]:
+              - button [ref=f23e99] [cursor=pointer]:
+                - generic [ref=f23e100]:
+                  - tooltip "Setup"
+            - listitem [ref=f23e107]:
+              - button [ref=f23e110] [cursor=pointer]:
+                - generic [ref=f23e111]:
+                  - tooltip "Notifications"
+              - generic [ref=f23e119]: 2 new notifications
+            - listitem [ref=f23e120]:
+              - button "View profile" [ref=f23e123] [cursor=pointer]:
+                - generic [ref=f23e124]:
+                  - tooltip "View profile"
+    - generic [ref=f23e15]:
+      - generic [ref=f23e130]:
+        - generic [ref=f23e132]:
+          - navigation "App" [ref=f23e133]:
+            - button "App Launcher" [ref=f23e135] [cursor=pointer]
+          - heading "Sales" [level=1] [ref=f23e147]
+        - navigation "Global" [ref=f23e151]:
+          - list [ref=f23e152]:
+            - listitem [ref=f23e153]:
+              - link "Home" [ref=f23e154] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f23e156]:
+              - link "Analytics" [ref=f23e157] [cursor=pointer]:
+                - /url: /lightning/page/analytics
+            - listitem [ref=f23e159]:
+              - link "Opportunities" [ref=f23e160] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+              - button "Opportunities List" [ref=f23e165] [cursor=pointer]
+            - listitem [ref=f23e173]:
+              - link "Quotes" [ref=f23e174] [cursor=pointer]:
+                - /url: /lightning/o/Quote/home
+              - button "Quotes List" [ref=f23e179] [cursor=pointer]
+            - listitem [ref=f23e187] [cursor=pointer]:
+              - link "Leads" [ref=f23e188]:
+                - /url: /lightning/o/Lead/home
+              - button "Leads List" [ref=f23e193]
+            - listitem [ref=f23e201]:
+              - link "Tasks" [ref=f23e202] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+              - button "Tasks List" [ref=f23e207] [cursor=pointer]
+            - listitem [ref=f23e215]:
+              - link "Files" [ref=f23e216] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+              - button "Files List" [ref=f23e221] [cursor=pointer]
+            - listitem [ref=f23e229]:
+              - link "Accounts" [ref=f23e230] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f23e235] [cursor=pointer]
+            - listitem [ref=f23e243]:
+              - link "Contacts" [ref=f23e244] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f23e249] [cursor=pointer]
+            - listitem [ref=f23e257]:
+              - link "Campaigns" [ref=f23e258] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+              - button "Campaigns List" [ref=f23e263] [cursor=pointer]
+            - listitem [ref=f23e271]:
+              - link "Dashboards" [ref=f23e272] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+              - button "Dashboards List" [ref=f23e277] [cursor=pointer]
+            - listitem [ref=f23e285]:
+              - link "Reports" [ref=f23e286] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+              - button "Reports List" [ref=f23e291] [cursor=pointer]
+            - listitem [ref=f23e299]:
+              - link "Chatter" [ref=f23e300] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+            - listitem [ref=f23e302]:
+              - link "Groups" [ref=f23e303] [cursor=pointer]:
+                - /url: /lightning/o/CollaborationGroup/home
+              - button "Groups List" [ref=f23e308] [cursor=pointer]
+            - listitem [ref=f23e316]:
+              - button "Show more navigation items" [ref=f23e318] [cursor=pointer]:
+                - generic [ref=f23e319]: More
+            - listitem [ref=f23e327]:
+              - button "Edit nav items" [ref=f23e329] [cursor=pointer]
+      - main [ref=f23e17]:
+        - generic [ref=f23e746]:
+          - generic [ref=f23e748]:
+            - generic [ref=f23e750]:
+              - generic "Lead" [ref=f23e752]
+              - generic [ref=f23e761]:
+                - heading "Leads" [level=1] [ref=f23e762]
+                - generic [ref=f23e767] [cursor=pointer]:
+                  - heading "Leads My Leads" [level=1] [ref=f23e768]:
+                    - generic [ref=f23e769]: Leads
+                    - generic [ref=f23e770]: My Leads
+                  - 'button "Select a List View: Leads" [ref=f23e773]'
+            - group [ref=f23e782]:
+              - generic "Lead View Settings" [ref=f23e784]:
+                - button "Lead View Settings" [ref=f23e785] [cursor=pointer]
+              - button "Refresh" [ref=f23e795] [cursor=pointer]
+              - button "Edit List" [ref=f23e804] [cursor=pointer]
+              - group [ref=f23e811]:
+                - generic [ref=f23e813]:
+                  - button "New" [ref=f23e815] [cursor=pointer]
+                  - button "List View" [ref=f23e817] [cursor=pointer]
+          - generic [ref=f23e819]:
+            - generic [ref=f23e823]:
+              - generic [ref=f23e824]:
+                - generic [ref=f23e825]:
+                  - generic [ref=f23e826]: Created
+                  - 'button "Time Period Filter: This Quarter" [ref=f23e832] [cursor=pointer]': This Quarter
+                - generic [ref=f23e837]:
+                  - generic [ref=f23e838]: Owner
+                  - 'button "Lead owner filter: Me" [ref=f23e844] [cursor=pointer]': Me
+              - group [ref=f23e851]:
+                - generic [ref=f23e853]:
+                  - generic [ref=f23e854]:
+                    - button "Important Leads" [ref=f23e857] [cursor=pointer]
+                    - generic [ref=f23e863]: Apply Important Leads Filter
+                  - tooltip "Shows the leads you mark as important. If you filter your view, the same filters apply." [ref=f23e864]
+                - button "Show filters" [ref=f23e868] [cursor=pointer]
+            - group "Key Performance Indicators" [ref=f23e876]:
+              - button [pressed] [ref=f23e878] [cursor=pointer]:
+                - generic [ref=f23e879]:
+                  - paragraph [ref=f23e881]: Total Leads
+                  - paragraph [ref=f23e882]: ٢
+              - generic [ref=f23e883]:
+                - button [ref=f23e884] [cursor=pointer]:
+                  - generic [ref=f23e885]:
+                    - paragraph [ref=f23e887]: No Activity
+                    - paragraph [ref=f23e889]: ٢
+                - button "Help" [ref=f23e893] [cursor=pointer]
+              - generic [ref=f23e899]:
+                - button [ref=f23e900] [cursor=pointer]:
+                  - generic [ref=f23e901]:
+                    - paragraph [ref=f23e903]: Idle
+                    - paragraph [ref=f23e905]: ٠
+                - button "Help" [ref=f23e909] [cursor=pointer]
+              - generic [ref=f23e915]:
+                - button [ref=f23e916] [cursor=pointer]:
+                  - generic [ref=f23e917]:
+                    - paragraph [ref=f23e919]: No Upcoming
+                    - paragraph [ref=f23e921]: ٠
+                - button "Help" [ref=f23e925] [cursor=pointer]
+              - button [ref=f23e932] [cursor=pointer]:
+                - generic [ref=f23e933]:
+                  - paragraph [ref=f23e935]: Overdue
+                  - paragraph [ref=f23e936]: ٠
+              - button [ref=f23e938] [cursor=pointer]:
+                - generic [ref=f23e939]:
+                  - paragraph [ref=f23e941]: Due Today
+                  - paragraph [ref=f23e942]: ١
+              - generic [ref=f23e943]:
+                - button [ref=f23e944] [cursor=pointer]:
+                  - generic [ref=f23e945]:
+                    - paragraph [ref=f23e947]: Upcoming
+                    - paragraph [ref=f23e949]: ٠
+                - button "Help" [ref=f23e953] [cursor=pointer]
+            - generic [ref=f23e962]:
+              - status [ref=f23e966]: 2 items • Filtered by Created Date, Me, Total Leads
+              - group [ref=f23e969]:
+                - generic [ref=f23e971]:
+                  - button "Change Owner" [ref=f23e973] [cursor=pointer]
+                  - button "Add to an Actionable List" [ref=f23e975] [cursor=pointer]
+                  - button "Assign Label" [ref=f23e977] [cursor=pointer]
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=f23e731]:
+          - listitem [ref=f23e732]:
+            - button "To Do List" [ref=f23e735] [cursor=pointer]
+  - generic:
+    - status

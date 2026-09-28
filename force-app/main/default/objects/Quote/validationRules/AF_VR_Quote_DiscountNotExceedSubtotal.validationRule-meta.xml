@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Quote_DiscountNotExceedSubtotal</fullName>
+    <active>true</active>
+    <description>LFRDN-650: A discount larger than the deal value should not be enterable. The approval fail-safe routes it, but the value itself is invalid.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(AF_DiscountAmount__c)),
+    Subtotal &gt; 0,
+    AF_DiscountAmount__c &gt; Subtotal
+)</errorConditionFormula>
+    <errorMessage>The discount cannot exceed the quote subtotal.</errorMessage>
+</ValidationRule>

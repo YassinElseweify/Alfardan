@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_Lead_LockWhileDisqualified</fullName>
+    <active>true</active>
+    <description>ALF-LM-07: a Disqualified Lead cannot be edited except to reactivate it (change Status away from Disqualified via the Reactivate Lead Quick Action). Blocks any save that leaves it still Disqualified.</description>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    ISPICKVAL(PRIORVALUE(Status), &quot;Disqualified&quot;),
+    ISPICKVAL(Status, &quot;Disqualified&quot;),
+    OR(
+        ISCHANGED(FirstName),
+        ISCHANGED(LastName),
+        ISCHANGED(Phone),
+        ISCHANGED(Email),
+        ISCHANGED(Company),
+        ISCHANGED(OwnerId),
+        ISCHANGED(AF_Brand__c),
+        ISCHANGED(AF_VehicleOfInterest__c),
+        ISCHANGED(Rating),
+        ISCHANGED(AF_ContactValidity__c),
+        ISCHANGED(AF_SourceOfBusiness__c),
+        ISCHANGED(AF_QualificationOutcome__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>This Lead is Disqualified and cannot be edited. Use the Reactivate Lead action first.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,249 @@
+- generic:
+  - generic [ref=f381e2]:
+    - generic [ref=f381e3]:
+      - link "Skip to Navigation" [ref=f381e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=f381e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f381e8]:
+        - generic [ref=f381e9]: "Sandbox: QA |"
+        - link "Log out" [ref=f381e10] [cursor=pointer]:
+          - /url: /secur/logout.jsp
+      - generic [ref=f381e11]:
+        - button "Search" [ref=f381e18]: Search...
+        - navigation "Global Header" [ref=f381e23]:
+          - list [ref=f381e25]:
+            - listitem [ref=f381e26]:
+              - group [ref=f381e27]:
+                - button "Add favorite" [ref=f381e29] [cursor=pointer]:
+                  - generic [ref=f381e30]:
+                    - tooltip "Add favorite"
+                - button [ref=f381e38] [cursor=pointer]:
+                  - generic [ref=f381e39]:
+                    - tooltip "Favorites list"
+            - listitem [ref=f381e46]:
+              - button [ref=f381e52] [cursor=pointer]:
+                - generic [ref=f381e53]:
+                  - tooltip "Global Actions"
+            - listitem [ref=f381e60]:
+              - button [ref=f381e62] [cursor=pointer]:
+                - generic [ref=f381e63]:
+                  - tooltip "Salesforce Help"
+            - listitem
+            - listitem [ref=f381e70]:
+              - button "8 Notifications" [ref=f381e73] [cursor=pointer]:
+                - generic [ref=f381e74]:
+                  - generic [ref=f381e75]: "8"
+                  - tooltip "Notifications"
+              - generic [ref=f381e84]: 8 new notifications
+            - listitem [ref=f381e85]:
+              - button "View profile" [ref=f381e88] [cursor=pointer]:
+                - generic [ref=f381e89]:
+                  - tooltip "View profile"
+    - generic [ref=f381e93]:
+      - generic [ref=f381e96]:
+        - generic [ref=f381e98]:
+          - navigation "App" [ref=f381e99]:
+            - button "App Launcher" [ref=f381e101] [cursor=pointer]
+          - heading "Automotive" [level=1] [ref=f381e113]
+        - navigation "Global" [ref=f381e117]:
+          - list [ref=f381e118]:
+            - listitem [ref=f381e119]:
+              - link "Home" [ref=f381e120] [cursor=pointer]:
+                - /url: /lightning/page/home
+            - listitem [ref=f381e122]:
+              - link "Vehicles" [ref=f381e123] [cursor=pointer]:
+                - /url: /lightning/o/Vehicle/home
+              - button "Vehicles List" [ref=f381e128] [cursor=pointer]
+            - listitem [ref=f381e136]:
+              - link "Assets" [ref=f381e137] [cursor=pointer]:
+                - /url: /lightning/o/Asset/home
+              - button "Assets List" [ref=f381e142] [cursor=pointer]
+            - listitem [ref=f381e150]:
+              - link "Vehicle Definitions" [ref=f381e151] [cursor=pointer]:
+                - /url: /lightning/o/VehicleDefinition/home
+              - button "Vehicle Definitions List" [ref=f381e156] [cursor=pointer]
+            - listitem [ref=f381e164]:
+              - link "Products" [ref=f381e165] [cursor=pointer]:
+                - /url: /lightning/o/Product2/home
+              - button "Products List" [ref=f381e170] [cursor=pointer]
+            - listitem [ref=f381e178]:
+              - link "Accounts" [ref=f381e179] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+              - button "Accounts List" [ref=f381e184] [cursor=pointer]
+            - listitem [ref=f381e192]:
+              - link "Contacts" [ref=f381e193] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+              - button "Contacts List" [ref=f381e198] [cursor=pointer]
+            - listitem [ref=f381e206]:
+              - link "Asset Milestones" [ref=f381e207] [cursor=pointer]:
+                - /url: /lightning/o/AssetMilestone/home
+              - button "Asset Milestones List" [ref=f381e212] [cursor=pointer]
+            - listitem [ref=f381e220] [cursor=pointer]:
+              - link "* APLI-000000097 | Trade In Item" [ref=f381e221]:
+                - /url: /lightning/r/AppraisalItem/9AIFV0000QWaczs4QB/view
+                - generic "Not added to nav bar" [ref=f381e222]: "*"
+                - generic [ref=f381e223]: APLI-000000097 | Trade In Item
+              - button "APLI-000000097 | Trade In Item List" [ref=f381e227]
+              - button "Close tab" [ref=f381e235]
+            - listitem [ref=f381e243]:
+              - button "* Show more navigation items" [ref=f381e245] [cursor=pointer]:
+                - generic "Not added to nav bar" [ref=f381e246]: "*"
+                - generic [aria-hidden] [ref=f381e247]: More
+                - generic [ref=f381e254]: Show more navigation items
+            - listitem [ref=f381e255]:
+              - button "Edit nav items" [ref=f381e257] [cursor=pointer]
+      - main [ref=f381e264]:
+        - generic [ref=f381e280]:
+          - generic [ref=f381e289]:
+            - generic [ref=f381e290]:
+              - generic [ref=f381e296]:
+                - generic [ref=f381e297]: Trade In Item
+                - heading "APLI-000000097" [level=1] [ref=f381e299]
+              - generic [ref=f381e305]:
+                - generic "Edit" [ref=f381e306]:
+                  - button "Edit" [ref=f381e311] [cursor=pointer]
+                - generic "Clone" [ref=f381e312]:
+                  - button "Clone" [ref=f381e317] [cursor=pointer]
+            - generic [ref=f381e318]:
+              - generic [ref=f381e320]:
+                - paragraph [ref=f381e321]: Type
+                - paragraph [ref=f381e322]:
+                  - generic [ref=f381e323]: Vehicle
+              - generic [ref=f381e325]:
+                - paragraph [ref=f381e326]: Identification Number
+                - paragraph [ref=f381e327]:
+                  - generic [ref=f381e328]: SALWA2FE1MA127777
+              - generic [ref=f381e330]:
+                - paragraph [ref=f381e331]: Final Value
+                - paragraph [ref=f381e332]:
+                  - generic [ref=f381e333]: AED 0.00
+          - generic [ref=f381e337]:
+            - generic [ref=f381e345]:
+              - heading "Tabs" [level=2] [ref=f381e346]
+              - tablist "Tabs" [ref=f381e348]:
+                - tab "Related" [selected] [ref=f381e349] [cursor=pointer]
+                - tab "Details" [ref=f381e350] [cursor=pointer]
+              - tabpanel "Related" [ref=f381e353]:
+                - generic [ref=f381e358]:
+                  - article "Approval History" [ref=f381e366]:
+                    - heading [level=2] [ref=f381e373]:
+                      - link "Approval History (0)" [ref=f381e374] [cursor=pointer]:
+                        - /url: /lightning/r/AppraisalItem/9AIFV0000QWaczs4QB/related/ProcessSteps/view
+                        - generic "Approval History" [ref=f381e375]
+                        - generic "(0)" [ref=f381e376]
+                  - article "Trade In Item History" [ref=f381e382]:
+                    - generic [ref=f381e383]:
+                      - generic [ref=f381e384]:
+                        - heading [level=2] [ref=f381e395]:
+                          - link "Trade In Item History (1)" [ref=f381e396] [cursor=pointer]:
+                            - /url: /lightning/r/AppraisalItem/9AIFV0000QWaczs4QB/related/Histories/view
+                            - generic "Trade In Item History" [ref=f381e397]
+                            - generic "(1)" [ref=f381e398]
+                        - generic [ref=f381e405]:
+                          - generic: Navigation Mode
+                          - grid "Trade In Item History" [ref=f381e410]:
+                            - rowgroup:
+                              - row "Date Field User Original Value New Value":
+                                - columnheader "Date":
+                                  - generic "Date" [ref=f381e414]
+                                - columnheader "Field":
+                                  - generic "Field" [ref=f381e418]
+                                - columnheader "User":
+                                  - generic "User" [ref=f381e422]
+                                - columnheader "Original Value":
+                                  - generic "Original Value" [ref=f381e426]
+                                - columnheader "New Value":
+                                  - generic "New Value" [ref=f381e430]
+                            - rowgroup [ref=f381e431]:
+                              - row [ref=f381e432]:
+                                - rowheader "27/09/2026, 11:20 PM" [ref=f381e433]
+                                - gridcell "Created." [ref=f381e439]
+                                - gridcell [ref=f381e445]:
+                                  - link "QA SalesRep2" [ref=f381e452] [cursor=pointer]:
+                                    - /url: /lightning/r/005FV0082KfRrqeYQC/view
+                                - gridcell [ref=f381e454]
+                                - gridcell [ref=f381e455]
+                      - link "View All Trade In Item History" [ref=f381e456] [cursor=pointer]:
+                        - /url: /lightning/r/AppraisalItem/9AIFV0000QWaczs4QB/related/Histories/view
+                        - generic [ref=f381e457]: View All
+                  - article "Notes & Attachments" [ref=f381e465]:
+                    - generic [ref=f381e466]:
+                      - heading [level=2] [ref=f381e472]:
+                        - link "Notes & Attachments (2)" [ref=f381e473] [cursor=pointer]:
+                          - /url: /lightning/r/AppraisalItem/9AIFV0000QWaczs4QB/related/CombinedAttachments/view
+                          - generic "Notes & Attachments" [ref=f381e474]
+                          - generic "(2)" [ref=f381e475]
+                      - list [ref=f381e478]:
+                        - listitem [ref=f381e479]:
+                          - button "Upload Files" [active] [ref=f381e480] [cursor=pointer]
+                    - generic [ref=f381e487]:
+                      - generic [ref=f381e488]: Drop Files
+                      - list [ref=f381e498]:
+                        - listitem [ref=f381e499]:
+                          - button "360_front 27 Sep 2026• 158B •png" [ref=f381e500] [cursor=pointer]:
+                            - generic [ref=f381e506]:
+                              - generic "360_front" [ref=f381e507]
+                              - paragraph [ref=f381e508]:
+                                - text: 27 Sep 2026•
+                                - generic [ref=f381e509]:
+                                  - generic [ref=f381e510]: 158B
+                                  - text: •
+                                - text: png
+                        - listitem [ref=f381e511]:
+                          - button "360 Photo 27 Sep 2026• 52B •pdf" [ref=f381e512] [cursor=pointer]:
+                            - generic [ref=f381e523]:
+                              - generic "360 Photo" [ref=f381e524]
+                              - paragraph [ref=f381e525]:
+                                - text: 27 Sep 2026•
+                                - generic [ref=f381e526]:
+                                  - generic [ref=f381e527]: 52B
+                                  - text: •
+                                - text: pdf
+                    - link "View All Notes & Attachments" [ref=f381e528] [cursor=pointer]:
+                      - /url: /lightning/r/AppraisalItem/9AIFV0000QWaczs4QB/related/CombinedAttachments/view
+                      - generic [ref=f381e529]: View All
+            - generic [ref=f381e532]:
+              - generic [ref=f381e536]:
+                - generic [ref=f381e537]: Trade-In 360° Photos
+                - paragraph [ref=f381e549]: 360 Photo
+                - button "360 Photo" [ref=f381e551] [cursor=pointer]
+              - generic [ref=f381e566]:
+                - heading "Tabs" [level=2] [ref=f381e567]
+                - tablist "Tabs" [ref=f381e569]:
+                  - tab "Activity" [selected] [ref=f381e570] [cursor=pointer]
+                - tabpanel "Activity" [ref=f381e573]:
+                  - generic [ref=f381e579]:
+                    - heading "Activity Publisher" [level=2] [ref=f381e580]
+                    - heading "Activity Timeline" [level=2] [ref=f381e581]
+                    - generic [ref=f381e583]:
+                      - link "Skip to the bottom of the activity timeline" [ref=f381e584] [cursor=pointer]:
+                        - /url: javascript:void(0);
+                      - generic [ref=f381e586]:
+                        - generic [ref=f381e587]: "Filters: All time • All activities • All types"
+                        - button "Timeline Settings" [ref=f381e589] [cursor=pointer]
+                      - generic [ref=f381e597]:
+                        - button "Refresh" [ref=f381e598] [cursor=pointer]
+                        - text: •
+                        - button "Expand All. Show details for activities in the timeline." [ref=f381e599] [cursor=pointer]: Expand All
+                        - text: •
+                        - button "View All" [ref=f381e600] [cursor=pointer]
+                      - generic [ref=f381e602]:
+                        - heading [level=3] [ref=f381e603]:
+                          - button "Upcoming & Overdue" [expanded] [ref=f381e604] [cursor=pointer]
+                        - generic [ref=f381e609]:
+                          - generic:
+                            - list
+                          - generic [ref=f381e610]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                      - status [ref=f381e613]:
+                        - generic [ref=f381e614]: No past activity. Past meetings and tasks marked as done show up here.
+                      - link "Skip to the top of the activity timeline" [ref=f381e615] [cursor=pointer]:
+                        - /url: javascript:void(0);
+  - generic:
+    - generic [ref=f381e622]:
+      - generic [ref=f381e623]: Success notification.
+      - generic [ref=f381e630]:
+        - generic [ref=f381e631]: 1 file was added to the Trade In Item.
+        - generic [ref=f381e633]: Press Control + F6 to navigate to the next toast notification or focusable region.
+      - button "Close" [ref=f381e635] [cursor=pointer]
+    - status [ref=f381e643]: Success notification.1 file was added to the Trade In Item. Press Control + F6 to navigate to the next toast notification or focusable region.

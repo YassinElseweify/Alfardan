@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Determines whether isProcessServiceCatalogRequestFailed from the ProcessRequestStatementCopiesAndNotifyAccount step of the ProcessRequestStatmentCopiesAndNotifyStakeholders stage is set to True.</description>
+        <name>HasRequestStatementCopiesFailed</name>
+        <label>Has Request Statement Copies Failed?</label>
+        <locationX>248</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsFailed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ProcessRequestStatementCopiesAndNotifyAccount.Outputs.isProcessServiceCatalogRequestFailed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>NotifyCaseOwnerOfFailure</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the &apos;isRetryConnection&apos; variable in the NotifyCaseOwnerOfFailedRequest is set to True, indicating that the user has chosen to retry the ProcessRequestStatmentCopiesAndNotifyStakeholders stage.</description>
+        <name>IsRetrySelected</name>
+        <label>Is Retry Selected?</label>
+        <locationX>50</locationX>
+        <locationY>719</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>RetrySelected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NotifyCaseOwnerOfFailedRequest.Outputs.isRetryConnection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>ProcessRequestStatmentCopiesAndNotifyStakeholders</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>ProcessRqstStmtCopies Clone {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ProcessRqstStmtCopies Clone</label>
+    <orchestratedStages>
+        <description>Notifies the case owner that the request statement copies failed..</description>
+        <name>NotifyCaseOwnerOfFailure</name>
+        <label>Notify Case Owner of Failure</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <connector>
+            <targetReference>IsRetrySelected</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Assigns a work item to the service catalog request record owner that displays a retry screen, notifying them that the statement copies request failed.</description>
+            <name>NotifyCaseOwnerOfFailedRequest</name>
+            <actionName>serviceprocess__AsyncApexCalloutSts</actionName>
+            <actionType>stepInteractive</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>Resource</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>status</name>
+                <value>
+                    <elementReference>ProcessRequestStatementCopiesAndNotifyAccount.Outputs.failureMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__RecordId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Case Owner of Failed Request</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>InteractiveStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Notifies the account associated with the triggering service catalog request that a request statement copies has been made for the account. If your process requires that you notify other stakeholders, add more steps to notify them in this stage.</description>
+        <name>NotifyStakeholdersOfRequest</name>
+        <label>Notify Stakeholders of Request</label>
+        <locationX>248</locationX>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>ProcessRequestStatmentCopiesAndNotifyStakeholders</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Attempts to process the request statement copies, close the case, and notify the account associated with the triggering service catalog request. If your process requires that you notify other stakeholders about the success or case change in status, add more steps to notify them in this stage.</description>
+            <name>ProcessRequestStatementCopiesAndNotifyStakeholders</name>
+            <actionName>serviceprocess__RqstStmtCopy</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>inputRecordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Process Request Statement Copies and Notify Stakeholders</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Attempts to process the request statement copies, close the case, and notify the account associated with the triggering service catalog request. If your process requires that you notify other stakeholders about the success or case change in status, add more steps to notify them in this stage.</description>
+        <name>ProcessRequestStatmentCopiesAndNotifyStakeholders</name>
+        <label>Process Request Statement Copies and Notify Stakeholders</label>
+        <locationX>248</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>HasRequestStatementCopiesFailed</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Processes a request statement copies and, if the request succeeds, closes the associated case. If an email is available and the case is closed, emails the customer to notify them that their request was processed and the case is closed. If the request statement copies fails, returns True for isProcessServiceCatalogRequestFailed and an error message for failureMessage.</description>
+            <name>ProcessRequestStatementCopiesAndNotifyAccount</name>
+            <actionName>serviceprocess__UpdateCase</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>accountEmail</name>
+                <value>
+                    <elementReference>ProcessRequestStatementCopiesAndNotifyStakeholders.Outputs.accountEmail</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>caseId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>emailSubjectCaseClosed</name>
+                <value>
+                    <stringValue>Your service request to Request Statement Copies was closed</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>integrationDefinitionDevName</name>
+                <value>
+                    <stringValue>FSC_RequestStatementCopies</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Process Request Statement Copies and Notify Account</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Orchestrator</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <sourceTemplate>serviceprocess__ProcessRqstStmtCopies</sourceTemplate>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>NotifyStakeholdersOfRequest</targetReference>
+        </connector>
+        <filterFormula>{!$Record.SvcCatalogItemDefinition.DeveloperName}=&apos;RequestStatementCopies&apos;</filterFormula>
+        <object>SvcCatalogRequest</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

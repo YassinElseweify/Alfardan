@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_IsOwnerAUser__c</fullName>
+    <description>Formula guard used by AF_FL_Lead_SLAEscalation&apos;s entry criteria: true only when OwnerId currently resolves to a User (005 prefix), false when it&apos;s a Queue (00G prefix). Salesforce re-checks a record-triggered flow&apos;s entry criteria against the record&apos;s CURRENT field values when a scheduled path&apos;s fire time arrives — if this field is false at that moment (record reassigned back to a queue, or never claimed), the scheduled path is automatically skipped (&quot;neglected&quot;) without ever starting the interview, instead of starting and then faulting on a null owner/manager lookup. Added 16 Aug 2026 after RECORD_IN_USE_BY_WORKFLOW was traced to exactly that fault path.</description>
+    <formula>LEFT(OwnerId, 3) = &quot;005&quot;</formula>
+    <label>Is Owner A User</label>
+    <type>Checkbox</type>
+</CustomField>

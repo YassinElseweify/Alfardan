@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Should_Create_Task</name>
+        <label>Should Create Follow-Up Task?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_ClosedWonGatePassed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AF_FollowUpTaskCreated__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Queue</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>ALF-RS-12 (LFRDN-342) FR8: 2 days after AF_HandoverDate__c, creates a CRM follow-up Task for customer experience outreach - but only if the handover actually completed (AF_Status__c = Completed) and no follow-up Task has already been created (AF_FollowUpTaskCreated__c), so a status change after the scheduled path already fired, or a re-save, cannot create a duplicate.
+
+LFRDN-710 fix: creation now gates on AF_ClosedWonGatePassed__c (checklist AND customer sign-off), not AF_Status__c = Completed alone - a follow-up for a delivery that hasn&apos;t actually been confirmed (checklist done but unsigned) should never be created; paired with the same-day fix to AF_FL_Handover_UpdateChecklistGate, which now only auto-sets Status = Completed once the gate has passed.
+
+LFRDN-713 fix: OwnerId now resolves to the new AF_Q_CustomerExperience queue (Get_Queue) instead of the Handover owner, so the task lands with the CRM team, not the Sales Rep. WhoId falls back to the Opportunity&apos;s own AF_PrimaryBrandContact__c (via Get_Opportunity) when the Handover&apos;s own AF_Contact__c is blank - the same &quot;was never populated pre-LFRDN-706&quot; gap LFRDN-708 already worked around for the generated documents.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_TaskOwnerId</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Queue.Id}), {!$Record.OwnerId}, {!Get_Queue.Id})</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_TaskWhoId</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.AF_Contact__c})), {!$Record.AF_Contact__c}, {!Get_Opportunity.AF_PrimaryBrandContact__c})</expression>
+    </formulas>
+    <interviewLabel>Handover Follow-Up Task {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Handover Follow-Up Task</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Follow_Up_Task</name>
+        <label>Create Follow-Up Task</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Mark_Follow_Up_Task_Created</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Customer experience follow-up 2 days after confirmed vehicle handover (Handover {!$Record.Name}).</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Formula_TaskOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Post-Handover Customer Experience Follow-Up</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>Formula_TaskWhoId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Follow_Up_Task</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Queue</name>
+        <label>Get Customer Experience Queue</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>AF_Q_CustomerExperience</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Mark_Follow_Up_Task_Created</name>
+        <label>Mark Follow-Up Task Created</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>AF_FollowUpTaskCreated__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterFormula>NOT(ISBLANK({!$Record.AF_HandoverDate__c}))</filterFormula>
+        <object>AF_Handover__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Path_FollowUp_2Days_After</name>
+            <connector>
+                <targetReference>Should_Create_Task</targetReference>
+            </connector>
+            <label>Follow-Up (2 Days After Handover)</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>AF_HandoverDate__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

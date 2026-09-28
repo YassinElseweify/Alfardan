@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_VR_DepositNotNegative</fullName>
+    <active>true</active>
+    <description>ALF-RS-08 FR10 lower bound: a deposit runs from zero upwards. A negative deposit would silently inflate the remaining balance.</description>
+    <errorConditionFormula>AF_DepositAmount__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>AF_DepositAmount__c</errorDisplayField>
+    <errorMessage>Deposit amount cannot be negative.</errorMessage>
+</ValidationRule>
