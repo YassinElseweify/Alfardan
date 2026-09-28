@@ -24,7 +24,61 @@
     </actionCalls>
     <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>After-save on AF_CreditNote__c, paired with the before-save AF_FL_CreditNote_SetApprovalStatus. Submits the record into AF_AP_CreditNote_Cancellation only on the transition into Pending, never on a later unrelated save while already Pending, since re-submitting an in-flight approval request errors.</description>
+    <decisions>
+        <name>Has_Manager</name>
+        <label>Owner Has a Manager?</label>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Submit_For_Approval</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Manager</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Has_Manager</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Manager.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Share_CreditNote_With_Manager</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_Opportunity</name>
+        <label>Linked to a Deal?</label>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Submit_For_Approval</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Deal</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Has_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AF_Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Share_Opportunity_With_Manager</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>After-save on AF_CreditNote__c, paired with the before-save AF_FL_CreditNote_SetApprovalStatus. Submits the record into AF_AP_CreditNote_Cancellation only on the transition into Pending, never on a later unrelated save while already Pending, since re-submitting an in-flight approval request errors.
+
+LFRDN-729 fix: previously fired for AF_Reason__c = Cancellation too, submitting the refund credit note the instant it was created - fully independent of, and racing ahead of, the Opportunity&apos;s own cancellation approval (AF_AP_Opp_Cancellation). A rejected cancellation left its refund Pending forever, and a second cancellation request created a second, duplicate Pending refund. Restricted this criteria to AF_Reason__c != Cancellation - cancellation refunds are now only ever submitted by AF_CreditNote_CancellationLinkService, called from AF_FL_Opp_AfterCancellationApprovalOutcome once the Opportunity&apos;s own cancellation approval is actually Approved. Non-cancellation credit notes (e.g. AF_Reason__c = Customer Request) are unaffected and still submit immediately as before.
+
+LFRDN-761 (2026-09-28): AF_AP_CreditNote_Cancellation routes to the Owner&apos;s Manager, but AF_CreditNote__c and Opportunity are Private and the Manager may sit outside the deal&apos;s business unit. Cancellation refunds already get the share in AF_CreditNote_CancellationLinkService; this path (every other credit note) now does the same before submitting: AF_CreditNote__Share and OpportunityShare, Edit/Manual, for the Owner&apos;s Manager.</description>
     <environments>Default</environments>
     <interviewLabel>Credit Note Submit Approval {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Credit Note Submit Approval</label>
@@ -35,13 +89,125 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <start>
-        <locationX>50</locationX>
+    <recordCreates>
+        <name>Share_CreditNote_With_Manager</name>
+        <label>Share Credit Note With Manager</label>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Has_Opportunity</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AF_CreditNote__Share</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Share_Opportunity_With_Manager</name>
+        <label>Share Opportunity With Manager</label>
+        <locationX>176</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Submit_For_Approval</targetReference>
         </connector>
-        <filterFormula>ISPICKVAL({!$Record.AF_ApprovalStatus__c}, &quot;Pending&quot;) &amp;&amp; (ISNEW() || ISCHANGED({!$Record.AF_ApprovalStatus__c}))</filterFormula>
+        <inputAssignments>
+            <field>OpportunityAccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityShare</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Manager</name>
+        <label>Get Owner&apos;s Manager</label>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Manager</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Owner_User.ManagerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Owner_User</name>
+        <label>Get Owner User</label>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Manager</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Owner_User</targetReference>
+        </connector>
+        <filterFormula>ISPICKVAL({!$Record.AF_ApprovalStatus__c}, &quot;Pending&quot;) &amp;&amp; (ISNEW() || ISCHANGED({!$Record.AF_ApprovalStatus__c})) &amp;&amp; NOT(ISPICKVAL({!$Record.AF_Reason__c}, &quot;Cancellation&quot;))</filterFormula>
         <object>AF_CreditNote__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

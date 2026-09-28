@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>AF_DiscountPercent__c</fullName>
-    <description>Read-only, derived from AF_DiscountAmount__c (the numeric-value discount entry) over Subtotal. Sales Reps enter a discount amount, not a percentage - this displays the equivalent percentage automatically.</description>
-    <formula>IF(Subtotal = 0, 0, AF_DiscountAmount__c / Subtotal)</formula>
+    <description>Read-only, derived from AF_DiscountAmount__c (the numeric-value discount entry) over the priced lines (AF_PricedLinesSubtotal__c, which excludes the Trade-In Deduction line). Sales Reps enter a discount amount, not a percentage - this displays the equivalent percentage automatically. LFRDN-755: was over Subtotal, which is net of the trade-in, so it overstated the percentage actually applied.</description>
+    <formula>IF(AF_PricedLinesSubtotal__c = 0, 0, AF_DiscountAmount__c / AF_PricedLinesSubtotal__c)</formula>
     <label>Discount %</label>
     <precision>18</precision>
     <required>false</required>

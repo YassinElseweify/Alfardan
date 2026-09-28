@@ -62,6 +62,9 @@ public without sharing class AF_HandoverUploadSyncService {
             }
         }
 
-        update as user updates.values();
+        // System mode: this write only ever sets the checklist flag the upload itself just
+        // satisfied. LFRDN-701 intentionally mutes rep Edit on these flags to stop manual ticking;
+        // that FLS must not also block the automation that is the sole legitimate way to set them.
+        Database.update(updates.values(), AccessLevel.SYSTEM_MODE);
     }
 }

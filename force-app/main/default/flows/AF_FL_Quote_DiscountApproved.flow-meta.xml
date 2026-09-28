@@ -101,8 +101,24 @@
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
-    <apiVersion>68.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Line_To_Gross_Total</name>
+        <label>Add Line to Discountable Gross Total</label>
+        <locationX>318</locationX>
+        <locationY>90</locationY>
+        <assignmentItems>
+            <assignToReference>var_DiscountableGrossTotal</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>AF_Formula_SumLineGross</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Sum_Lines</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Assign_RecipientId</name>
         <label>Assign Recipient Id</label>
@@ -128,7 +144,7 @@
             <assignToReference>Loop_All_Lines.Discount</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.AF_DiscountPercent__c</elementReference>
+                <elementReference>AF_Formula_CorrectedDiscountPercent</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -144,12 +160,38 @@
     </assignments>
     <description>Fires when AF_DiscountApprovalStatus__c changes to Approved. 2026-09-10 fix: the approval chain previously only sent notifications and never actually applied the approved discount to price - Quote.AF_DiscountAmount__c/AF_DiscountPercent__c drove tier routing but nothing wrote it onto any QuoteLineItem, so TotalPrice never changed even after Approved (meanwhile QuoteLineItem&apos;s own native Discount/DiscountAmount fields and the separately-named QuoteLineItem.AF_DiscountAmount__c/AF_DiscountPercentage__c custom fields were directly editable and bypassed approval entirely, since nothing gated them - QuoteLineItem-level discount editing has since been removed from the layout and FLS to close that gap, see AF_PS_QuoteLineItem_FullAccess). Notifies the Quote Owner via email and Custom Notification - same dual-channel pattern as AF_FL_Reservation_Approved. logEmailOnSend+relatedRecordId=$Record.Id added so the email logs as an EmailMessage on the Quote&apos;s own Emails/Activity related list (previously sent but not logged anywhere). 2026-09-09: upgraded from plain text to branded HTML (sendRichBody=true). Tried real EmailTemplate + AF_SendTemplateEmailAction (Apex wrapper around Messaging.sendEmail(templateId=...)) first, since Flow&apos;s own &quot;emailTemplate&quot; core action is confirmed NOT a valid InvocableActionType in this org&apos;s Metadata API - but Messaging.sendEmail to a User target hard-requires saveAsActivity=false, and with that forced false, ZERO EmailMessage row is created (confirmed empirically: isSuccess()=true, no EmailMessage ever appears), unlike emailSimple+logEmailOnSend which reliably logs even to User recipients. Reverted to emailSimple/inline-HTML for this reason - it is the only mechanism proven to both send AND log for a User recipient in this org.
 
-2026-09-14 change: the approved discount % used to be written to only the single Vehicle line item (AF_LineItemType__c=Vehicle), leaving every other line (add-ons/accessories) undiscounted. Live business feedback: the approved discount should apply to the whole Quote, i.e. every QuoteLineItem, not just the vehicle. Replaced the single Get_Vehicle_Line/Apply_Discount_To_Line pair with Get_All_Lines feeding Loop_All_Lines, which sets each line&apos;s native Discount (Percent) field to Quote.AF_DiscountPercent__c and collects them into var_LinesToUpdate for one bulk Update_All_Lines DML after the loop - Salesforce recalculates each line&apos;s TotalPrice, and Quote.TotalPrice/Subtotal/GrandTotal, from that automatically. Get_All_Lines excludes AF_LineItemType__c = &quot;Trade-In Deduction&quot; and &quot;Discount Adjustment&quot;: these aren&apos;t priced items, they&apos;re already-negative adjustment lines, and live-testing found touching a Trade-In Deduction line re-triggers AF_VR_QLI_TradeInDeductionGate (its own unrelated validation requiring an Approved+Accepted linked Trade-In), which can fail the whole Approved transaction for a reason that has nothing to do with the discount. If the Quote has no discountable lines, the update collection stays empty and Update_All_Lines silently no-ops.</description>
+2026-09-14 change: the approved discount % used to be written to only the single Vehicle line item (AF_LineItemType__c=Vehicle), leaving every other line (add-ons/accessories) undiscounted. Live business feedback: the approved discount should apply to the whole Quote, i.e. every QuoteLineItem, not just the vehicle. Replaced the single Get_Vehicle_Line/Apply_Discount_To_Line pair with Get_All_Lines feeding Loop_All_Lines, which sets each line&apos;s native Discount (Percent) field to Quote.AF_DiscountPercent__c and collects them into var_LinesToUpdate for one bulk Update_All_Lines DML after the loop - Salesforce recalculates each line&apos;s TotalPrice, and Quote.TotalPrice/Subtotal/GrandTotal, from that automatically. Get_All_Lines excludes AF_LineItemType__c = &quot;Trade-In Deduction&quot; and &quot;Discount Adjustment&quot;: these aren&apos;t priced items, they&apos;re already-negative adjustment lines, and live-testing found touching a Trade-In Deduction line re-triggers AF_VR_QLI_TradeInDeductionGate (its own unrelated validation requiring an Approved+Accepted linked Trade-In), which can fail the whole Approved transaction for a reason that has nothing to do with the discount. If the Quote has no discountable lines, the update collection stays empty and Update_All_Lines silently no-ops.
+
+LFRDN-755 (2026-09-27): this flow applied Quote.AF_DiscountPercent__c to every line, but that field is a
+native Salesforce formula (IF(Subtotal=0,0,AF_DiscountAmount__c/Subtotal)) that always divides by the
+FULL Subtotal, including the negative Trade-In Deduction line - fixing the tier-routing calculation
+in AF_FL_Quote_SetDiscountApprovalStatus alone (also done as part of this ticket) does NOT fix this
+flow, since AF_DiscountPercent__c is a separate, independently-computed field this flow reads
+directly - confirmed live: after fixing tier routing only, this flow still applied the old wrong 6.08%
+instead of the correct ~4.02% (16,000 approved on a 398,300 gross with a 135,000 trade-in). Added a
+first pass (Loop_Sum_Lines/AF_Formula_SumLineGross) over the exact same Get_All_Lines collection this
+flow already excludes Trade-In Deduction/Discount Adjustment from, summing UnitPrice*Quantity (not
+TotalPrice, which would already have a prior Discount% baked in and corrupt the calculation on a
+second approval cycle) into var_DiscountableGrossTotal; the second pass then applies
+AF_Formula_CorrectedDiscountPercent (AF_DiscountAmount__c / that gross total) instead of the native
+field. The two loops iterate the same already-queried Get_All_Lines collection, so no extra SOQL.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_CorrectedDiscountPercent</name>
+        <dataType>Number</dataType>
+        <expression>IF({!var_DiscountableGrossTotal} = 0, 0, ({!$Record.AF_DiscountAmount__c} / {!var_DiscountableGrossTotal}) * 100)</expression>
+        <scale>4</scale>
+    </formulas>
     <formulas>
         <name>AF_Formula_Subject</name>
         <dataType>String</dataType>
         <expression>&quot;Approved: Quote Discount &quot; &amp; {!$Record.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>AF_Formula_SumLineGross</name>
+        <dataType>Number</dataType>
+        <expression>{!Loop_Sum_Lines.UnitPrice} * {!Loop_Sum_Lines.Quantity}</expression>
+        <scale>2</scale>
     </formulas>
     <formulas>
         <name>EmailBody</name>
@@ -182,6 +224,20 @@
             <targetReference>Update_All_Lines</targetReference>
         </noMoreValuesConnector>
     </loops>
+    <loops>
+        <name>Loop_Sum_Lines</name>
+        <label>Loop Sum Line Items</label>
+        <locationX>318</locationX>
+        <locationY>25</locationY>
+        <collectionReference>Get_All_Lines</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Line_To_Gross_Total</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Loop_All_Lines</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -196,7 +252,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Loop_All_Lines</targetReference>
+            <targetReference>Loop_Sum_Lines</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -297,7 +353,6 @@
         </connector>
         <inputReference>var_LinesToUpdate</inputReference>
     </recordUpdates>
-    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
@@ -310,6 +365,17 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>var_DiscountableGrossTotal</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
     <variables>
         <name>var_LinesToUpdate</name>
         <dataType>SObject</dataType>

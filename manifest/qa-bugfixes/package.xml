@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <!-- LFRDN-761 (cancellation refund path) -->
+        <members>AF_CreditNote_CancellationLinkService</members>
+        <!-- LFRDN-754 -->
+        <members>AF_DocumentService</members>
+        <!-- LFRDN-745 -->
+        <members>AF_InternalRequisitionFormService</members>
+        <members>AF_InternalRequisitionFormServiceTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <!-- LFRDN-755 -->
+        <members>Quote.AF_DiscountPercent__c</members>
+        <members>Quote.AF_PricedLinesSubtotal__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <!-- LFRDN-758 -->
+        <members>AF_Sales_Dashboards/AF_DASH_Retail_Sales_Overview</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
+        <!-- Add Products: hide Package category, every added line requisition-required (2026-09-28, no ticket) -->
+        <members>AF_Add_Products_To_Opporunity</members>
+        <!-- LFRDN-752, LFRDN-719 -->
+        <members>AF_FL_Opp_SalesWalkIn</members>
+        <!-- LFRDN-695, LFRDN-763 -->
+        <members>AF_FL_Quote_CreateReservation</members>
+        <!-- LFRDN-754 -->
+        <members>AF_FL_Handover_AutoCloseWon</members>
+        <!-- LFRDN-761 -->
+        <members>AF_FL_CreditNote_SubmitApproval</members>
+        <members>AF_FL_Opp_RequestInternalRequisition</members>
+        <members>AF_FL_Quote_SubmitDiscountApproval</members>
+        <members>AF_FL_Reservation_SubmitApproval</members>
+        <!-- LFRDN-750 -->
+        <members>AF_FL_Opp_RequisitionRejected</members>
+        <!-- LFRDN-756 -->
+        <members>AF_FL_AppraisalItem_RollupApprovalToAppraisal</members>
+        <name>Flow</name>
+    </types>
+    <version>67.0</version>
+</Package>

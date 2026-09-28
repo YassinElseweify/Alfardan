@@ -169,13 +169,32 @@ REMOVED 2026-09-24 (LFRDN-720): the entire &quot;pick a different vehicle&quot; 
 
 LFRDN-721/726 (2026-09-24): two more gaps closed in the same pass. LFRDN-721: added Get_Existing_Payment (Opportunity&apos;s own AF_Payment__c where AF_Status__c = &apos;Paid / Verified&apos;) and wired it onto Create_Reservation&apos;s new AF_Payment__c input - a deposit paid before a reservation existed was never being linked to the reservation created afterward. LFRDN-726: added Get_Active_Appraisal (Opportunity&apos;s IsActive=true Appraisal) so TradeInAsDepositField only shows once that appraisal&apos;s Status = &apos;Completed&apos; (previously showed unconditionally, even with no trade-in on the deal at all). Split the old single DepositAmountField in two, mutually exclusive by TradeInAsDepositField: DepositAmountField (relabeled &quot;Amount to Apply from Trade-In&quot;, defaults to Get_Active_Appraisal.AF_ActiveTradeInValue__c but stays editable since the full appraisal value isn&apos;t always what the rep wants applied) shows only when Trade-In is selected; DepositAmountCashField (&quot;Deposit Amount&quot;, unchanged cash behavior) shows only when it isn&apos;t. Formula_EffectiveDepositAmount picks whichever one actually rendered for Create_Reservation&apos;s AF_DepositAmount__c input.
 
-LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter never matched anything real - a live query confirmed zero Appraisal records in this org have IsActive=true, since nothing in the org&apos;s automation ever sets that standard field. Every genuinely-approved trade-in (AF_ApprovalStatus__c=&apos;Approved&apos;) checked live had IsActive=false and a Status other than &apos;Completed&apos; - so TradeInAsDepositField could never appear for any real approved trade-in. Replaced the query filter with AF_ApprovalStatus__c=&apos;Approved&apos; (matching FR11&apos;s &quot;approved Trade-In&quot; language), sorted by CreatedDate Desc, and changed the field&apos;s visibility rule to check Get_Active_Appraisal.Id is not null rather than re-testing Status.</description>
+LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter never matched anything real - a live query confirmed zero Appraisal records in this org have IsActive=true, since nothing in the org&apos;s automation ever sets that standard field. Every genuinely-approved trade-in (AF_ApprovalStatus__c=&apos;Approved&apos;) checked live had IsActive=false and a Status other than &apos;Completed&apos; - so TradeInAsDepositField could never appear for any real approved trade-in. Replaced the query filter with AF_ApprovalStatus__c=&apos;Approved&apos; (matching FR11&apos;s &quot;approved Trade-In&quot; language), sorted by CreatedDate Desc, and changed the field&apos;s visibility rule to check Get_Active_Appraisal.Id is not null rather than re-testing Status.
+
+LFRDN-763 fix (2026-09-28): DepositAmountField already defaulted to the appraisal&apos;s AF_ActiveTradeInValue__c (LFRDN-721/726), but nothing stopped the rep from typing a larger amount - the reservation would then treat the deposit as fully paid with no payment record needed, for more than the trade-in was actually worth. Added a screen validationRule comparing the entered amount against Get_Active_Appraisal.AF_ActiveTradeInValue__c, blocking Next with a clear message naming the actual approved value if exceeded.
+
+Regression fix (2026-09-28, same day, found while re-testing LFRDN-763 live): Next silently stopped working on this screen for every Contract Type, even &quot;3-Day (No Deposit)&quot; where none of DepositAmountField/DepositAmountCashField are meant to apply. Root cause was pre-existing (from LFRDN-721/726, not this session&apos;s own edit): DepositAmountCashField was isRequired=true with a visibilityRule keyed off TradeInAsDepositField NotEqualTo true - but TradeInAsDepositField itself is only rendered (and only gets its default seeded into the interview) when Contract Type = &apos;7-Day (Deposit)&apos;, so on every other path it stays truly null in the runtime context, not false. The screen validator was still enforcing isRequired on the hidden field despite its own visibilityRule correctly evaluating to hidden. Fixed by setting isRequired=false and moving the requiredness into a validationRule that only fires when the field is actually meant to be visible, matching the pattern already used for DepositAmountField&apos;s trade-in-cap check.
+
+Second regression fix (2026-09-28, same session, found immediately after the above): once Next worked again, Create_Reservation itself started throwing INVALID_TYPE_ON_FIELD_IN_RECORD on AF_TradeInAsDeposit__c (a non-nullable Boolean) - TradeInAsDepositField was still assigned straight into it, and on any path where that screen field never renders its value is truly null (never coerced to its own false default), which Salesforce rejects when writing to a required Boolean. Added Formula_EffectiveTradeInAsDeposit = IF(ContractTypeField = &quot;7-Day (Deposit)&quot;, TradeInAsDepositField, false) and repointed Create_Reservation&apos;s AF_TradeInAsDeposit__c input to it. The IF short-circuits so the null TradeInAsDepositField branch is never actually evaluated on the other paths - ISBLANK(), ISNULL() and TEXT() all reject Boolean-typed arguments in Flow formulas (confirmed via 3 separate failed deploys), so a short-circuiting IF is the only safe null-coalesce pattern for a Boolean screen field that may not have rendered. Live-verified end to end as QA SalesRep2: RES-00240 created with AF_TradeInAsDeposit__c=false on the 3-Day (No Deposit) path.
+
+LFRDN-695/763 (2026-09-28): on deals with no Approved appraisal the screen referenced the null Get_Active_Appraisal directly (visibility rule and DepositAmountField default), which stopped reactive visibility. Added HasApprovedAppraisal and Formula_ApprovedTradeInValue so nothing on the screen reads the appraisal record directly; DepositAmountCashField now shows on 7-Day whenever the trade-in is not used (no appraisal, or box unticked). LFRDN-763: DepositAmountField validation caps the amount at the appraisal&apos;s AF_ActiveTradeInValue__c.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Formula_ApprovedTradeInValue</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!HasApprovedAppraisal}, BLANKVALUE({!Get_Active_Appraisal.AF_ActiveTradeInValue__c}, 0), 0)</expression>
+        <scale>2</scale>
+    </formulas>
     <formulas>
         <name>Formula_EffectiveDepositAmount</name>
         <dataType>Currency</dataType>
-        <expression>IF({!TradeInAsDepositField}, {!DepositAmountField}, {!DepositAmountCashField})</expression>
+        <expression>IF({!Formula_EffectiveTradeInAsDeposit}, {!DepositAmountField}, {!DepositAmountCashField})</expression>
         <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Formula_EffectiveTradeInAsDeposit</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(AND({!ContractTypeField} = &quot;7-Day (Deposit)&quot;, {!HasApprovedAppraisal}), {!TradeInAsDepositField}, false)</expression>
     </formulas>
     <formulas>
         <name>Formula_EffectiveVehicleDefinitionId</name>
@@ -231,6 +250,11 @@ LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter nev
     {!Get_Quote_Vehicle_Line.AF_Vehicle__r.Name},
     {!Get_Opportunity.AF_SelectedVehicle__r.Name}
 )</expression>
+    </formulas>
+    <formulas>
+        <name>HasApprovedAppraisal</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISBLANK({!Get_Active_Appraisal.Id}))</expression>
     </formulas>
     <interviewLabel>Quote Create Reservation {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Quote Create Reservation</label>
@@ -315,7 +339,7 @@ LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter nev
         <inputAssignments>
             <field>AF_TradeInAsDeposit__c</field>
             <value>
-                <elementReference>TradeInAsDepositField</elementReference>
+                <elementReference>Formula_EffectiveTradeInAsDeposit</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -639,10 +663,10 @@ LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter nev
                     </rightValue>
                 </conditions>
                 <conditions>
-                    <leftValueReference>Get_Active_Appraisal.Id</leftValueReference>
-                    <operator>IsNull</operator>
+                    <leftValueReference>HasApprovedAppraisal</leftValueReference>
+                    <operator>EqualTo</operator>
                     <rightValue>
-                        <booleanValue>false</booleanValue>
+                        <booleanValue>true</booleanValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -651,11 +675,11 @@ LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter nev
             <name>DepositAmountField</name>
             <dataType>Currency</dataType>
             <defaultValue>
-                <elementReference>Get_Active_Appraisal.AF_ActiveTradeInValue__c</elementReference>
+                <elementReference>Formula_ApprovedTradeInValue</elementReference>
             </defaultValue>
             <fieldText>Amount to Apply from Trade-In</fieldText>
             <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
+            <isRequired>false</isRequired>
             <scale>0</scale>
             <styleProperties>
                 <verticalAlignment>
@@ -665,6 +689,10 @@ LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter nev
                     <stringValue>6</stringValue>
                 </width>
             </styleProperties>
+            <validationRule>
+                <errorMessage>Enter an amount greater than zero and no more than the approved trade-in value ({!Formula_ApprovedTradeInValue}).</errorMessage>
+                <formulaExpression>NOT({!Formula_EffectiveTradeInAsDeposit}) || (NOT(ISBLANK({!DepositAmountField})) &amp;&amp; {!DepositAmountField} &gt; 0 &amp;&amp; {!DepositAmountField} &lt;= {!Formula_ApprovedTradeInValue})</formulaExpression>
+            </validationRule>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -691,7 +719,7 @@ LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter nev
             </defaultValue>
             <fieldText>Deposit Amount</fieldText>
             <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
+            <isRequired>false</isRequired>
             <scale>0</scale>
             <styleProperties>
                 <verticalAlignment>
@@ -701,13 +729,24 @@ LFRDN-760 fix (2026-09-27): Get_Active_Appraisal&apos;s IsActive=true filter nev
                     <stringValue>6</stringValue>
                 </width>
             </styleProperties>
+            <validationRule>
+                <errorMessage>Please enter a deposit amount.</errorMessage>
+                <formulaExpression>NOT({!ContractTypeField} = &quot;7-Day (Deposit)&quot; &amp;&amp; NOT({!Formula_EffectiveTradeInAsDeposit})) || NOT(ISBLANK({!DepositAmountCashField}))</formulaExpression>
+            </validationRule>
             <visibilityRule>
-                <conditionLogic>and</conditionLogic>
+                <conditionLogic>1 AND (2 OR 3)</conditionLogic>
                 <conditions>
                     <leftValueReference>ContractTypeField</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <stringValue>7-Day (Deposit)</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>HasApprovedAppraisal</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
                     </rightValue>
                 </conditions>
                 <conditions>

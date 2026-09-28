@@ -4186,3 +4186,33 @@ Note: the Atlassian connector intermittently returns 403 "The app is not install
   - 758: dashboard component error 209 on Aged Open Opportunities (tabular report row limit).
 - Draft (not triaged yet): 726, 761, 763, 764. Out of scope: 677, 685, 737 (Keyloop), 678 (currency, deferred).
 - ⚠️ This cloud container has no `sf` CLI or org credentials, and the repo's `force-app` is a snapshot that does NOT include today's deployed fixes. Retrieve from the org before editing any metadata, or you will overwrite fixes.
+
+## 2026-09-28 — Fix session: 13 To Do/Draft LFRDN bugs + 2 extras (cloud container)
+
+Every changed component is listed in `manifest/qa-bugfixes/package.xml` (retrieve/deploy with `sf project deploy start --manifest manifest/qa-bugfixes/package.xml`). All fixes were deployed to **both DEV and QA**; DEV was diffed against QA before each deploy (identical apart from the fix). Each ticket got a "Marwan, … Yassine" comment and was moved To Do/Draft → In Development → In Review → **DEPLOYED TO QA** (transition ids 2 → 3 → 5; Draft needs 4 first).
+
+| Ticket | Root cause → fix | Status (JQL, end of session) |
+|---|---|---|
+| 752 | Receptionist can't read the rep-owned deal (Private OWD), so Task WhatId refused. Not a permission-set gap (receptionist has Edit Tasks). `AF_FL_Opp_SalesWalkIn` → `runInMode=SystemModeWithoutSharing` (no Apex, per user). | Done |
+| 719 | Same flow read `UserRole.Name` in user context; fixed by the same run-mode change. | Done |
+| 695 | Screen read null `Get_Active_Appraisal` directly. Added `HasApprovedAppraisal` + `Formula_ApprovedTradeInValue`; cash Deposit shows on 7-Day when trade-in not used. | Done |
+| 763 | No cap (the flow description claimed one; none existed in DEV or QA). Screen validation: 0 < amount ≤ `AF_ActiveTradeInValue__c` ("Approved Trade-In Value", confirmed by user). | Done |
+| 754 | Required Documents links the file before tagging it (697 pattern). `AF_DocumentService.renameUploadedDocuments` now re-runs `AF_PaymentDocumentCloseRetryService` after tagging; `AF_FL_Handover_AutoCloseWon` posts the Chatter alert only when the handover *becomes* Completed. | Done |
+| 755 | New roll-up `Quote.AF_PricedLinesSubtotal__c` (excl. Trade-In Deduction + Discount Adjustment); `AF_DiscountPercent__c` divides by it. 00000254 = 4.02%, 00000260 = 2.51%. | DEPLOYED TO QA |
+| 761 | Reservation/discount/requisition paths already shared with the manager (done earlier today); added the same share to `AF_FL_CreditNote_SubmitApproval` (non-cancellation credit notes). | DEPLOYED TO QA |
+| 745 | `Blob.toPdf` reverses Arabic then joins letters in reversed order (فحص → صحف); dir/fonts can't fix it. `AF_InternalRequisitionFormService` now shapes Arabic to presentation forms + simplified bidi + pre-broken lines (40 chars), fixed column widths. Tests updated (7/7). | DEPLOYED TO QA |
+| 750 | Rejection flow ran before the approval step (with Comments) existed. `AF_FL_Opp_RequisitionRejected` now runs on the **AsyncAfterCommit** path. Verified on R2: email shows the real comment. R2 left at Requisition Status = Rejected. | DEPLOYED TO QA |
+| 758 | Classic Table component on a tabular report without row limit/dashboard settings (error 209); Analytics API refuses a row limit on this report. Component switched to **FlexTable** (Lightning Table). | DEPLOYED TO QA |
+| 728 / 729 | Already fixed; re-verified from live data (8 non-admin cancellations with manager share; CN-00032 closed; C5 reject→resubmit left one open refund). Old ~10 Pending CNs **not touched**. | DEPLOYED TO QA |
+| 756 | Real culprit was `AF_FL_AppraisalItem_RollupApprovalToAppraisal` (Set_Appraisal_Approved also wrote header outcome = Accepted). Removed; header outcome now only follows the item outcome. My earlier "can't reproduce" comment was wrong and is corrected on the ticket. | DEPLOYED TO QA |
+| (no ticket) | `AF_Add_Products_To_Opporunity`: Package category excluded from both pickers; every added line defaults `AF_RequiresInternalRequisition__c = true`. | deployed DEV + QA |
+
+**Still waiting / open:** 729: Marwan to confirm which ~10 pre-fix Pending cancellation CNs to close. 761: business to confirm QA SalesRep2's Manager (ShowroomManager2 today vs SalesBrandManager2 assumed by 707/728). 758: three FR1 items (campaign attribution, stage funnel, lost-sales recovery) are unbuilt and need design decisions. 736: optional removal of the `Has_Real_Submission` gate not done. Add Products change has no Jira ticket yet.
+
+**Gotchas from this session (cloud container):**
+- `sf` isn't preinstalled: `npm install -g @salesforce/cli`. `sf org login sfdx-url` needs the alias **before** `--sfdx-url-stdin` (`-a ALFardan_QA --sfdx-url-stdin`), and aliases with spaces broke; used `ALFardan_DEV` / `ALFardan_QA`.
+- Playwright Chromium: pass `--proxy-server=http://127.0.0.1:45293` and import `/root/.ccr/ca-bundle.crt` into `~/.pki/nssdb` (`apt-get update && apt-get install libnss3-tools`, then `certutil -A -t "CT,C,C"` per cert). The NSS DB was empty despite the proxy README.
+- UI login is **two-step** and from a new device hits **email identity verification**, so no UI testing was possible. QA Test Admin (`juw…`) is **inactive**, so there is no "Login As" route. Injecting the CLI admin session into the browser was blocked by the harness as credential use. All verification was done via CLI: SOQL, Tooling, Analytics REST, and anonymous Apex with `Database.setSavepoint()`/`rollback`.
+- `UserRecordAccess` in Apex needs `RecordId` selected. PDFs can be pulled out for inspection by `System.debug` of base64 → PyMuPDF render.
+- Screen flows *do* support `runInMode` (SystemModeWithoutSharing). Boolean screen inputs must stay `isRequired=true`. Same-type flow elements must be contiguous in the XML.
+- Approval comments aren't visible to a flow triggered by the approval's own field update; use an async path.

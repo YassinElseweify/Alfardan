@@ -50,6 +50,9 @@
         <label>Gate Allowed?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Just_Completed</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_Allowed</name>
@@ -84,9 +87,31 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Opportunity</targetReference>
+                <targetReference>Set_Delivery_Confirmation</targetReference>
             </connector>
             <label>Yes, Completed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Just_Completed</name>
+        <label>Handover Just Completed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Already Completed - Do Not Re-Post</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Just_Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.AF_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_Gate_Refusal_To_Feed</targetReference>
+            </connector>
+            <label>Yes, Just Completed</label>
         </rules>
     </decisions>
     <decisions>
@@ -138,10 +163,34 @@
             <label>At Take the Keys - Check Fully Paid</label>
         </rules>
     </decisions>
-    <description>ALF-RS-12 (LFRDN-342), per the user&apos;s direction: once a Handover reaches AF_Status__c = Completed (all 8 documents done, set by AF_FL_Handover_UpdateChecklistGate), auto-progresses the Opportunity toward Closed Won. Two-step, not a direct jump: AF_VR_Opp_SequentialStageProgression blocks any stage move of more than 1 step, and this org&apos;s stage model has &quot;Take the Keys&quot; between Commit and Closed Won (its own gate requires invoice balance = 0) - confirmed via live testing (2026-09-16) that a direct Commit-to-Closed-Won update is rejected. So: if the Opportunity is at Commit, this flow first advances it to Take the Keys (matches the BRD&apos;s own language - handover confirmed means delivered/keys handed over); once at Take the Keys, if the Invoice Summary is Fully Paid, it continues in the same transaction to Closed Won, routed through the existing AF_Opportunity_ClosedWonPaymentGate Apex check (the same one the manual Closed Won path already enforces) rather than setting the stage directly, so there is one single source of truth for the Closed Won conditions. If the Opportunity is below Commit when the Handover completes, this flow does nothing (that is a real data-sequencing problem, not something to paper over by forcing the stage forward). After-save (not before-save) because before-save Flow cannot call Apex Actions.
+    <description>LFRDN-700 fix: added explicit triggerOrder=2 (AF_FL_Handover_SyncOpportunityGate is order=1) - both are RecordAfterSave on AF_Handover__c with no prior ordering, so Salesforce could run this flow before the other one had written Opportunity.AF_HandoverComplete__c. When that happened, Check_Closed_Won_Gate (the Apex gate, which never checks AF_HandoverComplete__c) returned allowed=true, Set_Closed_Won tried to set StageName=Closed Won, and AF_VR_Opp_ClosedWonGate - which DOES require AF_HandoverComplete__c - rejected the whole Handover save with a raw CANNOT_EXECUTE_FLOW_TRIGGER error, losing the rep&apos;s edits. Confirmed AF_HandoverComplete__c was never actually unwired (AF_FL_Handover_SyncOpportunityGate has always set it from AF_ClosedWonGatePassed__c) - this was purely a same-transaction ordering race between two after-save flows, not a missing update.
 
-Also sets Opportunity.AF_DeliveryConfirmation__c = true in the same update as StageName going to Closed Won. Discovered via live testing that AF_VR_Opp_ClosedWonGate (a separate declarative backstop, LFRDN-341) independently requires this field true and it was never set by anything in the org - it is documented elsewhere as reserved for a future Keyloop/MuleSoft delivery-status sync that was never built, meaning Closed Won was unreachable by ANY path, not just this one. A completed Handover with a generated Delivery Note is real local proof of delivery, so this flow now supplies it until the Keyloop sync exists; if that integration is later built, it should take over writing this field and this assignment should be reconsidered.</description>
+ALF-RS-12 (LFRDN-342), per the user&apos;s direction: once a Handover reaches AF_Status__c = Completed (all 8 documents done, set by AF_FL_Handover_UpdateChecklistGate), auto-progresses the Opportunity toward Closed Won. Two-step, not a direct jump: AF_VR_Opp_SequentialStageProgression blocks any stage move of more than 1 step, and this org&apos;s stage model has &quot;Take the Keys&quot; between Commit and Closed Won (its own gate requires invoice balance = 0) - confirmed via live testing (2026-09-16) that a direct Commit-to-Closed-Won update is rejected. So: if the Opportunity is at Commit, this flow first advances it to Take the Keys (matches the BRD&apos;s own language - handover confirmed means delivered/keys handed over); once at Take the Keys, if the Invoice Summary is Fully Paid, it continues in the same transaction to Closed Won, routed through the existing AF_Opportunity_ClosedWonPaymentGate Apex check (the same one the manual Closed Won path already enforces) rather than setting the stage directly, so there is one single source of truth for the Closed Won conditions. If the Opportunity is below Commit when the Handover completes, this flow does nothing (that is a real data-sequencing problem, not something to paper over by forcing the stage forward). After-save (not before-save) because before-save Flow cannot call Apex Actions.
+
+Also sets Opportunity.AF_DeliveryConfirmation__c = true in the same update as StageName going to Closed Won. Discovered via live testing that AF_VR_Opp_ClosedWonGate (a separate declarative backstop, LFRDN-341) independently requires this field true and it was never set by anything in the org - it is documented elsewhere as reserved for a future Keyloop/MuleSoft delivery-status sync that was never built, meaning Closed Won was unreachable by ANY path, not just this one. A completed Handover with a generated Delivery Note is real local proof of delivery, so this flow now supplies it until the Keyloop sync exists; if that integration is later built, it should take over writing this field and this assignment should be reconsidered.
+
+LFRDN-754 (2026-09-27): AF_DeliveryConfirmation__c was only ever set inside Set_Closed_Won, gated
+behind the payment gate - if the gate refused (e.g. a Bank Transfer payment missing its Bank LPO),
+the flow ended silently with no branch, so the field was never set at all. The rep then hit a
+deadlock: the automatic close correctly declined, but AF_VR_Opp_ClosedWonGate&apos;s manual-close path
+also requires this same field, which nothing else in the org ever sets - so the deal was stuck at
+Take the Keys with no way forward except editing the already-Completed Handover again to re-trigger
+this flow. Moved the AF_DeliveryConfirmation__c assignment into its own Set_Delivery_Confirmation
+step that runs as soon as the Handover reaches Completed, independent of the payment gate outcome -
+a completed, signed-off Handover is real proof of delivery regardless of whether payment
+documentation happens to be in order yet, and the manual Closed Won path (which separately checks
+InvoiceBalance=0 and the Handover&apos;s own Traffic Form/Sign-Off) is now reachable once the rep fixes
+whatever the gate flagged. Also added Post_Gate_Refusal_To_Feed: when the gate refuses, the exact
+same message the manual Closed Won screen shows is now posted to the Opportunity&apos;s Chatter feed, so
+the rep isn&apos;t left with a silently-skipped auto-close and no visible reason why.
+
+LFRDN-754 (2026-09-28): the flow re-runs on every save of a Completed Handover, so a second save re-posted the same alert (HO-00075: two posts 31s apart). Just_Completed now posts only on the save where AF_Status__c becomes Completed; later saves still re-check the gate and close the deal if it now passes.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_GateRefusalMessage</name>
+        <dataType>String</dataType>
+        <expression>&quot;The handover is complete, but this deal cannot close Won yet: &quot; &amp; {!Check_Closed_Won_Gate.message}</expression>
+    </formulas>
     <interviewLabel>Handover Auto Close Won {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Handover Auto Close Won</label>
     <processMetadataValues>
@@ -157,6 +206,25 @@ Also sets Opportunity.AF_DeliveryConfirmation__c = true in the same update as St
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Post_Gate_Refusal_To_Feed</name>
+        <label>Post Gate Refusal To Feed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Body</field>
+            <value>
+                <elementReference>AF_Formula_GateRefusalMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>FeedItem</object>
+    </recordCreates>
     <recordLookups>
         <name>Get_Opportunity</name>
         <label>Get Opportunity</label>
@@ -192,12 +260,6 @@ Also sets Opportunity.AF_DeliveryConfirmation__c = true in the same update as St
             </value>
         </filters>
         <inputAssignments>
-            <field>AF_DeliveryConfirmation__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>CloseDate</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
@@ -207,6 +269,30 @@ Also sets Opportunity.AF_DeliveryConfirmation__c = true in the same update as St
             <field>StageName</field>
             <value>
                 <stringValue>Closed Won</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Delivery_Confirmation</name>
+        <label>Set Delivery Confirmation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AF_DeliveryConfirmation__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>
@@ -247,4 +333,5 @@ Also sets Opportunity.AF_DeliveryConfirmation__c = true in the same update as St
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <triggerOrder>2</triggerOrder>
 </Flow>

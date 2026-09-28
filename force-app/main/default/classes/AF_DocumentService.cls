@@ -327,11 +327,15 @@ public without sharing class AF_DocumentService {
         // ContentVersion.AF_FileUpload__c is set by the update just above, so that first run always
         // sees a blank tag and skips. Re-running the sync here, now that the tag is set, is what
         // actually ticks AF_Handover__c.AF_TrafficFormUploaded__c / AF_InsuranceFormUploaded__c.
-        AF_HandoverUploadSyncService.syncFromLinks([
+        // LFRDN-754: same ordering problem for a Payment document (e.g. Bank LPO) uploaded to unblock
+        // a deal stuck at Take the Keys - the close retry must also run once the tag is set.
+        List<ContentDocumentLink> taggedLinks = [
             SELECT Id, LinkedEntityId, ContentDocumentId
             FROM ContentDocumentLink
             WHERE LinkedEntityId = :recordId AND ContentDocumentId IN :linkedDocumentIds
-        ]);
+        ];
+        AF_HandoverUploadSyncService.syncFromLinks(taggedLinks);
+        AF_PaymentDocumentCloseRetryService.retryCloseForLinkedPayments(taggedLinks);
     }
 
     private static String generateUniqueTitle(String baseTitle, Set<String> usedTitles) {

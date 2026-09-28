@@ -71,6 +71,13 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>NewDraftLine.AF_RequiresInternalRequisition__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>DraftLineItems</assignToReference>
             <operator>Add</operator>
             <value>
@@ -160,7 +167,7 @@
             <label>Has Brand</label>
         </rules>
     </decisions>
-    <description>2026-09-10 fix: added AF_CustomerFacing__c/AF_IncludedInQuote__c defaults to every new draft line (previously both were left blank/false, so nothing added here ever reached a Create Quotation quote without a manual edit first). Internal Provider Item (Internal Requisition line type) defaults both flags to false since it&apos;s a cost the customer shouldn&apos;t see; every other category defaults both to true, matching how a rep expects &quot;add this to the deal&quot; to behave. Also excluded Trim/Line Variant (selected only via the dedicated vehicle-selection picker, same as Vehicle Model) and Trade-In Deduction (system-managed, only ever created automatically by the Create Quotation flow&apos;s trade-in logic) from the product picker. CHANGED 2026-09-10 (second pass, real user feedback): Internal Provider Item is no longer excluded from Get_Products/Get_Products_For_Brand — staff can now add an internal requisition line manually through this picker. Formula_DefaultCustomerFacing still forces AF_CustomerFacing__c/AF_IncludedInQuote__c to false for that category, so an internal cost line still never shows to the customer or reaches a quote even though it can now be added here.</description>
+    <description>2026-09-10 fix: added AF_CustomerFacing__c/AF_IncludedInQuote__c defaults to every new draft line (previously both were left blank/false, so nothing added here ever reached a Create Quotation quote without a manual edit first). Internal Provider Item (Internal Requisition line type) defaults both flags to false since it&apos;s a cost the customer shouldn&apos;t see; every other category defaults both to true, matching how a rep expects &quot;add this to the deal&quot; to behave. Also excluded Trim/Line Variant (selected only via the dedicated vehicle-selection picker, same as Vehicle Model) and Trade-In Deduction (system-managed, only ever created automatically by the Create Quotation flow&apos;s trade-in logic) from the product picker. CHANGED 2026-09-10 (second pass, real user feedback): Internal Provider Item is no longer excluded from Get_Products - staff can now add an internal requisition line manually through this picker. Formula_DefaultCustomerFacing still forces AF_CustomerFacing__c/AF_IncludedInQuote__c to false for that category, so an internal cost line still never shows to the customer or reaches a quote even though it can now be added here. LFRDN-747 (2026-09-27): that 2026-09-10 change only touched Get_Products (the no-brand path) - Get_Products_For_Brand, used for every branded deal (i.e. almost every real Opportunity), still had its own separate Internal Provider Item exclusion left in place, so Dealer Prep &amp; Registration products could never actually be added on a branded deal. Removed that filter too, and added Formula_DefaultRequiresInternalRequisition so an Internal Provider Item line defaults AF_RequiresInternalRequisition__c = true instead of requiring a manual edit afterward. 2026-09-28: every line added here now defaults AF_RequiresInternalRequisition__c = true (not only Internal Provider Item), and Package products are excluded from both product pickers.</description>
     <environments>Default</environments>
     <formulas>
         <name>Formula_DefaultCustomerFacing</name>
@@ -344,6 +351,13 @@
                 <stringValue>Trade-In Deduction</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>AF_ProductCategory__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Package</stringValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Product2</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -397,7 +411,7 @@
             <field>AF_ProductCategory__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <stringValue>Internal Provider Item</stringValue>
+                <stringValue>Package</stringValue>
             </value>
         </filters>
         <filters>

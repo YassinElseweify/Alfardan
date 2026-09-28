@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>68.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Line_To_Total</name>
+        <label>Add Line to Discountable Subtotal</label>
+        <locationX>120</locationX>
+        <locationY>190</locationY>
+        <assignmentItems>
+            <assignToReference>var_DiscountableSubtotal</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>AF_Formula_LineGross</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Discountable_Lines</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Set_NoTierConfigured</name>
         <label>Set No Tier Configured (Fallback: Pending)</label>
@@ -72,7 +88,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Discount_Tier</targetReference>
+                <targetReference>Get_Discountable_Lines</targetReference>
             </connector>
             <label>Discount Present</label>
         </rules>
@@ -131,16 +147,55 @@
             <label>Tier Requires Approval (&gt;0)</label>
         </rules>
     </decisions>
-    <description>Confirmed DoA matrix, now driven entirely by AF_DiscountApprovalTier__mdt (LFRDN-337) instead of hardcoded percentages: whenever a Sales Rep enters or changes the Discount Amount, computes the discount % and looks up which tier&apos;s Min/Max Percent band it falls into, stamping both AF_DiscountTier__c (the stable number AF_AP_Quote_DiscountTiers routes on) and AF_DiscountApprovalStatus__c. Tier 0 = self-authorized (Not Required); any tier &gt;0 = Pending, escalating through the Approval Process&apos;s steps. A discount % that matches no configured tier (e.g. a gap left in the business&apos;s matrix) deliberately falls back to Pending rather than silently skipping approval - same fail-safe philosophy as AF_FL_Reservation_EvaluateApproval&apos;s missing-threshold handling. Editing the % boundaries only ever requires editing AF_DiscountApprovalTier__mdt records, never this flow or the Approval Process. Before-save, no extra DML.</description>
+    <description>Confirmed DoA matrix, now driven entirely by AF_DiscountApprovalTier__mdt (LFRDN-337) instead of hardcoded percentages: whenever a Sales Rep enters or changes the Discount Amount, computes the discount % and looks up which tier&apos;s Min/Max Percent band it falls into, stamping both AF_DiscountTier__c (the stable number AF_AP_Quote_DiscountTiers routes on) and AF_DiscountApprovalStatus__c. Tier 0 = self-authorized (Not Required); any tier &gt;0 = Pending, escalating through the Approval Process&apos;s steps. A discount % that matches no configured tier (e.g. a gap left in the business&apos;s matrix) deliberately falls back to Pending rather than silently skipping approval - same fail-safe philosophy as AF_FL_Reservation_EvaluateApproval&apos;s missing-threshold handling. Editing the % boundaries only ever requires editing AF_DiscountApprovalTier__mdt records, never this flow or the Approval Process. Before-save, no extra DML (the new Get_Discountable_Lines lookup is a query, not DML).
+
+LFRDN-755 (2026-09-27): Var_DiscountPercent used to divide by {!$Record.Subtotal}, which includes
+the negative Trade-In Deduction line - on a quote with a big trade-in, that shrinks the denominator
+and inflates the computed percentage (e.g. 16,000 / 263,300 = 6.08% instead of the correct
+16,000 / 398,300 = 4.02%), which then (a) routed the discount to a more senior approver tier than
+it should have, and (b) got written onto every non-trade-in line by AF_FL_Quote_DiscountApproved,
+so the customer received far more discount than was actually approved (24,216.64 applied vs 16,000
+approved in the reported case). Added Get_Discountable_Lines + Loop_Discountable_Lines
+(var_DiscountableSubtotal), excluding Trade-In Deduction and Discount Adjustment lines - the exact
+same two-category exclusion AF_FL_Quote_DiscountApproved already uses when applying the approved
+percentage to lines, so the same set of lines now drives both the percentage&apos;s numerator context
+and its actual application, closing the gross-vs-net mismatch. Sums UnitPrice*Quantity
+(AF_Formula_LineGross), not TotalPrice - TotalPrice already has whatever Discount% is currently on
+the line baked in, so summing it would silently re-derive the percentage from an already-discounted
+base on any quote that had a prior discount applied (confirmed live: using TotalPrice on a quote
+already discounted at the old buggy 6.08% kept recomputing 6.08% instead of the correct 4.02%, since
+374,083.36 - the already-discounted total of the two priced lines - was being used as the gross
+instead of the true pre-discount 398,300). Var_DiscountPercent now divides by this
+line-item-summed pre-discount total instead of the native Subtotal rollup.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_LineGross</name>
+        <dataType>Number</dataType>
+        <expression>{!Loop_Discountable_Lines.UnitPrice} * {!Loop_Discountable_Lines.Quantity}</expression>
+        <scale>2</scale>
+    </formulas>
     <formulas>
         <name>Var_DiscountPercent</name>
         <dataType>Number</dataType>
-        <expression>IF({!$Record.Subtotal} = 0, 0, ({!$Record.AF_DiscountAmount__c} / {!$Record.Subtotal}) * 100)</expression>
+        <expression>IF({!var_DiscountableSubtotal} = 0, 0, ({!$Record.AF_DiscountAmount__c} / {!var_DiscountableSubtotal}) * 100)</expression>
         <scale>4</scale>
     </formulas>
     <interviewLabel>Quote Set Discount Approval Status {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Quote Set Discount Approval Status</label>
+    <loops>
+        <name>Loop_Discountable_Lines</name>
+        <label>Loop Discountable Line Items</label>
+        <locationX>120</locationX>
+        <locationY>162</locationY>
+        <collectionReference>Get_Discountable_Lines</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Line_To_Total</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Discount_Tier</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -176,7 +231,41 @@
         <object>AF_DiscountApprovalTier__mdt</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <runInMode>SystemModeWithoutSharing</runInMode>
+    <recordLookups>
+        <name>Get_Discountable_Lines</name>
+        <label>Get Discountable Line Items</label>
+        <locationX>120</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Discountable_Lines</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>QuoteId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_LineItemType__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Trade-In Deduction</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AF_LineItemType__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Discount Adjustment</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>QuoteLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
@@ -189,4 +278,15 @@
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>var_DiscountableSubtotal</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
 </Flow>

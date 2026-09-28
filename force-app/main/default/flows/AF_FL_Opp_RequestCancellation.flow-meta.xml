@@ -106,7 +106,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Manager_Record_Access</targetReference>
+                <targetReference>Share_Opportunity_With_Manager</targetReference>
             </connector>
             <label>Manager Found</label>
         </rules>
@@ -177,7 +177,7 @@
             <name>Manager_Has_Read_Access</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Manager_Record_Access.HasReadAccess</leftValueReference>
+                <leftValueReference>Var_ManagerRecordAccess.HasReadAccess</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -189,7 +189,11 @@
             <label>Manager Has Read Access</label>
         </rules>
     </decisions>
-    <description>Quick Action screen flow on Opportunity (LFRDN-343 / ALF-RS-13). Captures cancellation reason, evidence, and notes, blocks re-submission when already Cancelled or already Pending approval, sets AF_CancellationApprovalStatus__c = Pending, creates the linked AF_CreditNote__c (Pending, Reason=Cancellation) which auto-submits into AF_AP_CreditNote_Cancellation via the existing AF_FL_CreditNote_SubmitApproval, then submits the Opportunity itself for approval via AF_AP_Opp_Cancellation (Owner&apos;s Manager). Same manager-hierarchy submission pattern as AF_FL_Opp_RequestClosure / AF_FL_Opp_RequestInternalRequisition.</description>
+    <description>Quick Action screen flow on Opportunity (LFRDN-343 / ALF-RS-13). Captures cancellation reason, evidence, and notes, blocks re-submission when already Cancelled or already Pending approval, sets AF_CancellationApprovalStatus__c = Pending, creates the linked AF_CreditNote__c (Pending, Reason=Cancellation) which auto-submits into AF_AP_CreditNote_Cancellation via the existing AF_FL_CreditNote_SubmitApproval, then submits the Opportunity itself for approval via AF_AP_Opp_Cancellation (Owner&apos;s Manager). Same manager-hierarchy submission pattern as AF_FL_Opp_RequestClosure / AF_FL_Opp_RequestInternalRequisition.
+
+LFRDN-728 fix: the Manager_Can_See_Deal block screen already existed (a real, correct fail-safe for the LFRDN-707-style cross-BU access gap), but it only ever blocked - it never actually got the manager access to approve. Added Share_Opportunity_With_Manager (same OpportunityShare/Edit/Manual pattern as LFRDN-707) right after the manager is resolved, before the UserRecordAccess check - so the manager now has access before that check even runs, and Screen_ManagerCannotApprove becomes a pure safety net rather than the default outcome for any cross-BU manager.
+
+LFRDN-728 QA-rejected re-fix (2026-09-28, per Marwan): Get_Manager_Record_Access used storeOutputAutomatically with no queriedFields - UserRecordAccess requires RecordId to be explicitly selected, which automatic output storage silently omitted, so the lookup faulted with &quot;RecordId field must be selected&quot; on every single submission (breaking Cancel Sales Order entirely) and had no faultConnector to catch it. Switched to explicit queriedFields (RecordId, HasReadAccess) + storeOutputAutomatically=false + an explicit outputAssignments into Var_ManagerHasReadAccess (Salesforce requires a manual output variable once storeOutputAutomatically is false, confirmed via a real failed deploy trying to keep the old Get_Manager_Record_Access.HasReadAccess reference), and added a faultConnector to Screen_Error so any future lookup failure surfaces a real message instead of an unhandled fault.</description>
     <environments>Default</environments>
     <formulas>
         <name>AF_Formula_CreditNoteAmount</name>
@@ -292,6 +296,44 @@
         <object>AF_CreditNote__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Share_Opportunity_With_Manager</name>
+        <label>Share Opportunity With Manager</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Manager_Record_Access</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Screen_Error</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>OpportunityAccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityShare</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_Manager</name>
         <label>Get Owner&apos;s Manager</label>
@@ -322,6 +364,9 @@
         <connector>
             <targetReference>Manager_Can_See_Deal</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Screen_Error</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>UserId</field>
@@ -337,9 +382,10 @@
                 <elementReference>Get_Opportunity.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>UserRecordAccess</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>Var_ManagerRecordAccess</outputReference>
+        <queriedFields>RecordId</queriedFields>
+        <queriedFields>HasReadAccess</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Opportunity</name>
@@ -633,5 +679,13 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_ManagerRecordAccess</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>UserRecordAccess</objectType>
     </variables>
 </Flow>

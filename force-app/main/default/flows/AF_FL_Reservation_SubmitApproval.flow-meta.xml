@@ -24,7 +24,9 @@
     </actionCalls>
     <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>After-save on AF_VehicleReservation__c, paired with the before-save AF_FL_Reservation_EvaluateApproval. Submits the record into AF_AP_Reservation_Manager only on the transition into Pending (ISNEW or ISCHANGED), never on a later unrelated save while already Pending, since re-submitting an in-flight approval request errors.</description>
+    <description>After-save on AF_VehicleReservation__c, paired with the before-save AF_FL_Reservation_EvaluateApproval. Submits the record into AF_AP_Reservation_Manager only on the transition into Pending (ISNEW or ISCHANGED), never on a later unrelated save while already Pending, since re-submitting an in-flight approval request errors.
+
+LFRDN-761 fix: AF_AP_Reservation_Manager routes to the Owner&apos;s Manager, but this org&apos;s sharing is Private/BU-group-based, not role-hierarchy - a Manager outside the Opportunity&apos;s BU had no access to the Reservation or its Opportunity (confirmed live, RES-00238/QA ShowroomManager2). Added Get_Owner_User/Get_Manager to resolve the Owner&apos;s Manager, then Share_Reservation_With_Manager and Share_Opportunity_With_Manager (same OpportunityShare/AF_VehicleReservation__c__Share, Edit/Manual pattern as LFRDN-707/728) before Submit_For_Approval, so the resolved approver always has access to both the reservation and its parent deal.</description>
     <environments>Default</environments>
     <interviewLabel>Reservation Submit Approval {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Reservation Submit Approval</label>
@@ -35,11 +37,123 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Share_Opportunity_With_Manager</name>
+        <label>Share Opportunity With Manager</label>
+        <locationX>176</locationX>
+        <locationY>106</locationY>
+        <connector>
+            <targetReference>Submit_For_Approval</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OpportunityAccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>$Record.AF_Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityShare</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Share_Reservation_With_Manager</name>
+        <label>Share Reservation With Manager</label>
+        <locationX>176</locationX>
+        <locationY>90</locationY>
+        <connector>
+            <targetReference>Share_Opportunity_With_Manager</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AF_VehicleReservation__Share</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Manager</name>
+        <label>Get Owner&apos;s Manager</label>
+        <locationX>176</locationX>
+        <locationY>58</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Share_Reservation_With_Manager</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Owner_User.ManagerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Owner_User</name>
+        <label>Get Owner User</label>
+        <locationX>176</locationX>
+        <locationY>42</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Manager</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Submit_For_Approval</targetReference>
+            <targetReference>Get_Owner_User</targetReference>
         </connector>
         <filterFormula>ISPICKVAL({!$Record.AF_ApprovalStatus__c}, &quot;Pending&quot;) &amp;&amp; (ISNEW() || ISCHANGED({!$Record.AF_ApprovalStatus__c}))</filterFormula>
         <object>AF_VehicleReservation__c</object>

@@ -10,9 +10,17 @@
  * with zero files attached to the Handover - nothing checked for a real signed document, so a
  * deal could reach Closed Won/Delivered on an unsigned handover. Blocked in before context (a
  * validation rule can't do cross-object SOQL) whenever the value is changing TO Physically
- * Signed and no ContentDocumentLink on the record is tagged as one of the 5 signed agreements
- * or the Delivery Note (the same AF_FileUpload__c document names AF_HandoverDocumentService
- * already generates/tags).
+ * Signed and no ContentDocumentLink on the record is tagged as a signed document.
+ *
+ * QA-rejected re-fix (2026-09-27): the first pass checked for the same 6 AF_FileUpload__c tags
+ * (DOC_VEHICLE_SALE_AGREEMENT etc.) that AF_HandoverDocumentService itself stamps on its own
+ * system-generated, still-unsigned PDFs - since LFRDN-712 made those auto-generate at Take the
+ * Keys, every Handover has those tags automatically, so the check passed trivially with zero
+ * rep-uploaded files ever required. Now checks for a genuinely distinct tag,
+ * "Signed Handover Documents" (new AF_Document__mdt row, AF_Required__c=false since it's only
+ * required conditionally by this trigger, not by the general checklist gate), which nothing
+ * auto-generates - a rep must actually upload the signed scan via the Handover's own Required
+ * Documents component before Physically Signed can be set.
  *
  * LFRDN-722: AF_FL_Handover_GenerateDocuments used to pass bypassGates=true unconditionally, so
  * every click of the Generate Documents button re-printed and re-attached all 6 documents even
@@ -34,14 +42,7 @@ trigger AF_Handover on AF_Handover__c (before insert, before update, after inser
             }
         }
 
-        Set<String> SIGNED_DOCUMENT_NAMES = new Set<String>{
-            AF_HandoverDocumentService.DOC_VEHICLE_SALE_AGREEMENT,
-            AF_HandoverDocumentService.DOC_WARRANTY_AGREEMENT,
-            AF_HandoverDocumentService.DOC_SERVICE_CONTRACT_AGREEMENT,
-            AF_HandoverDocumentService.DOC_VEHICLE_REPAIR_DISCLAIMER,
-            AF_HandoverDocumentService.DOC_BUYER_ACKNOWLEDGEMENT,
-            AF_HandoverDocumentService.DOC_DELIVERY_NOTE
-        };
+        Set<String> SIGNED_DOCUMENT_NAMES = new Set<String>{ 'Signed Handover Documents' };
 
         Set<Id> handoverIdsToCheck = new Set<Id>();
         for (AF_Handover__c ho : Trigger.new) {
@@ -52,7 +53,7 @@ trigger AF_Handover on AF_Handover__c (before insert, before update, after inser
                 handoverIdsToCheck.add(ho.Id);
             } else if (becomingSigned && ho.Id == null) {
                 // A brand-new Handover cannot possibly have an uploaded file yet.
-                ho.AF_CustomerSignOff__c.addError('Customer Sign-Off cannot be set to Physically Signed until a signed handover document is attached to this Handover.');
+                ho.AF_CustomerSignOff__c.addError('Customer Sign-Off cannot be set to Physically Signed until a signed copy is uploaded under Signed Handover Documents on this Handover.');
             }
         }
 
@@ -70,7 +71,7 @@ trigger AF_Handover on AF_Handover__c (before insert, before update, after inser
 
             for (AF_Handover__c ho : Trigger.new) {
                 if (handoverIdsToCheck.contains(ho.Id) && !handoverIdsWithSignedDoc.contains(ho.Id)) {
-                    ho.AF_CustomerSignOff__c.addError('Customer Sign-Off cannot be set to Physically Signed until a signed handover document is attached to this Handover.');
+                    ho.AF_CustomerSignOff__c.addError('Customer Sign-Off cannot be set to Physically Signed until a signed copy is uploaded under Signed Handover Documents on this Handover.');
                 }
             }
         }

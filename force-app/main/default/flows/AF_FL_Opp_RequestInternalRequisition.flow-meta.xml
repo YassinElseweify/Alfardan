@@ -3,12 +3,12 @@
     <actionCalls>
         <name>Submit_For_Approval</name>
         <label>Submit for Approval</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>890</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <connector>
-            <targetReference>Screen_Confirmation</targetReference>
+            <targetReference>Unlock_Opportunity</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Screen_Error</targetReference>
@@ -28,13 +28,35 @@
         </inputParameters>
         <nameSegment>submit</nameSegment>
     </actionCalls>
-    <apiVersion>68.0</apiVersion>
+    <actionCalls>
+        <name>Unlock_Opportunity</name>
+        <label>Unlock Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>944</locationY>
+        <actionName>AF_RecordUnlockService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Screen_Confirmation</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Screen_Confirmation</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>AF_RecordUnlockService</nameSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Has_LineItems_Requiring_Requisition</name>
         <label>Any Line Items Requiring Requisition?</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
         <defaultConnector>
             <targetReference>Screen_NoLineItems</targetReference>
         </defaultConnector>
@@ -58,8 +80,8 @@
     <decisions>
         <name>Has_Manager_For_Submission</name>
         <label>Owner Has a Manager?</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
         <defaultConnector>
             <targetReference>Screen_NoManager</targetReference>
         </defaultConnector>
@@ -83,8 +105,8 @@
     <decisions>
         <name>Has_Quote_On_Opportunity</name>
         <label>Any Quote Created?</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>290</locationY>
         <defaultConnector>
             <targetReference>Screen_NoQuote</targetReference>
         </defaultConnector>
@@ -105,7 +127,34 @@
             <label>Quote Found</label>
         </rules>
     </decisions>
-    <description>Quick Action screen flow on Opportunity. Requires at least one Opportunity Line Item flagged AF_RequiresInternalRequisition__c before allowing the request (accessories/PDI requirements must be selected first, per BRD). 2026-09-17: added a second gate - at least one Quote must exist on the Opportunity (Quote.OpportunityId lookup) - per business decision that the Internal Requisition request should only become available once a Quote has been created, in addition to the existing line-item flag requirement (both gates apply, neither replaces the other). Captures the requested completion date, sets AF_RequisitionStatus__c = Pending Approval, then submits for approval via AF_AP_Opp_InternalRequisition (Sales Manager approval, routed via the owner&apos;s manager). Same manager-hierarchy submission pattern as AF_FL_Opp_RequestClosure.</description>
+    <decisions>
+        <name>Is_Requisition_Already_Pending</name>
+        <label>Is a Requisition Already Pending?</label>
+        <locationX>176</locationX>
+        <locationY>80</locationY>
+        <defaultConnector>
+            <targetReference>Get_LineItems_Requiring_Requisition</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Pending</defaultConnectorLabel>
+        <rules>
+            <name>Requisition_Pending</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_ForStatusCheck.AF_RequisitionStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen_AlreadyPending</targetReference>
+            </connector>
+            <label>Requisition Pending</label>
+        </rules>
+    </decisions>
+    <description>Quick Action screen flow on Opportunity. Requires at least one Opportunity Line Item flagged AF_RequiresInternalRequisition__c before allowing the request (accessories/PDI requirements must be selected first, per BRD). 2026-09-17: added a second gate - at least one Quote must exist on the Opportunity (Quote.OpportunityId lookup) - per business decision that the Internal Requisition request should only become available once a Quote has been created, in addition to the existing line-item flag requirement (both gates apply, neither replaces the other). Captures the requested completion date, sets AF_RequisitionStatus__c = Pending Approval, then submits for approval via AF_AP_Opp_InternalRequisition (Sales Manager approval, routed via the owner&apos;s manager). Same manager-hierarchy submission pattern as AF_FL_Opp_RequestClosure. LFRDN-748 (2026-09-27): the flow never checked AF_RequisitionStatus__c before running - a second request while one was already Pending Approval reached Update_Opportunity, which failed on the approval process&apos;s own record lock (ENTITY_IS_LOCKED) and surfaced that raw SOAP exception code to the rep via $Flow.FaultMessage. Added an up-front status check that shows a plain &quot;already pending&quot; message instead of ever reaching the update.
+
+LFRDN-761 fix: added Share_Opportunity_With_Manager (same OpportunityShare/Edit/Manual pattern as LFRDN-707/728/762) right after Update_Opportunity, before Submit_For_Approval - the resolved Manager may be outside the Opportunity&apos;s BU and have no sharing access otherwise.</description>
     <environments>Default</environments>
     <interviewLabel>Request Internal Requisition {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Request Internal Requisition</label>
@@ -122,11 +171,49 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>Share_Opportunity_With_Manager</name>
+        <label>Share Opportunity With Manager</label>
+        <locationX>176</locationX>
+        <locationY>806</locationY>
+        <connector>
+            <targetReference>Submit_For_Approval</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Screen_Error</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>OpportunityAccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityShare</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_LineItems_Requiring_Requisition</name>
         <label>Get Line Items Requiring Requisition</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Has_LineItems_Requiring_Requisition</targetReference>
@@ -153,8 +240,8 @@
     <recordLookups>
         <name>Get_Manager</name>
         <label>Get Owner&apos;s Manager</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Has_Manager_For_Submission</targetReference>
@@ -172,10 +259,31 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Opportunity_ForStatusCheck</name>
+        <label>Get Opportunity (Status Check)</label>
+        <locationX>176</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Requisition_Already_Pending</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Opportunity_Owner</name>
         <label>Get Opportunity Owner</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Owner_User</targetReference>
@@ -195,8 +303,8 @@
     <recordLookups>
         <name>Get_Owner_User</name>
         <label>Get Owner User</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Manager</targetReference>
@@ -216,8 +324,8 @@
     <recordLookups>
         <name>Get_Quotes_On_Opportunity</name>
         <label>Get Quotes On Opportunity</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>206</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Has_Quote_On_Opportunity</targetReference>
@@ -237,10 +345,10 @@
     <recordUpdates>
         <name>Update_Opportunity</name>
         <label>Set Pending Requisition Request</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>782</locationY>
         <connector>
-            <targetReference>Submit_For_Approval</targetReference>
+            <targetReference>Share_Opportunity_With_Manager</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Screen_Error</targetReference>
@@ -268,10 +376,34 @@
         <object>Opportunity</object>
     </recordUpdates>
     <screens>
+        <name>Screen_AlreadyPending</name>
+        <label>Requisition Already Pending</label>
+        <locationX>50</locationX>
+        <locationY>134</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Text_AlreadyPending</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;A request is already pending approval.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;This Opportunity already has an Internal Requisition Form request submitted for &lt;strong&gt;{!Get_Opportunity_ForStatusCheck.AF_RequisitionCompletionDate__c}&lt;/strong&gt;, awaiting Sales Manager approval. Wait for that decision, or ask your manager to review it, before requesting again.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Screen_Confirmation</name>
         <label>Requisition Submitted</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>998</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -294,8 +426,8 @@
     <screens>
         <name>Screen_Error</name>
         <label>Something Went Wrong</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>434</locationX>
+        <locationY>998</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -318,8 +450,8 @@
     <screens>
         <name>Screen_NoLineItems</name>
         <label>No Requisition Items Selected</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>434</locationX>
+        <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -342,8 +474,8 @@
     <screens>
         <name>Screen_NoManager</name>
         <label>Cannot Submit for Approval</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>434</locationX>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -366,8 +498,8 @@
     <screens>
         <name>Screen_NoQuote</name>
         <label>No Quote Created Yet</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>434</locationX>
+        <locationY>290</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -390,8 +522,8 @@
     <screens>
         <name>Screen_RequestRequisition</name>
         <label>Request Internal Requisition</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -412,15 +544,19 @@
                     <stringValue>12</stringValue>
                 </width>
             </styleProperties>
+            <validationRule>
+                <errorMessage>The completion date cannot be in the past.</errorMessage>
+                <formulaExpression>{!CompletionDateField} &gt;= TODAY()</formulaExpression>
+            </validationRule>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>0</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_LineItems_Requiring_Requisition</targetReference>
+            <targetReference>Get_Opportunity_ForStatusCheck</targetReference>
         </connector>
     </start>
     <status>Active</status>

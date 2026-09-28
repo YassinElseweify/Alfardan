@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AF_PricedLinesSubtotal__c</fullName>
+    <description>LFRDN-755: Subtotal (UnitPrice x Quantity, before discount) of the priced lines only - excludes Trade-In Deduction and Discount Adjustment lines, the same lines AF_FL_Quote_DiscountApproved and AF_FL_Quote_SetDiscountApprovalStatus exclude. Base for AF_DiscountPercent__c.</description>
+    <label>Priced Lines Subtotal</label>
+    <summarizedField>QuoteLineItem.Subtotal</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.AF_LineItemType__c</field>
+        <operation>notEqual</operation>
+        <value>Trade-In Deduction, Discount Adjustment</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

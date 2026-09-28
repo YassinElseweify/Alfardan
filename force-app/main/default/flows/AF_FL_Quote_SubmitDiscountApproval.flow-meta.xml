@@ -22,9 +22,11 @@
         </inputParameters>
         <nameSegment>submit</nameSegment>
     </actionCalls>
-    <apiVersion>68.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>After-save on Quote, paired with the before-save AF_FL_Quote_SetDiscountApprovalStatus. Submits the record into AF_AP_Quote_DiscountTiers only on the transition into Pending, never on a later unrelated save while already Pending, since re-submitting an in-flight approval request errors. Renamed from the original AF_AP_Quote_Discount when that process needed a genuine 4-tier rebuild to match the confirmed DoA matrix - Salesforce permanently locks an approval process&apos;s steps once it has any submission history, so a new process was required rather than editing in place.</description>
+    <description>After-save on Quote, paired with the before-save AF_FL_Quote_SetDiscountApprovalStatus. Submits the record into AF_AP_Quote_DiscountTiers only on the transition into Pending, never on a later unrelated save while already Pending, since re-submitting an in-flight approval request errors. Renamed from the original AF_AP_Quote_Discount when that process needed a genuine 4-tier rebuild to match the confirmed DoA matrix - Salesforce permanently locks an approval process&apos;s steps once it has any submission history, so a new process was required rather than editing in place.
+
+LFRDN-761 fix: AF_AP_Quote_DiscountTiers routes to the Owner&apos;s Manager, but this org&apos;s sharing is Private/BU-group-based, not role-hierarchy - a Manager outside the Opportunity&apos;s BU had no access. Quote sharing is Controlled By Parent (the Opportunity), so only the Opportunity needs an explicit share, not the Quote itself. Added Get_Owner_User/Get_Manager to resolve the Owner&apos;s Manager, then Share_Opportunity_With_Manager (same OpportunityShare/Edit/Manual pattern as LFRDN-707/728/762) before Submit_For_Approval.</description>
     <environments>Default</environments>
     <interviewLabel>Quote Submit Discount Approval {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Quote Submit Discount Approval</label>
@@ -35,12 +37,88 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <runInMode>SystemModeWithoutSharing</runInMode>
+    <recordCreates>
+        <name>Share_Opportunity_With_Manager</name>
+        <label>Share Opportunity With Manager</label>
+        <locationX>176</locationX>
+        <locationY>106</locationY>
+        <connector>
+            <targetReference>Submit_For_Approval</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OpportunityAccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityShare</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Manager</name>
+        <label>Get Owner&apos;s Manager</label>
+        <locationX>176</locationX>
+        <locationY>58</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Share_Opportunity_With_Manager</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Owner_User.ManagerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Owner_User</name>
+        <label>Get Owner User</label>
+        <locationX>176</locationX>
+        <locationY>42</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Manager</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Submit_For_Approval</targetReference>
+            <targetReference>Get_Owner_User</targetReference>
         </connector>
         <filterFormula>ISPICKVAL({!$Record.AF_DiscountApprovalStatus__c}, &quot;Pending&quot;) &amp;&amp; (ISNEW() || ISCHANGED({!$Record.AF_DiscountApprovalStatus__c}))</filterFormula>
         <object>Quote</object>

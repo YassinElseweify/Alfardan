@@ -66,18 +66,42 @@
         <inputParameters>
             <name>emailBody</name>
             <value>
-                <stringValue>Your Internal Requisition Form request has been rejected. Please review and resubmit if needed.</stringValue>
+                <elementReference>AF_Formula_EmailBody</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
             <name>sendRichBody</name>
             <value>
-                <booleanValue>false</booleanValue>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>Get_OrgWideEmailAddress.Address</elementReference>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
-    <apiVersion>68.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_RecipientId</name>
@@ -95,8 +119,15 @@
             <targetReference>Send_Notification</targetReference>
         </connector>
     </assignments>
-    <description>Fires when AF_RequisitionStatus__c changes to Rejected - notifies the Opportunity Owner via email (emailSimple - emailAlert core action confirmed unavailable in this org) and via Custom Notification, matching the dual-channel pattern used for Closed Lost (AF_FL_Opp_LostRejected).</description>
+    <description>Fires when AF_RequisitionStatus__c changes to Rejected - notifies the Opportunity Owner via email (emailSimple - emailAlert core action confirmed unavailable in this org) and via Custom Notification, matching the dual-channel pattern used for Closed Lost (AF_FL_Opp_LostRejected). LFRDN-750 (2026-09-27): Send_Owner_Rejection was missing senderType/senderAddress/logEmailOnSend - unlike every other emailSimple call in this org&apos;s Opportunity flows, it had no org-wide sender configured, which is why it silently never delivered (no EmailMessage was ever logged either). Added the same OrgWideEmailAddress/logEmailOnSend pattern used by AF_FL_Opp_RequisitionApproved - confirmed live, the email now sends and logs correctly. Also added Get_ProcessInstance/Get_RejectionReason (ProcessInstanceStep.Comments for this Opportunity&apos;s approval) and included it in both the email body and the notification body, with a &quot;No reason was provided&quot; fallback - live-verified this fallback text still fires today, because the field-update action that runs this flow executes before the Approval engine&apos;s own ProcessInstanceStep audit row for that same rejection is query-visible in the triggering transaction (a real, documented Salesforce platform ordering quirk, not a bug in this flow&apos;s SOQL). The comment IS correctly present moments later on the very next query outside this transaction.
+
+LFRDN-750 (2026-09-28): the notification now runs on the flow&apos;s asynchronous path (AsyncAfterCommit), after the approval transaction commits, so Get_RejectionReason finds the rejection step and its Comments. Entry condition is the same (status becomes Rejected), expressed as ISPICKVAL + &quot;only when updated to meet the condition&quot;, which an asynchronous path requires.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>AF_Formula_EmailBody</name>
+        <dataType>String</dataType>
+        <expression>&apos;&lt;html&gt;&lt;body style=&quot;margin:0;padding:16px;background-color:#F4F4F6;font-family:Helvetica,Arial,sans-serif;&quot;&gt;&lt;div style=&quot;max-width:560px;margin:0 auto;background:#FFFFFF;border-radius:6px;border:1px solid #E2E5EA;border-top:4px solid #B3261E;padding:20px 24px;&quot;&gt;&lt;span style=&quot;display:inline-block;background-color:#FBE4E1;color:#B3261E;font-size:11px;font-weight:bold;letter-spacing:0.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px;&quot;&gt;Rejected&lt;/span&gt;&lt;h2 style=&quot;margin:12px 0;font-size:18px;color:#0B2545;&quot;&gt;Internal Requisition Form Rejected&lt;/h2&gt;&lt;p style=&quot;margin:0 0 6px;font-size:14px;color:#4A4A4A;&quot;&gt;Your Internal Requisition Form request for &lt;strong&gt;&apos; &amp; {!$Record.Name} &amp; &apos;&lt;/strong&gt; has been rejected.&lt;/p&gt;&lt;p style=&quot;margin:16px 0 6px;font-size:12px;color:#6B6B6B;text-transform:uppercase;letter-spacing:0.04em;&quot;&gt;Reason&lt;/p&gt;&lt;p style=&quot;margin:0 0 16px;font-size:14px;color:#1A1A1A;background:#F4F4F6;border-radius:4px;padding:10px 12px;&quot;&gt;&apos; &amp; IF(ISBLANK({!Get_RejectionReason.Comments}), &quot;No reason was provided.&quot;, {!Get_RejectionReason.Comments}) &amp; &apos;&lt;/p&gt;&lt;p style=&quot;margin:0;font-size:14px;color:#4A4A4A;&quot;&gt;Please review and resubmit if needed.&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&apos;</expression>
+    </formulas>
     <formulas>
         <name>AF_Formula_Subject</name>
         <dataType>String</dataType>
@@ -105,7 +136,7 @@
     <formulas>
         <name>NotifBody</name>
         <dataType>String</dataType>
-        <expression>&quot;Your Internal Requisition Form request for &quot; &amp; {!$Record.Name} &amp; &quot; was rejected.&quot;</expression>
+        <expression>&quot;Your Internal Requisition Form request for &quot; &amp; {!$Record.Name} &amp; &quot; was rejected. Reason: &quot; &amp; IF(ISBLANK({!Get_RejectionReason.Comments}), &quot;No reason was provided.&quot;, {!Get_RejectionReason.Comments})</expression>
     </formulas>
     <formulas>
         <name>NotifTitle</name>
@@ -143,6 +174,27 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_OrgWideEmailAddress</name>
+        <label>Get Org Wide Email Address</label>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_ProcessInstance</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DisplayName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>No Reply</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OrgWideEmailAddress</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Owner_User_ForEmail</name>
         <label>Get Owner User (for Email)</label>
         <locationX>176</locationX>
@@ -163,16 +215,72 @@
         <object>User</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <runInMode>SystemModeWithoutSharing</runInMode>
-    <start>
+    <recordLookups>
+        <name>Get_ProcessInstance</name>
+        <label>Get Process Instance</label>
         <locationX>50</locationX>
-        <locationY>0</locationY>
+        <locationY>75</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_RejectionReason</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_RejectionReason</name>
+        <label>Get Rejection Reason</label>
+        <locationX>50</locationX>
+        <locationY>100</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Owner_User_ForEmail</targetReference>
         </connector>
-        <filterFormula>ISCHANGED({!$Record.AF_RequisitionStatus__c}) &amp;&amp; ISPICKVAL({!$Record.AF_RequisitionStatus__c}, &quot;Rejected&quot;)</filterFormula>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ProcessInstanceId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_ProcessInstance.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StepStatus</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstanceStep</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>ISPICKVAL({!$Record.AF_RequisitionStatus__c}, &quot;Rejected&quot;)</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Get_OrgWideEmailAddress</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

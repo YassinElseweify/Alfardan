@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Send_Notification</name>
         <label>Send Notification</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>408</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -41,18 +41,18 @@
         <inputParameters>
             <name>targetId</name>
             <value>
-                <elementReference>Get_New_Opportunity.Id</elementReference>
+                <elementReference>opportunity.Id</elementReference>
             </value>
         </inputParameters>
         <nameSegment>customNotificationAction</nameSegment>
     </actionCalls>
-    <apiVersion>68.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_opportunity_Details</name>
         <label>Assign opportunity Details</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>246</locationY>
         <assignmentItems>
             <assignToReference>opportunity.CampaignId</assignToReference>
             <operator>Assign</operator>
@@ -131,13 +131,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>opportunity.ContactId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Contact.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>opportunity.Pricebook2Id</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -151,8 +144,8 @@
     <assignments>
         <name>Assign_RecipientId</name>
         <label>Assign Recipient Id</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>372</locationY>
         <assignmentItems>
             <assignToReference>var_RecipientIds</assignToReference>
             <operator>Add</operator>
@@ -167,7 +160,7 @@
     <decisions>
         <name>Decide_Gate</name>
         <label>Business Unit Enabled for Sales Walk-In?</label>
-        <locationX>0</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
             <targetReference>Screen_NotEnabled</targetReference>
@@ -192,8 +185,8 @@
     <decisions>
         <name>Decision_3</name>
         <label>Decision 3</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>144</locationY>
         <defaultConnector>
             <targetReference>Get_SalesRepRole</targetReference>
         </defaultConnector>
@@ -214,7 +207,7 @@
             <label>Brand Undecided</label>
         </rules>
     </decisions>
-    <description>Quick Action screen flow launched from a customer Contact by the Sales Receptionist. recordId is the Contact&apos;s Id; Get_Contact resolves it to that Contact&apos;s Account (Get_Account) since the Opportunity is created under the Account, not the Contact. Captures Brand, Showroom, and Sales Representative, then creates the Opportunity directly under that Account and assigns it to the chosen rep, triggering both an assignment notification Task and a real-time Custom Notification (customNotificationAction, type AF_NT_Alfardan_Alert — same pattern as AF_FL_Lead_QueueRouting/AF_FL_Lead_NotifyOnAssignment) to that rep. Duplicate-opportunity flagging and Showroom Manager notification are handled centrally by AF_FL_Opp_AfterCreate, not duplicated here.</description>
+    <description>Quick Action screen flow launched from a customer Contact by the Sales Receptionist. recordId is the Contact&apos;s Id; Get_Contact resolves it to that Contact&apos;s Account (Get_Account) since the Opportunity is created under the Account, not the Contact. Captures Brand, Showroom, and Sales Representative, then creates the Opportunity directly under that Account and assigns it to the chosen rep, triggering both an assignment notification Task and a real-time Custom Notification (customNotificationAction, type AF_NT_Alfardan_Alert — same pattern as AF_FL_Lead_QueueRouting/AF_FL_Lead_NotifyOnAssignment) to that rep. Duplicate-opportunity flagging and Showroom Manager notification are handled centrally by AF_FL_Opp_AfterCreate, not duplicated here. LFRDN-752 (2026-09-27): removed Get_New_Opportunity entirely - it re-queried the just-created Opportunity as the receptionist, who has no read access to a Private-sharing-model Opportunity owned by the rep they just assigned it to (confirmed via UserRecordAccess), so the lookup always returned nothing even though the record was created successfully. That null Id then made the notification Task&apos;s WhatId null and the customNotificationAction fault with &quot;no navigation target&quot;, surfacing a false &quot;Something went wrong&quot; to the receptionist on every single use. Task WhatId and the notification targetId now both reference {!opportunity.Id} directly (the Id Create_Opportunity itself returns), which the receptionist&apos;s own transaction always has, regardless of later record-sharing. LFRDN-752/719 (2026-09-28): flow runs in System Context Without Sharing. The Task insert was still refused (INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY) because its WhatId is a rep-owned Opportunity the receptionist cannot read under Private OWD, and Get_SalesRepRole could not read UserRole.Name in the running user&apos;s context. Entry is still gated by the AF_CanUseSalesWalkIn custom permission.</description>
     <dynamicChoiceSets>
         <name>Brand</name>
         <dataType>Picklist</dataType>
@@ -279,6 +272,18 @@
         <expression>CASE({!Choice_Brand},
     &quot;Ferrari&quot;, &quot;Sales Rep - SportsMotors&quot;,
     &quot;Rolls-Royce&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;BMW&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;Mini&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;BMW Motorrad&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;KTM&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;Ducati&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;Piaggio&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;Gas Gas&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;Triumph&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;Husqvarna&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;MV Augusta&quot;, &quot;Sales Rep - Automobiles&quot;,
+    &quot;Jaguar&quot;, &quot;Sales Rep - PremierMotors&quot;,
+    &quot;Land Rover&quot;, &quot;Sales Rep - PremierMotors&quot;,
     &quot;&quot;)</expression>
     </formulas>
     <interviewLabel>Sales Walk-In {!$Flow.CurrentDateTime}</interviewLabel>
@@ -299,8 +304,8 @@
     <recordCreates>
         <name>Create_Notification_Task</name>
         <label>Create Sales Rep Notification Task</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>336</locationY>
         <connector>
             <targetReference>Get_NotificationType</targetReference>
         </connector>
@@ -340,7 +345,7 @@
         <inputAssignments>
             <field>WhatId</field>
             <value>
-                <elementReference>Get_New_Opportunity.Id</elementReference>
+                <elementReference>opportunity.Id</elementReference>
             </value>
         </inputAssignments>
         <object>Task</object>
@@ -348,18 +353,18 @@
     <recordCreates>
         <name>Create_Opportunity</name>
         <label>Create Opportunity</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>264</locationY>
         <connector>
-            <targetReference>Get_New_Opportunity</targetReference>
+            <targetReference>Create_Notification_Task</targetReference>
         </connector>
         <inputReference>opportunity</inputReference>
     </recordCreates>
     <recordLookups>
         <name>Get_Account</name>
         <label>Get Account</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>48</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Campaigns</targetReference>
@@ -382,8 +387,8 @@
     <recordLookups>
         <name>Get_Campaigns</name>
         <label>Get Campaigns</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>84</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen_WalkInDetails</targetReference>
@@ -403,8 +408,8 @@
     <recordLookups>
         <name>Get_Contact</name>
         <label>Get Contact</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>36</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Account</targetReference>
@@ -425,36 +430,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_New_Opportunity</name>
-        <label>Get New Opportunity</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Notification_Task</targetReference>
-        </connector>
-        <faultConnector>
-            <targetReference>Screen_Error</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>opportunity.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Opportunity</object>
-        <sortField>CreatedDate</sortField>
-        <sortOrder>Desc</sortOrder>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_NotificationType</name>
         <label>Get Notification Type</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_RecipientId</targetReference>
@@ -477,8 +456,8 @@
     <recordLookups>
         <name>Get_SalesRepRole</name>
         <label>Get Sales Rep Role for Brand</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>156</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen_AssignRep</targetReference>
@@ -501,8 +480,8 @@
     <recordLookups>
         <name>Get_Standard_Price_Book</name>
         <label>Get Standard Price Book</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>210</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_opportunity_Details</targetReference>
@@ -519,11 +498,12 @@
         <object>Pricebook2</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>ErorrScreen</name>
         <label>Erorr Screen</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>434</locationX>
+        <locationY>144</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
         <allowPause>false</allowPause>
@@ -546,8 +526,8 @@
     <screens>
         <name>Screen_AssignRep</name>
         <label>Assign to Sales</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>228</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -576,8 +556,8 @@
     <screens>
         <name>Screen_Confirmation</name>
         <label>Opportunity Created</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>336</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -600,8 +580,8 @@
     <screens>
         <name>Screen_Error</name>
         <label>Something Went Wrong</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>434</locationX>
+        <locationY>48</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -624,7 +604,7 @@
     <screens>
         <name>Screen_NotEnabled</name>
         <label>Not Enabled</label>
-        <locationX>0</locationX>
+        <locationX>302</locationX>
         <locationY>0</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -648,8 +628,8 @@
     <screens>
         <name>Screen_WalkInDetails</name>
         <label>Walk-In Details</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>120</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -776,7 +756,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>0</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Decide_Gate</targetReference>
@@ -786,8 +766,8 @@
     <subflows>
         <name>Sub_DeriveBusinessUnit</name>
         <label>Derive Business Unit</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>176</locationX>
+        <locationY>192</locationY>
         <connector>
             <targetReference>Get_Standard_Price_Book</targetReference>
         </connector>

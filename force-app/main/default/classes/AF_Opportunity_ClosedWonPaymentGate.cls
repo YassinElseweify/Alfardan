@@ -73,12 +73,36 @@ public with sharing class AF_Opportunity_ClosedWonPaymentGate {
         }
 
         Map<Id, Opportunity> opportunitiesById = new Map<Id, Opportunity>([
-            SELECT Id, AF_Handover__c, AF_Handover__r.AF_TrafficFormUploaded__c,
-                   AF_Handover__r.AF_CustomerSignOff__c
+            SELECT Id, AF_Handover__c
             FROM Opportunity
             WHERE Id IN :opportunityIds
             WITH USER_MODE
         ]);
+
+        // LFRDN-709/LFRDN-696-pattern: AF_Handover__c is now Private OWD, shared only to the
+        // record's own business-unit/showroom group. Whether the Traffic Form is uploaded and the
+        // customer signed off is a gate-check fact the running user needs answered to know if THEY
+        // may close THIS deal - not document content the rep is personally choosing to view - so
+        // the record-access decision made by the main Opportunity query above (WITH USER_MODE) is
+        // what actually gates this check; requiring separate Handover sharing on top of that would
+        // make every real rep without a direct BU-group grant unable to close their own deals.
+        Set<Id> handoverIds = new Set<Id>();
+        for (Opportunity opp : opportunitiesById.values()) {
+            if (opp.AF_Handover__c != null) {
+                handoverIds.add(opp.AF_Handover__c);
+            }
+        }
+        Map<Id, AF_Handover__c> handoversById = new Map<Id, AF_Handover__c>();
+        if (!handoverIds.isEmpty()) {
+            for (AF_Handover__c ho : [
+                SELECT Id, AF_TrafficFormUploaded__c, AF_CustomerSignOff__c
+                FROM AF_Handover__c
+                WHERE Id IN :handoverIds
+                WITH SYSTEM_MODE
+            ]) {
+                handoversById.put(ho.Id, ho);
+            }
+        }
 
         Map<Id, List<AF_Payment__c>> paymentsByOpportunity = new Map<Id, List<AF_Payment__c>>();
         Map<Id, AF_Payment__c> paymentsById = new Map<Id, AF_Payment__c>();
@@ -120,10 +144,10 @@ public with sharing class AF_Opportunity_ClosedWonPaymentGate {
             }
 
             Opportunity opp = opportunitiesById.get(req.opportunityId);
-            Boolean handoverOk = opp != null
-                && opp.AF_Handover__c != null
-                && opp.AF_Handover__r.AF_TrafficFormUploaded__c == true
-                && opp.AF_Handover__r.AF_CustomerSignOff__c == 'Physically Signed';
+            AF_Handover__c ho = opp != null && opp.AF_Handover__c != null ? handoversById.get(opp.AF_Handover__c) : null;
+            Boolean handoverOk = ho != null
+                && ho.AF_TrafficFormUploaded__c == true
+                && ho.AF_CustomerSignOff__c == 'Physically Signed';
             if (!handoverOk) {
                 res.message = 'Registration (Traffic Form) and signed delivery note (Customer Sign-Off) must be complete on the linked Handover.';
                 continue;

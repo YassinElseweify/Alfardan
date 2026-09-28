@@ -164,7 +164,9 @@
             <label>Approver Found</label>
         </rules>
     </decisions>
-    <description>Quick Action screen flow reachable from any open Opportunity stage. Captures Loss Reason (required), Competitor Outcome, and Notes (required); sets AF_LostApprovalStatus__c = Pending and AF_ApprovalRecipient__c, then submits for approval — StageName is never touched here, which is what keeps the request-and-approve path deadlock-free. AF_ApprovalRecipient__c is resolved to the Opportunity Owner&apos;s own User.ManagerId, matching AF_AP_Opp_ClosedLost&apos;s userHierarchyField approver — the same org-chart-manager pattern every other AF_AP_* approval process uses (Quote discount, Appraisal, VehicleReservation, CreditNote, Opportunity Internal Requisition). An earlier version of this flow routed to the Opportunity&apos;s own Showroom Manager via a UserRole.Name lookup instead of the rep&apos;s generic manager; that lookup reliably failed for any non-admin persona at runtime (&quot;unable to parse field as dataType could not be retrieved for the passed field: RawFieldImpl[tableName: UserRole, columnName: Name]&quot;) — confirmed via a real click-through as the Test SalesRep persona, never caught by Apex-driven testing since Apex runs as the admin API user, which bypasses whatever gated that lookup. Reverted to the org&apos;s standard hierarchy pattern for consistency and reliability; showroom-specific routing was the reason for the original design but isn&apos;t worth the fragility until the underlying UserRole access gap is understood. Deliberately does NOT send the approver notification (email or Custom Notification) itself — that logic lives in AF_FL_Opp_ApprovalRequested, a record-triggered flow on the Pending status change, matching the pattern already used for Approved/Rejected. Reason: this is a Screen Flow, and Screen Flows cannot be invoked programmatically (Flow.Interview.start explicitly rejects process type Screen Flow), so any notification logic embedded here is untestable via Apex and never fires for anything other than a live UI click — it also wouldn&apos;t fire for the case where AF_LostApprovalStatus__c is set to Pending some other way. A record-triggered flow reacting to the field value itself covers every path that sets Pending, not just this screen. Runs System Mode Without Sharing: AF_LostApprovalStatus__c has no persona has Edit FLS on it in this org (only AF_PS_Integration_MuleSoft and AF_System_Admin do — every AF_MPS_* muting permission set mutes it, treating it as an approval-authority field like the Quote/Reservation discount-approval fields), which makes sense for direct edits but also blocked this flow&apos;s own legitimate write of Pending on submit (&quot;INVALID_FIELD_FOR_INSERT_UPDATE&quot;, confirmed via a real click-through as Test SalesRep, 2026-09-13). System Mode is the correct fix here, not loosening FLS — a rep still can&apos;t set this field to Approved/Rejected directly through any UI path; only this flow (Pending) and the Approval Process&apos;s own system-context field updates (Approved/Rejected) ever write it.</description>
+    <description>Quick Action screen flow reachable from any open Opportunity stage. Captures Loss Reason (required), Competitor Outcome, and Notes (required); sets AF_LostApprovalStatus__c = Pending and AF_ApprovalRecipient__c, then submits for approval — StageName is never touched here, which is what keeps the request-and-approve path deadlock-free. AF_ApprovalRecipient__c is resolved to the Opportunity Owner&apos;s own User.ManagerId, matching AF_AP_Opp_ClosedLost&apos;s userHierarchyField approver — the same org-chart-manager pattern every other AF_AP_* approval process uses (Quote discount, Appraisal, VehicleReservation, CreditNote, Opportunity Internal Requisition). An earlier version of this flow routed to the Opportunity&apos;s own Showroom Manager via a UserRole.Name lookup instead of the rep&apos;s generic manager; that lookup reliably failed for any non-admin persona at runtime (&quot;unable to parse field as dataType could not be retrieved for the passed field: RawFieldImpl[tableName: UserRole, columnName: Name]&quot;) — confirmed via a real click-through as the Test SalesRep persona, never caught by Apex-driven testing since Apex runs as the admin API user, which bypasses whatever gated that lookup. Reverted to the org&apos;s standard hierarchy pattern for consistency and reliability; showroom-specific routing was the reason for the original design but isn&apos;t worth the fragility until the underlying UserRole access gap is understood. Deliberately does NOT send the approver notification (email or Custom Notification) itself — that logic lives in AF_FL_Opp_ApprovalRequested, a record-triggered flow on the Pending status change, matching the pattern already used for Approved/Rejected. Reason: this is a Screen Flow, and Screen Flows cannot be invoked programmatically (Flow.Interview.start explicitly rejects process type Screen Flow), so any notification logic embedded here is untestable via Apex and never fires for anything other than a live UI click — it also wouldn&apos;t fire for the case where AF_LostApprovalStatus__c is set to Pending some other way. A record-triggered flow reacting to the field value itself covers every path that sets Pending, not just this screen. Runs System Mode Without Sharing: AF_LostApprovalStatus__c has no persona has Edit FLS on it in this org (only AF_PS_Integration_MuleSoft and AF_System_Admin do — every AF_MPS_* muting permission set mutes it, treating it as an approval-authority field like the Quote/Reservation discount-approval fields), which makes sense for direct edits but also blocked this flow&apos;s own legitimate write of Pending on submit (&quot;INVALID_FIELD_FOR_INSERT_UPDATE&quot;, confirmed via a real click-through as Test SalesRep, 2026-09-13). System Mode is the correct fix here, not loosening FLS — a rep still can&apos;t set this field to Approved/Rejected directly through any UI path; only this flow (Pending) and the Approval Process&apos;s own system-context field updates (Approved/Rejected) ever write it.
+
+LFRDN-707 fix: the resolved Manager (Get_Manager) is the correct approval-process approver, but approval routing never grants sharing access on its own — this org&apos;s Opportunity sharing is Private with BU-group sharing rules (AF_ChildRecordSharingService), not role-hierarchy-based, so a Manager whose own Role sits in a different Business Unit than the Opportunity had no way to ever see the record they were assigned to approve, confirmed via a real cross-BU test (QA ShowroomManager2 assigned as QA SalesRep2&apos;s Manager, but in the SportsMotors BU group while the Opportunity was Alsadd). Added Share_Opportunity_With_Approver, inserting a standard OpportunityShare row (Edit, RowCause=Manual) for the resolved approver right before Submit_For_Approval, so the assigned approver always has access to the record regardless of BU-group membership.</description>
     <environments>Default</environments>
     <interviewLabel>Request Closure {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Request Closure</label>
@@ -181,6 +183,44 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>Share_Opportunity_With_Approver</name>
+        <label>Share Opportunity With Approver</label>
+        <locationX>176</locationX>
+        <locationY>206</locationY>
+        <connector>
+            <targetReference>Submit_For_Approval</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Screen_Error</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>OpportunityAccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Manager.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityShare</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_Manager</name>
         <label>Get Owner&apos;s Manager</label>
@@ -250,7 +290,7 @@
         <locationX>176</locationX>
         <locationY>210</locationY>
         <connector>
-            <targetReference>Submit_For_Approval</targetReference>
+            <targetReference>Share_Opportunity_With_Approver</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Screen_Error</targetReference>
