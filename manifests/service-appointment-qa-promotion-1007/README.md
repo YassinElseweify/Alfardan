@@ -1,12 +1,18 @@
 # Service Appointment Management: DEV → QA promotion (2026-10-07)
 
 `package.xml` in this folder lists every metadata component the Service Appointment feature
-(ALF-SA-01 to ALF-SA-07) needs in QA, including the dependencies. It covers everything the
-"Service appointment Management" session changed in DEV on 2026-10-07.
+(ALF-SA-01 to ALF-SA-07) needs in QA, including the dependencies. It is built to cover
+everything the "Service appointment Management" session created or changed. That is the
+whole session, not only 2026-10-07; see "Work done across the session" below.
 
 ## How to promote
 
 ```bash
+# 0. Completeness check against DEV. It lists anything the manifest's components use, anything
+#    that uses them, and anything modified in DEV since the date, that isn't in package.xml.
+#    Set the date to when the SA work started.
+manifests/service-appointment-qa-promotion-1007/check-completeness.sh "ALFardan DEV" 2026-09-01T00:00:00Z
+
 # 1. Retrieve fresh from DEV (DEV is the source of truth: the local force-app was stale for SA)
 sf project retrieve start -x manifests/service-appointment-qa-promotion-1007/package.xml \
   -o "ALFardan DEV" -r manifests/service-appointment-qa-promotion-1007
@@ -27,6 +33,32 @@ sf project deploy start -x manifests/service-appointment-qa-promotion-1007/packa
 The retrieve in step 1 has not been run yet. The original session ran out of usage before it
 could. If the CLI or the QA org rejects API `68.0`, change `<version>` to `67.0`, which matches
 `sfdx-project.json`.
+
+## Work done across the session, and where it is in the manifest
+
+From the session's transcript and its memory notes (`alfardan-sa-ux-polish-1007`, which follows
+on from `alfardan-sa01-novehicle-bugfix-1007`):
+
+| Work | Covered by |
+|---|---|
+| Booking flow built, then redesigned vehicle-first: 3 entry paths (Contact with a vehicle, Contact with no vehicle and the vehicle created on the fly, and the list-view button with no context) | Flow `AF_FL_ServiceAppointment_NewBooking`, ApexClass `AF_ServiceAppointmentVehicleResolver` (+Test) |
+| `AccountId` → `ParentRecordId` fix on the record create | NewBooking flow |
+| Confirmation screen rebuilt as a styled card (Contact FirstName/LastName fix) | NewBooking flow |
+| v15: Phone/Email wired via `Get_BookingContact`; Subject/BookingChannel | NewBooking flow |
+| v16/v17: Sched*/EarliestStart/DueDate, PreferredBranch = chosen shop, shop-scoped advisor screens, `SystemModeWithoutSharing` | NewBooking flow, `ServiceResource.AF_MaintenanceShop__c`, `AF_PS_ServiceResource_FullAccess` |
+| Page layout redesigned in the Case style (AccountId hidden) | Layout `ServiceAppointment-Service Appointment Layout` |
+| Highlights panel shows the Contact: new compact layout, assigned on the object | CompactLayout `AF_ServiceAppointment_Compact` + CustomObject `ServiceAppointment` (holds `compactLayoutAssignment`) |
+| Record page you created mid-session | FlexiPage `Service_Appointment_Record_Page` + CustomObject `ServiceAppointment` (holds the page assignment) |
+| List-view button that launches the flow (no-context path) | CustomObject `ServiceAppointment` (a retrieve of the object includes its `webLinks` and `searchLayouts`). The completeness check lists the button by name under reverse dependencies. |
+| Contact quick action | QuickAction `Contact.AF_New_ServiceAppointment`. The check lists the Contact layout or page that holds it. |
+| SA-02 confirmation/reminder emails | Flow `AF_FL_ServiceAppointment_SendComms`, Comms Apex classes, CMDT types and records |
+| SA-03 no-show, SA-05 follow-up and feedback, SA-06/07 vehicle reminders | Their flows, `AF_Feedback__c`, the permission sets |
+
+The session's local manifest folders (`service-appointment-polish-1007`,
+`service-appointment-shopadvisor-1007`, `_sa_fixes*`) were deleted during that session. This
+manifest supersedes them all. The transcript from before 09:42 on 2026-10-07 was compacted and
+isn't recoverable, which is why step 0 exists: it checks DEV itself rather than relying on the
+conversation history.
 
 ## What's in the manifest
 
