@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Service Appointment Management (ALF-SA-01 .. ALF-SA-07) - DEV -> QA promotion manifest, 2026-10-07.
+    Retrieve from DEV, then deploy to QA. See README.md in this folder for the component rationale,
+    the fixes made versus the first draft, and the prerequisites QA must already have.
+-->
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Apex: invocable vehicle resolver (SA-01) + comms service/sender (SA-02) and their tests -->
+    <types>
+        <members>AF_ServiceAppointmentCommsSender</members>
+        <members>AF_ServiceAppointmentCommsSenderTest</members>
+        <members>AF_ServiceAppointmentCommsService</members>
+        <members>AF_ServiceAppointmentCommsServiceTest</members>
+        <members>AF_ServiceAppointmentVehicleResolver</members>
+        <members>AF_ServiceAppointmentVehicleResolverTest</members>
+        <name>ApexClass</name>
+    </types>
+    <!-- Compact layout assigned to ServiceAppointment -->
+    <types>
+        <members>ServiceAppointment.AF_ServiceAppointment_Compact</members>
+        <name>CompactLayout</name>
+    </types>
+    <!-- Custom fields, listed explicitly so they are retrieved even for the standard objects.
+         The two __mdt types' fields come with their CustomObject entries below. -->
+    <types>
+        <members>AF_Feedback__c.AF_Account__c</members>
+        <members>AF_Feedback__c.AF_CapturedBy__c</members>
+        <members>AF_Feedback__c.AF_CapturedDate__c</members>
+        <members>AF_Feedback__c.AF_Case__c</members>
+        <members>AF_Feedback__c.AF_Comments__c</members>
+        <members>AF_Feedback__c.AF_Contact__c</members>
+        <members>AF_Feedback__c.AF_FeedbackContext__c</members>
+        <members>AF_Feedback__c.AF_FeedbackOutcome__c</members>
+        <members>AF_Feedback__c.AF_ServiceAppointment__c</members>
+        <members>AF_Feedback__c.AF_Source__c</members>
+        <members>AF_Feedback__c.AF_Vehicle__c</members>
+        <members>ServiceAppointment.AF_BookingChannel__c</members>
+        <members>ServiceAppointment.AF_KeyloopAppointmentReference__c</members>
+        <members>ServiceAppointment.AF_MaintenanceShop__c</members>
+        <members>ServiceAppointment.AF_NoShowDetected__c</members>
+        <members>ServiceAppointment.AF_NoShowGraceMinutes__c</members>
+        <members>ServiceAppointment.AF_PreferredBranch__c</members>
+        <members>ServiceAppointment.AF_RelationshipToOwner__c</members>
+        <members>ServiceAppointment.AF_ServiceType__c</members>
+        <members>ServiceAppointment.AF_Vehicle__c</members>
+        <members>ServiceAppointment.AF_WorkshopStatus__c</members>
+        <members>ServiceResource.AF_MaintenanceShop__c</members>
+        <name>CustomField</name>
+    </types>
+    <!-- CMDT records: SA email templates (SA-02) + brand no-reply mailboxes the comms sender queries -->
+    <types>
+        <members>AF_BrandMailbox__mdt.BMW</members>
+        <members>AF_BrandMailbox__mdt.BMW_Motorrad</members>
+        <members>AF_BrandMailbox__mdt.Ferrari</members>
+        <members>AF_BrandMailbox__mdt.Jaguar</members>
+        <members>AF_BrandMailbox__mdt.Mini</members>
+        <members>AF_EmailTemplateConfig__mdt.AF_SA_BookingConfirmation</members>
+        <members>AF_EmailTemplateConfig__mdt.AF_SA_Reminder24h</members>
+        <members>AF_EmailTemplateConfig__mdt.AF_SA_Reminder2to3h</members>
+        <name>CustomMetadata</name>
+    </types>
+    <!-- Objects: SA/SR carry record-page + compact-layout assignments; AF_Feedback__c is new for SA-05;
+         the two __mdt types must exist before their records deploy -->
+    <types>
+        <members>AF_BrandMailbox__mdt</members>
+        <members>AF_EmailTemplateConfig__mdt</members>
+        <members>AF_Feedback__c</members>
+        <members>ServiceAppointment</members>
+        <members>ServiceResource</members>
+        <name>CustomObject</name>
+    </types>
+    <!-- Tab for AF_Feedback__c (referenced by AF_PS_Feedback_FullAccess) -->
+    <types>
+        <members>AF_Feedback__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Service_Appointment_Record_Page</members>
+        <name>FlexiPage</name>
+    </types>
+    <!-- Flows: SA-01 booking, SA-02 comms, SA-03 no-show, SA-05 follow-up, SA-06/07 vehicle reminders,
+         plus the shared BU subflow that NewBooking and PostServiceFollowUp call -->
+    <types>
+        <members>AF_FL_ServiceAppointment_NewBooking</members>
+        <members>AF_FL_ServiceAppointment_NoShowDetection</members>
+        <members>AF_FL_ServiceAppointment_PostServiceFollowUp</members>
+        <members>AF_FL_ServiceAppointment_SendComms</members>
+        <members>AF_FL_Sub_DeriveBusinessUnit</members>
+        <members>AF_FL_Task_WarrantyRenewalEscalation</members>
+        <members>AF_FL_Vehicle_ServiceDueReminders</members>
+        <members>AF_FL_Vehicle_WarrantyRenewalFollowUp</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>ServiceAppointment-Service Appointment Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>AF_PS_Feedback_FullAccess</members>
+        <members>AF_PS_ServiceAppointment_FullAccess</members>
+        <members>AF_PS_ServiceResource_FullAccess</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Contact.AF_New_ServiceAppointment</members>
+        <name>QuickAction</name>
+    </types>
+    <version>68.0</version>
+</Package>
